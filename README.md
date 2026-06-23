@@ -1,36 +1,68 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Abada
 
-## Getting Started
+Infraestructura legal para venture capital en Colombia. Plataforma de preparación para inversión y debida diligencia, con revisión de abogados de Balam Legal.
 
-First, run the development server:
+## Stack
+
+- **Next.js 16** (App Router) + TypeScript + Tailwind CSS v4
+- **Claude** (Anthropic) para la asistente de IA
+- **i18n**: español colombiano por defecto (`es-CO`), inglés con toggle
+
+## Inicio rápido
 
 ```bash
+npm install
+cp .env.example .env.local   # opcional: añade ANTHROPIC_API_KEY
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Abre [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Sin `ANTHROPIC_API_KEY`, la asistente responde con respuestas demo alineadas al tono de Balam Legal.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Vistas
 
-## Learn More
+| Ruta | Rol |
+|------|-----|
+| `/` | Sitio público |
+| `/fundador` | Dashboard fundador |
+| `/inversionista` | Dashboard inversionista |
+| `/abogado` | Cola de revisión (Balam Legal) |
 
-To learn more about Next.js, take a look at the following resources:
+Usa las pestañas del header o el toggle de idioma (Español / English).
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Tema
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Diseño propio (no copia del mockup de Netlify):
 
-## Deploy on Vercel
+- Tipografía: **Plus Jakarta Sans**
+- Paleta: teal profundo + ámbar cálido sobre fondo stone/cream
+- Componentes: botones con gradiente, tarjetas redondeadas, badges de riesgo
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Tokens en `src/app/globals.css`.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## IA
+
+- Prompts en `src/lib/ai/prompts.ts` — tres registros (fundador, inversionista, abogado)
+- API: `POST /api/ai/chat` con `{ messages, locale, audience }`
+- Idioma de la IA sigue el locale del usuario
+
+## Estructura
+
+```
+src/
+  app/           # Rutas y páginas
+  components/    # UI, layout, asistente
+  data/          # Datos mock
+  lib/ai/        # Claude + prompts
+  lib/i18n/      # Traducciones es-CO / en
+  messages/      # Archivos JSON de traducción
+```
+
+## Próximos pasos (MVP)
+
+- Autenticación (Clerk u otro)
+- Flujos guiados de los 5 documentos de investment-readiness
+- Pagos Wompi
+- Sala de datos con watermarking
+- Multi-tenant para Balam Legal y futuras firmas
