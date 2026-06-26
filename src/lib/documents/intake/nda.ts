@@ -1,0 +1,77 @@
+import type { IntakeSchema } from "@/lib/documents/intake/types";
+
+export const ndaIntakeSchema: IntakeSchema = {
+  documentType: "nda",
+  steps: 2,
+  fields: [
+    {
+      key: "company_name",
+      type: "text",
+      labelKey: "company_name",
+      required: true,
+      step: 1,
+      placeholderKey: "company_name",
+    },
+    {
+      key: "company_id",
+      type: "text",
+      labelKey: "company_id",
+      required: true,
+      step: 1,
+      placeholderKey: "company_id",
+      helpKey: "company_id",
+    },
+    {
+      key: "counterparty_name",
+      type: "text",
+      labelKey: "counterparty_name",
+      required: true,
+      step: 1,
+      placeholderKey: "counterparty_name",
+    },
+    {
+      key: "counterparty_id",
+      type: "text",
+      labelKey: "counterparty_id",
+      required: true,
+      step: 1,
+      placeholderKey: "counterparty_id",
+    },
+    {
+      key: "purpose",
+      type: "textarea",
+      labelKey: "purpose",
+      required: true,
+      step: 2,
+      placeholderKey: "purpose",
+      helpKey: "purpose",
+    },
+    {
+      key: "term_years",
+      type: "number",
+      labelKey: "term_years",
+      required: true,
+      step: 2,
+      placeholderKey: "term_years",
+    },
+    {
+      key: "jurisdiction_city",
+      type: "text",
+      labelKey: "jurisdiction_city",
+      required: true,
+      step: 2,
+      placeholderKey: "jurisdiction_city",
+    },
+    {
+      key: "agreement_mode",
+      type: "select",
+      labelKey: "agreement_mode",
+      required: true,
+      step: 2,
+      options: [
+        { value: "mutual", labelKey: "agreement_mode_mutual" },
+        { value: "unilateral", labelKey: "agreement_mode_unilateral" },
+      ],
+    },
+  ],
+};
