@@ -1,0 +1,4 @@
+# Drop source files here for import scripts.
+#
+# Brain Word docs → npm run brain:import
+# Corpus spreadsheet → npm run brain:import-corpus -- ./Platform_Corpus_AI_Training_Inventory.xlsx
