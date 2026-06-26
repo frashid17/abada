@@ -2,7 +2,8 @@
 
 import { useAuth, useClerk, useSignUp } from "@clerk/nextjs";
 import { useTranslations } from "next-intl";
-import { useEffect, useState } from "react";
+import Link from "next/link";
+import { useState } from "react";
 import { AtSign, Eye, EyeOff, Loader2, Lock, User } from "lucide-react";
 import { AuthDivider } from "@/components/auth/auth-divider";
 import { AuthField } from "@/components/auth/auth-field";
@@ -30,7 +31,7 @@ export function SignUpForm({ redirectUrl, inviteToken, inviteEmail }: SignUpForm
 
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
-  const [email, setEmail] = useState("");
+  const [email, setEmail] = useState(inviteEmail ?? "");
   const [password, setPassword] = useState("");
   const [code, setCode] = useState("");
   const [showPassword, setShowPassword] = useState(false);
@@ -39,10 +40,6 @@ export function SignUpForm({ redirectUrl, inviteToken, inviteEmail }: SignUpForm
   const [error, setError] = useState<string | null>(null);
 
   const postAuthPath = redirectUrl ?? buildOnboardingPath(inviteToken);
-
-  useEffect(() => {
-    if (inviteEmail) setEmail(inviteEmail);
-  }, [inviteEmail]);
 
   const metadata = inviteToken ? { inviteToken } : {};
 
@@ -246,9 +243,9 @@ export function SignUpForm({ redirectUrl, inviteToken, inviteEmail }: SignUpForm
 
         <p className="text-center text-sm text-muted-foreground">
           {t("hasAccount")}{" "}
-          <a href="/iniciar-sesion" className="font-medium text-primary hover:underline">
+          <Link href="/iniciar-sesion" className="font-medium text-primary hover:underline">
             {t("signIn")}
-          </a>
+          </Link>
         </p>
 
         <p className="text-center text-[11px] leading-relaxed text-muted-foreground">{t("terms")}</p>

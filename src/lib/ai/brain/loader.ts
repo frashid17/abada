@@ -127,7 +127,7 @@ export function summarizeCorpusInventory(inventory: CorpusInventory): string {
     "Categories:",
   ];
 
-  for (const [key, category] of Object.entries(inventory.categories)) {
+  for (const category of Object.values(inventory.categories)) {
     const critical = category.items.filter((i) => i.Priority === "CRITICAL").length;
     const create = category.items.filter((i) => i.Status === "CREATE").length;
     lines.push(`- ${category.sheet}: ${category.count} items (${critical} critical, ${create} to create)`);

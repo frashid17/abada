@@ -1,8 +1,9 @@
 "use client";
 
 import { useUser } from "@clerk/nextjs";
+import type { UserResource } from "@clerk/types";
 import { useTranslations } from "next-intl";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Loader2, Lock, Mail, User } from "lucide-react";
 import { AuthField } from "@/components/auth/auth-field";
 import { getClerkErrorMessage } from "@/lib/auth/clerk-errors";
@@ -11,24 +12,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 
 export function ManageAccountPanel() {
-  const t = useTranslations("auth.manage");
   const { isLoaded, user } = useUser();
-
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [currentPassword, setCurrentPassword] = useState("");
-  const [newPassword, setNewPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
-  const [profilePending, setProfilePending] = useState(false);
-  const [passwordPending, setPasswordPending] = useState(false);
-  const [message, setMessage] = useState<string | null>(null);
-  const [error, setError] = useState<string | null>(null);
-
-  useEffect(() => {
-    if (!user) return;
-    setFirstName(user.firstName ?? "");
-    setLastName(user.lastName ?? "");
-  }, [user]);
 
   if (!isLoaded || !user) {
     return (
@@ -37,6 +21,22 @@ export function ManageAccountPanel() {
       </div>
     );
   }
+
+  return <ManageAccountPanelContent user={user} />;
+}
+
+function ManageAccountPanelContent({ user }: { user: UserResource }) {
+  const t = useTranslations("auth.manage");
+
+  const [firstName, setFirstName] = useState(user.firstName ?? "");
+  const [lastName, setLastName] = useState(user.lastName ?? "");
+  const [currentPassword, setCurrentPassword] = useState("");
+  const [newPassword, setNewPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const [profilePending, setProfilePending] = useState(false);
+  const [passwordPending, setPasswordPending] = useState(false);
+  const [message, setMessage] = useState<string | null>(null);
+  const [error, setError] = useState<string | null>(null);
 
   const activeUser = user;
 

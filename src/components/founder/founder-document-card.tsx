@@ -4,7 +4,6 @@ import { DOCUMENT_ICONS } from "@/components/founder/document-icons";
 import { DocumentStatusChip } from "@/components/founder/document-status-chip";
 import { isDocumentFlowReady } from "@/lib/documents/dashboard-insights";
 import type { DashboardDocument } from "@/lib/documents/dashboard";
-import type { DocumentStatus } from "@/lib/documents/catalog";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
@@ -37,7 +36,7 @@ export function FounderDocumentCard({
 }: FounderDocumentCardProps) {
   const Icon = DOCUMENT_ICONS[doc.documentType];
   const isNotStarted = doc.status === "not_started";
-  const flowReady = isDocumentFlowReady(doc.documentType);
+  const flowReady = isDocumentFlowReady();
   const showUpdated = doc.status !== "not_started" && doc.updatedAt !== new Date(0).toISOString();
   const showFeaturedLayout = featured && featuredLayout;
   const ctaLabel = isNotStarted && flowReady ? startLabel : viewLabel;

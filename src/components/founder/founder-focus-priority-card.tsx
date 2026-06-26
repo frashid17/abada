@@ -31,7 +31,7 @@ export function FounderFocusPriorityCard({
 }: FounderFocusPriorityCardProps) {
   const Icon = DOCUMENT_ICONS[doc.documentType];
   const isNotStarted = doc.status === "not_started";
-  const flowReady = isDocumentFlowReady(doc.documentType);
+  const flowReady = isDocumentFlowReady();
   const showUpdated = doc.status !== "not_started" && doc.updatedAt !== new Date(0).toISOString();
   const ctaLabel = isNotStarted && flowReady ? startLabel : viewLabel;
   const href = `/fundador/documentos/${doc.documentType}`;

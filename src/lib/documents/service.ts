@@ -9,7 +9,6 @@ import { getIntakeSchema, isFlowDocumentType } from "@/lib/documents/intake";
 import {
   enqueueDocumentReview,
   getCompletedReviewForDocument,
-  resolveDefaultFirmTenantId,
   type ReviewMarkup,
 } from "@/lib/firm/reviews";
 import { getPrimaryFirmTenantId } from "@/lib/firm/tenant";
@@ -20,7 +19,7 @@ import { renderDocument } from "@/lib/documents/render";
 import { buildPartySignatures } from "@/lib/documents/signatures";
 import { getFirmName } from "@/lib/brand";
 import { getDisclaimer } from "@/lib/ai/guardrails";
-import { getDocumentDisplayTitle, type DocumentLocale } from "@/lib/documents/document-locale";
+import { getDocumentDisplayTitle } from "@/lib/documents/document-locale";
 
 export type DocumentRecord = {
   id: string;

@@ -1,10 +1,10 @@
 "use client";
 
-import { useAuth } from "@clerk/nextjs";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useAuth } from "@clerk/nextjs";
 import { AccountMenu } from "@/components/auth/account-menu";
 import { Button } from "@/components/ui/button";
+import { useIsClient } from "@/hooks/use-is-client";
 
 export function AuthHeaderPlaceholder() {
   return (
@@ -25,9 +25,7 @@ type AuthHeaderActionsProps = {
  */
 export function AuthHeaderActions({ signInLabel }: AuthHeaderActionsProps) {
   const { isLoaded, userId } = useAuth();
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => setMounted(true), []);
+  const mounted = useIsClient();
 
   if (!mounted || !isLoaded) {
     return <AuthHeaderPlaceholder />;

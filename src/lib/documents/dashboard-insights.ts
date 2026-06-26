@@ -1,5 +1,5 @@
 import type { DashboardDocument, FounderDashboardData } from "@/lib/documents/dashboard";
-import type { DocumentStatus, InvestmentDocumentType } from "@/lib/documents/catalog";
+import type { DocumentStatus } from "@/lib/documents/catalog";
 
 const STATUS_PRIORITY: Record<DocumentStatus, number> = {
   flagged: 0,
@@ -44,7 +44,7 @@ export function getFounderDashboardInsights(data: FounderDashboardData): Founder
   };
 }
 
-export function isDocumentFlowReady(_documentType: InvestmentDocumentType): boolean {
+export function isDocumentFlowReady(): boolean {
   return true;
 }
 

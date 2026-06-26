@@ -39,7 +39,7 @@ export function FounderDashboardHero({
   continueCta,
   stats,
 }: FounderDashboardHeroProps) {
-  const showCta = nextDocument && isDocumentFlowReady(nextDocument.documentType);
+  const showCta = nextDocument && isDocumentFlowReady();
 
   return (
     <section className="relative overflow-hidden rounded-2xl border border-border/70 bg-trust-panel text-trust-panel-foreground shadow-card">

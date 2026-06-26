@@ -3,7 +3,7 @@
  * Import .docx brain sources → docs/brain/<slug>.md
  * Usage: node scripts/import-brain-docs.mjs [sources-dir]
  */
-import { readFileSync, writeFileSync, readdirSync, existsSync, mkdirSync } from "node:fs";
+import { writeFileSync, readdirSync, existsSync, mkdirSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { createRequire } from "node:module";

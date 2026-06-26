@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, CheckCircle2, Loader2 } from "lucide-react";
+import { CheckCircle2, Loader2 } from "lucide-react";
 import type { DashboardDocument } from "@/lib/documents/dashboard";
 import type { DocumentStatus } from "@/lib/documents/catalog";
 import { cn } from "@/lib/utils";

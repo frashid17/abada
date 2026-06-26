@@ -2,6 +2,7 @@
 
 import { useAuth, useClerk, useSignIn } from "@clerk/nextjs";
 import { useTranslations } from "next-intl";
+import Link from "next/link";
 import { useState } from "react";
 import { AtSign, Eye, EyeOff, Loader2, Lock } from "lucide-react";
 import { AuthDivider } from "@/components/auth/auth-divider";
@@ -304,9 +305,9 @@ export function SignInForm({ redirectUrl }: SignInFormProps) {
 
         <p className="text-center text-sm text-muted-foreground">
           {t("noAccount")}{" "}
-          <a href="/registro" className="font-medium text-primary hover:underline">
+          <Link href="/registro" className="font-medium text-primary hover:underline">
             {t("createAccount")}
-          </a>
+          </Link>
         </p>
       </CardContent>
     </Card>

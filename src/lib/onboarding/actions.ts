@@ -3,7 +3,6 @@
 import { auth, clerkClient, currentUser } from "@clerk/nextjs/server";
 import { createServiceRoleSupabaseClient } from "@/lib/supabase/server";
 import { homeForContext } from "@/lib/auth/routing";
-import { getOrCreateProfile } from "@/lib/auth/profile";
 import { createFirmTenant } from "@/lib/firm/create-tenant";
 import { redeemFirmInvitation } from "@/lib/firm/invitations";
 import { resolveInviteForOnboarding } from "@/lib/firm/invite-lookup";

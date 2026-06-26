@@ -123,7 +123,6 @@ function drawReviewWatermark(page: PDFPage, firmName: string, font: PDFFont) {
 
 function drawReviewedHeader(ctx: PdfContext) {
   const { page, input, bold, regular } = ctx;
-  const copy = getAttestationCopy(input.locale);
   const signedDate = input.attorneySignature
     ? new Date(input.attorneySignature.signedAt).toLocaleDateString(
         input.locale === "en-US" ? "en-US" : "es-CO",
@@ -186,7 +185,7 @@ function drawReviewedHeader(ctx: PdfContext) {
 
 function drawDraftHeader(ctx: PdfContext) {
   const { page, input, bold } = ctx;
-  let y = PAGE_HEIGHT - MARGIN;
+  const y = PAGE_HEIGHT - MARGIN;
 
   page.drawText(input.firmName.toUpperCase(), {
     x: MARGIN,
