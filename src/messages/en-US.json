@@ -1,0 +1,1045 @@
+{
+  "meta": {
+    "title": "Abada — Legal preparation for raising capital",
+    "description": "Investment-readiness documents and due diligence for Colombia's venture capital ecosystem."
+  },
+  "shell": {
+    "brand": "Abada",
+    "signIn": "Sign in",
+    "nav": {
+      "dashboard": "My workspace",
+      "documents": "Documents",
+      "dataRoom": "Data room",
+      "rooms": "Data rooms",
+      "queue": "Review queue",
+      "dd": "Due diligence",
+      "team": "Team"
+    }
+  },
+  "theme": {
+    "toggle": "Toggle theme",
+    "light": "Light",
+    "dark": "Dark",
+    "system": "System"
+  },
+  "locale": {
+    "selector": "Select language",
+    "toggle": "Switch language"
+  },
+  "footer": {
+    "tagline": "Legal infrastructure for Colombian startups raising venture capital.",
+    "firmNote": "Operated by {firm} — a VC-native law firm in Colombia.",
+    "platform": "Platform",
+    "platformLinks": {
+      "founders": "Founders",
+      "investors": "Investors",
+      "firm": "Firm access"
+    },
+    "account": "Account",
+    "accountLinks": {
+      "signIn": "Sign in",
+      "signUp": "Create account"
+    },
+    "copyright": "© {year} {brand}. Operated by {firm}.",
+    "disclaimer": "AI assistance guides the process; every legally significant document is reviewed by a named {firm} attorney."
+  },
+  "public": {
+    "eyebrow": "Balam Legal · Investment-readiness platform",
+    "headline": "The legal layer for Colombian startups raising venture capital",
+    "subheadline": "Prepare the five documents investors expect, with review by a named Balam Legal attorney.",
+    "ctaFounder": "I'm a founder",
+    "ctaInvestor": "I'm an investor",
+    "ctaFirm": "Firm access",
+    "trustBadge": "Named-attorney review",
+    "securityCard": {
+      "eyebrow": "Security & trust",
+      "title": "Every document reviewed by a firm attorney",
+      "body": "AI speeds up the draft; a named Balam Legal attorney reviews before you sign or share."
+    },
+    "finalCta": {
+      "title": "Start with the NDA and founder vesting agreement",
+      "subtitle": "The first two checklist documents — guided flow, preview, and fingerprinted download.",
+      "button": "Create founder account"
+    },
+    "compliance": {
+      "attorney": "Named-attorney review",
+      "tenant": "Multi-tenant RLS isolation",
+      "audit": "Audit fingerprint on downloads",
+      "colombia": "Colombian VC law"
+    },
+    "pipeline": {
+      "title": "The five checklist documents",
+      "subtitle": "A guided flow per document — from investment-readiness to firm review."
+    },
+    "disclosureBanner": "AI assistance guides the process; every legally significant document is reviewed by a named {firm} attorney before you sign or share.",
+    "modulesTitle": "One platform, three connected modules",
+    "modulesSubtitle": "Legal preparation, due diligence, and human review — built for Colombia's VC ecosystem.",
+    "heroCard": {
+      "title": "Round-ready",
+      "description": "Everything an investor expects to see, in one place.",
+      "items": {
+        "documents": "5 investment-readiness documents",
+        "review": "Named-attorney review",
+        "diligence": "Risk-category due diligence"
+      }
+    },
+    "stats": {
+      "statDocuments": { "value": "5", "label": "Core documents to raise capital" },
+      "statFirm": { "value": "1", "label": "VC-native firm behind every review" },
+      "statRisk": { "value": "8", "label": "Colombian DD risk categories" }
+    },
+    "modules": {
+      "readiness": {
+        "title": "Investment-readiness",
+        "description": "Five essential documents",
+        "body": "NDA, vesting, IP assignment, employment agreement, and shareholders agreement — with AI help and human review."
+      },
+      "diligence": {
+        "title": "Due diligence",
+        "description": "Secure data room",
+        "body": "Assessment organized by Colombian risk category, not a file tree."
+      },
+      "review": {
+        "title": "Named review",
+        "description": "Assigned attorney",
+        "body": "Request paid review with a named lawyer, markup, and executive summary."
+      }
+    }
+  },
+  "auth": {
+    "or": "or",
+    "shell": {
+      "backHome": "Home",
+      "quote": "AI speeds up the draft; a named attorney reviews before you sign or share.",
+      "quoteAttribution": "— Abada × Balam Legal review standard",
+      "auditBadge": "Audit fingerprint"
+    },
+    "context": {
+      "founder": "Founder",
+      "investor": "Investor",
+      "firm": "Firm"
+    },
+    "signIn": {
+      "title": "Sign in",
+      "subtitle": "Access your workspace on the platform.",
+      "email": "Email",
+      "emailPlaceholder": "you@company.com",
+      "password": "Password",
+      "passwordPlaceholder": "••••••••",
+      "showPassword": "Show password",
+      "hidePassword": "Hide password",
+      "submit": "Sign in",
+      "google": "Continue with Google",
+      "forgotPassword": "Forgot password?",
+      "forgotDescription": "We'll send a code to reset your password.",
+      "sendReset": "Send code",
+      "resetDescription": "Enter the code from your email and your new password.",
+      "verificationCode": "Verification code",
+      "verificationPlaceholder": "123456",
+      "newPassword": "New password",
+      "newPasswordPlaceholder": "At least 8 characters",
+      "resetSubmit": "Reset password",
+      "back": "Back",
+      "noAccount": "Don't have an account?",
+      "createAccount": "Create account",
+      "error": "Could not sign in.",
+      "additionalStepRequired": "Additional verification step required."
+    },
+    "signUp": {
+      "title": {
+        "default": "Create account",
+        "founder": "Founder sign-up",
+        "investor": "Investor sign-up",
+        "firm": "Firm sign-up"
+      },
+      "subtitle": {
+        "default": "Create your account and choose how you'll use the platform.",
+        "invite": "You've been invited to join a firm. Create your account to continue.",
+        "founder": "Create your account to prepare investment-readiness documents.",
+        "investor": "Create your account to access due diligence rooms.",
+        "firm": "Create your firm account using the invite link from your administrator.",
+        "firmInvite": "Complete sign-up with the email address that received the invitation."
+      },
+      "firstName": "First name",
+      "firstNamePlaceholder": "Maria",
+      "lastName": "Last name",
+      "lastNamePlaceholder": "Lopez",
+      "email": "Email",
+      "emailPlaceholder": "you@company.com",
+      "password": "Password",
+      "passwordPlaceholder": "At least 8 characters",
+      "showPassword": "Show password",
+      "hidePassword": "Hide password",
+      "submit": "Create account",
+      "google": "Continue with Google",
+      "verifyDescription": "Enter the code we sent to your email.",
+      "verificationCode": "Verification code",
+      "verificationPlaceholder": "123456",
+      "verifySubmit": "Verify and continue",
+      "hasAccount": "Already have an account?",
+      "signIn": "Sign in",
+      "terms": "By continuing, you agree to the platform terms and privacy policy.",
+      "error": "Could not create account.",
+      "additionalStepRequired": "Additional verification step required.",
+      "firmErrors": {
+        "signup_failed": "Could not complete firm access.",
+        "email_required": "A verified email is required.",
+        "unauthorized": "You must be signed in to continue."
+      }
+    },
+    "account": {
+      "user": "User",
+      "dashboard": "Go to dashboard",
+      "manage": "Manage account",
+      "signOut": "Sign out"
+    },
+    "manage": {
+      "eyebrow": "Account",
+      "title": "Manage account",
+      "subtitle": "Update your profile and password.",
+      "profileTitle": "Profile",
+      "profileDescription": "Your name and contact details.",
+      "firstName": "First name",
+      "lastName": "Last name",
+      "email": "Email",
+      "contextLabel": "Account type",
+      "context": {
+        "founder": "Founder",
+        "investor": "Investor",
+        "firm": "Firm"
+      },
+      "saveProfile": "Save profile",
+      "profileSaved": "Profile updated.",
+      "profileError": "Could not update profile.",
+      "securityTitle": "Security",
+      "securityDescription": "Change your sign-in password.",
+      "currentPassword": "Current password",
+      "newPassword": "New password",
+      "confirmPassword": "Confirm password",
+      "savePassword": "Update password",
+      "passwordSaved": "Password updated.",
+      "passwordError": "Could not update password.",
+      "passwordMismatch": "Passwords do not match.",
+      "orgTitle": "Organization",
+      "orgDescription": "Select your firm's active organization.",
+      "activeOrg": "Active organization",
+      "noActiveOrg": "No active organization selected.",
+      "switchOrg": "Switch organization",
+      "selectOrg": "Select organization…",
+      "orgSaved": "Organization updated.",
+      "orgError": "Could not switch organization."
+    },
+    "signInTitle": "Sign in",
+    "signInSubtitle": "Access your workspace on the platform.",
+    "signUpTitle": {
+      "founder": "Founder sign-up",
+      "investor": "Investor sign-up",
+      "firm": "Firm sign-up"
+    },
+    "signUpSubtitle": {
+      "founder": "Create your account to prepare investment-readiness documents.",
+      "investor": "Create your account to access due diligence rooms.",
+      "firm": "Create your firm account using the invite link from your administrator."
+    }
+  },
+  "onboarding": {
+    "eyebrow": "Welcome",
+    "title": "How will you use Abada?",
+    "subtitle": "Choose your path. Create a firm, or join as a founder or investor.",
+    "inviteHint": "Invited to a firm? Open the link from your invitation email.",
+    "back": "Back",
+    "invite": {
+      "title": "You've been invited to a firm",
+      "description": "This invitation was sent to {email}.",
+      "role": "Assigned role: {role}",
+      "cta": "Join firm",
+      "notMe": "Not me — choose another path"
+    },
+    "paths": {
+      "firm": {
+        "title": "I'm a law firm",
+        "description": "Create your firm, invite your team, and manage legal reviews."
+      },
+      "founder": {
+        "title": "I'm a founder",
+        "description": "Prepare investment-readiness documents to raise capital."
+      },
+      "investor": {
+        "title": "I'm an investor",
+        "description": "Access due diligence rooms and shared documents."
+      }
+    },
+    "createFirm": {
+      "title": "Create your firm",
+      "description": "You'll be the admin and can invite attorneys and partners.",
+      "nameLabel": "Firm name",
+      "namePlaceholder": "e.g. Balam Legal",
+      "cta": "Create firm and continue"
+    },
+    "roles": {
+      "admin": "Admin",
+      "partner": "Partner",
+      "associate": "Associate",
+      "of_counsel": "Of counsel"
+    },
+    "errors": {
+      "generic": "Could not complete onboarding.",
+      "unauthorized": "You must be signed in.",
+      "email_required": "A verified email is required.",
+      "create_failed": "Could not create the firm.",
+      "invite_failed": "Could not accept the invitation.",
+      "Firm name is required": "Firm name is required."
+    }
+  },
+  "founder": {
+    "dashboard": {
+      "eyebrow": "Investment-readiness",
+      "title": "My workspace",
+      "subtitle": "Your investment-readiness checklist — five documents to be investor-ready.",
+      "step": "Step {step}",
+      "progress": "{completed} of {total} complete",
+      "continueCta": "Continue checklist",
+      "nextUp": "Next up: {title}",
+      "pipelineTitle": "Your document path",
+      "allDocuments": "All documents",
+      "comingSoonBadge": "Coming soon",
+      "updated": "Updated {date}",
+      "reviewTitle": "Named-attorney review",
+      "reviewDescription": "Flag any document for help and a firm attorney will review your draft before you share it with investors.",
+      "disclaimer": "AI-generated drafts are not legal advice. Obtain named-attorney review before signing.",
+      "stats": {
+        "completed": "Completed",
+        "inProgress": "In progress",
+        "needsAttention": "Needs attention",
+        "remaining": "Remaining"
+      },
+      "viewDocument": "View document",
+      "startDocument": "Get started",
+      "browseAllDocuments": "Browse all documents",
+      "focusTitle": "What to work on now",
+      "focusDescription": "Your highest-priority document based on checklist progress.",
+      "alsoInProgress": "Also in progress",
+      "allCompleteTitle": "Checklist complete",
+      "allCompleteDescription": "All investment-readiness documents are done. Review or download from the library.",
+      "statusNotStarted": "Not started",
+      "status": {
+        "not_started": "Not started",
+        "draft": "Draft",
+        "flagged": "Flagged for help",
+        "in_review": "In review",
+        "complete": "Complete"
+      }
+    },
+    "documentsPage": {
+      "title": "Documents",
+      "subtitle": "Five guided flows to get your startup investor-ready — start anywhere or continue where you left off.",
+      "eyebrow": "Document library",
+      "catalogSubtitle": "Browse every document in your investment-readiness pack, in checklist order.",
+      "catalogHeading": "Full library",
+      "catalogDescription": "Each document builds on the last. Open any flow to draft, save, and download.",
+      "pipelineTitle": "Your document path",
+      "continueCta": "Continue where you left off",
+      "documentCount": "{count} documents",
+      "comingSoon": "The guided flow for this document is not available yet."
+    },
+    "sala": {
+      "eyebrow": "Data room",
+      "title": "My due diligence rooms",
+      "subtitle": "Upload documents requested by the firm as part of your DD process.",
+      "empty": "You have no active rooms yet. When the firm invites you to a process, it will appear here.",
+      "emptyTitle": "No rooms yet",
+      "backToRooms": "Back to rooms",
+      "documentCount": "{count, plural, one {# document} other {# documents}}",
+      "categoryCoverage": "{covered} of {total} categories",
+      "uploadProgress": "Upload coverage",
+      "tipsEyebrow": "Tip",
+      "tipsTitle": "Upload by category",
+      "tipsDescription": "Cover corporate, financial, tax, and labor categories first — investors and the firm review against Colombian DD standards.",
+      "coverageTitle": "Document checklist",
+      "coverageDescription": "Track which categories still need a file before the firm can complete its review.",
+      "stats": {
+        "documents": "Documents uploaded",
+        "categories": "Categories covered"
+      },
+      "status": "Status: {status}",
+      "openDeal": "Open room",
+      "dealSubtitle": "Upload and manage documents for this data room.",
+      "documentsTitle": "Uploaded documents",
+      "uploadTitle": "Upload document",
+      "uploadDescription": "Each file is versioned and receives an audit fingerprint.",
+      "categoryLabel": "Category",
+      "selectCategory": "Select category…",
+      "documentTitleLabel": "Document title",
+      "documentTitlePlaceholder": "e.g. 2024 financial statements",
+      "fileLabel": "File",
+      "ndaGateLabel": "Requires signed NDA before sharing with investors",
+      "uploadCta": "Upload",
+      "uploading": "Uploading…",
+      "uploadSuccess": "Document uploaded successfully.",
+      "categories": {
+        "corporate": "Corporate",
+        "financial": "Financial",
+        "tax": "Tax",
+        "labor": "Labor",
+        "contracts": "Contracts",
+        "ip": "Intellectual property",
+        "litigation": "Litigation",
+        "regulatory": "Regulatory",
+        "other": "Other"
+      },
+      "errors": {
+        "upload_failed": "Could not upload the document.",
+        "invalid_input": "Please complete all required fields.",
+        "empty_file": "The file is empty.",
+        "file_too_large": "The file exceeds the maximum allowed size.",
+        "unsupported_type": "File type not allowed.",
+        "invalid_filename": "Invalid file name.",
+        "forbidden": "You do not have permission to upload to this room."
+      }
+    },
+    "documents": {
+      "nda": {
+        "title": "Mutual non-disclosure agreement",
+        "description": "Protect sensitive information in investor conversations."
+      },
+      "vesting": {
+        "title": "Founder vesting agreement",
+        "description": "Align incentives with the horizon funds expect."
+      },
+      "ip": {
+        "title": "Intellectual property assignment",
+        "description": "Ensure the company owns its IP."
+      },
+      "employment": {
+        "title": "Investment-ready employment agreement",
+        "description": "Employment contract with clauses investors review."
+      },
+      "shareholders": {
+        "title": "Shareholders agreement",
+        "description": "Governance, transfers, and round protections."
+      }
+    },
+    "flow": {
+      "stepProgress": "Step {step} of {total}",
+      "back": "Back",
+      "backToDocuments": "Back to documents",
+      "next": "Next",
+      "saveDraft": "Save draft",
+      "saved": "Draft saved.",
+      "saveError": "Could not save. Try again.",
+      "selectOption": "Select…",
+      "finalizeTitle": "Preview and download",
+      "finalizeDescription": "Choose the language for the PDF or preview (disclaimers and signature labels). You can download without submitting for review.",
+      "documentLanguageLabel": "Document language",
+      "documentLanguageHint": "The document body, signature labels, and legal disclaimers are generated in the selected language.",
+      "documentLanguage": {
+        "es-CO": "Spanish (Colombia)",
+        "en-US": "English (US)"
+      },
+      "preview": "Preview",
+      "previewIncomplete": "Preview has pending fields — complete the form for a final draft.",
+      "closePreview": "Close",
+      "download": "Download PDF",
+      "downloadReviewed": "Download reviewed PDF",
+      "finalizeTitleReviewed": "Download reviewed document",
+      "finalizeDescriptionReviewed": "Your attorney-reviewed PDF includes the firm watermark and signature. Choose the language before downloading.",
+      "finalizeDescriptionPending": "Your draft is with the firm for review. You can still preview or download a draft PDF while you wait.",
+      "reviewTitle": "Submit for review",
+      "reviewDescription": "When your draft is ready, send it to the firm's review queue. You can add an optional note for the attorney.",
+      "reviewPlaceholder": "Optional note for the reviewing attorney…",
+      "sendForReview": "Submit for review",
+      "reviewSubmitted": "Submitted for review",
+      "reviewCompleteTitle": "Attorney review complete",
+      "reviewCompleteDescription": "This document has been reviewed and signed by a named attorney. Download the reviewed PDF above.",
+      "reviewCompleteAttorney": "Reviewed by",
+      "reviewCompleteDate": "Review date",
+      "reviewPendingTitle": "Awaiting attorney review",
+      "reviewPendingDescription": "Your draft is in the firm's review queue. You'll be notified when the review is complete.",
+      "reviewPendingSubmitted": "Submitted on {date}",
+      "reviewPendingNoteLabel": "Your note to the attorney",
+      "reviewSent": "Draft sent to the firm's review queue.",
+      "reviewError": "Could not submit for review.",
+      "reviewIncomplete": "Complete all required fields before submitting for review.",
+      "reviewAlreadySubmitted": "This document is already in review or has been completed.",
+      "helpTitle": "Need help?",
+      "helpDescription": "Flag this document so a firm attorney can follow up.",
+      "helpPlaceholder": "Describe your question or the field you're unsure about…",
+      "flagHelp": "Flag for help",
+      "helpRequired": "Write a message before flagging for help.",
+      "helpSent": "Document flagged. The firm will review your request.",
+      "helpError": "Could not send the request.",
+      "disclaimer": "This draft was generated with AI assistance. Obtain named-attorney review before signing.",
+      "steps": {
+        "nda": {
+          "1": "Agreement parties",
+          "2": "Confidentiality terms"
+        },
+        "vesting": {
+          "1": "Founder and company",
+          "2": "Vesting schedule",
+          "3": "Acceleration and departure"
+        },
+        "ip": {
+          "1": "Parties",
+          "2": "IP scope and terms"
+        },
+        "employment": {
+          "1": "Employer and employee",
+          "2": "Role and compensation",
+          "3": "Restrictions and signatories"
+        },
+        "shareholders": {
+          "1": "Company and lead investor",
+          "2": "Transfer protections",
+          "3": "Governance and disputes"
+        }
+      },
+      "stepsDescription": {
+        "nda": {
+          "1": "Identify the startup and counterparty (fund or investor).",
+          "2": "Define purpose, term, and agreement type."
+        },
+        "vesting": {
+          "1": "Founder and company details.",
+          "2": "Shares subject to vesting, cliff, and start date.",
+          "3": "Acceleration, departure treatment, and signatories."
+        },
+        "ip": {
+          "1": "Company and assignor details.",
+          "2": "Description, scope, consideration, and effective date."
+        },
+        "employment": {
+          "1": "Employer and employee identification.",
+          "2": "Role, start date, salary, and contract type.",
+          "3": "Non-compete, jurisdiction, and company representative."
+        },
+        "shareholders": {
+          "1": "Company and lead investor details.",
+          "2": "Drag-along threshold, tag-along, and anti-dilution.",
+          "3": "Qualified majority, dispute resolution, and signatory."
+        }
+      },
+      "fields": {
+        "nda": {
+          "company_name": "Startup name",
+          "company_id": "Startup tax ID (NIT)",
+          "counterparty_name": "Counterparty name",
+          "counterparty_id": "Counterparty ID (NIT or passport)",
+          "purpose": "Purpose of disclosure",
+          "term_years": "Confidentiality term (years)",
+          "jurisdiction_city": "Jurisdiction city",
+          "agreement_mode": "Agreement type"
+        },
+        "vesting": {
+          "company_name": "Company name",
+          "company_id": "Company tax ID (NIT)",
+          "founder_name": "Founder name",
+          "founder_id": "Founder ID number",
+          "founder_email": "Founder email",
+          "shares_total": "Shares subject to vesting",
+          "vesting_months": "Vesting months",
+          "cliff_months": "Cliff months",
+          "vesting_start_date": "Start date",
+          "acceleration_type": "Acceleration",
+          "departure_treatment": "Departure treatment",
+          "company_representative": "Company representative",
+          "company_representative_title": "Representative title",
+          "good_leaver_definition": "Good leaver definition (optional)",
+          "additional_terms": "Additional terms (optional)"
+        },
+        "ip": {
+          "company_name": "Company name",
+          "company_id": "Company tax ID (NIT)",
+          "assignor_name": "Assignor name",
+          "assignor_id": "Assignor ID number",
+          "assignor_email": "Assignor email",
+          "ip_description": "IP description",
+          "assignment_scope": "Assignment scope",
+          "consideration": "Consideration",
+          "effective_date": "Effective date",
+          "jurisdiction_city": "Jurisdiction city"
+        },
+        "employment": {
+          "company_name": "Company name",
+          "company_id": "Company tax ID (NIT)",
+          "employee_name": "Employee name",
+          "employee_id": "Employee ID number",
+          "employee_email": "Employee email",
+          "role_title": "Job title",
+          "start_date": "Start date",
+          "salary_monthly_cop": "Monthly salary (COP)",
+          "contract_type": "Contract type",
+          "term_months": "Term (months)",
+          "non_compete": "Non-compete",
+          "jurisdiction_city": "Jurisdiction city",
+          "company_representative": "Company representative"
+        },
+        "shareholders": {
+          "company_name": "Company name",
+          "company_id": "Company tax ID (NIT)",
+          "lead_investor_name": "Lead investor name",
+          "lead_investor_id": "Lead investor ID (NIT)",
+          "effective_date": "Effective date",
+          "drag_along_threshold_pct": "Drag-along threshold (%)",
+          "tag_along_enabled": "Tag-along rights",
+          "anti_dilution": "Anti-dilution",
+          "qualified_majority_pct": "Qualified majority (%)",
+          "dispute_resolution": "Dispute resolution",
+          "jurisdiction_city": "Jurisdiction city",
+          "company_representative": "Company representative"
+        }
+      },
+      "placeholders": {
+        "nda": {
+          "company_name": "e.g. Acme Colombia S.A.S.",
+          "company_id": "900.000.000-1",
+          "counterparty_name": "e.g. XYZ Fund",
+          "counterparty_id": "NIT or passport",
+          "purpose": "Evaluation of a potential seed round investment…",
+          "term_years": "2",
+          "jurisdiction_city": "Bogotá D.C."
+        },
+        "vesting": {
+          "company_name": "e.g. Acme Colombia S.A.S.",
+          "company_id": "900.000.000-1",
+          "founder_name": "Full name",
+          "founder_id": "ID 1.000.000.000",
+          "founder_email": "founder@company.com",
+          "shares_total": "100000",
+          "vesting_months": "48",
+          "cliff_months": "12",
+          "company_representative": "Legal representative name",
+          "company_representative_title": "CEO / Manager",
+          "good_leaver_definition": "Mutual agreement, serious disability, death…",
+          "additional_terms": "Any additional clause agreed with the firm…"
+        },
+        "ip": {
+          "company_name": "e.g. Acme Colombia S.A.S.",
+          "company_id": "900.000.000-1",
+          "assignor_name": "Full name",
+          "assignor_id": "ID 1.000.000.000",
+          "assignor_email": "assignor@company.com",
+          "ip_description": "Software, trademarks, designs, trade secrets…",
+          "consideration": "e.g. Equity, cash, or nominal sum",
+          "jurisdiction_city": "Bogotá D.C."
+        },
+        "employment": {
+          "company_name": "e.g. Acme Colombia S.A.S.",
+          "company_id": "900.000.000-1",
+          "employee_name": "Full name",
+          "employee_id": "ID 1.000.000.000",
+          "employee_email": "employee@company.com",
+          "role_title": "e.g. Head of Engineering",
+          "salary_monthly_cop": "5000000",
+          "term_months": "12",
+          "jurisdiction_city": "Bogotá D.C.",
+          "company_representative": "Legal representative name"
+        },
+        "shareholders": {
+          "company_name": "e.g. Acme Colombia S.A.S.",
+          "company_id": "900.000.000-1",
+          "lead_investor_name": "e.g. Alpha Ventures Fund",
+          "lead_investor_id": "900.123.456-7",
+          "drag_along_threshold_pct": "75",
+          "qualified_majority_pct": "66",
+          "jurisdiction_city": "Bogotá D.C.",
+          "company_representative": "Legal representative name"
+        }
+      },
+      "help": {
+        "nda": {
+          "company_id": "You may omit punctuation; the firm will normalize on review.",
+          "purpose": "Be specific: round, due diligence, term sheet negotiation, etc."
+        },
+        "vesting": {
+          "vesting_months": "Standard VC vesting in Colombia is often 48 months.",
+          "cliff_months": "Typical cliff: 12 months."
+        },
+        "ip": {
+          "ip_description": "List code, brands, designs, or know-how being assigned."
+        },
+        "employment": {
+          "term_months": "Required only for fixed-term contracts.",
+          "salary_monthly_cop": "Gross monthly salary in Colombian pesos."
+        },
+        "shareholders": {
+          "drag_along_threshold_pct": "Common VC range: 66–80%. The firm will validate for your round.",
+          "qualified_majority_pct": "Often 66.67% for reserved matters in Colombian SAS."
+        }
+      },
+      "options": {
+        "nda": {
+          "agreement_mode_mutual": "Mutual (both parties protected)",
+          "agreement_mode_unilateral": "Unilateral (startup discloses only)"
+        },
+        "vesting": {
+          "acceleration_none": "No automatic acceleration",
+          "acceleration_single": "Single trigger (liquidity event)",
+          "acceleration_double": "Double trigger (change of control + termination)",
+          "departure_forfeit": "Forfeit unvested shares",
+          "departure_partial": "Partial repurchase at fair value",
+          "departure_negotiable": "Negotiable based on good/bad leaver"
+        },
+        "ip": {
+          "scope_all": "All current and future IP related to the business",
+          "scope_specified": "Only the IP described in this agreement"
+        },
+        "employment": {
+          "contract_indefinite": "Indefinite term",
+          "contract_fixed": "Fixed term",
+          "non_compete_none": "No non-compete clause",
+          "non_compete_compensated": "Non-compete with compensation"
+        },
+        "shareholders": {
+          "tag_along_yes": "Include tag-along for minorities",
+          "tag_along_no": "No tag-along in this draft",
+          "anti_dilution_none": "No anti-dilution",
+          "anti_dilution_broad": "Broad-based weighted average",
+          "dispute_arbitration": "Arbitration (recommended)",
+          "dispute_courts": "Ordinary courts"
+        }
+      },
+      "ai": {
+        "badge": "AI assist",
+        "title": "Drafting assistant",
+        "description": "Ask about clauses, standard Colombian VC terms, or how to complete a field.",
+        "welcome": "Hi — I can help with clauses, standard Colombian VC terms, and how to complete fields in this document. Pick a suggestion or type your question below.",
+        "welcomeShort": "Ask about clauses or document fields",
+        "emptyTitle": "What can I help with?",
+        "documentContext": "Document: {document}",
+        "newChat": "New chat",
+        "contextProgress": "{filled} of {total} fields completed",
+        "suggestionsLabel": "Suggestions",
+        "placeholder": "Type your question…",
+        "send": "Send",
+        "minimize": "Minimize assistant",
+        "expand": "Expand assistant",
+        "loading": "Thinking…",
+        "error": "Could not get a response. Check your connection or AI configuration.",
+        "errorNotConfigured": "AI is not configured. Add ANTHROPIC_API_KEY to your environment.",
+        "disclaimer": "AI assistance is not legal advice. A named attorney must review before signing.",
+        "promptPrefix": "I am preparing the «{document}» document for investment-readiness in Colombia.",
+        "contextLabel": "Data entered so far",
+        "noContext": "No data entered yet",
+        "questionLabel": "Your question",
+        "prompts": {
+          "nda": {
+            "mutual": "Mutual or unilateral with this fund?",
+            "term": "What's a standard confidentiality term?",
+            "purpose": "How should I phrase the disclosure purpose?"
+          },
+          "vesting": {
+            "cliff": "Is a 12-month cliff typical?",
+            "acceleration": "When is double trigger appropriate?",
+            "departure": "What counts as a good leaver in VC?"
+          },
+          "ip": {
+            "scope": "Assign all IP or only what's described?",
+            "consideration": "What consideration is reasonable?"
+          },
+          "employment": {
+            "contract": "Fixed-term or indefinite contract?",
+            "nonCompete": "Should I include a non-compete?"
+          },
+          "shareholders": {
+            "dragAlong": "What drag-along threshold is standard?",
+            "tagAlong": "Do we need tag-along for this round?",
+            "antiDilution": "Broad-based anti-dilution — when to use it?"
+          }
+        }
+      }
+    }
+  },
+  "dd": {
+    "documents": {
+      "empty": "No documents in this room yet.",
+      "version": "Version {n}",
+      "download": "Download",
+      "categories": {
+        "corporate": "Corporate",
+        "financial": "Financial",
+        "tax": "Tax",
+        "labor": "Labor",
+        "contracts": "Contracts",
+        "ip": "Intellectual property",
+        "litigation": "Litigation",
+        "regulatory": "Regulatory",
+        "other": "Other"
+      }
+    }
+  },
+  "investor": {
+    "dashboard": {
+      "eyebrow": "Assessment-first",
+      "title": "Investor dashboard",
+      "subtitle": "Evaluate opportunities with the firm's assessment, organized by risk.",
+      "emptyTitle": "No active rooms",
+      "emptyDescription": "When a fund invites you to a process, you'll see the assessment here.",
+      "emptyBody": "The view prioritizes findings by Colombian risk category, not the document tree.",
+      "recentRooms": "Your data rooms",
+      "viewAllRooms": "View all rooms",
+      "stats": {
+        "activeRooms": "Active rooms",
+        "assessments": "Published assessments",
+        "findings": "Total findings"
+      }
+    },
+    "rooms": {
+      "title": "Data rooms",
+      "subtitle": "Access due diligence rooms shared with you."
+    },
+    "room": {
+      "eyebrow": "Data room",
+      "title": "Shared due diligence rooms",
+      "subtitle": "Review the firm's published assessment, risk findings, and shared documents.",
+      "empty": "No rooms have been shared with you yet. When a fund adds you to a process, it will appear here.",
+      "emptyTitle": "No shared rooms",
+      "backToRooms": "Back to rooms",
+      "openDeal": "Open room",
+      "dealSubtitle": "Assessment-first view organized by Colombian risk category.",
+      "documentCount": "{count, plural, one {# document} other {# documents}}",
+      "findingCount": "{count, plural, one {# finding} other {# findings}}",
+      "assessmentReady": "Firm assessment published",
+      "assessmentPending": "Assessment pending",
+      "documentsTitle": "Shared documents",
+      "findingsTitle": "Findings by risk category",
+      "assessmentTitle": "Executive assessment",
+      "assessmentPublishedAt": "Published {date}",
+      "assessmentPendingTitle": "Assessment not yet published",
+      "assessmentPendingDescription": "The firm is still preparing the executive assessment for this process. Check back soon.",
+      "noFindingsInCategory": "No findings in this category.",
+      "stats": {
+        "documents": "Documents available",
+        "findings": "Findings logged",
+        "assessment": "Firm assessment",
+        "published": "Published",
+        "pending": "Pending"
+      },
+      "riskCategories": {
+        "corporativo_registral": "Corporate & registry",
+        "laboral": "Labor",
+        "tributario": "Tax",
+        "contractual": "Contractual",
+        "propiedad_intelectual": "Intellectual property",
+        "litigios": "Litigation",
+        "regulatorio": "Regulatory",
+        "datos_privacidad": "Data & privacy"
+      },
+      "riskLevels": {
+        "bajo": "Low",
+        "medio": "Medium",
+        "alto": "High"
+      }
+    }
+  },
+  "firm": {
+    "dashboard": {
+      "eyebrow": "Back-office",
+      "title": "Firm back-office",
+      "subtitle": "Manage founder reviews, due diligence rooms, and your firm's team.",
+      "roleLabel": "Your role: {role}",
+      "orgLabel": "Firm tenant",
+      "tenantLabel": "Firm",
+      "tenantLinked": "Tenant linked in Supabase: {name}",
+      "tenantPending": "Tenant pending configuration.",
+      "membershipHint": "Firm access is invite-only. Administrators can invite colleagues from Team.",
+      "teamCta": "Manage team",
+      "modulesTitle": "Workspace modules",
+      "modulesSubtitle": "Jump into your firm's core tools.",
+      "stats": {
+        "pendingReviews": "Pending reviews",
+        "completedReviews": "Completed reviews",
+        "activeDeals": "Active DD rooms",
+        "teamMembers": "Team members",
+        "pendingInvites": "Pending invites"
+      },
+      "modules": {
+        "queue": {
+          "description": "Founder requests for named-attorney review on investment-readiness documents.",
+          "cta": "Open queue",
+          "countLabel": "pending"
+        },
+        "dd": {
+          "description": "Create rooms, review target documents, and log findings by risk category.",
+          "cta": "View rooms",
+          "countLabel": "active"
+        },
+        "team": {
+          "description": "Invite colleagues with magic links and manage access roles.",
+          "cta": "View team",
+          "countLabel": "members"
+        }
+      },
+      "recentActivity": {
+        "title": "Needs attention",
+        "description": "Open reviews waiting for the firm's response.",
+        "empty": "No pending reviews. You're all caught up.",
+        "viewAll": "View full queue"
+      },
+      "invitePanel": {
+        "title": "Invite your team",
+        "description": "Access is invite-only. Administrators can send magic links from Team."
+      }
+    },
+    "queue": {
+      "title": "Review queue",
+      "subtitle": "Investment-readiness document review requests.",
+      "empty": "No review requests in the queue. When a founder flags a document for help, it will appear here.",
+      "requester": "Founder {id}…",
+      "submitted": "Submitted {date}",
+      "openReview": "Open review",
+      "status": {
+        "queued": "Queued",
+        "in_progress": "In progress",
+        "completed": "Completed",
+        "cancelled": "Cancelled"
+      },
+      "documentTypes": {
+        "nda": "Mutual NDA",
+        "vesting": "Founder vesting",
+        "ip": "IP assignment",
+        "employment": "Employment agreement",
+        "shareholders": "Shareholders agreement"
+      }
+    },
+    "review": {
+      "eyebrow": "Document review",
+      "subtitle": "Status: {status}",
+      "founderRequest": "Founder request",
+      "intakeTitle": "Intake data",
+      "intakeDescription": "Fields submitted by the founder (read-only).",
+      "noFields": "No intake fields saved yet.",
+      "markupTitle": "Review markup",
+      "markupDescription": "Internal notes and status for this review.",
+      "statusLabel": "Review status",
+      "notesLabel": "Attorney notes",
+      "notesPlaceholder": "Markup, redlines, or follow-up items…",
+      "summaryLabel": "Executive summary",
+      "summaryPlaceholder": "Summary for the founder (optional)…",
+      "save": "Save review",
+      "saving": "Saving…",
+      "saved": "Review saved.",
+      "saveError": "Could not save review.",
+      "completeNote": "When marked completed, your name is appended in cursive on the founder's PDF and the firm watermark is applied.",
+      "attorneySigned": "Signed by {name} on {date}",
+      "status": {
+        "queued": "Queued",
+        "in_progress": "In progress",
+        "completed": "Completed",
+        "cancelled": "Cancelled"
+      }
+    },
+    "dd": {
+      "eyebrow": "Due diligence",
+      "title": "DD rooms",
+      "subtitle": "Create rooms, review target documents, and record findings by risk category.",
+      "empty": "No active rooms. Create a room to start a due diligence process.",
+      "status": "Status: {status}",
+      "openDeal": "Open room",
+      "deleteRoom": "Delete room",
+      "deleteConfirm": "Delete \"{name}\"? This removes all documents, findings, and assessments. The founder will lose access.",
+      "deleteError": "Could not delete the room.",
+      "createDealTitle": "New DD room",
+      "dealNameLabel": "Room name",
+      "founderLabel": "Founder",
+      "founderHint": "Choose a founder you have worked with, or enter their account email if they already use Abada.",
+      "founderByEmailOption": "Another founder by email…",
+      "founderEmailPlaceholder": "founder@company.com",
+      "createDealCta": "Create room",
+      "dealSubtitle": "Review documents, findings, and assessment for this room.",
+      "documentsTitle": "Room documents",
+      "findingsTitle": "Findings by category",
+      "addFinding": "Record finding",
+      "riskCategoryLabel": "Risk category",
+      "riskLevelLabel": "Risk level",
+      "sourceDocumentLabel": "Source document",
+      "noSourceDocument": "No linked document",
+      "findingDescriptionLabel": "Finding description",
+      "recommendedActionLabel": "Recommended action",
+      "legalCitationLabel": "Legal citation (optional)",
+      "saveFinding": "Save finding",
+      "findingSaved": "Finding saved.",
+      "noFindingsInCategory": "No findings in this category.",
+      "assessmentTitle": "Executive assessment",
+      "publishedAt": "Published on {date}",
+      "assessmentSummaryLabel": "Executive summary",
+      "saveDraftAssessment": "Save draft",
+      "publishAssessment": "Publish assessment",
+      "assessmentSaved": "Draft saved.",
+      "assessmentPublished": "Assessment published.",
+      "riskCategories": {
+        "corporativo_registral": "Corporate & registry",
+        "laboral": "Labor",
+        "tributario": "Tax",
+        "contractual": "Contractual",
+        "propiedad_intelectual": "Intellectual property",
+        "litigios": "Litigation",
+        "regulatorio": "Regulatory",
+        "datos_privacidad": "Data & privacy"
+      },
+      "riskLevels": {
+        "bajo": "Low",
+        "medio": "Medium",
+        "alto": "High"
+      },
+      "errors": {
+        "create_failed": "Could not create the room.",
+        "founder_not_found": "No founder account found with that email. They need to sign up on Abada first.",
+        "founder_required": "Select or enter a founder for this room.",
+        "founder_ambiguous": "Multiple founder accounts match that email. Contact support to resolve the duplicate.",
+        "tenant_not_configured": "Firm workspace is not configured correctly. Ask an admin to check tenant setup.",
+        "firm_org_required": "You must have firm membership.",
+        "firm_membership_required": "You must have firm membership.",
+        "tenant_not_configured": "Firm tenant is not configured."
+      }
+    },
+    "team": {
+      "eyebrow": "Team",
+      "title": "Firm team",
+      "subtitle": "Invite colleagues with a magic link and manage access.",
+      "inviteTitle": "Invite member",
+      "inviteDescription": "Generate an invite link. The invitee will create an account and join your firm.",
+      "emailLabel": "Invitee email",
+      "roleLabel": "Role",
+      "inviteCta": "Generate link",
+      "linkReady": "Link ready — share it with the invitee:",
+      "copyLink": "Copy link",
+      "copied": "Copied",
+      "membersTitle": "Members",
+      "pendingTitle": "Pending invitations",
+      "you": "you",
+      "saveRole": "Save role",
+      "roleUpdated": "Role updated.",
+      "roles": {
+        "admin": "Administrator",
+        "partner": "Partner",
+        "associate": "Associate",
+        "of_counsel": "Of counsel"
+      },
+      "errors": {
+        "invite_failed": "Could not create invitation.",
+        "role_update_failed": "Could not update role.",
+        "last_admin": "At least one administrator must remain on the firm.",
+        "member_not_found": "Member not found.",
+        "invalid_role": "Invalid role.",
+        "forbidden": "You do not have permission for this action.",
+        "unauthorized": "You must be signed in."
+      }
+    },
+    "invite": {
+      "eyebrow": "Invitation",
+      "title": "Join your firm",
+      "description": "You were invited as {email}. Create your account to access the back-office.",
+      "createAccountHint": "Use the same email address that received the invitation.",
+      "createAccountCta": "Create account",
+      "hasAccount": "Already have an account?",
+      "signInLink": "Sign in",
+      "invalidTitle": "Invalid invitation",
+      "invalidDescription": "This link expired or was already used. Ask an administrator for a new invite.",
+      "membershipRequiredTitle": "Invitation required",
+      "membershipRequiredDescription": "Firm access is invite-only. Ask an administrator to send you a link.",
+      "emailMismatchTitle": "Email mismatch",
+      "emailMismatchDescription": "Sign in with {email} or ask for a new invitation to that address."
+    }
+  }
+}
