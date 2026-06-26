@@ -1,0 +1,1085 @@
+{
+  "version": "2.0",
+  "source": "Platform_Corpus_AI_Training_Inventory.xlsx",
+  "summary": {
+    "total": 127,
+    "by_status": {
+      "PUB": 52,
+      "EXT": 1,
+      "CREATE": 63,
+      "HAVE": 11
+    },
+    "by_priority": {
+      "MEDIUM": 34,
+      "HIGH": 38,
+      "CRITICAL": 44,
+      "LOW": 11
+    }
+  },
+  "categories": {
+    "primary-legal-sources": {
+      "sheet": "Primary Legal Sources",
+      "count": 23,
+      "items": [
+        {
+          "ID": "PL-01",
+          "Item": "Constitución Política de Colombia",
+          "Description / Why the AI needs it": "Constitutional rights relevant to data protection, free enterprise, due process. Cited rarely but foundational.",
+          "Status": "PUB",
+          "Priority": "MEDIUM",
+          "Notes": "Available at secretariasenado.gov.co"
+        },
+        {
+          "ID": "PL-02",
+          "Item": "Código Civil (selected articles)",
+          "Description / Why the AI needs it": "Underlies every contract: obligations, contracts, persons, agency.",
+          "Status": "PUB",
+          "Priority": "HIGH",
+          "Notes": "Curate relevant articles only"
+        },
+        {
+          "ID": "PL-03",
+          "Item": "Código de Comercio",
+          "Description / Why the AI needs it": "Governs commercial activity, companies, commercial obligations. Foundation for SAS framework.",
+          "Status": "PUB",
+          "Priority": "HIGH",
+          "Notes": ""
+        },
+        {
+          "ID": "PL-04",
+          "Item": "Código Sustantivo del Trabajo",
+          "Description / Why the AI needs it": "Foundation for the Contrato de Trabajo Investment-Ready.",
+          "Status": "PUB",
+          "Priority": "CRITICAL",
+          "Notes": ""
+        },
+        {
+          "ID": "PL-05",
+          "Item": "Estatuto Tributario",
+          "Description / Why the AI needs it": "Tax treatment of contracts, withholdings, parafiscales, equity events.",
+          "Status": "PUB",
+          "Priority": "HIGH",
+          "Notes": ""
+        },
+        {
+          "ID": "PL-06",
+          "Item": "Código General del Proceso (CGP)",
+          "Description / Why the AI needs it": "Procedural rules referenced in dispute resolution clauses.",
+          "Status": "PUB",
+          "Priority": "MEDIUM",
+          "Notes": ""
+        },
+        {
+          "ID": "PL-07",
+          "Item": "Ley 1258 de 2008 (SAS)",
+          "Description / Why the AI needs it": "Foundation for shareholders agreement and SAS-specific governance.",
+          "Status": "PUB",
+          "Priority": "CRITICAL",
+          "Notes": "Most cited statute for the platform"
+        },
+        {
+          "ID": "PL-08",
+          "Item": "Ley 222 de 1995 (modifies Código de Comercio)",
+          "Description / Why the AI needs it": "Corporate fundamentals across all five documents.",
+          "Status": "PUB",
+          "Priority": "CRITICAL",
+          "Notes": ""
+        },
+        {
+          "ID": "PL-09",
+          "Item": "Ley 50 de 1990 (labor reform)",
+          "Description / Why the AI needs it": "Contrato de Trabajo legal grounding.",
+          "Status": "PUB",
+          "Priority": "HIGH",
+          "Notes": ""
+        },
+        {
+          "ID": "PL-10",
+          "Item": "Ley 789 de 2002 (labor reform)",
+          "Description / Why the AI needs it": "Contrato de Trabajo + parafiscales reform.",
+          "Status": "PUB",
+          "Priority": "HIGH",
+          "Notes": ""
+        },
+        {
+          "ID": "PL-11",
+          "Item": "Ley 1429 de 2010 (formalización)",
+          "Description / Why the AI needs it": "Contrato de Trabajo and SAS context.",
+          "Status": "PUB",
+          "Priority": "MEDIUM",
+          "Notes": ""
+        },
+        {
+          "ID": "PL-12",
+          "Item": "Ley 23 de 1982 (Derecho de Autor)",
+          "Description / Why the AI needs it": "Critical for Cesión de Propiedad Intelectual.",
+          "Status": "PUB",
+          "Priority": "CRITICAL",
+          "Notes": ""
+        },
+        {
+          "ID": "PL-13",
+          "Item": "Decisión Andina 351 (CAN, PI)",
+          "Description / Why the AI needs it": "Critical for Cesión de Propiedad Intelectual and cross-border IP context.",
+          "Status": "PUB",
+          "Priority": "CRITICAL",
+          "Notes": ""
+        },
+        {
+          "ID": "PL-14",
+          "Item": "Decisión Andina 486 (propiedad industrial)",
+          "Description / Why the AI needs it": "Trademark and patent considerations in IP assignment.",
+          "Status": "PUB",
+          "Priority": "MEDIUM",
+          "Notes": ""
+        },
+        {
+          "ID": "PL-15",
+          "Item": "Ley 1581 de 2012 (Habeas Data)",
+          "Description / Why the AI needs it": "Data treatment across NDA, IP assignment, employment, shareholders agreement.",
+          "Status": "PUB",
+          "Priority": "HIGH",
+          "Notes": ""
+        },
+        {
+          "ID": "PL-16",
+          "Item": "Decreto 1377 de 2013 (Habeas Data reglamento)",
+          "Description / Why the AI needs it": "Data treatment procedural framework.",
+          "Status": "PUB",
+          "Priority": "HIGH",
+          "Notes": ""
+        },
+        {
+          "ID": "PL-17",
+          "Item": "Ley 1116 de 2006 (insolvencia)",
+          "Description / Why the AI needs it": "Insolvency risk assessment in DD.",
+          "Status": "PUB",
+          "Priority": "MEDIUM",
+          "Notes": ""
+        },
+        {
+          "ID": "PL-18",
+          "Item": "Ley 1314 de 2009 (NIIF / contabilidad)",
+          "Description / Why the AI needs it": "Financial statement standards for DD review.",
+          "Status": "PUB",
+          "Priority": "MEDIUM",
+          "Notes": ""
+        },
+        {
+          "ID": "PL-19",
+          "Item": "Ley 1340 de 2009 (libre competencia)",
+          "Description / Why the AI needs it": "Antitrust in DD for sale or merger scenarios.",
+          "Status": "PUB",
+          "Priority": "MEDIUM",
+          "Notes": ""
+        },
+        {
+          "ID": "PL-20",
+          "Item": "Ley 1474 de 2011 (Estatuto Anti-Corrupción)",
+          "Description / Why the AI needs it": "Anti-corruption diligence.",
+          "Status": "PUB",
+          "Priority": "MEDIUM",
+          "Notes": ""
+        },
+        {
+          "ID": "PL-21",
+          "Item": "Ley 1762 de 2015 (anti-contrabando / lavado)",
+          "Description / Why the AI needs it": "Anti-money laundering DD aspects.",
+          "Status": "PUB",
+          "Priority": "LOW",
+          "Notes": ""
+        },
+        {
+          "ID": "PL-22",
+          "Item": "DUR financiero (Decreto 2555 de 2010)",
+          "Description / Why the AI needs it": "Financial sector regulation, relevant for fintech targets.",
+          "Status": "PUB",
+          "Priority": "LOW",
+          "Notes": ""
+        },
+        {
+          "ID": "PL-23",
+          "Item": "Recent jurisprudence on non-competition compensation",
+          "Description / Why the AI needs it": "Critical for the non-compete clause in the Contrato de Trabajo Investment-Ready.",
+          "Status": "PUB",
+          "Priority": "CRITICAL",
+          "Notes": "Specifically: CSJ Sala Laboral decisions 2023-2025"
+        }
+      ]
+    },
+    "regulatory-materials": {
+      "sheet": "Regulatory Materials",
+      "count": 15,
+      "items": [
+        {
+          "ID": "RG-01",
+          "Item": "Conceptos jurídicos · Superintendencia de Sociedades",
+          "Description / Why the AI needs it": "Interpretations on SAS governance, board duties, corporate decisions. Critical for shareholders agreement variants.",
+          "Status": "PUB",
+          "Priority": "HIGH",
+          "Notes": "Selective curation"
+        },
+        {
+          "ID": "RG-02",
+          "Item": "Circulares externas · SuperSociedades (corporate governance)",
+          "Description / Why the AI needs it": "Governance compliance requirements.",
+          "Status": "PUB",
+          "Priority": "MEDIUM",
+          "Notes": ""
+        },
+        {
+          "ID": "RG-03",
+          "Item": "Resoluciones · SuperSociedades on related-party transactions",
+          "Description / Why the AI needs it": "Common DD findings on conflict of interest.",
+          "Status": "PUB",
+          "Priority": "MEDIUM",
+          "Notes": ""
+        },
+        {
+          "ID": "RG-04",
+          "Item": "Circular Básica Jurídica · SuperFinanciera",
+          "Description / Why the AI needs it": "Fintech sector reference, banking touchpoints in DD.",
+          "Status": "PUB",
+          "Priority": "LOW",
+          "Notes": ""
+        },
+        {
+          "ID": "RG-05",
+          "Item": "Circular Básica Contable y Financiera · SuperFinanciera",
+          "Description / Why the AI needs it": "Financial statement standards for DD.",
+          "Status": "PUB",
+          "Priority": "MEDIUM",
+          "Notes": ""
+        },
+        {
+          "ID": "RG-06",
+          "Item": "Resoluciones · SIC on Habeas Data",
+          "Description / Why the AI needs it": "Data treatment compliance for NDA and IP assignment clauses.",
+          "Status": "PUB",
+          "Priority": "HIGH",
+          "Notes": ""
+        },
+        {
+          "ID": "RG-07",
+          "Item": "Conceptos · SIC on Registro Nacional de Bases de Datos",
+          "Description / Why the AI needs it": "Compliance reference for companies being raised.",
+          "Status": "PUB",
+          "Priority": "MEDIUM",
+          "Notes": ""
+        },
+        {
+          "ID": "RG-08",
+          "Item": "SIC trademark guidelines and Niza classification",
+          "Description / Why the AI needs it": "Reference for IP assignment scope.",
+          "Status": "PUB",
+          "Priority": "MEDIUM",
+          "Notes": ""
+        },
+        {
+          "ID": "RG-09",
+          "Item": "Decisiones SIC en antitrust (selected)",
+          "Description / Why the AI needs it": "DD risk assessment for targets with antitrust exposure.",
+          "Status": "PUB",
+          "Priority": "LOW",
+          "Notes": ""
+        },
+        {
+          "ID": "RG-10",
+          "Item": "Conceptos tributarios DIAN on equity instruments",
+          "Description / Why the AI needs it": "Tax treatment of vesting, SAFE, convertible notes for diligence.",
+          "Status": "PUB",
+          "Priority": "HIGH",
+          "Notes": ""
+        },
+        {
+          "ID": "RG-11",
+          "Item": "DIAN resoluciones on facturación electrónica",
+          "Description / Why the AI needs it": "Compliance reference for SMB customer base.",
+          "Status": "PUB",
+          "Priority": "LOW",
+          "Notes": ""
+        },
+        {
+          "ID": "RG-12",
+          "Item": "Conceptos del Ministerio del Trabajo on Contrato de Trabajo distinctions",
+          "Description / Why the AI needs it": "Critical for employment contract drafting.",
+          "Status": "PUB",
+          "Priority": "HIGH",
+          "Notes": ""
+        },
+        {
+          "ID": "RG-13",
+          "Item": "Decretos sobre prima, cesantías, intereses (current)",
+          "Description / Why the AI needs it": "Current rates and obligations for employment contracts.",
+          "Status": "PUB",
+          "Priority": "HIGH",
+          "Notes": ""
+        },
+        {
+          "ID": "RG-14",
+          "Item": "Decreto 1072 de 2015 (DUR Sector Trabajo)",
+          "Description / Why the AI needs it": "Comprehensive labor reference.",
+          "Status": "PUB",
+          "Priority": "MEDIUM",
+          "Notes": ""
+        },
+        {
+          "ID": "RG-15",
+          "Item": "Cámara de Comercio Bogotá · procedures and forms",
+          "Description / Why the AI needs it": "Reference for governance and shareholders' agreement filings if applicable.",
+          "Status": "PUB",
+          "Priority": "MEDIUM",
+          "Notes": ""
+        }
+      ]
+    },
+    "jurisprudence": {
+      "sheet": "Jurisprudence",
+      "count": 10,
+      "items": [
+        {
+          "ID": "JP-01",
+          "Item": "Corte Constitucional · habeas data y privacidad",
+          "Description / Why the AI needs it": "Data treatment standards across all five documents.",
+          "Status": "PUB",
+          "Priority": "HIGH",
+          "Notes": "Selective curation"
+        },
+        {
+          "ID": "JP-02",
+          "Item": "Corte Constitucional · libertad económica y flexibilidad laboral",
+          "Description / Why the AI needs it": "Non-compete and exclusivity clauses in employment.",
+          "Status": "PUB",
+          "Priority": "CRITICAL",
+          "Notes": "Required for Contrato de Trabajo non-compete clause"
+        },
+        {
+          "ID": "JP-03",
+          "Item": "Corte Constitucional · sentencias relevantes a tutelas laborales",
+          "Description / Why the AI needs it": "Risk awareness in employment clause design.",
+          "Status": "PUB",
+          "Priority": "MEDIUM",
+          "Notes": ""
+        },
+        {
+          "ID": "JP-04",
+          "Item": "CSJ Sala Civil · interpretación contractual",
+          "Description / Why the AI needs it": "Foundation for clause interpretation across all five documents.",
+          "Status": "PUB",
+          "Priority": "HIGH",
+          "Notes": ""
+        },
+        {
+          "ID": "JP-05",
+          "Item": "CSJ Sala Civil · responsabilidad precontractual",
+          "Description / Why the AI needs it": "Scope of NDA and pre-investment conversation protections.",
+          "Status": "PUB",
+          "Priority": "MEDIUM",
+          "Notes": ""
+        },
+        {
+          "ID": "JP-06",
+          "Item": "CSJ Sala Laboral · reclasificación de contratistas independientes",
+          "Description / Why the AI needs it": "Critical risk awareness embedded in employment vs contractor distinction.",
+          "Status": "PUB",
+          "Priority": "HIGH",
+          "Notes": ""
+        },
+        {
+          "ID": "JP-07",
+          "Item": "CSJ Sala Laboral · no competencia con compensación",
+          "Description / Why the AI needs it": "CRITICAL · directly informs the non-compete language in Contrato de Trabajo Investment-Ready.",
+          "Status": "PUB",
+          "Priority": "CRITICAL",
+          "Notes": "Lock recent decisions 2023-2025"
+        },
+        {
+          "ID": "JP-08",
+          "Item": "Consejo de Estado · decisions on regulated sectors",
+          "Description / Why the AI needs it": "DD context for regulated-sector targets.",
+          "Status": "PUB",
+          "Priority": "LOW",
+          "Notes": ""
+        },
+        {
+          "ID": "JP-09",
+          "Item": "Tribunales Arbitrales · CAC Cámara Comercio Bogotá awards (public)",
+          "Description / Why the AI needs it": "Default arbitration forum referenced in dispute resolution clauses.",
+          "Status": "PUB",
+          "Priority": "LOW",
+          "Notes": "Selective"
+        },
+        {
+          "ID": "JP-10",
+          "Item": "CCI awards involving Colombian parties (cross-border)",
+          "Description / Why the AI needs it": "DD cross-border context.",
+          "Status": "EXT",
+          "Priority": "LOW",
+          "Notes": "May require subscription"
+        }
+      ]
+    },
+    "firm-internal": {
+      "sheet": "Firm Internal",
+      "count": 22,
+      "items": [
+        {
+          "ID": "FI-01",
+          "Item": "FIVE DOCS · Acuerdo de Accionistas · master template",
+          "Description / Why the AI needs it": "Master template for the platform's most complex document. Includes drag-along, tag-along, qualified majorities, anti-dilution principles, governance.",
+          "Status": "CREATE",
+          "Priority": "CRITICAL",
+          "Notes": "Most variant-heavy of the five"
+        },
+        {
+          "ID": "FI-02",
+          "Item": "FIVE DOCS · Vesting de Fundadores · master template",
+          "Description / Why the AI needs it": "Vesting agreement with cliff, acceleration provisions, treatment on departure.",
+          "Status": "CREATE",
+          "Priority": "CRITICAL",
+          "Notes": "Build with both single-trigger and double-trigger variants"
+        },
+        {
+          "ID": "FI-03",
+          "Item": "FIVE DOCS · Cesión de Propiedad Intelectual · master template",
+          "Description / Why the AI needs it": "IP assignment with variants for founders, employees, and contractors.",
+          "Status": "CREATE",
+          "Priority": "CRITICAL",
+          "Notes": "Distinct legal grounding per contributor type"
+        },
+        {
+          "ID": "FI-04",
+          "Item": "FIVE DOCS · Contrato de Trabajo Investment-Ready · master template",
+          "Description / Why the AI needs it": "Employment contract with comprehensive IP assignment, confidentiality, non-compete folded in.",
+          "Status": "CREATE",
+          "Priority": "CRITICAL",
+          "Notes": "Non-compete clause requires recent jurisprudence grounding"
+        },
+        {
+          "ID": "FI-05",
+          "Item": "FIVE DOCS · Acuerdo de Confidencialidad mutuo · master template",
+          "Description / Why the AI needs it": "Mutual NDA with unilateral variant. Simplest of the five.",
+          "Status": "CREATE",
+          "Priority": "CRITICAL",
+          "Notes": "Ships first, validates the engine"
+        },
+        {
+          "ID": "FI-06",
+          "Item": "Clause library · Acuerdo de Accionistas variants",
+          "Description / Why the AI needs it": "Each clause with all variants the firm uses, conditions of inclusion, explanatory notes.",
+          "Status": "CREATE",
+          "Priority": "CRITICAL",
+          "Notes": "Largest clause library of the five"
+        },
+        {
+          "ID": "FI-07",
+          "Item": "Clause library · Vesting de Fundadores variants",
+          "Description / Why the AI needs it": "Vesting schedule variants, acceleration variants, treatment-on-departure variants.",
+          "Status": "CREATE",
+          "Priority": "CRITICAL",
+          "Notes": ""
+        },
+        {
+          "ID": "FI-08",
+          "Item": "Clause library · Cesión de PI variants",
+          "Description / Why the AI needs it": "Founder vs employee vs contractor variants. Prior-creations carve-outs.",
+          "Status": "CREATE",
+          "Priority": "CRITICAL",
+          "Notes": ""
+        },
+        {
+          "ID": "FI-09",
+          "Item": "Clause library · Contrato de Trabajo Investment-Ready variants",
+          "Description / Why the AI needs it": "IP, confidentiality, non-compete, non-solicit variants per role and seniority.",
+          "Status": "CREATE",
+          "Priority": "CRITICAL",
+          "Notes": ""
+        },
+        {
+          "ID": "FI-10",
+          "Item": "Clause library · NDA variants",
+          "Description / Why the AI needs it": "Mutual vs unilateral, plus protection-period variants.",
+          "Status": "CREATE",
+          "Priority": "CRITICAL",
+          "Notes": ""
+        },
+        {
+          "ID": "FI-11",
+          "Item": "Past shareholders agreements (last 3 years, redacted)",
+          "Description / Why the AI needs it": "Baseline patterns for the master template.",
+          "Status": "HAVE",
+          "Priority": "HIGH",
+          "Notes": "Needs organization and redaction"
+        },
+        {
+          "ID": "FI-12",
+          "Item": "Past vesting agreements (last 3 years, redacted)",
+          "Description / Why the AI needs it": "Baseline patterns.",
+          "Status": "HAVE",
+          "Priority": "HIGH",
+          "Notes": ""
+        },
+        {
+          "ID": "FI-13",
+          "Item": "Past IP assignments (last 3 years, redacted)",
+          "Description / Why the AI needs it": "Baseline patterns. Employee, contractor, founder versions.",
+          "Status": "HAVE",
+          "Priority": "HIGH",
+          "Notes": ""
+        },
+        {
+          "ID": "FI-14",
+          "Item": "Past Contratos de Trabajo with investor-grade clauses (redacted)",
+          "Description / Why the AI needs it": "Baseline patterns.",
+          "Status": "HAVE",
+          "Priority": "HIGH",
+          "Notes": ""
+        },
+        {
+          "ID": "FI-15",
+          "Item": "Past NDAs (mutual and unilateral, redacted)",
+          "Description / Why the AI needs it": "Baseline patterns.",
+          "Status": "HAVE",
+          "Priority": "HIGH",
+          "Notes": ""
+        },
+        {
+          "ID": "FI-16",
+          "Item": "Memos on drag-along thresholds in Colombian VC",
+          "Description / Why the AI needs it": "Firm position on drag-along thresholds for clause notes.",
+          "Status": "HAVE",
+          "Priority": "MEDIUM",
+          "Notes": "If exists; otherwise CREATE"
+        },
+        {
+          "ID": "FI-17",
+          "Item": "Memos on non-compete enforceability and compensation",
+          "Description / Why the AI needs it": "Firm position on enforceable non-compete language.",
+          "Status": "HAVE",
+          "Priority": "HIGH",
+          "Notes": "If exists; otherwise CREATE"
+        },
+        {
+          "ID": "FI-18",
+          "Item": "Memos on IP assignment scope and moral rights",
+          "Description / Why the AI needs it": "Firm position on Colombian moral rights treatment.",
+          "Status": "HAVE",
+          "Priority": "MEDIUM",
+          "Notes": "If exists; otherwise CREATE"
+        },
+        {
+          "ID": "FI-19",
+          "Item": "Negotiation playbook for shareholders agreements with investors",
+          "Description / Why the AI needs it": "Patterns of what investors push for and how the firm responds.",
+          "Status": "CREATE",
+          "Priority": "MEDIUM",
+          "Notes": ""
+        },
+        {
+          "ID": "FI-20",
+          "Item": "Standard DD scope and checklist used by the firm",
+          "Description / Why the AI needs it": "Powers target upload taxonomy and firm review structure.",
+          "Status": "HAVE",
+          "Priority": "CRITICAL",
+          "Notes": "If exists; otherwise CREATE"
+        },
+        {
+          "ID": "FI-21",
+          "Item": "Past DD reports (redacted, with client permission)",
+          "Description / Why the AI needs it": "Patterns of findings and language for DD AI training.",
+          "Status": "HAVE",
+          "Priority": "HIGH",
+          "Notes": "Requires client permission for redacted use"
+        },
+        {
+          "ID": "FI-22",
+          "Item": "Risk taxonomy for Colombian DD findings",
+          "Description / Why the AI needs it": "Findings categorization in the investor view (registral, laboral, etc.).",
+          "Status": "CREATE",
+          "Priority": "CRITICAL",
+          "Notes": ""
+        }
+      ]
+    },
+    "procedural-materials": {
+      "sheet": "Procedural Materials",
+      "count": 7,
+      "items": [
+        {
+          "ID": "PR-01",
+          "Item": "Cap table maintenance procedures",
+          "Description / Why the AI needs it": "Reference for keeping the cap table clean as the company adds investors.",
+          "Status": "CREATE",
+          "Priority": "MEDIUM",
+          "Notes": "Linked to shareholders agreement and vesting"
+        },
+        {
+          "ID": "PR-02",
+          "Item": "RUT activation and changes",
+          "Description / Why the AI needs it": "Reference for tax registration touches in DD.",
+          "Status": "PUB",
+          "Priority": "MEDIUM",
+          "Notes": ""
+        },
+        {
+          "ID": "PR-03",
+          "Item": "Firma electrónica options and process",
+          "Description / Why the AI needs it": "Out-of-platform signature workflow reference.",
+          "Status": "PUB",
+          "Priority": "LOW",
+          "Notes": "Electronic signature integration is out of scope for MVP"
+        },
+        {
+          "ID": "PR-04",
+          "Item": "EPS, Pensión, ARL, Caja affiliation procedures",
+          "Description / Why the AI needs it": "Reference for due diligence on employment formalization.",
+          "Status": "PUB",
+          "Priority": "MEDIUM",
+          "Notes": ""
+        },
+        {
+          "ID": "PR-05",
+          "Item": "Planilla Integrada de Liquidación de Aportes (PILA)",
+          "Description / Why the AI needs it": "Reference for DD on recurring labor obligations.",
+          "Status": "PUB",
+          "Priority": "LOW",
+          "Notes": ""
+        },
+        {
+          "ID": "PR-06",
+          "Item": "SIC RNBD (Registro Nacional de Bases de Datos) procedure",
+          "Description / Why the AI needs it": "Reference for habeas data compliance in DD.",
+          "Status": "PUB",
+          "Priority": "MEDIUM",
+          "Notes": ""
+        },
+        {
+          "ID": "PR-07",
+          "Item": "Standard data treatment policy template",
+          "Description / Why the AI needs it": "Reference template generated when DD identifies data treatment gaps.",
+          "Status": "HAVE",
+          "Priority": "MEDIUM",
+          "Notes": "If exists; otherwise CREATE"
+        }
+      ]
+    },
+    "ai-behavior": {
+      "sheet": "AI Behavior",
+      "count": 26,
+      "items": [
+        {
+          "ID": "AI-01",
+          "Item": "Drafting assistant prompt · investment-readiness focus",
+          "Description / Why the AI needs it": "Inline help in document drafting flow. Tuned for founder/SMB audience and the five document focus.",
+          "Status": "CREATE",
+          "Priority": "CRITICAL",
+          "Notes": ""
+        },
+        {
+          "ID": "AI-02",
+          "Item": "Structured intake summarization prompt",
+          "Description / Why the AI needs it": "Generates the lawyer's executive summary from intake form for review preparation.",
+          "Status": "CREATE",
+          "Priority": "CRITICAL",
+          "Notes": ""
+        },
+        {
+          "ID": "AI-03",
+          "Item": "Knowledge hub query prompt",
+          "Description / Why the AI needs it": "Public-facing Q&A grounded in published articles and indexed Colombian regulation.",
+          "Status": "CREATE",
+          "Priority": "HIGH",
+          "Notes": ""
+        },
+        {
+          "ID": "AI-04",
+          "Item": "DD finding extraction prompt",
+          "Description / Why the AI needs it": "Extracts findings from data room documents with Colombian regulatory context.",
+          "Status": "CREATE",
+          "Priority": "CRITICAL",
+          "Notes": ""
+        },
+        {
+          "ID": "AI-05",
+          "Item": "Review preparation prompt",
+          "Description / Why the AI needs it": "Compares customer draft against master template, highlights deviations.",
+          "Status": "CREATE",
+          "Priority": "HIGH",
+          "Notes": ""
+        },
+        {
+          "ID": "AI-06",
+          "Item": "Refusal prompt · legal advice boundary",
+          "Description / Why the AI needs it": "Used when the AI must decline to give legal advice.",
+          "Status": "CREATE",
+          "Priority": "CRITICAL",
+          "Notes": ""
+        },
+        {
+          "ID": "AI-07",
+          "Item": "Guardrail · no specific legal advice on customer situation",
+          "Description / Why the AI needs it": "Validation rule for outputs.",
+          "Status": "CREATE",
+          "Priority": "CRITICAL",
+          "Notes": ""
+        },
+        {
+          "ID": "AI-08",
+          "Item": "Guardrail · no prediction of legal outcomes",
+          "Description / Why the AI needs it": "Validation rule.",
+          "Status": "CREATE",
+          "Priority": "CRITICAL",
+          "Notes": ""
+        },
+        {
+          "ID": "AI-09",
+          "Item": "Guardrail · no reference to laws or cases that do not exist",
+          "Description / Why the AI needs it": "Hallucination check.",
+          "Status": "CREATE",
+          "Priority": "CRITICAL",
+          "Notes": ""
+        },
+        {
+          "ID": "AI-10",
+          "Item": "Guardrail · no contradiction with customer input",
+          "Description / Why the AI needs it": "Quality check.",
+          "Status": "CREATE",
+          "Priority": "HIGH",
+          "Notes": ""
+        },
+        {
+          "ID": "AI-11",
+          "Item": "Guardrail · mandatory disclaimer on every AI response",
+          "Description / Why the AI needs it": "Professional responsibility requirement.",
+          "Status": "CREATE",
+          "Priority": "CRITICAL",
+          "Notes": ""
+        },
+        {
+          "ID": "AI-12",
+          "Item": "Q&A pairs · Shareholders Agreement drafting (10 pairs)",
+          "Description / Why the AI needs it": "Few-shot examples of correct drafting assistant behavior.",
+          "Status": "CREATE",
+          "Priority": "HIGH",
+          "Notes": ""
+        },
+        {
+          "ID": "AI-13",
+          "Item": "Q&A pairs · Vesting drafting (10 pairs)",
+          "Description / Why the AI needs it": "Few-shot examples.",
+          "Status": "CREATE",
+          "Priority": "HIGH",
+          "Notes": ""
+        },
+        {
+          "ID": "AI-14",
+          "Item": "Q&A pairs · IP Assignment drafting (10 pairs)",
+          "Description / Why the AI needs it": "Few-shot examples.",
+          "Status": "CREATE",
+          "Priority": "HIGH",
+          "Notes": ""
+        },
+        {
+          "ID": "AI-15",
+          "Item": "Q&A pairs · Contrato de Trabajo Investment-Ready drafting (10 pairs)",
+          "Description / Why the AI needs it": "Few-shot examples.",
+          "Status": "CREATE",
+          "Priority": "HIGH",
+          "Notes": ""
+        },
+        {
+          "ID": "AI-16",
+          "Item": "Q&A pairs · NDA drafting (10 pairs)",
+          "Description / Why the AI needs it": "Few-shot examples.",
+          "Status": "CREATE",
+          "Priority": "HIGH",
+          "Notes": ""
+        },
+        {
+          "ID": "AI-17",
+          "Item": "Q&A pairs · knowledge hub common questions (20 pairs)",
+          "Description / Why the AI needs it": "Few-shot for the public-facing Q&A.",
+          "Status": "CREATE",
+          "Priority": "MEDIUM",
+          "Notes": ""
+        },
+        {
+          "ID": "AI-18",
+          "Item": "Q&A pairs · DD finding extraction examples (20 pairs)",
+          "Description / Why the AI needs it": "Few-shot for the DD AI.",
+          "Status": "CREATE",
+          "Priority": "HIGH",
+          "Notes": ""
+        },
+        {
+          "ID": "AI-19",
+          "Item": "Q&A pairs · refusal scenarios with correct responses (15 pairs)",
+          "Description / Why the AI needs it": "Few-shot for refusal behavior.",
+          "Status": "CREATE",
+          "Priority": "CRITICAL",
+          "Notes": ""
+        },
+        {
+          "ID": "AI-20",
+          "Item": "Glossary of 150-200 key legal terms in plain Spanish",
+          "Description / Why the AI needs it": "Consistent terminology across the platform.",
+          "Status": "CREATE",
+          "Priority": "MEDIUM",
+          "Notes": ""
+        },
+        {
+          "ID": "AI-21",
+          "Item": "Acronym dictionary (DIAN, SIC, SAS, SAFE, ESOP, etc.)",
+          "Description / Why the AI needs it": "Inline expansion on first use.",
+          "Status": "CREATE",
+          "Priority": "LOW",
+          "Notes": ""
+        },
+        {
+          "ID": "AI-22",
+          "Item": "Standard AI response disclaimer",
+          "Description / Why the AI needs it": "Appears below every AI-generated answer.",
+          "Status": "CREATE",
+          "Priority": "CRITICAL",
+          "Notes": ""
+        },
+        {
+          "ID": "AI-23",
+          "Item": "Document generation disclaimer",
+          "Description / Why the AI needs it": "Before download of any generated document.",
+          "Status": "CREATE",
+          "Priority": "CRITICAL",
+          "Notes": ""
+        },
+        {
+          "ID": "AI-24",
+          "Item": "DD assessment disclaimer",
+          "Description / Why the AI needs it": "On every DD report and finding.",
+          "Status": "CREATE",
+          "Priority": "HIGH",
+          "Notes": ""
+        },
+        {
+          "ID": "AI-25",
+          "Item": "No-attorney-client-relationship language",
+          "Description / Why the AI needs it": "Throughout platform terms and UI.",
+          "Status": "CREATE",
+          "Priority": "CRITICAL",
+          "Notes": ""
+        },
+        {
+          "ID": "AI-26",
+          "Item": "AI Use Policy text (firm-internal)",
+          "Description / Why the AI needs it": "Firm user acknowledgment before access.",
+          "Status": "CREATE",
+          "Priority": "CRITICAL",
+          "Notes": ""
+        }
+      ]
+    },
+    "intake-forms": {
+      "sheet": "Intake Forms",
+      "count": 9,
+      "items": [
+        {
+          "ID": "IF-01",
+          "Item": "Review request intake · Acuerdo de Accionistas",
+          "Description / Why the AI needs it": "Fields capturing accionistas, distribution of capital, threshold decisions made, investor on the table, flagged sections (~25 fields).",
+          "Status": "CREATE",
+          "Priority": "CRITICAL",
+          "Notes": ""
+        },
+        {
+          "ID": "IF-02",
+          "Item": "Review request intake · Vesting de Fundadores",
+          "Description / Why the AI needs it": "Fields capturing founder identities, equity already granted, vesting schedule chosen, acceleration choice, recent founder changes (~15 fields).",
+          "Status": "CREATE",
+          "Priority": "CRITICAL",
+          "Notes": ""
+        },
+        {
+          "ID": "IF-03",
+          "Item": "Review request intake · Cesión de PI",
+          "Description / Why the AI needs it": "Fields capturing contributor type, scope of IP, prior creations, current role at company, special carve-outs (~15 fields).",
+          "Status": "CREATE",
+          "Priority": "CRITICAL",
+          "Notes": ""
+        },
+        {
+          "ID": "IF-04",
+          "Item": "Review request intake · Contrato de Trabajo Investment-Ready",
+          "Description / Why the AI needs it": "Fields capturing role, salary, IP scope, non-compete period chosen, special circumstances (~18 fields).",
+          "Status": "CREATE",
+          "Priority": "CRITICAL",
+          "Notes": ""
+        },
+        {
+          "ID": "IF-05",
+          "Item": "Review request intake · NDA mutuo",
+          "Description / Why the AI needs it": "Fields capturing parties, purpose, term, scope of confidential information (~8 fields).",
+          "Status": "CREATE",
+          "Priority": "CRITICAL",
+          "Notes": ""
+        },
+        {
+          "ID": "IF-06",
+          "Item": "Help request intake · generic mid-flow",
+          "Description / Why the AI needs it": "Field flagged, restated question, urgency, preferred response method.",
+          "Status": "CREATE",
+          "Priority": "HIGH",
+          "Notes": ""
+        },
+        {
+          "ID": "IF-07",
+          "Item": "DD intake · target company onboarding",
+          "Description / Why the AI needs it": "Company basics, deal type, requesting investor, scope of DD.",
+          "Status": "CREATE",
+          "Priority": "HIGH",
+          "Notes": ""
+        },
+        {
+          "ID": "IF-08",
+          "Item": "DD intake · investor invitation",
+          "Description / Why the AI needs it": "Investor identification, syndicate composition, access scope.",
+          "Status": "CREATE",
+          "Priority": "MEDIUM",
+          "Notes": ""
+        },
+        {
+          "ID": "IF-09",
+          "Item": "DD intake · additional document request (firm to target)",
+          "Description / Why the AI needs it": "Document description, urgency, relationship to existing findings.",
+          "Status": "CREATE",
+          "Priority": "MEDIUM",
+          "Notes": ""
+        }
+      ]
+    },
+    "knowledge-hub": {
+      "sheet": "Knowledge Hub",
+      "count": 15,
+      "items": [
+        {
+          "ID": "KH-01",
+          "Item": "¿Qué documentos legales debes tener antes de buscar inversión?",
+          "Description / Why the AI needs it": "Top-of-funnel article. Positions the five-document framework.",
+          "Status": "CREATE",
+          "Priority": "CRITICAL",
+          "Notes": "First article to publish"
+        },
+        {
+          "ID": "KH-02",
+          "Item": "Acuerdo de accionistas: la base de toda ronda de inversión",
+          "Description / Why the AI needs it": "Drives Shareholders Agreement flow.",
+          "Status": "CREATE",
+          "Priority": "CRITICAL",
+          "Notes": ""
+        },
+        {
+          "ID": "KH-03",
+          "Item": "Vesting para fundadores: por qué los inversionistas lo exigen",
+          "Description / Why the AI needs it": "Drives Vesting flow. Counterintuitive topic for many founders.",
+          "Status": "CREATE",
+          "Priority": "CRITICAL",
+          "Notes": ""
+        },
+        {
+          "ID": "KH-04",
+          "Item": "Cómo asegurar que tu empresa sea dueña de su propiedad intelectual",
+          "Description / Why the AI needs it": "Drives IP Assignment flow.",
+          "Status": "CREATE",
+          "Priority": "CRITICAL",
+          "Notes": ""
+        },
+        {
+          "ID": "KH-05",
+          "Item": "Contratos laborales listos para inversión: lo que los inversionistas revisan",
+          "Description / Why the AI needs it": "Drives Contrato de Trabajo flow.",
+          "Status": "CREATE",
+          "Priority": "CRITICAL",
+          "Notes": ""
+        },
+        {
+          "ID": "KH-06",
+          "Item": "Cuándo y cómo usar un NDA mutuo con un inversionista",
+          "Description / Why the AI needs it": "Drives NDA flow. Practical guidance.",
+          "Status": "CREATE",
+          "Priority": "HIGH",
+          "Notes": ""
+        },
+        {
+          "ID": "KH-07",
+          "Item": "Los 5 errores legales más comunes antes de levantar capital",
+          "Description / Why the AI needs it": "Listicle. Strong organic search potential. Connects all five documents.",
+          "Status": "CREATE",
+          "Priority": "CRITICAL",
+          "Notes": ""
+        },
+        {
+          "ID": "KH-08",
+          "Item": "Due diligence: qué esperar cuando un fondo te invita a un proceso",
+          "Description / Why the AI needs it": "Bridges the customer side and the DD platform side.",
+          "Status": "CREATE",
+          "Priority": "HIGH",
+          "Notes": ""
+        },
+        {
+          "ID": "KH-09",
+          "Item": "Cap table limpia: cómo prepararte para una ronda semilla",
+          "Description / Why the AI needs it": "Education on cap table preparation, linked to shareholders agreement.",
+          "Status": "CREATE",
+          "Priority": "MEDIUM",
+          "Notes": ""
+        },
+        {
+          "ID": "KH-10",
+          "Item": "Cuándo necesitas un abogado y cuándo puedes hacerlo solo",
+          "Description / Why the AI needs it": "Positioning piece for the platform itself.",
+          "Status": "CREATE",
+          "Priority": "HIGH",
+          "Notes": ""
+        },
+        {
+          "ID": "KH-11",
+          "Item": "Term sheet: cómo leer la propuesta de un inversionista",
+          "Description / Why the AI needs it": "Phase 2 article, beta period.",
+          "Status": "CREATE",
+          "Priority": "MEDIUM",
+          "Notes": ""
+        },
+        {
+          "ID": "KH-12",
+          "Item": "SAFE vs Nota Convertible: cuál es mejor para tu ronda",
+          "Description / Why the AI needs it": "Phase 2 article.",
+          "Status": "CREATE",
+          "Priority": "MEDIUM",
+          "Notes": ""
+        },
+        {
+          "ID": "KH-13",
+          "Item": "ESOP (Stock Options) para empleados clave en startups colombianas",
+          "Description / Why the AI needs it": "Phase 2 article.",
+          "Status": "CREATE",
+          "Priority": "MEDIUM",
+          "Notes": ""
+        },
+        {
+          "ID": "KH-14",
+          "Item": "Plain Spanish style guide for knowledge hub",
+          "Description / Why the AI needs it": "Consistent voice across articles.",
+          "Status": "CREATE",
+          "Priority": "MEDIUM",
+          "Notes": ""
+        },
+        {
+          "ID": "KH-15",
+          "Item": "SEO keyword research (Colombian Spanish, fundraising-focused)",
+          "Description / Why the AI needs it": "Article topic prioritization.",
+          "Status": "CREATE",
+          "Priority": "HIGH",
+          "Notes": "May require contractor"
+        }
+      ]
+    }
+  }
+}
