@@ -11,10 +11,14 @@ Legal-AI platform for Colombian venture capital — investment-readiness documen
 ## Getting started
 
 ```bash
-cp .env.example .env.local
+cp .env.example .env
 npm install
 npm run dev
 ```
+
+### Production (Vercel)
+
+Use [`.env.production.example`](./.env.production.example) as the checklist. Set each variable in **Vercel → Settings → Environment Variables** under the **Production** scope with your public `https://` domain — never copy `localhost` URLs from `.env`.
 
 ### Clerk + Supabase setup
 

@@ -1,0 +1,56 @@
+---
+description: Core rules for the legal-AI platform. Always applied.
+alwaysApply: true
+---
+
+# Communication
+- Reply to the developer in ENGLISH only. Code comments and commits in English.
+- The APP defaults to Colombian Spanish (es-CO). en-US is the only other locale.
+
+# i18n
+- All user-facing copy lives in message catalogs (next-intl). Never hardcode strings in JSX.
+- Locale resolution order: user preference (persisted) -> cookie -> es-CO default.
+- Use Colombian conventions for date, time, and currency (COP) in es-CO.
+
+# Theming
+- next-themes with light / dark / system. A toggle is present in every app shell.
+- Colors come from CSS variables / design tokens. No raw hex in components.
+
+# Multi-tenancy (CRITICAL)
+- Every tenant-owned table has a non-null tenant_id (the law firm that owns the row).
+- Postgres Row-Level Security is enabled on every tenant-scoped table and enforces
+  tenant_id = the requesting user's active tenant. RLS is the source of truth, not app code.
+- Cross-tenant access exists ONLY for the platform operations role, via explicit policy.
+- Write a test for each tenant-scoped table proving tenant A cannot read tenant B's rows.
+
+# Auth (Clerk + Supabase third-party)
+- Use Supabase native third-party auth with Clerk — NOT the deprecated JWT-template bridge.
+- Client: createClient(url, anonKey, { accessToken: async () => (await auth()).getToken() }).
+- RLS: auth.jwt()->>'sub' for user id (not auth.uid()); org_id for firm tenant scoping.
+- Two scoping models: firm rows by org_id; founder/investor rows by sub ownership + deal grants.
+- Firm templates/clauses reach founders only via server-side rendering, never direct SELECT.
+
+# AI
+- All model calls go through one internal abstraction (the AI gateway). Swapping providers
+  is a config change, not a code change. Default provider: Anthropic.
+- Cheap model by default (e.g. Haiku-class); escalate to a stronger model only for
+  complex drafting, DD analysis, and executive summaries. Routing is configurable.
+- Every customer-facing AI output passes the guardrail/validation layer before display,
+  and every AI response renders with the standard disclaimer.
+- Never reference Colombian laws or cases that are not in the provided corpus. If unsure,
+  escalate; do not fabricate. Mark gaps as TODO(legal).
+
+# Security & defensibility
+- Master templates and clause libraries render SERVER-SIDE and never reach the client.
+- Generated documents and data-room downloads are fingerprinted (user + session + tenant).
+- Data-room previews carry a visible watermark (viewer name + access timestamp).
+- Rate-limit document generation and data-room access per user/tenant/hour/day/month.
+- Audit-log every meaningful action (who, what, when, from where, tenant). 3-year retention.
+
+# Code quality
+- Small commits. Keep BUILD_PLAN.md current. Typed end to end. No `any` without a reason.
+- Server Components by default; Client Components only where interactivity requires it.
+- Use proxy.ts (not middleware.ts) for Next.js request boundary routing.
+- Compose Clerk + next-intl in the same proxy.ts (`export default clerkMiddleware(...)`).
+- proxy.ts is a thin boundary: locale negotiation + optimistic session redirects only.
+  Never put real authorization in proxy.ts — RLS and server components enforce access.
