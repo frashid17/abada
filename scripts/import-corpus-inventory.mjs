@@ -15,8 +15,9 @@ const defaultXlsx = path.join(root, "docs", "brain", "sources", "Platform_Corpus
 const xlsxPath = process.argv[2] ?? defaultXlsx;
 const outDir = path.join(root, "docs", "brain", "corpus");
 
-const XLSX = require("xlsx");
-const wb = XLSX.readFile(xlsxPath);
+const readXlsxFile = require("read-excel-file/node");
+const { readSheetNames } = require("read-excel-file/node");
+
 const skip = new Set(["README", "Summary"]);
 const inventory = {};
 const summary = { total: 0, by_status: {}, by_priority: {} };
@@ -25,21 +26,28 @@ function bump(obj, key) {
   if (key) obj[key] = (obj[key] ?? 0) + 1;
 }
 
-for (const sheet of wb.SheetNames) {
+function cellValue(value) {
+  if (value === null || value === undefined) return "";
+  return String(value).trim();
+}
+
+const sheetNames = await readSheetNames(xlsxPath);
+
+for (const sheet of sheetNames) {
   if (skip.has(sheet)) continue;
-  const rows = XLSX.utils.sheet_to_json(wb.Sheets[sheet], { header: 1, defval: "" });
+  const rows = await readXlsxFile(xlsxPath, { sheet });
   let headers = null;
   const items = [];
   for (const row of rows) {
     if (!row?.length) continue;
-    if (!headers && row[0] === "ID") {
-      headers = row.map((h) => String(h).trim());
+    if (!headers && cellValue(row[0]) === "ID") {
+      headers = row.map((h) => cellValue(h));
       continue;
     }
-    if (!headers || !row[0] || String(row[0]) === "ID") continue;
+    if (!headers || !row[0] || cellValue(row[0]) === "ID") continue;
     const item = {};
     headers.forEach((h, i) => {
-      if (h) item[h] = String(row[i] ?? "").trim();
+      if (h) item[h] = cellValue(row[i]);
     });
     if (item.ID) {
       items.push(item);
