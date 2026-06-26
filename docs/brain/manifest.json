@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "description": "Platform brain documents loaded into the AI gateway system prompt. Add entries here when new brain files land.",
+  "loadOrder": [
+    "01-context",
+    "02-voice",
+    "03-memory"
+  ],
+  "documents": {
+    "01-context": {
+      "file": "01-context.md",
+      "title": "Context",
+      "series": 1,
+      "required": true,
+      "enabled": true,
+      "tags": ["identity", "scope", "colombian-law"]
+    },
+    "02-voice": {
+      "file": "02-voice.md",
+      "title": "Voice and Communication",
+      "series": 2,
+      "required": true,
+      "enabled": true,
+      "tags": ["voice", "registers", "i18n"]
+    },
+    "03-memory": {
+      "file": "03-memory.md",
+      "title": "Memory",
+      "series": 3,
+      "required": true,
+      "enabled": true,
+      "tags": ["memory", "learning", "confidentiality"]
+    }
+  },
+  "extensions": {
+    "description": "Optional brain files auto-loaded after manifest documents, in filename order.",
+    "directory": "extensions",
+    "glob": "*.md",
+    "enabled": true
+  },
+  "corpus": {
+    "description": "Corpus inventory metadata — not injected into every prompt; used for retrieval and gap tracking.",
+    "inventoryFile": "corpus/inventory.json",
+    "enabled": true
+  },
+  "placeholders": {
+    "04-system-operating": { "title": "System Operating", "status": "pending" },
+    "05-legal-reasoning": { "title": "Legal Reasoning & Methodology", "status": "pending" },
+    "06-guardrails-ethics": { "title": "Guardrails, Ethics & Compliance", "status": "pending" },
+    "07-knowledge-architecture": { "title": "Knowledge Architecture", "status": "pending" },
+    "08-workflow-playbooks": { "title": "Workflow Playbooks", "status": "pending" }
+  }
+}
