@@ -7,6 +7,7 @@ const platformLinks = [
   { href: "/registro", key: "founders" },
   { href: "/registro", key: "investors" },
   { href: "/iniciar-sesion?redirect_url=/firma", key: "firm" },
+  { href: "/conocimiento", key: "knowledge" },
 ] as const;
 
 const accountLinks = [
