@@ -20,6 +20,7 @@ import { buildPartySignatures } from "@/lib/documents/signatures";
 import { getFirmName } from "@/lib/brand";
 import { getDisclaimer } from "@/lib/ai/guardrails";
 import { getDocumentDisplayTitle } from "@/lib/documents/document-locale";
+import { writeAuditLog } from "@/lib/audit";
 
 export type DocumentRecord = {
   id: string;
@@ -474,6 +475,15 @@ export async function submitDocumentForReview(
     requesterSub: ownerSub,
     tenantId,
     helpMessage: message || undefined,
+  });
+
+  await writeAuditLog({
+    action: "document.submitted_for_review",
+    actorSub: ownerSub,
+    tenantId,
+    resourceType: "document",
+    resourceId: document.id,
+    metadata: { documentType, hasMessage: Boolean(message) },
   });
 }
 

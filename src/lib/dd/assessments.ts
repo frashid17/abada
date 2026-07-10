@@ -1,6 +1,7 @@
 import { auth } from "@clerk/nextjs/server";
 import { assertDealReadAccess, assertFirmDealAccess } from "@/lib/data-room/access";
 import { createServiceRoleSupabaseClient } from "@/lib/supabase/server";
+import { writeAuditLog } from "@/lib/audit";
 
 export type AssessmentRecord = {
   id: string;
@@ -79,5 +80,15 @@ export async function upsertDealAssessment(input: {
     .single();
 
   if (error) throw error;
+
+  await writeAuditLog({
+    action: input.publish ? "dd.assessment.published" : "dd.assessment.saved",
+    actorSub: userId,
+    tenantId,
+    resourceType: "assessment",
+    resourceId: data.id,
+    metadata: { dealId: input.dealId },
+  });
+
   return mapAssessment(data);
 }

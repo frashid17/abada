@@ -3,6 +3,7 @@ import type { FieldValues } from "@/lib/documents/intake/types";
 import { requireFirmMembership } from "@/lib/firm/membership";
 import { getPrimaryFirmTenantId, resolveFirmReviewTenantScope } from "@/lib/firm/tenant";
 import { createServiceRoleSupabaseClient } from "@/lib/supabase/server";
+import { writeAuditLog } from "@/lib/audit";
 
 export type ReviewStatus = "queued" | "in_progress" | "completed" | "cancelled";
 
@@ -278,5 +279,16 @@ export async function updateFirmReview(
         .update({ status: "in_review", updated_at: new Date().toISOString() })
         .eq("id", existing.document_id);
     }
+  }
+
+  if (input.status) {
+    await writeAuditLog({
+      action: `review.${input.status}`,
+      actorSub: membership.clerkUserId,
+      tenantId: existing.tenant_id,
+      resourceType: "review",
+      resourceId: reviewId,
+      metadata: { documentId: existing.document_id },
+    });
   }
 }
