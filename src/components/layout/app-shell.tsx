@@ -8,6 +8,7 @@ import { PageBackdrop } from "@/components/layout/page-backdrop";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { ShellNav } from "@/components/layout/shell-nav";
 import { ThemeToggle } from "@/components/layout/theme-toggle";
+import { NotificationBell } from "@/components/notifications/notification-bell";
 import { getFirmName } from "@/lib/brand";
 
 type AppShellProps = {
@@ -16,7 +17,7 @@ type AppShellProps = {
 };
 
 const navKeys = {
-  public: [],
+  public: [{ href: "/conocimiento", key: "knowledge" }],
   founder: [
     { href: "/fundador", key: "dashboard" },
     { href: "/fundador/documentos", key: "documents" },
@@ -60,6 +61,7 @@ export async function AppShell({ children, variant }: AppShellProps) {
             </span>
             <LocaleSelector />
             <ThemeToggle />
+            {variant !== "public" ? <NotificationBell /> : null}
             <AuthHeaderActions signInLabel={t("signIn")} />
           </div>
         </div>

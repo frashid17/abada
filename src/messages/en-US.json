@@ -13,8 +13,21 @@
       "rooms": "Data rooms",
       "queue": "Review queue",
       "dd": "Due diligence",
-      "team": "Team"
+      "team": "Team",
+      "knowledge": "Knowledge"
     }
+  },
+  "notifications": {
+    "title": "Notifications",
+    "empty": "You have no notifications.",
+    "markAllRead": "Mark all read"
+  },
+  "knowledgeHub": {
+    "eyebrow": "Knowledge hub",
+    "title": "Guides for raising capital in Colombia",
+    "subtitle": "Firm-curated articles on documents, due diligence, and venture.",
+    "readArticle": "Read article",
+    "backToHub": "Back to knowledge hub"
   },
   "theme": {
     "toggle": "Toggle theme",

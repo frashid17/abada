@@ -13,8 +13,21 @@
       "rooms": "Salas de datos",
       "queue": "Cola de revisión",
       "dd": "Due diligence",
-      "team": "Equipo"
+      "team": "Equipo",
+      "knowledge": "Conocimiento"
     }
+  },
+  "notifications": {
+    "title": "Notificaciones",
+    "empty": "No tienes notificaciones.",
+    "markAllRead": "Marcar todas leídas"
+  },
+  "knowledgeHub": {
+    "eyebrow": "Centro de conocimiento",
+    "title": "Guías para levantar capital en Colombia",
+    "subtitle": "Artículos curados por la firma sobre documentos, due diligence y venture.",
+    "readArticle": "Leer artículo",
+    "backToHub": "Volver al centro de conocimiento"
   },
   "theme": {
     "toggle": "Cambiar tema",
