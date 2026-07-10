@@ -617,6 +617,111 @@ export interface Database {
         };
         Relationships: [];
       };
+      scheduled_calls: {
+        Row: {
+          id: string;
+          tenant_id: string;
+          requester_sub: string;
+          payment_id: string | null;
+          scheduled_at: string;
+          status: string;
+          created_at: string;
+        };
+        Insert: {
+          id?: string;
+          tenant_id: string;
+          requester_sub: string;
+          payment_id?: string | null;
+          scheduled_at: string;
+          status?: string;
+          created_at?: string;
+        };
+        Update: {
+          id?: string;
+          tenant_id?: string;
+          requester_sub?: string;
+          payment_id?: string | null;
+          scheduled_at?: string;
+          status?: string;
+          created_at?: string;
+        };
+        Relationships: [];
+      };
+      notifications: {
+        Row: {
+          id: string;
+          tenant_id: string | null;
+          recipient_sub: string;
+          channel: string;
+          title: string;
+          body: string;
+          read_at: string | null;
+          created_at: string;
+        };
+        Insert: {
+          id?: string;
+          tenant_id?: string | null;
+          recipient_sub: string;
+          channel: string;
+          title: string;
+          body: string;
+          read_at?: string | null;
+          created_at?: string;
+        };
+        Update: {
+          id?: string;
+          tenant_id?: string | null;
+          recipient_sub?: string;
+          channel?: string;
+          title?: string;
+          body?: string;
+          read_at?: string | null;
+          created_at?: string;
+        };
+        Relationships: [];
+      };
+      knowledge_hub_articles: {
+        Row: {
+          id: string;
+          tenant_id: string;
+          slug: string;
+          title: string;
+          excerpt: string | null;
+          body: string;
+          seo: Json;
+          status: string;
+          published_at: string | null;
+          created_at: string;
+          updated_at: string;
+        };
+        Insert: {
+          id?: string;
+          tenant_id: string;
+          slug: string;
+          title: string;
+          excerpt?: string | null;
+          body?: string;
+          seo?: Json;
+          status?: string;
+          published_at?: string | null;
+          created_at?: string;
+          updated_at?: string;
+        };
+        Update: {
+          id?: string;
+          tenant_id?: string;
+          slug?: string;
+          title?: string;
+          excerpt?: string | null;
+          body?: string;
+          seo?: Json;
+          status?: string;
+          published_at?: string | null;
+          created_at?: string;
+          updated_at?: string;
+        };
+        Relationships: [];
+      };
       ai_call_logs: {
         Row: {
           id: string;
