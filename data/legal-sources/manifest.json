@@ -1,0 +1,247 @@
+{
+  "version": "1.0",
+  "jurisdiction": "CO",
+  "officialLocale": "es-CO",
+  "sources": [
+    {
+      "id": "constitucion-1991",
+      "corpusId": "PL-01",
+      "sourceType": "constitution",
+      "pdfFilename": "Constitución_Política_1_de_1991_Asamblea_Nacional_Constituyente.pdf",
+      "citation": { "es": "Constitución Política de Colombia (1991)", "en": "Political Constitution of Colombia (1991)" },
+      "title": { "es": "Constitución Política de Colombia", "en": "Political Constitution of Colombia" },
+      "description": {
+        "es": "Carta magna. Derechos fundamentales, libre empresa, debido proceso y marco constitucional para contratos y sociedades.",
+        "en": "Constitutional charter. Fundamental rights, free enterprise, due process, and the constitutional framework for contracts and companies."
+      }
+    },
+    {
+      "id": "codigo-civil-1463-1779",
+      "corpusId": "PL-02",
+      "sourceType": "code",
+      "pdfFilename": "Codigo Civil Art 1463 - 1779.pdf",
+      "citation": { "es": "Código Civil (arts. 1463–1779)", "en": "Civil Code (arts. 1463–1779)" },
+      "title": { "es": "Código Civil — artículos seleccionados", "en": "Civil Code — selected articles" },
+      "description": {
+        "es": "Obligaciones, contratos, personas y representación. Base de casi todo acuerdo privado.",
+        "en": "Obligations, contracts, persons, and agency. Underlies most private agreements."
+      }
+    },
+    {
+      "id": "codigo-comercio-410-1971",
+      "corpusId": "PL-03",
+      "sourceType": "code",
+      "pdfFilename": "Código de Comercio - Decreto_410_de_1971.pdf",
+      "citation": { "es": "Decreto 410 de 1971 (Código de Comercio)", "en": "Decree 410 of 1971 (Commercial Code)" },
+      "title": { "es": "Código de Comercio", "en": "Commercial Code" },
+      "description": {
+        "es": "Actividad mercantil, sociedades y obligaciones comerciales. Marco base del régimen SAS.",
+        "en": "Commercial activity, companies, and commercial obligations. Foundation for the SAS corporate framework."
+      }
+    },
+    {
+      "id": "codigo-sustantivo-trabajo",
+      "corpusId": "PL-04",
+      "sourceType": "code",
+      "pdfFilename": "Codigo_Sustantivo_Trabajo.pdf",
+      "citation": { "es": "Código Sustantivo del Trabajo", "en": "Substantive Labor Code" },
+      "title": { "es": "Código Sustantivo del Trabajo", "en": "Substantive Labor Code" },
+      "description": {
+        "es": "Base legal del Contrato de Trabajo Investment-Ready y relaciones laborales.",
+        "en": "Legal foundation for the investment-ready employment contract and labor relationships."
+      }
+    },
+    {
+      "id": "circular-basica-juridica-ss",
+      "corpusId": "PL-22",
+      "sourceType": "circular",
+      "pdfFilename": "Circular Basica Juridica - SS.pdf",
+      "citation": { "es": "Circular Básica Jurídica · Superintendencia de Sociedades", "en": "Basic Legal Circular · Superintendencia de Sociedades" },
+      "title": { "es": "Circular Básica Jurídica (SuperSociedades)", "en": "Basic Legal Circular (Superintendencia de Sociedades)" },
+      "description": {
+        "es": "Marco regulatorio societario, gobierno corporativo y obligaciones de sociedades vigiladas.",
+        "en": "Corporate regulatory framework, governance, and obligations for supervised companies."
+      }
+    },
+    {
+      "id": "decision-andina-351-1993",
+      "corpusId": "PL-13",
+      "sourceType": "decision",
+      "pdfFilename": "decisin-andina-351-de-1993.pdf",
+      "citation": { "es": "Decisión Andina 351 de 1993 (CAN)", "en": "Andean Decision 351 of 1993 (CAN)" },
+      "title": { "es": "Decisión Andina 351 — régimen común de propiedad intelectual", "en": "Andean Decision 351 — common IP regime" },
+      "description": {
+        "es": "Régimen común sobre derecho de autor y conexos en el bloque andino. Base para cesión de PI.",
+        "en": "Common regime on copyright and related rights in the Andean Community. Basis for IP assignment."
+      }
+    },
+    {
+      "id": "decision-andina-486",
+      "corpusId": "PL-14",
+      "sourceType": "decision",
+      "pdfFilename": "DA 486.pdf",
+      "citation": { "es": "Decisión Andina 486 (propiedad industrial)", "en": "Andean Decision 486 (industrial property)" },
+      "title": { "es": "Decisión Andina 486 — propiedad industrial", "en": "Andean Decision 486 — industrial property" },
+      "description": {
+        "es": "Régimen común sobre marcas, patentes y signos distintivos en la CAN.",
+        "en": "Common regime on trademarks, patents, and distinctive signs in the CAN."
+      }
+    },
+    {
+      "id": "decreto-1377-2013",
+      "corpusId": "PL-15",
+      "sourceType": "decree",
+      "pdfFilename": "Decreto_1377_de_2013.pdf",
+      "citation": { "es": "Decreto 1377 de 2013", "en": "Decree 1377 of 2013" },
+      "title": { "es": "Decreto 1377 de 2013 — reglamento Habeas Data", "en": "Decree 1377 of 2013 — Habeas Data regulation" },
+      "description": {
+        "es": "Reglamenta el tratamiento de datos personales y deberes de los responsables.",
+        "en": "Regulates personal data processing and data-controller obligations."
+      }
+    },
+    {
+      "id": "ley-1258-2008",
+      "corpusId": "PL-07",
+      "sourceType": "statute",
+      "pdfFilename": "Ley 1258 de 2008.pdf",
+      "citation": { "es": "Ley 1258 de 2008", "en": "Law 1258 of 2008" },
+      "title": { "es": "Ley 1258 de 2008 — Sociedad por Acciones Simplificada", "en": "Law 1258 of 2008 — Simplified Stock Company (SAS)" },
+      "description": {
+        "es": "Crea y regula la SAS. Estatuto más citado en acuerdos de accionistas y rondas de inversión.",
+        "en": "Creates and regulates the SAS. Most cited statute in shareholders agreements and investment rounds."
+      }
+    },
+    {
+      "id": "ley-23-1982",
+      "corpusId": "PL-12",
+      "sourceType": "statute",
+      "pdfFilename": "Ley_23_de_1982.pdf",
+      "citation": { "es": "Ley 23 de 1982", "en": "Law 23 of 1982" },
+      "title": { "es": "Ley 23 de 1982 — Derecho de Autor", "en": "Law 23 of 1982 — Copyright" },
+      "description": {
+        "es": "Régimen nacional de derecho de autor. Crítica para cesión de propiedad intelectual.",
+        "en": "National copyright regime. Critical for intellectual property assignment."
+      }
+    },
+    {
+      "id": "ley-50-1990",
+      "corpusId": "PL-09",
+      "sourceType": "statute",
+      "pdfFilename": "Ley_50_de_1990.pdf",
+      "citation": { "es": "Ley 50 de 1990", "en": "Law 50 of 1990" },
+      "title": { "es": "Ley 50 de 1990 — reforma laboral", "en": "Law 50 of 1990 — labor reform" },
+      "description": {
+        "es": "Reforma laboral. Contratos, terminación y obligaciones del empleador.",
+        "en": "Labor reform. Contracts, termination, and employer obligations."
+      }
+    },
+    {
+      "id": "ley-222-1995",
+      "corpusId": "PL-08",
+      "sourceType": "statute",
+      "pdfFilename": "Ley_222_de_1995.pdf",
+      "citation": { "es": "Ley 222 de 1995", "en": "Law 222 of 1995" },
+      "title": { "es": "Ley 222 de 1995 — modifica Código de Comercio", "en": "Law 222 of 1995 — amends Commercial Code" },
+      "description": {
+        "es": "Fundamentos societarios: asambleas, administración, reformas y disolución.",
+        "en": "Corporate fundamentals: meetings, management, amendments, and dissolution."
+      }
+    },
+    {
+      "id": "ley-789-2002",
+      "corpusId": "PL-10",
+      "sourceType": "statute",
+      "pdfFilename": "Ley_789_de_2002.pdf",
+      "citation": { "es": "Ley 789 de 2002", "en": "Law 789 of 2002" },
+      "title": { "es": "Ley 789 de 2002 — reforma laboral y parafiscales", "en": "Law 789 of 2002 — labor and parafiscal reform" },
+      "description": {
+        "es": "Flexibilización laboral y aportes parafiscales. Contexto del contrato de trabajo.",
+        "en": "Labor flexibility and parafiscal contributions. Employment contract context."
+      }
+    },
+    {
+      "id": "ley-1116-2006",
+      "corpusId": "PL-16",
+      "sourceType": "statute",
+      "pdfFilename": "Ley_1116_de_2006.pdf",
+      "citation": { "es": "Ley 1116 de 2006", "en": "Law 1116 of 2006" },
+      "title": { "es": "Ley 1116 de 2006 — insolvencia empresarial", "en": "Law 1116 of 2006 — business insolvency" },
+      "description": {
+        "es": "Régimen de reorganización y liquidación empresarial.",
+        "en": "Business reorganization and liquidation regime."
+      }
+    },
+    {
+      "id": "ley-1314-2009",
+      "corpusId": "PL-17",
+      "sourceType": "statute",
+      "pdfFilename": "Ley_1314_de_2009.pdf",
+      "citation": { "es": "Ley 1314 de 2009", "en": "Law 1314 of 2009" },
+      "title": { "es": "Ley 1314 de 2009 — adopción NIIF", "en": "Law 1314 of 2009 — IFRS adoption" },
+      "description": {
+        "es": "Marco contable y adopción de estándares internacionales de información financiera.",
+        "en": "Accounting framework and adoption of international financial reporting standards."
+      }
+    },
+    {
+      "id": "ley-1340-2009",
+      "corpusId": "PL-18",
+      "sourceType": "statute",
+      "pdfFilename": "Ley_1340_de_2009.pdf",
+      "citation": { "es": "Ley 1340 de 2009", "en": "Law 1340 of 2009" },
+      "title": { "es": "Ley 1340 de 2009 — protección de la competencia", "en": "Law 1340 of 2009 — competition protection" },
+      "description": {
+        "es": "Libre competencia, prácticas restrictivas y control de concentraciones.",
+        "en": "Free competition, restrictive practices, and merger control."
+      }
+    },
+    {
+      "id": "ley-1429-2010",
+      "corpusId": "PL-11",
+      "sourceType": "statute",
+      "pdfFilename": "Ley_1429_de_2010.pdf",
+      "citation": { "es": "Ley 1429 de 2010", "en": "Law 1429 of 2010" },
+      "title": { "es": "Ley 1429 de 2010 — formalización y generación de empleo", "en": "Law 1429 of 2010 — formalization and job creation" },
+      "description": {
+        "es": "Formalización empresarial, beneficios tributarios y contexto SAS/laboral.",
+        "en": "Business formalization, tax benefits, and SAS/labor context."
+      }
+    },
+    {
+      "id": "ley-1474-2011",
+      "corpusId": "PL-19",
+      "sourceType": "statute",
+      "pdfFilename": "Ley_1474_de_2011.pdf",
+      "citation": { "es": "Ley 1474 de 2011", "en": "Law 1474 of 2011" },
+      "title": { "es": "Ley 1474 de 2011 — Estatuto Anticorrupción", "en": "Law 1474 of 2011 — Anti-Corruption Statute" },
+      "description": {
+        "es": "Responsabilidad penal de personas jurídicas, compliance y contratación pública.",
+        "en": "Corporate criminal liability, compliance, and public procurement."
+      }
+    },
+    {
+      "id": "ley-1518-2012",
+      "corpusId": null,
+      "sourceType": "statute",
+      "pdfFilename": "Ley_1518_de_2012.pdf",
+      "citation": { "es": "Ley 1518 de 2012", "en": "Law 1518 of 2012" },
+      "title": { "es": "Ley 1518 de 2012 — Convenio UPOV (obtenciones vegetales)", "en": "Law 1518 of 2012 — UPOV Convention (plant varieties)" },
+      "description": {
+        "es": "Aprueba el Convenio Internacional para la Protección de las Obtenciones Vegetales (UPOV).",
+        "en": "Approves the International Convention for the Protection of New Varieties of Plants (UPOV)."
+      }
+    },
+    {
+      "id": "ley-1762-2015",
+      "corpusId": "PL-20",
+      "sourceType": "statute",
+      "pdfFilename": "Ley_1762_de_2015.pdf",
+      "citation": { "es": "Ley 1762 de 2015", "en": "Law 1762 of 2015" },
+      "title": { "es": "Ley 1762 de 2015 — contrabando y lavado de activos", "en": "Law 1762 of 2015 — smuggling and asset laundering" },
+      "description": {
+        "es": "Medidas contra contrabando, lavado de activos y financiación del terrorismo.",
+        "en": "Measures against smuggling, money laundering, and terrorist financing."
+      }
+    }
+  ]
+}

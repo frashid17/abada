@@ -11,7 +11,8 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "brain:import": "node scripts/import-brain-docs.mjs",
-    "brain:import-corpus": "node scripts/import-corpus-inventory.mjs"
+    "brain:import-corpus": "node scripts/import-corpus-inventory.mjs",
+    "corpus:ingest": "node scripts/ingest-legal-sources.mjs"
   },
   "dependencies": {
     "@ai-sdk/anthropic": "^4.0.0",

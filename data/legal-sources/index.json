@@ -1,0 +1,125 @@
+{
+  "version": "1.0",
+  "sources": [
+    {
+      "sourceId": "constitucion-1991",
+      "chunkCount": 1894,
+      "charCount": 890161,
+      "extractedAt": "2026-07-10T03:17:22.498Z"
+    },
+    {
+      "sourceId": "codigo-civil-1463-1779",
+      "chunkCount": 373,
+      "charCount": 157665,
+      "extractedAt": "2026-07-10T03:17:22.498Z"
+    },
+    {
+      "sourceId": "codigo-comercio-410-1971",
+      "chunkCount": 2642,
+      "charCount": 1127998,
+      "extractedAt": "2026-07-10T03:17:22.498Z"
+    },
+    {
+      "sourceId": "codigo-sustantivo-trabajo",
+      "chunkCount": 3227,
+      "charCount": 1284324,
+      "extractedAt": "2026-07-10T03:17:22.498Z"
+    },
+    {
+      "sourceId": "circular-basica-juridica-ss",
+      "chunkCount": 409,
+      "charCount": 537873,
+      "extractedAt": "2026-07-10T03:17:22.498Z"
+    },
+    {
+      "sourceId": "decision-andina-351-1993",
+      "chunkCount": 83,
+      "charCount": 37939,
+      "extractedAt": "2026-07-10T03:17:22.498Z"
+    },
+    {
+      "sourceId": "decision-andina-486",
+      "chunkCount": 372,
+      "charCount": 179766,
+      "extractedAt": "2026-07-10T03:17:22.498Z"
+    },
+    {
+      "sourceId": "decreto-1377-2013",
+      "chunkCount": 53,
+      "charCount": 33408,
+      "extractedAt": "2026-07-10T03:17:22.498Z"
+    },
+    {
+      "sourceId": "ley-1258-2008",
+      "chunkCount": 60,
+      "charCount": 30915,
+      "extractedAt": "2026-07-10T03:17:22.498Z"
+    },
+    {
+      "sourceId": "ley-23-1982",
+      "chunkCount": 309,
+      "charCount": 133011,
+      "extractedAt": "2026-07-10T03:17:22.498Z"
+    },
+    {
+      "sourceId": "ley-50-1990",
+      "chunkCount": 215,
+      "charCount": 113483,
+      "extractedAt": "2026-07-10T03:17:22.498Z"
+    },
+    {
+      "sourceId": "ley-222-1995",
+      "chunkCount": 426,
+      "charCount": 221382,
+      "extractedAt": "2026-07-10T03:17:22.498Z"
+    },
+    {
+      "sourceId": "ley-789-2002",
+      "chunkCount": 147,
+      "charCount": 150721,
+      "extractedAt": "2026-07-10T03:17:22.498Z"
+    },
+    {
+      "sourceId": "ley-1116-2006",
+      "chunkCount": 188,
+      "charCount": 186724,
+      "extractedAt": "2026-07-10T03:17:22.498Z"
+    },
+    {
+      "sourceId": "ley-1314-2009",
+      "chunkCount": 24,
+      "charCount": 28886,
+      "extractedAt": "2026-07-10T03:17:22.498Z"
+    },
+    {
+      "sourceId": "ley-1340-2009",
+      "chunkCount": 60,
+      "charCount": 46064,
+      "extractedAt": "2026-07-10T03:17:22.498Z"
+    },
+    {
+      "sourceId": "ley-1429-2010",
+      "chunkCount": 117,
+      "charCount": 93077,
+      "extractedAt": "2026-07-10T03:17:22.498Z"
+    },
+    {
+      "sourceId": "ley-1474-2011",
+      "chunkCount": 296,
+      "charCount": 184678,
+      "extractedAt": "2026-07-10T03:17:22.498Z"
+    },
+    {
+      "sourceId": "ley-1518-2012",
+      "chunkCount": 94,
+      "charCount": 100248,
+      "extractedAt": "2026-07-10T03:17:22.498Z"
+    },
+    {
+      "sourceId": "ley-1762-2015",
+      "chunkCount": 112,
+      "charCount": 89569,
+      "extractedAt": "2026-07-10T03:17:22.498Z"
+    }
+  ]
+}
