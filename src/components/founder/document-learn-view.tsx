@@ -69,8 +69,10 @@ export function DocumentLearnView({ payload }: DocumentLearnViewProps) {
     if (!root) return;
 
     function onScroll() {
-      const max = root.scrollHeight - root.clientHeight;
-      setScrollProgress(max > 0 ? Math.min(100, (root.scrollTop / max) * 100) : 0);
+      const element = scrollRef.current;
+      if (!element) return;
+      const max = element.scrollHeight - element.clientHeight;
+      setScrollProgress(max > 0 ? Math.min(100, (element.scrollTop / max) * 100) : 0);
     }
 
     root.addEventListener("scroll", onScroll, { passive: true });
