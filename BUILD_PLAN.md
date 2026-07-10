@@ -37,8 +37,10 @@ Colombian legal-AI due diligence & investment-readiness platform.
 - [x] AI gateway scaffold (Vercel AI SDK + Anthropic; fast/strong routing)
 - [x] Guardrails + localized disclaimers (initial rules)
 - [x] pgvector + FTS retrieval scaffold (`firm_knowledge`, `search_firm_knowledge`)
+- [x] Legal corpus ingest — 20 Colombian law PDFs → bilingual chunk files (`data/legal-sources/`, `npm run corpus:ingest`)
+- [x] Platform legal corpus schema (`014_legal_corpus.sql`) + local/DB search (`search_legal_corpus`)
 - [x] Mi Espacio dashboard wired to `documents` table
-- [ ] **Manual:** Apply migration `002_m1_full_schema.sql` to Supabase
+- [ ] **Manual:** Apply migration `014_legal_corpus.sql` and load chunk JSON into Supabase (optional — local files work for dev)
 - [ ] **Manual:** Wompi merchant verification + sandbox keys (client phone) → live checkout in M4
 
 ## M2 — Documents 1–2 end to end
