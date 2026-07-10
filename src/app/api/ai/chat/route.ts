@@ -2,6 +2,7 @@ import { auth } from "@clerk/nextjs/server";
 import { NextResponse } from "next/server";
 import { z } from "zod";
 import { runAiGateway } from "@/lib/ai/gateway";
+import { enforceRateLimit, RATE_LIMITS, rateLimitResponseBody } from "@/lib/rate-limit";
 
 const bodySchema = z.object({
   message: z.string().min(1).max(8000),
@@ -27,6 +28,15 @@ export async function POST(request: Request) {
   const { userId } = await auth();
   if (!userId) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+  }
+
+  const rate = await enforceRateLimit({
+    subjectSub: userId,
+    actionKey: "ai.chat",
+    rules: RATE_LIMITS.aiChat,
+  });
+  if (!rate.allowed) {
+    return NextResponse.json(rateLimitResponseBody(rate), { status: 429 });
   }
 
   let body: z.infer<typeof bodySchema>;
