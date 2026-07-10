@@ -2,7 +2,7 @@
 
 Colombian legal-AI due diligence & investment-readiness platform.
 
-**Current milestone:** M5 — DD target upload + firm reviewer
+**Current milestone:** M6 — DD investor view + knowledge hub + notifications
 
 ## M0 — Foundations
 
@@ -87,9 +87,13 @@ Colombian legal-AI due diligence & investment-readiness platform.
 
 ## M6 — DD investor view + knowledge hub + notifications
 
-- [ ] Assessment-first investor view
-- [ ] Scheduled call booking; notification center
-- [ ] Knowledge hub (10 article slots)
+- [x] Assessment-first investor view (`/inversionista/salas/[dealId]`)
+- [x] Firm can add investors to DD rooms (create form + deal detail)
+- [x] Notification center (bell in app shell; in-app notifications on assessment publish / investor added / call requests)
+- [x] Scheduled call booking (investor request + firm status panel)
+- [x] Knowledge hub — 10 published article slots (`/conocimiento`, `/conocimiento/[slug]`)
+- [ ] **Manual:** Apply migration `013_m6_knowledge_hub_seed.sql`
+- [ ] **Manual:** End-to-end test — firm adds investor → publishes assessment → investor notified → schedules call
 
 ## M7 — Hardening
 
