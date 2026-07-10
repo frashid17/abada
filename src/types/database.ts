@@ -722,6 +722,113 @@ export interface Database {
         };
         Relationships: [];
       };
+      legal_sources: {
+        Row: {
+          id: string;
+          corpus_id: string | null;
+          source_type: string;
+          jurisdiction: string;
+          citation_es: string;
+          citation_en: string;
+          title_es: string;
+          title_en: string;
+          description_es: string | null;
+          description_en: string | null;
+          pdf_filename: string | null;
+          chunk_count: number;
+          status: string;
+          extracted_at: string | null;
+          created_at: string;
+          updated_at: string;
+        };
+        Insert: {
+          id: string;
+          corpus_id?: string | null;
+          source_type: string;
+          jurisdiction?: string;
+          citation_es: string;
+          citation_en: string;
+          title_es: string;
+          title_en: string;
+          description_es?: string | null;
+          description_en?: string | null;
+          pdf_filename?: string | null;
+          chunk_count?: number;
+          status?: string;
+          extracted_at?: string | null;
+          created_at?: string;
+          updated_at?: string;
+        };
+        Update: {
+          id?: string;
+          corpus_id?: string | null;
+          source_type?: string;
+          jurisdiction?: string;
+          citation_es?: string;
+          citation_en?: string;
+          title_es?: string;
+          title_en?: string;
+          description_es?: string | null;
+          description_en?: string | null;
+          pdf_filename?: string | null;
+          chunk_count?: number;
+          status?: string;
+          extracted_at?: string | null;
+          created_at?: string;
+          updated_at?: string;
+        };
+        Relationships: [];
+      };
+      legal_source_chunks: {
+        Row: {
+          id: string;
+          source_id: string;
+          locale: string;
+          chunk_index: number;
+          article_ref: string;
+          heading: string;
+          content: string;
+          translation_status: string;
+          content_tsv: string | null;
+          embedding: string | null;
+          created_at: string;
+        };
+        Insert: {
+          id?: string;
+          source_id: string;
+          locale: string;
+          chunk_index: number;
+          article_ref: string;
+          heading: string;
+          content: string;
+          translation_status?: string;
+          content_tsv?: string | null;
+          embedding?: string | null;
+          created_at?: string;
+        };
+        Update: {
+          id?: string;
+          source_id?: string;
+          locale?: string;
+          chunk_index?: number;
+          article_ref?: string;
+          heading?: string;
+          content?: string;
+          translation_status?: string;
+          content_tsv?: string | null;
+          embedding?: string | null;
+          created_at?: string;
+        };
+        Relationships: [
+          {
+            foreignKeyName: "legal_source_chunks_source_id_fkey";
+            columns: ["source_id"];
+            isOneToOne: false;
+            referencedRelation: "legal_sources";
+            referencedColumns: ["id"];
+          },
+        ];
+      };
       ai_call_logs: {
         Row: {
           id: string;
@@ -768,6 +875,20 @@ export interface Database {
           topic_key: string;
           title: string;
           content: string;
+          rank: number;
+        }[];
+      };
+      search_legal_corpus: {
+        Args: { p_query: string; p_locale?: string; p_limit?: number };
+        Returns: {
+          id: string;
+          source_id: string;
+          locale: string;
+          article_ref: string;
+          heading: string;
+          content: string;
+          citation: string;
+          title: string;
           rank: number;
         }[];
       };

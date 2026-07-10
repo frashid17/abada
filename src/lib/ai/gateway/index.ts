@@ -9,7 +9,7 @@ import {
 import type { GatewayRequest, GatewayResponse } from "@/lib/ai/brain/types";
 import { finalizeGatewayResponse } from "@/lib/ai/guardrails";
 import { resolveModelForTask } from "@/lib/ai/gateway/routing";
-import { formatKnowledgeContext, searchFirmKnowledge } from "@/lib/ai/retrieval";
+import { formatKnowledgeContext, searchFirmKnowledge, searchLegalCorpus, formatLegalCorpusForPrompt } from "@/lib/ai/retrieval";
 import { createServiceRoleSupabaseClient } from "@/lib/supabase/server";
 
 function assertAnthropicConfigured(): void {
@@ -39,6 +39,17 @@ export async function runAiGateway(request: GatewayRequest): Promise<GatewayResp
     }
   }
 
+  const legalTasks = new Set(["drafting", "dd_finding", "knowledge_hub", "intake_summary"]);
+  let legalCorpusContext: string | undefined;
+  if (legalTasks.has(request.task)) {
+    try {
+      const hits = await searchLegalCorpus(request.userMessage, request.locale, 8);
+      legalCorpusContext = formatLegalCorpusForPrompt(hits, request.locale);
+    } catch {
+      legalCorpusContext = undefined;
+    }
+  }
+
   const runtime = buildRuntimeInstructions({
     register: request.register,
     task: request.task,
@@ -52,6 +63,9 @@ export async function runAiGateway(request: GatewayRequest): Promise<GatewayResp
   }
   if (knowledgeContext) {
     systemParts.push("---", "Retrieved firm knowledge:\n" + knowledgeContext);
+  }
+  if (legalCorpusContext) {
+    systemParts.push("---", "Retrieved legal corpus (cite only from this grounding):\n" + legalCorpusContext);
   }
   const system = systemParts.join("\n\n");
 

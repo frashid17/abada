@@ -1,4 +1,10 @@
 import { createServiceRoleSupabaseClient } from "@/lib/supabase/server";
+import { parseDocumentLocale, type DocumentLocale } from "@/lib/documents/document-locale";
+import {
+  formatLegalCorpusContext,
+  searchLegalCorpusLocal,
+  type LegalCorpusSearchHit,
+} from "@/lib/legal-corpus";
 
 export type KnowledgeSearchResult = {
   id: string;
@@ -55,4 +61,52 @@ export function formatKnowledgeContext(results: KnowledgeSearchResult[]): string
         `[${i + 1}] ${r.title} (${r.topicKey})\n${r.content.slice(0, 1200)}`,
     )
     .join("\n\n---\n\n");
+}
+
+export type LegalCorpusSearchResult = LegalCorpusSearchHit;
+
+/**
+ * Platform legal corpus search. Uses Supabase FTS when available, else local chunk files.
+ */
+export async function searchLegalCorpus(
+  query: string,
+  locale: DocumentLocale,
+  limit = 12,
+): Promise<LegalCorpusSearchResult[]> {
+  try {
+    const supabase = createServiceRoleSupabaseClient();
+    const { data, error } = await supabase.rpc("search_legal_corpus", {
+      p_query: query,
+      p_locale: locale,
+      p_limit: limit,
+    });
+
+    if (!error && data && data.length > 0) {
+      return data.map((row) => {
+        const rowLocale = parseDocumentLocale(row.locale);
+        return {
+          sourceId: row.source_id,
+          locale: rowLocale,
+          articleRef: row.article_ref,
+          heading: row.heading,
+          content: row.content,
+          citation: row.citation,
+          title: row.title,
+          translationStatus: rowLocale === "en-US" ? ("pending" as const) : ("official" as const),
+          score: row.rank,
+        };
+      });
+    }
+  } catch {
+    // Fall through to local file search (dev / pre-migration)
+  }
+
+  return searchLegalCorpusLocal(query, locale, limit);
+}
+
+export function formatLegalCorpusForPrompt(
+  results: LegalCorpusSearchResult[],
+  locale: DocumentLocale,
+): string {
+  return formatLegalCorpusContext(results, locale);
 }
