@@ -892,6 +892,23 @@ export interface Database {
           rank: number;
         }[];
       };
+      increment_rate_limit: {
+        Args: {
+          p_subject_sub: string;
+          p_action_key: string;
+          p_window_start: string;
+          p_tenant_id?: string;
+        };
+        Returns: number;
+      };
+      purge_stale_rate_limits: {
+        Args: Record<string, never>;
+        Returns: number;
+      };
+      purge_expired_audit_logs: {
+        Args: Record<string, never>;
+        Returns: number;
+      };
     };
     Enums: Record<string, never>;
     CompositeTypes: Record<string, never>;
