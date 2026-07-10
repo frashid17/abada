@@ -14,7 +14,8 @@
       "queue": "Review queue",
       "dd": "Due diligence",
       "team": "Team",
-      "knowledge": "Knowledge"
+      "knowledge": "Knowledge",
+      "templates": "Templates"
     }
   },
   "notifications": {
@@ -356,9 +357,13 @@
       "documentCount": "{count} documents",
       "comingSoon": "The guided flow for this document is not available yet."
     },
+    "templates": {
+      "eyebrow": "Firm templates",
+      "title": "Learn the documents",
+      "subtitle": "Choose a template, read each clause, and see why it matters for your round — with firm commentary."
+    },
     "learn": {
       "documentProgress": "Document {step} of {total}",
-      "intro": "This is the first document a serious investor reads. It sets the rules of control and exit for everyone on your cap table: who decides what, who can buy or sell shares, and what happens when the company is sold. Click a clause to see why it matters in the side panel.",
       "clickHint": "Click a clause to see its explanation",
       "selectClauseTitle": "Select a clause",
       "selectClauseHint": "Click any clause in the draft to see what it means and why it matters for your round.",
@@ -367,18 +372,50 @@
       "whyItMatters": "Why it matters",
       "continueDrafting": "Continue drafting",
       "prototypeNote": "Prototype · in-document education layer. Legal text must be confirmed by a named firm attorney before use.",
+      "documents": {
+        "term_sheet": {
+          "tabLabel": "Series A term sheet",
+          "title": "Term sheet — Series A",
+          "description": "Reference template for preferred-share financing in Colombia, with firm commentary."
+        },
+        "shareholders": {
+          "tabLabel": "Shareholders agreement",
+          "title": "Shareholders agreement",
+          "description": "Control, transfer, and exit rules among shareholders after the term sheet."
+        }
+      },
+      "intros": {
+        "term_sheet": "This term sheet summarizes a Series A preferred-share round. It is the first document you negotiate with a fund before definitive agreements. Click a clause to see what it means and the firm's commentary.",
+        "shareholders": "This is the document a serious investor reviews after the term sheet. It sets the rules of control and exit for your cap table. Click a clause to see why it matters in the side panel."
+      },
       "callouts": {
-        "dragAlong": {
-          "label": "Drag-along threshold",
-          "hint": "The single most sensitive number in the document. Our default is 75%. It decides when you can be forced to sell."
+        "term_sheet": {
+          "liquidationPreference": {
+            "label": "Liquidation preference",
+            "hint": "The most important preferred-share right: investors get paid before founders and the team. Standard is 1x, but it can increase with negotiation."
+          },
+          "protectiveProvisions": {
+            "label": "Protective provisions",
+            "hint": "As a minority, the fund needs vetoes on key decisions — debt, issuances, business changes. Aim for balance with operating autonomy."
+          },
+          "liquidityRights": {
+            "label": "Liquidity rights",
+            "hint": "Defines how and when investors can demand an exit if there is no liquidity event within 7–10 years."
+          }
         },
-        "antiDilution": {
-          "label": "Anti-dilution type",
-          "hint": "A broad-based weighted average is gentle. A full ratchet is harsh. Know which one protects the investor here."
-        },
-        "vesting": {
-          "label": "Founder vesting",
-          "hint": "You earn your shares over four years. Leave before the one-year cliff and you usually keep nothing."
+        "shareholders": {
+          "dragAlong": {
+            "label": "Drag-along threshold",
+            "hint": "The single most sensitive number in the document. Our default is 75%. It decides when you can be forced to sell."
+          },
+          "antiDilution": {
+            "label": "Anti-dilution type",
+            "hint": "A broad-based weighted average is gentle. A full ratchet is harsh. Know which one protects the investor here."
+          },
+          "vesting": {
+            "label": "Founder vesting",
+            "hint": "You earn your shares over four years. Leave before the one-year cliff and you usually keep nothing."
+          }
         }
       },
       "clauses": {
@@ -438,10 +475,100 @@
             "summary": "Fixes Colombian law and contractual domicile city.",
             "why": "Anchors the agreement to local law and a known forum — relevant for international funds investing in Colombia."
           }
+        },
+        "term_sheet": {
+          "preamble": {
+            "title": "Term sheet framework",
+            "summary": "Summarizes the preferred-share investment offer, what is binding (confidentiality), and what remains subject to definitive agreements.",
+            "why": "Only confidentiality and exclusivity are typically binding at signing. Everything else is a negotiation baseline until subscription and shareholders agreements close."
+          },
+          "1": {
+            "title": "Offer terms",
+            "summary": "Sets closing, investors, amount, price per share, post-money valuation, cap table, and use of proceeds.",
+            "why": "Investors expect preferred shares, not common. The amount defines ownership %; post-money valuation locks that percentage before the round closes."
+          },
+          "2": {
+            "title": "Dividends",
+            "summary": "Governs if and when dividends are paid on preferred shares and blocks distributions for several years.",
+            "why": "Should align with the business plan. It can reassure funds that capital will not be used to pay founders until meaningful traction is achieved."
+          },
+          "3": {
+            "title": "Liquidation preference",
+            "summary": "Defines how much preferred holders receive before common holders in a liquidation, sale, or similar event.",
+            "why": "This is the core economic right of preferred shares. Standard is 1x the investment; in bridge rounds we have seen up to 3x depending on risk and leverage."
+          },
+          "4": {
+            "title": "Voting rights",
+            "summary": "Preferred shares vote on an as-converted basis, elect an investor director, and common shares may carry multiple votes.",
+            "why": "Favors founders if common shares carry more weight or multiple votes. One vote per share is standard; control should remain majority founder-held in early stages."
+          },
+          "5": {
+            "title": "Protective provisions",
+            "summary": "Lists decisions requiring preferred-holder consent — issuances, debt, business changes, etc.",
+            "why": "As a minority, the fund needs vetoes. Includes the debt threshold without consent: a key autonomy vs. oversight decision."
+          },
+          "6": {
+            "title": "Optional conversion",
+            "summary": "Allows preferred shares to convert 1:1 into common at the holder's option.",
+            "why": "Gives investors flexibility to move into common shares when useful, for example before an exit or a later round."
+          },
+          "7": {
+            "title": "Subscription agreement",
+            "summary": "Covers representations, warranties, closing conditions, and allocation of legal fees.",
+            "why": "Conditions precedent protect the investor between term sheet signing and closing. Founders prefer specific conditions; funds prefer broad wording."
+          },
+          "8": {
+            "title": "Information rights",
+            "summary": "Access to facilities, periodic reports, annual budget, and updated cap table.",
+            "why": "Standard rights that let investors monitor the company. Ideally share information founders already use without excessive team overhead."
+          },
+          "9": {
+            "title": "Pro rata rights",
+            "summary": "Lets investors and founders participate in future rounds to avoid dilution.",
+            "why": "An important concession for funds and usually easy to grant: it preserves their option to keep investing in the company."
+          },
+          "10": {
+            "title": "Supermajority and non-compete",
+            "summary": "Sensitive board decisions (CEO, budget, auditors) and team non-compete agreements.",
+            "why": "Majorities can sit at board or shareholder level; board is faster. Non-competes are common in US-style docs but enforceability in Colombia is questionable — limit time and scope."
+          },
+          "11": {
+            "title": "Right of first offer and tag-along",
+            "summary": "Other shareholders' right to buy or join a proposed share sale.",
+            "why": "Ensures that if founders sell partially, investors can exit on the same terms."
+          },
+          "12": {
+            "title": "Board of directors",
+            "summary": "Initial board composition with seats for investors and founders.",
+            "why": "Ideal first-round size is small, ideally 3. The board decides whether to keep or remove the CEO — founders should retain majority control."
+          },
+          "13": {
+            "title": "Drag-along",
+            "summary": "Requires all shareholders to sell if a qualified percentage approves a 100% company sale.",
+            "why": "Founders should be able to block an unwanted sale; this usually requires founder and preferred majorities, not investors alone."
+          },
+          "14": {
+            "title": "Liquidity rights",
+            "summary": "Forced exit mechanism if there is no liquidity between years 7 and 10 post-closing.",
+            "why": "Funds need an exit horizon. Defines minimum return thresholds (IRR or multiple) before a demand sale."
+          },
+          "15": {
+            "title": "Other matters",
+            "summary": "Founder sale restrictions, term sheet confidentiality, and expiration date.",
+            "why": "Confidentiality protects the negotiation; expiration forces closing or renegotiation within a reasonable window."
+          }
         }
       }
     },
     "sala": {
+      "subnav": {
+        "ariaLabel": "Data room sections",
+        "rooms": "My rooms",
+        "documentation": "Documentation"
+      },
+      "documentation": {
+        "eyebrow": "Reference documentation"
+      },
       "eyebrow": "Data room",
       "title": "My due diligence rooms",
       "subtitle": "Upload documents requested by the firm as part of your DD process.",

@@ -1,7 +1,6 @@
 import { getTranslations } from "next-intl/server";
 import { FounderChecklistTracker } from "@/components/founder/founder-checklist-tracker";
 import { FounderDashboardHero } from "@/components/founder/founder-dashboard-hero";
-import { FounderLearnSection } from "@/components/founder/founder-learn-section";
 import { FounderWorkspaceFocus } from "@/components/founder/founder-workspace-focus";
 import { FeaturePanel } from "@/components/legal/feature-panel";
 import { LegalDisclosure } from "@/components/legal/legal-disclosure";
@@ -61,8 +60,6 @@ export async function FounderDashboard({ data }: FounderDashboardProps) {
         stepLabel={(step) => t("dashboard.step", { step })}
         title={t("dashboard.pipelineTitle")}
       />
-
-      <FounderLearnSection />
 
       <div className="grid gap-6 xl:grid-cols-[1fr_280px] xl:items-start">
         <FounderWorkspaceFocus data={data} />

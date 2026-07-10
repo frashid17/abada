@@ -14,7 +14,8 @@
       "queue": "Cola de revisión",
       "dd": "Due diligence",
       "team": "Equipo",
-      "knowledge": "Conocimiento"
+      "knowledge": "Conocimiento",
+      "templates": "Plantillas"
     }
   },
   "notifications": {
@@ -356,9 +357,13 @@
       "documentCount": "{count} documentos",
       "comingSoon": "El flujo guiado de este documento aún no está disponible."
     },
+    "templates": {
+      "eyebrow": "Plantillas de la firma",
+      "title": "Aprende los documentos",
+      "subtitle": "Elige una plantilla, lee cada cláusula y descubre por qué importa en tu ronda — con comentarios de la firma."
+    },
     "learn": {
       "documentProgress": "Documento {step} de {total}",
-      "intro": "Este es el primer documento que un inversionista serio revisa. Define las reglas de control y salida de tu cap table: quién decide qué, quién puede comprar o vender acciones y qué pasa si la compañía se vende. Haz clic en una cláusula para ver por qué importa en el panel lateral.",
       "clickHint": "Haz clic en una cláusula para ver la explicación",
       "selectClauseTitle": "Selecciona una cláusula",
       "selectClauseHint": "Haz clic en cualquier cláusula del borrador para ver qué significa y por qué importa para tu ronda.",
@@ -367,18 +372,50 @@
       "whyItMatters": "Por qué importa",
       "continueDrafting": "Continuar borrador",
       "prototypeNote": "Prototipo · capa educativa en el documento. El texto legal debe ser confirmado por un abogado nombrado de la firma antes de usar.",
+      "documents": {
+        "term_sheet": {
+          "tabLabel": "Hoja de términos Serie A",
+          "title": "Hoja de términos — Serie A",
+          "description": "Plantilla de referencia para financiación con acciones preferentes en Colombia, con comentarios de la firma."
+        },
+        "shareholders": {
+          "tabLabel": "Acuerdo de accionistas",
+          "title": "Acuerdo de accionistas",
+          "description": "Reglas de control, transferencia y salida entre accionistas después del term sheet."
+        }
+      },
+      "intros": {
+        "term_sheet": "Esta hoja de términos resume la oferta de una ronda Serie A con acciones preferentes. Es el primer documento que negocias con un fondo antes de los acuerdos definitivos. Haz clic en una cláusula para ver qué significa y los comentarios de la firma.",
+        "shareholders": "Este es el documento que un inversionista serio revisa después del term sheet. Define las reglas de control y salida de tu cap table. Haz clic en una cláusula para ver por qué importa en el panel lateral."
+      },
       "callouts": {
-        "dragAlong": {
-          "label": "Umbral de drag-along",
-          "hint": "El número más sensible del documento. Nuestro valor por defecto es 75 %. Define cuándo puedes ser obligado a vender."
+        "term_sheet": {
+          "liquidationPreference": {
+            "label": "Liquidación preferente",
+            "hint": "El derecho más importante de las preferentes: el inversionista cobra antes que fundadores y equipo. Lo usual es 1x, pero puede subir según negociación."
+          },
+          "protectiveProvisions": {
+            "label": "Medidas de protección",
+            "hint": "Como minoría, el fondo necesita vetos sobre decisiones clave — deuda, emisiones, cambio de negocio. Busca equilibrio con autonomía operativa."
+          },
+          "liquidityRights": {
+            "label": "Derechos de liquidez",
+            "hint": "Define cómo y cuándo los inversionistas pueden exigir una salida si no hay evento de liquidez en 7–10 años."
+          }
         },
-        "antiDilution": {
-          "label": "Tipo de anti-dilución",
-          "hint": "El promedio ponderado amplio es suave. Un full ratchet es duro. Identifica cuál protege al inversionista aquí."
-        },
-        "vesting": {
-          "label": "Vesting de fundadores",
-          "hint": "Ganas tus acciones en cuatro años. Si sales antes del cliff de un año, normalmente no conservas nada."
+        "shareholders": {
+          "dragAlong": {
+            "label": "Umbral de drag-along",
+            "hint": "El número más sensible del documento. Nuestro valor por defecto es 75 %. Define cuándo puedes ser obligado a vender."
+          },
+          "antiDilution": {
+            "label": "Tipo de anti-dilución",
+            "hint": "El promedio ponderado amplio es suave. Un full ratchet es duro. Identifica cuál protege al inversionista aquí."
+          },
+          "vesting": {
+            "label": "Vesting de fundadores",
+            "hint": "Ganas tus acciones en cuatro años. Si sales antes del cliff de un año, normalmente no conservas nada."
+          }
         }
       },
       "clauses": {
@@ -438,10 +475,100 @@
             "summary": "Fija legislación colombiana y ciudad de domicilio contractual.",
             "why": "Ancla el acuerdo a derecho local y un foro conocido — relevante para fondos internacionales que invierten en Colombia."
           }
+        },
+        "term_sheet": {
+          "preamble": {
+            "title": "Marco de la hoja de términos",
+            "summary": "Resume la oferta de inversión en acciones preferentes, qué es vinculante (confidencialidad) y qué queda sujeto a acuerdos definitivos.",
+            "why": "Solo confidencialidad y exclusividad suelen ser obligatorias al firmar. El resto es base de negociación hasta cerrar suscripción y acuerdo de accionistas."
+          },
+          "1": {
+            "title": "Términos de la oferta",
+            "summary": "Fija cierre, inversionistas, monto, precio por acción, valoración post-money, cap table y uso de recursos.",
+            "why": "Los inversionistas esperan acciones preferentes, no ordinarias. El monto define el % de participación; la valoración post-money garantiza ese porcentaje antes de cerrar la ronda."
+          },
+          "2": {
+            "title": "Dividendos",
+            "summary": "Regula si y cuándo se pagan dividendos sobre preferentes y bloquea distribuciones por varios años.",
+            "why": "Debe ser coherente con el plan de negocio. Puede dar tranquilidad a los fondos de que el capital no se usará para pagar a fundadores hasta lograr tracción."
+          },
+          "3": {
+            "title": "Liquidación preferente",
+            "summary": "Define cuánto cobran las preferentes antes que ordinarias en liquidación, venta o evento similar.",
+            "why": "Es el derecho económico central de las preferentes. Lo usual es 1x la inversión; en puentes hemos visto hasta 3x según riesgo y poder de negociación."
+          },
+          "4": {
+            "title": "Derechos de voto",
+            "summary": "Las preferentes votan en as-converted, eligen un director inversionista y pueden tener voto múltiple en ordinarias.",
+            "why": "Favorece a fundadores si las ordinarias tienen más peso o voto múltiple. Lo usual es un voto por acción; el control debe quedar mayoritariamente con el equipo fundador en etapas tempranas."
+          },
+          "5": {
+            "title": "Medidas de protección",
+            "summary": "Lista decisiones que requieren consentimiento de la mayoría de preferentes — emisiones, deuda, cambios de negocio, etc.",
+            "why": "Como minoría, el fondo necesita vetos. Incluye el tope de deuda sin consulta: una de las decisiones clave de autonomía vs. supervisión."
+          },
+          "6": {
+            "title": "Conversión opcional",
+            "summary": "Permite convertir preferentes 1:1 en ordinarias a opción del tenedor.",
+            "why": "Da flexibilidad al inversionista para pasar a ordinarias si conviene, por ejemplo antes de una salida o una ronda posterior."
+          },
+          "7": {
+            "title": "Acuerdo de suscripción",
+            "summary": "Cubre manifestaciones, garantías, condiciones de cierre y reparto de gastos legales.",
+            "why": "Las condiciones precedentes protegen al inversionista entre firma del term sheet y cierre. Para fundadores conviene que sean específicas; para fondos, redacción general."
+          },
+          "8": {
+            "title": "Derechos de información",
+            "summary": "Acceso a instalaciones, reportes periódicos, presupuesto anual y cap table actualizada.",
+            "why": "Son usuales y permiten monitorear la compañía. Idealmente comparte información que ya usan los fundadores sin consumir tiempo excesivo del equipo."
+          },
+          "9": {
+            "title": "Derecho pro rata",
+            "summary": "Permite a inversionistas y fundadores participar en rondas futuras para evitar dilución.",
+            "why": "Concesión importante para fondos y generalmente fácil de conceder: mantiene su opción de seguir invirtiendo en la compañía."
+          },
+          "10": {
+            "title": "Mayoría especial y no competencia",
+            "summary": "Decisiones sensibles de junta (CEO, presupuesto, auditores) y acuerdos de no competencia del equipo.",
+            "why": "Las mayorías pueden estar en junta o en accionistas; junta es más ágil. La no competencia es usual en modelos US pero su exigibilidad en Colombia es cuestionable — limitar tiempo y alcance."
+          },
+          "11": {
+            "title": "Primera oferta y tag-along",
+            "summary": "Derecho de los demás accionistas a comprar o acompañar una venta de acciones.",
+            "why": "Asegura que si fundadores venden parcialmente, los inversionistas puedan salir en los mismos términos."
+          },
+          "12": {
+            "title": "Junta directiva",
+            "summary": "Composición inicial de la junta con asientos para inversionistas y fundadores.",
+            "why": "Lo ideal en la primera ronda es un número reducido, idealmente 3. La junta define si mantiene o remueve al CEO — los fundadores deberían conservar mayoría."
+          },
+          "13": {
+            "title": "Cláusula de arrastre",
+            "summary": "Obliga a vender si un porcentaje calificado aprueba una venta del 100 % de la compañía.",
+            "why": "Los fundadores deberían poder bloquear una venta no deseada; suele requerir mayoría de fundadores y preferentes, no solo inversionistas."
+          },
+          "14": {
+            "title": "Derechos de liquidez",
+            "summary": "Mecanismo de salida forzada si no hay liquidez entre los años 7 y 10 post-cierre.",
+            "why": "Los fondos necesitan horizonte de salida. Define umbrales de retorno mínimo (TIR o múltiplo) antes de una salida por demanda."
+          },
+          "15": {
+            "title": "Otros asuntos",
+            "summary": "Restricción de venta de fundadores, confidencialidad del term sheet y fecha de expiración.",
+            "why": "La confidencialidad protege la negociación; la expiración obliga a cerrar o renegociar en un plazo razonable."
+          }
         }
       }
     },
     "sala": {
+      "subnav": {
+        "ariaLabel": "Secciones de sala de datos",
+        "rooms": "Mis salas",
+        "documentation": "Documentación"
+      },
+      "documentation": {
+        "eyebrow": "Documentación de referencia"
+      },
       "eyebrow": "Sala de datos",
       "title": "Mis salas de due diligence",
       "subtitle": "Sube documentos solicitados por la firma en el marco de tu proceso de DD.",
