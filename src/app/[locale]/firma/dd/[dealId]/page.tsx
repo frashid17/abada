@@ -6,9 +6,12 @@ import { AssessmentForm } from "@/components/dd/assessment-form";
 import { DataRoomDocumentList } from "@/components/dd/data-room-document-list";
 import { FindingForm } from "@/components/dd/finding-form";
 import { FindingsByCategory } from "@/components/dd/findings-by-category";
+import { AddInvestorForm } from "@/components/firm/add-investor-form";
+import { DealParticipantsPanel } from "@/components/firm/deal-participants-panel";
 import { getDealAssessment } from "@/lib/dd/assessments";
 import { listFindingsByCategory } from "@/lib/dd/findings";
 import { listDataRoomDocuments } from "@/lib/data-room/service";
+import { listDealParticipantsWithLabels } from "@/lib/deals/participants";
 import { getFirmDeal } from "@/lib/firm/deals";
 import { requireFirmPageAccess } from "@/lib/firm/session";
 import { DeleteDealButton } from "@/components/firm/delete-deal-button";
@@ -25,10 +28,11 @@ export default async function FirmDealDetailPage({
   if (!deal) notFound();
 
   const t = await getTranslations("firm.dd");
-  const [documents, findingsByCategory, assessment] = await Promise.all([
+  const [documents, findingsByCategory, assessment, participants] = await Promise.all([
     listDataRoomDocuments(dealId),
     listFindingsByCategory(dealId),
     getDealAssessment(dealId),
+    listDealParticipantsWithLabels(dealId),
   ]);
 
   const documentOptions = documents.map((doc) => ({
@@ -60,6 +64,8 @@ export default async function FirmDealDetailPage({
           </div>
 
           <aside className="space-y-6">
+            <DealParticipantsPanel participants={participants} />
+            <AddInvestorForm dealId={dealId} />
             <FindingForm dealId={dealId} documentOptions={documentOptions} />
             <AssessmentForm
               dealId={dealId}

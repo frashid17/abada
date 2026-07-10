@@ -1000,10 +1000,21 @@
         "founder_not_found": "No hay una cuenta de fundador con ese correo. Debe registrarse en Abada primero.",
         "founder_required": "Selecciona o ingresa un fundador para esta sala.",
         "founder_ambiguous": "Varias cuentas de fundador coinciden con ese correo. Contacta soporte para resolver el duplicado.",
+        "investor_not_found": "No hay una cuenta de inversionista con ese correo. Debe registrarse en Abada primero.",
         "tenant_not_configured": "El espacio de trabajo de la firma no está configurado correctamente. Pide a un administrador revisar el tenant.",
         "firm_org_required": "Debes tener membresía en la firma.",
-        "firm_membership_required": "Debes tener membresía en la firma.",
-        "tenant_not_configured": "Tenant de firma no configurado."
+        "firm_membership_required": "Debes tener membresía en la firma."
+      }
+    },
+    "calls": {
+      "title": "Llamadas programadas",
+      "empty": "No hay solicitudes de llamada pendientes.",
+      "markCompleted": "Marcar completada",
+      "markCancelled": "Cancelar",
+      "status": {
+        "scheduled": "Programada",
+        "completed": "Completada",
+        "cancelled": "Cancelada"
       }
     },
     "team": {

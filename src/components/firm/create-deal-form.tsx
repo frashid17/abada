@@ -20,6 +20,7 @@ const DEAL_ERROR_KEYS = new Set([
   "founder_not_found",
   "founder_required",
   "founder_ambiguous",
+  "investor_not_found",
   "firm_membership_required",
   "unauthorized",
   "tenant_not_configured",
@@ -42,6 +43,7 @@ export function CreateDealForm({ knownFounders }: CreateDealFormProps) {
   );
   const [selectedFounderId, setSelectedFounderId] = useState(knownFounders[0]?.clerkUserId ?? "");
   const [founderEmail, setFounderEmail] = useState("");
+  const [investorEmail, setInvestorEmail] = useState("");
 
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -53,6 +55,7 @@ export function CreateDealForm({ knownFounders }: CreateDealFormProps) {
         name: String(form.get("name")),
         founderClerkId: founderMode === "known" ? selectedFounderId : undefined,
         founderEmail: founderMode === "email" ? founderEmail : undefined,
+        investorEmail: investorEmail.trim() || undefined,
       });
 
       if (!result.ok) {
@@ -110,6 +113,18 @@ export function CreateDealForm({ knownFounders }: CreateDealFormProps) {
             />
           ) : null}
           <p className="text-xs text-muted-foreground">{t("founderHint")}</p>
+        </div>
+        <div className="space-y-2 sm:col-span-2">
+          <Label htmlFor="investor-email">{t("investorEmailLabel")}</Label>
+          <Input
+            id="investor-email"
+            type="email"
+            disabled={pending}
+            value={investorEmail}
+            placeholder={t("investorEmailPlaceholder")}
+            onChange={(e) => setInvestorEmail(e.target.value)}
+          />
+          <p className="text-xs text-muted-foreground">{t("investorOptionalHint")}</p>
         </div>
       </div>
       <Button type="submit" size="sm" disabled={pending}>

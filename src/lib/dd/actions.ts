@@ -2,15 +2,17 @@
 
 import { revalidatePath } from "next/cache";
 import { auth } from "@clerk/nextjs/server";
-import { createDeal } from "@/lib/deals/service";
+import { addDealParticipant, createDeal, getDealById, listDealParticipants } from "@/lib/deals/service";
 import { getFirmMembershipForUser } from "@/lib/firm/membership";
 import { deleteFirmDeal } from "@/lib/firm/deals";
 import { resolveFounderByEmail } from "@/lib/firm/founder-lookup";
+import { resolveInvestorByEmail } from "@/lib/firm/investor-lookup";
 import { resolveFirmReviewTenantScope } from "@/lib/firm/tenant";
 import { uploadDataRoomFile } from "@/lib/data-room/upload";
 import { createFinding } from "@/lib/dd/findings";
 import { upsertDealAssessment } from "@/lib/dd/assessments";
-import { requireUserId } from "@/lib/data-room/access";
+import { assertFirmDealAccess, requireUserId } from "@/lib/data-room/access";
+import { createNotification } from "@/lib/notifications/service";
 
 const DEAL_ACTION_ERRORS = new Set([
   "unauthorized",
@@ -18,6 +20,7 @@ const DEAL_ACTION_ERRORS = new Set([
   "founder_not_found",
   "founder_required",
   "founder_ambiguous",
+  "investor_not_found",
   "tenant_not_configured",
   "create_failed",
 ]);
@@ -55,6 +58,7 @@ export async function createFirmDealAction(input: {
   name: string;
   founderClerkId?: string;
   founderEmail?: string;
+  investorEmail?: string;
 }): Promise<{ ok: true; dealId: string } | { ok: false; error: string }> {
   try {
     const { userId } = await auth();
@@ -74,16 +78,68 @@ export async function createFirmDealAction(input: {
 
     if (!targetSub) return { ok: false, error: "founder_required" };
 
+    const investorSubs: string[] = [];
+    if (input.investorEmail?.trim()) {
+      const investor = await resolveInvestorByEmail(input.investorEmail);
+      if (!investor) return { ok: false, error: "investor_not_found" };
+      investorSubs.push(investor.clerkUserId);
+    }
+
     const deal = await createDeal({
       tenantId: primaryTenantId,
       name: input.name.trim(),
       targetSub,
+      investorSubs,
     });
+
+    for (const investorSub of investorSubs) {
+      await createNotification({
+        recipientSub: investorSub,
+        tenantId: primaryTenantId,
+        title: "Nueva sala de due diligence",
+        body: `Se te añadió a la sala «${deal.name}». Revisa la evaluación cuando esté publicada.`,
+      });
+    }
 
     revalidatePath("/firma/dd");
     return { ok: true, dealId: deal.id };
   } catch (error) {
     console.error("createFirmDealAction failed", error);
+    return { ok: false, error: mapDealActionError(error) };
+  }
+}
+
+export async function addInvestorToDealAction(input: {
+  dealId: string;
+  investorEmail: string;
+}): Promise<{ ok: true } | { ok: false; error: string }> {
+  try {
+    const { userId } = await auth();
+    if (!userId) return { ok: false, error: "unauthorized" };
+
+    const membership = await getFirmMembershipForUser(userId);
+    if (!membership) return { ok: false, error: "firm_membership_required" };
+
+    await assertFirmDealAccess(input.dealId);
+
+    const investor = await resolveInvestorByEmail(input.investorEmail);
+    if (!investor) return { ok: false, error: "investor_not_found" };
+
+    await addDealParticipant(input.dealId, investor.clerkUserId, "investor");
+
+    const deal = await getDealById(input.dealId);
+    await createNotification({
+      recipientSub: investor.clerkUserId,
+      tenantId: deal?.tenantId ?? membership.tenantId,
+      title: "Nueva sala de due diligence",
+      body: `Se te añadió a la sala «${deal?.name ?? "DD"}». Revisa la evaluación cuando esté publicada.`,
+    });
+
+    revalidatePath(`/firma/dd/${input.dealId}`);
+    revalidatePath("/inversionista/salas");
+    return { ok: true };
+  } catch (error) {
+    console.error("addInvestorToDealAction failed", error);
     return { ok: false, error: mapDealActionError(error) };
   }
 }
@@ -172,7 +228,28 @@ export async function saveAssessmentAction(input: {
 }): Promise<{ ok: true } | { ok: false; error: string }> {
   try {
     await upsertDealAssessment(input);
+
+    if (input.publish) {
+      const deal = await getDealById(input.dealId);
+      const participants = await listDealParticipants(input.dealId);
+      const investors = participants.filter((participant) => participant.role === "investor");
+
+      await Promise.all(
+        investors.map((investor) =>
+          createNotification({
+            recipientSub: investor.participantSub,
+            tenantId: deal?.tenantId ?? null,
+            title: "Evaluación publicada",
+            body: `La firma publicó la evaluación ejecutiva de «${deal?.name ?? "tu sala"}».`,
+          }),
+        ),
+      );
+    }
+
     revalidatePath(`/firma/dd/${input.dealId}`);
+    revalidatePath(`/inversionista/salas/${input.dealId}`);
+    revalidatePath("/inversionista/salas");
+    revalidatePath("/inversionista");
     return { ok: true };
   } catch (error) {
     return { ok: false, error: error instanceof Error ? error.message : "assessment_failed" };

@@ -1000,10 +1000,21 @@
         "founder_not_found": "No founder account found with that email. They need to sign up on Abada first.",
         "founder_required": "Select or enter a founder for this room.",
         "founder_ambiguous": "Multiple founder accounts match that email. Contact support to resolve the duplicate.",
+        "investor_not_found": "No investor account matches that email. They must sign up on Abada first.",
         "tenant_not_configured": "Firm workspace is not configured correctly. Ask an admin to check tenant setup.",
         "firm_org_required": "You must have firm membership.",
-        "firm_membership_required": "You must have firm membership.",
-        "tenant_not_configured": "Firm tenant is not configured."
+        "firm_membership_required": "You must have firm membership."
+      }
+    },
+    "calls": {
+      "title": "Scheduled calls",
+      "empty": "No call requests yet.",
+      "markCompleted": "Mark completed",
+      "markCancelled": "Cancel",
+      "status": {
+        "scheduled": "Scheduled",
+        "completed": "Completed",
+        "cancelled": "Cancelled"
       }
     },
     "team": {

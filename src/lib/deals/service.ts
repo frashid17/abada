@@ -116,6 +116,43 @@ export async function listDealParticipants(dealId: string): Promise<DealParticip
   }));
 }
 
+export async function addDealParticipant(
+  dealId: string,
+  participantSub: string,
+  role: DealParticipantRecord["role"],
+): Promise<void> {
+  const supabase = createServiceRoleSupabaseClient();
+
+  const { data: existing } = await supabase
+    .from("deal_participants")
+    .select("id")
+    .eq("deal_id", dealId)
+    .eq("participant_sub", participantSub)
+    .maybeSingle();
+
+  if (existing) return;
+
+  const { error } = await supabase.from("deal_participants").insert({
+    deal_id: dealId,
+    participant_sub: participantSub,
+    role,
+  });
+
+  if (error) throw error;
+}
+
+export async function getDealById(dealId: string): Promise<DealRecord | null> {
+  const supabase = createServiceRoleSupabaseClient();
+  const { data, error } = await supabase
+    .from("deals")
+    .select("id, tenant_id, name, status, created_at")
+    .eq("id", dealId)
+    .maybeSingle();
+
+  if (error) throw error;
+  return data ? mapDeal(data) : null;
+}
+
 export async function deleteDeal(dealId: string): Promise<void> {
   const supabase = createServiceRoleSupabaseClient();
 
