@@ -356,6 +356,91 @@
       "documentCount": "{count} documents",
       "comingSoon": "The guided flow for this document is not available yet."
     },
+    "learn": {
+      "documentProgress": "Document {step} of {total}",
+      "intro": "This is the first document a serious investor reads. It sets the rules of control and exit for everyone on your cap table: who decides what, who can buy or sell shares, and what happens when the company is sold. Click a clause to see why it matters in the side panel.",
+      "clickHint": "Click a clause to see its explanation",
+      "selectClauseTitle": "Select a clause",
+      "selectClauseHint": "Click any clause in the draft to see what it means and why it matters for your round.",
+      "draftMeta": "Draft for review · {count} clauses",
+      "panelEyebrow": "What this clause means",
+      "whyItMatters": "Why it matters",
+      "continueDrafting": "Continue drafting",
+      "prototypeNote": "Prototype · in-document education layer. Legal text must be confirmed by a named firm attorney before use.",
+      "callouts": {
+        "dragAlong": {
+          "label": "Drag-along threshold",
+          "hint": "The single most sensitive number in the document. Our default is 75%. It decides when you can be forced to sell."
+        },
+        "antiDilution": {
+          "label": "Anti-dilution type",
+          "hint": "A broad-based weighted average is gentle. A full ratchet is harsh. Know which one protects the investor here."
+        },
+        "vesting": {
+          "label": "Founder vesting",
+          "hint": "You earn your shares over four years. Leave before the one-year cliff and you usually keep nothing."
+        }
+      },
+      "clauses": {
+        "shareholders": {
+          "preamble": {
+            "title": "Agreement introduction",
+            "summary": "Identifies the company, lead investor, and effective date for shareholder rules.",
+            "why": "Without clear parties and timing, a fund cannot tell who each clause binds or when it applies in your round."
+          },
+          "1": {
+            "title": "Purpose of the agreement",
+            "summary": "States that this pact governs shareholder rights and obligations in a Colombian venture investment.",
+            "why": "Signals to investors that governance, transfers, dilution, and exit are covered here — not just generic bylaws."
+          },
+          "2": {
+            "title": "Transfer restrictions",
+            "summary": "Limits share sales without meeting right of first refusal and other corporate rules.",
+            "why": "Protects the cap table from unwanted third-party buyers without giving other holders a chance to respond."
+          },
+          "3": {
+            "title": "Drag-along",
+            "summary": "If a minimum percentage approves a sale, other shareholders must sell on the same terms.",
+            "why": "This is the buyer's lever to acquire 100% of the company. A low threshold exposes you to being dragged into a sale you do not want."
+          },
+          "4": {
+            "title": "Tag-along",
+            "summary": "Lets minority holders join a majority sale on a proportional basis.",
+            "why": "Protects founders and other minorities from being left behind while a majority shareholder exits."
+          },
+          "5": {
+            "title": "Anti-dilution",
+            "summary": "Adjusts conversion price or investor protection if future issuances happen at a lower price.",
+            "why": "Defines how much extra dilution you take if the next round is priced lower. Broad-based is usually more negotiable than full ratchet."
+          },
+          "6": {
+            "title": "Shareholder decisions",
+            "summary": "Lists decisions requiring a qualified majority — new series, material debt, key asset sales, etc.",
+            "why": "Marks what the CEO or board cannot decide alone without shareholders holding enough voting power."
+          },
+          "7": {
+            "title": "Founder vesting and departure",
+            "summary": "Incorporates the vesting agreement by reference and good/bad leaver rules.",
+            "why": "Connects corporate governance with founder retention. Investors will check whether your equity is truly earned over time."
+          },
+          "8": {
+            "title": "Confidentiality",
+            "summary": "Keeps economic and strategic terms of the pact confidential.",
+            "why": "Prevents leaks about valuation, preferences, and rights that could affect negotiations with other funds."
+          },
+          "9": {
+            "title": "Dispute resolution",
+            "summary": "Sets arbitration or ordinary courts for shareholder disputes.",
+            "why": "Anticipates where and how conflicts are resolved. In Colombian venture, arbitration is often faster than ordinary litigation."
+          },
+          "10": {
+            "title": "Governing law",
+            "summary": "Fixes Colombian law and contractual domicile city.",
+            "why": "Anchors the agreement to local law and a known forum — relevant for international funds investing in Colombia."
+          }
+        }
+      }
+    },
     "sala": {
       "eyebrow": "Data room",
       "title": "My due diligence rooms",

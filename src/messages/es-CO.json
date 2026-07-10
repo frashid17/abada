@@ -356,6 +356,91 @@
       "documentCount": "{count} documentos",
       "comingSoon": "El flujo guiado de este documento aún no está disponible."
     },
+    "learn": {
+      "documentProgress": "Documento {step} de {total}",
+      "intro": "Este es el primer documento que un inversionista serio revisa. Define las reglas de control y salida de tu cap table: quién decide qué, quién puede comprar o vender acciones y qué pasa si la compañía se vende. Haz clic en una cláusula para ver por qué importa en el panel lateral.",
+      "clickHint": "Haz clic en una cláusula para ver la explicación",
+      "selectClauseTitle": "Selecciona una cláusula",
+      "selectClauseHint": "Haz clic en cualquier cláusula del borrador para ver qué significa y por qué importa para tu ronda.",
+      "draftMeta": "Borrador para revisión · {count} cláusulas",
+      "panelEyebrow": "Qué significa esta cláusula",
+      "whyItMatters": "Por qué importa",
+      "continueDrafting": "Continuar borrador",
+      "prototypeNote": "Prototipo · capa educativa en el documento. El texto legal debe ser confirmado por un abogado nombrado de la firma antes de usar.",
+      "callouts": {
+        "dragAlong": {
+          "label": "Umbral de drag-along",
+          "hint": "El número más sensible del documento. Nuestro valor por defecto es 75 %. Define cuándo puedes ser obligado a vender."
+        },
+        "antiDilution": {
+          "label": "Tipo de anti-dilución",
+          "hint": "El promedio ponderado amplio es suave. Un full ratchet es duro. Identifica cuál protege al inversionista aquí."
+        },
+        "vesting": {
+          "label": "Vesting de fundadores",
+          "hint": "Ganas tus acciones en cuatro años. Si sales antes del cliff de un año, normalmente no conservas nada."
+        }
+      },
+      "clauses": {
+        "shareholders": {
+          "preamble": {
+            "title": "Introducción del acuerdo",
+            "summary": "Identifica a la compañía, al inversionista líder y la fecha desde la cual rigen las reglas entre accionistas.",
+            "why": "Sin partes y vigencia claras, el fondo no puede evaluar a quién obliga cada cláusula ni desde cuándo aplica en tu ronda."
+          },
+          "1": {
+            "title": "Objeto del acuerdo",
+            "summary": "Marca que este pacto regula derechos y obligaciones entre accionistas en una inversión de venture en Colombia.",
+            "why": "Le dice al inversionista que aquí están gobierno, transferencias, dilución y salida — no solo estatutos genéricos."
+          },
+          "2": {
+            "title": "Restricción a la transferencia",
+            "summary": "Limita ventas de acciones sin cumplir preferencia y otras reglas societarias.",
+            "why": "Protege la cap table: evita que un socio venda a un tercero no deseado sin que los demás puedan reaccionar."
+          },
+          "3": {
+            "title": "Drag-along (arrastre)",
+            "summary": "Si un porcentaje mínimo de accionistas aprueba una venta, los demás deben vender en las mismas condiciones.",
+            "why": "Es la palanca del comprador para cerrar el 100 % de la compañía. Un umbral muy bajo te expone a ser arrastrado en una venta que no quieres."
+          },
+          "4": {
+            "title": "Tag-along (acompañamiento)",
+            "summary": "Permite que minoritarios se sumen a una venta de mayoritarios en condiciones proporcionales.",
+            "why": "Protege a fundadores y otros minoritarios para no quedar atrapados mientras un socio mayoritario liquida."
+          },
+          "5": {
+            "title": "Anti-dilución",
+            "summary": "Ajusta el precio de conversión o protección del inversionista si hay emisiones futuras a menor valor.",
+            "why": "Define cuánto dilución adicional asumes tú si la siguiente ronda es a peor precio. Broad-based suele ser más negociable que full ratchet."
+          },
+          "6": {
+            "title": "Decisiones de accionistas",
+            "summary": "Lista decisiones que requieren mayoría calificada — emisión de series, deuda material, venta de activos clave, etc.",
+            "why": "Marca qué no puede decidir solo el CEO o un directorio sin voto de accionistas con peso suficiente."
+          },
+          "7": {
+            "title": "Vesting y salida de fundadores",
+            "summary": "Incorpora por referencia el acuerdo de vesting y las reglas de buen/mal salidor.",
+            "why": "Conecta gobierno societario con retención del equipo fundador. Un inversionista revisará si tu equity realmente está ganado en el tiempo."
+          },
+          "8": {
+            "title": "Confidencialidad",
+            "summary": "Mantiene confidenciales términos económicos y estratégicos del pacto.",
+            "why": "Evita filtraciones sobre valuación, preferencias y derechos que pueden afectar la negociación con otros fondos."
+          },
+          "9": {
+            "title": "Solución de controversias",
+            "summary": "Define arbitraje o jurisdicción ordinaria para disputas entre accionistas.",
+            "why": "Anticipa dónde y cómo se resuelven conflictos. En venture colombiano, arbitraje suele ser más rápido que litigio ordinario."
+          },
+          "10": {
+            "title": "Ley aplicable",
+            "summary": "Fija legislación colombiana y ciudad de domicilio contractual.",
+            "why": "Ancla el acuerdo a derecho local y un foro conocido — relevante para fondos internacionales que invierten en Colombia."
+          }
+        }
+      }
+    },
     "sala": {
       "eyebrow": "Sala de datos",
       "title": "Mis salas de due diligence",
