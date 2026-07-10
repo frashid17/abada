@@ -53,3 +53,14 @@ export async function requireFirmMembership(): Promise<FirmMembership> {
 export function isFirmAdminRole(role: FirmMemberRole): boolean {
   return role === "admin" || role === "partner";
 }
+
+export async function listFirmMemberSubs(tenantId: string): Promise<string[]> {
+  const supabase = createServiceRoleSupabaseClient();
+  const { data, error } = await supabase
+    .from("memberships")
+    .select("clerk_user_id")
+    .eq("tenant_id", tenantId);
+
+  if (error) throw error;
+  return [...new Set((data ?? []).map((row) => row.clerk_user_id))];
+}

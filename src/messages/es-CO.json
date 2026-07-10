@@ -842,7 +842,13 @@
         "bajo": "Bajo",
         "medio": "Medio",
         "alto": "Alto"
-      }
+      },
+      "scheduleCallTitle": "Agendar llamada con la firma",
+      "scheduleCallHint": "Solicita un seguimiento sobre esta sala. La firma confirmará el horario.",
+      "scheduleCallLabel": "Fecha y hora preferida",
+      "scheduleCallCta": "Solicitar llamada",
+      "scheduleCallSuccess": "Solicitud enviada. Recibirás una notificación cuando la firma confirme.",
+      "scheduleCallError": "No se pudo enviar la solicitud."
     }
   },
   "firm": {

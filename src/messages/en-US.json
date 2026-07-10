@@ -842,7 +842,13 @@
         "bajo": "Low",
         "medio": "Medium",
         "alto": "High"
-      }
+      },
+      "scheduleCallTitle": "Schedule a call with the firm",
+      "scheduleCallHint": "Request a follow-up on this room. The firm will confirm the time.",
+      "scheduleCallLabel": "Preferred date and time",
+      "scheduleCallCta": "Request call",
+      "scheduleCallSuccess": "Request sent. You will be notified when the firm confirms.",
+      "scheduleCallError": "Could not send the request."
     }
   },
   "firm": {

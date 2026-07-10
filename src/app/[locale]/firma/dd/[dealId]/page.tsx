@@ -8,12 +8,16 @@ import { FindingForm } from "@/components/dd/finding-form";
 import { FindingsByCategory } from "@/components/dd/findings-by-category";
 import { AddInvestorForm } from "@/components/firm/add-investor-form";
 import { DealParticipantsPanel } from "@/components/firm/deal-participants-panel";
+import { FirmScheduledCallsPanel } from "@/components/firm/firm-scheduled-calls-panel";
 import { getDealAssessment } from "@/lib/dd/assessments";
 import { listFindingsByCategory } from "@/lib/dd/findings";
 import { listDataRoomDocuments } from "@/lib/data-room/service";
 import { listDealParticipantsWithLabels } from "@/lib/deals/participants";
 import { getFirmDeal } from "@/lib/firm/deals";
 import { requireFirmPageAccess } from "@/lib/firm/session";
+import { listScheduledCallsForTenant } from "@/lib/scheduled-calls/service";
+import { getFirmMembershipForUser } from "@/lib/firm/membership";
+import { auth } from "@clerk/nextjs/server";
 import { DeleteDealButton } from "@/components/firm/delete-deal-button";
 
 export default async function FirmDealDetailPage({
@@ -28,11 +32,14 @@ export default async function FirmDealDetailPage({
   if (!deal) notFound();
 
   const t = await getTranslations("firm.dd");
-  const [documents, findingsByCategory, assessment, participants] = await Promise.all([
+  const { userId } = await auth();
+  const membership = userId ? await getFirmMembershipForUser(userId) : null;
+  const [documents, findingsByCategory, assessment, participants, scheduledCalls] = await Promise.all([
     listDataRoomDocuments(dealId),
     listFindingsByCategory(dealId),
     getDealAssessment(dealId),
     listDealParticipantsWithLabels(dealId),
+    membership ? listScheduledCallsForTenant(membership.tenantId) : Promise.resolve([]),
   ]);
 
   const documentOptions = documents.map((doc) => ({
@@ -66,6 +73,7 @@ export default async function FirmDealDetailPage({
           <aside className="space-y-6">
             <DealParticipantsPanel participants={participants} />
             <AddInvestorForm dealId={dealId} />
+            <FirmScheduledCallsPanel calls={scheduledCalls} />
             <FindingForm dealId={dealId} documentOptions={documentOptions} />
             <AssessmentForm
               dealId={dealId}

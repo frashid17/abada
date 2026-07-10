@@ -8,6 +8,7 @@ import { DealRoomBackLink } from "@/components/dd/deal-room-back-link";
 import { DealRoomStats } from "@/components/dd/deal-room-stats";
 import { FindingsByCategory } from "@/components/dd/findings-by-category";
 import { InvestorAssessmentPanel } from "@/components/dd/investor-assessment-panel";
+import { ScheduleCallForm } from "@/components/dd/schedule-call-form";
 import { getPublishedDealAssessment } from "@/lib/dd/assessments";
 import { listFindingsByCategory } from "@/lib/dd/findings";
 import { assertDealParticipant } from "@/lib/data-room/access";
@@ -65,6 +66,7 @@ export default async function InvestorRoomDetailPage({
           <section className="space-y-4">
             <h2 className="font-serif text-xl font-semibold">{t("documentsTitle")}</h2>
             <DataRoomDocumentList documents={documents} showDownload />
+            <ScheduleCallForm dealId={dealId} />
           </section>
         </div>
       </div>
