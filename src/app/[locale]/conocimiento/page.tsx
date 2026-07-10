@@ -4,13 +4,15 @@ import { AppShell } from "@/components/layout/app-shell";
 import { PageHeader } from "@/components/layout/page-header";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { listPublishedKnowledgeArticles } from "@/lib/knowledge-hub/service";
+import { resolveAppShellVariant } from "@/lib/layout/shell-variant";
 
 export default async function KnowledgeHubPage() {
   const t = await getTranslations("knowledgeHub");
   const articles = await listPublishedKnowledgeArticles();
+  const shellVariant = await resolveAppShellVariant();
 
   return (
-    <AppShell variant="public">
+    <AppShell variant={shellVariant}>
       <div className="space-y-8">
         <PageHeader eyebrow={t("eyebrow")} title={t("title")} description={t("subtitle")} />
         <div className="grid gap-4 md:grid-cols-2">

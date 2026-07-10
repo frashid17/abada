@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { AppShell } from "@/components/layout/app-shell";
 import { PageHeader } from "@/components/layout/page-header";
 import { getPublishedKnowledgeArticle } from "@/lib/knowledge-hub/service";
+import { resolveAppShellVariant } from "@/lib/layout/shell-variant";
 
 export default async function KnowledgeHubArticlePage({
   params,
@@ -15,9 +16,10 @@ export default async function KnowledgeHubArticlePage({
   if (!article) notFound();
 
   const t = await getTranslations("knowledgeHub");
+  const shellVariant = await resolveAppShellVariant();
 
   return (
-    <AppShell variant="public">
+    <AppShell variant={shellVariant}>
       <article className="mx-auto max-w-3xl space-y-8">
         <Link href="/conocimiento" className="text-sm font-medium text-primary hover:underline">
           {t("backToHub")}
