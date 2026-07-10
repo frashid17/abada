@@ -1,20 +1,30 @@
 import { auth } from "@clerk/nextjs/server";
 import { NextResponse } from "next/server";
+import { z } from "zod";
 import { assertDealParticipant, assertFirmDealAccess } from "@/lib/data-room/access";
 import { downloadDataRoomFile, getDataRoomDocument } from "@/lib/data-room/upload";
 import { buildWatermarkedTextContent } from "@/lib/data-room/watermark";
-import { createServiceRoleSupabaseClient } from "@/lib/supabase/server";
 import { getFirmMembershipForUser } from "@/lib/firm/membership";
+import { writeAuditLog } from "@/lib/audit";
+import { enforceRateLimit, RATE_LIMITS, rateLimitResponseBody } from "@/lib/rate-limit";
+
+const docIdSchema = z.string().uuid();
 
 export async function GET(
-  _request: Request,
+  request: Request,
   { params }: { params: Promise<{ docId: string }> },
 ) {
-  const { docId } = await params;
+  const { docId: rawDocId } = await params;
   const { userId } = await auth();
   if (!userId) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
+
+  const parsedDocId = docIdSchema.safeParse(rawDocId);
+  if (!parsedDocId.success) {
+    return NextResponse.json({ error: "Not found" }, { status: 404 });
+  }
+  const docId = parsedDocId.data;
 
   const doc = await getDataRoomDocument(docId);
   if (!doc) {
@@ -32,6 +42,16 @@ export async function GET(
     return NextResponse.json({ error: "Forbidden" }, { status: 403 });
   }
 
+  const rate = await enforceRateLimit({
+    subjectSub: userId,
+    actionKey: "data_room.download",
+    rules: RATE_LIMITS.dataRoomDownload,
+    tenantId: doc.tenantId,
+  });
+  if (!rate.allowed) {
+    return NextResponse.json(rateLimitResponseBody(rate), { status: 429 });
+  }
+
   try {
     const { buffer, mimeType, fileName, fingerprint } = await downloadDataRoomFile(docId);
     const accessedAt = new Date();
@@ -46,13 +66,14 @@ export async function GET(
       contentType = "text/plain; charset=utf-8";
     }
 
-    await createServiceRoleSupabaseClient().from("audit_logs").insert({
-      tenant_id: doc.tenantId,
-      actor_sub: userId,
+    await writeAuditLog({
       action: "data_room.download",
-      resource_type: "data_room_document",
-      resource_id: docId,
+      actorSub: userId,
+      tenantId: doc.tenantId,
+      resourceType: "data_room_document",
+      resourceId: docId,
       metadata: { fingerprint, fileName },
+      request,
     });
 
     const headers = new Headers({
