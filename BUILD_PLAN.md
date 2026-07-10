@@ -99,8 +99,18 @@ Colombian legal-AI due diligence & investment-readiness platform.
 
 ## M7 — Hardening
 
-- [ ] Full RLS pass; rate limiting; security review
-- [ ] E2E tests; accessibility; seed data
+- [x] Rate limiting — `increment_rate_limit` RPC (`015_m7_hardening.sql`) + `src/lib/rate-limit` enforced on AI chat, document download, data-room download, payment checkout (hour/day/month windows)
+- [x] Centralized audit service (`src/lib/audit`) — actor, action, resource, tenant, IP, user agent; wired to downloads, checkout, review status changes, review submission, assessment publish
+- [x] Audit retention — `purge_expired_audit_logs()` (3 years) + `purge_stale_rate_limits()`
+- [x] Security review fixes — payment checkout now verifies tenant relationship (membership / review / primary firm); data-room `docId` validated as UUID
+- [x] RLS pass — contract tests now cover every table in all migrations (RLS enabled + policies present + tenant scoping)
+- [x] Seed data — `npm run seed:dev` (two tenants, memberships, sample deal, RLS smoke fixtures)
+- [x] E2E scaffold — Playwright (`npm run test:e2e`), public smoke suite (landing, knowledge hub, auth redirects, API 401s)
+- [ ] E2E authenticated flows (Clerk testing tokens) — founder doc flow, firm review, DD room
+- [ ] Live DB RLS isolation tests (tenant A vs tenant B against real Supabase)
+- [ ] **Manual:** Apply migration `015_m7_hardening.sql`
+- [ ] **Manual:** Schedule `purge_expired_audit_logs()` + `purge_stale_rate_limits()` (pg_cron or external scheduler)
+- [ ] **Manual:** `npx playwright install chromium` before first `npm run test:e2e`
 
 ## M8 — Beta readiness
 
