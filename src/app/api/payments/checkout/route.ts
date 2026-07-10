@@ -2,6 +2,11 @@ import { auth } from "@clerk/nextjs/server";
 import { NextResponse } from "next/server";
 import { z } from "zod";
 import { getPaymentProvider, recordPayment } from "@/lib/payments";
+import { getFirmMembershipForUser } from "@/lib/firm/membership";
+import { getPrimaryFirmTenantId } from "@/lib/firm/tenant";
+import { createServiceRoleSupabaseClient } from "@/lib/supabase/server";
+import { writeAuditLog } from "@/lib/audit";
+import { enforceRateLimit, RATE_LIMITS, rateLimitResponseBody } from "@/lib/rate-limit";
 
 const bodySchema = z.object({
   amountCents: z.number().int().positive().max(500_000_000),
@@ -11,10 +16,46 @@ const bodySchema = z.object({
   redirectUrl: z.string().url().optional(),
 });
 
+/**
+ * The client-supplied tenantId is only accepted when the caller has a real
+ * relationship with that tenant: firm membership, a review they requested,
+ * or it is the platform's primary firm (founders paying for firm services).
+ */
+async function isTenantAuthorizedForPayer(
+  tenantId: string,
+  userId: string,
+): Promise<boolean> {
+  const membership = await getFirmMembershipForUser(userId);
+  if (membership?.tenantId === tenantId) return true;
+
+  const primaryFirm = await getPrimaryFirmTenantId();
+  if (primaryFirm === tenantId) return true;
+
+  const supabase = createServiceRoleSupabaseClient();
+  const { data: review } = await supabase
+    .from("reviews")
+    .select("id")
+    .eq("tenant_id", tenantId)
+    .eq("requester_sub", userId)
+    .limit(1)
+    .maybeSingle();
+
+  return Boolean(review);
+}
+
 export async function POST(request: Request) {
   const { userId } = await auth();
   if (!userId) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+  }
+
+  const rate = await enforceRateLimit({
+    subjectSub: userId,
+    actionKey: "payment.checkout",
+    rules: RATE_LIMITS.paymentCheckout,
+  });
+  if (!rate.allowed) {
+    return NextResponse.json(rateLimitResponseBody(rate), { status: 429 });
   }
 
   let body: z.infer<typeof bodySchema>;
@@ -22,6 +63,10 @@ export async function POST(request: Request) {
     body = bodySchema.parse(await request.json());
   } catch {
     return NextResponse.json({ error: "Invalid request body" }, { status: 400 });
+  }
+
+  if (!(await isTenantAuthorizedForPayer(body.tenantId, userId))) {
+    return NextResponse.json({ error: "Forbidden" }, { status: 403 });
   }
 
   if (!process.env.WOMPI_PRIVATE_KEY || !process.env.WOMPI_PUBLIC_KEY) {
@@ -53,6 +98,16 @@ export async function POST(request: Request) {
         description: body.description,
         checkoutUrl: intent.checkoutUrl,
       },
+    });
+
+    await writeAuditLog({
+      action: "payment.checkout_created",
+      actorSub: userId,
+      tenantId: body.tenantId,
+      resourceType: "payment",
+      resourceId: intent.providerReference,
+      metadata: { amountCents: body.amountCents, currency: body.currency },
+      request,
     });
 
     if (!intent.checkoutUrl) {
