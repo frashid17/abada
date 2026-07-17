@@ -24,6 +24,15 @@ Single source:
 npm run corpus:ingest -- --source ley-1258-2008 "/path/to/Laws - Regulations"
 ```
 
+### Admin console (paste or PDF)
+
+Platform admins can add/edit laws at `/admin/corpus` in two ways:
+
+1. **Paste Spanish text** — article-split into chunks automatically
+2. **Upload PDF** — embedded text layer via `pdftotext`; if the PDF looks scanned (sparse text), OCR via `pdftoppm` + `tesseract -l spa+eng`
+
+Host requirements for PDF upload: Poppler (`pdftotext`, `pdftoppm`) and Tesseract with Spanish language data (`spa`).
+
 Spanish text is extracted from PDF. English chunks carry the same article structure with `translationStatus: "pending"` until a firm attorney reviews machine or human translation (`TODO(legal)`).
 
 ## Bilingual model
