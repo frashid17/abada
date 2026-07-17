@@ -169,3 +169,12 @@ export function summarizeLegalCorpusInventory(): string {
   });
   return `Colombian legal corpus (${manifest.sources.length} sources):\n${lines.join("\n")}`;
 }
+
+export { chunkLegalText, normalizeLegalWhitespace } from "@/lib/legal-corpus/chunk-text";
+export type { LegalTextChunk } from "@/lib/legal-corpus/chunk-text";
+export {
+  extractTextFromPdf,
+  pdfToolsAvailable,
+} from "@/lib/legal-corpus/pdf-extract";
+export type { PdfExtractMethod, PdfExtractResult } from "@/lib/legal-corpus/pdf-extract";
+
