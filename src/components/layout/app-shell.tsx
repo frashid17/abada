@@ -13,7 +13,7 @@ import { getFirmName } from "@/lib/brand";
 
 type AppShellProps = {
   children: React.ReactNode;
-  variant: "public" | "founder" | "investor" | "firm";
+  variant: "public" | "founder" | "investor" | "firm" | "admin";
 };
 
 const navKeys = {
@@ -22,6 +22,7 @@ const navKeys = {
     { href: "/fundador", key: "dashboard" },
     { href: "/fundador/documentos", key: "documents" },
     { href: "/fundador/plantillas", key: "templates" },
+    { href: "/fundador/leyes", key: "laws" },
     { href: "/fundador/sala", key: "dataRoom" },
   ],
   investor: [
@@ -33,6 +34,13 @@ const navKeys = {
     { href: "/firma/cola", key: "queue" },
     { href: "/firma/dd", key: "dd" },
     { href: "/firma/equipo", key: "team" },
+  ],
+  admin: [
+    { href: "/admin", key: "adminOverview" },
+    { href: "/admin/corpus", key: "adminCorpus" },
+    { href: "/admin/ai", key: "adminAi" },
+    { href: "/admin/requests", key: "adminRequests" },
+    { href: "/admin/audit", key: "adminAudit" },
   ],
 } as const;
 
