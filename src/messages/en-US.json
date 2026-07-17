@@ -15,7 +15,13 @@
       "dd": "Due diligence",
       "team": "Team",
       "knowledge": "Knowledge",
-      "templates": "Templates"
+      "templates": "Templates",
+      "laws": "Laws & regulations",
+      "adminOverview": "Overview",
+      "adminCorpus": "Legal corpus",
+      "adminAi": "AI usage",
+      "adminRequests": "Requests",
+      "adminAudit": "Audit"
     }
   },
   "notifications": {
@@ -29,6 +35,134 @@
     "subtitle": "Firm-curated articles on documents, due diligence, and venture.",
     "readArticle": "Read article",
     "backToHub": "Back to knowledge hub"
+  },
+  "admin": {
+    "eyebrow": "Platform operations",
+    "title": "Admin console",
+    "subtitle": "Manage the legal corpus, monitor AI usage, and review platform activity.",
+    "forbidden": "You do not have platform admin access.",
+    "stats": {
+      "corpus": "Legal sources",
+      "aiCalls": "AI calls",
+      "openReviews": "Open reviews",
+      "auditEvents": "Audit events",
+      "visibleHint": "{count} visible to founders",
+      "aiHint": "Across all tenants",
+      "reviewsHint": "Queued or in progress",
+      "auditHint": "Platform-wide trail"
+    },
+    "overview": {
+      "addLaw": "Add law",
+      "addLawDescription": "Create a new statute or regulation in the corpus.",
+      "manageCorpus": "Manage corpus",
+      "manageCorpusDescription": "Edit metadata, paste text, or change founder visibility.",
+      "viewAudit": "Audit log",
+      "viewAuditDescription": "Review who changed what across the platform.",
+      "shortcutsTitle": "Quick actions",
+      "recentActivity": "Recent activity",
+      "recentActivityDescription": "Latest audit events",
+      "recentAi": "Recent AI calls",
+      "recentAiDescription": "Latest model usage",
+      "viewAll": "View all"
+    },
+    "corpus": {
+      "eyebrow": "Legal corpus",
+      "title": "Laws & regulations for founders",
+      "subtitle": "Add, edit, and control which statutes appear in the founder legal library. AI grounding still uses the full corpus.",
+      "addLaw": "Add law",
+      "edit": "Edit",
+      "empty": "No legal sources yet. Add the first statute to get started.",
+      "visible": "Visible to founders",
+      "hidden": "Hidden from founders",
+      "show": "Show to founders",
+      "hide": "Hide from founders",
+      "chunks": "{count} articles",
+      "status": "Status: {status}",
+      "updated": "Visibility updated",
+      "error": "Could not update visibility",
+      "types": {
+        "constitution": "Constitution",
+        "code": "Code",
+        "statute": "Statute",
+        "decree": "Decree",
+        "circular": "Circular",
+        "decision": "Decision"
+      },
+      "form": {
+        "createTitle": "Add a legal source",
+        "createSubtitle": "Enter metadata, then add the law by pasting Spanish text or uploading a PDF (text layer or OCR).",
+        "editTitle": "Edit legal source",
+        "editSubtitle": "Updating {citation}",
+        "idLabel": "Source ID (optional)",
+        "idPlaceholder": "ley-1258-2008",
+        "idHint": "Leave blank to generate from the Spanish citation. Use a stable slug if you plan to re-upload the same PDF later.",
+        "typeLabel": "Type",
+        "citationEs": "Citation (Spanish)",
+        "citationEn": "Citation (English)",
+        "titleEs": "Title (Spanish)",
+        "titleEn": "Title (English)",
+        "descriptionEs": "Description (Spanish)",
+        "descriptionEn": "Description (English)",
+        "contentLabel": "Law content",
+        "modePaste": "Paste text",
+        "modePasteHint": "Paste Spanish article text. Split into articles automatically.",
+        "modePdf": "Upload PDF",
+        "modePdfHint": "Digital PDFs use the text layer; scanned pages are OCR’d (Spanish + English).",
+        "pastedText": "Spanish body text",
+        "pastedTextPlaceholder": "Paste article text here…",
+        "pastedTextHint": "Articles are detected from headings like ARTÍCULO 1. English mirror chunks stay pending review.",
+        "pdfLabel": "PDF file",
+        "pdfHint": "Max 25 MB. Poppler (pdftotext/pdftoppm) and Tesseract with spa+eng are required for extraction.",
+        "pdfSelected": "Selected: {name}",
+        "extracting": "Extracting text from PDF… this can take a minute for scanned documents.",
+        "extractedText": "Extracted text layer into {count} articles.",
+        "extractedOcr": "OCR extracted text into {count} articles.",
+        "founderVisible": "Show in founder legal library",
+        "createSubmit": "Create law",
+        "editSubmit": "Save changes",
+        "cancel": "Cancel",
+        "errors": {
+          "REQUIRED_FIELDS": "Title and citation (Spanish) are required.",
+          "INVALID_TYPE": "Invalid source type.",
+          "PDF_REQUIRED": "Choose a PDF file to upload.",
+          "PDF_TOO_LARGE": "PDF is too large (max 25 MB).",
+          "INVALID_PDF": "That file is not a valid PDF.",
+          "PDF_TOOLS_MISSING": "pdftotext (Poppler) is not installed on the server.",
+          "OCR_TOOLS_MISSING": "OCR needs pdftoppm and tesseract with Spanish (spa) language data.",
+          "EXTRACT_EMPTY": "Could not extract readable text from the PDF."
+        }
+      }
+    },
+    "ai": {
+      "eyebrow": "AI gateway",
+      "title": "AI usage",
+      "subtitle": "Recent model calls across the platform.",
+      "empty": "No AI calls logged yet.",
+      "caller": "Caller",
+      "task": "Task",
+      "model": "Model",
+      "when": "When"
+    },
+    "requests": {
+      "eyebrow": "Firm queue",
+      "title": "Review requests",
+      "subtitle": "Document review requests across tenants.",
+      "empty": "No review requests yet.",
+      "status": "Status",
+      "requester": "Requester",
+      "document": "Document",
+      "when": "When"
+    },
+    "audit": {
+      "eyebrow": "Defensibility",
+      "title": "Audit log",
+      "subtitle": "Who did what, and when.",
+      "empty": "No audit events yet.",
+      "action": "Action",
+      "actor": "Actor",
+      "resource": "Resource",
+      "when": "When"
+    }
   },
   "theme": {
     "toggle": "Toggle theme",
@@ -205,6 +339,8 @@
     "account": {
       "user": "User",
       "dashboard": "Go to dashboard",
+      "adminDashboard": "Admin console",
+      "founderDashboard": "Founder dashboard",
       "manage": "Manage account",
       "signOut": "Sign out"
     },
@@ -361,6 +497,30 @@
       "eyebrow": "Firm templates",
       "title": "Learn the documents",
       "subtitle": "Choose a template, read each clause, and see why it matters for your round — with firm commentary."
+    },
+    "legalLibrary": {
+      "eyebrow": "Legal corpus",
+      "title": "Colombian laws & regulations",
+      "subtitle": "Browse the reference texts the platform AI uses — statutes, codes, and circulars relevant to your round.",
+      "readSource": "View text",
+      "backToLibrary": "Back to laws & regulations",
+      "searchPlaceholder": "Search article or keyword…",
+      "articleCount": "{count} articles",
+      "loading": "Loading…",
+      "loadMore": "Load more articles",
+      "noResults": "No articles match your search.",
+      "readerEyebrow": "Article text",
+      "selectArticle": "Select an article from the list to read the full text.",
+      "englishPendingNote": "English translation is pending legal review. The authoritative text is in Spanish.",
+      "disclaimer": "Reference text for education. Confirm with a named firm attorney before use in an agreement.",
+      "sourceTypes": {
+        "constitution": "Constitution",
+        "code": "Codes",
+        "statute": "Statutes",
+        "decree": "Decrees",
+        "circular": "Circulars",
+        "decision": "Decisions"
+      }
     },
     "learn": {
       "documentProgress": "Document {step} of {total}",
