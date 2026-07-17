@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useTranslations } from "next-intl";
 import { Search } from "lucide-react";
 import { Input } from "@/components/ui/input";
@@ -12,6 +12,14 @@ type ChunkRow = {
   heading: string;
   content: string;
   translationStatus: string;
+};
+
+type LoadedPage = {
+  key: string;
+  chunks: ChunkRow[];
+  total: number;
+  hasMore: boolean;
+  offset: number;
 };
 
 type LegalSourceReaderProps = {
@@ -28,29 +36,36 @@ export function LegalSourceReader({
   const t = useTranslations("founder.legalLibrary");
   const [query, setQuery] = useState("");
   const [debouncedQuery, setDebouncedQuery] = useState("");
-  const [chunks, setChunks] = useState<ChunkRow[]>([]);
-  const [offset, setOffset] = useState(0);
-  const [hasMore, setHasMore] = useState(false);
-  const [total, setTotal] = useState(initialChunkCount);
-  const [loading, setLoading] = useState(true);
+  const [page, setPage] = useState<LoadedPage | null>(null);
+  const [loadingMore, setLoadingMore] = useState(false);
+
+  const loadKey = `${sourceId}|${locale}|${debouncedQuery}`;
+  const loading = page?.key !== loadKey;
+  const chunks = page?.key === loadKey ? page.chunks : [];
+  const total = page?.key === loadKey ? page.total : initialChunkCount;
+  const hasMore = page?.key === loadKey ? page.hasMore : false;
+  const offset = page?.key === loadKey ? page.offset : 0;
 
   useEffect(() => {
     const timer = setTimeout(() => setDebouncedQuery(query.trim()), 300);
     return () => clearTimeout(timer);
   }, [query]);
 
-  const fetchChunks = useCallback(
-    async (nextOffset: number, append: boolean) => {
-      setLoading(true);
+  useEffect(() => {
+    const controller = new AbortController();
+
+    async function load() {
       try {
         const params = new URLSearchParams({
           locale,
-          offset: String(nextOffset),
+          offset: "0",
           limit: "60",
         });
         if (debouncedQuery) params.set("q", debouncedQuery);
 
-        const res = await fetch(`/api/legal-corpus/${sourceId}?${params}`);
+        const res = await fetch(`/api/legal-corpus/${sourceId}?${params}`, {
+          signal: controller.signal,
+        });
         if (!res.ok) throw new Error("fetch failed");
         const data = (await res.json()) as {
           chunks: ChunkRow[];
@@ -58,22 +73,63 @@ export function LegalSourceReader({
           hasMore: boolean;
         };
 
-        setChunks((prev) => (append ? [...prev, ...data.chunks] : data.chunks));
-        setTotal(data.chunkCount);
-        setHasMore(data.hasMore);
-        setOffset(nextOffset);
-      } finally {
-        setLoading(false);
+        setPage({
+          key: loadKey,
+          chunks: data.chunks,
+          total: data.chunkCount,
+          hasMore: data.hasMore,
+          offset: 0,
+        });
+      } catch (error) {
+        if (controller.signal.aborted) return;
+        setPage({
+          key: loadKey,
+          chunks: [],
+          total: 0,
+          hasMore: false,
+          offset: 0,
+        });
+        console.error(error);
       }
-    },
-    [sourceId, locale, debouncedQuery],
-  );
+    }
 
-  useEffect(() => {
-    setChunks([]);
-    setOffset(0);
-    void fetchChunks(0, false);
-  }, [fetchChunks]);
+    void load();
+    return () => controller.abort();
+  }, [sourceId, locale, debouncedQuery, loadKey]);
+
+  async function loadMore() {
+    setLoadingMore(true);
+    try {
+      const nextOffset = offset + 60;
+      const params = new URLSearchParams({
+        locale,
+        offset: String(nextOffset),
+        limit: "60",
+      });
+      if (debouncedQuery) params.set("q", debouncedQuery);
+
+      const res = await fetch(`/api/legal-corpus/${sourceId}?${params}`);
+      if (!res.ok) throw new Error("fetch failed");
+      const data = (await res.json()) as {
+        chunks: ChunkRow[];
+        chunkCount: number;
+        hasMore: boolean;
+      };
+
+      setPage((prev) => {
+        if (!prev || prev.key !== loadKey) return prev;
+        return {
+          key: loadKey,
+          chunks: [...prev.chunks, ...data.chunks],
+          total: data.chunkCount,
+          hasMore: data.hasMore,
+          offset: nextOffset,
+        };
+      });
+    } finally {
+      setLoadingMore(false);
+    }
+  }
 
   return (
     <div className="flex min-h-0 flex-1 flex-col gap-5">
@@ -135,10 +191,10 @@ export function LegalSourceReader({
             <Button
               type="button"
               variant="outline"
-              disabled={loading}
-              onClick={() => void fetchChunks(offset + 60, true)}
+              disabled={loading || loadingMore}
+              onClick={() => void loadMore()}
             >
-              {loading ? t("loading") : t("loadMore")}
+              {loadingMore ? t("loading") : t("loadMore")}
             </Button>
           </div>
         ) : null}
