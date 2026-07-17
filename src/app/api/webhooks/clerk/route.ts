@@ -36,17 +36,46 @@ export async function POST(request: Request) {
 
   if (event.type === "user.created") {
     const user = event.data;
-    await supabase.from("profiles").upsert(
-      {
-        clerk_user_id: user.id,
-        context: "founder",
-        display_name: [user.first_name, user.last_name].filter(Boolean).join(" ") || null,
-        email: user.email_addresses?.[0]?.email_address ?? null,
-        avatar_url: user.image_url ?? null,
-        onboarding_complete: false,
-      },
+    const email = user.email_addresses?.[0]?.email_address?.trim().toLowerCase() ?? null;
+    const row = {
+      clerk_user_id: user.id,
+      context: "founder" as const,
+      display_name: [user.first_name, user.last_name].filter(Boolean).join(" ") || null,
+      avatar_url: user.image_url ?? null,
+      onboarding_complete: false,
+    };
+
+    let { error } = await supabase.from("profiles").upsert(
+      { ...row, email },
       { onConflict: "clerk_user_id" },
     );
+
+    if (
+      error &&
+      email &&
+      (error.code === "23505" || error.message.toLowerCase().includes("duplicate"))
+    ) {
+      await supabase
+        .from("profiles")
+        .update({ email: null })
+        .eq("context", "founder")
+        .ilike("email", email)
+        .neq("clerk_user_id", user.id);
+
+      ({ error } = await supabase.from("profiles").upsert(
+        { ...row, email },
+        { onConflict: "clerk_user_id" },
+      ));
+    }
+
+    if (error) {
+      ({ error } = await supabase.from("profiles").upsert(row, { onConflict: "clerk_user_id" }));
+    }
+
+    if (error) {
+      console.error("[clerk webhook] profile upsert failed", error);
+      return new Response("Profile upsert failed", { status: 500 });
+    }
   }
 
   return new Response("ok", { status: 200 });
