@@ -15,7 +15,13 @@
       "dd": "Due diligence",
       "team": "Equipo",
       "knowledge": "Conocimiento",
-      "templates": "Plantillas"
+      "templates": "Plantillas",
+      "laws": "Leyes y normas",
+      "adminOverview": "Resumen",
+      "adminCorpus": "Corpus legal",
+      "adminAi": "Uso de IA",
+      "adminRequests": "Solicitudes",
+      "adminAudit": "Auditoría"
     }
   },
   "notifications": {
@@ -29,6 +35,134 @@
     "subtitle": "Artículos curados por la firma sobre documentos, due diligence y venture.",
     "readArticle": "Leer artículo",
     "backToHub": "Volver al centro de conocimiento"
+  },
+  "admin": {
+    "eyebrow": "Operaciones de plataforma",
+    "title": "Consola de administración",
+    "subtitle": "Gestiona el corpus legal, monitorea el uso de IA y revisa la actividad de la plataforma.",
+    "forbidden": "No tienes acceso de administrador de plataforma.",
+    "stats": {
+      "corpus": "Fuentes legales",
+      "aiCalls": "Llamadas de IA",
+      "openReviews": "Revisiones abiertas",
+      "auditEvents": "Eventos de auditoría",
+      "visibleHint": "{count} visibles para fundadores",
+      "aiHint": "En todos los tenants",
+      "reviewsHint": "En cola o en progreso",
+      "auditHint": "Rastro de toda la plataforma"
+    },
+    "overview": {
+      "addLaw": "Agregar ley",
+      "addLawDescription": "Crea un nuevo estatuto o norma en el corpus.",
+      "manageCorpus": "Gestionar corpus",
+      "manageCorpusDescription": "Edita metadatos, pega texto o cambia la visibilidad.",
+      "viewAudit": "Registro de auditoría",
+      "viewAuditDescription": "Revisa quién cambió qué en la plataforma.",
+      "shortcutsTitle": "Acciones rápidas",
+      "recentActivity": "Actividad reciente",
+      "recentActivityDescription": "Últimos eventos de auditoría",
+      "recentAi": "Llamadas de IA recientes",
+      "recentAiDescription": "Uso reciente del modelo",
+      "viewAll": "Ver todo"
+    },
+    "corpus": {
+      "eyebrow": "Corpus legal",
+      "title": "Leyes y normas para fundadores",
+      "subtitle": "Agrega, edita y controla qué normas aparecen en la biblioteca legal del fundador. La IA sigue usando el corpus completo.",
+      "addLaw": "Agregar ley",
+      "edit": "Editar",
+      "empty": "Aún no hay fuentes legales. Agrega el primer estatuto para comenzar.",
+      "visible": "Visible para fundadores",
+      "hidden": "Oculto para fundadores",
+      "show": "Mostrar a fundadores",
+      "hide": "Ocultar a fundadores",
+      "chunks": "{count} artículos",
+      "status": "Estado: {status}",
+      "updated": "Visibilidad actualizada",
+      "error": "No se pudo actualizar la visibilidad",
+      "types": {
+        "constitution": "Constitución",
+        "code": "Código",
+        "statute": "Ley",
+        "decree": "Decreto",
+        "circular": "Circular",
+        "decision": "Sentencia"
+      },
+      "form": {
+        "createTitle": "Agregar fuente legal",
+        "createSubtitle": "Ingresa los metadatos y agrega la norma pegando texto en español o subiendo un PDF (capa de texto u OCR).",
+        "editTitle": "Editar fuente legal",
+        "editSubtitle": "Actualizando {citation}",
+        "idLabel": "ID de la fuente (opcional)",
+        "idPlaceholder": "ley-1258-2008",
+        "idHint": "Déjalo en blanco para generarlo desde la cita en español. Usa un slug estable si vas a volver a subir el mismo PDF.",
+        "typeLabel": "Tipo",
+        "citationEs": "Cita (español)",
+        "citationEn": "Cita (inglés)",
+        "titleEs": "Título (español)",
+        "titleEn": "Título (inglés)",
+        "descriptionEs": "Descripción (español)",
+        "descriptionEn": "Descripción (inglés)",
+        "contentLabel": "Contenido de la norma",
+        "modePaste": "Pegar texto",
+        "modePasteHint": "Pega el texto en español. Se divide en artículos automáticamente.",
+        "modePdf": "Subir PDF",
+        "modePdfHint": "Los PDF digitales usan la capa de texto; las páginas escaneadas se procesan con OCR (español + inglés).",
+        "pastedText": "Texto del cuerpo en español",
+        "pastedTextPlaceholder": "Pega aquí el texto del artículo…",
+        "pastedTextHint": "Los artículos se detectan por encabezados como ARTÍCULO 1. Los fragmentos en inglés quedan pendientes de revisión.",
+        "pdfLabel": "Archivo PDF",
+        "pdfHint": "Máx. 25 MB. Se requieren Poppler (pdftotext/pdftoppm) y Tesseract con idioma spa+eng.",
+        "pdfSelected": "Seleccionado: {name}",
+        "extracting": "Extrayendo texto del PDF… puede tardar un minuto en documentos escaneados.",
+        "extractedText": "Se extrajo la capa de texto en {count} artículos.",
+        "extractedOcr": "OCR extrajo el texto en {count} artículos.",
+        "founderVisible": "Mostrar en la biblioteca legal del fundador",
+        "createSubmit": "Crear ley",
+        "editSubmit": "Guardar cambios",
+        "cancel": "Cancelar",
+        "errors": {
+          "REQUIRED_FIELDS": "El título y la cita (español) son obligatorios.",
+          "INVALID_TYPE": "Tipo de fuente no válido.",
+          "PDF_REQUIRED": "Elige un archivo PDF para subir.",
+          "PDF_TOO_LARGE": "El PDF es demasiado grande (máx. 25 MB).",
+          "INVALID_PDF": "Ese archivo no es un PDF válido.",
+          "PDF_TOOLS_MISSING": "pdftotext (Poppler) no está instalado en el servidor.",
+          "OCR_TOOLS_MISSING": "El OCR necesita pdftoppm y tesseract con datos de idioma español (spa).",
+          "EXTRACT_EMPTY": "No se pudo extraer texto legible del PDF."
+        }
+      }
+    },
+    "ai": {
+      "eyebrow": "Puerta de enlace de IA",
+      "title": "Uso de IA",
+      "subtitle": "Llamadas recientes al modelo en toda la plataforma.",
+      "empty": "Aún no hay llamadas de IA registradas.",
+      "caller": "Usuario",
+      "task": "Tarea",
+      "model": "Modelo",
+      "when": "Cuándo"
+    },
+    "requests": {
+      "eyebrow": "Cola de la firma",
+      "title": "Solicitudes de revisión",
+      "subtitle": "Solicitudes de revisión de documentos entre tenants.",
+      "empty": "Aún no hay solicitudes de revisión.",
+      "status": "Estado",
+      "requester": "Solicitante",
+      "document": "Documento",
+      "when": "Cuándo"
+    },
+    "audit": {
+      "eyebrow": "Defensibilidad",
+      "title": "Registro de auditoría",
+      "subtitle": "Quién hizo qué, y cuándo.",
+      "empty": "Aún no hay eventos de auditoría.",
+      "action": "Acción",
+      "actor": "Actor",
+      "resource": "Recurso",
+      "when": "Cuándo"
+    }
   },
   "theme": {
     "toggle": "Cambiar tema",
@@ -205,6 +339,8 @@
     "account": {
       "user": "Usuario",
       "dashboard": "Ir al panel",
+      "adminDashboard": "Consola admin",
+      "founderDashboard": "Panel fundador",
       "manage": "Administrar cuenta",
       "signOut": "Cerrar sesión"
     },
@@ -361,6 +497,30 @@
       "eyebrow": "Plantillas de la firma",
       "title": "Aprende los documentos",
       "subtitle": "Elige una plantilla, lee cada cláusula y descubre por qué importa en tu ronda — con comentarios de la firma."
+    },
+    "legalLibrary": {
+      "eyebrow": "Corpus legal",
+      "title": "Leyes y normas de Colombia",
+      "subtitle": "Consulta el texto de referencia que usa la IA de la plataforma — leyes, códigos y circulares aplicables a tu ronda.",
+      "readSource": "Ver texto",
+      "backToLibrary": "Volver a leyes y normas",
+      "searchPlaceholder": "Buscar artículo o palabra clave…",
+      "articleCount": "{count} artículos",
+      "loading": "Cargando…",
+      "loadMore": "Cargar más artículos",
+      "noResults": "No hay artículos que coincidan con tu búsqueda.",
+      "readerEyebrow": "Texto del artículo",
+      "selectArticle": "Selecciona un artículo de la lista para leer el texto completo.",
+      "englishPendingNote": "La traducción al inglés está pendiente de revisión legal. El texto oficial es en español.",
+      "disclaimer": "Texto de referencia para educación. Confirma con un abogado de la firma antes de usar en un acuerdo.",
+      "sourceTypes": {
+        "constitution": "Constitución",
+        "code": "Códigos",
+        "statute": "Leyes",
+        "decree": "Decretos",
+        "circular": "Circulares",
+        "decision": "Decisiones"
+      }
     },
     "learn": {
       "documentProgress": "Documento {step} de {total}",
