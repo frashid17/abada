@@ -14,13 +14,15 @@ export function isProtectedPath(pathname: string): boolean {
   return (
     pathname.startsWith("/fundador") ||
     pathname.startsWith("/inversionista") ||
-    pathname.startsWith("/firma")
+    pathname.startsWith("/firma") ||
+    pathname.startsWith("/admin")
   );
 }
 
-export function shellForPath(pathname: string): "public" | "founder" | "investor" | "firm" {
+export function shellForPath(pathname: string): "public" | "founder" | "investor" | "firm" | "admin" {
   if (pathname.startsWith("/fundador")) return "founder";
   if (pathname.startsWith("/inversionista")) return "investor";
   if (pathname.startsWith("/firma")) return "firm";
+  if (pathname.startsWith("/admin")) return "admin";
   return "public";
 }
