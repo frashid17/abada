@@ -76,24 +76,32 @@ export function OnboardingWizard({ userEmail, invitation }: OnboardingWizardProp
   function handleFounder() {
     startTransition(async () => {
       setError(null);
-      const result = await completeFounderOnboarding();
-      if (!result.ok) {
+      try {
+        const result = await completeFounderOnboarding();
+        if (!result.ok) {
+          setError(t(`errors.${result.error}` as "errors.generic"));
+          return;
+        }
+        goTo(result.redirect);
+      } catch {
         setError(t("errors.generic"));
-        return;
       }
-      goTo(result.redirect);
     });
   }
 
   function handleInvestor() {
     startTransition(async () => {
       setError(null);
-      const result = await completeInvestorOnboarding();
-      if (!result.ok) {
+      try {
+        const result = await completeInvestorOnboarding();
+        if (!result.ok) {
+          setError(t(`errors.${result.error}` as "errors.generic"));
+          return;
+        }
+        goTo(result.redirect);
+      } catch {
         setError(t("errors.generic"));
-        return;
       }
-      goTo(result.redirect);
     });
   }
 
