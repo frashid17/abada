@@ -108,13 +108,18 @@ Colombian legal-AI due diligence & investment-readiness platform.
 - [x] E2E scaffold — Playwright (`npm run test:e2e`), public smoke suite (landing, knowledge hub, auth redirects, API 401s)
 - [ ] E2E authenticated flows (Clerk testing tokens) — founder doc flow, firm review, DD room
 - [ ] Live DB RLS isolation tests (tenant A vs tenant B against real Supabase)
+- [x] Founder legal library — `/fundador/leyes` browse + read Colombian corpus (laws, codes, circulars)
+- [x] Platform admin console — `/admin` overview + feed, corpus add/edit (paste or PDF+OCR), AI usage, reviews, audit (name/email labels)
 - [ ] **Manual:** Apply migration `015_m7_hardening.sql`
+- [ ] **Manual:** Apply migration `016_platform_admin.sql` and set `PLATFORM_ADMIN_SUBS` (your Clerk user id)
+- [ ] **Manual:** Install Poppler + Tesseract (`spa`) on hosts that run admin PDF uploads
 - [ ] **Manual:** Schedule `purge_expired_audit_logs()` + `purge_stale_rate_limits()` (pg_cron or external scheduler)
 - [ ] **Manual:** `npx playwright install chromium` before first `npm run test:e2e`
 
 ## M8 — Beta readiness
 
-- [ ] Sentry; analytics; platform-ops console; feature flags; runbooks
+- [ ] Sentry; analytics; feature flags; runbooks
+- [x] Admin PDF upload UI — paste or PDF (text layer + OCR via Poppler/Tesseract); CLI `corpus:ingest` still available
 
 ## Architecture notes (M0 decisions)
 
