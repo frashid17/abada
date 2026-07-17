@@ -7,9 +7,12 @@ import { createFirmTenant } from "@/lib/firm/create-tenant";
 import { redeemFirmInvitation } from "@/lib/firm/invitations";
 import { resolveInviteForOnboarding } from "@/lib/firm/invite-lookup";
 import { getFirmMembershipForUser } from "@/lib/firm/membership";
+import { isPlatformAdmin } from "@/lib/platform-admin/auth";
 import type { UserContext } from "@/types/database";
 
 export async function getOnboardingRedirect(userId: string): Promise<string | null> {
+  if (await isPlatformAdmin(userId)) return "/admin";
+
   const supabase = createServiceRoleSupabaseClient();
   const { data: profile } = await supabase
     .from("profiles")
