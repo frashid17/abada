@@ -1,3 +1,4 @@
+import { auth } from "@clerk/nextjs/server";
 import { getTranslations } from "next-intl/server";
 import { BrandMark } from "@/components/brand/brand-mark";
 import { Link } from "@/i18n/navigation";
@@ -17,14 +18,22 @@ const accountLinks = [
 
 export async function SiteFooter() {
   const t = await getTranslations("footer");
+  const { userId } = await auth();
   const brand = getBrandName();
   const firm = getFirmName();
   const year = new Date().getFullYear();
+  const showAuthLinks = !userId;
 
   return (
     <footer className="relative z-10 mt-auto shrink-0 border-t border-border bg-background">
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6">
-        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr]">
+        <div
+          className={
+            showAuthLinks
+              ? "grid gap-10 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr]"
+              : "grid gap-10 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr]"
+          }
+        >
           <div className="space-y-3">
             <Link href="/" className="inline-block cursor-pointer transition-opacity hover:opacity-90">
               <BrandMark wordmark={brand} />
@@ -51,23 +60,25 @@ export async function SiteFooter() {
             </ul>
           </div>
 
-          <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.12em] text-muted-foreground">
-              {t("account")}
-            </p>
-            <ul className="mt-4 space-y-2.5">
-              {accountLinks.map(({ href, key }) => (
-                <li key={key}>
-                  <Link
-                    href={href}
-                    className="cursor-pointer text-sm text-foreground/80 transition-colors hover:text-foreground"
-                  >
-                    {t(`accountLinks.${key}`)}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+          {showAuthLinks ? (
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.12em] text-muted-foreground">
+                {t("account")}
+              </p>
+              <ul className="mt-4 space-y-2.5">
+                {accountLinks.map(({ href, key }) => (
+                  <li key={key}>
+                    <Link
+                      href={href}
+                      className="cursor-pointer text-sm text-foreground/80 transition-colors hover:text-foreground"
+                    >
+                      {t(`accountLinks.${key}`)}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ) : null}
         </div>
 
         <div className="mt-10 flex flex-col gap-3 border-t border-border/70 pt-6 sm:flex-row sm:items-center sm:justify-between">
