@@ -4,7 +4,7 @@ import { useClerk, useUser } from "@clerk/nextjs";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useTranslations } from "next-intl";
-import { ChevronDown, LogOut, Settings, LayoutDashboard } from "lucide-react";
+import { ChevronDown, LogOut, Settings, LayoutDashboard, ShieldCheck } from "lucide-react";
 import { AuthHeaderPlaceholder } from "@/components/auth/auth-header-actions";
 import { homeForContext } from "@/lib/auth/routing";
 import type { UserContext } from "@/types/database";
@@ -43,6 +43,8 @@ export function AccountMenu() {
     (user.unsafeMetadata?.context as UserContext | undefined) ??
     "founder";
 
+  const isAdmin = user.publicMetadata?.platformAdmin === true;
+
   const displayName = user.fullName ?? user.primaryEmailAddress?.emailAddress ?? t("user");
   const email = user.primaryEmailAddress?.emailAddress ?? "";
   const initials = getInitials(user.fullName, email);
@@ -77,10 +79,18 @@ export function AccountMenu() {
           </div>
         </DropdownMenuLabel>
         <DropdownMenuSeparator />
+        {isAdmin ? (
+          <DropdownMenuItem asChild>
+            <Link href="/admin" className="cursor-pointer">
+              <ShieldCheck />
+              {t("adminDashboard")}
+            </Link>
+          </DropdownMenuItem>
+        ) : null}
         <DropdownMenuItem asChild>
           <Link href={homeForContext(context)} className="cursor-pointer">
             <LayoutDashboard />
-            {t("dashboard")}
+            {context === "founder" && isAdmin ? t("founderDashboard") : t("dashboard")}
           </Link>
         </DropdownMenuItem>
         <DropdownMenuItem asChild>
