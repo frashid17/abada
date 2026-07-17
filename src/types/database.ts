@@ -737,6 +737,7 @@ export interface Database {
           pdf_filename: string | null;
           chunk_count: number;
           status: string;
+          founder_visible: boolean;
           extracted_at: string | null;
           created_at: string;
           updated_at: string;
@@ -755,6 +756,7 @@ export interface Database {
           pdf_filename?: string | null;
           chunk_count?: number;
           status?: string;
+          founder_visible?: boolean;
           extracted_at?: string | null;
           created_at?: string;
           updated_at?: string;
@@ -773,9 +775,28 @@ export interface Database {
           pdf_filename?: string | null;
           chunk_count?: number;
           status?: string;
+          founder_visible?: boolean;
           extracted_at?: string | null;
           created_at?: string;
           updated_at?: string;
+        };
+        Relationships: [];
+      };
+      platform_admins: {
+        Row: {
+          clerk_user_id: string;
+          display_name: string | null;
+          created_at: string;
+        };
+        Insert: {
+          clerk_user_id: string;
+          display_name?: string | null;
+          created_at?: string;
+        };
+        Update: {
+          clerk_user_id?: string;
+          display_name?: string | null;
+          created_at?: string;
         };
         Relationships: [];
       };
@@ -868,6 +889,7 @@ export interface Database {
       requesting_user_sub: { Args: Record<string, never>; Returns: string };
       requesting_org_id: { Args: Record<string, never>; Returns: string | null };
       active_tenant_id: { Args: Record<string, never>; Returns: string | null };
+      is_platform_admin: { Args: Record<string, never>; Returns: boolean };
       search_firm_knowledge: {
         Args: { p_tenant_id: string; p_query: string; p_limit?: number };
         Returns: {
