@@ -1,5 +1,5 @@
-/** Active payment provider for Colombia MVP. */
-export type PaymentProviderName = "wompi";
+/** Active payment provider for Colombia MVP. `mock` is for local/demo checkout only. */
+export type PaymentProviderName = "wompi" | "mock";
 
 export type PaymentStatus =
   | "pending"
@@ -40,6 +40,7 @@ export type RevenueSplitLine = {
 export type RecordPaymentInput = {
   tenantId: string;
   payerSub: string;
+  provider?: PaymentProviderName;
   providerReference: string;
   amountCents: number;
   currency: string;
