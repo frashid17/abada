@@ -1,7 +1,7 @@
 "use client";
 
 import { useLocale, useTranslations } from "next-intl";
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import {
   ChevronDown,
   ChevronUp,
@@ -38,6 +38,11 @@ type DocumentAiPanelProps = {
   documentTitle: string;
   fields: FieldValues;
   fieldKeys: string[];
+  initialAccess: {
+    hasAccess: boolean;
+    paywallEnabled: boolean;
+    amountFormatted: string;
+  };
 };
 
 function createMessageId(): string {
@@ -52,6 +57,7 @@ export function DocumentAiPanel({
   documentTitle,
   fields,
   fieldKeys,
+  initialAccess,
 }: DocumentAiPanelProps) {
   const t = useTranslations("founder.flow.ai");
   const tPay = useTranslations("payments.checkout");
@@ -61,39 +67,12 @@ export function DocumentAiPanel({
   const [messages, setMessages] = useState<ChatMessage[]>([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const [accessLoading, setAccessLoading] = useState(true);
-  const [hasAccess, setHasAccess] = useState(false);
-  const [paywallEnabled, setPaywallEnabled] = useState(true);
-  const [amountFormatted, setAmountFormatted] = useState("");
+  const [hasAccess, setHasAccess] = useState(initialAccess.hasAccess);
+  const [paywallEnabled] = useState(initialAccess.paywallEnabled);
+  const [amountFormatted] = useState(initialAccess.amountFormatted);
   const [checkoutOpen, setCheckoutOpen] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLTextAreaElement>(null);
-
-  const refreshAccess = useCallback(async () => {
-    try {
-      const response = await fetch("/api/payments/ai-access");
-      if (!response.ok) {
-        setHasAccess(false);
-        return;
-      }
-      const data = (await response.json()) as {
-        hasAccess?: boolean;
-        paywallEnabled?: boolean;
-        amountFormatted?: string;
-      };
-      setHasAccess(Boolean(data.hasAccess));
-      setPaywallEnabled(data.paywallEnabled !== false);
-      setAmountFormatted(data.amountFormatted ?? "");
-    } catch {
-      setHasAccess(false);
-    } finally {
-      setAccessLoading(false);
-    }
-  }, []);
-
-  useEffect(() => {
-    void refreshAccess();
-  }, [refreshAccess]);
 
   const filledCount = useMemo(
     () =>
@@ -254,7 +233,6 @@ export function DocumentAiPanel({
           onSuccess={() => {
             setHasAccess(true);
             setCheckoutOpen(false);
-            setAccessLoading(false);
             setMinimized(false);
           }}
         />
@@ -345,12 +323,7 @@ export function DocumentAiPanel({
           ref={scrollRef}
           className="min-h-0 flex-1 space-y-5 overflow-y-auto px-5 py-5 scroll-smooth"
         >
-          {accessLoading ? (
-            <div className="flex h-full flex-col items-center justify-center gap-3 py-10 text-muted-foreground">
-              <Loader2 className="h-5 w-5 animate-spin text-primary" aria-hidden />
-              <p className="text-sm">{tPay("checkingAccess")}</p>
-            </div>
-          ) : locked ? (
+          {locked ? (
             <div className="flex h-full flex-col items-center justify-center gap-5 py-6 text-center">
               <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-primary/15 to-cta/10 text-primary">
                 <Lock className="h-6 w-6" aria-hidden />
@@ -479,7 +452,7 @@ export function DocumentAiPanel({
                   id="ai-chat-input"
                   rows={1}
                   value={input}
-                  disabled={loading || accessLoading}
+                  disabled={loading}
                   placeholder={t("placeholder")}
                   onChange={(e) => setInput(e.target.value)}
                   onKeyDown={(e) => {
@@ -495,7 +468,7 @@ export function DocumentAiPanel({
                   variant="cta"
                   size="icon"
                   className="absolute bottom-2.5 right-2.5 h-10 w-10 rounded-xl shadow-soft"
-                  disabled={loading || accessLoading || !input.trim()}
+                  disabled={loading || !input.trim()}
                   aria-label={t("send")}
                 >
                   {loading ? (
@@ -520,7 +493,6 @@ export function DocumentAiPanel({
         onSuccess={() => {
           setHasAccess(true);
           setCheckoutOpen(false);
-          setAccessLoading(false);
         }}
       />
     </>
