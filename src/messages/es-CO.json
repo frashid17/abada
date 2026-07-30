@@ -192,6 +192,49 @@
     "copyright": "© {year} {brand}. Operado por {firm}.",
     "disclaimer": "La asistencia con IA orienta el proceso; cada documento con relevancia legal es revisado por un abogado nombrado de {firm}."
   },
+  "payments": {
+    "checkout": {
+      "eyebrow": "Pago seguro · Colombia",
+      "title": "Desbloquear asistencia IA",
+      "subtitle": "Paga una vez para usar el asistente de redacción en tus documentos.",
+      "close": "Cerrar checkout",
+      "product": "Acceso IA",
+      "productDetail": "Asistente de redacción · acceso completo",
+      "methodLabel": "Método de pago",
+      "methods": {
+        "card": "Tarjeta",
+        "nequi": "Nequi",
+        "daviplata": "Daviplata"
+      },
+      "card": {
+        "name": "Nombre en la tarjeta",
+        "namePlaceholder": "Como aparece en la tarjeta",
+        "number": "Número de tarjeta",
+        "expiry": "Vencimiento",
+        "expiryPlaceholder": "MM/AA",
+        "cvc": "CVC",
+        "cvcPlaceholder": "123"
+      },
+      "mobile": {
+        "phone": "Celular en Colombia",
+        "phonePlaceholder": "300 123 4567",
+        "nequiHint": "Te enviaremos un push a Nequi para confirmar el pago (simulado).",
+        "daviplataHint": "Te enviaremos una solicitud a Daviplata para confirmar el pago (simulado)."
+      },
+      "pay": "Pagar {amount}",
+      "processing": "Procesando pago…",
+      "secureNote": "Checkout de demostración · datos no se envían a un procesador real",
+      "successTitle": "Pago aprobado",
+      "successBody": "Tu asistencia IA ya está desbloqueada.",
+      "error": "No se pudo completar el pago. Revisa los datos e intenta de nuevo.",
+      "lockedTitle": "IA bloqueada",
+      "lockedBody": "Desbloquea el asistente de redacción por {amount} (pago único).",
+      "lockedHint": "Pago requerido para usar la IA",
+      "unlockCta": "Desbloquear por {amount}",
+      "checkingAccess": "Verificando acceso…",
+      "mockNote": "Pago de demostración · tarjeta o dinero móvil colombiano"
+    }
+  },
   "public": {
     "eyebrow": "Balam Legal · Plataforma de investment-readiness",
     "headline": "La capa legal para startups colombianas que levantan capital",
@@ -452,6 +495,7 @@
       "continueCta": "Continuar checklist",
       "nextUp": "Siguiente: {title}",
       "pipelineTitle": "Tu ruta de documentos",
+      "pipelineSubtitle": "Cinco pasos hacia investment-readiness — toca cualquiera para abrir el flujo.",
       "allDocuments": "Todos los documentos",
       "comingSoonBadge": "Próximamente",
       "updated": "Actualizado {date}",
