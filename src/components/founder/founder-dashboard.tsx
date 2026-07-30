@@ -26,12 +26,19 @@ export async function FounderDashboard({ data }: FounderDashboardProps) {
     ),
   ) as Record<DocumentStatus, string>;
 
+  const documentTitles = Object.fromEntries(
+    pipelineDocuments.map((doc) => [
+      doc.documentType,
+      t(`documents.${doc.documentType}.title`),
+    ]),
+  );
+
   const nextTitle = insights.nextDocument
     ? t(`documents.${insights.nextDocument.documentType}.title`)
     : null;
 
   return (
-    <div className="space-y-10">
+    <div className="space-y-12">
       <FounderDashboardHero
         eyebrow={t("dashboard.eyebrow")}
         title={t("dashboard.title")}
@@ -57,21 +64,23 @@ export async function FounderDashboard({ data }: FounderDashboardProps) {
       <FounderChecklistTracker
         documents={pipelineDocuments}
         labels={statusLabels}
+        documentTitles={documentTitles}
         stepLabel={(step) => t("dashboard.step", { step })}
         title={t("dashboard.pipelineTitle")}
+        subtitle={t("dashboard.pipelineSubtitle")}
       />
 
-      <div className="grid gap-6 xl:grid-cols-[1fr_280px] xl:items-start">
+      <div className="grid gap-8 xl:grid-cols-[minmax(0,1fr)_300px] xl:items-start">
         <FounderWorkspaceFocus data={data} />
 
-        <aside className="space-y-3">
+        <aside className="space-y-4 xl:sticky xl:top-24">
           <FeaturePanel
             tone="trust"
             icon={ShieldCheck}
             eyebrow={firmName}
             title={t("dashboard.reviewTitle")}
             description={t("dashboard.reviewDescription")}
-            className="p-5"
+            className="rounded-3xl p-6"
           />
           <LegalDisclosure message={t("dashboard.disclaimer")} className="text-xs" />
         </aside>
