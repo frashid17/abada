@@ -34,3 +34,14 @@ Use **sandbox** keys until the Wompi merchant account is verified.
 - `POST /api/payments/checkout` → creates Wompi payment link + pending `payments` row
 - `POST /api/webhooks/wompi` → verifies checksum, captures payment + `revenue_splits`
 - `recordPayment()` / `captureRecordedPayment()` → persists to Supabase
+
+## Mock AI paywall (demo)
+
+Until live Wompi merchant keys are ready, AI drafting is gated by a **mock Colombia checkout**:
+
+- UI: card or mobile money (Nequi / Daviplata, `+57`)
+- `POST /api/payments/mock-checkout` → validates details, sets httpOnly entitlement cookie, records `provider=mock` payment when firm tenant exists
+- `GET /api/payments/ai-access` → entitlement status for the AI panel
+- `POST /api/ai/chat` → returns `402` without access
+- Kill switch: `FEATURE_AI_PAYWALL=false` (bypass paywall for local/dev)
+- Migration: `018_mock_payments.sql` (adds `mock` to payments provider check)
