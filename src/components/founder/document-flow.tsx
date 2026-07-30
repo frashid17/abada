@@ -30,6 +30,11 @@ type DocumentFlowProps = {
   status: DocumentStatus;
   helpMessage: string | null;
   reviewSummary: DocumentReviewSummary;
+  aiAccess: {
+    hasAccess: boolean;
+    paywallEnabled: boolean;
+    amountFormatted: string;
+  };
 };
 
 export function DocumentFlow({
@@ -38,6 +43,7 @@ export function DocumentFlow({
   status,
   helpMessage,
   reviewSummary,
+  aiAccess,
 }: DocumentFlowProps) {
   const t = useTranslations("founder.flow");
   const tDocs = useTranslations("founder.documents");
@@ -427,6 +433,7 @@ export function DocumentFlow({
           documentTitle={tDocs(`${documentType}.title`)}
           fields={fields}
           fieldKeys={schema.fields.map((field) => field.key)}
+          initialAccess={aiAccess}
         />
       </div>
 
