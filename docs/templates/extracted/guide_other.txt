@@ -1,0 +1,527 @@
+Annotated Guide to the Legal Package for an S.A.S.
+
+Purpose of Each Section and Its Importance for Founders
+
+Purpose of this guide. This guide accompanies the documents prepared for the Company and explains, section by section, two practical matters: (1) the purpose of the clause and (2) why it is important for the founders. The commentary does not replace the contractual language; it is intended to facilitate review, negotiation, implementation, and alignment with the bylaws, founders’ agreement, and shareholders’ agreement.
+
+I Confidentiality, Intellectual Property Assignment, and Inventions Agreement
+
+Heading, Parties, and Purpose
+
+Purpose of the section: Identifies the Company and the founder, employee, contractor, or technical team member signing the document. It also establishes that the agreement covers confidentiality, intellectual property, and inventions related to the Business.
+
+Importance for founders: Prevents disputes over who is bound and the scope of the document. For a startup, the most valuable early assets are often its code, product, data, and know-how; therefore, every person contributing to the product should be contractually bound.
+
+1. Purpose and Scope
+
+Purpose of the section: Establishes that the Contributor participates in the business and that the agreement governs the work product and information the Contributor learns, uses, or creates through that relationship.
+
+Importance for founders: Reduces the risk that someone will claim that their developments were unrelated to the Company. This is especially relevant when a founder or developer works on a hybrid, remote, part-time, or contractor basis.
+
+2. Definitions
+
+Purpose of the section: Broadly defines “Confidential Information” and “Developments,” including software, code, AI models, data, interfaces, documentation, methods, and trade secrets.
+
+Importance for founders: A broad definition avoids gaps. Without it, a developer could argue that an algorithm, prompt, database, or product improvement was not covered by the assignment or confidentiality obligation.
+
+3. Confidentiality
+
+Purpose of the section: Requires the Contributor to protect and use confidential information only for authorized purposes; it also establishes reasonable exceptions and a process for legally compelled disclosure.
+
+Importance for founders: Protects information that may immediately lose value if disclosed: the roadmap, pricing, commercial strategy, credentials, source code, customer contacts, and investor discussions. It also helps demonstrate that the Company took reasonable measures to protect its trade secrets.
+
+4. Ownership and Assignment of Economic Rights
+
+Purpose of the section: Recognizes the Company’s exclusive ownership of the Developments and contains an express assignment of economic intellectual property rights.
+
+Importance for founders: This is one of the most important clauses for a financing round or sale of the company. Investors and buyers review whether the Company truly owns the code, trademarks, designs, and technology assets. If a founder or contractor retains those rights, that person may block financing, an acquisition, or commercial use of the product.
+
+5. Software, Code, and Third-Party Materials
+
+Purpose of the section: Regulates the use of open-source software, libraries, data, models, and third-party materials, and imposes license review and recordkeeping obligations.
+
+Importance for founders: Prevents the team from incorporating software or materials subject to licenses that require source-code disclosure, broad licenses to third parties, or unforeseen costs. It also mitigates the risk that a developer improperly uses information from a previous employer.
+
+6. Moral Rights and Authorizations
+
+Purpose of the section: Recognizes that moral rights are inalienable in Colombia but obtains authorizations allowing the Company to adapt, modify, integrate, publish, and exploit the Developments to the extent permitted by law.
+
+Importance for founders: An assignment of economic rights alone may not resolve every issue involving modification or attribution. This authorization reduces the risk that a creator later objects to changes needed in software, content, designs, or product materials.
+
+7. Pre-Existing IP
+
+Purpose of the section: Requires the Contributor to disclose intellectual property owned before joining and establishes a broad license if that IP is incorporated into the Business.
+
+Importance for founders: Prevents a founder from later claiming that an essential part of the product was personally owned and demanding payment, control, or renegotiation after the company grows. Schedule 1 transparently identifies what is excluded and what license the Company receives.
+
+8. Disclosure, Delivery, and Cooperation
+
+Purpose of the section: Requires the Contributor to deliver repositories, documentation, files, credentials, and other materials, and to sign additional documents needed to register or perfect rights.
+
+Importance for founders: Ensures operational continuity when someone leaves. Without this clause, code may remain in a personal account, credentials may be lost, and the Company may be unable to prove ownership to investors, customers, or authorities.
+
+9. Security, Data, and Ownership of Assets
+
+Purpose of the section: Establishes that accounts, repositories, equipment, credentials, and corporate assets belong to the Company and requires compliance with security and data-handling measures.
+
+Importance for founders: Reduces the risk of unauthorized access, data loss, and reliance on personal accounts. It is a basic due diligence measure: investors typically review who controls GitHub, domains, cloud services, databases, and administrator accounts.
+
+10. Return of Property and Termination
+
+Purpose of the section: Requires the return of assets, access credentials, and information, and deletion of copies under the Contributor’s control when the relationship ends.
+
+Importance for founders: Facilitates an orderly departure and protects the Company from former team members retaining code, databases, customer information, or access to critical infrastructure.
+
+11. Contributor Representations
+
+Purpose of the section: The Contributor confirms capacity, absence of conflicts, compliance with prior obligations, and no intentional infringement of third-party rights.
+
+Importance for founders: Creates a contractual basis for claims if a Contributor concealed prior restrictions or introduced third-party assets without permission. It also helps identify intellectual property or non-compete risks involving a former employer at an early stage.
+
+12. Breach and Remedies
+
+Purpose of the section: Recognizes that certain breaches may cause harm that is difficult to quantify and permits injunctive relief, specific performance, and damages.
+
+Importance for founders: Provides tools to respond quickly to leaks, misuse of code, withholding of credentials, or misappropriation of assets. In technology businesses, waiting for a lengthy damages proceeding may be insufficient to contain the harm.
+
+13. Governing Law and Dispute Resolution
+
+Purpose of the section: Establishes Colombian law and a tiered process of negotiation, conciliation, and arbitration or ordinary court proceedings.
+
+Importance for founders: Avoids uncertainty about where and how a dispute will be resolved. It may also help reduce costs and achieve a faster solution to sensitive internal conflicts.
+
+14. General Provisions
+
+Purpose of the section: Includes entire agreement, written amendments, severability, and electronic signature provisions.
+
+Importance for founders: Prevents informal conversations or oral agreements from altering critical IP and confidentiality obligations. Electronic signatures also facilitate the rapid onboarding of developers, consultants, and remote contributors.
+
+Schedule 1 – Excluded Pre-Existing IP
+
+Purpose of the section: Expressly documents the assets the Contributor does not assign and the terms of any license granted to the Company.
+
+Importance for founders: Provides key evidence for due diligence and reduces future ownership disputes. If the schedule states “none,” the Company is in a stronger position to maintain that the product assets are under its control.
+
+II  Equity Compensation and Incentive Plan
+
+Heading and Implementation Note
+
+Purpose of the section: Identifies the Plan and the Company and explains its purpose of adapting the economics of restricted shares for founders and options for employees to the Colombian context.
+
+Importance for founders: Avoids mechanically importing U.S. documents that do not fit Colombian corporate formalities. It makes clear that the Plan must be coordinated with the bylaws, authorized capital, shareholders’ ledger, and shareholders’ agreement.
+
+1. Purpose
+
+Purpose of the section: Establishes that the Plan seeks to attract, retain, and align founders, employees, consultants, and advisors through equity-linked incentives.
+
+Importance for founders: Provides a compensation tool that does not depend solely on cash. It is essential for hiring technical and executive talent at an early stage when resources are limited.
+
+2. Plan Administration
+
+Purpose of the section: Designates the body authorized to grant, interpret, amend, and administer incentives.
+
+Importance for founders: Prevents improvised or inconsistent grants. It also protects governance: once investors are involved, they will want to know who can dilute shareholders and under what rules.
+
+3. Plan Pool
+
+Purpose of the section: Establishes the percentage or number of shares reserved for incentives, commonly called the ESOP pool.
+
+Importance for founders: The pool determines future dilution. If it is not planned, an investment round may require creating a pool that causes greater founder dilution. If sized correctly, it supports hiring without renegotiating the capital structure for each grant.
+
+4. Participants
+
+Purpose of the section: Defines who may receive incentives: founders, employees, directors, contractors, consultants, and advisors.
+
+Importance for founders: Allows the Plan to be used for key people who are not necessarily employees. This is useful for startups working with advisors, technical consultants, or contractors at an early stage.
+
+5. Types of Incentives
+
+Purpose of the section: Allows the use of restricted shares, subscription rights, options, transfer promises, or other permitted economic rights.
+
+Importance for founders: Provides flexibility to select the most suitable structure based on the participant’s profile, applicable law, tax considerations, and the Company’s stage. Not every participant should receive the same instrument.
+
+6. Restricted Shares for Founders
+
+Purpose of the section: Implements an RSPA-style structure: the founder receives or subscribes for shares, but the Company retains a repurchase right over the unvested portion if the founder ceases to be involved.
+
+Importance for founders: Protects the team and future investors from “dead equity”: a person leaving early while retaining a large ownership stake without continuing to contribute. Vesting aligns ownership with continued service and value creation.
+
+7. Options for Employees and Consultants
+
+Purpose of the section: Establishes the mechanism for granting options, including the number of shares, exercise price, vesting, term, and post-termination rules.
+
+Importance for founders: Allows employees and consultants to be incentivized without issuing shares on day one. It also protects the capitalization table because unexercised options may lapse if a participant leaves before vesting or exercising them.
+
+8. Grant Letter
+
+Purpose of the section: Requires each incentive to be documented individually with its specific terms.
+
+Importance for founders: Prevents disputes over the number of shares, price, vesting, or acceleration. The Plan establishes the general rules; the individual letter permits each case to be tailored without amending the entire Plan.
+
+9. Continuous Service Relationship
+
+Purpose of the section: Defines what constitutes continuous service for vesting and option purposes.
+
+Importance for founders: Prevents changes in role, contractual arrangement, or working hours from unintentionally interrupting vesting. It also allows the administrator to define clearly when a departure actually ends the right to continue vesting incentives.
+
+10. Good Leaver and Bad Leaver
+
+Purpose of the section: Distinguishes legitimate departures from departures involving serious misconduct and connects that distinction to repurchase rights and the treatment of shares.
+
+Importance for founders: Allows balanced treatment of a person who leaves because of incapacity, removal without cause, or mutual agreement, while giving the Company greater protection when a person abandons the venture, competes, commits fraud, or breaches IP or confidentiality obligations.
+
+11. Change of Control
+
+Purpose of the section: Defines how shares and options are treated if the Company is sold, merged, or undergoes a change of control.
+
+Importance for founders: Avoids uncertainty in an acquisition. Double-trigger acceleration is often a balanced solution: it protects people who lose their roles after a sale without granting automatic acceleration merely upon closing the transaction.
+
+12. Capital Adjustments
+
+Purpose of the section: Permits adjustments to the number of shares and exercise prices in the event of stock splits, consolidations, mergers, spin-offs, or other reorganizations.
+
+Importance for founders: Prevents incentives from unjustifiably losing or gaining value because of purely corporate changes that do not reflect a real economic variation.
+
+13. Taxes and Social Security
+
+Purpose of the section: Assigns tax responsibility to the Participant and allows the Company to make withholdings or condition issuances on tax compliance.
+
+Importance for founders: Shares and options may have complex tax consequences. This clause prevents the Company from assuming a participant’s personal tax liability and requires the treatment to be reviewed before issuance or exercise.
+
+14. No Guarantee of Continued Engagement
+
+Purpose of the section: Clarifies that receiving an incentive does not guarantee employment, consultancy work, future compensation, or continued engagement.
+
+Importance for founders: Reduces the risk that an employee or consultant will claim that the option or Plan guaranteed continued employment or a particular contractual relationship.
+
+15. Transfer Restrictions and Accession
+
+Purpose of the section: Subjects shares issued under the Plan to the bylaws, shareholders’ agreement, transfer restrictions, and IP/confidentiality documents.
+
+Importance for founders: Prevents ESOP shares from ending up in the hands of undesirable third parties or outside the intended governance framework. It also ensures that anyone receiving equity is bound by IP and confidentiality protections.
+
+16. Term, Amendment, and Termination
+
+Purpose of the section: Defines the duration, amendment, and termination of the Plan without improperly affecting incentives already granted.
+
+Importance for founders: Preserves flexibility to adapt the Plan for a financing round, regulatory changes, or hiring needs while maintaining the confidence of people who have already received incentives.
+
+Annex A – Founder Restricted Share Grant Letter
+
+Purpose of the section: Documents an individual grant of founder shares, including price, vesting, repurchase, and acceleration terms.
+
+Importance for founders: This is the operative instrument that converts the general vesting arrangement into specific, demonstrable obligations owed to the Company, the other shareholders, and investors.
+
+Annex B – Option Grant Letter
+
+Purpose of the section: Individually documents an option, including the underlying shares, exercise price, vesting, expiration, and post-departure exercise period.
+
+Importance for founders: Protects the consistency of the ESOP and prevents disputes with employees or consultants over the actual scope of the compensation offered.
+
+III Master Services Agreement with Corporate Clients
+
+Heading and Parties
+
+Purpose of the section: Identifies the Provider and the Client and establishes that they are entering into a master agreement.
+
+Importance for founders: Ensures the commercial relationship is documented with the correct entity and allows a standard structure to be reused for multiple clients, reducing legal time and commercial risk.
+
+1. Scope and Service Documents
+
+Purpose of the section: Defines the Services and allows the agreement to be supplemented by Service Orders covering scope, deliverables, schedule, fees, and specific terms.
+
+Importance for founders: Avoids renegotiating the entire agreement for every project. It also reduces scope disputes, a frequent source of delays, unpaid work, and conflict with corporate clients.
+
+2. Access to and Use of the Services
+
+Purpose of the section: Grants the Client a limited license and establishes restrictions on use, resale, reverse engineering, interference, and unlawful use.
+
+Importance for founders: Protects the technology, business model, and platform security. It prevents a client from sharing access, reselling the product, or attempting to copy critical functionality.
+
+3. Provider Obligations
+
+Purpose of the section: Defines the performance standard, maintenance of capabilities, and reasonable security measures.
+
+Importance for founders: Builds commercial confidence without promising impossible results or absolute availability. It sets a professional, realistic standard the Company can meet.
+
+4. Client Obligations
+
+Purpose of the section: Requires the Client to pay, cooperate, provide lawful information, and ensure its users comply with the agreement.
+
+Importance for founders: Balances responsibilities. Many implementation failures occur because the client does not provide information, make decisions, or have permission to share data; this clause protects the startup from those risks.
+
+5. Fees, Invoicing, and Taxes
+
+Purpose of the section: Governs pricing, VAT, invoicing, payment terms, default interest, suspension, and withholding taxes.
+
+Importance for founders: Protects cash flow, which is often critical for early-stage companies. It provides contractual tools to collect payment, suspend for nonpayment, and address tax withholdings without absorbing unexpected costs.
+
+6. Intellectual Property
+
+Purpose of the section: Distinguishes Provider Technology, Client Data, and the treatment of deliverables or custom developments.
+
+Importance for founders: Prevents a client from claiming ownership of the platform, codebase, or general improvements merely because it paid for the Services. This clause is central to preserving a scalable product that can be defended to investors.
+
+7. Confidentiality
+
+Purpose of the section: Protects each Party’s confidential information and establishes permitted uses, exceptions, and survival.
+
+Importance for founders: Allows product, security, strategy, and business information to be shared with clients without losing control over it. It also requires the Client to protect the startup’s sensitive information.
+
+8. Personal Data Protection and Security
+
+Purpose of the section: Allocates the roles of Data Controller and Data Processor, requires the Client to have legal bases for processing, and establishes security and incident-notification duties.
+
+Importance for founders: Essential for selling to companies that share personal data. It supports compliance with Law 1581 of 2012 and reduces the risk that the Client shifts responsibility to the startup for data it was not authorized to share.
+
+9. Warranties
+
+Purpose of the section: Establishes a limited warranty of professional performance and defines an exclusive remedy of correction or proportional refund.
+
+Importance for founders: Avoids broad warranties of results, universal compatibility, or total availability that a startup cannot control. Limiting the remedy protects the Company’s margin and financial exposure.
+
+10. Indemnification
+
+Purpose of the section: Governs responsibility for third-party claims involving IP, Client Data, or unlawful use and establishes a defense process.
+
+Importance for founders: This is a critical allocation of risk. It protects the startup when a client uses data without authorization or infringes third-party rights, while offering the client reasonable protection if the Provider’s technology infringes third-party IP.
+
+11. Limitation of Liability
+
+Purpose of the section: Excludes indirect damages and establishes a monetary liability cap, with exceptions for serious misconduct and particularly sensitive obligations.
+
+Importance for founders: Without a liability cap, a client claim can easily exceed the Company’s total revenue. The clause helps keep contractual risk insurable, financeable, and proportionate to the value of the contract.
+
+12. Term and Termination
+
+Purpose of the section: Defines the term, termination for breach, suspension for risk, and the return or export of data.
+
+Importance for founders: Allows problematic relationships to be ended, uses affecting security to be suspended, and the treatment of client information upon termination to be defined. It also reduces the risk of indefinite services or unpaid work.
+
+13. Legal Compliance
+
+Purpose of the section: Requires compliance with anti-corruption, anti-money laundering, sanctions, data protection, and other applicable laws.
+
+Importance for founders: Facilitates due diligence by investors and enterprise clients and reduces reputational and regulatory risks from dealing with inappropriate counterparties or uses.
+
+14. Publicity
+
+Purpose of the section: Governs whether the Company may use the Client’s name or logo as a commercial reference.
+
+Importance for founders: Client references can be highly valuable for sales and financing, but unauthorized trademark use may create conflict. The clause allows clear consent to be obtained.
+
+15. General Provisions
+
+Purpose of the section: Covers the entire agreement, assignment, force majeure, notices, governing law, disputes, and electronic signatures.
+
+Importance for founders: Closes operational gaps and prevents disputes about communications, corporate assignments, or events outside the startup’s control. It also facilitates digital execution and commercial scalability.
+
+IV  Terms and Conditions for End Users
+
+Heading, Acceptance, and Definitions
+
+Purpose of the section: Identifies the Company, the Services, and the User and establishes that account creation or use constitutes acceptance of the Terms.
+
+Importance for founders: Provides the contractual basis for operating a platform at scale. Without valid acceptance, it is harder to enforce usage rules, collect payment, limit liability, or suspend abusive accounts.
+
+1. Definitions
+
+Purpose of the section: Defines Account, User Content, Services, and User.
+
+Importance for founders: Avoids ambiguity about what information the user provides, what the product includes, and who is subject to the terms.
+
+2. Eligibility and Account
+
+Purpose of the section: Governs legal capacity, data accuracy, credential protection, and suspension of high-risk accounts.
+
+Importance for founders: Reduces fraud, impersonation, unauthorized use, and security risks. It also enables a rapid response to compromised accounts or unlawful activities.
+
+3. License and Permitted Use
+
+Purpose of the section: Grants the User a limited license and prohibits reverse engineering, resale, code extraction, technical abuse, and unlawful uses.
+
+Importance for founders: Protects the product’s intellectual property and architecture. It prevents users from turning a license to use the platform into a right to copy, distribute, or exploit it.
+
+4. User Content
+
+Purpose of the section: Preserves the User’s ownership of their content while granting the Company an operational license to host, process, and protect that content.
+
+Importance for founders: The platform needs authorization to process user data and files; without this license, its technical operation may be legally exposed. At the same time, recognizing user ownership builds trust and reduces commercial friction.
+
+5. Artificial Intelligence Services
+
+Purpose of the section: Warns that AI outputs may be inaccurate and requires human review; it limits sensitive or automated uses without appropriate safeguards.
+
+Importance for founders: Reduces liability risks arising from AI-generated results and protects against misuse, especially in employment, financial, legal, medical, or other high-impact decisions.
+
+6. Fees, Payments, and Renewal
+
+Purpose of the section: Governs plans, charges, taxes, non-refundable payments, automatic renewal, and future price changes.
+
+Importance for founders: Protects recurring revenue and supports scaling a subscription model. It also reduces billing disputes and explains how a User may cancel before renewal.
+
+7. Intellectual Property
+
+Purpose of the section: Reserves all rights in the product to the Company and permits the use of User feedback.
+
+Importance for founders: Prevents Users from claiming rights in the software, features, or platform improvements. Feedback may be incorporated into the product without later negotiations or compensation.
+
+8. Personal Data and Privacy
+
+Purpose of the section: Incorporates the privacy policy, defines the User’s duties regarding third-party data, and explains the channels for exercising habeas data rights.
+
+Importance for founders: Promotes transparency and supports compliance with Colombian data protection rules. It also allocates risk when a User uploads third-party personal information without authorization.
+
+9. Availability, Support, and Changes
+
+Purpose of the section: Explains that the service may undergo maintenance, failures, or functional changes and limits promises of absolute availability.
+
+Importance for founders: A startup must be able to improve and modify its product. This clause reduces claims arising from reasonable interruptions or changes required for security, scalability, or commercial development.
+
+10. Disclaimer of Warranties
+
+Purpose of the section: Limits implied warranties and clarifies that the service is provided as available, while preserving non-waivable consumer rights.
+
+Importance for founders: Protects the Company from unrealistic expectations regarding results, accuracy, error-free operation, or fitness for particular purposes. Preserving consumer rights helps avoid an excessive or invalid clause.
+
+11. Limitation of Liability
+
+Purpose of the section: Limits recoverable damages and establishes a liability cap, subject to mandatory legal exceptions.
+
+Importance for founders: Prevents an individual claim from disproportionately exceeding the subscription value or revenue generated by a User. This is especially important for digital businesses with many Users and low transaction values.
+
+12. Indemnification
+
+Purpose of the section: Requires the User to protect the Company against claims related to the User’s content, unlawful use, or breach of data-related obligations.
+
+Importance for founders: Protects the platform if a User uploads infringing content, uses data without permission, or employs the service to harm third parties. Without this clause, the startup may bear costs arising from another person’s conduct.
+
+13. Suspension and Termination
+
+Purpose of the section: Permits account cancellation, access suspension, and rules for exporting or deleting content after termination.
+
+Importance for founders: Provides operational control over fraud, nonpayment, and security risks. It also defines what happens to data and prevents the Company from being indefinitely required to maintain cancelled accounts.
+
+14. Amendment of the Terms
+
+Purpose of the section: Permits updates to the Terms with reasonable notice and acceptance through continued use where legally permitted.
+
+Importance for founders: The product, regulations, and business model evolve. This clause permits the rules to be updated without signing a new individual agreement with every User.
+
+15. Governing Law and Dispute Resolution
+
+Purpose of the section: Establishes Colombian law and preserves consumer rights while defining a dispute-resolution mechanism for non-consumer Users.
+
+Importance for founders: Avoids a clause that disregards consumer-protection rules while providing a more predictable dispute-resolution path for business Users.
+
+16. Contact
+
+Purpose of the section: Provides channels for support, privacy matters, and general communications.
+
+Importance for founders: Promotes transparency and enables requests, complaints, claims, and data-protection inquiries to be handled in an orderly and traceable manner.
+
+V. Employment Agreement with Confidentiality and IP Assignment
+
+Note: The employment agreement should incorporate confidentiality and IP assignment obligations consistently with the IP and Inventions Agreement. To avoid duplication or inconsistencies, the IP Agreement may be incorporated as a binding annex to the employment agreement.
+
+Heading, Parties, and Position
+
+Purpose of the section: Identifies the employer, the employee, the position, start date, workplace, and working arrangement.
+
+Importance for founders: Clearly defines the employment relationship and reduces the risk of claims regarding undocumented duties, subordination, working hours, or compensation. It also helps demonstrate employment formality to investors and corporate clients.
+
+1. Purpose and Duties
+
+Purpose of the section: Describes the position, responsibilities, reporting line, objectives, and the ability to assign reasonable duties related to the role.
+
+Importance for founders: Allows the founding team to adapt duties in a changing company while giving the employee a clear framework of responsibility. This is especially useful in small teams where roles evolve quickly.
+
+2. Term and Probationary Period
+
+Purpose of the section: Defines whether the agreement is indefinite-term, fixed-term, or for a specific project or task and, where applicable, the probationary period permitted by law.
+
+Importance for founders: Aligns the agreement with the actual type of engagement and helps manage early hiring risk. It must be applied strictly in accordance with the Substantive Labour Code to avoid invalidity.
+
+3. Working Hours, Workplace, and Working Arrangement
+
+Purpose of the section: Governs working hours, remote, hybrid, or on-site work, reasonable availability, tools, and compliance with policies.
+
+Importance for founders: Helps manage productivity, information security, and employment compliance, especially for distributed teams. It must not be used to disregard statutory limits on working hours, rest periods, or overtime.
+
+4. Salary, Payments, and Benefits
+
+Purpose of the section: Establishes salary, payment frequency, salary and non-salary components, benefits, and authorized deductions.
+
+Importance for founders: Reduces compensation disputes and permits, where legally valid, a distinction between salary and non-salary payments. This is relevant to budgets, social security contributions, and financial projections.
+
+5. Social Security, Statutory Benefits, and Withholdings
+
+Purpose of the section: Confirms enrolment, contributions, statutory employment benefits, withholdings, and the employer’s legal obligations.
+
+Importance for founders: Employment compliance is a central due diligence issue. Failures involving social security or statutory benefits can generate employment liabilities, penalties, and delays in a financing or acquisition.
+
+6. Confidentiality
+
+Purpose of the section: Requires the employee to protect confidential information and use it only for authorized duties, subject to reasonable exceptions and survival provisions.
+
+Importance for founders: Protects the product, credentials, strategy, and client information. Including the obligation in the employment agreement makes the duty of confidentiality enforceable from the first day of employment.
+
+7. Intellectual Property and Inventions
+
+Purpose of the section: Establishes that developments created in the course of employment belong to or are assigned to the Company and requires authorizations for their exploitation and modification under Colombian law.
+
+Importance for founders: Ensures that the Company, rather than the employee, owns the code, designs, documentation, and other work product developed through employment. This is essential for investment, product sales, and operational continuity.
+
+8. Tools, Assets, and Information Security
+
+Purpose of the section: Governs the use of equipment, email, repositories, access credentials, security policies, and the return of assets.
+
+Importance for founders: Prevents critical information from remaining on personal devices or accounts. It also reduces cybersecurity risks and allows access to be recovered quickly when an employee leaves.
+
+9. Personal Data Protection
+
+Purpose of the section: Requires the employee to process personal data in accordance with the Company’s instructions and applicable law.
+
+Importance for founders: Employees often access data concerning Users, clients, and colleagues. This clause supports regulatory compliance and helps demonstrate that the Company has implemented internal accountability measures.
+
+10. Conflicts of Interest and Outside Activities
+
+Purpose of the section: Requires disclosure of conflicts and limits outside activities that materially interfere with the position or compete with the Company during employment.
+
+Importance for founders: Reduces the risk that an employee develops a competing product using Company time or resources. Restrictions must be reasonable and must respect applicable limits under Colombian employment law.
+
+11. Termination and Delivery of Information
+
+Purpose of the section: Governs the consequences of termination, including return of assets, delivery of developments, transition assistance, and survival of confidentiality and IP obligations.
+
+Importance for founders: Ensures an orderly departure, particularly for technical personnel or anyone with infrastructure access. The startup should not depend on a former employee to recover code, credentials, or client information.
+
+12. Disciplinary Rules and Policies
+
+Purpose of the section: Binds the employee to reasonable internal policies, the internal work regulations where applicable, and the consequences of non-compliance.
+
+Importance for founders: Allows consistent implementation of standards for security, conduct, AI use, data protection, and remote work. It must be applied in accordance with employment due process.
+
+13. Governing Law and General Provisions
+
+Purpose of the section: Confirms the application of Colombian law, the entire-agreement principle, written amendments, and the precedence of mandatory employment rules.
+
+Importance for founders: Prevents the agreement from attempting to limit non-waivable employment rights and helps keep the document enforceable. It also clarifies that the IP and confidentiality annexes form part of the employment relationship.
+
+Founder Checklist Before Using the Documents
+
+Confirm that the Company has been duly incorporated and that each signatory has authority to represent it.
+
+Align the equity documents with the authorized capital, bylaws, shareholders’ ledger, and shareholders’ agreement.
+
+Have the IP agreement signed by every founder, employee, contractor, advisor, and technical service provider before they access repositories or sensitive information.
+
+Verify that domains, cloud accounts, repositories, app-store accounts, and AI accounts are registered in the Company’s name or under corporate control.
+
+Adopt a personal data processing policy and, for B2B clients, a data processing addendum where the operation requires one.
+
+Define an approval process for granting shares, options, or equity rights, and document each grant through an individual letter.
+
+Customize liability caps, fees, SLAs, data processing, and service scope before signing agreements with corporate clients.
+
+Review the employment agreement and compensation arrangements with Colombian employment and tax advisers before implementing payments, benefits, options, or shares.
