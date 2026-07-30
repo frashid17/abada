@@ -2,6 +2,9 @@ import { auth } from "@clerk/nextjs/server";
 import { NextResponse } from "next/server";
 import { z } from "zod";
 import { runAiGateway } from "@/lib/ai/gateway";
+import { trackAnalytics } from "@/lib/analytics";
+import { isFeatureEnabled } from "@/lib/feature-flags";
+import { userHasAiAccess } from "@/lib/payments/ai-access";
 import { enforceRateLimit, RATE_LIMITS, rateLimitResponseBody } from "@/lib/rate-limit";
 
 const bodySchema = z.object({
@@ -28,6 +31,17 @@ export async function POST(request: Request) {
   const { userId } = await auth();
   if (!userId) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+  }
+
+  if (!isFeatureEnabled("aiDrafting")) {
+    return NextResponse.json({ error: "AI drafting is temporarily disabled" }, { status: 503 });
+  }
+
+  if (!(await userHasAiAccess(userId))) {
+    return NextResponse.json(
+      { error: "Payment required", code: "PAYMENT_REQUIRED" },
+      { status: 402 },
+    );
   }
 
   const rate = await enforceRateLimit({
@@ -63,6 +77,11 @@ export async function POST(request: Request) {
       includeCorpusIndex: body.includeCorpusIndex ?? body.task === "knowledge_hub",
       sessionContext: body.sessionContext,
       history: body.history,
+    });
+
+    await trackAnalytics({
+      event: "document_drafted",
+      properties: { task: body.task, locale: body.locale },
     });
 
     return NextResponse.json(response);
