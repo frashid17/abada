@@ -1,5 +1,5 @@
 import { auth } from "@clerk/nextjs/server";
-import { getTranslations } from "next-intl/server";
+import { getLocale, getTranslations } from "next-intl/server";
 import { redirect, notFound } from "next/navigation";
 import { AppShell } from "@/components/layout/app-shell";
 import { PageHeader } from "@/components/layout/page-header";
@@ -10,6 +10,7 @@ import { isFlowDocumentType, getIntakeSchema } from "@/lib/documents/intake";
 import { ensureInvestmentReadinessChecklist } from "@/lib/documents/dashboard";
 import { getDocumentFlowState } from "@/lib/documents/service";
 import { isInvestmentDocumentType } from "@/lib/documents/catalog";
+import { getAiAccessStatus } from "@/lib/payments/ai-access";
 
 export default async function FounderDocumentFlowPage({
   params,
@@ -48,7 +49,11 @@ export default async function FounderDocumentFlowPage({
     );
   }
 
-  const state = await getDocumentFlowState(docId);
+  const locale = (await getLocale()) as "es-CO" | "en-US";
+  const [state, aiAccess] = await Promise.all([
+    getDocumentFlowState(docId),
+    getAiAccessStatus(userId, locale),
+  ]);
   if (!state) notFound();
 
   return (
@@ -66,6 +71,7 @@ export default async function FounderDocumentFlowPage({
           status={state.document.status}
           helpMessage={state.helpMessage}
           reviewSummary={state.reviewSummary}
+          aiAccess={aiAccess}
         />
       </div>
     </AppShell>
