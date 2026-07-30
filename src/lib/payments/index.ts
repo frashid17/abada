@@ -19,7 +19,7 @@ export async function recordPayment(input: RecordPaymentInput): Promise<string> 
     .insert({
       tenant_id: input.tenantId,
       payer_sub: input.payerSub,
-      provider: "wompi",
+      provider: input.provider ?? "wompi",
       provider_reference: input.providerReference,
       amount_cents: input.amountCents,
       currency: input.currency,
