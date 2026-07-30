@@ -192,6 +192,49 @@
     "copyright": "© {year} {brand}. Operated by {firm}.",
     "disclaimer": "AI assistance guides the process; every legally significant document is reviewed by a named {firm} attorney."
   },
+  "payments": {
+    "checkout": {
+      "eyebrow": "Secure payment · Colombia",
+      "title": "Unlock AI assistance",
+      "subtitle": "Pay once to use the drafting assistant on your documents.",
+      "close": "Close checkout",
+      "product": "AI access",
+      "productDetail": "Drafting assistant · full access",
+      "methodLabel": "Payment method",
+      "methods": {
+        "card": "Card",
+        "nequi": "Nequi wallet",
+        "daviplata": "Daviplata wallet"
+      },
+      "card": {
+        "name": "Name on card",
+        "namePlaceholder": "As printed on the card",
+        "number": "Card number",
+        "expiry": "Expiry",
+        "expiryPlaceholder": "MM/YY",
+        "cvc": "CVC",
+        "cvcPlaceholder": "123"
+      },
+      "mobile": {
+        "phone": "Colombian mobile number",
+        "phonePlaceholder": "300 123 4567",
+        "nequiHint": "We'll send a push notification to your Nequi app to confirm (simulated).",
+        "daviplataHint": "We'll send a payment request to your Daviplata app to confirm (simulated)."
+      },
+      "pay": "Pay {amount}",
+      "processing": "Processing payment…",
+      "secureNote": "Demo checkout · details are not sent to a live processor",
+      "successTitle": "Payment approved",
+      "successBody": "Your AI assistant is unlocked.",
+      "error": "Could not complete payment. Check your details and try again.",
+      "lockedTitle": "AI locked",
+      "lockedBody": "Unlock the drafting assistant for {amount} (one-time).",
+      "lockedHint": "Payment required to use AI",
+      "unlockCta": "Unlock for {amount}",
+      "checkingAccess": "Checking access…",
+      "mockNote": "Demo payment · Colombian card or mobile money"
+    }
+  },
   "public": {
     "eyebrow": "Balam Legal · Investment-readiness platform",
     "headline": "The legal layer for Colombian startups raising venture capital",
@@ -452,6 +495,7 @@
       "continueCta": "Continue checklist",
       "nextUp": "Next up: {title}",
       "pipelineTitle": "Your document path",
+      "pipelineSubtitle": "Five steps to investment-readiness — tap any to open the flow.",
       "allDocuments": "All documents",
       "comingSoonBadge": "Coming soon",
       "updated": "Updated {date}",
