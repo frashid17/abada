@@ -3,6 +3,10 @@ import type { LearnDocumentType } from "@/lib/documents/learn/render-learn-docum
 export const LEARN_DOCUMENT_SLUGS: Record<LearnDocumentType, string> = {
   term_sheet: "term-sheet",
   shareholders: "shareholders",
+  founders: "founders",
+  employment: "employment",
+  corporate_client: "corporate-client",
+  terms_of_use: "terms-of-use",
 };
 
 const SLUG_TO_TYPE = Object.fromEntries(
