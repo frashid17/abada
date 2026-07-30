@@ -1,0 +1,299 @@
+CONTRATO MARCO DE PRESTACIÓN DE SERVICIOS
+
+Clientes Corporativos – S.A.S. Colombia
+
+Este Contrato Marco de Prestación de Servicios (el “Contrato”) se celebra a partir del [FECHA DE EFECTIVIDAD], entre:
+
+Proveedor: [NOMBRE DE LA SOCIEDAD] S.A.S., sociedad por acciones simplificada constituida conforme a las leyes de la República de Colombia, identificada con NIT [NIT], con domicilio en [DOMICILIO] (el “Proveedor”); y
+
+Cliente: [NOMBRE DEL CLIENTE], identificado con NIT [NIT], con domicilio en [DOMICILIO] (el “Cliente”).
+
+El Proveedor y el Cliente se denominarán individualmente una “Parte” y conjuntamente las “Partes”.
+
+1. Objeto y Documentos de Servicio
+
+1.1 El Proveedor prestará al Cliente los servicios de [DESCRIPCIÓN DE LOS SERVICIOS] (los “Servicios”), conforme a este Contrato y a las órdenes de servicio, propuestas, anexos, formularios de pedido o documentos de alcance que las Partes suscriban o acepten por medios electrónicos (cada uno, una “Orden de Servicio”).
+
+1.2 Cada Orden de Servicio hará parte integral de este Contrato y podrá establecer, entre otros, el alcance de los Servicios, entregables, cronograma, tarifas, niveles de servicio, supuestos, exclusiones, responsabilidades del Cliente y condiciones particulares.
+
+1.3 En caso de conflicto entre este Contrato y una Orden de Servicio, prevalecerá la Orden de Servicio únicamente respecto del asunto específico que regule expresamente, salvo que dicha Orden de Servicio indique que una disposición de este Contrato queda modificada o sustituida.
+
+1.4 El Proveedor podrá actualizar razonablemente los Servicios, incluyendo funcionalidades, infraestructura, interfaces, procesos y medidas de seguridad, siempre que no reduzca materialmente la funcionalidad esencial contratada durante un período de suscripción ya pagado, salvo que el cambio sea necesario por razones de seguridad, cumplimiento legal, prevención de fraude o mantenimiento técnico.
+
+2. Acceso y Uso de los Servicios
+
+2.1 Sujeto al pago oportuno de las tarifas y al cumplimiento de este Contrato, el Proveedor otorga al Cliente una licencia limitada, no exclusiva, no transferible, no sublicenciable y revocable para acceder y usar los Servicios durante el plazo contratado, exclusivamente para sus operaciones internas y conforme a la documentación aplicable.
+
+2.2 El Cliente será responsable por los actos y omisiones de sus empleados, contratistas, afiliadas y demás usuarios autorizados que accedan o usen los Servicios bajo sus credenciales o por su cuenta (“Usuarios Autorizados”).
+
+2.3 El Cliente no podrá, ni permitirá que terceros:
+
+(a) copiar, modificar, traducir, adaptar, descompilar, realizar ingeniería inversa, desmontar o intentar obtener el código fuente de los Servicios, salvo en la medida expresamente permitida por una norma imperativa;
+
+(b) alquilar, arrendar, revender, sublicenciar, distribuir, comercializar, explotar o poner los Servicios a disposición de terceros, salvo autorización previa y escrita del Proveedor;
+
+(c) usar los Servicios para desarrollar, entrenar, validar o mejorar un producto, modelo o servicio que compita materialmente con los Servicios;
+
+(d) eliminar, ocultar o modificar avisos de propiedad intelectual, marcas, avisos de copyright o restricciones técnicas;
+
+(e) interferir con la seguridad, integridad, disponibilidad o funcionamiento de los Servicios;
+
+(f) introducir virus, malware, código malicioso, contenido ilícito o instrucciones que puedan afectar los sistemas del Proveedor o de terceros; o
+
+(g) usar los Servicios de forma fraudulenta, abusiva, ilegal, discriminatoria, engañosa o que vulnere derechos de terceros.
+
+2.4 El Proveedor podrá suspender el acceso a los Servicios, total o parcialmente, cuando sea razonablemente necesario para prevenir un riesgo de seguridad, corregir una vulnerabilidad, atender una obligación legal, evitar perjuicios a terceros o hacer frente a un incumplimiento material del Cliente. Cuando sea razonablemente posible, el Proveedor dará aviso previo al Cliente.
+
+3. Obligaciones del Proveedor
+
+El Proveedor se obliga a:
+
+(a) prestar los Servicios con diligencia profesional razonable y de conformidad sustancial con la Orden de Servicio aplicable;
+
+(b) mantener las autorizaciones, recursos y capacidades razonablemente necesarios para prestar los Servicios;
+
+(c) implementar medidas técnicas, humanas y administrativas razonables para proteger la seguridad, integridad y disponibilidad de los Servicios;
+
+(d) prestar soporte conforme al nivel de soporte indicado en la Orden de Servicio o, en ausencia de este, conforme a sus prácticas operativas razonables;
+
+(e) tratar los Datos del Cliente únicamente en la medida necesaria para prestar los Servicios, cumplir obligaciones legales, prevenir fraude, proteger la seguridad y hacer cumplir este Contrato; y
+
+(f) informar al Cliente sobre incidentes de seguridad que afecten materialmente los Datos del Cliente, conforme a la Cláusula 8.
+
+4. Obligaciones del Cliente
+
+El Cliente se obliga a:
+
+(a) pagar oportunamente las tarifas, impuestos, costos y cargos aplicables;
+
+(b) proporcionar oportunamente la información, accesos, decisiones, aprobaciones, recursos técnicos y cooperación razonablemente necesarios para la prestación de los Servicios;
+
+(c) garantizar que cuenta con todos los derechos, autorizaciones, avisos, consentimientos y bases legales necesarios para proporcionar al Proveedor los Datos del Cliente y para instruir su tratamiento;
+
+(d) usar los Servicios de acuerdo con este Contrato, la documentación aplicable y la ley;
+
+(e) mantener la confidencialidad y seguridad de las credenciales de sus Usuarios Autorizados;
+
+(f) notificar prontamente al Proveedor cualquier uso no autorizado, vulneración de seguridad o incidente que pueda afectar los Servicios;
+
+(g) no cargar ni transmitir contenido que infrinja derechos de terceros, sea ilícito o vulnere obligaciones de confidencialidad; y
+
+(h) cumplir las políticas razonables del Proveedor relacionadas con seguridad, uso aceptable, protección de datos y soporte, siempre que hayan sido comunicadas al Cliente.
+
+5. Tarifas, Facturación e Impuestos
+
+5.1 El Cliente pagará las tarifas previstas en cada Orden de Servicio. Salvo estipulación diferente, las tarifas se expresan en pesos colombianos, no incluyen IVA ni otros impuestos indirectos aplicables, y serán facturadas [MENSUALMENTE / ANUALMENTE / SEGÚN ORDEN DE SERVICIO].
+
+5.2 El Cliente pagará cada factura dentro de los [__] días calendario siguientes a su recepción. Los valores vencidos causarán intereses de mora a la tasa máxima legal permitida en Colombia, sin perjuicio de los demás derechos y remedios del Proveedor.
+
+5.3 Si una factura permanece vencida por más de [__] días calendario después de una notificación escrita del Proveedor, el Proveedor podrá suspender los Servicios hasta que reciba el pago completo, sin que dicha suspensión constituya incumplimiento del Proveedor.
+
+5.4 Las tarifas son no reembolsables, salvo que este Contrato, una Orden de Servicio o la ley aplicable dispongan expresamente lo contrario.
+
+5.5 El Cliente será responsable de practicar y declarar las retenciones tributarias que le correspondan por ley, y entregará al Proveedor los certificados respectivos dentro de los plazos legales. Las Partes cooperarán de buena fe para aplicar certificados de residencia, convenios tributarios u otros mecanismos disponibles que reduzcan retenciones legalmente aplicables.
+
+6. Propiedad Intelectual
+
+6.1 El Proveedor y sus licenciantes conservan todos los derechos, títulos e intereses sobre los Servicios, el software, código fuente y código objeto, interfaces, diseños, modelos, algoritmos, documentación, metodologías, herramientas, procesos, datos agregados o anonimizados, desarrollos preexistentes, mejoras generales, marcas, nombres comerciales, secretos empresariales y know-how del Proveedor (conjuntamente, la “Tecnología del Proveedor”).
+
+6.2 El Cliente conserva todos los derechos, títulos e intereses sobre los Datos del Cliente y los materiales que proporcione al Proveedor. “Datos del Cliente” significa los datos, archivos, contenidos, registros, instrucciones, configuraciones, información y demás materiales cargados, transmitidos o puestos a disposición por el Cliente o sus Usuarios Autorizados mediante los Servicios.
+
+6.3 Salvo que una Orden de Servicio establezca expresamente una cesión de derechos patrimoniales específica, los entregables desarrollados para el Cliente se licencian al Cliente para su uso interno durante el plazo, territorio y alcance indicados en la Orden de Servicio correspondiente. No se entenderá cedida al Cliente la Tecnología del Proveedor ni ningún componente reutilizable, genérico o preexistente.
+
+6.4 El Cliente otorga al Proveedor una licencia limitada, no exclusiva, mundial, libre de regalías y vigente durante el plazo del Contrato para alojar, reproducir, procesar, transmitir, modificar técnicamente y usar los Datos del Cliente únicamente en la medida necesaria para prestar, soportar, proteger y mejorar los Servicios, conforme a este Contrato y la ley aplicable.
+
+6.5 El Proveedor podrá usar información agregada, anonimizadas o desidentificada, que no identifique razonablemente al Cliente, a sus Usuarios Autorizados o a personas naturales, para fines de analítica, seguridad, desarrollo, entrenamiento de funcionalidades y mejora de los Servicios, en la medida permitida por la legislación aplicable.
+
+7. Confidencialidad
+
+7.1 “Información Confidencial” significa toda información no pública revelada por una Parte a la otra, en cualquier formato, que sea identificada como confidencial o que razonablemente deba entenderse como confidencial por su naturaleza o circunstancias de divulgación, incluyendo información técnica, comercial, financiera, estratégica, de producto, de seguridad, precios, contratos, Datos del Cliente, código, documentación, credenciales y secretos empresariales.
+
+7.2 La Parte receptora utilizará la Información Confidencial de la Parte divulgadora únicamente para ejercer sus derechos y cumplir sus obligaciones bajo este Contrato. La Parte receptora protegerá dicha información con al menos el mismo grado de cuidado que utiliza para proteger su propia información confidencial de similar importancia y, en ningún caso, con menos de un cuidado razonable.
+
+7.3 La Parte receptora podrá divulgar Información Confidencial a sus empleados, afiliadas, asesores, auditores, aseguradores y contratistas que necesiten conocerla para los fines permitidos, siempre que estén sujetos a obligaciones de confidencialidad al menos tan protectoras como las establecidas en este Contrato.
+
+7.4 Las obligaciones de confidencialidad no aplicarán a información que la Parte receptora pueda demostrar que:
+
+(a) es o se hace pública sin incumplimiento de este Contrato;
+
+(b) ya conocía legítimamente sin obligación de confidencialidad antes de recibirla;
+
+(c) recibió lícitamente de un tercero sin obligación de confidencialidad; o
+
+(d) desarrolló de manera independiente sin usar Información Confidencial de la Parte divulgadora.
+
+7.5 Si una Parte es requerida por ley, autoridad competente o proceso judicial para revelar Información Confidencial, podrá hacerlo en la medida estrictamente necesaria, siempre que, cuando la ley lo permita, notifique previamente a la Parte divulgadora y coopere razonablemente para obtener protección confidencial.
+
+7.6 Las obligaciones de esta Cláusula permanecerán vigentes durante el plazo del Contrato y por cinco (5) años después de su terminación. Las obligaciones relacionadas con secretos empresariales subsistirán mientras la información conserve tal carácter conforme a la ley aplicable.
+
+8. Protección de Datos Personales y Seguridad
+
+8.1 Cada Parte cumplirá las normas colombianas aplicables sobre protección de datos personales, incluyendo la Ley 1581 de 2012, sus decretos reglamentarios, las instrucciones de la Superintendencia de Industria y Comercio y las normas que las modifiquen, sustituyan o complementen.
+
+8.2 En la medida en que el Proveedor trate Datos Personales por cuenta del Cliente, el Cliente actuará como Responsable del Tratamiento y el Proveedor actuará como Encargado del Tratamiento, salvo que una Orden de Servicio o la naturaleza de un tratamiento específico determine un rol distinto conforme a la ley.
+
+8.3 El Cliente instruye al Proveedor para tratar los Datos Personales únicamente para prestar los Servicios, brindar soporte, prevenir fraude, proteger la seguridad, cumplir obligaciones legales y ejecutar instrucciones documentadas del Cliente compatibles con este Contrato.
+
+8.4 El Proveedor implementará medidas técnicas, humanas y administrativas razonables y apropiadas para proteger los Datos Personales contra acceso, uso, alteración, pérdida, divulgación, destrucción o tratamiento no autorizado.
+
+8.5 El Proveedor notificará al Cliente sin demora indebida después de confirmar un incidente de seguridad que afecte materialmente los Datos Personales tratados por cuenta del Cliente. El Proveedor cooperará razonablemente con el Cliente en la investigación, mitigación y atención del incidente, sin asumir obligaciones que correspondan exclusivamente al Cliente como Responsable del Tratamiento.
+
+8.6 El Cliente será responsable de obtener las autorizaciones, avisos de privacidad, consentimientos, bases legales y demás requisitos requeridos para el tratamiento de Datos Personales que entregue al Proveedor.
+
+8.7 Cuando sea aplicable, las Partes podrán suscribir un anexo de tratamiento de datos personales que detalle categorías de datos, finalidades, medidas de seguridad, subencargados, transferencias internacionales y procedimientos de atención de derechos de los titulares.
+
+9. Garantías
+
+9.1 El Proveedor garantiza que prestará los Servicios con diligencia profesional razonable y de conformidad sustancial con la documentación y la Orden de Servicio aplicable.
+
+9.2 Como remedio exclusivo del Cliente por incumplimiento de la garantía anterior, el Proveedor, a su elección, realizará esfuerzos comercialmente razonables para corregir la no conformidad notificada o, si no puede corregirla dentro de un plazo razonable, reembolsará la parte proporcional de las tarifas prepagadas correspondientes al período de los Servicios materialmente afectados.
+
+9.3 Salvo lo expresamente previsto en este Contrato, los Servicios se proporcionan “tal como están” y “según disponibilidad”. En la máxima medida permitida por la ley, el Proveedor excluye toda garantía implícita, incluyendo garantías de comerciabilidad, idoneidad para un propósito particular, disponibilidad ininterrumpida, resultados específicos, compatibilidad con sistemas del Cliente, ausencia de errores y ausencia de vulnerabilidades.
+
+9.4 El Proveedor no garantiza que los Servicios sean adecuados para cumplir requisitos legales, regulatorios, contables, laborales, tributarios, médicos, financieros o profesionales específicos del Cliente, salvo que se establezca expresamente por escrito en una Orden de Servicio.
+
+10. Indemnidad
+
+10.1 El Proveedor defenderá al Cliente frente a reclamaciones de terceros que aleguen que el uso autorizado de los Servicios infringe derechos de propiedad intelectual de terceros, y pagará las condenas definitivas o acuerdos transaccionales aprobados previamente por el Proveedor, siempre que el Cliente:
+
+(a) notifique prontamente la reclamación al Proveedor;
+
+(b) otorgue al Proveedor el control exclusivo de la defensa y negociación de la reclamación; y
+
+(c) coopere razonablemente con el Proveedor.
+
+10.2 El Proveedor no tendrá responsabilidad bajo la Cláusula 10.1 en la medida en que la reclamación derive de:
+
+(a) Datos del Cliente;
+
+(b) modificaciones a los Servicios no realizadas o autorizadas por el Proveedor;
+
+(c) uso de los Servicios en incumplimiento de este Contrato o de la documentación;
+
+(d) combinación de los Servicios con productos, servicios, datos o sistemas no proporcionados por el Proveedor, cuando la reclamación no habría surgido sin dicha combinación; o
+
+(e) cumplimiento de instrucciones, especificaciones o materiales proporcionados por el Cliente.
+
+10.3 Si los Servicios son objeto de una reclamación de infracción o el Proveedor considera razonablemente que pueden serlo, el Proveedor podrá, a su elección:
+
+(a) obtener para el Cliente el derecho de continuar usando los Servicios;
+
+(b) modificar o sustituir los Servicios por otros funcionalmente equivalentes; o
+
+(c) terminar los Servicios afectados y reembolsar al Cliente las tarifas prepagadas no devengadas correspondientes al período afectado.
+
+10.4 El Cliente defenderá, indemnizará y mantendrá indemne al Proveedor, sus afiliadas, administradores, empleados y contratistas frente a reclamaciones de terceros derivadas de:
+
+(a) los Datos del Cliente;
+
+(b) el uso de los Servicios por el Cliente o sus Usuarios Autorizados en incumplimiento de este Contrato;
+
+(c) el incumplimiento de obligaciones del Cliente en materia de protección de datos personales; o
+
+(d) instrucciones, especificaciones o materiales proporcionados por el Cliente.
+
+El Proveedor deberá notificar prontamente al Cliente, otorgarle control razonable de la defensa y cooperar razonablemente en dicha defensa.
+
+11. Limitación de Responsabilidad
+
+11.1 En la máxima medida permitida por la ley, ninguna Parte será responsable frente a la otra por lucro cesante, pérdida de ingresos, pérdida de oportunidad, pérdida de reputación, pérdida de datos no causada directamente por incumplimiento de obligaciones de seguridad razonables, daños indirectos, especiales, incidentales, consecuenciales o punitivos, incluso si ha sido advertida de su posibilidad.
+
+11.2 La responsabilidad total acumulada de cada Parte derivada de este Contrato, de cualquier Orden de Servicio o de los Servicios no excederá el total de las tarifas efectivamente pagadas o pagaderas por el Cliente al Proveedor durante los doce (12) meses inmediatamente anteriores al hecho que dio lugar a la reclamación.
+
+11.3 Las limitaciones previstas en esta Cláusula no aplicarán a:
+
+(a) obligaciones de pago del Cliente;
+
+(b) fraude, dolo o culpa grave;
+
+(c) incumplimiento de las restricciones de uso previstas en la Cláusula 2;
+
+(d) infracción o apropiación indebida de derechos de propiedad intelectual de la otra Parte;
+
+(e) incumplimiento de obligaciones de confidencialidad; o
+
+(f) responsabilidades que no puedan limitarse o excluirse conforme a la ley.
+
+11.4 Para los eventos descritos en los literales (d) y (e) de la Cláusula 11.3, la responsabilidad total acumulada de cada Parte no excederá [DOS (2) VECES EL LÍMITE GENERAL / OTRO MONTO], salvo que la ley aplicable prohíba dicha limitación.
+
+12. Plazo y Terminación
+
+12.1 Este Contrato inicia en la Fecha de Efectividad y permanecerá vigente mientras exista una Orden de Servicio vigente, salvo terminación anticipada de conformidad con esta Cláusula.
+
+12.2 Cualquiera de las Partes podrá terminar este Contrato o una Orden de Servicio mediante notificación escrita si la otra Parte incurre en un incumplimiento material y no lo subsana dentro de los treinta (30) días calendario siguientes a la recepción de una notificación escrita que describa razonablemente el incumplimiento.
+
+12.3 Cualquiera de las Partes podrá terminar este Contrato de forma inmediata si el incumplimiento de la otra Parte no es subsanable, si la otra Parte entra en proceso de liquidación o insolvencia que afecte materialmente su capacidad de cumplir el Contrato, o si la continuación del Contrato sería ilícita.
+
+12.4 El Proveedor podrá suspender o terminar los Servicios de forma inmediata cuando el uso del Cliente cree un riesgo material de seguridad, infrinja la ley, vulnere derechos de terceros o pueda causar perjuicio material a los Servicios, al Proveedor o a otros clientes. Cuando sea razonablemente posible, el Proveedor notificará previamente al Cliente.
+
+12.5 A la terminación:
+
+(a) el Cliente cesará el uso de los Servicios y pagará todas las tarifas vencidas, así como las tarifas no cancelables expresamente comprometidas;
+
+(b) cada Parte devolverá o destruirá la Información Confidencial de la otra Parte, salvo retenciones legalmente exigidas o copias de respaldo automáticas no fácilmente accesibles;
+
+(c) a solicitud escrita del Cliente presentada dentro de los [30] días calendario siguientes a la terminación, el Proveedor pondrá a disposición los Datos del Cliente en un formato razonablemente disponible, sujeto al pago de valores pendientes, limitaciones técnicas razonables y requisitos legales aplicables; y
+
+(d) las cláusulas que por su naturaleza deban sobrevivir permanecerán vigentes, incluyendo propiedad intelectual, confidencialidad, protección de datos, pagos pendientes, indemnidad, limitación de responsabilidad y solución de controversias.
+
+13. Cumplimiento Legal
+
+13.1 Cada Parte cumplirá las leyes y regulaciones aplicables a sus actividades bajo este Contrato, incluyendo las normas de anticorrupción, prevención de lavado de activos, protección de datos personales, competencia, sanciones económicas y control de exportaciones que resulten aplicables.
+
+13.2 Ninguna Parte ofrecerá, prometerá, autorizará o entregará pagos, beneficios o ventajas indebidas en relación con este Contrato.
+
+13.3 El Cliente declara que no usará los Servicios en relación con actividades ilícitas, fraude, lavado de activos, financiación del terrorismo, vulneración de sanciones aplicables o cualquier actividad prohibida por la ley.
+
+14. Publicidad
+
+14.1 Ninguna Parte podrá utilizar el nombre, marca, logo, signos distintivos o imagen comercial de la otra Parte en comunicados públicos, materiales de marketing, estudios de caso o anuncios sin autorización previa y escrita de la otra Parte.
+
+14.2 No obstante, el Cliente autoriza al Proveedor a incluir su nombre y logo en una lista general de clientes, únicamente si se indica a continuación: [SÍ / NO].
+
+15. Disposiciones Generales
+
+15.1 Integridad. Este Contrato y las Órdenes de Servicio constituyen el acuerdo completo entre las Partes respecto de su objeto y sustituyen todos los entendimientos, propuestas, negociaciones y acuerdos previos sobre la misma materia.
+
+15.2 Modificaciones. Toda modificación de este Contrato o de una Orden de Servicio deberá constar por escrito y estar firmada o aceptada electrónicamente por representantes autorizados de ambas Partes.
+
+15.3 Cesión. El Cliente no podrá ceder este Contrato sin autorización previa y escrita del Proveedor, salvo en conexión con una fusión, reorganización o venta de la totalidad o sustancialmente la totalidad de sus activos, siempre que el cesionario asuma por escrito las obligaciones del Cliente. El Proveedor podrá ceder este Contrato a una afiliada o en conexión con una reorganización, fusión, adquisición o venta de la totalidad o sustancialmente la totalidad de sus activos.
+
+15.4 Fuerza Mayor. Ninguna Parte será responsable por retrasos o incumplimientos causados por eventos fuera de su control razonable, incluyendo desastres naturales, guerra, disturbios, fallas generalizadas de telecomunicaciones, actos de autoridad, pandemias, ataques cibernéticos generalizados o fallas de proveedores de infraestructura, salvo respecto de obligaciones de pago. La Parte afectada deberá notificar razonablemente a la otra Parte y adoptar medidas razonables para mitigar los efectos del evento.
+
+15.5 Relación entre las Partes. Las Partes son contratistas independientes. Este Contrato no crea una sociedad, mandato, relación laboral, joint venture, agencia, fiducia ni representación entre las Partes.
+
+15.6 Notificaciones. Toda notificación bajo este Contrato deberá hacerse por escrito a las direcciones físicas o electrónicas indicadas en el encabezado, o a las que cada Parte comunique posteriormente por escrito. Las notificaciones se entenderán recibidas: (a) en la fecha de entrega personal; (b) al día hábil siguiente al envío por mensajería reconocida; (c) al tercer día hábil siguiente al depósito en correo certificado; o (d) en la fecha de envío por correo electrónico, si no se recibe mensaje de error y se envía antes de las 5:00 p.m. de un día hábil; en caso contrario, el siguiente día hábil.
+
+15.7 Ley Aplicable y Solución de Controversias. Este Contrato se regirá por las leyes de la República de Colombia. Las Partes intentarán resolver cualquier controversia mediante negociación directa durante quince (15) días hábiles. Si no se alcanza una solución, las Partes acudirán a conciliación ante [CENTRO DE CONCILIACIÓN], con sede en [CIUDAD, COLOMBIA]. Si la controversia persiste, será resuelta por [TRIBUNAL DE ARBITRAMENTO / JURISDICCIÓN ORDINARIA], con sede en [CIUDAD, COLOMBIA].
+
+15.8 Divisibilidad. Si una disposición de este Contrato se considera inválida o inexigible, las demás disposiciones continuarán en plena vigencia, y la disposición afectada se interpretará o ajustará en la mínima medida necesaria para hacerla válida y exigible, en cuanto la ley lo permita.
+
+15.9 Renuncia. La falta de ejercicio o demora de una Parte en ejercer un derecho no constituirá renuncia a dicho derecho. Toda renuncia deberá constar por escrito.
+
+15.10 Firmas Electrónicas y Contrapartes. Este Contrato podrá firmarse en uno o varios ejemplares y mediante firma electrónica o digital válida conforme a la legislación colombiana. Todos los ejemplares constituirán un solo instrumento.
+
+Firmas
+
+EL PROVEEDOR
+
+[NOMBRE DE LA SOCIEDAD] S.A.S.
+
+Por: ______________________________
+
+Nombre: [NOMBRE DEL REPRESENTANTE LEGAL]
+
+Cargo: [CARGO]
+
+Fecha: ______________________________
+
+EL CLIENTE
+
+[NOMBRE DEL CLIENTE]
+
+Por: ______________________________
+
+Nombre: [NOMBRE DEL FIRMANTE]
+
+Cargo: [CARGO]
+
+Fecha: ______________________________
