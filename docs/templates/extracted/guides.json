@@ -1,0 +1,862 @@
+{
+  "founders": {
+    "preamble": {
+      "es": {
+        "title": "Encabezado, Partes y Fecha de Efectividad",
+        "summary": "Identifica a cada fundador, a la Sociedad y la fecha a partir de la cual las obligaciones empiezan a aplicar.",
+        "why": "Evita dudas sobre quién está obligado, en qué calidad firma cada persona y desde cuándo operan las restricciones, los derechos de vesting y las obligaciones de confidencialidad."
+      },
+      "en": {
+        "title": "Heading, Parties, and Effective Date",
+        "summary": "Identifies each founder, the Company, and the date from which the obligations begin to apply.",
+        "why": "It avoids uncertainty about who is bound, in what capacity each person signs, and when restrictions, vesting rights, and confidentiality obligations begin."
+      }
+    },
+    "1": {
+      "es": {
+        "title": "1. Antecedentes y Objeto",
+        "summary": "Explica el Negocio, el objetivo del Acuerdo y la intención de complementar los estatutos, el libro de accionistas, los documentos de inversión y los acuerdos de PI.",
+        "why": "Establece el marco de interpretación del Acuerdo. Para los fundadores, es importante porque confirma que el documento no regula solo la titularidad de acciones: también gobierna la relación de trabajo, contribución, control y salida entre quienes construyen la empresa."
+      },
+      "en": {
+        "title": "Background and Purpose",
+        "summary": "It explains the Business, the purpose of the Agreement, and the intention to supplement the charter, the shareholder register, the investment documents, and the IP agreements.",
+        "why": "It establishes the Agreement’s interpretive framework. It matters because it confirms that the document governs more than equity ownership: it also governs contribution, control, working relationships, and founder departures."
+      }
+    },
+    "2": {
+      "es": {
+        "title": "2. Definiciones",
+        "summary": "",
+        "why": ": Las definiciones reducen ambigüedad. Por ejemplo, una definición clara de “Cambio de Control” determina cuándo pueden activarse aceleración de vesting, tag-along, drag-along o derechos económicos especiales."
+      },
+      "en": {
+        "title": "Definitions",
+        "summary": "Defines technical and recurring terms such as Shares, Founder Shareholder, Affiliate, Change of Control, Transfer, Serious Cause, and Confidential Information.",
+        "why": "Definitions reduce ambiguity. For example, a clear “Change of Control” definition determines when vesting acceleration, tag-along, drag-along, or special economic rights may apply."
+      }
+    },
+    "3": {
+      "es": {
+        "title": "3. Capitalización y Estructura Accionaria",
+        "summary": "",
+        "why": "Protege el cap table. Los fundadores deben saber quién posee qué, cómo se medirá la dilución y qué aprobaciones se requieren antes de emitir acciones, opciones, SAFEs, notas convertibles u otros instrumentos."
+      },
+      "en": {
+        "title": "Capitalization and Share Structure",
+        "summary": "It establishes the initial shareholding structure, recognizes the possibility of creating classes or series of shares, and makes future issuances subject to approval rules.",
+        "why": "It protects the cap table. Founders need clarity on ownership, how dilution will be measured, and what approvals are required before issuing shares, options, SAFEs, convertible notes, or other instruments."
+      }
+    },
+    "4": {
+      "es": {
+        "title": "4. Aportes, Roles y Dedicación de los Fundadores",
+        "summary": "",
+        "why": ": Evita expectativas incompatibles sobre quién aporta capital, tecnología, ventas, operación o redes de contacto. También reduce el riesgo de que un fundador mantenga una participación significativa sin contribuir de manera consistente."
+      },
+      "en": {
+        "title": "Founder Contributions, Roles, and Commitment",
+        "summary": "It documents each founder’s committed contributions, responsibilities, role, and level of commitment. It clarifies that being a shareholder does not automatically mean being an employee or having a right to a salary.",
+        "why": "It prevents mismatched expectations regarding capital, technology, sales, operations, or network contributions. It also reduces the risk that a founder retains a significant equity stake without contributing consistently."
+      }
+    },
+    "5": {
+      "es": {
+        "title": "5. Propiedad Intelectual",
+        "summary": "",
+        "why": ": Es una cláusula crítica para inversión, ventas B2B y una eventual adquisición. La empresa debe poder demostrar que controla el código, la marca, los datos, los diseños y el know-how necesarios para operar. Si la PI permanece en manos de un fundador, puede bloquear financiación, comercialización o una venta de la compañía."
+      },
+      "en": {
+        "title": "Intellectual Property",
+        "summary": "It assigns developments related to the Business to the Company and includes an assignment of economic IP rights. It also addresses moral rights, pre-existing IP, and supplementary documents.",
+        "why": "This is critical for fundraising, B2B sales, and a potential exit. The company must be able to demonstrate control over the code, brand, data, designs, and know-how required to operate. If IP remains with a founder, it can block financing, commercialization, or a company sale."
+      }
+    },
+    "6": {
+      "es": {
+        "title": "6. Vesting, Permanencia y Recompra de Acciones",
+        "summary": "",
+        "why": ": Evita el “dead equity”: el riesgo de que un fundador se vaya temprano pero conserve una participación alta. El vesting protege a quienes se quedan, alinea incentivos y suele ser una condición importante para inversionistas."
+      },
+      "en": {
+        "title": "Vesting, Continued Service, and Share Repurchase",
+        "summary": "It links the economic vesting of the founders’ shares to continued service. It establishes a vesting schedule (the accrual of rights to the shares over time), a cliff (an initial minimum period), a repurchase right over unvested shares, acceleration, and implementation documents. Es necesario que en una S.A.S., el vesting debe respaldarse con mecanismos corporativos y contractuales ejecutables —por ejemplo, restricciones estatutarias, opciones de compra, pactos de recompra, cartas de instrucción",
+        "why": "It avoids “dead equity”: the risk that a founder leaves early but retains a large ownership stake. Vesting protects the remaining team, aligns incentives, and is often a key investor requirement. Why is this here? It links the economic vesting of the founders’ shares to continued service. It establishes a vesting schedule (the accrual of rights to the shares over time), a cliff (an initial minimum period), a repurchase right over unvested shares, acceleration, and implementation documents. Es ne"
+      }
+    },
+    "7": {
+      "es": {
+        "title": "7. Gobierno Corporativo",
+        "summary": "",
+        "why": ": Permite separar la propiedad de la gestión diaria. Los fundadores deben acordar quién toma decisiones operativas, cómo se supervisa la administración y qué sucede cuando entren inversionistas con derechos de junta u observador."
+      },
+      "en": {
+        "title": "Corporate Governance",
+        "summary": "It defines the governing bodies—the shareholders’ meeting, the legal representative, and, if applicable, the board of directors or advisory committee—and their relationship with the bylaws.",
+        "why": "It allows ownership to be separated from day-to-day management. Founders need to agree on who makes operating decisions, how management is supervised, and what happens when investors receive board or observer rights."
+      }
+    },
+    "8": {
+      "es": {
+        "title": "8. Materias Reservadas",
+        "summary": "",
+        "why": ": Protege a fundadores minoritarios y evita que una mayoría simple tome decisiones irreversibles o muy dilutivas sin consulta. También hace más predecible la gobernanza para futuros inversionistas."
+      },
+      "en": {
+        "title": "Reserved Matters",
+        "summary": "It identifies strategic decisions that require a supermajority, such as issuing shares, incurring significant debt, selling assets, changing the business, entering into related-party transactions, declaring dividends, pursuing litigation, and amending the bylaws.",
+        "why": "It protects minority founders and prevents a simple majority from taking irreversible or highly dilutive decisions without consultation. It also makes governance more predictable for future investors. Punto de negociación: Un umbral demasiado alto puede generar bloqueo; uno demasiado bajo puede dejar a minoritarios sin protección. Debe calibrarse según el número de fundadores, distribución accionaria y etapa de la compañía. Negotiation point: A threshold that is too high can create deadlock; one"
+      }
+    },
+    "9": {
+      "es": {
+        "title": "9. Financiamiento Futuro y Derecho de Preferencia",
+        "summary": "",
+        "why": "- Protege a los fundadores frente a dilución inesperada y, a la vez, permite que la empresa levante capital. La obligación de cooperación en due diligence, cap table e IP evita que un fundador retrase una ronda necesaria para la supervivencia o crecimiento de la empresa."
+      },
+      "en": {
+        "title": "Future Financing and Pre-Emptive Rights",
+        "summary": "It allows the Company to obtain financing and establishes the shareholders’ right to participate proportionately in new issuances, subject to exceptions and approvals.",
+        "why": "It protects founders against unexpected dilution while allowing the company to raise capital. The cooperation obligation for diligence, cap table cleanup, and IP prevents a founder from delaying a financing needed for the company’s survival or growth."
+      }
+    },
+    "10": {
+      "es": {
+        "title": "10. Restricciones a la Transferencia",
+        "summary": "",
+        "why": ": Evita que un fundador transfiera acciones a un tercero no deseado —por ejemplo, un competidor, un exsocio problemático o un inversionista no alineado— sin que la Sociedad y los demás accionistas tengan protección."
+      },
+      "en": {
+        "title": "Transfer Restrictions",
+        "summary": "It restricts the sale, assignment, pledge, or other disposition of shares outside the rules of the Agreement, requires the transferee to join the Agreement, and provides for registration in the shareholder register.",
+        "why": "It prevents a founder from transferring shares to an unwanted third party—such as a competitor, a problematic former partner, or a misaligned investor—without protection for the company and the other shareholders."
+      }
+    },
+    "11": {
+      "es": {
+        "title": "11. Derecho de Adquisición Preferente sobre Transferencias Voluntarias",
+        "summary": "",
+        "why": ": Mantiene control sobre quién entra al cap table. También puede permitir a los fundadores restantes o a la Sociedad consolidar participación cuando un cofundador decide vender."
+      },
+      "en": {
+        "title": "Right of First Refusal on Voluntary Transfers",
+        "summary": "It grants the Company first, and then the other shareholders, the right to purchase shares that a shareholder intends to sell to a third party, on the same terms offered.",
+        "why": "It preserves control over who enters the cap table. It can also allow the remaining founders or the company to consolidate ownership when a cofounder wants to sell."
+      }
+    },
+    "12": {
+      "es": {
+        "title": "12. Derecho de Acompañamiento (Tag-Along)",
+        "summary": "",
+        "why": "Evita que un fundador mayoritario venda su participación o control a un tercero mientras los demás quedan como socios de un nuevo comprador que no eligieron. Da a los minoritarios una salida junto con la venta principal."
+      },
+      "en": {
+        "title": "Tag-Along Right",
+        "summary": "It allows minority shareholders to participate proportionately in a significant sale by majority shareholders on equivalent terms. Why does it matter? It prevents a controlling founder from selling ownership or control to a third party while others remain partnered with an acquirer they did not choose. It gives minority holders an exit alongside the main sale.",
+        "why": "It allows minority shareholders to participate proportionately in a significant sale by majority shareholders on equivalent terms. Why does it matter? It prevents a controlling founder from selling ownership or control to a third party while others remain partnered with an acquirer they did not choose. It gives minority holders an exit alongside the main sale."
+      }
+    },
+    "13": {
+      "es": {
+        "title": "13. Derecho de Arrastre (Drag-Along)",
+        "summary": "",
+        "why": "Evita que un accionista minoritario bloquee una adquisición atractiva para la empresa. Las salvaguardas incluidas son esenciales: los minoritarios no deben asumir responsabilidad solidaria, garantías comerciales desproporcionadas ni obligaciones personales ajenas a la venta."
+      },
+      "en": {
+        "title": "Drag-Along Right",
+        "summary": "It requires all shareholders to support a sale approved by a qualified majority, provided that proportionate treatment protections and liability limits are in place. Why does it matter? It prevents a minority shareholder from blocking an acquisition that is attractive for the company. The included safeguards are essential: minority holders should not bear joint and several liability, disproportionate business warranties, or personal obligations unrelated to the sale.",
+        "why": "It requires all shareholders to support a sale approved by a qualified majority, provided that proportionate treatment protections and liability limits are in place. Why does it matter? It prevents a minority shareholder from blocking an acquisition that is attractive for the company. The included safeguards are essential: minority holders should not bear joint and several liability, disproportionate business warranties, or personal obligations unrelated to the sale."
+      }
+    },
+    "14": {
+      "es": {
+        "title": "14. Salida de Fundadores y Good Leaver",
+        "summary": "",
+        "why": "Es una de las cláusulas con mayor potencial de conflicto. Protege a la compañía frente a abandono, competencia, fraude o incumplimientos graves, pero también debe tratar de forma justa las salidas por muerte, incapacidad, remoción sin causa o mutuo acuerdo."
+      },
+      "en": {
+        "title": "Bad Leaver",
+        "summary": "It defines what happens if a founder leaves, distinguishes between a Good Leaver and a Bad Leaver, defines Serious Cause, and governs the repurchase of vested and unvested shares. Why does it matter? This is one of the most dispute-prone provisions. It protects the company against abandonment, competition, fraud, or serious misconduct, but should also treat fairly departures caused by death, disability, termination without cause, or mutual agreement. Punto de negociación: Los fundadores deben ac",
+        "why": "It defines what happens if a founder leaves, distinguishes between a Good Leaver and a Bad Leaver, defines Serious Cause, and governs the repurchase of vested and unvested shares. Why does it matter? This is one of the most dispute-prone provisions. It protects the company against abandonment, competition, fraud, or serious misconduct, but should also treat fairly departures caused by death, disability, termination without cause, or mutual agreement. Punto de negociación: Los fundadores deben ac"
+      }
+    },
+    "15": {
+      "es": {
+        "title": "15. Plan de Incentivos de Capital",
+        "summary": "",
+        "why": "Permite contratar y retener talento sin depender únicamente de salario. Los fundadores deben entender que el pool genera dilución; sin embargo, suele ser necesario para construir un equipo competitivo y puede ser exigido por inversionistas."
+      },
+      "en": {
+        "title": "Equity Incentive Plan",
+        "summary": "It authorizes the creation of an ESOP or incentive plan for employees, consultants, advisors, and directors, and defines the initial size of the pool. Why does it matter? It enables the company to hire and retain talent without relying only on cash compensation. Founders should understand that the pool creates dilution; however, it is often necessary to build a competitive team and may be required by investors.",
+        "why": "It authorizes the creation of an ESOP or incentive plan for employees, consultants, advisors, and directors, and defines the initial size of the pool. Why does it matter? It enables the company to hire and retain talent without relying only on cash compensation. Founders should understand that the pool creates dilution; however, it is often necessary to build a competitive team and may be required by investors."
+      }
+    },
+    "16": {
+      "es": {
+        "title": "16. Información, Registros y Política de Dividendos",
+        "summary": "",
+        "why": "Asegura transparencia entre fundadores y ayuda a detectar temprano problemas de caja, ejecución o gobierno. La política de reinversión evita expectativas prematuras de dividendos cuando la empresa necesita capital para crecer."
+      },
+      "en": {
+        "title": "Information Rights, Records, and Dividend Policy",
+        "summary": "It governs corporate records, periodic financial and operational information, the budget, metrics, and dividend policy. Why does it matter? It ensures transparency among founders and helps identify cash, execution, or governance problems early. A reinvestment policy avoids premature dividend expectations when the company needs capital to grow",
+        "why": "It governs corporate records, periodic financial and operational information, the budget, metrics, and dividend policy. Why does it matter? It ensures transparency among founders and helps identify cash, execution, or governance problems early. A reinvestment policy avoids premature dividend expectations when the company needs capital to grow"
+      }
+    },
+    "17": {
+      "es": {
+        "title": "17. Confidencialidad",
+        "summary": "",
+        "why": "Protege valor competitivo y secreto empresarial. Es especialmente importante antes de lanzar producto, negociar con clientes, levantar capital o desarrollar tecnología diferenciada."
+      },
+      "en": {
+        "title": "Confidentiality",
+        "summary": "It protects non-public information about the Company, the Business, customers, investors, and founders; it defines exceptions and rules for mandatory disclosure. Why does it matter? It protects competitive value and trade secrets. It is especially important before launching a product, negotiating with customers, raising capital, or developing differentiated technology.",
+        "why": "It protects non-public information about the Company, the Business, customers, investors, and founders; it defines exceptions and rules for mandatory disclosure. Why does it matter? It protects competitive value and trade secrets. It is especially important before launching a product, negotiating with customers, raising capital, or developing differentiated technology."
+      }
+    },
+    "18": {
+      "es": {
+        "title": "18. No Competencia y No Captación",
+        "summary": "",
+        "why": "Protege continuidad del equipo, relaciones comerciales y know-how. Las restricciones posteriores a la relación deben ser razonables y revisarse con cuidado bajo derecho colombiano, porque su exigibilidad puede ser limitada."
+      },
+      "en": {
+        "title": "Non-Competition and Non-Solicitation",
+        "summary": "It prohibits competition during active engagement and restricts the direct solicitation of key employees, contractors, customers, or business partners after departure. Why does it matter? It protects competitive value and trade secrets. It is especially important before launching a product, negotiating with customers, raising capital, or developing differentiated technology.",
+        "why": "It prohibits competition during active engagement and restricts the direct solicitation of key employees, contractors, customers, or business partners after departure. Why does it matter? It protects competitive value and trade secrets. It is especially important before launching a product, negotiating with customers, raising capital, or developing differentiated technology."
+      }
+    },
+    "19": {
+      "es": {
+        "title": "19. Declaraciones y Garantías de los Fundadores",
+        "summary": "",
+        "why": "Obliga a revelar restricciones de empleo previo, gravámenes sobre acciones, conflictos o riesgos de PI antes de que se conviertan en problemas de la Sociedad. También será útil en procesos de inversión y due diligence."
+      },
+      "en": {
+        "title": "Founder Representations and Warranties",
+        "summary": "Each founder confirms their capacity, absence of conflicts, non-misuse of third-party IP, ownership of shares, and opportunity to obtain independent advice. Why does it matter? It requires disclosure of prior employment restrictions, share encumbrances, conflicts, or IP risks before they become company problems. It is also useful in fundraising and due diligence processes.",
+        "why": "Each founder confirms their capacity, absence of conflicts, non-misuse of third-party IP, ownership of shares, and opportunity to obtain independent advice. Why does it matter? It requires disclosure of prior employment restrictions, share encumbrances, conflicts, or IP risks before they become company problems. It is also useful in fundraising and due diligence processes."
+      }
+    },
+    "20": {
+      "es": {
+        "title": "20. Adhesión de Nuevos Accionistas",
+        "summary": "",
+        "why": "Evita que nuevos accionistas tengan acciones pero no queden sujetos a vesting, transferencia, confidencialidad, tag/drag u otras reglas de gobierno. Mantiene el Acuerdo vigente y coherente a medida que crece el cap table."
+      },
+      "en": {
+        "title": "Joinder by New Shareholders",
+        "summary": "It requires anyone acquiring shares to join the Agreement before being recognized as a shareholder for purposes of the contractual framework. Why does it matter? It prevents new holders from owning shares without being subject to vesting, transfer, confidentiality, tag/drag, or other governance rules. It keeps the Agreement effective and coherent as the cap table grows.",
+        "why": "It requires anyone acquiring shares to join the Agreement before being recognized as a shareholder for purposes of the contractual framework. Why does it matter? It prevents new holders from owning shares without being subject to vesting, transfer, confidentiality, tag/drag, or other governance rules. It keeps the Agreement effective and coherent as the cap table grows."
+      }
+    },
+    "21": {
+      "es": {
+        "title": "21. Solución de Controversias",
+        "summary": "¿Por qué está aquí? Establece una secuencia de negociación directa, conciliación o mediación y arbitraje o jurisdicción ordinaria, con posibilidad de medidas cautelares urgentes. ¿Por qué es importante? Los conflictos entre fundadores pueden paralizar la empresa. Un proceso escalonado incentiva una solución temprana; la posibilidad de medidas cautelares es importante para detener filtraciones de i",
+        "why": "Los conflictos entre fundadores pueden paralizar la empresa. Un proceso escalonado incentiva una solución temprana; la posibilidad de medidas cautelares es importante para detener filtraciones de información, apropiación de PI o transferencias indebidas de acciones."
+      },
+      "en": {
+        "title": "Dispute Resolution",
+        "summary": "¿Por qué está aquí? Establece una secuencia de negociación directa, conciliación o mediación y arbitraje o jurisdicción ordinaria, con posibilidad de medidas cautelares urgentes. ¿Por qué es importante? Los conflictos entre fundadores pueden paralizar la empresa. Un proceso escalonado incentiva una solución temprana; la posibilidad de medidas cautelares es importante para detener filtraciones de i",
+        "why": "¿Por qué está aquí? Establece una secuencia de negociación directa, conciliación o mediación y arbitraje o jurisdicción ordinaria, con posibilidad de medidas cautelares urgentes. ¿Por qué es importante? Los conflictos entre fundadores pueden paralizar la empresa. Un proceso escalonado incentiva una solución temprana; la posibilidad de medidas cautelares es importante para detener filtraciones de i"
+      }
+    },
+    "22": {
+      "es": {
+        "title": "22. Notificaciones",
+        "summary": "¿Por qué está aquí? Define cómo, dónde y cuándo se consideran recibidas las comunicaciones formales. Why it matters / Por qué es importante: Muchas acciones relevantes —ejercicio de ROFR, aviso de venta, convocatoria, salida, recompra o controversia— dependen de plazos. Una regla clara de notificaciones evita discusiones sobre si un aviso fue válido o recibido a tiempo.",
+        "why": ": Muchas acciones relevantes —ejercicio de ROFR, aviso de venta, convocatoria, salida, recompra o controversia— dependen de plazos. Una regla clara de notificaciones evita discusiones sobre si un aviso fue válido o recibido a tiempo. Many important actions—exercise of ROFR, sale notice, meeting notice, departure, repurchase, or dispute notice—depend on deadlines. A clear notice rule avoids disputes over whether notice was valid or timely received."
+      },
+      "en": {
+        "title": "Notices",
+        "summary": "¿Por qué está aquí? Define cómo, dónde y cuándo se consideran recibidas las comunicaciones formales. Why it matters / Por qué es importante: Muchas acciones relevantes —ejercicio de ROFR, aviso de venta, convocatoria, salida, recompra o controversia— dependen de plazos. Una regla clara de notificaciones evita discusiones sobre si un aviso fue válido o recibido a tiempo.",
+        "why": "/ Por qué es importante: Muchas acciones relevantes —ejercicio de ROFR, aviso de venta, convocatoria, salida, recompra o controversia— dependen de plazos. Una regla clara de notificaciones evita discusiones sobre si un aviso fue válido o recibido a tiempo. Many important actions—exercise of ROFR, sale notice, meeting notice, departure, repurchase, or dispute notice—depend on deadlines. A clear notice rule avoids disputes over whether notice was valid or timely received."
+      }
+    },
+    "23": {
+      "es": {
+        "title": "23. Disposiciones Generales",
+        "summary": "¿Por qué está aquí? Contiene ley aplicable, vigencia, modificaciones, integridad, prelación frente a estatutos, cesión, divisibilidad, cumplimiento específico y firma electrónica. Why it matters / Por qué es importante: Estas cláusulas aseguran que el Acuerdo pueda operar durante cambios corporativos, rondas de inversión y reorganizaciones. La regla de prelación es especialmente importante en Colo",
+        "why": ": Estas cláusulas aseguran que el Acuerdo pueda operar durante cambios corporativos, rondas de inversión y reorganizaciones. La regla de prelación es especialmente importante en Colombia: ciertas materias deben reflejarse en los estatutos para ser plenamente eficaces frente a la Sociedad o terceros. These provisions ensure that the Agreement can operate through corporate changes, financing rounds, and reorganizations. The hierarchy rule is particularly important in Colombia: certain matters must"
+      },
+      "en": {
+        "title": "General Provisions",
+        "summary": "¿Por qué está aquí? Contiene ley aplicable, vigencia, modificaciones, integridad, prelación frente a estatutos, cesión, divisibilidad, cumplimiento específico y firma electrónica. Why it matters / Por qué es importante: Estas cláusulas aseguran que el Acuerdo pueda operar durante cambios corporativos, rondas de inversión y reorganizaciones. La regla de prelación es especialmente importante en Colo",
+        "why": "/ Por qué es importante: Estas cláusulas aseguran que el Acuerdo pueda operar durante cambios corporativos, rondas de inversión y reorganizaciones. La regla de prelación es especialmente importante en Colombia: ciertas materias deben reflejarse en los estatutos para ser plenamente eficaces frente a la Sociedad o terceros. These provisions ensure that the Agreement can operate through corporate changes, financing rounds, and reorganizations. The hierarchy rule is particularly important in Colombi"
+      }
+    }
+  },
+  "employment": {
+    "preamble": {
+      "en": {
+        "title": "V. Employment Agreement with Confidentiality and IP Assignment",
+        "summary": "Purpose of the section: Identifies the employer, the employee, the position, start date, workplace, and working arrangement.",
+        "why": "Sets context so founders know what this document covers before reviewing operative clauses."
+      },
+      "es": {
+        "title": "V. Employment Agreement with Confidentiality and IP Assignment",
+        "summary": "Purpose of the section: Identifies the employer, the employee, the position, start date, workplace, and working arrangement.",
+        "why": "Da contexto para que los fundadores sepan qué cubre el documento antes de revisar las cláusulas operativas."
+      }
+    },
+    "1": {
+      "en": {
+        "title": "1. Purpose and Duties",
+        "summary": "and Duties",
+        "why": "Purpose of the section: Describes the position, responsibilities, reporting line, objectives, and the ability to assign reasonable duties related to the role. Importance for founders: Allows the founding team to adapt duties in a changing company while giving the employee a clear framework of responsibility. This is especially useful in small teams where roles evolve quickly."
+      },
+      "es": {
+        "title": "1. Purpose and Duties",
+        "summary": "and Duties",
+        "why": "Purpose of the section: Describes the position, responsibilities, reporting line, objectives, and the ability to assign reasonable duties related to the role. Importance for founders: Allows the founding team to adapt duties in a changing company while giving the employee a clear framework of responsibility. This is especially useful in small teams where roles evolve quickly."
+      }
+    },
+    "2": {
+      "en": {
+        "title": "2. Term and Probationary Period",
+        "summary": "of the section: Defines whether the agreement is indefinite-term, fixed-term, or for a specific project or task and, where applicable, the probationary period permitted by law. Importance for founders: Aligns the agreement with the actual type of engagement and helps manage early hiring risk. It must be applied strictly in accordance with the Substantive Labour Code to avoid invalidity.",
+        "why": "Purpose of the section: Defines whether the agreement is indefinite-term, fixed-term, or for a specific project or task and, where applicable, the probationary period permitted by law. Importance for founders: Aligns the agreement with the actual type of engagement and helps manage early hiring risk. It must be applied strictly in accordance with the Substantive Labour Code to avoid invalidity."
+      },
+      "es": {
+        "title": "2. Term and Probationary Period",
+        "summary": "of the section: Defines whether the agreement is indefinite-term, fixed-term, or for a specific project or task and, where applicable, the probationary period permitted by law. Importance for founders: Aligns the agreement with the actual type of engagement and helps manage early hiring risk. It must be applied strictly in accordance with the Substantive Labour Code to avoid invalidity.",
+        "why": "Purpose of the section: Defines whether the agreement is indefinite-term, fixed-term, or for a specific project or task and, where applicable, the probationary period permitted by law. Importance for founders: Aligns the agreement with the actual type of engagement and helps manage early hiring risk. It must be applied strictly in accordance with the Substantive Labour Code to avoid invalidity."
+      }
+    },
+    "3": {
+      "en": {
+        "title": "3. Working Hours, Workplace, and Working Arrangement",
+        "summary": "of the section: Governs working hours, remote, hybrid, or on-site work, reasonable availability, tools, and compliance with policies. Importance for founders: Helps manage productivity, information security, and employment compliance, especially for distributed teams. It must not be used to disregard statutory limits on working hours, rest periods, or overtime.",
+        "why": "Purpose of the section: Governs working hours, remote, hybrid, or on-site work, reasonable availability, tools, and compliance with policies. Importance for founders: Helps manage productivity, information security, and employment compliance, especially for distributed teams. It must not be used to disregard statutory limits on working hours, rest periods, or overtime."
+      },
+      "es": {
+        "title": "3. Working Hours, Workplace, and Working Arrangement",
+        "summary": "of the section: Governs working hours, remote, hybrid, or on-site work, reasonable availability, tools, and compliance with policies. Importance for founders: Helps manage productivity, information security, and employment compliance, especially for distributed teams. It must not be used to disregard statutory limits on working hours, rest periods, or overtime.",
+        "why": "Purpose of the section: Governs working hours, remote, hybrid, or on-site work, reasonable availability, tools, and compliance with policies. Importance for founders: Helps manage productivity, information security, and employment compliance, especially for distributed teams. It must not be used to disregard statutory limits on working hours, rest periods, or overtime."
+      }
+    },
+    "4": {
+      "en": {
+        "title": "4. Salary, Payments, and Benefits",
+        "summary": "of the section: Establishes salary, payment frequency, salary and non-salary components, benefits, and authorized deductions. Importance for founders: Reduces compensation disputes and permits, where legally valid, a distinction between salary and non-salary payments. This is relevant to budgets, social security contributions, and financial projections.",
+        "why": "Purpose of the section: Establishes salary, payment frequency, salary and non-salary components, benefits, and authorized deductions. Importance for founders: Reduces compensation disputes and permits, where legally valid, a distinction between salary and non-salary payments. This is relevant to budgets, social security contributions, and financial projections."
+      },
+      "es": {
+        "title": "4. Salary, Payments, and Benefits",
+        "summary": "of the section: Establishes salary, payment frequency, salary and non-salary components, benefits, and authorized deductions. Importance for founders: Reduces compensation disputes and permits, where legally valid, a distinction between salary and non-salary payments. This is relevant to budgets, social security contributions, and financial projections.",
+        "why": "Purpose of the section: Establishes salary, payment frequency, salary and non-salary components, benefits, and authorized deductions. Importance for founders: Reduces compensation disputes and permits, where legally valid, a distinction between salary and non-salary payments. This is relevant to budgets, social security contributions, and financial projections."
+      }
+    },
+    "5": {
+      "en": {
+        "title": "5. Social Security, Statutory Benefits, and Withholdings",
+        "summary": "of the section: Confirms enrolment, contributions, statutory employment benefits, withholdings, and the employer’s legal obligations. Importance for founders: Employment compliance is a central due diligence issue. Failures involving social security or statutory benefits can generate employment liabilities, penalties, and delays in a financing or acquisition.",
+        "why": "Purpose of the section: Confirms enrolment, contributions, statutory employment benefits, withholdings, and the employer’s legal obligations. Importance for founders: Employment compliance is a central due diligence issue. Failures involving social security or statutory benefits can generate employment liabilities, penalties, and delays in a financing or acquisition."
+      },
+      "es": {
+        "title": "5. Social Security, Statutory Benefits, and Withholdings",
+        "summary": "of the section: Confirms enrolment, contributions, statutory employment benefits, withholdings, and the employer’s legal obligations. Importance for founders: Employment compliance is a central due diligence issue. Failures involving social security or statutory benefits can generate employment liabilities, penalties, and delays in a financing or acquisition.",
+        "why": "Purpose of the section: Confirms enrolment, contributions, statutory employment benefits, withholdings, and the employer’s legal obligations. Importance for founders: Employment compliance is a central due diligence issue. Failures involving social security or statutory benefits can generate employment liabilities, penalties, and delays in a financing or acquisition."
+      }
+    },
+    "6": {
+      "en": {
+        "title": "6. Confidentiality",
+        "summary": "of the section: Requires the employee to protect confidential information and use it only for authorized duties, subject to reasonable exceptions and survival provisions. Importance for founders: Protects the product, credentials, strategy, and client information. Including the obligation in the employment agreement makes the duty of confidentiality enforceable from the first day of employment.",
+        "why": "Purpose of the section: Requires the employee to protect confidential information and use it only for authorized duties, subject to reasonable exceptions and survival provisions. Importance for founders: Protects the product, credentials, strategy, and client information. Including the obligation in the employment agreement makes the duty of confidentiality enforceable from the first day of employ"
+      },
+      "es": {
+        "title": "6. Confidentiality",
+        "summary": "of the section: Requires the employee to protect confidential information and use it only for authorized duties, subject to reasonable exceptions and survival provisions. Importance for founders: Protects the product, credentials, strategy, and client information. Including the obligation in the employment agreement makes the duty of confidentiality enforceable from the first day of employment.",
+        "why": "Purpose of the section: Requires the employee to protect confidential information and use it only for authorized duties, subject to reasonable exceptions and survival provisions. Importance for founders: Protects the product, credentials, strategy, and client information. Including the obligation in the employment agreement makes the duty of confidentiality enforceable from the first day of employ"
+      }
+    },
+    "7": {
+      "en": {
+        "title": "7. Intellectual Property and Inventions",
+        "summary": "of the section: Establishes that developments created in the course of employment belong to or are assigned to the Company and requires authorizations for their exploitation and modification under Colombian law. Importance for founders: Ensures that the Company, rather than the employee, owns the code, designs, documentation, and other work product developed through employment. This is essential for investment, product sales, and operational continuity.",
+        "why": "Purpose of the section: Establishes that developments created in the course of employment belong to or are assigned to the Company and requires authorizations for their exploitation and modification under Colombian law. Importance for founders: Ensures that the Company, rather than the employee, owns the code, designs, documentation, and other work product developed through employment. This is ess"
+      },
+      "es": {
+        "title": "7. Intellectual Property and Inventions",
+        "summary": "of the section: Establishes that developments created in the course of employment belong to or are assigned to the Company and requires authorizations for their exploitation and modification under Colombian law. Importance for founders: Ensures that the Company, rather than the employee, owns the code, designs, documentation, and other work product developed through employment. This is essential for investment, product sales, and operational continuity.",
+        "why": "Purpose of the section: Establishes that developments created in the course of employment belong to or are assigned to the Company and requires authorizations for their exploitation and modification under Colombian law. Importance for founders: Ensures that the Company, rather than the employee, owns the code, designs, documentation, and other work product developed through employment. This is ess"
+      }
+    },
+    "8": {
+      "en": {
+        "title": "8. Tools, Assets, and Information Security",
+        "summary": "of the section: Governs the use of equipment, email, repositories, access credentials, security policies, and the return of assets. Importance for founders: Prevents critical information from remaining on personal devices or accounts. It also reduces cybersecurity risks and allows access to be recovered quickly when an employee leaves.",
+        "why": "Purpose of the section: Governs the use of equipment, email, repositories, access credentials, security policies, and the return of assets. Importance for founders: Prevents critical information from remaining on personal devices or accounts. It also reduces cybersecurity risks and allows access to be recovered quickly when an employee leaves."
+      },
+      "es": {
+        "title": "8. Tools, Assets, and Information Security",
+        "summary": "of the section: Governs the use of equipment, email, repositories, access credentials, security policies, and the return of assets. Importance for founders: Prevents critical information from remaining on personal devices or accounts. It also reduces cybersecurity risks and allows access to be recovered quickly when an employee leaves.",
+        "why": "Purpose of the section: Governs the use of equipment, email, repositories, access credentials, security policies, and the return of assets. Importance for founders: Prevents critical information from remaining on personal devices or accounts. It also reduces cybersecurity risks and allows access to be recovered quickly when an employee leaves."
+      }
+    },
+    "9": {
+      "en": {
+        "title": "9. Personal Data Protection",
+        "summary": "of the section: Requires the employee to process personal data in accordance with the Company’s instructions and applicable law. Importance for founders: Employees often access data concerning Users, clients, and colleagues. This clause supports regulatory compliance and helps demonstrate that the Company has implemented internal accountability measures.",
+        "why": "Purpose of the section: Requires the employee to process personal data in accordance with the Company’s instructions and applicable law. Importance for founders: Employees often access data concerning Users, clients, and colleagues. This clause supports regulatory compliance and helps demonstrate that the Company has implemented internal accountability measures."
+      },
+      "es": {
+        "title": "9. Personal Data Protection",
+        "summary": "of the section: Requires the employee to process personal data in accordance with the Company’s instructions and applicable law. Importance for founders: Employees often access data concerning Users, clients, and colleagues. This clause supports regulatory compliance and helps demonstrate that the Company has implemented internal accountability measures.",
+        "why": "Purpose of the section: Requires the employee to process personal data in accordance with the Company’s instructions and applicable law. Importance for founders: Employees often access data concerning Users, clients, and colleagues. This clause supports regulatory compliance and helps demonstrate that the Company has implemented internal accountability measures."
+      }
+    },
+    "10": {
+      "en": {
+        "title": "10. Conflicts of Interest and Outside Activities",
+        "summary": "of the section: Requires disclosure of conflicts and limits outside activities that materially interfere with the position or compete with the Company during employment. Importance for founders: Reduces the risk that an employee develops a competing product using Company time or resources. Restrictions must be reasonable and must respect applicable limits under Colombian employment law.",
+        "why": "Purpose of the section: Requires disclosure of conflicts and limits outside activities that materially interfere with the position or compete with the Company during employment. Importance for founders: Reduces the risk that an employee develops a competing product using Company time or resources. Restrictions must be reasonable and must respect applicable limits under Colombian employment law."
+      },
+      "es": {
+        "title": "10. Conflicts of Interest and Outside Activities",
+        "summary": "of the section: Requires disclosure of conflicts and limits outside activities that materially interfere with the position or compete with the Company during employment. Importance for founders: Reduces the risk that an employee develops a competing product using Company time or resources. Restrictions must be reasonable and must respect applicable limits under Colombian employment law.",
+        "why": "Purpose of the section: Requires disclosure of conflicts and limits outside activities that materially interfere with the position or compete with the Company during employment. Importance for founders: Reduces the risk that an employee develops a competing product using Company time or resources. Restrictions must be reasonable and must respect applicable limits under Colombian employment law."
+      }
+    },
+    "11": {
+      "en": {
+        "title": "11. Termination and Delivery of Information",
+        "summary": "of the section: Governs the consequences of termination, including return of assets, delivery of developments, transition assistance, and survival of confidentiality and IP obligations. Importance for founders: Ensures an orderly departure, particularly for technical personnel or anyone with infrastructure access. The startup should not depend on a former employee to recover code, credentials, or client information.",
+        "why": "Purpose of the section: Governs the consequences of termination, including return of assets, delivery of developments, transition assistance, and survival of confidentiality and IP obligations. Importance for founders: Ensures an orderly departure, particularly for technical personnel or anyone with infrastructure access. The startup should not depend on a former employee to recover code, credenti"
+      },
+      "es": {
+        "title": "11. Termination and Delivery of Information",
+        "summary": "of the section: Governs the consequences of termination, including return of assets, delivery of developments, transition assistance, and survival of confidentiality and IP obligations. Importance for founders: Ensures an orderly departure, particularly for technical personnel or anyone with infrastructure access. The startup should not depend on a former employee to recover code, credentials, or client information.",
+        "why": "Purpose of the section: Governs the consequences of termination, including return of assets, delivery of developments, transition assistance, and survival of confidentiality and IP obligations. Importance for founders: Ensures an orderly departure, particularly for technical personnel or anyone with infrastructure access. The startup should not depend on a former employee to recover code, credenti"
+      }
+    },
+    "12": {
+      "en": {
+        "title": "12. Disciplinary Rules and Policies",
+        "summary": "of the section: Binds the employee to reasonable internal policies, the internal work regulations where applicable, and the consequences of non-compliance. Importance for founders: Allows consistent implementation of standards for security, conduct, AI use, data protection, and remote work. It must be applied in accordance with employment due process.",
+        "why": "Purpose of the section: Binds the employee to reasonable internal policies, the internal work regulations where applicable, and the consequences of non-compliance. Importance for founders: Allows consistent implementation of standards for security, conduct, AI use, data protection, and remote work. It must be applied in accordance with employment due process."
+      },
+      "es": {
+        "title": "12. Disciplinary Rules and Policies",
+        "summary": "of the section: Binds the employee to reasonable internal policies, the internal work regulations where applicable, and the consequences of non-compliance. Importance for founders: Allows consistent implementation of standards for security, conduct, AI use, data protection, and remote work. It must be applied in accordance with employment due process.",
+        "why": "Purpose of the section: Binds the employee to reasonable internal policies, the internal work regulations where applicable, and the consequences of non-compliance. Importance for founders: Allows consistent implementation of standards for security, conduct, AI use, data protection, and remote work. It must be applied in accordance with employment due process."
+      }
+    },
+    "13": {
+      "en": {
+        "title": "13. Governing Law and General Provisions",
+        "summary": "of the section: Confirms the application of Colombian law, the entire-agreement principle, written amendments, and the precedence of mandatory employment rules. Importance for founders: Prevents the agreement from attempting to limit non-waivable employment rights and helps keep the document enforceable. It also clarifies that the IP and confidentiality annexes form part of the employment relationship. Founder Checklist Before Using the Documents Confirm that the Company has been duly incorporat",
+        "why": "Purpose of the section: Confirms the application of Colombian law, the entire-agreement principle, written amendments, and the precedence of mandatory employment rules. Importance for founders: Prevents the agreement from attempting to limit non-waivable employment rights and helps keep the document enforceable. It also clarifies that the IP and confidentiality annexes form part of the employment "
+      },
+      "es": {
+        "title": "13. Governing Law and General Provisions",
+        "summary": "of the section: Confirms the application of Colombian law, the entire-agreement principle, written amendments, and the precedence of mandatory employment rules. Importance for founders: Prevents the agreement from attempting to limit non-waivable employment rights and helps keep the document enforceable. It also clarifies that the IP and confidentiality annexes form part of the employment relationship. Founder Checklist Before Using the Documents Confirm that the Company has been duly incorporat",
+        "why": "Purpose of the section: Confirms the application of Colombian law, the entire-agreement principle, written amendments, and the precedence of mandatory employment rules. Importance for founders: Prevents the agreement from attempting to limit non-waivable employment rights and helps keep the document enforceable. It also clarifies that the IP and confidentiality annexes form part of the employment "
+      }
+    }
+  },
+  "corporate_client": {
+    "preamble": {
+      "en": {
+        "title": "III Master Services Agreement with Corporate Clients",
+        "summary": "Purpose of the section: Identifies the Provider and the Client and establishes that they are entering into a master agreement.",
+        "why": "Sets context so founders know what this document covers before reviewing operative clauses."
+      },
+      "es": {
+        "title": "III Master Services Agreement with Corporate Clients",
+        "summary": "Purpose of the section: Identifies the Provider and the Client and establishes that they are entering into a master agreement.",
+        "why": "Da contexto para que los fundadores sepan qué cubre el documento antes de revisar las cláusulas operativas."
+      }
+    },
+    "1": {
+      "en": {
+        "title": "1. Scope and Service Documents",
+        "summary": "of the section: Defines the Services and allows the agreement to be supplemented by Service Orders covering scope, deliverables, schedule, fees, and specific terms. Importance for founders: Avoids renegotiating the entire agreement for every project. It also reduces scope disputes, a frequent source of delays, unpaid work, and conflict with corporate clients.",
+        "why": "Purpose of the section: Defines the Services and allows the agreement to be supplemented by Service Orders covering scope, deliverables, schedule, fees, and specific terms. Importance for founders: Avoids renegotiating the entire agreement for every project. It also reduces scope disputes, a frequent source of delays, unpaid work, and conflict with corporate clients."
+      },
+      "es": {
+        "title": "1. Scope and Service Documents",
+        "summary": "of the section: Defines the Services and allows the agreement to be supplemented by Service Orders covering scope, deliverables, schedule, fees, and specific terms. Importance for founders: Avoids renegotiating the entire agreement for every project. It also reduces scope disputes, a frequent source of delays, unpaid work, and conflict with corporate clients.",
+        "why": "Purpose of the section: Defines the Services and allows the agreement to be supplemented by Service Orders covering scope, deliverables, schedule, fees, and specific terms. Importance for founders: Avoids renegotiating the entire agreement for every project. It also reduces scope disputes, a frequent source of delays, unpaid work, and conflict with corporate clients."
+      }
+    },
+    "2": {
+      "en": {
+        "title": "2. Access to and Use of the Services",
+        "summary": "of the section: Grants the Client a limited license and establishes restrictions on use, resale, reverse engineering, interference, and unlawful use. Importance for founders: Protects the technology, business model, and platform security. It prevents a client from sharing access, reselling the product, or attempting to copy critical functionality.",
+        "why": "Purpose of the section: Grants the Client a limited license and establishes restrictions on use, resale, reverse engineering, interference, and unlawful use. Importance for founders: Protects the technology, business model, and platform security. It prevents a client from sharing access, reselling the product, or attempting to copy critical functionality."
+      },
+      "es": {
+        "title": "2. Access to and Use of the Services",
+        "summary": "of the section: Grants the Client a limited license and establishes restrictions on use, resale, reverse engineering, interference, and unlawful use. Importance for founders: Protects the technology, business model, and platform security. It prevents a client from sharing access, reselling the product, or attempting to copy critical functionality.",
+        "why": "Purpose of the section: Grants the Client a limited license and establishes restrictions on use, resale, reverse engineering, interference, and unlawful use. Importance for founders: Protects the technology, business model, and platform security. It prevents a client from sharing access, reselling the product, or attempting to copy critical functionality."
+      }
+    },
+    "3": {
+      "en": {
+        "title": "3. Provider Obligations",
+        "summary": "of the section: Defines the performance standard, maintenance of capabilities, and reasonable security measures. Importance for founders: Builds commercial confidence without promising impossible results or absolute availability. It sets a professional, realistic standard the Company can meet.",
+        "why": "Purpose of the section: Defines the performance standard, maintenance of capabilities, and reasonable security measures. Importance for founders: Builds commercial confidence without promising impossible results or absolute availability. It sets a professional, realistic standard the Company can meet."
+      },
+      "es": {
+        "title": "3. Provider Obligations",
+        "summary": "of the section: Defines the performance standard, maintenance of capabilities, and reasonable security measures. Importance for founders: Builds commercial confidence without promising impossible results or absolute availability. It sets a professional, realistic standard the Company can meet.",
+        "why": "Purpose of the section: Defines the performance standard, maintenance of capabilities, and reasonable security measures. Importance for founders: Builds commercial confidence without promising impossible results or absolute availability. It sets a professional, realistic standard the Company can meet."
+      }
+    },
+    "4": {
+      "en": {
+        "title": "4. Client Obligations",
+        "summary": "of the section: Requires the Client to pay, cooperate, provide lawful information, and ensure its users comply with the agreement. Importance for founders: Balances responsibilities. Many implementation failures occur because the client does not provide information, make decisions, or have permission to share data; this clause protects the startup from those risks.",
+        "why": "Purpose of the section: Requires the Client to pay, cooperate, provide lawful information, and ensure its users comply with the agreement. Importance for founders: Balances responsibilities. Many implementation failures occur because the client does not provide information, make decisions, or have permission to share data; this clause protects the startup from those risks."
+      },
+      "es": {
+        "title": "4. Client Obligations",
+        "summary": "of the section: Requires the Client to pay, cooperate, provide lawful information, and ensure its users comply with the agreement. Importance for founders: Balances responsibilities. Many implementation failures occur because the client does not provide information, make decisions, or have permission to share data; this clause protects the startup from those risks.",
+        "why": "Purpose of the section: Requires the Client to pay, cooperate, provide lawful information, and ensure its users comply with the agreement. Importance for founders: Balances responsibilities. Many implementation failures occur because the client does not provide information, make decisions, or have permission to share data; this clause protects the startup from those risks."
+      }
+    },
+    "5": {
+      "en": {
+        "title": "5. Fees, Invoicing, and Taxes",
+        "summary": "of the section: Governs pricing, VAT, invoicing, payment terms, default interest, suspension, and withholding taxes. Importance for founders: Protects cash flow, which is often critical for early-stage companies. It provides contractual tools to collect payment, suspend for nonpayment, and address tax withholdings without absorbing unexpected costs.",
+        "why": "Purpose of the section: Governs pricing, VAT, invoicing, payment terms, default interest, suspension, and withholding taxes. Importance for founders: Protects cash flow, which is often critical for early-stage companies. It provides contractual tools to collect payment, suspend for nonpayment, and address tax withholdings without absorbing unexpected costs."
+      },
+      "es": {
+        "title": "5. Fees, Invoicing, and Taxes",
+        "summary": "of the section: Governs pricing, VAT, invoicing, payment terms, default interest, suspension, and withholding taxes. Importance for founders: Protects cash flow, which is often critical for early-stage companies. It provides contractual tools to collect payment, suspend for nonpayment, and address tax withholdings without absorbing unexpected costs.",
+        "why": "Purpose of the section: Governs pricing, VAT, invoicing, payment terms, default interest, suspension, and withholding taxes. Importance for founders: Protects cash flow, which is often critical for early-stage companies. It provides contractual tools to collect payment, suspend for nonpayment, and address tax withholdings without absorbing unexpected costs."
+      }
+    },
+    "6": {
+      "en": {
+        "title": "6. Intellectual Property",
+        "summary": "of the section: Distinguishes Provider Technology, Client Data, and the treatment of deliverables or custom developments. Importance for founders: Prevents a client from claiming ownership of the platform, codebase, or general improvements merely because it paid for the Services. This clause is central to preserving a scalable product that can be defended to investors.",
+        "why": "Purpose of the section: Distinguishes Provider Technology, Client Data, and the treatment of deliverables or custom developments. Importance for founders: Prevents a client from claiming ownership of the platform, codebase, or general improvements merely because it paid for the Services. This clause is central to preserving a scalable product that can be defended to investors."
+      },
+      "es": {
+        "title": "6. Intellectual Property",
+        "summary": "of the section: Distinguishes Provider Technology, Client Data, and the treatment of deliverables or custom developments. Importance for founders: Prevents a client from claiming ownership of the platform, codebase, or general improvements merely because it paid for the Services. This clause is central to preserving a scalable product that can be defended to investors.",
+        "why": "Purpose of the section: Distinguishes Provider Technology, Client Data, and the treatment of deliverables or custom developments. Importance for founders: Prevents a client from claiming ownership of the platform, codebase, or general improvements merely because it paid for the Services. This clause is central to preserving a scalable product that can be defended to investors."
+      }
+    },
+    "7": {
+      "en": {
+        "title": "7. Confidentiality",
+        "summary": "of the section: Protects each Party’s confidential information and establishes permitted uses, exceptions, and survival. Importance for founders: Allows product, security, strategy, and business information to be shared with clients without losing control over it. It also requires the Client to protect the startup’s sensitive information.",
+        "why": "Purpose of the section: Protects each Party’s confidential information and establishes permitted uses, exceptions, and survival. Importance for founders: Allows product, security, strategy, and business information to be shared with clients without losing control over it. It also requires the Client to protect the startup’s sensitive information."
+      },
+      "es": {
+        "title": "7. Confidentiality",
+        "summary": "of the section: Protects each Party’s confidential information and establishes permitted uses, exceptions, and survival. Importance for founders: Allows product, security, strategy, and business information to be shared with clients without losing control over it. It also requires the Client to protect the startup’s sensitive information.",
+        "why": "Purpose of the section: Protects each Party’s confidential information and establishes permitted uses, exceptions, and survival. Importance for founders: Allows product, security, strategy, and business information to be shared with clients without losing control over it. It also requires the Client to protect the startup’s sensitive information."
+      }
+    },
+    "8": {
+      "en": {
+        "title": "8. Personal Data Protection and Security",
+        "summary": "of the section: Allocates the roles of Data Controller and Data Processor, requires the Client to have legal bases for processing, and establishes security and incident-notification duties. Importance for founders: Essential for selling to companies that share personal data. It supports compliance with Law 1581 of 2012 and reduces the risk that the Client shifts responsibility to the startup for data it was not authorized to share.",
+        "why": "Purpose of the section: Allocates the roles of Data Controller and Data Processor, requires the Client to have legal bases for processing, and establishes security and incident-notification duties. Importance for founders: Essential for selling to companies that share personal data. It supports compliance with Law 1581 of 2012 and reduces the risk that the Client shifts responsibility to the start"
+      },
+      "es": {
+        "title": "8. Personal Data Protection and Security",
+        "summary": "of the section: Allocates the roles of Data Controller and Data Processor, requires the Client to have legal bases for processing, and establishes security and incident-notification duties. Importance for founders: Essential for selling to companies that share personal data. It supports compliance with Law 1581 of 2012 and reduces the risk that the Client shifts responsibility to the startup for data it was not authorized to share.",
+        "why": "Purpose of the section: Allocates the roles of Data Controller and Data Processor, requires the Client to have legal bases for processing, and establishes security and incident-notification duties. Importance for founders: Essential for selling to companies that share personal data. It supports compliance with Law 1581 of 2012 and reduces the risk that the Client shifts responsibility to the start"
+      }
+    },
+    "9": {
+      "en": {
+        "title": "9. Warranties",
+        "summary": "of the section: Establishes a limited warranty of professional performance and defines an exclusive remedy of correction or proportional refund. Importance for founders: Avoids broad warranties of results, universal compatibility, or total availability that a startup cannot control. Limiting the remedy protects the Company’s margin and financial exposure.",
+        "why": "Purpose of the section: Establishes a limited warranty of professional performance and defines an exclusive remedy of correction or proportional refund. Importance for founders: Avoids broad warranties of results, universal compatibility, or total availability that a startup cannot control. Limiting the remedy protects the Company’s margin and financial exposure."
+      },
+      "es": {
+        "title": "9. Warranties",
+        "summary": "of the section: Establishes a limited warranty of professional performance and defines an exclusive remedy of correction or proportional refund. Importance for founders: Avoids broad warranties of results, universal compatibility, or total availability that a startup cannot control. Limiting the remedy protects the Company’s margin and financial exposure.",
+        "why": "Purpose of the section: Establishes a limited warranty of professional performance and defines an exclusive remedy of correction or proportional refund. Importance for founders: Avoids broad warranties of results, universal compatibility, or total availability that a startup cannot control. Limiting the remedy protects the Company’s margin and financial exposure."
+      }
+    },
+    "10": {
+      "en": {
+        "title": "10. Indemnification",
+        "summary": "of the section: Governs responsibility for third-party claims involving IP, Client Data, or unlawful use and establishes a defense process. Importance for founders: This is a critical allocation of risk. It protects the startup when a client uses data without authorization or infringes third-party rights, while offering the client reasonable protection if the Provider’s technology infringes third-party IP.",
+        "why": "Purpose of the section: Governs responsibility for third-party claims involving IP, Client Data, or unlawful use and establishes a defense process. Importance for founders: This is a critical allocation of risk. It protects the startup when a client uses data without authorization or infringes third-party rights, while offering the client reasonable protection if the Provider’s technology infringe"
+      },
+      "es": {
+        "title": "10. Indemnification",
+        "summary": "of the section: Governs responsibility for third-party claims involving IP, Client Data, or unlawful use and establishes a defense process. Importance for founders: This is a critical allocation of risk. It protects the startup when a client uses data without authorization or infringes third-party rights, while offering the client reasonable protection if the Provider’s technology infringes third-party IP.",
+        "why": "Purpose of the section: Governs responsibility for third-party claims involving IP, Client Data, or unlawful use and establishes a defense process. Importance for founders: This is a critical allocation of risk. It protects the startup when a client uses data without authorization or infringes third-party rights, while offering the client reasonable protection if the Provider’s technology infringe"
+      }
+    },
+    "11": {
+      "en": {
+        "title": "11. Limitation of Liability",
+        "summary": "of the section: Excludes indirect damages and establishes a monetary liability cap, with exceptions for serious misconduct and particularly sensitive obligations. Importance for founders: Without a liability cap, a client claim can easily exceed the Company’s total revenue. The clause helps keep contractual risk insurable, financeable, and proportionate to the value of the contract.",
+        "why": "Purpose of the section: Excludes indirect damages and establishes a monetary liability cap, with exceptions for serious misconduct and particularly sensitive obligations. Importance for founders: Without a liability cap, a client claim can easily exceed the Company’s total revenue. The clause helps keep contractual risk insurable, financeable, and proportionate to the value of the contract."
+      },
+      "es": {
+        "title": "11. Limitation of Liability",
+        "summary": "of the section: Excludes indirect damages and establishes a monetary liability cap, with exceptions for serious misconduct and particularly sensitive obligations. Importance for founders: Without a liability cap, a client claim can easily exceed the Company’s total revenue. The clause helps keep contractual risk insurable, financeable, and proportionate to the value of the contract.",
+        "why": "Purpose of the section: Excludes indirect damages and establishes a monetary liability cap, with exceptions for serious misconduct and particularly sensitive obligations. Importance for founders: Without a liability cap, a client claim can easily exceed the Company’s total revenue. The clause helps keep contractual risk insurable, financeable, and proportionate to the value of the contract."
+      }
+    },
+    "12": {
+      "en": {
+        "title": "12. Term and Termination",
+        "summary": "of the section: Defines the term, termination for breach, suspension for risk, and the return or export of data. Importance for founders: Allows problematic relationships to be ended, uses affecting security to be suspended, and the treatment of client information upon termination to be defined. It also reduces the risk of indefinite services or unpaid work.",
+        "why": "Purpose of the section: Defines the term, termination for breach, suspension for risk, and the return or export of data. Importance for founders: Allows problematic relationships to be ended, uses affecting security to be suspended, and the treatment of client information upon termination to be defined. It also reduces the risk of indefinite services or unpaid work."
+      },
+      "es": {
+        "title": "12. Term and Termination",
+        "summary": "of the section: Defines the term, termination for breach, suspension for risk, and the return or export of data. Importance for founders: Allows problematic relationships to be ended, uses affecting security to be suspended, and the treatment of client information upon termination to be defined. It also reduces the risk of indefinite services or unpaid work.",
+        "why": "Purpose of the section: Defines the term, termination for breach, suspension for risk, and the return or export of data. Importance for founders: Allows problematic relationships to be ended, uses affecting security to be suspended, and the treatment of client information upon termination to be defined. It also reduces the risk of indefinite services or unpaid work."
+      }
+    },
+    "13": {
+      "en": {
+        "title": "13. Legal Compliance",
+        "summary": "of the section: Requires compliance with anti-corruption, anti-money laundering, sanctions, data protection, and other applicable laws. Importance for founders: Facilitates due diligence by investors and enterprise clients and reduces reputational and regulatory risks from dealing with inappropriate counterparties or uses.",
+        "why": "Purpose of the section: Requires compliance with anti-corruption, anti-money laundering, sanctions, data protection, and other applicable laws. Importance for founders: Facilitates due diligence by investors and enterprise clients and reduces reputational and regulatory risks from dealing with inappropriate counterparties or uses."
+      },
+      "es": {
+        "title": "13. Legal Compliance",
+        "summary": "of the section: Requires compliance with anti-corruption, anti-money laundering, sanctions, data protection, and other applicable laws. Importance for founders: Facilitates due diligence by investors and enterprise clients and reduces reputational and regulatory risks from dealing with inappropriate counterparties or uses.",
+        "why": "Purpose of the section: Requires compliance with anti-corruption, anti-money laundering, sanctions, data protection, and other applicable laws. Importance for founders: Facilitates due diligence by investors and enterprise clients and reduces reputational and regulatory risks from dealing with inappropriate counterparties or uses."
+      }
+    },
+    "14": {
+      "en": {
+        "title": "14. Publicity",
+        "summary": "of the section: Governs whether the Company may use the Client’s name or logo as a commercial reference. Importance for founders: Client references can be highly valuable for sales and financing, but unauthorized trademark use may create conflict. The clause allows clear consent to be obtained.",
+        "why": "Purpose of the section: Governs whether the Company may use the Client’s name or logo as a commercial reference. Importance for founders: Client references can be highly valuable for sales and financing, but unauthorized trademark use may create conflict. The clause allows clear consent to be obtained."
+      },
+      "es": {
+        "title": "14. Publicity",
+        "summary": "of the section: Governs whether the Company may use the Client’s name or logo as a commercial reference. Importance for founders: Client references can be highly valuable for sales and financing, but unauthorized trademark use may create conflict. The clause allows clear consent to be obtained.",
+        "why": "Purpose of the section: Governs whether the Company may use the Client’s name or logo as a commercial reference. Importance for founders: Client references can be highly valuable for sales and financing, but unauthorized trademark use may create conflict. The clause allows clear consent to be obtained."
+      }
+    },
+    "15": {
+      "en": {
+        "title": "15. General Provisions",
+        "summary": "of the section: Covers the entire agreement, assignment, force majeure, notices, governing law, disputes, and electronic signatures. Importance for founders: Closes operational gaps and prevents disputes about communications, corporate assignments, or events outside the startup’s control. It also facilitates digital execution and commercial scalability.",
+        "why": "Purpose of the section: Covers the entire agreement, assignment, force majeure, notices, governing law, disputes, and electronic signatures. Importance for founders: Closes operational gaps and prevents disputes about communications, corporate assignments, or events outside the startup’s control. It also facilitates digital execution and commercial scalability."
+      },
+      "es": {
+        "title": "15. General Provisions",
+        "summary": "of the section: Covers the entire agreement, assignment, force majeure, notices, governing law, disputes, and electronic signatures. Importance for founders: Closes operational gaps and prevents disputes about communications, corporate assignments, or events outside the startup’s control. It also facilitates digital execution and commercial scalability.",
+        "why": "Purpose of the section: Covers the entire agreement, assignment, force majeure, notices, governing law, disputes, and electronic signatures. Importance for founders: Closes operational gaps and prevents disputes about communications, corporate assignments, or events outside the startup’s control. It also facilitates digital execution and commercial scalability."
+      }
+    }
+  },
+  "terms_of_use": {
+    "preamble": {
+      "en": {
+        "title": "IV  Terms and Conditions for End Users",
+        "summary": "Purpose of the section: Identifies the Company, the Services, and the User and establishes that account creation or use constitutes acceptance of the Terms.",
+        "why": "Sets context so founders know what this document covers before reviewing operative clauses."
+      },
+      "es": {
+        "title": "IV  Terms and Conditions for End Users",
+        "summary": "Purpose of the section: Identifies the Company, the Services, and the User and establishes that account creation or use constitutes acceptance of the Terms.",
+        "why": "Da contexto para que los fundadores sepan qué cubre el documento antes de revisar las cláusulas operativas."
+      }
+    },
+    "1": {
+      "en": {
+        "title": "1. Definitions",
+        "summary": "of the section: Defines Account, User Content, Services, and User. Importance for founders: Avoids ambiguity about what information the user provides, what the product includes, and who is subject to the terms.",
+        "why": "Purpose of the section: Defines Account, User Content, Services, and User. Importance for founders: Avoids ambiguity about what information the user provides, what the product includes, and who is subject to the terms."
+      },
+      "es": {
+        "title": "1. Definitions",
+        "summary": "of the section: Defines Account, User Content, Services, and User. Importance for founders: Avoids ambiguity about what information the user provides, what the product includes, and who is subject to the terms.",
+        "why": "Purpose of the section: Defines Account, User Content, Services, and User. Importance for founders: Avoids ambiguity about what information the user provides, what the product includes, and who is subject to the terms."
+      }
+    },
+    "2": {
+      "en": {
+        "title": "2. Eligibility and Account",
+        "summary": "of the section: Governs legal capacity, data accuracy, credential protection, and suspension of high-risk accounts. Importance for founders: Reduces fraud, impersonation, unauthorized use, and security risks. It also enables a rapid response to compromised accounts or unlawful activities.",
+        "why": "Purpose of the section: Governs legal capacity, data accuracy, credential protection, and suspension of high-risk accounts. Importance for founders: Reduces fraud, impersonation, unauthorized use, and security risks. It also enables a rapid response to compromised accounts or unlawful activities."
+      },
+      "es": {
+        "title": "2. Eligibility and Account",
+        "summary": "of the section: Governs legal capacity, data accuracy, credential protection, and suspension of high-risk accounts. Importance for founders: Reduces fraud, impersonation, unauthorized use, and security risks. It also enables a rapid response to compromised accounts or unlawful activities.",
+        "why": "Purpose of the section: Governs legal capacity, data accuracy, credential protection, and suspension of high-risk accounts. Importance for founders: Reduces fraud, impersonation, unauthorized use, and security risks. It also enables a rapid response to compromised accounts or unlawful activities."
+      }
+    },
+    "3": {
+      "en": {
+        "title": "3. License and Permitted Use",
+        "summary": "of the section: Grants the User a limited license and prohibits reverse engineering, resale, code extraction, technical abuse, and unlawful uses. Importance for founders: Protects the product’s intellectual property and architecture. It prevents users from turning a license to use the platform into a right to copy, distribute, or exploit it.",
+        "why": "Purpose of the section: Grants the User a limited license and prohibits reverse engineering, resale, code extraction, technical abuse, and unlawful uses. Importance for founders: Protects the product’s intellectual property and architecture. It prevents users from turning a license to use the platform into a right to copy, distribute, or exploit it."
+      },
+      "es": {
+        "title": "3. License and Permitted Use",
+        "summary": "of the section: Grants the User a limited license and prohibits reverse engineering, resale, code extraction, technical abuse, and unlawful uses. Importance for founders: Protects the product’s intellectual property and architecture. It prevents users from turning a license to use the platform into a right to copy, distribute, or exploit it.",
+        "why": "Purpose of the section: Grants the User a limited license and prohibits reverse engineering, resale, code extraction, technical abuse, and unlawful uses. Importance for founders: Protects the product’s intellectual property and architecture. It prevents users from turning a license to use the platform into a right to copy, distribute, or exploit it."
+      }
+    },
+    "4": {
+      "en": {
+        "title": "4. User Content",
+        "summary": "of the section: Preserves the User’s ownership of their content while granting the Company an operational license to host, process, and protect that content. Importance for founders: The platform needs authorization to process user data and files; without this license, its technical operation may be legally exposed. At the same time, recognizing user ownership builds trust and reduces commercial friction.",
+        "why": "Purpose of the section: Preserves the User’s ownership of their content while granting the Company an operational license to host, process, and protect that content. Importance for founders: The platform needs authorization to process user data and files; without this license, its technical operation may be legally exposed. At the same time, recognizing user ownership builds trust and reduces comm"
+      },
+      "es": {
+        "title": "4. User Content",
+        "summary": "of the section: Preserves the User’s ownership of their content while granting the Company an operational license to host, process, and protect that content. Importance for founders: The platform needs authorization to process user data and files; without this license, its technical operation may be legally exposed. At the same time, recognizing user ownership builds trust and reduces commercial friction.",
+        "why": "Purpose of the section: Preserves the User’s ownership of their content while granting the Company an operational license to host, process, and protect that content. Importance for founders: The platform needs authorization to process user data and files; without this license, its technical operation may be legally exposed. At the same time, recognizing user ownership builds trust and reduces comm"
+      }
+    },
+    "5": {
+      "en": {
+        "title": "5. Artificial Intelligence Services",
+        "summary": "of the section: Warns that AI outputs may be inaccurate and requires human review; it limits sensitive or automated uses without appropriate safeguards. Importance for founders: Reduces liability risks arising from AI-generated results and protects against misuse, especially in employment, financial, legal, medical, or other high-impact decisions.",
+        "why": "Purpose of the section: Warns that AI outputs may be inaccurate and requires human review; it limits sensitive or automated uses without appropriate safeguards. Importance for founders: Reduces liability risks arising from AI-generated results and protects against misuse, especially in employment, financial, legal, medical, or other high-impact decisions."
+      },
+      "es": {
+        "title": "5. Artificial Intelligence Services",
+        "summary": "of the section: Warns that AI outputs may be inaccurate and requires human review; it limits sensitive or automated uses without appropriate safeguards. Importance for founders: Reduces liability risks arising from AI-generated results and protects against misuse, especially in employment, financial, legal, medical, or other high-impact decisions.",
+        "why": "Purpose of the section: Warns that AI outputs may be inaccurate and requires human review; it limits sensitive or automated uses without appropriate safeguards. Importance for founders: Reduces liability risks arising from AI-generated results and protects against misuse, especially in employment, financial, legal, medical, or other high-impact decisions."
+      }
+    },
+    "6": {
+      "en": {
+        "title": "6. Fees, Payments, and Renewal",
+        "summary": "of the section: Governs plans, charges, taxes, non-refundable payments, automatic renewal, and future price changes. Importance for founders: Protects recurring revenue and supports scaling a subscription model. It also reduces billing disputes and explains how a User may cancel before renewal.",
+        "why": "Purpose of the section: Governs plans, charges, taxes, non-refundable payments, automatic renewal, and future price changes. Importance for founders: Protects recurring revenue and supports scaling a subscription model. It also reduces billing disputes and explains how a User may cancel before renewal."
+      },
+      "es": {
+        "title": "6. Fees, Payments, and Renewal",
+        "summary": "of the section: Governs plans, charges, taxes, non-refundable payments, automatic renewal, and future price changes. Importance for founders: Protects recurring revenue and supports scaling a subscription model. It also reduces billing disputes and explains how a User may cancel before renewal.",
+        "why": "Purpose of the section: Governs plans, charges, taxes, non-refundable payments, automatic renewal, and future price changes. Importance for founders: Protects recurring revenue and supports scaling a subscription model. It also reduces billing disputes and explains how a User may cancel before renewal."
+      }
+    },
+    "7": {
+      "en": {
+        "title": "7. Intellectual Property",
+        "summary": "of the section: Reserves all rights in the product to the Company and permits the use of User feedback. Importance for founders: Prevents Users from claiming rights in the software, features, or platform improvements. Feedback may be incorporated into the product without later negotiations or compensation.",
+        "why": "Purpose of the section: Reserves all rights in the product to the Company and permits the use of User feedback. Importance for founders: Prevents Users from claiming rights in the software, features, or platform improvements. Feedback may be incorporated into the product without later negotiations or compensation."
+      },
+      "es": {
+        "title": "7. Intellectual Property",
+        "summary": "of the section: Reserves all rights in the product to the Company and permits the use of User feedback. Importance for founders: Prevents Users from claiming rights in the software, features, or platform improvements. Feedback may be incorporated into the product without later negotiations or compensation.",
+        "why": "Purpose of the section: Reserves all rights in the product to the Company and permits the use of User feedback. Importance for founders: Prevents Users from claiming rights in the software, features, or platform improvements. Feedback may be incorporated into the product without later negotiations or compensation."
+      }
+    },
+    "8": {
+      "en": {
+        "title": "8. Personal Data and Privacy",
+        "summary": "of the section: Incorporates the privacy policy, defines the User’s duties regarding third-party data, and explains the channels for exercising habeas data rights. Importance for founders: Promotes transparency and supports compliance with Colombian data protection rules. It also allocates risk when a User uploads third-party personal information without authorization.",
+        "why": "Purpose of the section: Incorporates the privacy policy, defines the User’s duties regarding third-party data, and explains the channels for exercising habeas data rights. Importance for founders: Promotes transparency and supports compliance with Colombian data protection rules. It also allocates risk when a User uploads third-party personal information without authorization."
+      },
+      "es": {
+        "title": "8. Personal Data and Privacy",
+        "summary": "of the section: Incorporates the privacy policy, defines the User’s duties regarding third-party data, and explains the channels for exercising habeas data rights. Importance for founders: Promotes transparency and supports compliance with Colombian data protection rules. It also allocates risk when a User uploads third-party personal information without authorization.",
+        "why": "Purpose of the section: Incorporates the privacy policy, defines the User’s duties regarding third-party data, and explains the channels for exercising habeas data rights. Importance for founders: Promotes transparency and supports compliance with Colombian data protection rules. It also allocates risk when a User uploads third-party personal information without authorization."
+      }
+    },
+    "9": {
+      "en": {
+        "title": "9. Availability, Support, and Changes",
+        "summary": "of the section: Explains that the service may undergo maintenance, failures, or functional changes and limits promises of absolute availability. Importance for founders: A startup must be able to improve and modify its product. This clause reduces claims arising from reasonable interruptions or changes required for security, scalability, or commercial development.",
+        "why": "Purpose of the section: Explains that the service may undergo maintenance, failures, or functional changes and limits promises of absolute availability. Importance for founders: A startup must be able to improve and modify its product. This clause reduces claims arising from reasonable interruptions or changes required for security, scalability, or commercial development."
+      },
+      "es": {
+        "title": "9. Availability, Support, and Changes",
+        "summary": "of the section: Explains that the service may undergo maintenance, failures, or functional changes and limits promises of absolute availability. Importance for founders: A startup must be able to improve and modify its product. This clause reduces claims arising from reasonable interruptions or changes required for security, scalability, or commercial development.",
+        "why": "Purpose of the section: Explains that the service may undergo maintenance, failures, or functional changes and limits promises of absolute availability. Importance for founders: A startup must be able to improve and modify its product. This clause reduces claims arising from reasonable interruptions or changes required for security, scalability, or commercial development."
+      }
+    },
+    "10": {
+      "en": {
+        "title": "10. Disclaimer of Warranties",
+        "summary": "of the section: Limits implied warranties and clarifies that the service is provided as available, while preserving non-waivable consumer rights. Importance for founders: Protects the Company from unrealistic expectations regarding results, accuracy, error-free operation, or fitness for particular purposes. Preserving consumer rights helps avoid an excessive or invalid clause.",
+        "why": "Purpose of the section: Limits implied warranties and clarifies that the service is provided as available, while preserving non-waivable consumer rights. Importance for founders: Protects the Company from unrealistic expectations regarding results, accuracy, error-free operation, or fitness for particular purposes. Preserving consumer rights helps avoid an excessive or invalid clause."
+      },
+      "es": {
+        "title": "10. Disclaimer of Warranties",
+        "summary": "of the section: Limits implied warranties and clarifies that the service is provided as available, while preserving non-waivable consumer rights. Importance for founders: Protects the Company from unrealistic expectations regarding results, accuracy, error-free operation, or fitness for particular purposes. Preserving consumer rights helps avoid an excessive or invalid clause.",
+        "why": "Purpose of the section: Limits implied warranties and clarifies that the service is provided as available, while preserving non-waivable consumer rights. Importance for founders: Protects the Company from unrealistic expectations regarding results, accuracy, error-free operation, or fitness for particular purposes. Preserving consumer rights helps avoid an excessive or invalid clause."
+      }
+    },
+    "11": {
+      "en": {
+        "title": "11. Limitation of Liability",
+        "summary": "of the section: Limits recoverable damages and establishes a liability cap, subject to mandatory legal exceptions. Importance for founders: Prevents an individual claim from disproportionately exceeding the subscription value or revenue generated by a User. This is especially important for digital businesses with many Users and low transaction values.",
+        "why": "Purpose of the section: Limits recoverable damages and establishes a liability cap, subject to mandatory legal exceptions. Importance for founders: Prevents an individual claim from disproportionately exceeding the subscription value or revenue generated by a User. This is especially important for digital businesses with many Users and low transaction values."
+      },
+      "es": {
+        "title": "11. Limitation of Liability",
+        "summary": "of the section: Limits recoverable damages and establishes a liability cap, subject to mandatory legal exceptions. Importance for founders: Prevents an individual claim from disproportionately exceeding the subscription value or revenue generated by a User. This is especially important for digital businesses with many Users and low transaction values.",
+        "why": "Purpose of the section: Limits recoverable damages and establishes a liability cap, subject to mandatory legal exceptions. Importance for founders: Prevents an individual claim from disproportionately exceeding the subscription value or revenue generated by a User. This is especially important for digital businesses with many Users and low transaction values."
+      }
+    },
+    "12": {
+      "en": {
+        "title": "12. Indemnification",
+        "summary": "of the section: Requires the User to protect the Company against claims related to the User’s content, unlawful use, or breach of data-related obligations. Importance for founders: Protects the platform if a User uploads infringing content, uses data without permission, or employs the service to harm third parties. Without this clause, the startup may bear costs arising from another person’s conduct.",
+        "why": "Purpose of the section: Requires the User to protect the Company against claims related to the User’s content, unlawful use, or breach of data-related obligations. Importance for founders: Protects the platform if a User uploads infringing content, uses data without permission, or employs the service to harm third parties. Without this clause, the startup may bear costs arising from another person"
+      },
+      "es": {
+        "title": "12. Indemnification",
+        "summary": "of the section: Requires the User to protect the Company against claims related to the User’s content, unlawful use, or breach of data-related obligations. Importance for founders: Protects the platform if a User uploads infringing content, uses data without permission, or employs the service to harm third parties. Without this clause, the startup may bear costs arising from another person’s conduct.",
+        "why": "Purpose of the section: Requires the User to protect the Company against claims related to the User’s content, unlawful use, or breach of data-related obligations. Importance for founders: Protects the platform if a User uploads infringing content, uses data without permission, or employs the service to harm third parties. Without this clause, the startup may bear costs arising from another person"
+      }
+    },
+    "13": {
+      "en": {
+        "title": "13. Suspension and Termination",
+        "summary": "of the section: Permits account cancellation, access suspension, and rules for exporting or deleting content after termination. Importance for founders: Provides operational control over fraud, nonpayment, and security risks. It also defines what happens to data and prevents the Company from being indefinitely required to maintain cancelled accounts.",
+        "why": "Purpose of the section: Permits account cancellation, access suspension, and rules for exporting or deleting content after termination. Importance for founders: Provides operational control over fraud, nonpayment, and security risks. It also defines what happens to data and prevents the Company from being indefinitely required to maintain cancelled accounts."
+      },
+      "es": {
+        "title": "13. Suspension and Termination",
+        "summary": "of the section: Permits account cancellation, access suspension, and rules for exporting or deleting content after termination. Importance for founders: Provides operational control over fraud, nonpayment, and security risks. It also defines what happens to data and prevents the Company from being indefinitely required to maintain cancelled accounts.",
+        "why": "Purpose of the section: Permits account cancellation, access suspension, and rules for exporting or deleting content after termination. Importance for founders: Provides operational control over fraud, nonpayment, and security risks. It also defines what happens to data and prevents the Company from being indefinitely required to maintain cancelled accounts."
+      }
+    },
+    "14": {
+      "en": {
+        "title": "14. Amendment of the Terms",
+        "summary": "of the section: Permits updates to the Terms with reasonable notice and acceptance through continued use where legally permitted. Importance for founders: The product, regulations, and business model evolve. This clause permits the rules to be updated without signing a new individual agreement with every User.",
+        "why": "Purpose of the section: Permits updates to the Terms with reasonable notice and acceptance through continued use where legally permitted. Importance for founders: The product, regulations, and business model evolve. This clause permits the rules to be updated without signing a new individual agreement with every User."
+      },
+      "es": {
+        "title": "14. Amendment of the Terms",
+        "summary": "of the section: Permits updates to the Terms with reasonable notice and acceptance through continued use where legally permitted. Importance for founders: The product, regulations, and business model evolve. This clause permits the rules to be updated without signing a new individual agreement with every User.",
+        "why": "Purpose of the section: Permits updates to the Terms with reasonable notice and acceptance through continued use where legally permitted. Importance for founders: The product, regulations, and business model evolve. This clause permits the rules to be updated without signing a new individual agreement with every User."
+      }
+    },
+    "15": {
+      "en": {
+        "title": "15. Governing Law and Dispute Resolution",
+        "summary": "of the section: Establishes Colombian law and preserves consumer rights while defining a dispute-resolution mechanism for non-consumer Users. Importance for founders: Avoids a clause that disregards consumer-protection rules while providing a more predictable dispute-resolution path for business Users.",
+        "why": "Purpose of the section: Establishes Colombian law and preserves consumer rights while defining a dispute-resolution mechanism for non-consumer Users. Importance for founders: Avoids a clause that disregards consumer-protection rules while providing a more predictable dispute-resolution path for business Users."
+      },
+      "es": {
+        "title": "15. Governing Law and Dispute Resolution",
+        "summary": "of the section: Establishes Colombian law and preserves consumer rights while defining a dispute-resolution mechanism for non-consumer Users. Importance for founders: Avoids a clause that disregards consumer-protection rules while providing a more predictable dispute-resolution path for business Users.",
+        "why": "Purpose of the section: Establishes Colombian law and preserves consumer rights while defining a dispute-resolution mechanism for non-consumer Users. Importance for founders: Avoids a clause that disregards consumer-protection rules while providing a more predictable dispute-resolution path for business Users."
+      }
+    },
+    "16": {
+      "en": {
+        "title": "16. Contact",
+        "summary": "of the section: Provides channels for support, privacy matters, and general communications. Importance for founders: Promotes transparency and enables requests, complaints, claims, and data-protection inquiries to be handled in an orderly and traceable manner.",
+        "why": "Purpose of the section: Provides channels for support, privacy matters, and general communications. Importance for founders: Promotes transparency and enables requests, complaints, claims, and data-protection inquiries to be handled in an orderly and traceable manner."
+      },
+      "es": {
+        "title": "16. Contact",
+        "summary": "of the section: Provides channels for support, privacy matters, and general communications. Importance for founders: Promotes transparency and enables requests, complaints, claims, and data-protection inquiries to be handled in an orderly and traceable manner.",
+        "why": "Purpose of the section: Provides channels for support, privacy matters, and general communications. Importance for founders: Promotes transparency and enables requests, complaints, claims, and data-protection inquiries to be handled in an orderly and traceable manner."
+      }
+    }
+  }
+}
