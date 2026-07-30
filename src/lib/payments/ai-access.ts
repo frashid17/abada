@@ -107,6 +107,30 @@ export async function userHasAiAccess(userId: string): Promise<boolean> {
   return hasCapturedAiPayment(userId);
 }
 
+export type AiAccessStatus = {
+  hasAccess: boolean;
+  paywallEnabled: boolean;
+  amountCents: number;
+  currency: string;
+  amountFormatted: string;
+};
+
+/** Server-side status for the drafting paywall UI (avoids a client mount fetch). */
+export async function getAiAccessStatus(
+  userId: string,
+  locale: "es-CO" | "en-US" = "es-CO",
+): Promise<AiAccessStatus> {
+  const paywallEnabled = isFeatureEnabled("aiPaywall");
+  const hasAccess = await userHasAiAccess(userId);
+  return {
+    hasAccess,
+    paywallEnabled,
+    amountCents: AI_DRAFTING_AMOUNT_CENTS,
+    currency: AI_DRAFTING_CURRENCY,
+    amountFormatted: formatCopFromCents(AI_DRAFTING_AMOUNT_CENTS, locale),
+  };
+}
+
 export function formatCopFromCents(amountCents: number, locale: "es-CO" | "en-US" = "es-CO"): string {
   const pesos = Math.round(amountCents / 100);
   const amount = new Intl.NumberFormat(locale, {
