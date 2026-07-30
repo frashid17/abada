@@ -1,6 +1,8 @@
 import { auth } from "@clerk/nextjs/server";
 import { NextResponse } from "next/server";
 import { z } from "zod";
+import { trackAnalytics } from "@/lib/analytics";
+import { isFeatureEnabled } from "@/lib/feature-flags";
 import { getPaymentProvider, recordPayment } from "@/lib/payments";
 import { getFirmMembershipForUser } from "@/lib/firm/membership";
 import { getPrimaryFirmTenantId } from "@/lib/firm/tenant";
@@ -47,6 +49,10 @@ export async function POST(request: Request) {
   const { userId } = await auth();
   if (!userId) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+  }
+
+  if (!isFeatureEnabled("paymentsCheckout")) {
+    return NextResponse.json({ error: "Payments are temporarily disabled" }, { status: 503 });
   }
 
   const rate = await enforceRateLimit({
@@ -113,6 +119,14 @@ export async function POST(request: Request) {
     if (!intent.checkoutUrl) {
       return NextResponse.json({ error: "Could not create checkout session" }, { status: 502 });
     }
+
+    await trackAnalytics({
+      event: "payment_checkout_started",
+      properties: {
+        amountCents: body.amountCents,
+        currency: body.currency,
+      },
+    });
 
     return NextResponse.json({
       checkoutUrl: intent.checkoutUrl,
