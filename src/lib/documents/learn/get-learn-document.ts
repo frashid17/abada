@@ -60,6 +60,14 @@ const TERM_SHEET_SAMPLE_FIELDS: FieldValues = {
   term_sheet_validity_months: "tres",
 };
 
+const COMPANY_SAMPLE: FieldValues = {
+  nombre_de_la_sociedad: "[Nombre de la Sociedad]",
+  nit: "[NIT]",
+  domicilio: "[Domicilio]",
+  marca: "[Marca]",
+  fecha: "[Fecha]",
+};
+
 export type LearnDocumentPayload = {
   documentType: LearnDocumentType;
   step: number;
@@ -101,10 +109,83 @@ export function getTermSheetLearnDocument(
   return {
     documentType: "term_sheet",
     step: 1,
-    totalSteps: 1,
+    totalSteps: LEARN_ONLY_TOTAL,
     clauses: parseDocumentClauses(rendered.body),
     fields,
     hasDraftFlow: false,
+  };
+}
+
+const LEARN_ONLY_TOTAL = 6;
+
+function firmLearnPayload(
+  documentType: Exclude<LearnDocumentType, "shareholders" | "term_sheet">,
+  locale: DocumentLocale,
+  step: number,
+  hasDraftFlow: boolean,
+  extraFields: FieldValues = {},
+): LearnDocumentPayload {
+  const fields: FieldValues = { ...COMPANY_SAMPLE, ...extraFields };
+  const rendered = renderLearnDocument(documentType, fields, locale);
+  return {
+    documentType,
+    step,
+    totalSteps: LEARN_ONLY_TOTAL,
+    clauses: parseDocumentClauses(rendered.body),
+    fields,
+    hasDraftFlow,
+  };
+}
+
+export function getFoundersLearnDocument(
+  locale: DocumentLocale = "es-CO",
+): LearnDocumentPayload {
+  return firmLearnPayload("founders", locale, 2, false);
+}
+
+export function getCorporateClientLearnDocument(
+  locale: DocumentLocale = "es-CO",
+): LearnDocumentPayload {
+  return firmLearnPayload("corporate_client", locale, 5, false);
+}
+
+export function getTermsOfUseLearnDocument(
+  locale: DocumentLocale = "es-CO",
+): LearnDocumentPayload {
+  return firmLearnPayload("terms_of_use", locale, 6, false);
+}
+
+/** Sample employment learn payload without loading saved draft state (unit tests). */
+export function getEmploymentLearnDocumentSample(
+  locale: DocumentLocale = "es-CO",
+): LearnDocumentPayload {
+  const catalogStep =
+    INVESTMENT_DOCUMENT_CATALOG.find((item) => item.type === "employment")?.step ?? 4;
+  const rendered = renderLearnDocument("employment", COMPANY_SAMPLE, locale);
+  return {
+    documentType: "employment",
+    step: catalogStep,
+    totalSteps: INVESTMENT_DOCUMENT_CATALOG.length,
+    clauses: parseDocumentClauses(rendered.body),
+    fields: { ...COMPANY_SAMPLE },
+    hasDraftFlow: true,
+  };
+}
+
+export async function getEmploymentLearnDocument(
+  locale: DocumentLocale = "es-CO",
+): Promise<LearnDocumentPayload> {
+  const state = await getDocumentFlowState("employment");
+  const sample = getEmploymentLearnDocumentSample(locale);
+  const fields: FieldValues = {
+    ...sample.fields,
+    ...(state?.fields ?? {}),
+  };
+  const rendered = renderLearnDocument("employment", fields, locale);
+  return {
+    ...sample,
+    clauses: parseDocumentClauses(rendered.body),
+    fields,
   };
 }
 
@@ -115,5 +196,17 @@ export async function getLearnDocument(
   if (documentType === "term_sheet") {
     return getTermSheetLearnDocument(locale);
   }
-  return getShareholdersLearnDocument(locale);
+  if (documentType === "shareholders") {
+    return getShareholdersLearnDocument(locale);
+  }
+  if (documentType === "employment") {
+    return getEmploymentLearnDocument(locale);
+  }
+  if (documentType === "founders") {
+    return getFoundersLearnDocument(locale);
+  }
+  if (documentType === "corporate_client") {
+    return getCorporateClientLearnDocument(locale);
+  }
+  return getTermsOfUseLearnDocument(locale);
 }
