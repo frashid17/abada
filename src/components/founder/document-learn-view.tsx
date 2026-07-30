@@ -60,6 +60,58 @@ const DOCUMENT_CALLOUTS: Record<LearnDocumentType, DocumentCalloutConfig> = {
       liquidityRights: TrendingUp,
     },
   },
+  founders: {
+    keys: ["vesting", "ip", "dragAlong"],
+    clauseMap: {
+      vesting: "6",
+      ip: "5",
+      dragAlong: "13",
+    },
+    icons: {
+      vesting: Sparkles,
+      ip: Lightbulb,
+      dragAlong: Scale,
+    },
+  },
+  employment: {
+    keys: ["ip", "confidentiality", "termination"],
+    clauseMap: {
+      ip: "9",
+      confidentiality: "8",
+      termination: "14",
+    },
+    icons: {
+      ip: Lightbulb,
+      confidentiality: Shield,
+      termination: FileText,
+    },
+  },
+  corporate_client: {
+    keys: ["ip", "liability", "data"],
+    clauseMap: {
+      ip: "6",
+      liability: "11",
+      data: "8",
+    },
+    icons: {
+      ip: Lightbulb,
+      liability: Scale,
+      data: Shield,
+    },
+  },
+  terms_of_use: {
+    keys: ["ai", "liability", "account"],
+    clauseMap: {
+      ai: "5",
+      liability: "11",
+      account: "2",
+    },
+    icons: {
+      ai: Sparkles,
+      liability: Scale,
+      account: BookOpen,
+    },
+  },
 };
 
 function clauseLabel(clause: DocumentClause): string {
