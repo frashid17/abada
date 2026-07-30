@@ -1,9 +1,23 @@
 import type { DocumentLocale } from "@/lib/documents/document-locale";
 import type { FieldValues } from "@/lib/documents/intake/types";
+import { corporateClientMasterTemplate } from "@/lib/documents/templates/corporate-client";
+import { corporateClientMasterTemplateEn } from "@/lib/documents/templates/corporate-client.en";
+import { employmentLearnMasterTemplate } from "@/lib/documents/templates/employment-learn";
+import { employmentLearnMasterTemplateEn } from "@/lib/documents/templates/employment-learn.en";
+import { foundersMasterTemplate } from "@/lib/documents/templates/founders";
+import { foundersMasterTemplateEn } from "@/lib/documents/templates/founders.en";
 import { termSheetMasterTemplate } from "@/lib/documents/templates/term-sheet";
 import { termSheetMasterTemplateEn } from "@/lib/documents/templates/term-sheet.en";
+import { termsOfUseMasterTemplate } from "@/lib/documents/templates/terms-of-use";
+import { termsOfUseMasterTemplateEn } from "@/lib/documents/templates/terms-of-use.en";
 
-export type LearnDocumentType = "shareholders" | "term_sheet";
+export type LearnDocumentType =
+  | "shareholders"
+  | "term_sheet"
+  | "founders"
+  | "employment"
+  | "corporate_client"
+  | "terms_of_use";
 
 export type RenderResult = {
   body: string;
@@ -26,6 +40,17 @@ function mergeTemplate(template: string, values: Record<string, string>): Render
     return value;
   });
   return { body, missingFields };
+}
+
+/** Fill every `{{placeholder}}` from fields when present; leave others as bracket labels. */
+function valuesFromFields(template: string, fields: FieldValues): Record<string, string> {
+  const values: Record<string, string> = {};
+  for (const match of template.matchAll(/\{\{(\w+)\}\}/g)) {
+    const key = match[1]!;
+    const raw = fields[key];
+    values[key] = asString(raw);
+  }
+  return values;
 }
 
 function buildTermSheetValues(fields: FieldValues): Record<string, string> {
@@ -65,15 +90,52 @@ function buildTermSheetValues(fields: FieldValues): Record<string, string> {
   };
 }
 
+function pickTemplate(
+  locale: DocumentLocale,
+  es: string,
+  en: string,
+): string {
+  return locale === "en-US" ? en : es;
+}
+
 export function renderLearnDocument(
   documentType: LearnDocumentType,
   fields: FieldValues,
   locale: DocumentLocale = "es-CO",
 ): RenderResult {
-  if (documentType !== "term_sheet") {
-    return { body: "", missingFields: ["unsupported_learn_document_type"] };
+  if (documentType === "term_sheet") {
+    const template = pickTemplate(locale, termSheetMasterTemplate, termSheetMasterTemplateEn);
+    return mergeTemplate(template, buildTermSheetValues(fields));
   }
 
-  const template = locale === "en-US" ? termSheetMasterTemplateEn : termSheetMasterTemplate;
-  return mergeTemplate(template, buildTermSheetValues(fields));
+  if (documentType === "founders") {
+    const template = pickTemplate(locale, foundersMasterTemplate, foundersMasterTemplateEn);
+    return mergeTemplate(template, valuesFromFields(template, fields));
+  }
+
+  if (documentType === "employment") {
+    const template = pickTemplate(
+      locale,
+      employmentLearnMasterTemplate,
+      employmentLearnMasterTemplateEn,
+    );
+    return mergeTemplate(template, valuesFromFields(template, fields));
+  }
+
+  if (documentType === "corporate_client") {
+    const template = pickTemplate(
+      locale,
+      corporateClientMasterTemplate,
+      corporateClientMasterTemplateEn,
+    );
+    return mergeTemplate(template, valuesFromFields(template, fields));
+  }
+
+  if (documentType === "terms_of_use") {
+    const template = pickTemplate(locale, termsOfUseMasterTemplate, termsOfUseMasterTemplateEn);
+    return mergeTemplate(template, valuesFromFields(template, fields));
+  }
+
+  // shareholders remains on renderDocument via getLearnDocument
+  return { body: "", missingFields: ["unsupported_learn_document_type"] };
 }
