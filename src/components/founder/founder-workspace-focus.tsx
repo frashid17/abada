@@ -1,10 +1,8 @@
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { getLocale, getTranslations } from "next-intl/server";
 import { FounderFocusPriorityCard } from "@/components/founder/founder-focus-priority-card";
-import {
-  getFounderDashboardInsights,
-} from "@/lib/documents/dashboard-insights";
+import { getFounderDashboardInsights } from "@/lib/documents/dashboard-insights";
 import type { FounderDashboardData } from "@/lib/documents/dashboard";
 import type { DocumentStatus } from "@/lib/documents/catalog";
 
@@ -55,17 +53,17 @@ export async function FounderWorkspaceFocus({ data }: FounderWorkspaceFocusProps
   });
 
   return (
-    <section className="space-y-4">
+    <section className="space-y-5">
       <div className="flex items-start justify-between gap-4">
-        <div className="min-w-0 space-y-0.5">
-          <h2 className="font-serif text-lg font-semibold tracking-tight text-foreground">
+        <div className="min-w-0 space-y-1">
+          <h2 className="font-serif text-2xl font-semibold tracking-tight text-foreground">
             {t("dashboard.focusTitle")}
           </h2>
-          <p className="text-xs text-muted-foreground sm:text-sm">{t("dashboard.focusDescription")}</p>
+          <p className="text-sm text-muted-foreground">{t("dashboard.focusDescription")}</p>
         </div>
         <Link
           href="/fundador/documentos"
-          className="relative z-10 inline-flex shrink-0 items-center gap-1 rounded-lg border border-border/70 bg-background/60 px-2.5 py-1.5 text-xs font-medium text-foreground transition-colors hover:border-primary/30 hover:bg-muted/50"
+          className="relative z-10 inline-flex shrink-0 cursor-pointer items-center gap-1.5 rounded-xl border border-border/70 bg-card/80 px-3 py-2 text-xs font-medium text-foreground shadow-soft transition-all hover:border-primary/30 hover:bg-muted/50 hover:shadow-card"
         >
           {t("dashboard.browseAllDocuments")}
           <ArrowRight className="h-3.5 w-3.5" />
@@ -75,22 +73,29 @@ export async function FounderWorkspaceFocus({ data }: FounderWorkspaceFocusProps
       {next ? (
         <FounderFocusPriorityCard {...cardProps(next)} priority />
       ) : (
-        <div className="rounded-xl border border-border/60 bg-muted/20 px-4 py-6 text-center">
-          <p className="font-serif text-base font-semibold text-foreground">
+        <div className="relative overflow-hidden rounded-2xl border border-[color-mix(in_oklch,var(--risk-low)_35%,transparent)] bg-[color-mix(in_oklch,var(--risk-low)_8%,var(--surface))] px-5 py-8 text-center shadow-soft">
+          <div
+            className="pointer-events-none absolute -right-8 -top-8 h-28 w-28 rounded-full bg-[color-mix(in_oklch,var(--risk-low)_20%,transparent)] blur-2xl"
+            aria-hidden
+          />
+          <div className="relative mx-auto flex h-12 w-12 items-center justify-center rounded-2xl bg-[color-mix(in_oklch,var(--risk-low)_20%,transparent)] text-[color-mix(in_oklch,var(--risk-low)_55%,var(--fg))]">
+            <CheckCircle2 className="h-6 w-6" aria-hidden />
+          </div>
+          <p className="relative mt-4 font-serif text-lg font-semibold text-foreground">
             {t("dashboard.allCompleteTitle")}
           </p>
-          <p className="mt-1 text-xs text-muted-foreground sm:text-sm">
+          <p className="relative mx-auto mt-1.5 max-w-sm text-sm text-muted-foreground">
             {t("dashboard.allCompleteDescription")}
           </p>
         </div>
       )}
 
       {alsoActive.length > 0 ? (
-        <div className="space-y-2">
-          <h3 className="text-xs font-semibold uppercase tracking-[0.12em] text-muted-foreground">
+        <div className="space-y-3">
+          <h3 className="text-[11px] font-bold uppercase tracking-[0.14em] text-muted-foreground">
             {t("dashboard.alsoInProgress")}
           </h3>
-          <div className="space-y-2">
+          <div className="space-y-2.5">
             {alsoActive.map((doc) => (
               <FounderFocusPriorityCard key={doc.documentType} {...cardProps(doc)} />
             ))}
