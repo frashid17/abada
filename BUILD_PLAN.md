@@ -128,6 +128,8 @@ Colombian legal-AI due diligence & investment-readiness platform.
 - [x] Security headers — nosniff, frame deny, referrer policy, permissions-policy
 - [x] Admin PDF upload UI — paste or PDF (text layer + OCR via Poppler/Tesseract); CLI `corpus:ingest` still available
 - [x] Mock AI paywall — Colombia checkout (card / Nequi / Daviplata) gates drafting assistant; `FEATURE_AI_PAYWALL`
+- [x] Firm templates import — Founders, Employment, Corporate Client, Terms of Use + guide bubbles under `/fundador/plantillas`
+- [ ] **Manual:** Re-send Equity Compensation Plan + IP Assignment DOCX (current files wrongly contain Terms of Use) — see `docs/templates/README.md`
 - [ ] **Manual:** Apply migration `018_mock_payments.sql` (allows `mock` provider on `payments`)
 - [ ] **Manual:** Create Sentry project and set DSN / auth token in Vercel
 - [ ] **Manual:** Enable `FEATURE_ANALYTICS=true` + webhook if product analytics is desired
