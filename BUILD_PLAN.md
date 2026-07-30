@@ -2,7 +2,7 @@
 
 Colombian legal-AI due diligence & investment-readiness platform.
 
-**Current milestone:** M6 — DD investor view + knowledge hub + notifications
+**Current milestone:** M8 — Beta readiness (MVP hardening finalized in code; manual ops remain)
 
 ## M0 — Foundations
 
@@ -105,21 +105,32 @@ Colombian legal-AI due diligence & investment-readiness platform.
 - [x] Security review fixes — payment checkout now verifies tenant relationship (membership / review / primary firm); data-room `docId` validated as UUID
 - [x] RLS pass — contract tests now cover every table in all migrations (RLS enabled + policies present + tenant scoping)
 - [x] Seed data — `npm run seed:dev` (two tenants, memberships, sample deal, RLS smoke fixtures)
-- [x] E2E scaffold — Playwright (`npm run test:e2e`), public smoke suite (landing, knowledge hub, auth redirects, API 401s)
-- [ ] E2E authenticated flows (Clerk testing tokens) — founder doc flow, firm review, DD room
-- [ ] Live DB RLS isolation tests (tenant A vs tenant B against real Supabase)
+- [x] E2E scaffold — Playwright (`npm run test:e2e`), public smoke suite (landing, knowledge hub, auth redirects, API 401s, health, security headers)
+- [x] Authenticated E2E scaffold — `e2e/authenticated.spec.ts` (skipped until Clerk testing tokens are set)
+- [x] Live DB RLS isolation scaffold — `supabase/tests/live-rls-isolation.test.ts` (skipped until `LIVE_RLS_TEST=1`)
 - [x] Founder legal library — `/fundador/leyes` browse + read Colombian corpus (laws, codes, circulars)
 - [x] Platform admin console — `/admin` overview + feed, corpus add/edit (paste or PDF+OCR), AI usage, reviews, audit (name/email labels)
+- [x] Optional pg_cron scheduling migration — `017_schedule_purge_jobs.sql`
 - [ ] **Manual:** Apply migration `015_m7_hardening.sql`
 - [ ] **Manual:** Apply migration `016_platform_admin.sql` and set `PLATFORM_ADMIN_SUBS` (your Clerk user id)
+- [ ] **Manual:** Apply migration `017_schedule_purge_jobs.sql` (or schedule purge RPCs externally)
 - [ ] **Manual:** Install Poppler + Tesseract (`spa`) on hosts that run admin PDF uploads
-- [ ] **Manual:** Schedule `purge_expired_audit_logs()` + `purge_stale_rate_limits()` (pg_cron or external scheduler)
 - [ ] **Manual:** `npx playwright install chromium` before first `npm run test:e2e`
+- [ ] **Manual:** Configure Clerk testing tokens + run authenticated E2E
+- [ ] **Manual:** Run live RLS isolation with `LIVE_RLS_TEST=1` and tenant JWTs
 
 ## M8 — Beta readiness
 
-- [ ] Sentry; analytics; feature flags; runbooks
+- [x] Sentry — `@sentry/nextjs` wired (client/server/edge + `global-error`); enabled when `NEXT_PUBLIC_SENTRY_DSN` is set
+- [x] Analytics abstraction — `src/lib/analytics.ts` (off by default; optional webhook)
+- [x] Feature flags — `src/lib/feature-flags.ts` (env-driven kill switches for AI, payments, uploads, OCR, hub)
+- [x] Runbooks — `docs/runbooks.md` + `GET /api/health`
+- [x] Security headers — nosniff, frame deny, referrer policy, permissions-policy
 - [x] Admin PDF upload UI — paste or PDF (text layer + OCR via Poppler/Tesseract); CLI `corpus:ingest` still available
+- [x] Mock AI paywall — Colombia checkout (card / Nequi / Daviplata) gates drafting assistant; `FEATURE_AI_PAYWALL`
+- [ ] **Manual:** Apply migration `018_mock_payments.sql` (allows `mock` provider on `payments`)
+- [ ] **Manual:** Create Sentry project and set DSN / auth token in Vercel
+- [ ] **Manual:** Enable `FEATURE_ANALYTICS=true` + webhook if product analytics is desired
 
 ## Architecture notes (M0 decisions)
 
