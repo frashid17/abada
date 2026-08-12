@@ -1,0 +1,254 @@
+{
+  "methodology": {
+    "es": [
+      "Crear lista maestra de documentos (versión, fecha, partes, firma, ubicación).",
+      "Crear matriz de inconsistencias entre documentos (nombre, NIT, capital, accionistas, fechas).",
+      "Marcar cada hallazgo como Alto, Medio, Bajo o Información requerida.",
+      "Distinguir: (a) ausencia de cláusula; (b) mal redactada; (c) correcta sin documento operativo; (d) documento operativo sin evidencia.",
+      "Verificar evidencia de ejecución: firmas, actas, libro de accionistas, certificados, pagos.",
+      "Escalar de inmediato PI, cap table, vesting, convertibles, empleo, datos, responsabilidad elevada y litigios."
+    ],
+    "en": [
+      "Create a master list of received documents (version, date, parties, execution, data-room location).",
+      "Create an inter-document inconsistency matrix (name, tax ID, capital, shareholders, dates).",
+      "Tag each issue as High, Medium, Low, or Information required.",
+      "Distinguish: (a) missing clause; (b) poorly drafted; (c) proper clause without operative document; (d) operative document without evidence.",
+      "Verify execution evidence: signatures, minutes, shareholders' register, certificates, payments.",
+      "Immediately escalate IP, cap table, vesting, convertibles, employment, data, high liability, and litigation risks."
+    ]
+  },
+  "crossQuestions": {
+    "es": [
+      "¿El documento está firmado por las partes correctas y con facultades suficientes?",
+      "¿Las fechas, nombre de la Sociedad, NIT y definiciones coinciden con los demás documentos?",
+      "¿La cláusula clave está respaldada por un mecanismo operativo y evidencia de ejecución?",
+      "¿Es consistente con estatutos, cap table, libro de accionistas y aprobaciones corporativas?",
+      "¿Hay derechos, obligaciones, pagos, opciones, deuda o restricciones no reflejadas en otros documentos?",
+      "¿El riesgo afecta titularidad de activos, capacidad de financiarse, continuidad operativa o exposición económica?"
+    ],
+    "en": [
+      "Is the document signed by the correct parties with sufficient authority?",
+      "Do dates, Company name, tax ID, and definitions match the other documents?",
+      "Is the key clause backed by an operative mechanism and evidence of implementation?",
+      "Is it consistent with bylaws, cap table, shareholders' register, and corporate approvals?",
+      "Are there rights, obligations, payments, options, debt, or restrictions missing from other documents?",
+      "Does the risk affect asset ownership, fundraising ability, continuity, or economic exposure?"
+    ]
+  },
+  "areas": {
+    "founders_shareholders": {
+      "riskCategory": "corporativo_registral",
+      "uploadCategory": "founders_shareholders",
+      "title": {
+        "es": "Acuerdo de fundadores y accionistas",
+        "en": "Founders' and shareholders' agreement"
+      },
+      "checks": {
+        "es": [
+          "Partes, facultades y consistencia con estatutos/cap table.",
+          "Vesting, cliff, recompra y mecanismos operativos (estatutos, libro, opciones de compra).",
+          "Cesión de PI y confidencialidad alineadas con acuerdos individuales.",
+          "Drag-along, tag-along, ROFR y umbrales coherentes con el plan de incentivos.",
+          "Good/bad leaver y tratamiento de dead equity."
+        ],
+        "en": [
+          "Parties, authority, and consistency with bylaws/cap table.",
+          "Vesting, cliff, repurchase, and operative mechanics (bylaws, ledger, purchase options).",
+          "IP assignment and confidentiality aligned with individual agreements.",
+          "Drag-along, tag-along, ROFR thresholds coherent with the incentive plan.",
+          "Good/bad leaver and dead-equity treatment."
+        ]
+      }
+    },
+    "ip_technology": {
+      "riskCategory": "propiedad_intelectual",
+      "uploadCategory": "ip_technology",
+      "title": {
+        "es": "Confidencialidad, cesión de PI e invenciones",
+        "en": "Confidentiality, IP assignment, and inventions"
+      },
+      "checks": {
+        "es": [
+          "Cadena de titularidad: fundadores, empleados, contratistas y proveedores.",
+          "Definiciones amplias de Desarrollos e Información Confidencial.",
+          "PI preexistente revelada y licenciada; Anexo 1 completo.",
+          "Open source / terceros / IA documentados sin licencias contaminantes.",
+          "Entrega de repositorios, credenciales y cooperación post-salida."
+        ],
+        "en": [
+          "Ownership chain: founders, employees, contractors, and vendors.",
+          "Broad definitions of Developments and Confidential Information.",
+          "Pre-existing IP disclosed and licensed; Schedule 1 complete.",
+          "Open source / third-party / AI documented without contaminating licenses.",
+          "Delivery of repositories, credentials, and post-departure cooperation."
+        ]
+      }
+    },
+    "equity_compensation": {
+      "riskCategory": "corporativo_registral",
+      "uploadCategory": "equity_compensation",
+      "title": {
+        "es": "Plan de compensación en acciones e incentivos",
+        "en": "Equity compensation and incentive plan"
+      },
+      "checks": {
+        "es": [
+          "Pool/reserva vs. capital autorizado y aprobaciones corporativas.",
+          "Acciones restringidas de fundadores vs. vesting del acuerdo de fundadores.",
+          "Opciones: precio, vesting, plazo post-terminación y evidencia de pago.",
+          "Cartas de otorgamiento individuales firmadas.",
+          "Tratamiento en cambio de control y leavers."
+        ],
+        "en": [
+          "Pool/reserve vs. authorized capital and corporate approvals.",
+          "Founder restricted shares vs. founders' agreement vesting.",
+          "Options: price, vesting, post-termination window, and payment evidence.",
+          "Individual grant letters executed.",
+          "Change-of-control and leaver treatment."
+        ]
+      }
+    },
+    "labor_talent": {
+      "riskCategory": "laboral",
+      "uploadCategory": "labor_talent",
+      "title": {
+        "es": "Contrato laboral con confidencialidad y cesión de PI",
+        "en": "Employment agreement with confidentiality and IP assignment"
+      },
+      "checks": {
+        "es": [
+          "Vinculación, subordinación y prestaciones obligatorias colombianas.",
+          "Cesión de PI y confidencialidad consistentes con el acuerdo de PI.",
+          "Seguridad social y aportes al día.",
+          "Terminación, devolución de activos y no captación si aplica."
+        ],
+        "en": [
+          "Engagement, subordination, and mandatory Colombian employment benefits.",
+          "IP assignment and confidentiality consistent with the IP agreement.",
+          "Social security and contributions current.",
+          "Termination, return of assets, and non-solicit if applicable."
+        ]
+      }
+    },
+    "commercial_customers": {
+      "riskCategory": "contractual",
+      "uploadCategory": "commercial_customers",
+      "title": {
+        "es": "Contrato marco con clientes corporativos",
+        "en": "Corporate customer MSA"
+      },
+      "checks": {
+        "es": [
+          "Titularidad de plataforma vs. entregables del cliente.",
+          "Límites de responsabilidad y exclusiones.",
+          "Datos personales y seguridad.",
+          "Órdenes de servicio / alcance y pagos."
+        ],
+        "en": [
+          "Platform ownership vs. client deliverables.",
+          "Liability caps and exclusions.",
+          "Personal data and security.",
+          "Service orders / scope and payment."
+        ]
+      }
+    },
+    "privacy_consumer": {
+      "riskCategory": "datos_privacidad",
+      "uploadCategory": "privacy_consumer",
+      "title": {
+        "es": "Términos de uso, privacidad y consumidor",
+        "en": "End-user terms, privacy, and consumer"
+      },
+      "checks": {
+        "es": [
+          "Términos alineados con producto real y política de privacidad.",
+          "Tratamiento de datos y habeas data.",
+          "Disclaimers de IA y límites de responsabilidad frente a usuarios.",
+          "Cumplimiento de normas de consumidor cuando apliquen."
+        ],
+        "en": [
+          "Terms aligned with the real product and privacy policy.",
+          "Data processing and habeas data.",
+          "AI disclaimers and liability limits toward users.",
+          "Consumer-protection compliance where applicable."
+        ]
+      }
+    },
+    "corporate_governance": {
+      "riskCategory": "corporativo_registral",
+      "uploadCategory": "corporate_governance",
+      "title": {
+        "es": "Corporativo y gobierno",
+        "en": "Corporate and governance"
+      },
+      "checks": {
+        "es": [
+          "Existencia, estatutos, libros y representantes vigentes.",
+          "Cap table vs. libro de accionistas y títulos.",
+          "Aprobaciones para incentivos, emisiones y restricciones."
+        ],
+        "en": [
+          "Existence, bylaws, books, and current representatives.",
+          "Cap table vs. shareholders' register and certificates.",
+          "Approvals for incentives, issuances, and restrictions."
+        ]
+      }
+    },
+    "financing_related": {
+      "riskCategory": "contractual",
+      "uploadCategory": "financing_related",
+      "title": {
+        "es": "Financiamiento y vinculados",
+        "en": "Financing and related parties"
+      },
+      "checks": {
+        "es": [
+          "SAFEs, notas convertibles y deuda material revelados.",
+          "Consistencia con cap table y derechos de conversión.",
+          "Transacciones con vinculados documentadas y aprobadas."
+        ],
+        "en": [
+          "SAFEs, convertibles, and material debt disclosed.",
+          "Consistency with cap table and conversion rights.",
+          "Related-party transactions documented and approved."
+        ]
+      }
+    },
+    "disputes_compliance": {
+      "riskCategory": "litigios",
+      "uploadCategory": "disputes_compliance",
+      "title": {
+        "es": "Litigios, cumplimiento y seguros",
+        "en": "Disputes, compliance, and insurance"
+      },
+      "checks": {
+        "es": [
+          "Litigios materiales y contingencias revelados.",
+          "Cumplimiento AML/anticorrupción/sanciones cuando aplique.",
+          "Seguros materiales vigentes."
+        ],
+        "en": [
+          "Material litigation and contingencies disclosed.",
+          "AML/anti-corruption/sanctions compliance where applicable.",
+          "Material insurance policies current."
+        ]
+      }
+    }
+  },
+  "findingFormat": {
+    "es": [
+      "Hecho / evidencia (documento, cláusula, página).",
+      "Brecha (ausencia, redacción, falta de mecanismo operativo, falta de evidencia).",
+      "Impacto (financiación, titularidad, continuidad, exposición).",
+      "Nivel: Alto | Medio | Bajo | Información requerida.",
+      "Acción recomendada y responsable sugerido."
+    ],
+    "en": [
+      "Fact / evidence (document, clause, page).",
+      "Gap (missing, drafting, missing operative mechanic, missing evidence).",
+      "Impact (financing, ownership, continuity, exposure).",
+      "Level: High | Medium | Low | Information required.",
+      "Recommended action and suggested owner."
+    ]
+  }
+}
