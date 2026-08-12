@@ -13,7 +13,10 @@ describe("firm learn templates", () => {
     expect(learnSlugToType("employment")).toBe("employment");
     expect(learnSlugToType("corporate-client")).toBe("corporate_client");
     expect(learnSlugToType("terms-of-use")).toBe("terms_of_use");
+    expect(learnSlugToType("ip-assignment")).toBe("ip_assignment");
+    expect(learnSlugToType("equity-compensation")).toBe("equity_compensation");
     expect(LEARN_DOCUMENT_TYPES).toContain("founders");
+    expect(LEARN_DOCUMENT_TYPES).toContain("ip_assignment");
   });
 
   it.each([
@@ -21,6 +24,8 @@ describe("firm learn templates", () => {
     ["employment", "1", "Cargo"],
     ["corporate_client", "1", "Objeto"],
     ["terms_of_use", "1", "Definiciones"],
+    ["ip_assignment", "1", "Objeto"],
+    ["equity_compensation", "1", "Objeto"],
   ] as const)("parses %s into numbered clauses", (type, clauseId, headingPart) => {
     const rendered = renderLearnDocument(type, {}, "es-CO");
     const clauses = parseDocumentClauses(rendered.body);
@@ -46,6 +51,8 @@ describe("firm learn templates", () => {
       employment: ["8", "9", "14"],
       corporate_client: ["6", "8", "11"],
       terms_of_use: ["2", "5", "11"],
+      ip_assignment: ["3", "4", "7"],
+      equity_compensation: ["4", "6", "7"],
     } as const;
 
     for (const [type, ids] of Object.entries(callouts)) {
