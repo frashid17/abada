@@ -1,0 +1,538 @@
+REQUERIMIENTO DE INFORMACIÓN PARA DEBIDA DILIGENCIA
+S.A.S. Colombiana – Fundadores, Gobierno Corporativo, PI, Talento, Clientes y Tecnología
+Fecha: [FECHA]
+Destinatario: [NOMBRE DE LA SOCIEDAD] S.A.S. (la "Sociedad")
+Preparado por: [NOMBRE DEL INVERSIONISTA / ADQUIRENTE / ASESOR] (el "Solicitante")
+1. Propósito y Alcance
+Este requerimiento de información (el "RDI") tiene por objeto facilitar la debida diligencia legal, corporativa, comercial, laboral, tecnológica y de propiedad intelectual de la Sociedad en relación con [INVERSIÓN / ADQUISICIÓN / ALIANZA ESTRATÉGICA / OTRA TRANSACCIÓN] (la "Transacción").
+El Solicitante espera verificar, entre otros aspectos, que la Sociedad cuenta con documentos válidos, completos, ejecutados y consistentes que regulen: (a) la relación entre fundadores y accionistas; (b) la titularidad y protección de la propiedad intelectual; (c) el vesting, la compensación en acciones y los incentivos; (d) las relaciones laborales y de prestación de servicios; (e) los contratos con clientes corporativos; (f) la protección de datos, la seguridad y los términos de uso; y (g) la debida autorización corporativa de los principales actos de la Sociedad.
+Salvo que se indique otra cosa, favor entregar documentos vigentes, incluyendo todas sus modificaciones, anexos, órdenes de servicio, actas, consentimientos, cartas de otorgamiento, comunicaciones relevantes y versiones ejecutadas. Cuando un documento solicitado no exista, favor indicarlo expresamente como "No existe", explicar la razón e identificar cualquier medida correctiva propuesta o en curso.
+2. Instrucciones de Entrega
+2.1 Formato
+Entregar los documentos en formato PDF legible y, cuando esté disponible, en formato editable. Los documentos firmados electrónicamente deberán incluir evidencia razonable de ejecución, como certificados de firma, correos de confirmación, logs o copia de la plataforma de firma.
+2.2 Índice y Nomenclatura
+Organizar la información conforme a la numeración de este RDI. Cada archivo deberá incluir un nombre claro que identifique el documento, la fecha, las Partes y, cuando aplique, su estado: "firmado", "borrador", "vigente", "terminado" o "reemplazado".
+2.3 Divulgaciones
+Si un documento contiene información sensible, podrá entregarse una versión razonablemente redactada, siempre que la redacción no elimine información material para la evaluación de la Transacción. Identificar todo documento retenido o parcialmente redactado y explicar el motivo.
+2.4 Período de Revisión
+Salvo que se indique lo contrario, la información deberá cubrir desde la constitución de la Sociedad hasta [FECHA DE CORTE].
+
+3. Información Corporativa y Gobierno
+3.1 Constitución, Existencia y Registros
+Entregar:
+(a) certificado de existencia y representación legal vigente expedido por la Cámara de Comercio;
+(b) RUT y registro de información tributaria aplicable;
+(c) documento de constitución de la Sociedad y todas sus reformas;
+(d) estatutos sociales vigentes y versiones históricas relevantes;
+(e) libros corporativos, incluyendo libro de registro de accionistas y libro de actas de asamblea, junta directiva o decisiones del accionista único, según aplique;
+(f) poderes vigentes, nombramientos y aceptaciones de representantes legales, administradores y miembros de junta; y
+(g) licencias, registros, permisos o autorizaciones materiales para operar, si aplican.
+Verificación esperada: Que la Sociedad esté válidamente constituida, que sus estatutos permitan la estructura accionaria y los instrumentos de inversión previstos, y que las personas que suscribieron documentos materiales contaran con facultades suficientes.
+3.2 Capitalización y Cap Table
+Entregar:
+(a) cap table actualizado en formato editable, con detalle de capital autorizado, suscrito y pagado;
+(b) relación de todas las clases y series de acciones, derechos económicos y políticos asociados, valor nominal y derechos de preferencia;
+(c) relación de todos los accionistas, número de acciones, porcentaje de participación y fecha de adquisición;
+(d) copias de títulos, certificados, contratos de suscripción, comprobantes de pago, endosos y registros de emisión de acciones;
+(e) detalle de acciones sujetas a vesting, recompra, prenda, usufructo, restricciones de transferencia o cualquier gravamen;
+(f) relación de opciones, derechos de suscripción, warrants, SAFEs, notas convertibles, préstamos convertibles, promesas o instrumentos que puedan generar dilución; y
+(g) reconciliación entre el cap table, el libro de registro de accionistas, los estatutos, las actas corporativas y los documentos de inversión.
+Cláusulas y controles esperados: Estructura accionaria consistente; restricciones de transferencia; derechos de preferencia; autorización para emisión de acciones; adhesión de nuevos accionistas; y evidencia de que ningún derecho de equity ha sido otorgado sin aprobación corporativa suficiente.
+3.3 Aprobaciones y Materias Reservadas
+Entregar:
+(a) actas y decisiones relacionadas con emisión de acciones, creación de clases o series, ampliaciones de capital, endeudamiento, planes de incentivos, adquisiciones, ventas de activos, dividendos, transacciones con vinculados y reformas estatutarias;
+(b) matriz de materias reservadas vigente, indicando mayorías requeridas y aprobaciones obtenidas para cada materia relevante;
+(c) actas de junta directiva, comité asesor o asamblea que aprueben presupuestos, financiamientos, nombramientos de ejecutivos clave, remuneración de fundadores y transacciones estratégicas; y
+(d) detalle de cualquier decisión material adoptada sin acta, aprobación escrita o cumplimiento de las mayorías aplicables.
+Cláusulas y controles esperados: Materias reservadas claramente definidas; cumplimiento de quórums y mayorías; aprobaciones para emisiones dilutivas, deuda, transacciones con vinculados, cambios de negocio, venta de activos, dividendos y cambios de control.
+
+4. Fundadores y Acuerdo de Accionistas
+4.1 Acuerdo de Fundadores y Accionistas
+Entregar:
+(a) copia firmada del acuerdo de fundadores y accionistas vigente, incluyendo todos los anexos, modificaciones, adhesiones y documentos complementarios;
+(b) copia de cualquier pacto de accionistas anterior, side letter, carta de derechos, acuerdo de voto, acuerdo de inversión o entendimiento relevante entre fundadores, accionistas, inversionistas o la Sociedad;
+(c) evidencia de adhesión de todos los accionistas actuales al acuerdo vigente; y
+(d) lista de disposiciones del acuerdo de fundadores que aún no hayan sido implementadas en los estatutos, contratos de recompra, libro de accionistas u otros documentos operativos.
+Cláusulas esperadas en el acuerdo:
+aportes, roles, dedicación y responsabilidades de fundadores;
+confidencialidad, no competencia durante la vinculación y no captación razonable;
+cesión de PI y obligación de firmar documentos complementarios;
+vesting, cliff, recompra de acciones no consolidadas y mecanismos de ejecución en Colombia;
+Good Leaver / Bad Leaver y definición de causa grave;
+restricciones a la transferencia, ROFR o derecho de adquisición preferente;
+tag-along, drag-along y protecciones de responsabilidad para accionistas minoritarios;
+materias reservadas, gobierno corporativo, información y política de dividendos;
+adhesión de nuevos accionistas; y
+ley aplicable, notificaciones y solución de controversias.
+4.2 Aportes, Roles y Dedicación
+Entregar:
+(a) Anexo de aportes, roles, dedicación y responsabilidades de cada fundador;
+(b) contratos laborales, de prestación de servicios, de administración, consultoría o cualquier otro acuerdo entre la Sociedad y cada fundador;
+(c) detalle de salario, honorarios, bonos, beneficios, préstamos, anticipos, gastos reembolsables y cualquier contraprestación pagada o debida a fundadores;
+(d) relación de actividades externas, conflictos de interés revelados y autorizaciones otorgadas a fundadores; y
+(e) evidencia de cumplimiento o incumplimiento material de compromisos de dedicación, aportes o responsabilidades.
+Cláusulas y controles esperados: Separación entre condición de accionista y vínculo laboral o contractual; obligaciones claras de dedicación; procedimientos para conflictos de interés; y registro de operaciones con partes vinculadas.
+4.3 Vesting y Salida de Fundadores
+Entregar:
+(a) calendario de vesting de cada fundador, incluyendo fecha de inicio, cliff, porcentaje consolidado, saldo no consolidado, crédito por trabajo previo y aceleración aplicable;
+(b) contratos de suscripción, compra, recompra, opciones de compra, promesas de transferencia, prendas, cartas de instrucción, endosos, custodia de títulos, poderes y demás mecanismos utilizados para implementar vesting;
+(c) relación de cualquier fundador que haya terminado o reducido materialmente su vinculación y detalle del tratamiento dado a sus Acciones;
+(d) documentos de Good Leaver, Bad Leaver, renuncias, remociones, recompras, transferencias o acuerdos de salida de fundadores; y
+(e) evidencia de inscripción de las transferencias o recompras correspondientes en el libro de registro de accionistas.
+Cláusulas y controles esperados: Vesting de cuatro años con cliff de doce meses, salvo variación documentada; derecho de recompra sobre acciones no consolidadas; mecanismo ejecutable bajo ley colombiana; Good Leaver / Bad Leaver; aceleración de doble disparo si aplica; y documentación de cualquier salida.
+
+5. Propiedad Intelectual, Tecnología y Confidencialidad
+5.1 Acuerdos de PI e Invenciones
+Entregar:
+(a) copia firmada del acuerdo de confidencialidad, cesión de propiedad intelectual e invenciones con cada fundador, empleado, contratista, consultor, asesor, proveedor de desarrollo y persona con acceso material a tecnología o información confidencial;
+(b) matriz de PI que identifique para cada persona: nombre, rol, fecha de inicio, tipo de relación, acceso a repositorios o activos críticos, acuerdo de PI firmado, fecha de firma y estado de vigencia;
+(c) todos los anexos de PI preexistente excluida, licencias de PI preexistente e identificaciones de activos no cedidos a la Sociedad;
+(d) documentos de cesión específicos, registros, solicitudes, poderes, autorizaciones de derechos morales y documentos de perfeccionamiento de titularidad;
+(e) detalle de cualquier PI desarrollada antes de la constitución de la Sociedad, con evidencia de su cesión o licencia a favor de la Sociedad; y
+(f) relación de reclamaciones, disputas, amenazas, limitaciones o riesgos conocidos relacionados con la PI de la Sociedad.
+Cláusulas y controles esperados: Cesión presente y expresa de derechos patrimoniales; definición amplia de Desarrollos; autorización sobre modificaciones permitidas de derechos morales; declaración y licencia de PI preexistente; obligación de firma de documentos adicionales; confidencialidad; entrega de repositorios y activos; y remedios por incumplimiento.
+5.2 Titularidad de Activos Tecnológicos
+Entregar una lista, con evidencia de titularidad y control, de:
+(a) dominios, marcas, nombres comerciales, cuentas de redes sociales y cuentas de app stores;
+(b) repositorios de código, organizaciones de GitHub/GitLab/Bitbucket, cuentas de gestión de proyectos y documentación técnica;
+(c) infraestructura cloud, cuentas de proveedores de hosting, bases de datos, herramientas de seguridad, certificados, llaves, secretos, cuentas de facturación y administración;
+(d) modelos, datasets, modelos de IA, prompts, APIs, licencias de software y herramientas de desarrollo;
+(e) bases de datos, data rooms, copias de respaldo, sistemas de analítica, CRM y herramientas de comunicación; y
+(f) activos físicos o tecnológicos esenciales para el Negocio.
+Para cada activo, indicar: titular registral o contractual, administrador, usuarios con privilegios, ubicación de credenciales, fecha de renovación, costo, gravámenes, restricciones y si está controlado por la Sociedad o por una cuenta personal.
+Verificación esperada: Que los activos críticos estén registrados o controlados por la Sociedad y no dependan de cuentas personales de fundadores, empleados o contratistas.
+5.3 Open Source, Materiales de Terceros e Inteligencia Artificial
+Entregar:
+(a) inventario de software open source, bibliotecas, dependencias, SDKs, APIs, modelos de IA, datasets, imágenes, contenidos, fuentes de datos y demás materiales de terceros utilizados en productos o servicios;
+(b) detalle de licencias aplicables, incluyendo componentes sujetos a copyleft, AGPL, GPL, LGPL, restricciones comerciales, atribución, divulgación de código o restricciones de entrenamiento;
+(c) política de uso de software open source y procesos de aprobación, si existen;
+(d) políticas de uso de herramientas de IA y evidencia de controles para evitar ingreso de código, Información Confidencial o Datos Personales en herramientas no autorizadas;
+(e) contratos, licencias y términos de uso de proveedores de IA, hosting, APIs, software y datos; y
+(f) análisis interno o externo de riesgos de licencias, seguridad, propiedad intelectual o cumplimiento aplicables.
+Cláusulas y controles esperados: Restricciones sobre incorporación no autorizada de materiales de terceros; registro de dependencias y licencias; prohibición de uso de secretos empresariales de terceros; y controles sobre IA pública o no aprobada.
+5.4 Confidencialidad, Secretos Empresariales y Seguridad
+Entregar:
+(a) políticas de confidencialidad, seguridad de la información, desarrollo seguro, control de accesos, manejo de credenciales, backups, cifrado, retención y eliminación de datos;
+(b) acuerdos de confidencialidad firmados con empleados, contratistas, asesores, clientes, proveedores y potenciales inversionistas, según aplique;
+(c) registros de accesos a sistemas críticos y relación de personas con privilegios administrativos;
+(d) detalle de incidentes de seguridad, filtraciones, accesos no autorizados, pérdida de equipos o vulnerabilidades materiales, incluyendo acciones correctivas; y
+(e) procedimientos de devolución de activos, revocación de accesos y salida de personal.
+Cláusulas y controles esperados: Obligaciones de confidencialidad durante y después de la relación; devolución y eliminación de información; medidas de protección de secretos empresariales; propiedad corporativa de cuentas, repositorios y credenciales; y mecanismos de respuesta ante incidentes.
+
+6. Compensación en Acciones, ESOP y Otros Incentivos
+6.1 Plan de Compensación Accionaria
+Entregar:
+(a) copia del Plan de Compensación en Acciones e Incentivos vigente y todas sus versiones anteriores;
+(b) actos corporativos que aprobaron el Plan, la reserva de acciones, el Administrador del Plan y cualquier modificación;
+(c) cálculo del ESOP pool en base fully diluted, incluyendo reserva inicial, acciones disponibles, acciones otorgadas, opciones ejercidas, canceladas, expiradas o recompradas;
+(d) matriz completa de todos los Incentivos otorgados, con Participante, tipo de Incentivo, número de Acciones, clase, precio de ejercicio o compra, fecha de otorgamiento, vesting, fecha de vencimiento, estado y documentos firmados;
+(e) evidencia de que las Acciones reservadas y emitidas son consistentes con el capital autorizado y los estatutos;
+(f) Cartas de Otorgamiento, acuerdos de opción, acuerdos de acciones restringidas, documentos de ejercicio y adhesiones al acuerdo de accionistas; y
+(g) detalle de cualquier compromiso verbal, promesa de equity, phantom equity, token, bono ligado a valor o incentivo no documentado formalmente.
+Cláusulas esperadas: Administración clara del Plan; reserva de acciones; elegibilidad; condiciones de vesting; precio de ejercicio; plazos de ejercicio posteriores a terminación; Good Leaver / Bad Leaver; aceleración por Cambio de Control; ajustes de capital; restricciones de transferencia; y obligaciones tributarias.
+6.2 Fundadores y Acciones Restringidas
+Entregar:
+(a) Cartas de Otorgamiento de Acciones Restringidas a Fundadores;
+(b) documentos individuales de suscripción, compra, recompra y custodia;
+(c) evidencia de pago del precio de suscripción o compra;
+(d) cálculo actualizado de Acciones consolidadas y no consolidadas; y
+(e) cualquier modificación, waiver, aceleración, crédito de vesting o tratamiento especial otorgado a fundadores.
+Verificación esperada: Que las condiciones del Plan, el acuerdo de fundadores, el cap table y los documentos individuales sean consistentes y ejecutables.
+6.3 Opciones de Empleados, Consultores y Asesores
+Entregar:
+(a) todas las Cartas de Otorgamiento de Opción;
+(b) evidencia de aceptación por los Participantes;
+(c) solicitudes y documentos de ejercicio de Opciones;
+(d) evidencia de pago del precio de ejercicio y de retenciones o impuestos aplicables;
+(e) documentación de opciones canceladas, expiradas, aceleradas o modificadas; y
+(f) lista de Participantes que dejaron de prestar servicios y tratamiento aplicado a sus Opciones.
+Verificación esperada: Que no existan derechos de opción vencidos, no autorizados, mal documentados o incompatibles con las restricciones de transferencia y el acuerdo de accionistas.
+
+7. Laboral, Consultores y Talento
+7.1 Empleados
+Entregar:
+(a) organigrama actualizado y listado de empleados, incluyendo cargo, fecha de ingreso, modalidad de trabajo, salario, beneficios, ubicación y estatus de vinculación;
+(b) contratos individuales de trabajo y sus modificaciones;
+(c) anexos de confidencialidad, cesión de PI, protección de datos, uso de equipos, seguridad, conflictos de interés y trabajo remoto;
+(d) comprobantes de afiliación y aportes al sistema de seguridad social, nómina, prestaciones, vacaciones, retenciones y obligaciones laborales aplicables;
+(e) políticas laborales, reglamento interno de trabajo, políticas de prevención de acoso, seguridad y salud en el trabajo, desconexión laboral y teletrabajo/trabajo remoto, si aplican;
+(f) procesos disciplinarios, quejas, reclamaciones laborales, investigaciones, accidentes de trabajo, incapacidades o contingencias relevantes; y
+(g) detalle de terminaciones, indemnizaciones, conciliaciones, acuerdos de transacción y litigios laborales.
+Cláusulas esperadas en contratos laborales: Cargo y funciones; duración; período de prueba cuando aplique; salario y beneficios; jornada; seguridad social; confidencialidad; cesión de PI e invenciones; derechos morales; software y materiales de terceros; protección de datos; seguridad de la información; devolución de activos; conflictos de interés; terminación y supervivencia de obligaciones.
+7.2 Contratistas, Consultores y Asesores
+Entregar:
+(a) listado de contratistas, consultores, asesores y proveedores individuales, con descripción de servicios, duración, tarifas y ubicación;
+(b) contratos de prestación de servicios, consultoría, desarrollo, diseño, marketing, asesoría, administración o similares;
+(c) acuerdos de confidencialidad y cesión de PI firmados;
+(d) evidencia de aportes a seguridad social cuando aplique;
+(e) detalle de contratistas que hayan tenido acceso a código, repositorios, datos personales, infraestructura, cuentas administrativas o información estratégica; y
+(f) análisis de riesgo de existencia de una relación laboral encubierta, si existe.
+Verificación esperada: Que todos los proveedores de desarrollo o servicios críticos hayan cedido adecuadamente la PI, estén sujetos a confidencialidad y no existan contingencias laborales materiales.
+
+8. Contratos Comerciales y Clientes Corporativos
+8.1 Contrato Marco de Prestación de Servicios
+Entregar:
+(a) copia del modelo vigente de Contrato Marco de Prestación de Servicios con Clientes Corporativos;
+(b) todas las versiones históricas materiales y playbooks de negociación;
+(c) muestra de contratos ejecutados con los [NÚMERO] principales clientes por ingresos, incluyendo Órdenes de Servicio, anexos, adendas, renovaciones y side letters;
+(d) listado de contratos de clientes con ingresos, plazo, fecha de renovación, condiciones de terminación, créditos de servicio, descuentos, obligaciones de soporte y compromisos de exclusividad;
+(e) matriz de desviaciones materiales respecto del modelo estándar;
+(f) comunicaciones de incumplimiento, reclamaciones, créditos, penalidades, terminaciones, disputas o renegociaciones relevantes; y
+(g) contratos que impongan obligaciones de auditoría, SLA, cumplimiento, seguridad, residencia de datos, exclusividad, MFN, cesión de PI, indemnidad ampliada o límites de responsabilidad superiores al estándar.
+Cláusulas esperadas en el modelo B2B:
+objeto, Órdenes de Servicio, alcance y control de cambios;
+licencia de uso limitada para el Cliente y restricciones de uso, reventa e ingeniería inversa;
+obligaciones equilibradas del Proveedor y del Cliente;
+tarifas, impuestos, facturación, mora, suspensión y terminación;
+separación entre Tecnología del Proveedor, Datos del Cliente y entregables;
+confidencialidad; protección de datos y seguridad;
+garantías limitadas y remedio exclusivo;
+indemnidad de PI y responsabilidad del Cliente por sus datos;
+limitación de responsabilidad, exclusión de daños indirectos y cap;
+plazo, terminación, exportación o eliminación de datos;
+cumplimiento legal, publicidad, fuerza mayor, cesión, notificaciones y solución de controversias.
+8.2 Datos, SLA y Servicios Profesionales
+Entregar:
+(a) anexos de tratamiento de datos personales, DPA, acuerdos de seguridad, acuerdos de nivel de servicio y anexos de soporte;
+(b) políticas de retención, exportación, eliminación y devolución de Datos del Cliente;
+(c) documentación de entregables de servicios profesionales y cesiones de PI específicas pactadas con clientes;
+(d) relación de proyectos de implementación, desarrollo a medida o integración que puedan generar dudas sobre titularidad de PI; y
+(e) análisis de cualquier obligación contractual que limite el uso de componentes reutilizables, mejoras generales o know-how de la Sociedad.
+Verificación esperada: Que los contratos mantengan la titularidad de la plataforma y de los componentes reutilizables en la Sociedad, y que los Datos del Cliente sean tratados conforme a instrucciones y bases legales suficientes.
+
+9. Usuarios Finales, Privacidad y Protección al Consumidor
+9.1 Términos y Condiciones de Uso
+Entregar:
+(a) versión vigente e histórica de los términos y condiciones para usuarios finales;
+(b) evidencia del mecanismo de aceptación, incluyendo logs de clickwrap, registros de versión, fecha, IP o identificación de usuario cuando estén disponibles;
+(c) descripción de planes, precios, renovación automática, pruebas gratuitas, cancelaciones, reembolsos y políticas de cobro;
+(d) registros de quejas, reclamaciones de consumidores, reversión de pagos, chargebacks, solicitudes de reembolso y respuestas de la Sociedad;
+(e) términos específicos para funcionalidades de inteligencia artificial, cuando existan; y
+(f) comunicaciones de cambios materiales a los Términos.
+Cláusulas esperadas: Aceptación válida; elegibilidad y cuentas; licencia limitada; restricciones de uso; reglas sobre Contenido del Usuario; tratamiento de IA y revisión humana; pagos y renovaciones; PI; privacidad; disponibilidad; exclusión de garantías; limitación de responsabilidad compatible con normas de consumo; indemnidad; suspensión; terminación; modificaciones y contacto.
+9.2 Privacidad y Protección de Datos Personales
+Entregar:
+(a) política de tratamiento de datos personales, aviso de privacidad, políticas de cookies y políticas internas aplicables;
+(b) Registro Nacional de Bases de Datos, si aplica, y evidencia de actualizaciones;
+(c) inventario de bases de datos y mapa de flujos de Datos Personales;
+(d) matriz de roles de Responsable, Encargado, subencargado y terceros receptores;
+(e) contratos con encargados, subencargados, proveedores cloud, proveedores de analítica, pagos, CRM, IA, soporte y otros terceros que traten Datos Personales;
+(f) procedimientos y registros de atención de consultas, reclamos, supresión, actualización, rectificación y revocatoria;
+(g) autorizaciones, avisos y bases legales para tratamiento de datos de empleados, usuarios, clientes, proveedores, prospectos y otros titulares;
+(h) incidentes de seguridad o privacidad, reportes a autoridades y comunicaciones a titulares; y
+(i) transferencias o transmisiones internacionales de datos y mecanismos contractuales o legales aplicables.
+Verificación esperada: Cumplimiento con Ley 1581 de 2012 y normas aplicables; asignación clara de roles en contratos B2B; medidas de seguridad; gestión de derechos de titulares; y controles razonables sobre Datos Personales cargados por usuarios o clientes.
+
+10. Financiamiento, Endeudamiento y Transacciones con Vinculados
+10.1 Financiamiento e Instrumentos Convertibles
+Entregar:
+(a) documentos relacionados con cada ronda de financiación, incluyendo term sheets, contratos de inversión, acuerdos de suscripción, acuerdos de accionistas, estatutos reformados, closing checklists y actas;
+(b) SAFEs, notas convertibles, pagarés, préstamos, warrants, derechos de conversión, instrumentos de deuda, side letters y documentos de garantía;
+(c) evidencia de desembolsos, conversiones, capitalizaciones, pagos de intereses, vencimientos, prórrogas y autorizaciones corporativas;
+(d) lista de derechos especiales de inversionistas, incluyendo preferencias de liquidación, antidilución, pro rata, derechos de información, designación de junta, vetos o consentimientos; y
+(e) detalle de incumplimientos, eventos de default, solicitudes de waiver, renegociaciones o derechos de aceleración.
+Cláusulas y controles esperados: Autorización de instrumentos convertibles; consistencia con cap table; derechos de conversión; valoración tope y descuento, cuando aplique; vencimiento e intereses de notas; tratamiento de cambio de control; y adhesión de inversionistas al acuerdo de accionistas cuando corresponda.
+10.2 Operaciones con Vinculados
+Entregar:
+(a) listado de operaciones entre la Sociedad y fundadores, administradores, accionistas, Afiliadas o personas vinculadas;
+(b) contratos, facturas, préstamos, anticipos, arrendamientos, servicios, licencias, compras, ventas o pagos relacionados;
+(c) aprobaciones corporativas y análisis de condiciones de mercado; y
+(d) saldos pendientes y garantías otorgadas por o a vinculados.
+Verificación esperada: Que las operaciones con vinculados hayan sido reveladas, aprobadas y celebradas en términos razonables y de mercado.
+
+11. Litigios, Cumplimiento y Seguros
+11.1 Litigios y Reclamaciones
+Entregar:
+(a) lista de litigios, arbitrajes, procesos administrativos, investigaciones, reclamaciones, requerimientos, amenazas de reclamación y acuerdos de transacción;
+(b) documentos relevantes, incluyendo demandas, contestaciones, comunicaciones de autoridad, conceptos de abogados, reservas contables y acuerdos;
+(c) reclamaciones relacionadas con empleo, PI, datos personales, consumidores, contratos de clientes, impuestos, competencia o socios; y
+(d) detalle de hechos que razonablemente puedan dar lugar a una reclamación material.
+11.2 Cumplimiento y Ética
+Entregar:
+(a) políticas de anticorrupción, conflictos de interés, prevención de lavado de activos, sanciones, ética, canal de denuncias y cumplimiento;
+(b) capacitaciones, certificaciones, investigaciones internas y reportes de incumplimiento;
+(c) procesos de onboarding y due diligence de contrapartes cuando sean aplicables; y
+(d) comunicaciones con autoridades regulatorias relevantes.
+11.3 Seguros
+Entregar:
+(a) pólizas de seguro vigentes y anteriores relevantes, incluyendo ciberseguridad, responsabilidad civil, errores y omisiones, responsabilidad de administradores, propiedad, laboral o cualquier cobertura material;
+(b) reclamaciones, reservas, rechazos de cobertura y notificaciones a aseguradoras; y
+(c) cronograma de renovaciones, deducibles y exclusiones materiales.
+
+12. Certificación de Integridad de la Información
+Favor entregar una certificación suscrita por el representante legal de la Sociedad, en los siguientes términos:
+El suscrito, en calidad de representante legal de [NOMBRE DE LA SOCIEDAD] S.A.S., certifica que, a su leal saber y entender después de realizar una revisión razonable, la información y los documentos entregados en respuesta a este Requerimiento de Información para Debida Diligencia son completos, verdaderos y correctos en todos los aspectos materiales a la fecha de entrega; que se han identificado expresamente los documentos inexistentes, faltantes o no ejecutados; y que se han revelado las excepciones, contingencias y desviaciones materiales frente a los documentos modelo de la Sociedad.
+Representante Legal: [NOMBRE]
+Cargo: [CARGO]
+Firma: ______________________________
+Fecha: ______________________________
+
+DUE DILIGENCE REQUEST FOR INFORMATION
+Colombian S.A.S. – Founders, Corporate Governance, IP, Talent, Customers, and Technology
+Date: [DATE]
+To: [COMPANY NAME] S.A.S. (the "Company")
+Prepared by: [NAME OF INVESTOR / ACQUIRER / ADVISER] (the "Requesting Party")
+1. Purpose and Scope
+This request for information (the "RFI") is intended to facilitate the legal, corporate, commercial, employment, technology, and intellectual property due diligence of the Company in connection with [INVESTMENT / ACQUISITION / STRATEGIC ALLIANCE / OTHER TRANSACTION] (the "Transaction").
+The Requesting Party expects to verify, among other matters, that the Company has valid, complete, executed, and internally consistent documentation governing: (a) the relationship among founders and shareholders; (b) ownership and protection of intellectual property; (c) vesting, equity compensation, and incentive arrangements; (d) employment and independent contractor relationships; (e) agreements with corporate customers; (f) data protection, security, and terms of use; and (g) proper corporate authorization of the Company's principal actions.
+Unless otherwise indicated, please provide current documents, including all amendments, schedules, statements of work, minutes, consents, grant letters, material correspondence, and executed versions. If a requested document does not exist, please expressly state "Does not exist", explain the reason, and identify any proposed or ongoing remediation.
+2. Delivery Instructions
+2.1 Format
+Provide documents in readable PDF format and, where available, in editable format. Electronically signed documents should include reasonable evidence of execution, such as signature certificates, confirmation emails, audit logs, or copies from the electronic signature platform.
+2.2 Indexing and File Names
+Organize materials according to the numbering in this RFI. Each file should have a clear name identifying the document, date, parties, and, where applicable, its status: "executed," "draft," "current," "terminated," or "superseded."
+2.3 Disclosures and Redactions
+Where a document contains sensitive information, a reasonably redacted version may be provided, provided that the redactions do not remove information material to the assessment of the Transaction. Identify each withheld or partially redacted document and explain the reason.
+2.4 Review Period
+Unless otherwise indicated, information should cover the period from the Company's incorporation through [CUT-OFF DATE].
+
+3. Corporate Information and Governance
+3.1 Incorporation, Existence, and Registrations
+Please provide:
+(a) a current certificate of existence and legal representation issued by the relevant Chamber of Commerce;
+(b) the Company's RUT and applicable tax registration information;
+(c) the Company's incorporation document and all amendments;
+(d) the current bylaws (estatutos sociales) and all material historical versions;
+(e) corporate books, including the shareholders' register and minute books for shareholders' meetings, board meetings, and sole shareholder decisions, as applicable;
+(f) current powers of attorney, appointments, and acceptances of legal representatives, officers, directors, and board members; and
+(g) material licenses, registrations, permits, or authorizations required for operations, if applicable.
+Expected verification: That the Company is validly incorporated, its bylaws support the contemplated capitalization and investment instruments, and the persons executing material documents had sufficient authority.
+3.2 Capitalization and Cap Table
+Please provide:
+(a) an updated, editable capitalization table showing authorized, subscribed, and paid-in capital;
+(b) a description of all classes and series of shares, related economic and voting rights, par value, and pre-emptive rights;
+(c) a list of all shareholders, number of shares, ownership percentage, and acquisition date;
+(d) copies of share certificates, subscription agreements, payment evidence, endorsements, and share issuance records;
+(e) details of shares subject to vesting, repurchase rights, pledges, usufructs, transfer restrictions, or any other encumbrances;
+(f) a list of options, subscription rights, warrants, SAFEs, convertible notes, convertible loans, promises, or other potentially dilutive instruments; and
+(g) a reconciliation among the cap table, shareholders' register, bylaws, corporate approvals, and investment documents.
+Expected clauses and controls: Consistent ownership structure; transfer restrictions; pre-emptive rights; authorization to issue shares; joinder by new shareholders; and evidence that no equity right has been granted without sufficient corporate approval.
+3.3 Approvals and Reserved Matters
+Please provide:
+(a) minutes and written resolutions relating to share issuances, creation of share classes or series, capital increases, indebtedness, incentive plans, acquisitions, asset sales, dividends, related-party transactions, and bylaw amendments;
+(b) the current reserved matters matrix, identifying required approval thresholds and approvals obtained for each relevant matter;
+(c) board, advisory committee, or shareholders' meeting minutes approving budgets, financing transactions, appointments of key executives, founder compensation, and strategic transactions; and
+(d) details of any material decision taken without minutes, written approval, or compliance with applicable voting thresholds.
+Expected clauses and controls: Clearly defined reserved matters; compliance with quorums and voting thresholds; and approvals for dilutive issuances, debt, related-party transactions, changes of business, asset sales, dividends, and changes of control.
+
+4. Founders and Shareholders' Arrangements
+4.1 Founders' and Shareholders' Agreement
+Please provide:
+(a) an executed copy of the current founders' and shareholders' agreement, including all schedules, amendments, joinders, and ancillary documents;
+(b) copies of any prior shareholders' agreement, side letter, rights letter, voting agreement, investment agreement, or other relevant understanding among founders, shareholders, investors, or the Company;
+(c) evidence that all current shareholders have adhered to the current agreement; and
+(d) a list of provisions in the founders' agreement that have not yet been implemented in the bylaws, repurchase agreements, shareholders' register, or other operative documents.
+Expected provisions in the agreement:
+founder contributions, roles, commitment, and responsibilities;
+confidentiality, non-competition during active engagement, and reasonable non-solicitation;
+IP assignment and the obligation to execute ancillary documents;
+vesting, cliff, repurchase of unvested shares, and enforceable Colombian implementation mechanics;
+Good Leaver / Bad Leaver provisions and definition of cause;
+transfer restrictions, ROFR, or rights of first refusal;
+tag-along, drag-along, and liability protections for minority shareholders;
+reserved matters, corporate governance, information rights, and dividend policy;
+joinder by new shareholders; and
+governing law, notices, and dispute resolution.
+4.2 Founder Contributions, Roles, and Commitment
+Please provide:
+(a) the schedule of each founder's contributions, role, time commitment, and responsibilities;
+(b) employment agreements, services agreements, management agreements, consulting agreements, or any other agreement between the Company and each founder;
+(c) details of salary, fees, bonuses, benefits, loans, advances, reimbursable expenses, and any other consideration paid or owed to founders;
+(d) a list of outside activities, disclosed conflicts of interest, and approvals granted to founders; and
+(e) evidence of compliance with, or any material breach of, founder time commitment, contribution, or responsibility obligations.
+Expected clauses and controls: Separation between shareholder status and employment or service relationship; clear commitment obligations; conflict-of-interest procedures; and records of related-party transactions.
+4.3 Founder Vesting and Departures
+Please provide:
+(a) each founder's vesting schedule, including vesting commencement date, cliff, vested percentage, unvested balance, credit for prior service, and applicable acceleration;
+(b) subscription, purchase, repurchase, call option, transfer undertaking, pledge, instruction letter, endorsement, share custody, power of attorney, and other documents used to implement vesting;
+(c) a list of any founder who has terminated or materially reduced active involvement, together with details of the treatment of that founder's shares;
+(d) Good Leaver, Bad Leaver, resignation, removal, repurchase, transfer, or founder exit documents; and
+(e) evidence that applicable transfers or repurchases have been recorded in the shareholders' register.
+Expected clauses and controls: Four-year vesting with a 12-month cliff, unless a variation is documented; repurchase rights over unvested shares; enforceable Colombian-law mechanics; Good Leaver / Bad Leaver treatment; double-trigger acceleration, if applicable; and documentation of all departures.
+
+5. Intellectual Property, Technology, and Confidentiality
+5.1 IP Assignment and Inventions Agreements
+Please provide:
+(a) an executed confidentiality, intellectual property assignment, and inventions agreement with each founder, employee, contractor, consultant, adviser, development vendor, and person with material access to technology or confidential information;
+(b) an IP matrix identifying for each person: name, role, start date, relationship type, access to repositories or critical assets, executed IP agreement, execution date, and current status;
+(c) all schedules of excluded pre-existing IP, licenses of pre-existing IP, and descriptions of assets not assigned to the Company;
+(d) specific assignment documents, registrations, applications, powers of attorney, moral-rights authorizations, and ownership-perfection documents;
+(e) details of any IP developed before the Company was incorporated, with evidence of assignment or licensing to the Company; and
+(f) a list of known claims, disputes, threats, limitations, or risks relating to the Company's IP.
+Expected clauses and controls: Present and express assignment of transferable economic rights; broad definition of developments; authorization for permitted modifications in light of moral rights; disclosure and licensing of pre-existing IP; obligation to execute further documents; confidentiality; delivery of repositories and assets; and remedies for breach.
+5.2 Ownership of Technology Assets
+Please provide a list, together with evidence of ownership and control, of:
+(a) domains, trademarks, trade names, social media accounts, and app store accounts;
+(b) code repositories, GitHub/GitLab/Bitbucket organizations, project-management accounts, and technical documentation;
+(c) cloud infrastructure, hosting-provider accounts, databases, security tools, certificates, keys, secrets, billing accounts, and administrative accounts;
+(d) models, datasets, AI models, prompts, APIs, software licenses, and development tools;
+(e) databases, data rooms, backups, analytics systems, CRM tools, and communications tools; and
+(f) material physical or technology assets required for the Business.
+For each asset, identify the registered or contractual owner, administrator, privileged users, location of credentials, renewal date, cost, encumbrances, restrictions, and whether it is controlled by the Company or a personal account.
+Expected verification: That critical assets are registered to or controlled by the Company and do not depend on personal accounts of founders, employees, or contractors.
+5.3 Open Source, Third-Party Materials, and Artificial Intelligence
+Please provide:
+(a) an inventory of open-source software, libraries, dependencies, SDKs, APIs, AI models, datasets, images, content, data sources, and other third-party materials used in products or services;
+(b) details of applicable licenses, including components subject to copyleft, AGPL, GPL, LGPL, commercial restrictions, attribution requirements, source-code disclosure requirements, or training restrictions;
+(c) the Company's open-source software policy and approval process, if any;
+(d) AI-use policies and evidence of controls designed to prevent Company code, Confidential Information, or Personal Data from being entered into unauthorized tools;
+(e) agreements, licenses, and terms of use for AI, hosting, API, software, and data providers; and
+(f) any internal or external analysis of applicable licensing, security, IP, or compliance risks.
+Expected clauses and controls: Restrictions on unauthorized incorporation of third-party materials; tracking of dependencies and licenses; prohibition on using third-party trade secrets; and controls on public or unapproved AI tools.
+5.4 Confidentiality, Trade Secrets, and Security
+Please provide:
+(a) confidentiality, information security, secure development, access control, credential management, backup, encryption, data retention, and data deletion policies;
+(b) confidentiality agreements executed with employees, contractors, advisers, customers, suppliers, and prospective investors, as applicable;
+(c) access records for critical systems and a list of persons with administrative privileges;
+(d) details of security incidents, data leaks, unauthorized access, lost devices, or material vulnerabilities, including remediation actions; and
+(e) procedures for asset return, access revocation, and offboarding.
+Expected clauses and controls: Confidentiality obligations during and after the relationship; return and deletion of information; trade-secret protection measures; corporate ownership of accounts, repositories, and credentials; and incident-response mechanisms.
+
+6. Equity Compensation, ESOP, and Other Incentives
+6.1 Equity Compensation Plan
+Please provide:
+(a) a copy of the current Equity Compensation and Incentive Plan and all prior versions;
+(b) corporate approvals adopting the Plan, reserving shares, appointing the Plan Administrator, and approving amendments;
+(c) a fully diluted ESOP pool calculation showing the initial reserve, shares available, grants made, options exercised, cancelled, expired, or repurchased;
+(d) a complete schedule of all Incentives granted, showing the Participant, Incentive type, number of shares, class, exercise or purchase price, grant date, vesting, expiration date, status, and executed documents;
+(e) evidence that reserved and issued shares are consistent with authorized capital and the bylaws;
+(f) grant letters, option agreements, restricted share agreements, exercise documents, and shareholders' agreement joinders; and
+(g) details of any verbal commitment, equity promise, phantom equity, token, value-linked bonus, or other incentive not formally documented.
+Expected provisions: Clear Plan administration; share reserve; eligibility; vesting conditions; exercise price; post-termination exercise periods; Good Leaver / Bad Leaver treatment; Change of Control acceleration; capital adjustments; transfer restrictions; and tax obligations.
+6.2 Founders and Restricted Shares
+Please provide:
+(a) restricted share grant letters for founders;
+(b) individual subscription, purchase, repurchase, and custody documents;
+(c) evidence of payment of the subscription or purchase price;
+(d) an updated calculation of vested and unvested shares; and
+(e) any amendment, waiver, acceleration, vesting credit, or special treatment granted to founders.
+Expected verification: That the Plan, founders' agreement, cap table, and individual documents are consistent and enforceable.
+6.3 Employee, Consultant, and Adviser Options
+Please provide:
+(a) all option grant letters;
+(b) evidence of acceptance by Participants;
+(c) option exercise notices and documents;
+(d) evidence of payment of exercise price and applicable taxes or withholdings;
+(e) documentation relating to cancelled, expired, accelerated, or amended options; and
+(f) a list of Participants who ceased providing services and the treatment applied to their options.
+Expected verification: That no option rights are expired, unauthorized, inadequately documented, or inconsistent with transfer restrictions and the shareholders' agreement.
+
+7. Employment, Contractors, and Talent
+7.1 Employees
+Please provide:
+(a) an updated organization chart and employee list showing role, start date, work arrangement, salary, benefits, location, and engagement status;
+(b) individual employment agreements and amendments;
+(c) confidentiality, IP assignment, data protection, equipment-use, security, conflicts-of-interest, and remote-work addenda;
+(d) evidence of social security registrations and contributions, payroll, statutory benefits, vacation, withholdings, and applicable employment obligations;
+(e) employment policies, internal work rules, anti-harassment policies, occupational health and safety policies, right-to-disconnect policies, and telework/remote-work policies, where applicable;
+(f) disciplinary proceedings, complaints, employment claims, investigations, workplace accidents, medical leaves, or material contingencies; and
+(g) details of terminations, indemnities, conciliations, settlement agreements, and employment litigation.
+Expected clauses in employment agreements: Position and duties; term; probationary period where applicable; salary and benefits; working hours; social security; confidentiality; IP assignment and inventions; moral rights; software and third-party materials; data protection; information security; return of assets; conflicts of interest; termination; and survival of obligations.
+7.2 Contractors, Consultants, and Advisers
+Please provide:
+(a) a list of individual contractors, consultants, advisers, and service providers, showing services, term, fees, and location;
+(b) services, consulting, development, design, marketing, advisory, management, or similar agreements;
+(c) executed confidentiality and IP assignment agreements;
+(d) evidence of social security contributions where applicable;
+(e) details of contractors who have had access to code, repositories, Personal Data, infrastructure, administrative accounts, or strategic information; and
+(f) any analysis of risk that an employment relationship may be deemed to exist.
+Expected verification: That all critical development and service providers have properly assigned IP, are subject to confidentiality, and do not create material employment-law exposure.
+
+8. Commercial Agreements and Corporate Customers
+8.1 Master Services Agreement
+Please provide:
+(a) a copy of the current form of Master Services Agreement for corporate customers;
+(b) all material historical versions and negotiation playbooks;
+(c) samples of executed agreements with the top [NUMBER] customers by revenue, including Statements of Work, schedules, amendments, renewals, and side letters;
+(d) a list of customer agreements showing revenue, term, renewal date, termination rights, service credits, discounts, support obligations, and exclusivity commitments;
+(e) a matrix of material deviations from the standard form;
+(f) notices of breach, claims, credits, penalties, terminations, disputes, or material renegotiations; and
+(g) agreements imposing audit, SLA, compliance, security, data-residency, exclusivity, MFN, IP assignment, enhanced indemnity, or above-standard liability-cap obligations.
+Expected provisions in the B2B form:
+subject matter, Statements of Work, scope, and change control;
+limited use license for the customer and restrictions on use, resale, and reverse engineering;
+balanced provider and customer obligations;
+fees, taxes, invoicing, late payment, suspension, and termination;
+separation of Provider Technology, Customer Data, and deliverables;
+confidentiality, data protection, and security;
+limited warranties and exclusive remedy;
+IP indemnity and customer responsibility for its data;
+limitation of liability, exclusion of indirect damages, and liability cap;
+term, termination, and data export or deletion;
+legal compliance, publicity, force majeure, assignment, notices, and dispute resolution.
+
+8.2 Data, SLAs, and Professional Services
+Please provide:
+(a) data processing addenda, security addenda, service-level agreements, and support schedules;
+(b) policies for retention, export, deletion, and return of Customer Data;
+(c) documentation for professional services deliverables and any customer-specific IP assignments;
+(d) a list of implementation, custom-development, or integration projects that may create uncertainty regarding IP ownership; and
+(e) analysis of any contractual obligation that restricts the Company's use of reusable components, general improvements, or know-how.
+Expected verification: That agreements preserve ownership of the platform and reusable components in the Company and that Customer Data is processed under adequate instructions and lawful bases.
+
+9. End Users, Privacy, and Consumer Protection
+9.1 Terms and Conditions of Use
+Please provide:
+(a) current and historical versions of end-user terms and conditions;
+(b) evidence of the acceptance mechanism, including clickwrap logs, version records, date, IP address, or user identification where available;
+(c) a description of plans, pricing, auto-renewal, free trials, cancellations, refunds, and billing policies;
+(d) records of complaints, consumer claims, payment reversals, chargebacks, refund requests, and Company responses;
+(e) specific terms for artificial intelligence features, where applicable; and
+(f) notices of material changes to the Terms.
+Expected provisions: Valid acceptance; eligibility and accounts; limited license; use restrictions; User Content rules; AI treatment and human review; payments and renewals; IP; privacy; availability; warranty disclaimers; consumer-law compatible limitation of liability; indemnity; suspension; termination; amendments; and contact details.
+9.2 Privacy and Personal Data Protection
+Please provide:
+(a) personal data processing policy, privacy notice, cookie policies, and applicable internal policies;
+(b) National Database Registry filings, where applicable, and evidence of updates;
+(c) data inventory and Personal Data flow map;
+(d) matrix of controller, processor, subprocessor, and recipient roles;
+(e) agreements with processors, subprocessors, cloud providers, analytics providers, payment providers, CRM providers, AI providers, support providers, and other third parties processing Personal Data;
+(f) procedures and records for responding to access, complaint, deletion, update, correction, and withdrawal requests;
+(g) authorizations, notices, and legal bases for processing the data of employees, users, customers, suppliers, prospects, and other data subjects;
+(h) security or privacy incidents, reports to authorities, and notices to data subjects; and
+(i) international data transfers or transmissions and applicable legal or contractual mechanisms.
+Expected verification: Compliance with Law 1581 of 2012 and applicable rules; clear role allocation in B2B agreements; security measures; management of data-subject rights; and reasonable controls over Personal Data uploaded by users or customers.
+
+10. Financing, Indebtedness, and Related-Party Transactions
+10.1 Financing and Convertible Instruments
+Please provide:
+(a) documents relating to each financing round, including term sheets, investment agreements, subscription agreements, shareholders' agreements, amended bylaws, closing checklists, and corporate approvals;
+(b) SAFEs, convertible notes, promissory notes, loans, warrants, conversion rights, debt instruments, side letters, and security documents;
+(c) evidence of funding, conversions, capitalizations, interest payments, maturities, extensions, and corporate approvals;
+(d) a list of investor special rights, including liquidation preferences, anti-dilution, pro rata rights, information rights, board appointment rights, vetoes, or consent rights; and
+(e) details of defaults, default events, waiver requests, renegotiations, or acceleration rights.
+Expected clauses and controls: Authorization of convertible instruments; consistency with cap table; conversion rights; valuation cap and discount where applicable; maturity and interest on notes; Change of Control treatment; and investor joinder to the shareholders' agreement where appropriate.
+10.2 Related-Party Transactions
+Please provide:
+(a) a list of transactions between the Company and founders, officers, shareholders, Affiliates, or related persons;
+(b) related agreements, invoices, loans, advances, leases, services, licenses, purchases, sales, or payments;
+(c) corporate approvals and analyses of arm's-length terms; and
+(d) outstanding balances and guarantees granted by or to related parties.
+Expected verification: That related-party transactions have been disclosed, approved, and entered into on reasonable, arm's-length terms.
+
+11. Disputes, Compliance, and Insurance
+11.1 Disputes and Claims
+Please provide:
+(a) a list of litigation, arbitration, administrative proceedings, investigations, claims, demands, threatened claims, and settlement agreements;
+(b) relevant documents, including pleadings, responses, regulatory communications, legal memoranda, accounting reserves, and settlements;
+(c) claims relating to employment, IP, Personal Data, consumers, customer agreements, taxes, competition, or shareholders; and
+(d) details of facts that could reasonably give rise to a material claim.
+11.2 Compliance and Ethics
+Please provide:
+(a) anti-corruption, conflicts-of-interest, anti-money laundering, sanctions, ethics, whistleblowing, and compliance policies;
+(b) training records, certifications, internal investigations, and compliance reports;
+(c) counterparty onboarding and due diligence procedures, where applicable; and
+(d) communications with relevant regulatory authorities.
+11.3 Insurance
+Please provide:
+(a) current and material historical insurance policies, including cyber, general liability, errors and omissions, directors' and officers' liability, property, employment, or other material coverage;
+(b) claims, reserves, coverage denials, and notices to insurers; and
+(c) renewal schedules, deductibles, and material exclusions.
+
+12. Certification of Completeness of Information
+Please provide a certificate signed by the Company's legal representative in the following form:
+The undersigned, in his or her capacity as legal representative of [COMPANY NAME] S.A.S., certifies that, to the best of his or her knowledge after conducting a reasonable review, the information and documents delivered in response to this Due Diligence Request for Information are complete, true, and correct in all material respects as of the delivery date; that nonexistent, missing, or unexecuted documents have been expressly identified; and that material exceptions, contingencies, and deviations from the Company's standard form documents have been disclosed.
+Legal Representative: [NAME]
+Title: [TITLE]
+Signature: ______________________________
+Date: ______________________________
