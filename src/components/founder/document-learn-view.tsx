@@ -112,6 +112,32 @@ const DOCUMENT_CALLOUTS: Record<LearnDocumentType, DocumentCalloutConfig> = {
       account: BookOpen,
     },
   },
+  ip_assignment: {
+    keys: ["confidentiality", "assignment", "preExisting"],
+    clauseMap: {
+      confidentiality: "3",
+      assignment: "4",
+      preExisting: "7",
+    },
+    icons: {
+      confidentiality: Shield,
+      assignment: Lightbulb,
+      preExisting: FileText,
+    },
+  },
+  equity_compensation: {
+    keys: ["pool", "restricted", "options"],
+    clauseMap: {
+      pool: "4",
+      restricted: "6",
+      options: "7",
+    },
+    icons: {
+      pool: TrendingUp,
+      restricted: Sparkles,
+      options: Scale,
+    },
+  },
 };
 
 function clauseLabel(clause: DocumentClause): string {
