@@ -11,7 +11,14 @@ import { getActiveSession } from "@/lib/auth/session";
 import { getOnboardingRedirect } from "@/lib/onboarding/actions";
 
 export default async function HomePage() {
-  const { userId } = await getActiveSession();
+  // Turbopack cold starts can briefly miss clerkMiddleware headers; fall through to
+  // the public landing instead of crashing the first GET /.
+  let userId: string | null = null;
+  try {
+    ({ userId } = await getActiveSession());
+  } catch {
+    userId = null;
+  }
 
   if (userId) {
     const destination = await getOnboardingRedirect(userId);
