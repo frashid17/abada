@@ -1,4 +1,4 @@
-import { DD_DOCUMENT_CATEGORIES } from "@/lib/dd/taxonomy";
+import { DD_DOCUMENT_CATEGORIES, normalizeDdDocumentCategory } from "@/lib/dd/taxonomy";
 import { createServiceRoleSupabaseClient } from "@/lib/supabase/server";
 
 export type DealRoomSummary = {
@@ -40,7 +40,8 @@ export async function getDealRoomSummaries(dealIds: string[]): Promise<Map<strin
     if (!summary) continue;
     summary.documentCount += 1;
     const categories = categoriesByDeal.get(document.deal_id) ?? new Set<string>();
-    categories.add(document.taxonomy_category);
+    const normalized = normalizeDdDocumentCategory(document.taxonomy_category);
+    if (normalized) categories.add(normalized);
     categoriesByDeal.set(document.deal_id, categories);
   }
 
