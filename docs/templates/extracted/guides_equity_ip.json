@@ -1,0 +1,354 @@
+{
+  "ip_assignment": {
+    "es": {
+      "preamble": {
+        "title": "Encabezado, Partes y Objeto",
+        "summary": "Identifica a la Sociedad y al colaborador (fundador, empleado, contratista o equipo técnico) y fija que el acuerdo cubre confidencialidad, PI e invenciones del Negocio.",
+        "why": "Evita disputas sobre quién está obligado y el alcance. En una startup, el código, producto, datos y know-how suelen ser el activo más valioso; quien aporte al producto debe quedar vinculado contractualemente."
+      },
+      "1": {
+        "title": "1. Objeto y Alcance",
+        "summary": "Establece que el Colaborador participa en el negocio y que el acuerdo gobierna el work product y la información que conoce, usa o crea por esa relación.",
+        "why": "Reduce el riesgo de que alguien diga que sus desarrollos no estaban relacionados con la Sociedad. Es clave en esquemas híbridos, remotos, part-time o de contratistas."
+      },
+      "2": {
+        "title": "2. Definiciones",
+        "summary": "Define de forma amplia “Información Confidencial” y “Desarrollos”, incluyendo software, código, modelos de IA, datos, interfaces, documentación, métodos y secretos empresariales.",
+        "why": "Una definición amplia evita vacíos. Sin ella, un desarrollador podría argumentar que un algoritmo, prompt, base de datos o mejora no estaba cubierta."
+      },
+      "3": {
+        "title": "3. Confidencialidad",
+        "summary": "Obliga al Colaborador a proteger y usar la información confidencial solo para fines autorizados; incluye excepciones razonables y un proceso para revelaciones legalmente exigidas.",
+        "why": "Protege información que pierde valor si se divulga: roadmap, precios, estrategia, credenciales, código, contactos de clientes y conversaciones con inversionistas."
+      },
+      "4": {
+        "title": "4. Titularidad y Cesión de Derechos Patrimoniales",
+        "summary": "Reconoce la titularidad exclusiva de la Sociedad sobre los Desarrollos e incluye cesión expresa de derechos patrimoniales de PI.",
+        "why": "Es de las cláusulas más importantes para una ronda o venta. Inversionistas y compradores revisan si la Sociedad realmente es dueña del código, marcas, diseños y tecnología."
+      },
+      "5": {
+        "title": "5. Derechos Morales y Autorizaciones",
+        "summary": "Reconoce que los derechos morales son inalienables en Colombia, pero obtiene autorizaciones para adaptar, modificar, integrar, publicar y explotar los Desarrollos en la medida permitida por la ley.",
+        "why": "La sola cesión patrimonial puede no resolver objeciones a cambios o atribución. Esta autorización reduce fricción al iterar el producto."
+      },
+      "6": {
+        "title": "6. Software, Código, Materiales de Terceros e Inteligencia Artificial",
+        "summary": "Regula el uso de software open source, librerías, datos, modelos y materiales de terceros, e impone revisión de licencias y registro.",
+        "why": "Evita incorporar licencias que obliguen a revelar código o costos imprevistos, y mitiga el uso indebido de información de un empleador anterior."
+      },
+      "7": {
+        "title": "7. Propiedad Intelectual Preexistente",
+        "summary": "Exige revelar PI previa y otorga licencia amplia si se incorpora al Negocio; el Anexo 1 identifica exclusiones.",
+        "why": "Evita que un fundador reclame después que una parte esencial del producto era personal y exija pago o control. El anexo da transparencia para due diligence."
+      },
+      "8": {
+        "title": "8. Divulgación, Entrega y Colaboración",
+        "summary": "Obliga a entregar repositorios, documentación, archivos y credenciales, y a firmar documentos adicionales para registrar o perfeccionar derechos.",
+        "why": "Asegura continuidad operativa si alguien sale. Sin esto, el código puede quedar en cuentas personales y la Sociedad no podrá probar titularidad."
+      },
+      "9": {
+        "title": "9. Seguridad, Datos y Activos de la Sociedad",
+        "summary": "Establece que cuentas, repositorios, equipos y credenciales son de la Sociedad y exige cumplir medidas de seguridad y datos.",
+        "why": "Reduce accesos no autorizados y dependencia de cuentas personales. Es un básico de due diligence: quién controla GitHub, dominios, cloud y bases de datos."
+      },
+      "10": {
+        "title": "10. Devolución de Bienes y Terminación",
+        "summary": "Exige devolver activos, accesos e información, y eliminar copias bajo control del Colaborador al terminar la relación.",
+        "why": "Facilita una salida ordenada y evita que ex-colaboradores retengan código, datos de clientes o acceso a infraestructura crítica."
+      },
+      "11": {
+        "title": "11. Declaraciones y Garantías del Colaborador",
+        "summary": "El Colaborador confirma capacidad, ausencia de conflictos, cumplimiento de obligaciones previas y no infracción intencional de derechos de terceros.",
+        "why": "Da base contractual si se ocultaron restricciones previas o se introdujeron activos de terceros sin permiso."
+      },
+      "12": {
+        "title": "12. Incumplimiento y Remedios",
+        "summary": "Reconoce que ciertos incumplimientos causan daño difícil de cuantificar y permite medidas cautelares, cumplimiento específico y daños.",
+        "why": "Da herramientas para reaccionar rápido ante filtraciones, retención de credenciales o apropiación indebida."
+      },
+      "13": {
+        "title": "13. Ley Aplicable y Solución de Controversias",
+        "summary": "Fija ley colombiana y un proceso escalonado de negociación, conciliación y arbitraje o jurisdicción ordinaria.",
+        "why": "Evita incertidumbre sobre dónde y cómo se resuelve un conflicto interno sensible."
+      },
+      "14": {
+        "title": "14. Disposiciones Generales",
+        "summary": "Incluye integridad del acuerdo, modificaciones por escrito, divisibilidad y firma electrónica.",
+        "why": "Evita que conversaciones informales alteren obligaciones críticas de PI y confidencialidad. La firma electrónica agiliza onboarding remoto."
+      }
+    },
+    "en": {
+      "preamble": {
+        "title": "Heading, Parties, and Purpose",
+        "summary": "Identifies the Company and the founder, employee, contractor, or technical team member signing the document. It also establishes that the agreement covers confidentiality, intellectual property, and inventions related to the Business.",
+        "why": "Prevents disputes over who is bound and the scope of the document. For a startup, the most valuable early assets are often its code, product, data, and know-how; therefore, every person contributing to the product should be contractually bound."
+      },
+      "1": {
+        "title": "1. Purpose and Scope",
+        "summary": "Establishes that the Contributor participates in the business and that the agreement governs the work product and information the Contributor learns, uses, or creates through that relationship.",
+        "why": "Reduces the risk that someone will claim that their developments were unrelated to the Company. This is especially relevant when a founder or developer works on a hybrid, remote, part-time, or contractor basis."
+      },
+      "2": {
+        "title": "2. Definitions",
+        "summary": "Broadly defines “Confidential Information” and “Developments,” including software, code, AI models, data, interfaces, documentation, methods, and trade secrets.",
+        "why": "A broad definition avoids gaps. Without it, a developer could argue that an algorithm, prompt, database, or product improvement was not covered by the assignment or confidentiality obligation."
+      },
+      "3": {
+        "title": "3. Confidentiality",
+        "summary": "Requires the Contributor to protect and use confidential information only for authorized purposes; it also establishes reasonable exceptions and a process for legally compelled disclosure.",
+        "why": "Protects information that may immediately lose value if disclosed: the roadmap, pricing, commercial strategy, credentials, source code, customer contacts, and investor discussions. It also helps demonstrate that the Company took reasonable measures to protect its trade secrets."
+      },
+      "4": {
+        "title": "4. Ownership and Assignment of Economic Rights",
+        "summary": "Recognizes the Company’s exclusive ownership of the Developments and contains an express assignment of economic intellectual property rights.",
+        "why": "This is one of the most important clauses for a financing round or sale of the company. Investors and buyers review whether the Company truly owns the code, trademarks, designs, and technology assets. If a founder or contractor retains those rights, that person may block financing, an acquisition, or commercial use of the product."
+      },
+      "5": {
+        "title": "5. Moral Rights and Authorizations",
+        "summary": "Recognizes that moral rights are inalienable in Colombia but obtains authorizations allowing the Company to adapt, modify, integrate, publish, and exploit the Developments to the extent permitted by law.",
+        "why": "An assignment of economic rights alone may not resolve every issue involving modification or attribution. This authorization reduces the risk that a creator later objects to changes needed in software, content, designs, or product materials."
+      },
+      "6": {
+        "title": "6. Software, Code, Third-Party Materials, and AI",
+        "summary": "Regulates the use of open-source software, libraries, data, models, and third-party materials, and imposes license review and recordkeeping obligations.",
+        "why": "Prevents the team from incorporating software or materials subject to licenses that require source-code disclosure, broad licenses to third parties, or unforeseen costs. It also mitigates the risk that a developer improperly uses information from a previous employer."
+      },
+      "7": {
+        "title": "7. Pre-Existing IP",
+        "summary": "Requires the Contributor to disclose intellectual property owned before joining and establishes a broad license if that IP is incorporated into the Business.",
+        "why": "Prevents a founder from later claiming that an essential part of the product was personally owned and demanding payment, control, or renegotiation after the company grows. Schedule 1 transparently identifies what is excluded and what license the Company receives."
+      },
+      "8": {
+        "title": "8. Disclosure, Delivery, and Cooperation",
+        "summary": "Requires the Contributor to deliver repositories, documentation, files, credentials, and other materials, and to sign additional documents needed to register or perfect rights.",
+        "why": "Ensures operational continuity when someone leaves. Without this clause, code may remain in a personal account, credentials may be lost, and the Company may be unable to prove ownership to investors, customers, or authorities."
+      },
+      "9": {
+        "title": "9. Security, Data, and Ownership of Assets",
+        "summary": "Establishes that accounts, repositories, equipment, credentials, and corporate assets belong to the Company and requires compliance with security and data-handling measures.",
+        "why": "Reduces the risk of unauthorized access, data loss, and reliance on personal accounts. It is a basic due diligence measure: investors typically review who controls GitHub, domains, cloud services, databases, and administrator accounts."
+      },
+      "10": {
+        "title": "10. Return of Property and Termination",
+        "summary": "Requires the return of assets, access credentials, and information, and deletion of copies under the Contributor’s control when the relationship ends.",
+        "why": "Facilitates an orderly departure and protects the Company from former team members retaining code, databases, customer information, or access to critical infrastructure."
+      },
+      "11": {
+        "title": "11. Contributor Representations",
+        "summary": "The Contributor confirms capacity, absence of conflicts, compliance with prior obligations, and no intentional infringement of third-party rights.",
+        "why": "Creates a contractual basis for claims if a Contributor concealed prior restrictions or introduced third-party assets without permission. It also helps identify intellectual property or non-compete risks involving a former employer at an early stage."
+      },
+      "12": {
+        "title": "12. Breach and Remedies",
+        "summary": "Recognizes that certain breaches may cause harm that is difficult to quantify and permits injunctive relief, specific performance, and damages.",
+        "why": "Provides tools to respond quickly to leaks, misuse of code, withholding of credentials, or misappropriation of assets. In technology businesses, waiting for a lengthy damages proceeding may be insufficient to contain the harm."
+      },
+      "13": {
+        "title": "13. Governing Law and Dispute Resolution",
+        "summary": "Establishes Colombian law and a tiered process of negotiation, conciliation, and arbitration or ordinary court proceedings.",
+        "why": "Avoids uncertainty about where and how a dispute will be resolved. It may also help reduce costs and achieve a faster solution to sensitive internal conflicts."
+      },
+      "14": {
+        "title": "14. General Provisions",
+        "summary": "Includes entire agreement, written amendments, severability, and electronic signature provisions.",
+        "why": "Prevents informal conversations or oral agreements from altering critical IP and confidentiality obligations. Electronic signatures also facilitate the rapid onboarding of developers, consultants, and remote contributors."
+      }
+    }
+  },
+  "equity_compensation": {
+    "es": {
+      "preamble": {
+        "title": "Encabezado y Nota de Implementación",
+        "summary": "Identifica el Plan y la Sociedad y explica que adapta la lógica económica de acciones restringidas (fundadores) y opciones (empleados) al contexto colombiano.",
+        "why": "Evita importar mecánicamente documentos de EE. UU. que no encajan con formalidades societarias colombianas. El Plan debe coordinarse con estatutos, capital autorizado, libro de accionistas y acuerdo de accionistas."
+      },
+      "1": {
+        "title": "1. Objeto",
+        "summary": "Establece que el Plan busca atraer, retener y alinear a fundadores, empleados, consultores y asesores con incentivos ligados a equity.",
+        "why": "Da una herramienta de compensación que no depende solo de caja. Es esencial para contratar talento técnico y ejecutivo en etapas tempranas."
+      },
+      "2": {
+        "title": "2. Definiciones",
+        "summary": "Define términos recurrentes del Plan (Participantes, Incentivos, Vesting, Relación de Servicio Continua, Cambio de Control, etc.).",
+        "why": "TODO(legal): el guide Other Docs no trae un bloque dedicado de definiciones para el Plan; usar este resumen explicativo y validar con la firma."
+      },
+      "3": {
+        "title": "3. Administración del Plan",
+        "summary": "Designa el órgano autorizado para otorgar, interpretar, modificar y administrar incentivos.",
+        "why": "Evita otorgamientos improvisados o inconsistentes. Protege gobernanza: los inversionistas querrán saber quién puede diluir y bajo qué reglas."
+      },
+      "4": {
+        "title": "4. Reserva del Plan",
+        "summary": "Fija el porcentaje o número de acciones reservadas para incentivos (pool / ESOP).",
+        "why": "El pool determina dilución futura. Si no se planea, una ronda puede exigir crear pool con mayor dilución de fundadores."
+      },
+      "5": {
+        "title": "5. Elegibilidad y Tipos de Incentivos",
+        "summary": "Define quién puede recibir incentivos y qué instrumentos se pueden otorgar (acciones restringidas, opciones, promesas de transferencia u otros derechos económicos permitidos).",
+        "why": "Permite incentivar personas clave que no sean empleados y elegir la estructura adecuada según perfil, impuestos y etapa de la compañía."
+      },
+      "6": {
+        "title": "6. Acciones Restringidas para Fundadores",
+        "summary": "Implementa una estructura tipo RSPA: el fundador recibe o suscribe acciones, pero la Sociedad retiene derecho de recompra sobre la porción no consolidada si deja de aportar.",
+        "why": "Protege al equipo e inversionistas del “dead equity”: alguien que se va temprano conservando una participación alta sin seguir contribuyendo."
+      },
+      "7": {
+        "title": "7. Opciones para Empleados, Consultores y Asesores",
+        "summary": "Establece el mecanismo de opciones: número de acciones, precio de ejercicio, vesting, plazo y reglas post-terminación.",
+        "why": "Permite incentivar sin emitir acciones el día uno. Las opciones no ejercidas pueden caducar si la persona se va antes de consolidar o ejercer."
+      },
+      "8": {
+        "title": "8. Cartas de Otorgamiento y Documentos Individuales",
+        "summary": "Exige documentar cada incentivo con una carta u acuerdo individual con sus términos específicos.",
+        "why": "Evita disputas sobre número, precio, vesting o aceleración. El Plan da reglas generales; la carta ajusta cada caso."
+      },
+      "9": {
+        "title": "9. Relación de Servicio Continua",
+        "summary": "Define qué cuenta como servicio continuo para efectos de vesting y ejercicio.",
+        "why": "Evita que cambios de rol o modalidad interrumpan vesting sin querer, y aclara cuándo una salida corta el derecho a seguir consolidando."
+      },
+      "10": {
+        "title": "10. Good Leaver y Bad Leaver",
+        "summary": "Distingue salidas legítimas de salidas por falta grave y conecta eso con recompra y tratamiento de acciones.",
+        "why": "Permite trato equilibrado ante incapacidad o remoción sin causa, y mayor protección si hay abandono, competencia, fraude o incumplimiento de PI/confidencialidad."
+      },
+      "11": {
+        "title": "11. Cambio de Control",
+        "summary": "Define el tratamiento de acciones y opciones si hay venta, fusión o cambio de control.",
+        "why": "Evita incertidumbre en una adquisición. La aceleración de doble disparo suele equilibrar protección post-venta sin acelerar solo por el cierre."
+      },
+      "12": {
+        "title": "12. Ajustes de Capital y Reorganizaciones",
+        "summary": "Permite ajustar número de acciones y precios ante splits, consolidaciones, fusiones u otras reorganizaciones.",
+        "why": "Evita que los incentivos pierdan o ganen valor injustificadamente por cambios societarios sin variación económica real."
+      },
+      "13": {
+        "title": "13. Impuestos, Retenciones y Seguridad Social",
+        "summary": "Asigna la responsabilidad tributaria al Participante y permite retenciones o condicionar emisiones al cumplimiento fiscal.",
+        "why": "Acciones y opciones pueden tener consecuencias fiscales complejas. Evita que la Sociedad asuma la carga personal del participante."
+      },
+      "14": {
+        "title": "14. Sin Garantía de Vinculación",
+        "summary": "Aclara que recibir un incentivo no garantiza empleo, consultoría, compensación futura ni continuidad.",
+        "why": "Reduce el riesgo de que alguien alegue que la opción o el Plan garantizaba continuidad laboral o contractual."
+      },
+      "15": {
+        "title": "15. Restricciones de Transferencia, Adhesión y Cumplimiento",
+        "summary": "Somete las acciones del Plan a estatutos, acuerdo de accionistas, restricciones de transferencia y documentos de PI/confidencialidad.",
+        "why": "Evita que acciones del ESOP queden en manos indeseadas o fuera del marco de gobernanza previsto."
+      },
+      "16": {
+        "title": "16. Vigencia, Modificación y Terminación del Plan",
+        "summary": "Define duración, modificación y terminación del Plan sin afectar indebidamente incentivos ya otorgados.",
+        "why": "Da flexibilidad para adaptar el Plan a una ronda o cambios regulatorios manteniendo confianza de quienes ya recibieron incentivos."
+      },
+      "17": {
+        "title": "17. Ley Aplicable y Solución de Controversias",
+        "summary": "Fija ley colombiana y un proceso escalonado de negociación, conciliación y arbitraje o jurisdicción ordinaria.",
+        "why": "TODO(legal): el guide Other Docs no detalla este bloque para el Plan; adaptar del patrón de otros documentos y validar con la firma."
+      },
+      "18": {
+        "title": "18. Disposiciones Generales",
+        "summary": "Incluye integridad, prelación frente a estatutos/acuerdo de accionistas, divisibilidad y firma electrónica.",
+        "why": "TODO(legal): el guide Other Docs no detalla este bloque para el Plan; resumen explicativo pendiente de validación legal."
+      }
+    },
+    "en": {
+      "preamble": {
+        "title": "Heading and Implementation Note",
+        "summary": "Identifies the Plan and the Company and explains its purpose of adapting the economics of restricted shares for founders and options for employees to the Colombian context.",
+        "why": "Avoids mechanically importing U.S. documents that do not fit Colombian corporate formalities. It makes clear that the Plan must be coordinated with the bylaws, authorized capital, shareholders’ ledger, and shareholders’ agreement."
+      },
+      "1": {
+        "title": "1. Purpose",
+        "summary": "Establishes that the Plan seeks to attract, retain, and align founders, employees, consultants, and advisors through equity-linked incentives.",
+        "why": "Provides a compensation tool that does not depend solely on cash. It is essential for hiring technical and executive talent at an early stage when resources are limited."
+      },
+      "2": {
+        "title": "2. Definitions",
+        "summary": "Defines recurring Plan terms such as Participants, Incentives, Vesting, Continuous Service Relationship, and Change of Control.",
+        "why": "TODO(legal): Guide Other Docs has no dedicated definitions block for the Plan; validate with the firm."
+      },
+      "3": {
+        "title": "3. Plan Administration",
+        "summary": "Designates the body authorized to grant, interpret, amend, and administer incentives.",
+        "why": "Prevents improvised or inconsistent grants. It also protects governance: once investors are involved, they will want to know who can dilute shareholders and under what rules."
+      },
+      "4": {
+        "title": "4. Plan Pool",
+        "summary": "Establishes the percentage or number of shares reserved for incentives, commonly called the ESOP pool.",
+        "why": "The pool determines future dilution. If it is not planned, an investment round may require creating a pool that causes greater founder dilution. If sized correctly, it supports hiring without renegotiating the capital structure for each grant."
+      },
+      "5": {
+        "title": "5. Eligibility and Types of Incentives",
+        "summary": "Defines who may receive incentives: founders, employees, directors, contractors, consultants, and advisors. Allows the use of restricted shares, subscription rights, options, transfer promises, or other permitted economic rights.",
+        "why": "Allows the Plan to be used for key people who are not necessarily employees. This is useful for startups working with advisors, technical consultants, or contractors at an early stage. Provides flexibility to select the most suitable structure based on the participant’s profile, applicable law, tax considerations, and the Company’s stage. Not every participant should receive the same instrument."
+      },
+      "6": {
+        "title": "6. Restricted Shares for Founders",
+        "summary": "Implements an RSPA-style structure: the founder receives or subscribes for shares, but the Company retains a repurchase right over the unvested portion if the founder ceases to be involved.",
+        "why": "Protects the team and future investors from “dead equity”: a person leaving early while retaining a large ownership stake without continuing to contribute. Vesting aligns ownership with continued service and value creation."
+      },
+      "7": {
+        "title": "7. Options for Employees, Consultants, and Advisors",
+        "summary": "Establishes the mechanism for granting options, including the number of shares, exercise price, vesting, term, and post-termination rules.",
+        "why": "Allows employees and consultants to be incentivized without issuing shares on day one. It also protects the capitalization table because unexercised options may lapse if a participant leaves before vesting or exercising them."
+      },
+      "8": {
+        "title": "8. Grant Letters and Individual Documents",
+        "summary": "Requires each incentive to be documented individually with its specific terms.",
+        "why": "Prevents disputes over the number of shares, price, vesting, or acceleration. The Plan establishes the general rules; the individual letter permits each case to be tailored without amending the entire Plan."
+      },
+      "9": {
+        "title": "9. Continuous Service Relationship",
+        "summary": "Defines what constitutes continuous service for vesting and option purposes.",
+        "why": "Prevents changes in role, contractual arrangement, or working hours from unintentionally interrupting vesting. It also allows the administrator to define clearly when a departure actually ends the right to continue vesting incentives."
+      },
+      "10": {
+        "title": "10. Good Leaver and Bad Leaver",
+        "summary": "Distinguishes legitimate departures from departures involving serious misconduct and connects that distinction to repurchase rights and the treatment of shares.",
+        "why": "Allows balanced treatment of a person who leaves because of incapacity, removal without cause, or mutual agreement, while giving the Company greater protection when a person abandons the venture, competes, commits fraud, or breaches IP or confidentiality obligations."
+      },
+      "11": {
+        "title": "11. Change of Control",
+        "summary": "Defines how shares and options are treated if the Company is sold, merged, or undergoes a change of control.",
+        "why": "Avoids uncertainty in an acquisition. Double-trigger acceleration is often a balanced solution: it protects people who lose their roles after a sale without granting automatic acceleration merely upon closing the transaction."
+      },
+      "12": {
+        "title": "12. Capital Adjustments and Reorganizations",
+        "summary": "Permits adjustments to the number of shares and exercise prices in the event of stock splits, consolidations, mergers, spin-offs, or other reorganizations.",
+        "why": "Prevents incentives from unjustifiably losing or gaining value because of purely corporate changes that do not reflect a real economic variation."
+      },
+      "13": {
+        "title": "13. Taxes, Withholdings, and Social Security",
+        "summary": "Assigns tax responsibility to the Participant and allows the Company to make withholdings or condition issuances on tax compliance.",
+        "why": "Shares and options may have complex tax consequences. This clause prevents the Company from assuming a participant’s personal tax liability and requires the treatment to be reviewed before issuance or exercise."
+      },
+      "14": {
+        "title": "14. No Guarantee of Continued Engagement",
+        "summary": "Clarifies that receiving an incentive does not guarantee employment, consultancy work, future compensation, or continued engagement.",
+        "why": "Reduces the risk that an employee or consultant will claim that the option or Plan guaranteed continued employment or a particular contractual relationship."
+      },
+      "15": {
+        "title": "15. Transfer Restrictions, Accession, and Compliance",
+        "summary": "Subjects shares issued under the Plan to the bylaws, shareholders’ agreement, transfer restrictions, and IP/confidentiality documents.",
+        "why": "Prevents ESOP shares from ending up in the hands of undesirable third parties or outside the intended governance framework. It also ensures that anyone receiving equity is bound by IP and confidentiality protections."
+      },
+      "16": {
+        "title": "16. Term, Amendment, and Termination of the Plan",
+        "summary": "Defines the duration, amendment, and termination of the Plan without improperly affecting incentives already granted.",
+        "why": "Preserves flexibility to adapt the Plan for a financing round, regulatory changes, or hiring needs while maintaining the confidence of people who have already received incentives."
+      },
+      "17": {
+        "title": "17. Governing Law and Dispute Resolution",
+        "summary": "Establishes Colombian law and a tiered negotiation, conciliation, and arbitration or court process.",
+        "why": "TODO(legal): Guide Other Docs does not detail this Plan block; validate with the firm."
+      },
+      "18": {
+        "title": "18. General Provisions",
+        "summary": "Includes entire agreement, precedence, severability, and electronic signature provisions.",
+        "why": "TODO(legal): Guide Other Docs does not detail this Plan block; validate with the firm."
+      }
+    }
+  }
+}
