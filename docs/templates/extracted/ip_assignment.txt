@@ -1,0 +1,121 @@
+ACUERDO DE CONFIDENCIALIDAD, CESIÓN DE PROPIEDAD INTELECTUAL E INVENCIONES
+Fundadores, Empleados, Contratistas y Equipo de Tecnología – S.A.S. Colombia
+Este Acuerdo de Confidencialidad, Cesión de Propiedad Intelectual e Invenciones (el "Acuerdo") se celebra a partir del {{fecha}}, entre:
+La Sociedad: {{nombre_de_la_sociedad}} S.A.S., sociedad por acciones simplificada constituida conforme a las leyes de la República de Colombia, identificada con NIT {{nit}}, con domicilio en {{domicilio}} (la "Sociedad"); y
+El Colaborador: {{nombre_del_colaborador}}, identificado con {{id_colaborador}}, con domicilio en {{domicilio}} (el "Colaborador").
+La Sociedad y el Colaborador se denominarán individualmente una "Parte" y conjuntamente las "Partes".
+
+1. Objeto y Alcance
+1.1 El Colaborador prestará, ha prestado o podrá prestar servicios, desarrollar actividades o participar en el Negocio de la Sociedad en calidad de [FUNDADOR / EMPLEADO / CONTRATISTA / CONSULTOR / ASESOR].
+1.2 Este Acuerdo regula la confidencialidad, titularidad, cesión, protección, divulgación y entrega de los resultados, activos e información que el Colaborador cree, desarrolle, conozca, use o reciba en relación con la Sociedad, sus Afiliadas, el Negocio o los Servicios.
+1.3 Este Acuerdo complementa cualquier contrato laboral, de prestación de servicios, de administración, de consultoría, de suscripción de acciones o acuerdo de fundadores celebrado entre las Partes. En caso de conflicto, prevalecerá la disposición que otorgue mayor protección a la Sociedad respecto de la Información Confidencial y los derechos de propiedad intelectual, en la medida permitida por la ley.
+
+2. Definiciones
+Para efectos de este Acuerdo:
+"Afiliada" significa cualquier persona que controle, sea controlada por o esté bajo control común con la Sociedad, en los términos de la ley aplicable.
+"Información Confidencial" significa toda información no pública de la Sociedad, sus Afiliadas, fundadores, inversionistas, clientes, proveedores, aliados, empleados, contratistas o usuarios, independientemente de su formato o medio, incluyendo información técnica, comercial, financiera, estratégica, de producto, de seguridad, código fuente, código objeto, repositorios, algoritmos, modelos de inteligencia artificial, prompts, documentación, credenciales, tokens, claves, secretos empresariales, planes de negocio, listas de clientes, precios, contratos, métricas, proyecciones, datos personales, bases de datos, diseños, interfaces, arquitectura, metodologías y cualquier información identificada como confidencial o que razonablemente deba entenderse como reservada.
+"Desarrollos" significa todas las invenciones, innovaciones, descubrimientos, obras, programas de computador, código fuente, código objeto, APIs, scripts, modelos de inteligencia artificial, prompts, documentación, bases de datos, diseños, interfaces, contenidos, marcas, nombres, dominios, procesos, metodologías, mejoras, datos, informes, prototipos, know-how, secretos empresariales y demás resultados, protegibles o no, que sean creados, concebidos, desarrollados, reducidos a práctica, elaborados o puestos a disposición por el Colaborador, individualmente o con terceros, y que: (a) se relacionen con el Negocio, productos, servicios, actividades actuales o razonablemente previstas de la Sociedad; (b) se desarrollen en ejecución de sus funciones o servicios; o (c) se desarrollen usando recursos, activos, Información Confidencial o tiempo pagado por la Sociedad.
+"PI Preexistente" significa cualquier activo de propiedad intelectual que el Colaborador posea o controle legítimamente antes de su vinculación con la Sociedad y que esté identificado de manera completa en el Anexo 1.
+
+3. Confidencialidad
+3.1 El Colaborador mantendrá la Información Confidencial en estricta reserva y la utilizará exclusivamente para cumplir sus funciones, servicios u obligaciones autorizadas en beneficio de la Sociedad.
+3.2 El Colaborador no podrá divulgar, copiar, reproducir, transferir, publicar, comercializar, usar para fines propios, extraer, descargar, almacenar en medios no autorizados ni permitir el acceso de terceros a Información Confidencial, salvo autorización previa y escrita de la Sociedad o cuando sea estrictamente necesario para el desarrollo autorizado de sus funciones y el tercero esté sujeto a obligaciones de confidencialidad al menos tan protectoras como las previstas en este Acuerdo.
+3.3 Las obligaciones de esta Cláusula no aplicarán a información que el Colaborador demuestre mediante evidencia suficiente que: (a) es o se hace pública sin incumplimiento de este Acuerdo; (b) ya conocía legítimamente y sin deber de reserva antes de recibirla; (c) recibió lícitamente de un tercero sin deber de confidencialidad; o (d) desarrolló de manera independiente sin usar Información Confidencial.
+3.4 Si el Colaborador es requerido por ley, orden de autoridad competente o proceso judicial para revelar Información Confidencial, deberá, en la medida permitida por la ley: (a) notificar previamente a la Sociedad; (b) cooperar razonablemente con la Sociedad para procurar una orden de protección o tratamiento confidencial; y (c) revelar únicamente la información estrictamente requerida.
+3.5 Las obligaciones de confidencialidad permanecerán vigentes durante la relación del Colaborador con la Sociedad y por cinco (5) años después de su terminación. Respecto de secretos empresariales, las obligaciones subsistirán mientras la información conserve ese carácter conforme a la ley.
+
+4. Titularidad y Cesión de Derechos Patrimoniales
+4.1 Todos los Desarrollos pertenecerán exclusivamente a la Sociedad desde su creación, en la medida permitida por la ley.
+4.2 El Colaborador cede a favor de la Sociedad, de manera total, exclusiva, irrevocable, transferible, sublicenciable, mundial y por el máximo término de protección legal, todos los derechos patrimoniales de autor y demás derechos de propiedad intelectual transferibles que recaigan sobre los Desarrollos.
+4.3 La cesión incluye, entre otros, los derechos de reproducción, fijación, edición, publicación, distribución, comunicación pública, puesta a disposición, transformación, adaptación, traducción, modificación, compilación, integración, comercialización, licencia, cesión, importación, exportación y explotación de los Desarrollos por cualquier medio, formato, territorio, soporte, canal o modalidad actual o futura.
+4.4 La remuneración, contraprestación, salario, honorarios, acciones, opciones, participación accionaria u otros beneficios pactados entre las Partes constituyen contraprestación suficiente para la cesión de derechos patrimoniales prevista en este Acuerdo, sin perjuicio de los derechos irrenunciables que la ley colombiana reconozca.
+4.5 La cesión cubre los Desarrollos creados durante la vigencia de la relación con la Sociedad y los Desarrollos creados antes de la firma de este Acuerdo que estén descritos en el Anexo 1, hayan sido incorporados, entregados, usados o destinados al Negocio, o hayan sido desarrollados específicamente para la Sociedad.
+
+5. Derechos Morales y Autorizaciones
+5.1 El Colaborador reconoce que los derechos morales de autor son personales e inalienables conforme a la ley colombiana.
+5.2 Sin perjuicio de lo anterior, en la medida permitida por la ley, el Colaborador autoriza de manera previa, expresa e informada a la Sociedad, sus Afiliadas, cesionarios, sublicenciatarios y clientes para modificar, adaptar, actualizar, integrar, traducir, transformar, compilar, publicar, divulgar, mantener anónimo el nombre del autor cuando sea razonable y explotar los Desarrollos, siempre que ello no afecte injustificadamente la honra o reputación del Colaborador.
+5.3 El Colaborador se obliga a no impedir ni obstaculizar el ejercicio de los derechos patrimoniales cedidos a la Sociedad, salvo que exista una vulneración comprobada de derechos morales irrenunciables.
+
+6. Software, Código, Materiales de Terceros e Inteligencia Artificial
+6.1 El Colaborador no incorporará a los Desarrollos código, bibliotecas, modelos, datasets, contenidos, imágenes, software, componentes open source o materiales de terceros que impongan obligaciones de divulgación, licencia, atribución, copyleft, pago, restricciones de uso o condiciones incompatibles con el modelo de negocio de la Sociedad, salvo autorización previa y escrita de la Sociedad.
+6.2 El Colaborador cumplirá los procedimientos razonables de la Sociedad para documentar dependencias, licencias de software libre, componentes de terceros, fuentes de datos, herramientas de inteligencia artificial y modelos incorporados en los Desarrollos.
+6.3 El Colaborador no utilizará ni divulgará secretos empresariales, información confidencial, código, modelos, documentos, datos o materiales protegidos pertenecientes a empleadores, clientes, contratistas o terceros anteriores, salvo autorización escrita de su titular.
+6.4 El Colaborador no podrá cargar, ingresar, compartir o procesar Información Confidencial, Datos Personales, código, repositorios o materiales de la Sociedad en herramientas públicas, gratuitas, personales o no autorizadas de inteligencia artificial, almacenamiento, desarrollo, colaboración, análisis o comunicación, salvo autorización previa y escrita de la Sociedad.
+
+7. Propiedad Intelectual Preexistente
+7.1 El Colaborador declara que toda PI Preexistente que pretenda excluir de la cesión prevista en este Acuerdo se encuentra identificada de forma completa, precisa y suficiente en el Anexo 1. Si el Anexo 1 no identifica ningún activo, se entenderá que el Colaborador no excluye PI Preexistente relevante para el Negocio.
+7.2 Si el Colaborador incorpora PI Preexistente en un Desarrollo, producto, servicio, repositorio, documentación, proceso u operación de la Sociedad, otorga a la Sociedad una licencia mundial, perpetua, irrevocable, transferible, sublicenciable, gratuita y plenamente pagada para usar, reproducir, modificar, integrar, adaptar, distribuir, comercializar y explotar dicha PI Preexistente en relación con el Negocio.
+7.3 El Colaborador garantiza que tiene el derecho de otorgar la licencia prevista en esta Cláusula y que informará previamente a la Sociedad cualquier limitación, gravamen, licencia de tercero o restricción aplicable a la PI Preexistente.
+
+8. Divulgación, Entrega y Colaboración
+8.1 El Colaborador informará y entregará oportunamente a la Sociedad todos los Desarrollos, repositorios, archivos, documentación, diagramas, configuraciones, credenciales, llaves de acceso, diseños, bases de datos, soportes, registros de licencias y demás materiales relacionados con el Negocio.
+8.2 El Colaborador documentará los Desarrollos de manera razonable y mantendrá los materiales de trabajo, código, repositorios y archivos en los sistemas o plataformas autorizados por la Sociedad.
+8.3 El Colaborador firmará, durante y después de la terminación de su relación con la Sociedad, los documentos razonablemente necesarios para perfeccionar, registrar, defender o hacer oponible la titularidad de la Sociedad sobre los Desarrollos, incluyendo solicitudes, cesiones, declaraciones, formularios, poderes y documentos de registro en Colombia o en el exterior.
+8.4 En la medida permitida por la ley, si el Colaborador no firma un documento necesario después de una solicitud razonable de la Sociedad, el Colaborador designa a la Sociedad y a su representante legal como apoderados especiales para suscribir los documentos estrictamente necesarios para perfeccionar los derechos cedidos bajo este Acuerdo. Esta designación se entenderá limitada al objeto de esta Cláusula y no libera a la Sociedad de realizar esfuerzos razonables para obtener la firma del Colaborador.
+
+9. Seguridad, Datos y Activos de la Sociedad
+9.1 Todos los equipos, cuentas, correos corporativos, repositorios, dominios, licencias, llaves, tokens, credenciales, ambientes de desarrollo, infraestructuras cloud, dispositivos, archivos y demás activos proporcionados, pagados o administrados por la Sociedad son de propiedad exclusiva de la Sociedad.
+9.2 El Colaborador cumplirá las políticas, procedimientos y controles razonables de seguridad, protección de datos, desarrollo seguro, gestión de accesos, respaldo, cifrado, uso de herramientas y continuidad de negocio que adopte la Sociedad.
+9.3 El Colaborador no almacenará Información Confidencial ni Datos Personales en cuentas personales, dispositivos no autorizados, repositorios personales, servicios no aprobados o medios removibles no autorizados, salvo autorización previa y escrita de la Sociedad.
+9.4 El Colaborador deberá informar inmediatamente a la Sociedad cualquier incidente real o sospechado de pérdida, acceso no autorizado, divulgación, alteración, destrucción, extracción o tratamiento indebido de Información Confidencial, Datos Personales o activos de la Sociedad.
+
+10. Devolución de Bienes y Terminación
+10.1 Al terminar la relación del Colaborador con la Sociedad, o cuando la Sociedad lo solicite, el Colaborador devolverá inmediatamente todos los bienes, equipos, soportes, accesos, documentos, archivos, copias, credenciales y materiales de la Sociedad que estén bajo su posesión o control.
+10.2 El Colaborador eliminará, cuando sea técnicamente posible, las copias de Información Confidencial y Datos Personales que se encuentren en sus dispositivos, cuentas o medios personales no autorizados, salvo copias de respaldo automáticas no fácilmente accesibles o retenciones exigidas por ley.
+10.3 El Colaborador colaborará razonablemente en la transición de proyectos, accesos, documentación, repositorios, contraseñas, pendientes y Desarrollos para asegurar la continuidad operativa de la Sociedad.
+
+11. Declaraciones y Garantías del Colaborador
+El Colaborador declara y garantiza que:
+11.1 Tiene capacidad y facultad suficientes para celebrar y cumplir este Acuerdo.
+11.2 La cesión, licencias y autorizaciones previstas en este Acuerdo no vulneran obligaciones válidamente asumidas frente a terceros.
+11.3 Los Desarrollos entregados por el Colaborador no infringirán intencionalmente derechos de propiedad intelectual, confidencialidad o secretos empresariales de terceros.
+11.4 Revelará oportunamente a la Sociedad cualquier conflicto de interés, restricción contractual, obligación previa o limitación relevante que pueda afectar los Desarrollos o el cumplimiento de este Acuerdo.
+11.5 Ha tenido oportunidad razonable de obtener asesoría legal independiente antes de firmar este Acuerdo.
+
+12. Incumplimiento y Remedios
+12.1 El Colaborador reconoce que el incumplimiento de las obligaciones de confidencialidad, propiedad intelectual, protección de datos o seguridad puede causar perjuicios graves y de difícil reparación a la Sociedad.
+12.2 La Sociedad podrá solicitar medidas cautelares, cumplimiento específico, restitución, entrega de información, recuperación de activos, indemnización de perjuicios y demás remedios disponibles conforme a la ley, sin perjuicio de las acciones administrativas, civiles, laborales, penales o disciplinarias que puedan resultar aplicables.
+
+13. Ley Aplicable y Solución de Controversias
+13.1 Este Acuerdo se regirá por las leyes de la República de Colombia.
+13.2 Toda controversia relacionada con este Acuerdo será tratada inicialmente mediante negociación directa durante quince (15) días hábiles desde la notificación escrita de la controversia.
+13.3 Si la controversia no se resuelve mediante negociación directa, las Partes acudirán a conciliación ante {{centro_conciliacion}}, con sede en [CIUDAD, COLOMBIA].
+13.4 Si la controversia persiste, será resuelta por {{foro_disputas}}, con sede en [CIUDAD, COLOMBIA]. Sin perjuicio de lo anterior, la Sociedad podrá solicitar medidas cautelares o de protección inmediata ante cualquier autoridad competente para proteger Información Confidencial, propiedad intelectual, Datos Personales o activos críticos.
+
+14. Disposiciones Generales
+14.1 Integridad. Este Acuerdo constituye el acuerdo completo entre las Partes respecto de su objeto y reemplaza los entendimientos previos sobre confidencialidad, propiedad intelectual e invenciones, salvo aquellos que expresamente sobrevivan o complementen este Acuerdo.
+14.2 Modificaciones. Toda modificación de este Acuerdo deberá constar por escrito y estar firmada por ambas Partes.
+14.3 Divisibilidad. Si una disposición de este Acuerdo resulta inválida o inexigible, las demás disposiciones conservarán plena vigencia, y la disposición afectada se interpretará o ajustará en la mínima medida necesaria para hacerla válida y exigible, en cuanto la ley lo permita.
+14.4 Cesión. El Colaborador no podrá ceder sus derechos u obligaciones bajo este Acuerdo sin autorización previa y escrita de la Sociedad. La Sociedad podrá ceder este Acuerdo a una Afiliada, sucesor o adquirente de la totalidad o una parte sustancial de sus activos o Negocio.
+14.5 Notificaciones. Las notificaciones se realizarán por escrito a las direcciones indicadas a continuación o a aquellas actualizadas posteriormente por escrito:
+Sociedad:Dirección: [DIRECCIÓN]Correo electrónico: [CORREO]
+Colaborador:Dirección: [DIRECCIÓN]Correo electrónico: [CORREO]
+Las notificaciones se entenderán recibidas en la fecha de entrega personal, al día hábil siguiente si se envían por mensajería reconocida, al tercer día hábil siguiente si se remiten por correo certificado o en la fecha de envío por correo electrónico si no hay mensaje de error y se envía antes de las 5:00 p.m. de un día hábil.
+14.6 Firmas Electrónicas. Este Acuerdo podrá firmarse en contrapartes y mediante firma electrónica o digital válida conforme a la legislación colombiana.
+
+Anexo 1 – Propiedad Intelectual Preexistente Excluida
+Colaborador: [NOMBRE]
+Activo o Desarrollo
+Titular
+Descripción
+¿Se incorporará al Negocio?
+Condiciones de licencia
+[DESCRIBIR O INDICAR “NINGUNA”]
+[TITULAR]
+[DESCRIPCIÓN]
+[SÍ / NO]
+[TÉRMINOS]
+
+Firmas
+En constancia de lo anterior, las Partes suscriben el presente Acuerdo.
+LA SOCIEDAD
+{{nombre_de_la_sociedad}} S.A.S.
+Por: ______________________________
+Nombre: [NOMBRE DEL REPRESENTANTE LEGAL]
+Cargo: [CARGO]
+Fecha: ______________________________
+EL COLABORADOR
+Nombre: [NOMBRE]
+Identificación: [IDENTIFICACIÓN]
+Firma: ______________________________
+Fecha: ______________________________
