@@ -9,8 +9,9 @@ import { resolveFounderByEmail } from "@/lib/firm/founder-lookup";
 import { resolveInvestorByEmail } from "@/lib/firm/investor-lookup";
 import { resolveFirmReviewTenantScope } from "@/lib/firm/tenant";
 import { uploadDataRoomFile } from "@/lib/data-room/upload";
-import { createFinding } from "@/lib/dd/findings";
-import { upsertDealAssessment } from "@/lib/dd/assessments";
+import { createFinding, listDealFindings } from "@/lib/dd/findings";
+import { getDealAssessment, upsertDealAssessment } from "@/lib/dd/assessments";
+import { buildAssessmentDraftFromFindings, renderDdReport } from "@/lib/dd/report";
 import { assertFirmDealAccess, requireUserId } from "@/lib/data-room/access";
 import { createNotification } from "@/lib/notifications/service";
 
@@ -253,5 +254,50 @@ export async function saveAssessmentAction(input: {
     return { ok: true };
   } catch (error) {
     return { ok: false, error: error instanceof Error ? error.message : "assessment_failed" };
+  }
+}
+
+export async function draftAssessmentFromFindingsAction(
+  dealId: string,
+): Promise<{ ok: true; draft: string } | { ok: false; error: string }> {
+  try {
+    await assertFirmDealAccess(dealId);
+    const findings = await listDealFindings(dealId);
+    return { ok: true, draft: buildAssessmentDraftFromFindings(findings, "es") };
+  } catch (error) {
+    return { ok: false, error: error instanceof Error ? error.message : "draft_failed" };
+  }
+}
+
+export async function downloadDdReportAction(
+  dealId: string,
+): Promise<{ ok: true; body: string; fileName: string } | { ok: false; error: string }> {
+  try {
+    await assertFirmDealAccess(dealId);
+    const [deal, findings, assessment] = await Promise.all([
+      getDealById(dealId),
+      listDealFindings(dealId),
+      getDealAssessment(dealId),
+    ]);
+
+    const body = renderDdReport({
+      companyName: deal?.name ?? "Sociedad",
+      assessment,
+      findings,
+      locale: "bilingual",
+    });
+
+    const slug = (deal?.name ?? "dd-report")
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, "-")
+      .replace(/^-|-$/g, "");
+
+    return {
+      ok: true,
+      body,
+      fileName: `${slug || "dd-report"}-hallazgos.txt`,
+    };
+  } catch (error) {
+    return { ok: false, error: error instanceof Error ? error.message : "report_failed" };
   }
 }
