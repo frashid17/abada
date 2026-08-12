@@ -2,7 +2,7 @@ import { auth, currentUser } from "@clerk/nextjs/server";
 import { getTranslations } from "next-intl/server";
 import { redirect, notFound } from "next/navigation";
 import { AppShell } from "@/components/layout/app-shell";
-import { PageHeader } from "@/components/layout/page-header";
+import { SplitWorkspace } from "@/components/layout/split-workspace";
 import { CategoryCoveragePanel } from "@/components/dd/category-coverage-panel";
 import { DataRoomDocumentList } from "@/components/dd/data-room-document-list";
 import { DataRoomUploadForm } from "@/components/dd/data-room-upload-form";
@@ -43,23 +43,31 @@ export default async function FounderSalaDealPage({
   ]);
 
   return (
-    <AppShell variant="founder">
-      <div className="space-y-8">
-        <DealRoomBackLink href="/fundador/sala" variant="founder" />
-        <PageHeader eyebrow={t("eyebrow")} title={deal.name} description={t("dealSubtitle")} />
-        <DealRoomStats summary={summary} variant="founder" />
-
-        <div className="grid gap-8 xl:grid-cols-[1fr_400px]">
-          <div className="space-y-8">
-            <section className="space-y-4">
-              <h2 className="font-serif text-xl font-semibold">{t("documentsTitle")}</h2>
-              <DataRoomDocumentList documents={documents} showDownload={false} />
-            </section>
-            <CategoryCoveragePanel documents={documents} />
-          </div>
-
-          <DataRoomUploadForm dealId={dealId} uploaderName={uploaderName} />
+    <AppShell variant="founder" workspace>
+      <div className="flex min-h-0 flex-1 flex-col gap-3">
+        <div className="flex shrink-0 flex-wrap items-center justify-between gap-2">
+          <DealRoomBackLink href="/fundador/sala" variant="founder" />
+          <h1 className="truncate font-serif text-lg font-semibold sm:text-xl">{deal.name}</h1>
         </div>
+        <div className="shrink-0">
+          <DealRoomStats summary={summary} variant="founder" />
+        </div>
+
+        <SplitWorkspace
+          panesLabel={t("workspacePanes")}
+          primaryLabel={t("paneRoom")}
+          secondaryLabel={t("paneUpload")}
+          primary={
+            <>
+              <section className="space-y-3">
+                <h2 className="font-serif text-lg font-semibold sm:text-xl">{t("documentsTitle")}</h2>
+                <DataRoomDocumentList documents={documents} showDownload={false} />
+              </section>
+              <CategoryCoveragePanel documents={documents} />
+            </>
+          }
+          secondary={<DataRoomUploadForm dealId={dealId} uploaderName={uploaderName} />}
+        />
       </div>
     </AppShell>
   );
