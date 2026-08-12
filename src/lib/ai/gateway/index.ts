@@ -10,6 +10,7 @@ import type { GatewayRequest, GatewayResponse } from "@/lib/ai/brain/types";
 import { finalizeGatewayResponse } from "@/lib/ai/guardrails";
 import { resolveModelForTask } from "@/lib/ai/gateway/routing";
 import { formatKnowledgeContext, searchFirmKnowledge, searchLegalCorpus, formatLegalCorpusForPrompt } from "@/lib/ai/retrieval";
+import { buildPlaybookPromptContext } from "@/lib/dd/playbook";
 import { createServiceRoleSupabaseClient } from "@/lib/supabase/server";
 
 function assertAnthropicConfigured(): void {
@@ -58,6 +59,12 @@ export async function runAiGateway(request: GatewayRequest): Promise<GatewayResp
   });
 
   const systemParts = [brain.combined, "---", runtime];
+  if (request.task === "dd_finding") {
+    systemParts.push(
+      "---",
+      buildPlaybookPromptContext(request.locale === "en-US" ? "en" : "es"),
+    );
+  }
   if (request.sessionContext) {
     systemParts.push("---", "Active document session (reference only — do not recite unless relevant):\n" + request.sessionContext);
   }
