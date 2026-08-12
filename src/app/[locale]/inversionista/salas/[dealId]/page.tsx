@@ -2,7 +2,7 @@ import { auth } from "@clerk/nextjs/server";
 import { getTranslations } from "next-intl/server";
 import { redirect, notFound } from "next/navigation";
 import { AppShell } from "@/components/layout/app-shell";
-import { PageHeader } from "@/components/layout/page-header";
+import { SplitWorkspace } from "@/components/layout/split-workspace";
 import { DataRoomDocumentList } from "@/components/dd/data-room-document-list";
 import { DealRoomBackLink } from "@/components/dd/deal-room-back-link";
 import { DealRoomStats } from "@/components/dd/deal-room-stats";
@@ -44,31 +44,40 @@ export default async function InvestorRoomDetailPage({
   ]);
 
   return (
-    <AppShell variant="investor">
-      <div className="space-y-8">
-        <DealRoomBackLink href="/inversionista/salas" variant="investor" />
-        <PageHeader eyebrow={t("eyebrow")} title={deal.name} description={t("dealSubtitle")} />
-        <DealRoomStats summary={summary} variant="investor" />
-
-        <div className="grid gap-8 xl:grid-cols-[1fr_360px]">
-          <div className="space-y-8">
-            <InvestorAssessmentPanel assessment={assessment} />
-
-            <section className="space-y-4">
-              <h2 className="font-serif text-xl font-semibold">{t("findingsTitle")}</h2>
-              <FindingsByCategory
-                findingsByCategory={findingsByCategory}
-                translationNamespace="investor.room"
-              />
-            </section>
-          </div>
-
-          <section className="space-y-4">
-            <h2 className="font-serif text-xl font-semibold">{t("documentsTitle")}</h2>
-            <DataRoomDocumentList documents={documents} showDownload />
-            <ScheduleCallForm dealId={dealId} />
-          </section>
+    <AppShell variant="investor" workspace>
+      <div className="flex min-h-0 flex-1 flex-col gap-3">
+        <div className="flex shrink-0 flex-wrap items-center justify-between gap-2">
+          <DealRoomBackLink href="/inversionista/salas" variant="investor" />
+          <h1 className="truncate font-serif text-lg font-semibold sm:text-xl">{deal.name}</h1>
         </div>
+        <div className="shrink-0">
+          <DealRoomStats summary={summary} variant="investor" />
+        </div>
+
+        <SplitWorkspace
+          panesLabel={t("workspacePanes")}
+          primaryLabel={t("paneMain")}
+          secondaryLabel={t("paneDocs")}
+          primary={
+            <>
+              <InvestorAssessmentPanel assessment={assessment} />
+              <section className="space-y-3">
+                <h2 className="font-serif text-lg font-semibold sm:text-xl">{t("findingsTitle")}</h2>
+                <FindingsByCategory
+                  findingsByCategory={findingsByCategory}
+                  translationNamespace="investor.room"
+                />
+              </section>
+            </>
+          }
+          secondary={
+            <section className="space-y-4">
+              <h2 className="font-serif text-lg font-semibold sm:text-xl">{t("documentsTitle")}</h2>
+              <DataRoomDocumentList documents={documents} showDownload />
+              <ScheduleCallForm dealId={dealId} />
+            </section>
+          }
+        />
       </div>
     </AppShell>
   );
