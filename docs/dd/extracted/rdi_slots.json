@@ -1,0 +1,52 @@
+[
+  {
+    "id": "corporate_governance",
+    "title_es": "3. Información Corporativa y Gobierno",
+    "title_en": "3. Corporate Information and Governance"
+  },
+  {
+    "id": "founders_shareholders",
+    "title_es": "4. Fundadores y Acuerdo de Accionistas",
+    "title_en": "4. Founders and Shareholders' Arrangements"
+  },
+  {
+    "id": "ip_technology",
+    "title_es": "5. Propiedad Intelectual, Tecnología y Confidencialidad",
+    "title_en": "5. Intellectual Property, Technology, and Confidentiality"
+  },
+  {
+    "id": "equity_compensation",
+    "title_es": "6. Compensación en Acciones, ESOP y Otros Incentivos",
+    "title_en": "6. Equity Compensation, ESOP, and Other Incentives"
+  },
+  {
+    "id": "labor_talent",
+    "title_es": "7. Laboral, Consultores y Talento",
+    "title_en": "7. Employment, Contractors, and Talent"
+  },
+  {
+    "id": "commercial_customers",
+    "title_es": "8. Contratos Comerciales y Clientes Corporativos",
+    "title_en": "8. Commercial Agreements and Corporate Customers"
+  },
+  {
+    "id": "privacy_consumer",
+    "title_es": "9. Usuarios Finales, Privacidad y Protección al Consumidor",
+    "title_en": "9. End Users, Privacy, and Consumer Protection"
+  },
+  {
+    "id": "financing_related",
+    "title_es": "10. Financiamiento, Endeudamiento y Transacciones con Vinculados",
+    "title_en": "10. Financing, Indebtedness, and Related-Party Transactions"
+  },
+  {
+    "id": "disputes_compliance",
+    "title_es": "11. Litigios, Cumplimiento y Seguros",
+    "title_en": "11. Disputes, Compliance, and Insurance"
+  },
+  {
+    "id": "other",
+    "title_es": "Otros / documentación adicional",
+    "title_en": "Other / additional documentation"
+  }
+]
