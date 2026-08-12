@@ -116,7 +116,7 @@ export function getTermSheetLearnDocument(
   };
 }
 
-const LEARN_ONLY_TOTAL = 6;
+const LEARN_ONLY_TOTAL = 8;
 
 function firmLearnPayload(
   documentType: Exclude<LearnDocumentType, "shareholders" | "term_sheet">,
@@ -153,6 +153,18 @@ export function getTermsOfUseLearnDocument(
   locale: DocumentLocale = "es-CO",
 ): LearnDocumentPayload {
   return firmLearnPayload("terms_of_use", locale, 6, false);
+}
+
+export function getIpAssignmentLearnDocument(
+  locale: DocumentLocale = "es-CO",
+): LearnDocumentPayload {
+  return firmLearnPayload("ip_assignment", locale, 7, false);
+}
+
+export function getEquityCompensationLearnDocument(
+  locale: DocumentLocale = "es-CO",
+): LearnDocumentPayload {
+  return firmLearnPayload("equity_compensation", locale, 8, false);
 }
 
 /** Sample employment learn payload without loading saved draft state (unit tests). */
@@ -208,5 +220,11 @@ export async function getLearnDocument(
   if (documentType === "corporate_client") {
     return getCorporateClientLearnDocument(locale);
   }
-  return getTermsOfUseLearnDocument(locale);
+  if (documentType === "terms_of_use") {
+    return getTermsOfUseLearnDocument(locale);
+  }
+  if (documentType === "ip_assignment") {
+    return getIpAssignmentLearnDocument(locale);
+  }
+  return getEquityCompensationLearnDocument(locale);
 }
