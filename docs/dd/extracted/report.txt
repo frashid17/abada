@@ -1,0 +1,354 @@
+REPORTE BILINGÜE DE HALLAZGOS DE DEBIDA DILIGENCIA
+BILINGUAL DUE DILIGENCE FINDINGS REPORT
+Ausencia de Cláusulas y Mecanismos Críticos en el Paquete Legal
+Missing Critical Clauses and Implementation Mechanics in the Legal Document Package
+Español
+English
+Sociedad: [NOMBRE DE LA SOCIEDAD] S.A.S. (la "Sociedad")
+Company: [COMPANY NAME] S.A.S. (the "Company")
+Fecha: [FECHA]
+Date: [DATE]
+Preparado para: [INVERSIONISTA / ADQUIRENTE / JUNTA DIRECTIVA / FUNDADORES]
+Prepared for: [INVESTOR / ACQUIRER / BOARD OF DIRECTORS / FOUNDERS]
+Transacción: [INVERSIÓN / ADQUISICIÓN / OTRA]
+Transaction: [INVESTMENT / ACQUISITION / OTHER]
+1. Alcance, Base de Revisión y Limitaciones / Scope, Review Basis, and Limitations
+Español
+English
+Este reporte resume hallazgos identificados con base en el Requerimiento de Información para Debida Diligencia (el "RDI") relacionado con la Sociedad. Para efectos de este reporte, se asume que aproximadamente el veinte por ciento (20%) de las cláusulas, mecanismos operativos, evidencias de ejecución o documentos complementarios críticos esperados en cada documento principal del paquete legal no fueron entregados, no existen, no están firmados, no son consistentes entre sí o no han sido implementados de manera verificable.
+This report summarizes findings identified based on the Due Diligence Request for Information (the "RFI") relating to the Company. For purposes of this report, it is assumed that approximately twenty percent (20%) of the critical clauses, operative mechanisms, evidence of execution, or ancillary documents expected for each principal document in the legal package were not provided, do not exist, are not executed, are internally inconsistent, or have not been verifiably implemented.
+Los hallazgos se presentan como riesgos documentales, corporativos, contractuales, laborales, tecnológicos y comerciales. La ausencia de una cláusula o mecanismo no implica necesariamente un incumplimiento legal, pero puede afectar la exigibilidad de derechos, la asignación de riesgos, la preparación para una financiación o adquisición y el valor de la Sociedad.
+Findings are presented as documentary, corporate, contractual, employment, technology, and commercial risks. The absence of a clause or mechanism does not necessarily mean a legal violation, but it may affect enforceability, risk allocation, readiness for financing or an acquisition, and Company value.
+Este reporte no constituye una opinión legal definitiva y no sustituye una revisión completa de documentos ejecutados, libros corporativos, cap table, registros de PI, contratos materiales, sistemas tecnológicos y circunstancias fácticas de la Sociedad.
+This report is not a definitive legal opinion and does not replace a complete review of executed documents, corporate books, capitalization records, IP registrations, material agreements, technology systems, and the Company's factual circumstances.
+2. Resumen Ejecutivo / Executive Summary
+Español
+English
+La Sociedad cuenta con una estructura documental base para regular relaciones con fundadores, personal técnico, empleados, clientes corporativos y participantes de incentivos de capital. Sin embargo, se identifican brechas materiales en aproximadamente el 20% de los mecanismos críticos esperados en cada documento principal.
+The Company has a baseline document structure to govern relationships with founders, technical personnel, employees, corporate customers, and equity incentive participants. However, material gaps have been identified in approximately 20% of the critical mechanisms expected in each principal document.
+Las brechas prioritarias se concentran en: (i) implementación corporativa de vesting y recompra; (ii) cadena de titularidad de PI; (iii) consistencia entre cap table, estatutos, acuerdo de accionistas y ESOP; (iv) asignación de riesgos en contratos comerciales y de datos; y (v) formalización laboral y de contratistas.
+The priority gaps are concentrated in: (i) corporate implementation of vesting and repurchase rights; (ii) chain of IP ownership; (iii) consistency among the cap table, bylaws, shareholders' agreement, and ESOP; (iv) risk allocation in commercial and data agreements; and (v) employment and contractor formalization.
+Clasificación General de Riesgo / Overall Risk Classification
+Área / Area
+Nivel de riesgo / Risk Level
+Impacto potencial / Potential Impact
+Prioridad / Priority
+Vesting, recompra y salida de fundadores / Founder vesting, repurchase, and departures
+Alto / High
+Dilución no controlada, dead equity, bloqueo de inversión o venta / Uncontrolled dilution, dead equity, blocked financing or exit
+Inmediata / Pre-closing / Immediate / Pre-closing
+PI, tecnología y activos críticos / IP, technology, and critical assets
+Alto / High
+Falta de titularidad, reclamaciones de terceros, pérdida de valor / Ownership gaps, third-party claims, loss of value
+Inmediata / Pre-closing / Immediate / Pre-closing
+Cap table, ESOP y aprobaciones corporativas / Cap table, ESOP, and corporate approvals
+Alto / High
+Emisiones cuestionables, dilución desconocida, conflicto con inversionistas / Questionable issuances, unknown dilution, investor disputes
+Inmediata / Pre-closing / Immediate / Pre-closing
+Contratos laborales y de contratistas / Employment and contractor agreements
+Alto / High
+Contingencias laborales, PI incompleta, fuga de información / Employment exposure, incomplete IP, information leakage
+Inmediata / Pre-closing / Immediate / Pre-closing
+Contratos B2B y protección de datos / B2B agreements and data protection
+Medio-Alto / Medium-High
+Responsabilidad excesiva, pérdida de clientes, incumplimiento de datos / Excessive liability, customer loss, data non-compliance
+Pre-cierre o post-cierre corto / Pre-closing or short post-closing
+Términos de usuarios y consumo / End-user terms and consumer protection
+Medio / Medium
+Reclamaciones, cobros cuestionables, riesgo regulatorio / Claims, disputed charges, regulatory risk
+Post-cierre prioritario / Priority post-closing
+Financiamiento e instrumentos convertibles / Financing and convertible instruments
+Medio-Alto / Medium-High
+Conversión incierta, dilución no reflejada / Uncertain conversion, unrecorded dilution
+Inmediata / Pre-closing / Immediate / Pre-closing
+Cumplimiento, seguros y litigios / Compliance, insurance, and disputes
+Medio / Medium
+Riesgo regulatorio y pasivos contingentes / Regulatory risk and contingent liabilities
+Post-cierre prioritario / Priority post-closing
+3. Hallazgos por Documento / Findings by Document
+3.1 Acuerdo de Fundadores y Accionistas / Founders' and Shareholders' Agreement
+Hallazgo en español
+Finding in English
+Hallazgo 1 – Vesting no plenamente implementado mediante mecanismos ejecutables. Riesgo: Alto. No existe evidencia suficiente de contratos de recompra, opciones de compra, restricciones estatutarias, promesas de transferencia, endosos, cartas de instrucción, custodia u otros mecanismos que permitan ejecutar la recompra de Acciones no consolidadas bajo derecho colombiano. Impacto: un fundador que salga temprano podría conservar una participación desproporcionada, crear dead equity y dificultar una ronda o salida. Remediación: ejecutar un paquete de vesting y recompra para cada fundador, reflejar restricciones en estatutos cuando corresponda y registrar las restricciones en el libro de accionistas.
+Finding 1 – Vesting not fully implemented through enforceable mechanics. Risk: High. There is insufficient evidence of repurchase agreements, call options, bylaw restrictions, transfer undertakings, endorsements, instruction letters, custody arrangements, or other mechanisms enabling the repurchase of unvested shares under Colombian law. Impact: a founder departing early may retain a disproportionate stake, create dead equity, and hinder financing or an exit. Remediation: execute a vesting and repurchase package for each founder, reflect relevant restrictions in the bylaws, and record restrictions in the shareholders' register.
+Hallazgo 2 – Good Leaver / Bad Leaver incompleto o sin procedimiento operativo. Riesgo: Alto. Falta un proceso detallado para determinar Causal Grave, notificar, permitir subsanación cuando corresponda, valorar Acciones consolidadas y ejercer derechos de compra. Impacto: disputas sobre salida, recompra, retención de acciones y transición operativa. Remediación: adoptar un anexo operativo de salida y alinearlo con contratos de recompra, estatutos y contratos laborales o de servicios.
+Finding 2 – Good Leaver / Bad Leaver provisions are incomplete or lack an operative procedure. Risk: High. A detailed process is missing for determining Cause, giving notice, allowing cure where appropriate, valuing vested shares, and exercising purchase rights. Impact: disputes over departures, repurchases, share retention, and operational transition. Remediation: adopt an operative founder departure schedule and align it with repurchase agreements, bylaws, and employment or services agreements.
+Hallazgo 3 – Materias reservadas y aprobaciones no reflejadas plenamente. Riesgo: Medio-Alto. Algunas decisiones críticas —emisiones dilutivas, deuda relevante, operaciones con vinculados, venta de activos esenciales y cambios al ESOP— no están reflejadas de manera consistente en estatutos, actas o matriz de aprobaciones. Impacto: protección contractual potencialmente no oponible frente a la Sociedad o terceros. Remediación: preparar matriz de materias reservadas, actualizar estatutos cuando sea necesario y adoptar calendario de aprobaciones.
+Finding 3 – Reserved matters and approvals are not fully reflected. Risk: Medium-High. Certain critical decisions—dilutive issuances, material debt, related-party transactions, sales of key assets, and ESOP changes—are not consistently reflected in the bylaws, minutes, or approval matrix. Impact: contractual protections may not be enforceable against the Company or third parties. Remediation: prepare a reserved matters matrix, amend the bylaws where needed, and adopt an approval calendar.
+Hallazgo 4 – ROFR, tag-along y drag-along no totalmente documentados. Riesgo: Medio-Alto. Faltan avisos modelo, plazos, adhesión obligatoria de adquirentes, registro de restricciones y protecciones de responsabilidad para minoritarios. Impacto: ingreso de terceros no deseados, bloqueo de salida o responsabilidad desproporcionada en una venta. Remediación: completar estatutos, formatos de aviso y adhesión, y limitar responsabilidad de minoritarios en drag-along.
+Finding 4 – ROFR, tag-along, and drag-along rights are not fully documented. Risk: Medium-High. Model notices, timelines, mandatory purchaser joinders, registration of restrictions, and minority liability protections are missing. Impact: unwanted third-party entry, blocked exit, or disproportionate liability in a sale. Remediation: complete the bylaws, notice and joinder forms, and limit minority liability in drag-along transactions.
+Hallazgo 5 – Adhesión de nuevos accionistas y consistencia documental incompleta. Riesgo: Medio. No hay evidencia de adhesión de todos los accionistas, beneficiarios de opciones ejercidas o adquirentes de acciones a las obligaciones de gobierno, PI, confidencialidad y transferencia. Impacto: accionistas no sujetos a reglas esenciales. Remediación: obtener joinders, reconciliar el libro de accionistas con el cap table y condicionar futuras inscripciones a la adhesión.
+Finding 5 – New shareholder joinders and document consistency are incomplete. Risk: Medium. There is no evidence that all shareholders, exercised option holders, or transferees are bound by governance, IP, confidentiality, and transfer obligations. Impact: shareholders may not be subject to essential rules. Remediation: obtain joinders, reconcile the shareholders' register with the cap table, and condition future registrations on adherence.
+3.2 Acuerdo de Confidencialidad, Cesión de PI e Invenciones / Confidentiality, IP Assignment, and Inventions Agreement
+Hallazgo en español
+Finding in English
+Hallazgo 6 – Cobertura incompleta de la cadena de cesión de PI. Riesgo: Alto. Aproximadamente el 20% de las personas que contribuyeron al producto o accedieron a información crítica no cuentan con acuerdos ejecutados de confidencialidad, cesión de PI e invenciones. Impacto: la Sociedad puede no ser titular de código, diseños, documentación, datos o know-how críticos. Remediación: ejecutar acuerdos con todos los contribuyentes, incluyendo excolaboradores; cuando no sea posible, obtener cesiones específicas, licencias o confirmaciones de titularidad.
+Finding 6 – Incomplete IP assignment chain of title. Risk: High. Approximately 20% of persons who contributed to the product or accessed critical information do not have executed confidentiality, IP assignment, and inventions agreements. Impact: the Company may not own critical code, designs, documentation, data, or know-how. Remediation: execute agreements with all contributors, including former contributors; where not possible, obtain specific assignments, licenses, or ownership confirmations.
+Hallazgo 7 – PI preexistente no identificada o sin licencia adecuada. Riesgo: Alto. Faltan anexos completos de PI preexistente y licencias suficientes para activos incorporados al producto. Impacto: un fundador o excolaborador puede reclamar titularidad de componentes esenciales. Remediación: realizar auditoría de PI preexistente y obtener licencias mundiales, perpetuas, transferibles, sublicenciables y libres de regalías cuando corresponda.
+Finding 7 – Pre-existing IP is unidentified or insufficiently licensed. Risk: High. Complete schedules of pre-existing IP and sufficient licenses for incorporated assets are missing. Impact: a founder or former contributor may claim ownership of essential components. Remediation: conduct a pre-existing IP audit and obtain worldwide, perpetual, transferable, sublicensable, royalty-free licenses where appropriate.
+Hallazgo 8 – Control incompleto de repositorios, dominios y cuentas tecnológicas. Riesgo: Alto. No hay evidencia concluyente de control corporativo sobre repositorios, dominios, cuentas cloud, secretos, certificados, herramientas de IA y accesos administrativos críticos. Impacto: un excolaborador puede retener accesos, bloquear despliegues o interrumpir servicios. Remediación: inventario de activos, migración a cuentas corporativas, MFA, control basado en roles y proceso formal de offboarding.
+Finding 8 – Incomplete control over repositories, domains, and technology accounts. Risk: High. There is no conclusive evidence of corporate control over repositories, domains, cloud accounts, secrets, certificates, AI tools, and critical administrative access. Impact: a former contributor may retain access, block deployments, or interrupt services. Remediation: prepare an asset inventory, migrate to corporate accounts, deploy MFA and role-based access control, and implement formal offboarding.
+Hallazgo 9 – Gestión insuficiente de open source, terceros e IA. Riesgo: Medio-Alto. Faltan inventarios de componentes, licencias, datasets, modelos de IA y controles para evitar el uso de herramientas no autorizadas. Impacto: exposición a copyleft, divulgación de código, infracción de licencias o filtración de datos. Remediación: implementar SBOM, políticas de open source e IA y procesos de aprobación de herramientas de terceros.
+Finding 9 – Insufficient management of open source, third-party materials, and AI. Risk: Medium-High. Inventories of components, licenses, datasets, AI models, and controls against unauthorized tools are missing. Impact: exposure to copyleft, source code disclosure, license infringement, or data leakage. Remediation: implement an SBOM, open-source and AI policies, and third-party tool approval processes.
+3.3 Plan de Compensación en Acciones e Incentivos / Equity Compensation and Incentive Plan
+Hallazgo en español
+Finding in English
+Hallazgo 10 – Reserva del ESOP y autorizaciones corporativas incompletas. Riesgo: Alto. No existe evidencia suficiente de aprobación de la reserva, del Administrador del Plan y de otorgamientos individuales conforme a estatutos, acuerdo de accionistas y capital autorizado. Impacto: opciones o acciones cuestionables, dilución no prevista o insuficiencia de capital autorizado. Remediación: ratificar el Plan, reserva y cap table; ajustar estatutos y capital autorizado cuando sea necesario.
+Finding 10 – ESOP reserve and corporate approvals are incomplete. Risk: High. There is insufficient evidence of approval of the reserve, Plan Administrator, and individual grants under the bylaws, shareholders' agreement, and authorized capital. Impact: questionable options or shares, unanticipated dilution, or insufficient authorized capital. Remediation: ratify the Plan, reserve, and cap table; amend the bylaws and authorized capital where necessary.
+Hallazgo 11 – Cartas de Otorgamiento y términos de opciones incompletos. Riesgo: Medio-Alto. Cerca del 20% de las cartas o acuerdos no contienen precio, fechas, vesting, vencimiento, plazo post-terminación, aceleración, tratamiento de salida o requisitos de adhesión. Impacto: reclamaciones incompatibles con la intención de la Sociedad y dificultad para calcular dilución o cancelar derechos. Remediación: complementar o reemitir cartas, obtener aceptación y documentar ejercicios, cancelaciones y salidas.
+Finding 11 – Grant letters and option terms are incomplete. Risk: Medium-High. Approximately 20% of letters or agreements omit purchase/exercise price, dates, vesting, expiration, post-termination exercise period, acceleration, leaver treatment, or joinder requirements. Impact: claims inconsistent with Company intent and difficulty calculating dilution or cancelling rights. Remediation: supplement or reissue grant letters, obtain acceptance, and document exercises, cancellations, and departures.
+Hallazgo 12 – Tratamiento tributario y de seguridad social no documentado. Riesgo: Medio. Faltan procedimientos sobre impuestos, retenciones, seguridad social y efectos laborales de los incentivos. Impacto: contingencias tributarias, laborales o de nómina. Remediación: obtener memorando tributario y laboral, adoptar protocolo de retenciones y actualizar documentación individual.
+Finding 12 – Tax and social security treatment is undocumented. Risk: Medium. Procedures for taxes, withholding, social security, and employment effects of incentives are missing. Impact: tax, employment, or payroll contingencies. Remediation: obtain tax and employment advice, adopt a withholding protocol, and update individual documentation.
+3.4 Contrato Laboral con Confidencialidad y Cesión de PI / Employment Agreement with Confidentiality and IP Assignment
+Hallazgo en español
+Finding in English
+Hallazgo 13 – Contratos laborales sin anexos completos de PI, datos y seguridad. Riesgo: Alto. Cerca del 20% de los contratos no incluyen o no incorporan efectivamente confidencialidad, cesión de PI, derechos morales, software de terceros, IA, datos, seguridad, devolución de activos y supervivencia de obligaciones. Impacto: brechas de PI, fuga de información, retención de accesos y dificultades para exigir obligaciones post-empleo. Remediación: adoptar contratos y anexos estándar, regularizar contratos vigentes mediante otrosíes y mantener matriz de firmas.
+Finding 13 – Employment agreements lack complete IP, data, and security addenda. Risk: High. Approximately 20% of agreements do not include or effectively incorporate confidentiality, IP assignment, moral rights, third-party software, AI, data, security, asset return, and survival provisions. Impact: IP gaps, information leakage, retained access, and difficulty enforcing post-employment obligations. Remediation: adopt standard agreements and addenda, regularize existing agreements through amendments, and maintain an execution matrix.
+Hallazgo 14 – Documentación laboral y de trabajo remoto incompleta. Riesgo: Medio-Alto. Faltan contratos, modificaciones, políticas de teletrabajo/trabajo remoto, control de jornada, desconexión, SST y evidencia de aportes para parte del personal. Impacto: reclamaciones laborales, sanciones, riesgos de horas extra y debilidades de seguridad. Remediación: realizar auditoría laboral, actualizar contratos y políticas, y documentar onboarding y offboarding.
+Finding 14 – Employment and remote-work documentation is incomplete. Risk: Medium-High. Agreements, amendments, telework/remote-work policies, time controls, disconnection, occupational health and safety, and contribution evidence are missing for part of the workforce. Impact: employment claims, penalties, overtime exposure, and security weaknesses. Remediation: conduct an employment audit, update agreements and policies, and document onboarding and offboarding.
+Hallazgo 15 – Conflictos de interés y actividades externas insuficientemente regulados. Riesgo: Medio. Algunos contratos no exigen revelación de conflictos ni regulan actividades externas que interfieran con el cargo o impliquen competencia durante la relación. Impacto: uso de recursos corporativos para proyectos propios, competencia o relaciones no reveladas. Remediación: adoptar política de conflictos, actualizar contratos y establecer declaraciones anuales.
+Finding 15 – Conflicts of interest and outside activities are insufficiently regulated. Risk: Medium. Certain agreements do not require disclosure of conflicts or regulate outside activities that interfere with duties or involve competition during engagement. Impact: use of Company resources for personal projects, competition, or undisclosed relationships. Remediation: adopt a conflicts policy, update agreements, and implement annual declarations.
+3.5 Contrato Marco con Clientes Corporativos / Corporate Customer Master Services Agreement
+Hallazgo en español
+Finding in English
+Hallazgo 16 – Protección insuficiente de la Tecnología del Proveedor y entregables. Riesgo: Alto. Cerca del 20% de los contratos B2B no separan claramente Tecnología del Proveedor, Datos del Cliente, entregables específicos y componentes reutilizables. Impacto: un cliente podría reclamar derechos sobre código base, metodologías, modelos o mejoras generales. Remediación: actualizar MSA y contratos materiales para reservar Tecnología del Proveedor y otorgar licencias limitadas salvo cesión expresa y valorizada.
+Finding 16 – Insufficient protection of Provider Technology and deliverables. Risk: High. Approximately 20% of B2B agreements do not clearly distinguish Provider Technology, Customer Data, specific deliverables, and reusable components. Impact: a customer may claim rights over base code, methodologies, models, or general improvements. Remediation: update the MSA and material agreements to reserve Provider Technology and grant limited licenses unless an express, valued assignment is intended.
+Hallazgo 17 – Limitaciones de responsabilidad e indemnidades incompletas o desfavorables. Riesgo: Alto. Algunos contratos carecen de cap claro, exclusión de daños indirectos, supercap limitado, remedio exclusivo o límites de indemnidad. Impacto: una reclamación puede superar ingresos, liquidez o cobertura de seguro de la Sociedad. Remediación: estandarizar exclusiones, cap general basado en doce meses de tarifas y supercaps limitados; priorizar renegociación de contratos críticos.
+Finding 17 – Limitation of liability and indemnity provisions are incomplete or unfavorable. Risk: High. Certain agreements lack a clear cap, indirect damages exclusion, limited supercap, exclusive remedy, or indemnity limitations. Impact: a claim may exceed the Company's revenue, liquidity, or insurance coverage. Remediation: standardize exclusions, a general cap based on twelve months of fees, and limited supercaps; prioritize renegotiation of critical agreements.
+Hallazgo 18 – DPA, seguridad y gestión de Datos del Cliente insuficientes. Riesgo: Medio-Alto. No todos los contratos incluyen DPA, roles Responsable/Encargado, instrucciones, subencargados, seguridad, notificación de incidentes, exportación, retención y eliminación. Impacto: incumplimiento de datos y disputas con clientes regulados. Remediación: implementar DPA colombiano estándar, anexos de seguridad y procedimiento de respuesta a incidentes.
+Finding 18 – DPA, security, and Customer Data management are insufficient. Risk: Medium-High. Not all agreements include a DPA, controller/processor roles, instructions, subprocessors, security, incident notification, export, retention, and deletion provisions. Impact: data non-compliance and disputes with regulated customers. Remediation: implement a standard Colombian DPA, security schedules, and an incident response procedure.
+Hallazgo 19 – Pagos, suspensión y terminación no suficientemente protegidos. Riesgo: Medio. Algunos contratos no regulan adecuadamente facturación, impuestos, mora, suspensión, terminación, compromisos no cancelables o exportación de datos. Impacto: mora, trabajo no remunerado y obligaciones indefinidas de datos. Remediación: actualizar términos comerciales, aplicar controles de crédito y establecer procedimientos de suspensión y exportación.
+Finding 19 – Payment, suspension, and termination are insufficiently protected. Risk: Medium. Certain agreements do not adequately regulate invoicing, taxes, late payment, suspension, termination, non-cancellable commitments, or data export. Impact: late payment, unpaid work, and indefinite data obligations. Remediation: update commercial terms, apply credit controls, and establish suspension and export procedures.
+3.6 Términos y Condiciones para Usuarios Finales / End-User Terms and Conditions
+Hallazgo en español
+Finding in English
+Hallazgo 20 – Evidencia insuficiente de aceptación y modificación de términos. Riesgo: Medio-Alto. No existe evidencia suficiente de clickwrap, registros de versión, fecha de aceptación, identificación de usuario o avisos de cambios materiales. Impacto: se pueden cuestionar restricciones de uso, cobros, renovaciones, responsabilidad y suspensión de cuentas. Remediación: implementar clickwrap obligatorio, logs inalterables y mecanismos de aceptación renovada.
+Finding 20 – Insufficient evidence of acceptance and amendment of terms. Risk: Medium-High. There is insufficient evidence of clickwrap, version records, acceptance dates, user identification, or notices of material changes. Impact: use restrictions, charges, renewals, liability limitations, and account suspension may be challenged. Remediation: implement mandatory clickwrap, immutable logs, and renewed acceptance mechanisms.
+Hallazgo 21 – Disposiciones de IA, Contenido del Usuario y datos incompletas. Riesgo: Medio-Alto. Faltan advertencias de IA, revisión humana, límites a decisiones de alto impacto, licencia sobre contenido, responsabilidad por datos de terceros y reglas de información agregada. Impacto: resultados inexactos, reclamaciones de terceros y riesgo de privacidad. Remediación: actualizar términos con sección de IA, reglas de contenido, salvaguardas de alto impacto y referencias claras a privacidad.
+Finding 21 – AI, User Content, and data provisions are incomplete. Risk: Medium-High. AI warnings, human review, limits on high-impact decisions, content licenses, responsibility for third-party data, and aggregated information rules are missing. Impact: inaccurate results, third-party claims, and privacy risk. Remediation: update the terms with an AI section, content rules, high-impact safeguards, and clear privacy references.
+Hallazgo 22 – Cobros, renovaciones, consumidor y responsabilidad incompletos. Riesgo: Medio. Algunos términos no regulan de forma transparente renovación, cancelación, reembolso, pruebas, impuestos, PQR y límites compatibles con normas de consumidor. Impacto: chargebacks, reclamaciones y exposición regulatoria. Remediación: alinear flujos de compra y términos con normas de consumidor, transparencia de precios y proceso documentado de PQR/cancelación/reembolso.
+Finding 22 – Charges, renewals, consumer rights, and liability are incomplete. Risk: Medium. Certain terms do not transparently regulate renewal, cancellation, refunds, trials, taxes, consumer complaint channels, and consumer-law compatible limits. Impact: chargebacks, claims, and regulatory exposure. Remediation: align purchase flows and terms with consumer rules, pricing transparency, and documented complaint/cancellation/refund processes.
+3.7 Datos, Privacidad y Seguridad / Data, Privacy, and Security
+Hallazgo en español
+Finding in English
+Hallazgo 23 – Marco de privacidad y documentación de roles incompleto. Riesgo: Medio-Alto. Faltan inventario de bases de datos, mapa de flujos, matriz Responsable/Encargado/Subencargado, contratos con proveedores y evidencia de atención de derechos. Impacto: dificultad para demostrar cumplimiento bajo Ley 1581 de 2012 y obstáculo para ventas B2B. Remediación: implementar programa de privacidad, inventario, DPA, procedimientos de titulares e incidentes, y revisión de transferencias internacionales.
+Finding 23 – Privacy framework and role documentation are incomplete. Risk: Medium-High. A database inventory, data flow map, controller/processor/subprocessor matrix, vendor agreements, and evidence of data-subject rights handling are missing. Impact: difficulty demonstrating compliance with Law 1581 of 2012 and obstacles to B2B sales. Remediation: implement a privacy program, inventory, DPAs, data-subject and incident procedures, and review of international transfers.
+Hallazgo 24 – Controles de seguridad y respuesta a incidentes insuficientemente formalizados. Riesgo: Medio-Alto. Faltan políticas y evidencias sobre accesos, MFA, segregación, secretos, backups, vulnerabilidades, offboarding y retención/eliminación de datos. Impacto: mayor riesgo de incidentes, interrupción de servicios y responsabilidad frente a clientes. Remediación: formalizar programa mínimo de seguridad, responsables, registros y pruebas periódicas.
+Finding 24 – Security controls and incident response are insufficiently formalized. Risk: Medium-High. Policies and evidence relating to access, MFA, segregation, secrets, backups, vulnerabilities, offboarding, and data retention/deletion are missing. Impact: increased risk of incidents, service interruption, and customer liability. Remediation: formalize a minimum security program, assign owners, maintain records, and conduct periodic testing.
+3.8 Financiamiento, Convertibles y Vinculados / Financing, Convertibles, and Related Parties
+Hallazgo en español
+Finding in English
+Hallazgo 25 – SAFEs, notas convertibles y derechos de inversión no reconciliados. Riesgo: Medio-Alto. No hay evidencia completa de reconciliación entre instrumentos convertibles, topes, descuentos, intereses, vencimientos, cambio de control, aprobaciones, cap table y estatutos. Impacto: conversión incierta, dilución no anticipada y reclamaciones de inversionistas. Remediación: consolidar instrumentos, verificar cálculos, obtener ratificaciones y actualizar cap table y estatutos.
+Finding 25 – SAFEs, convertible notes, and investment rights are not reconciled. Risk: Medium-High. There is no complete evidence reconciling convertible instruments, caps, discounts, interest, maturity, change-of-control provisions, approvals, cap table, and bylaws. Impact: uncertain conversion, unanticipated dilution, and investor claims. Remediation: consolidate instruments, verify calculations, obtain ratifications, and update the cap table and bylaws.
+Hallazgo 26 – Operaciones con vinculados sin evidencia completa de aprobación. Riesgo: Medio. Faltan aprobaciones o análisis de mercado para parte de las transacciones con fundadores, accionistas, administradores, Afiliadas o relacionados. Impacto: conflictos de interés, cuestionamientos de gobierno y ajustes tributarios. Remediación: inventariar operaciones, documentar condiciones de mercado, ratificar aprobaciones y adoptar política de vinculados.
+Finding 26 – Related-party transactions lack complete evidence of approval. Risk: Medium. Approvals or arm's-length analyses are missing for certain transactions with founders, shareholders, officers, Affiliates, or related persons. Impact: conflicts of interest, governance concerns, and tax adjustments. Remediation: inventory transactions, document arm's-length terms, ratify approvals, and adopt a related-party policy.
+3.9 Cumplimiento, Litigios y Seguros / Compliance, Disputes, and Insurance
+Hallazgo en español
+Finding in English
+Hallazgo 27 – Políticas de cumplimiento y evidencia de implementación incompletas. Riesgo: Medio. Faltan políticas, capacitaciones, certificaciones o registros sobre anticorrupción, conflictos, lavado de activos, sanciones, ética, canal de denuncias y proveedores. Impacto: riesgo reputacional y regulatorio, especialmente frente a inversionistas o clientes institucionales. Remediación: adoptar políticas proporcionales, canal de reporte, capacitación y due diligence básica de contrapartes.
+Finding 27 – Compliance policies and implementation evidence are incomplete. Risk: Medium. Policies, training, certifications, or records relating to anti-corruption, conflicts, AML, sanctions, ethics, whistleblowing, and vendors are missing. Impact: reputational and regulatory risk, especially with institutional investors or customers. Remediation: adopt proportionate policies, a reporting channel, training, and basic counterparty due diligence.
+Hallazgo 28 – Cobertura de seguros y reservas no verificables. Riesgo: Medio. Faltan pólizas, exclusiones, renovaciones, notificaciones de reclamaciones y reservas sobre ciberseguridad, E&O, D&O, responsabilidad civil o empleo. Impacto: cobertura insuficiente para incidentes, reclamaciones de clientes, conflictos laborales o administradores. Remediación: revisar necesidades de seguro y priorizar cobertura ciber, E&O, responsabilidad civil y D&O según etapa y presupuesto.
+Finding 28 – Insurance coverage and contingency reserves are not verifiable. Risk: Medium. Policies, exclusions, renewals, claim notices, and reserves relating to cyber, E&O, D&O, general liability, or employment are missing. Impact: insufficient coverage for incidents, customer claims, employment disputes, or director claims. Remediation: assess insurance needs and prioritize cyber, E&O, general liability, and D&O coverage based on stage and budget.
+4. Matriz Consolidada de Remediación / Consolidated Remediation Matrix
+No.
+Hallazgo / Finding
+Riesgo / Risk
+Acción de remediación / Remediation Action
+Responsable sugerido / Suggested Owner
+Plazo / Target Timing
+1
+Vesting no implementado / Vesting not implemented
+Alto / High
+Ejecutar recompra, opciones, restricciones y registros / Execute repurchase, option, restriction, and registration documents
+Fundadores, consejo, abogado corporativo / Founders, board, corporate counsel
+Pre-cierre / Pre-closing
+2
+Good/Bad Leaver incompleto / Incomplete Good/Bad Leaver
+Alto / High
+Adoptar anexo de salida y procedimiento / Adopt departure schedule and procedure
+Fundadores, consejo / Founders, board
+Pre-cierre / Pre-closing
+3
+Materias reservadas no reflejadas / Reserved matters not reflected
+Medio-Alto / Medium-High
+Modificar estatutos y matriz / Amend bylaws and approval matrix
+Consejo, abogado corporativo / Board, corporate counsel
+Pre-cierre / Pre-closing
+4
+ROFR, tag y drag incompletos / Incomplete ROFR, tag, and drag
+Medio-Alto / Medium-High
+Actualizar estatutos, avisos y adhesiones / Update bylaws, notices, and joinders
+Fundadores, abogado corporativo / Founders, corporate counsel
+Pre-cierre / Pre-closing
+5
+Adhesiones faltantes / Missing joinders
+Medio / Medium
+Obtener joinders y actualizar libro / Obtain joinders and update register
+Secretario corporativo / Corporate secretary
+30 días / 30 days
+6
+Cesiones de PI faltantes / Missing IP assignments
+Alto / High
+Obtener acuerdos y cesiones retrospectivas / Obtain agreements and retrospective assignments
+CEO, legal, CTO
+Pre-cierre / Pre-closing
+7
+PI preexistente no resuelta / Unresolved pre-existing IP
+Alto / High
+Auditoría y licencias/cesiones / Audit and obtain licenses/assignments
+CTO, legal
+Pre-cierre / Pre-closing
+8
+Activos en cuentas personales / Assets in personal accounts
+Alto / High
+Migrar a cuentas corporativas y controlar accesos / Migrate to corporate accounts and control access
+CTO, security
+Inmediato / Immediate
+9
+Open source e IA sin controles / Uncontrolled open source and AI
+Medio-Alto / Medium-High
+Implementar SBOM y políticas / Implement SBOM and policies
+CTO, legal
+30-60 días / 30-60 days
+10
+ESOP sin aprobación completa / ESOP lacks full approval
+Alto / High
+Ratificar plan, reserva y cap table / Ratify plan, reserve, and cap table
+Board, legal, finance
+Pre-cierre / Pre-closing
+11
+Otorgamientos incompletos / Incomplete grants
+Medio-Alto / Medium-High
+Complementar o reemitir cartas / Supplement or reissue grant letters
+Legal, HR
+30 días / 30 days
+12
+Protocolo fiscal de equity faltante / Missing equity tax protocol
+Medio / Medium
+Obtener memo y adoptar retenciones / Obtain memo and adopt withholding process
+Finance, tax adviser
+30-60 días / 30-60 days
+13
+Contratos laborales incompletos / Incomplete employment agreements
+Alto / High
+Ejecutar otrosíes o acuerdos de PI / Execute amendments or IP agreements
+HR, legal
+Pre-cierre / Pre-closing
+14
+Trabajo remoto y aportes / Remote work and contributions
+Medio-Alto / Medium-High
+Auditoría laboral y políticas / Employment audit and policies
+HR, employment counsel
+60 días / 60 days
+15
+Conflictos de interés / Conflicts of interest
+Medio / Medium
+Política y declaraciones anuales / Policy and annual declarations
+Board, HR
+60 días / 60 days
+16
+PI B2B mal protegida / Poor B2B IP protection
+Alto / High
+Actualizar MSA y adendas críticas / Update MSA and critical amendments
+Legal, sales
+Pre-cierre para contratos críticos / Pre-closing for critical contracts
+17
+Caps e indemnidades deficientes / Deficient caps and indemnities
+Alto / High
+Estandarizar y renegociar / Standardize and renegotiate
+Legal, finance
+Pre-cierre para contratos críticos / Pre-closing for critical contracts
+18
+DPA y seguridad B2B incompletos / Incomplete B2B DPA and security
+Medio-Alto / Medium-High
+Implementar DPA y anexos / Implement DPA and security schedules
+Legal, privacy
+30-60 días / 30-60 days
+19
+Cobro y terminación débiles / Weak payment and termination terms
+Medio / Medium
+Actualizar MSA y cobranza / Update MSA and collections process
+Legal, finance
+30 días / 30 days
+20
+Aceptación T&C insuficiente / Insufficient T&C acceptance
+Medio-Alto / Medium-High
+Implementar clickwrap y logs / Implement clickwrap and logs
+Product, legal
+30 días / 30 days
+21
+IA y contenido incompletos / Incomplete AI and content terms
+Medio-Alto / Medium-High
+Actualizar T&C y políticas de IA / Update T&C and AI policies
+Legal, product
+30 días / 30 days
+22
+Consumidor y cobros incompletos / Incomplete consumer and billing terms
+Medio / Medium
+Ajustar flujos, avisos y PQR / Update flows, notices, and complaints process
+Legal, finance, product
+60 días / 60 days
+23
+Programa de privacidad incompleto / Incomplete privacy program
+Medio-Alto / Medium-High
+Implementar inventario, DPA y derechos / Implement inventory, DPAs, and rights procedures
+Privacy, legal
+60 días / 60 days
+24
+Seguridad e incident response incompletos / Incomplete security and incident response
+Medio-Alto / Medium-High
+Formalizar programa de seguridad / Formalize security program
+CTO, security
+60 días / 60 days
+25
+Convertibles no reconciliados / Convertible instruments not reconciled
+Medio-Alto / Medium-High
+Consolidar, recalcular y ratificar / Consolidate, recalculate, and ratify
+Finance, legal
+Pre-cierre / Pre-closing
+26
+Vinculados no aprobados / Unapproved related-party transactions
+Medio / Medium
+Inventariar y ratificar / Inventory and ratify
+Board, legal, finance
+30 días / 30 days
+27
+Compliance incompleto / Incomplete compliance
+Medio / Medium
+Adoptar políticas y capacitación / Adopt policies and training
+Legal, administration
+60-90 días / 60-90 days
+28
+Seguros no verificables / Insurance not verifiable
+Medio / Medium
+Revisar y contratar/renovar / Review and procure/renew
+Finance, board
+60-90 días / 60-90 days
+5. Condiciones Recomendadas / Recommended Conditions
+5.1 Condiciones Precedentes / Conditions Precedent
+Español
+English
+Antes del cierre, se recomienda exigir: (a) reconciliación y certificación del cap table; (b) implementación ejecutable de vesting, recompra y restricciones de transferencia; (c) regularización de acuerdos de PI y confidencialidad con fundadores, empleados, contratistas y proveedores críticos; (d) control corporativo de repositorios, dominios, cuentas cloud, credenciales y activos tecnológicos esenciales; (e) ratificación del ESOP y otorgamientos existentes; (f) regularización de contratos laborales y anexos de PI; (g) actualización de contratos B2B críticos; (h) reconciliación de instrumentos convertibles; e (i) aprobaciones corporativas y estatutarias para la Transacción.
+Before closing, it is recommended to require: (a) reconciliation and certification of the cap table; (b) enforceable implementation of vesting, repurchase, and transfer restrictions; (c) regularization of IP and confidentiality agreements with founders, employees, contractors, and critical vendors; (d) corporate control of repositories, domains, cloud accounts, credentials, and essential technology assets; (e) ratification of the ESOP and existing grants; (f) regularization of employment agreements and IP addenda; (g) updates to critical B2B agreements; (h) reconciliation of convertible instruments; and (i) the corporate and bylaw approvals required for the Transaction.
+5.2 Condiciones Posteriores / Post-Closing Conditions
+Español
+English
+Dentro de 30, 60 o 90 días después del cierre, según prioridad, se recomienda: (a) implementar inventario de open source, SBOM y política de IA; (b) formalizar privacidad, contratos con encargados y procedimientos de titulares; (c) formalizar controles de seguridad, respuesta a incidentes, offboarding y gestión de accesos; (d) regularizar políticas laborales, trabajo remoto, SST, conflictos y contratistas; (e) implementar clickwrap y actualización de términos de usuarios; (f) adoptar políticas de cumplimiento y canal de denuncias; y (g) revisar coberturas de seguro.
+Within 30, 60, or 90 days after closing, depending on priority, it is recommended to: (a) implement an open-source inventory, SBOM, and AI policy; (b) formalize privacy, processor agreements, and data-subject procedures; (c) formalize security controls, incident response, offboarding, and access management; (d) regularize employment, remote work, health and safety, conflicts, and contractor policies; (e) implement clickwrap and update end-user terms; (f) adopt compliance policies and a whistleblowing channel; and (g) review insurance coverage.
+6. Conclusión / Conclusion
+Español
+English
+La Sociedad cuenta con documentos base que pueden servir como punto de partida para una estructura apta para inversión. No obstante, la ausencia o implementación incompleta de aproximadamente el 20% de las cláusulas y mecanismos críticos en cada documento genera riesgos materiales en PI, vesting, cap table, gobierno corporativo, empleo, contratos comerciales, privacidad, seguridad y financiamiento.
+The Company has baseline documents that can serve as a starting point for an investment-ready structure. However, the absence or incomplete implementation of approximately 20% of the critical clauses and mechanisms in each document creates material risks in IP, vesting, capitalization, corporate governance, employment, commercial agreements, privacy, security, and financing.
+Los hallazgos de mayor prioridad son los que afectan titularidad de activos, estructura accionaria, salida de fundadores, continuidad tecnológica y exposición contractual frente a clientes. Los hallazgos de riesgo alto deben tratarse como condiciones precedentes o, si no es viable comercialmente, como obligaciones de remediación de corto plazo con responsables, entregables verificables y consecuencias claras.
+The highest-priority findings are those affecting asset ownership, capitalization, founder departures, technology continuity, and contractual exposure to customers. High-risk findings should be treated as conditions precedent or, if commercially impracticable, as short-term remediation obligations with assigned owners, verifiable deliverables, and clear consequences.
+
+Anexo – Certificación de Hallazgos y Plan de Remediación / Schedule – Findings and Remediation Plan Acknowledgment
+Español
+English
+El suscrito, en calidad de representante legal de [NOMBRE DE LA SOCIEDAD] S.A.S., reconoce haber recibido este Reporte Bilingüe de Hallazgos de Debida Diligencia. La Sociedad se compromete a preparar y ejecutar un plan de remediación respecto de los hallazgos aplicables, indicando responsable, acción, documento de soporte y fecha objetivo de cumplimiento.
+The undersigned, in his or her capacity as legal representative of [COMPANY NAME] S.A.S., acknowledges receipt of this Bilingual Due Diligence Findings Report. The Company undertakes to prepare and implement a remediation plan for applicable findings, identifying the responsible person, action, supporting document, and target completion date.
+Representante Legal / Legal Representative: [NOMBRE / NAME]
+Cargo / Title: [CARGO / TITLE]
+Firma / Signature: ______________________________
+Fecha / Date: ______________________________
