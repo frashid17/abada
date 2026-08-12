@@ -3,7 +3,7 @@ import { createFileFingerprint } from "@/lib/data-room/fingerprint";
 import { buildDataRoomStoragePath } from "@/lib/data-room/storage";
 import { scanUploadBuffer } from "@/lib/data-room/virus-scan";
 import { buildWatermarkPolicy } from "@/lib/data-room/watermark";
-import { isDdDocumentCategory } from "@/lib/dd/taxonomy";
+import { isDdDocumentCategory, normalizeDdDocumentCategory } from "@/lib/dd/taxonomy";
 import { createServiceRoleSupabaseClient } from "@/lib/supabase/server";
 import type { DataRoomDocumentRecord } from "@/lib/deals/types";
 
@@ -69,6 +69,7 @@ export async function uploadDataRoomFile(
     throw new Error("Invalid taxonomy category");
   }
 
+  const taxonomyCategory = normalizeDdDocumentCategory(input.taxonomyCategory)!;
   const { tenantId } = await assertDealParticipant(input.dealId, input.uploaderSub, ["target"]);
 
   const scan = scanUploadBuffer(input.fileBytes, input.mimeType, input.fileName);
@@ -76,10 +77,10 @@ export async function uploadDataRoomFile(
     throw new Error(scan.reason ?? "upload_rejected");
   }
 
-  const versionNumber = await getNextDocumentVersion(input.dealId, input.taxonomyCategory);
+  const versionNumber = await getNextDocumentVersion(input.dealId, taxonomyCategory);
   const storagePath = buildDataRoomStoragePath(
     input.dealId,
-    input.taxonomyCategory,
+    taxonomyCategory,
     input.fileName,
     versionNumber,
   );
@@ -110,7 +111,7 @@ export async function uploadDataRoomFile(
       id: documentId,
       deal_id: input.dealId,
       tenant_id: tenantId,
-      taxonomy_category: input.taxonomyCategory,
+      taxonomy_category: taxonomyCategory,
       title: input.title,
       storage_path: storagePath,
       version_number: versionNumber,
@@ -133,7 +134,7 @@ export async function uploadDataRoomFile(
     resource_id: data.id,
     metadata: {
       dealId: input.dealId,
-      taxonomyCategory: input.taxonomyCategory,
+      taxonomyCategory,
       versionNumber,
       fingerprint,
       fileName: input.fileName,
