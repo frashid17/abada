@@ -1,6 +1,6 @@
 import { getTranslations } from "next-intl/server";
 import { Check, Circle } from "lucide-react";
-import { DD_DOCUMENT_CATEGORIES } from "@/lib/dd/taxonomy";
+import { DD_DOCUMENT_CATEGORIES, normalizeDdDocumentCategory } from "@/lib/dd/taxonomy";
 import type { DataRoomDocumentRecord } from "@/lib/deals/types";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
@@ -11,7 +11,11 @@ type CategoryCoveragePanelProps = {
 
 export async function CategoryCoveragePanel({ documents }: CategoryCoveragePanelProps) {
   const t = await getTranslations("founder.sala");
-  const covered = new Set(documents.map((document) => document.taxonomyCategory));
+  const covered = new Set(
+    documents
+      .map((document) => normalizeDdDocumentCategory(document.taxonomyCategory))
+      .filter((category): category is NonNullable<typeof category> => Boolean(category)),
+  );
 
   return (
     <Card variant="feature">
