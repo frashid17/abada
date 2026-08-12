@@ -7,6 +7,8 @@ export const LEARN_DOCUMENT_SLUGS: Record<LearnDocumentType, string> = {
   employment: "employment",
   corporate_client: "corporate-client",
   terms_of_use: "terms-of-use",
+  ip_assignment: "ip-assignment",
+  equity_compensation: "equity-compensation",
 };
 
 const SLUG_TO_TYPE = Object.fromEntries(
