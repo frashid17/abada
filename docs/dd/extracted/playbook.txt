@@ -1,0 +1,626 @@
+PLAYBOOK BILINGÜE DE REVISIÓN LEGAL
+BILINGUAL LEGAL REVIEW PLAYBOOK
+Para abogado junior: paquete legal de una S.A.S. colombiana
+For junior counsel: Colombian S.A.S. legal document package
+Español
+English
+Propósito: Este playbook guía la revisión inicial de los documentos corporativos, de PI, laborales, comerciales, de compensación y de datos de una startup constituida como S.A.S. en Colombia. Su objetivo es ayudar al abogado junior a identificar faltantes, inconsistencias, riesgos materiales y temas que deben escalarse al abogado senior o al cliente.
+Purpose: This playbook guides the initial review of corporate, IP, employment, commercial, equity compensation, and data documents of a Colombian S.A.S. startup. Its purpose is to help junior counsel identify missing items, inconsistencies, material risks, and issues that should be escalated to senior counsel or the client.
+Regla central: No revisar documentos de manera aislada. Comparar siempre el acuerdo de fundadores, estatutos, libro de accionistas, cap table, documentos de equity, contratos laborales/consultoría, cesiones de PI y contratos con clientes.
+Core rule: Do not review documents in isolation. Always compare the founders' agreement, bylaws, shareholders' register, cap table, equity documents, employment/consulting agreements, IP assignments, and customer contracts.
+
+1. Metodología General de Revisión / General Review Methodology
+1.1 Flujo de trabajo / Workflow
+Paso / Step
+Español
+English
+1
+Crear una lista maestra de documentos recibidos, indicando versión, fecha, partes, estado de firma, vigencia y ubicación en el data room.
+Create a master list of received documents, showing version, date, parties, execution status, current status, and data-room location.
+2
+Crear una matriz de inconsistencias entre documentos: nombre de la Sociedad, NIT, capital autorizado, acciones emitidas, accionistas, fechas, definiciones y firmas.
+Create an inter-document inconsistency matrix: Company name, tax ID, authorized capital, issued shares, shareholders, dates, definitions, and signatures.
+3
+Marcar cada hallazgo como: Alto, Medio, Bajo o Información requerida.
+Tag each issue as: High, Medium, Low, or Information required.
+4
+Distinguir entre: (a) ausencia de cláusula; (b) cláusula mal redactada; (c) cláusula correcta sin documento operativo; y (d) documento operativo existente pero no firmado o no implementado.
+Distinguish among: (a) missing clause; (b) poorly drafted clause; (c) proper clause without an operative document; and (d) operative document existing but unsigned or not implemented.
+5
+Verificar siempre evidencia de ejecución: firmas, actas, libro de accionistas, certificados, comprobantes de pago, correos de aceptación, logs de clickwrap y registros de sistemas.
+Always verify evidence of execution: signatures, minutes, shareholders' register, certificates, payment evidence, acceptance emails, clickwrap logs, and system records.
+6
+Escalar de inmediato los riesgos de PI, cap table, vesting, deuda convertible, empleo, protección de datos, responsabilidad contractual elevada y litigios.
+Immediately escalate IP, cap table, vesting, convertible debt, employment, data protection, high contractual liability, and litigation risks.
+1.2 Preguntas transversales obligatorias / Mandatory Cross-Document Questions
+Español
+English
+1. ¿El documento está firmado por todas las partes correctas y por personas con facultades suficientes?
+1. Is the document signed by all correct parties and by persons with sufficient authority?
+2. ¿Las fechas, el nombre de la Sociedad, el NIT y las definiciones coinciden con los demás documentos?
+2. Do the dates, Company name, tax ID, and definitions match the other documents?
+3. ¿La cláusula importante está respaldada por un mecanismo operativo y evidencia de ejecución?
+3. Is the key clause supported by an operative mechanism and evidence of implementation?
+4. ¿El documento es consistente con estatutos, cap table, libro de accionistas y aprobaciones corporativas?
+4. Is the document consistent with the bylaws, cap table, shareholders' register, and corporate approvals?
+5. ¿Hay derechos, obligaciones, pagos, opciones, deuda o restricciones no reflejadas en otros documentos?
+5. Are there rights, obligations, payments, options, debt, or restrictions not reflected in other documents?
+6. ¿El riesgo afecta propiedad de activos, capacidad de financiarse, continuidad operativa o exposición económica?
+6. Does the risk affect asset ownership, ability to raise financing, business continuity, or economic exposure?
+1.3 Semáforo de Riesgo / Risk-Traffic-Light System
+Clasificación / Classification
+Español
+English
+Rojo – Alto / Red – High
+Puede impedir una inversión, adquisición, operación del producto o ejecución de derechos clave. Ejemplos: PI sin cesión, cap table inconsistente, vesting no ejecutable, contrato crítico sin limitación de responsabilidad.
+May prevent an investment, acquisition, product operation, or enforcement of key rights. Examples: unassigned IP, inconsistent cap table, unenforceable vesting, critical agreement without liability limitation.
+Amarillo – Medio / Yellow – Medium
+No impide necesariamente la Transacción, pero puede generar costo, demora, renegociación o contingencia material.
+Does not necessarily block the Transaction, but may create cost, delay, renegotiation, or material exposure.
+Verde – Bajo / Green – Low
+Mejora documental, administrativa o de buenas prácticas sin impacto material inmediato.
+Documentary, administrative, or best-practice improvement without immediate material impact.
+Azul – Información requerida / Blue – Information required
+Falta evidencia suficiente para concluir. Solicitar documentos, confirmaciones o información adicional.
+There is insufficient evidence to reach a conclusion. Request documents, confirmations, or further information.
+
+2. Acuerdo de Fundadores y Accionistas / Founders' and Shareholders' Agreement
+2.1 Objetivo de la revisión / Review Objective
+Español
+English
+Confirmar que los fundadores han acordado de manera ejecutable la propiedad, roles, vesting, salida, PI, gobierno, transferencias, financiación y resolución de conflictos.
+Confirm that founders have agreed, in an enforceable manner, on ownership, roles, vesting, departures, IP, governance, transfers, financing, and dispute resolution.
+2.2 Cláusulas críticas a revisar / Critical Clauses to Review
+Cláusula / Clause
+Qué revisar en español
+What to review in English
+Riesgo si falta o falla / Risk if Missing or Defective
+Partes y adhesión / Parties and joinders
+Verificar que todos los fundadores, accionistas actuales y, cuando aplique, la Sociedad hayan firmado. Revisar joinders de nuevos accionistas.
+Verify that all founders, current shareholders, and, where applicable, the Company have signed. Review joinders for new shareholders.
+Accionistas no sujetos a reglas de gobierno, transferencia o salida. / Shareholders not bound by governance, transfer, or departure rules.
+Cap table / Capitalization
+Comparar acciones, porcentajes, capital autorizado, suscrito y pagado con estatutos y libro de accionistas.
+Compare shares, percentages, authorized, subscribed, and paid-in capital against bylaws and shareholders' register.
+Dilución desconocida, emisiones cuestionables, conflicto entre accionistas. / Unknown dilution, questionable issuances, shareholder disputes.
+Roles y dedicación / Roles and commitment
+Verificar funciones, dedicación mínima, aportes y si existen contratos laborales o de servicios separados.
+Verify functions, minimum commitment, contributions, and whether separate employment or services agreements exist.
+Fundadores con expectativas incompatibles o participación sin contribución. / Founders with mismatched expectations or equity without contribution.
+PI / Intellectual property
+Confirmar cesión a la Sociedad, PI preexistente identificada, licencia sobre activos excluidos y obligación de firmar documentos adicionales.
+Confirm assignment to the Company, identified pre-existing IP, license to excluded assets, and obligation to execute further documents.
+Falta de titularidad sobre código, marca, datos o producto. / Lack of ownership of code, brand, data, or product.
+Vesting y cliff / Vesting and cliff
+Revisar plazo, cliff, fecha de inicio, crédito previo, aceleración y, especialmente, documentos operativos de recompra.
+Review term, cliff, commencement date, prior-service credit, acceleration, and especially operative repurchase documents.
+Dead equity, fundador saliente con participación alta, bloqueo de ronda. / Dead equity, departed founder retaining large stake, blocked financing.
+Good Leaver / Bad Leaver
+Verificar definiciones, proceso, causa grave, plazo de subsanación, precio de recompra y órgano decisor.
+Verify definitions, process, cause, cure period, repurchase price, and decision-maker.
+Litigio de salida, recompra impugnada, retención de acciones. / Departure dispute, challenged repurchase, share retention.
+Materias reservadas / Reserved matters
+Revisar umbrales y si están reflejadas en estatutos, actas y matriz de aprobaciones.
+Review thresholds and whether reflected in bylaws, minutes, and approval matrix.
+Decisiones dilutivas o estratégicas sin la protección esperada. / Dilutive or strategic decisions without expected protection.
+Transferencias y ROFR / Transfers and ROFR
+Revisar restricciones, avisos, plazos, precio, excepciones de transferencias permitidas y registro en libro de accionistas.
+Review restrictions, notices, timelines, pricing, permitted transfer exceptions, and shareholders' register recording.
+Entrada de terceros no deseados al cap table. / Unwanted third parties entering the cap table.
+Tag-along y drag-along
+Verificar umbrales, procedimiento, trato económico, escrows, garantías y límites de responsabilidad de minoritarios.
+Verify thresholds, process, economic treatment, escrows, warranties, and minority liability limits.
+Bloqueo de salida o responsabilidad excesiva para minoritarios. / Blocked exit or excessive minority liability.
+Información y dividendos / Information and dividends
+Revisar periodicidad de reportes, presupuesto, métricas y política de reinversión/dividendos.
+Review reporting cadence, budget, metrics, and reinvestment/dividend policy.
+Falta de transparencia y conflictos sobre caja o distribuciones. / Lack of transparency and conflicts over cash or distributions.
+Confidencialidad y no captación / Confidentiality and non-solicitation
+Revisar supervivencia, excepciones, protección de secretos empresariales y límites razonables de no captación.
+Review survival, exceptions, trade secret protection, and reasonable non-solicitation limits.
+Fuga de información, clientes o equipo. / Leakage of information, customers, or team members.
+Solución de controversias / Dispute resolution
+Revisar negociación, conciliación, arbitraje o jurisdicción, sede y medidas cautelares.
+Review negotiation, mediation, arbitration or courts, venue, and interim relief.
+Conflicto prolongado y dificultad para proteger PI o acciones urgentemente. / Prolonged dispute and difficulty protecting IP or shares urgently.
+2.3 Documentos de respaldo obligatorios / Required Supporting Documents
+Español
+English
+- Estatutos vigentes y reformas.
+- Current bylaws and amendments.
+- Libro de registro de accionistas.
+- Shareholders' register.
+- Cap table fully diluted.
+- Fully diluted cap table.
+- Contratos de suscripción, compra, recompra y opciones de Fundadores.
+- Founder subscription, purchase, repurchase, and option agreements.
+- Actas de aprobación de emisiones, vesting, ESOP y materias reservadas.
+- Minutes approving issuances, vesting, ESOP, and reserved matters.
+- Acuerdos de adhesión de nuevos accionistas.
+- New shareholder joinder agreements.
+2.4 Alertas rojas y escalamiento / Red Flags and Escalation
+Español
+English
+Escalar inmediatamente si: (a) cap table no coincide con libro de accionistas; (b) vesting está solo en el acuerdo sin mecanismo de recompra; (c) un fundador relevante no firmó cesión de PI; (d) hay acciones u opciones prometidas verbalmente; (e) existen convertibles no reflejados; o (f) un fundador salió sin documentación de recompra o transferencia.
+Escalate immediately if: (a) the cap table does not match the shareholders' register; (b) vesting exists only in the agreement without a repurchase mechanism; (c) a key founder has not signed an IP assignment; (d) shares or options were verbally promised; (e) convertibles are not reflected; or (f) a founder departed without repurchase or transfer documentation.
+
+3. Acuerdo de Confidencialidad, Cesión de PI e Invenciones / Confidentiality, IP Assignment, and Inventions Agreement
+3.1 Objetivo de la revisión / Review Objective
+Español
+English
+Confirmar una cadena completa de titularidad de PI a favor de la Sociedad y controles razonables sobre información confidencial, activos tecnológicos, open source, terceros e IA.
+Confirm a complete IP chain of title in favor of the Company and reasonable controls over confidential information, technology assets, open source, third parties, and AI.
+3.2 Cláusulas críticas a revisar / Critical Clauses to Review
+Cláusula / Clause
+Qué revisar en español
+What to review in English
+Riesgo si falta o falla / Risk if Missing or Defective
+Partes, rol y alcance / Parties, role, and scope
+Confirmar que cubre fundadores, empleados, contratistas, asesores y excolaboradores relevantes.
+Confirm coverage of founders, employees, contractors, advisers, and relevant former contributors.
+Cadena de PI incompleta. / Incomplete IP chain of title.
+Definición de Desarrollos / Definition of Developments
+Debe incluir código, modelos, datos, documentación, interfaces, prompts, mejoras, know-how y resultados relacionados con el negocio.
+Should include code, models, data, documentation, interfaces, prompts, improvements, know-how, and business-related results.
+Activos tecnológicos críticos fuera de la cesión. / Critical technology assets outside the assignment.
+Cesión presente de derechos / Present assignment
+Verificar lenguaje de cesión total de derechos patrimoniales, alcance territorial, plazo, sublicencia y explotación.
+Verify language assigning economic rights, territorial scope, term, sublicensing, and exploitation rights.
+Derecho de uso insuficiente o titularidad discutible. / Insufficient use rights or disputed ownership.
+Derechos morales / Moral rights
+Confirmar reconocimiento de inalienabilidad y autorización válida para modificar, adaptar e integrar.
+Confirm recognition of inalienability and valid authorization to modify, adapt, and integrate.
+Autor puede objetar modificaciones del producto. / Author may object to product modifications.
+PI preexistente / Pre-existing IP
+Revisar anexo, exclusiones, licencias y si la PI excluida se incorporó al producto.
+Review schedule, exclusions, licenses, and whether excluded IP was incorporated into the product.
+Fundador o contratista puede reclamar componentes esenciales. / Founder or contractor may claim essential components.
+Confidencialidad / Confidentiality
+Revisar definición amplia, uso permitido, excepciones, divulgación obligatoria y supervivencia.
+Review broad definition, permitted use, exceptions, compelled disclosure, and survival.
+Pérdida de secretos empresariales. / Loss of trade secret protection.
+Open source y terceros / Open source and third parties
+Revisar restricciones, aprobación previa, inventario de licencias y prohibición de uso de PI ajena.
+Review restrictions, prior approval, license inventory, and prohibition on using third-party IP.
+Copyleft, divulgación de código o infracción. / Copyleft, source disclosure, or infringement.
+IA y herramientas no autorizadas / AI and unauthorized tools
+Revisar prohibición de cargar código, datos o información confidencial en herramientas no aprobadas.
+Review prohibition on uploading code, data, or confidential information to unapproved tools.
+Filtración de datos o secretos en herramientas públicas. / Data or trade secret leakage through public tools.
+Entrega y cooperación / Delivery and cooperation
+Revisar obligación de entregar repositorios, credenciales, documentación y firmar documentos adicionales.
+Review obligation to deliver repositories, credentials, documentation, and execute further documents.
+Dependencia de excolaborador y falta de evidencia de titularidad. / Dependence on former contributor and lack of ownership evidence.
+Activos y seguridad / Assets and security
+Confirmar propiedad corporativa de cuentas, repositorios, dominios y obligación de cumplir controles de seguridad.
+Confirm corporate ownership of accounts, repositories, domains, and obligation to follow security controls.
+Accesos personales a infraestructura crítica. / Personal access to critical infrastructure.
+Devolución y remedios / Return and remedies
+Revisar devolución, eliminación, medidas cautelares y remedios por incumplimiento.
+Review return, deletion, injunctive relief, and breach remedies.
+Información o accesos retenidos tras salida. / Information or access retained after departure.
+3.3 Prueba operativa que debe solicitarse / Operative Evidence to Request
+Español
+English
+- Matriz de todas las personas con acceso a PI y fecha de firma del acuerdo.
+- Matrix of all persons with IP access and agreement execution date.
+- Anexos de PI preexistente de Fundadores y desarrolladores.
+- Pre-existing IP schedules for founders and developers.
+- Evidencia de titularidad de GitHub/GitLab, dominios, cloud y cuentas de IA.
+- Evidence of ownership/control of GitHub/GitLab, domains, cloud, and AI accounts.
+- Inventario de open source, APIs, modelos, datasets y licencias.
+- Inventory of open source, APIs, models, datasets, and licenses.
+- Lista de cuentas administrativas y evidencia de MFA/offboarding.
+- List of administrative accounts and evidence of MFA/offboarding.
+3.4 Alertas rojas y escalamiento / Red Flags and Escalation
+Español
+English
+Escalar inmediatamente si falta cesión de PI de un fundador, CTO, desarrollador principal, proveedor de software o excontratista relevante; si repositorios o dominios están en cuentas personales; si se usa GPL/AGPL sin análisis; o si se compartió código/datos con IA pública no autorizada.
+Escalate immediately if an IP assignment is missing from a founder, CTO, lead developer, software vendor, or material former contractor; if repositories or domains are in personal accounts; if GPL/AGPL is used without analysis; or if code/data was shared with unauthorized public AI.
+
+4. Plan de Compensación en Acciones e Incentivos / Equity Compensation and Incentive Plan
+4.1 Objetivo de la revisión / Review Objective
+Español
+English
+Confirmar que el ESOP, las Acciones Restringidas y las Opciones están autorizados, documentados, correctamente calculados y consistentes con el cap table, estatutos y acuerdo de accionistas.
+Confirm that the ESOP, Restricted Shares, and Options are authorized, documented, correctly calculated, and consistent with the cap table, bylaws, and shareholders' agreement.
+4.2 Cláusulas críticas a revisar / Critical Clauses to Review
+Cláusula / Clause
+Qué revisar en español
+What to review in English
+Riesgo si falta o falla / Risk if Missing or Defective
+Administración del Plan / Plan administration
+Identificar Administrador, facultades, aprobación de otorgamientos y evidencia en actas.
+Identify Plan Administrator, authority, grant approval, and evidence in minutes.
+Otorgamientos sin autoridad. / Unauthorized grants.
+Reserva ESOP / ESOP reserve
+Comparar porcentaje/pool con cap table, estatutos y capital autorizado.
+Compare pool size with cap table, bylaws, and authorized capital.
+Dilución incorrecta o falta de acciones disponibles. / Incorrect dilution or insufficient available shares.
+Elegibilidad / Eligibility
+Confirmar que fundadores, empleados, consultores y asesores son elegibles conforme al Plan.
+Confirm that founders, employees, contractors, and advisers are eligible under the Plan.
+Incentivos otorgados a personas no cubiertas. / Incentives granted to ineligible persons.
+Acciones Restringidas / Restricted Shares
+Revisar precio, vesting, recompra, restricciones de transferencia, Good/Bad Leaver y documentos de ejecución.
+Review price, vesting, repurchase, transfer restrictions, Good/Bad Leaver, and implementation documents.
+Dead equity o recompra no ejecutable. / Dead equity or unenforceable repurchase.
+Opciones / Options
+Revisar número, clase, precio de ejercicio, vesting, vencimiento, plazo post-terminación y forma de ejercicio.
+Review number, class, exercise price, vesting, expiration, post-termination period, and exercise mechanics.
+Derechos ambiguos, dilución no calculada, reclamaciones de empleados. / Ambiguous rights, uncalculated dilution, employee claims.
+Aceleración / Acceleration
+Revisar tratamiento en Cambio de Control y si es single o double trigger.
+Review Change of Control treatment and whether it is single or double trigger.
+Incentivos acelerados inesperadamente o protección insuficiente. / Unexpected accelerated vesting or insufficient protection.
+Ajustes de capital / Capital adjustments
+Revisar ajustes por splits, recapitalizaciones, fusiones y reorganizaciones.
+Review adjustments for splits, recapitalizations, mergers, and reorganizations.
+Distorsión económica de opciones o acciones. / Economic distortion of options or shares.
+Impuestos / Taxes
+Revisar asignación de impuestos, retenciones y condición previa a emisión/ejercicio.
+Review tax allocation, withholding, and conditions to issuance/exercise.
+Contingencias tributarias y de nómina. / Tax and payroll exposure.
+Transferencias y adhesión / Transfers and joinders
+Confirmar que el participante se adhiere al acuerdo de accionistas antes de recibir acciones.
+Confirm the participant joins the shareholders' agreement before receiving shares.
+Nuevos accionistas fuera de restricciones y gobierno. / New shareholders outside restrictions and governance.
+4.3 Reconciliaciones obligatorias / Mandatory Reconciliations
+Español
+English
+1. Total de acciones bajo el Plan vs. reserva ESOP aprobada.
+1. Total shares under the Plan vs. approved ESOP reserve.
+2. Opciones ejercidas vs. acciones emitidas en el libro de accionistas.
+2. Exercised options vs. shares issued in the shareholders' register.
+3. Acciones Restringidas de Fundadores vs. Anexo de vesting del acuerdo de fundadores.
+3. Founder Restricted Shares vs. founders' agreement vesting schedule.
+4. Precio de ejercicio vs. Carta de Otorgamiento y evidencia de pago.
+4. Exercise price vs. grant letter and payment evidence.
+5. Opciones canceladas/expiradas vs. acciones disponibles en el pool.
+5. Cancelled/expired options vs. shares available in the pool.
+4.4 Alertas rojas y escalamiento / Red Flags and Escalation
+Español
+English
+Escalar si: el ESOP no fue aprobado; las opciones exceden el pool; no hay Carta de Otorgamiento firmada; hay promesas verbales de equity; no existe precio de ejercicio; se ejercieron opciones sin emitir acciones; o el cap table no refleja fully diluted ownership.
+Escalate if: the ESOP was not approved; options exceed the pool; there is no signed grant letter; there are verbal equity promises; no exercise price exists; options were exercised without issuing shares; or the cap table does not reflect fully diluted ownership.
+
+5. Contrato Laboral con Confidencialidad y Cesión de PI / Employment Agreement with Confidentiality and IP Assignment
+5.1 Objetivo de la revisión / Review Objective
+Español
+English
+Confirmar que las relaciones laborales están formalizadas, cumplen requisitos básicos colombianos y protegen PI, confidencialidad, datos, activos y continuidad operativa.
+Confirm that employment relationships are formalized, comply with basic Colombian requirements, and protect IP, confidentiality, data, assets, and business continuity.
+5.2 Cláusulas críticas a revisar / Critical Clauses to Review
+Cláusula / Clause
+Qué revisar en español
+What to review in English
+Riesgo si falta o falla / Risk if Missing or Defective
+Partes, cargo y funciones / Parties, position, and duties
+Verificar nombre, identificación, cargo, jefe, funciones y fecha de inicio.
+Verify name, identification, role, manager, duties, and start date.
+Ambigüedad laboral y dificultad de gestión. / Employment ambiguity and management difficulty.
+Duración y período de prueba / Term and probation
+Revisar tipo de contrato y que el período de prueba esté por escrito y dentro de límites legales.
+Review contract type and ensure probation is written and within legal limits.
+Período de prueba inválido o contingencia laboral. / Invalid probation or employment exposure.
+Salario y beneficios / Salary and benefits
+Revisar monto, frecuencia, componentes salariales/no salariales y consistencia con nómina.
+Review amount, frequency, salary/non-salary components, and consistency with payroll.
+Reclamaciones salariales y aportes incorrectos. / Wage claims and incorrect contributions.
+Jornada, remoto y desconexión / Hours, remote work, and disconnection
+Revisar jornada, modalidad de trabajo, autorización de horas extra, teletrabajo/trabajo remoto y desconexión.
+Review hours, work arrangement, overtime authorization, telework/remote work, and disconnection.
+Reclamos de horas extra, incumplimiento de políticas o SST. / Overtime claims, policy non-compliance, or health and safety issues.
+Seguridad social / Social security
+Confirmar afiliaciones, aportes, prestaciones, vacaciones y soportes.
+Confirm registrations, contributions, statutory benefits, vacation, and evidence.
+Contingencias laborales y sanciones. / Employment exposure and penalties.
+Confidencialidad / Confidentiality
+Revisar definición, uso permitido, supervivencia, excepciones y divulgación obligatoria.
+Review definition, permitted use, survival, exceptions, and compelled disclosure.
+Fuga de información y pérdida de secreto empresarial. / Information leakage and loss of trade secret protection.
+Cesión de PI / IP assignment
+Revisar Desarrollos, cesión patrimonial, PI preexistente, derechos morales y documentos adicionales.
+Review Developments, economic rights assignment, pre-existing IP, moral rights, and further documents.
+Cadena de titularidad incompleta. / Incomplete chain of title.
+Open source e IA / Open source and AI
+Revisar restricciones de materiales de terceros y herramientas de IA no autorizadas.
+Review restrictions on third-party materials and unauthorized AI tools.
+Copyleft, infracción o filtración de datos/código. / Copyleft, infringement, or data/code leakage.
+Datos y seguridad / Data and security
+Revisar tratamiento de datos, incidentes, activos corporativos, cuentas personales y monitoreo permitido.
+Review data handling, incidents, corporate assets, personal accounts, and permitted monitoring.
+Incidente de seguridad o incumplimiento de privacidad. / Security incident or privacy non-compliance.
+Conflictos y actividades externas / Conflicts and outside activities
+Revisar revelación de conflictos y prohibiciones razonables durante la relación.
+Review conflict disclosure and reasonable restrictions during engagement.
+Competencia, desvío de oportunidades o uso de recursos corporativos. / Competition, diversion of opportunities, or misuse of Company resources.
+Terminación y devolución / Termination and return
+Revisar entrega de activos, revocación de accesos, transición y supervivencia.
+Review asset return, access revocation, transition, and survival.
+Exempleado con acceso, activos o información. / Former employee retaining access, assets, or information.
+5.3 Evidencia adicional / Additional Evidence
+Español
+English
+- Nómina, aportes y afiliaciones de seguridad social.
+- Payroll, social security contributions, and registrations.
+- Políticas de trabajo remoto, SST, acoso, seguridad y protección de datos.
+- Remote-work, occupational health and safety, anti-harassment, security, and data protection policies.
+- Inventario de equipos entregados y proceso de offboarding.
+- Equipment inventory and offboarding process.
+- Matriz de empleados con acuerdos de PI/confidencialidad firmados.
+- Employee matrix showing executed IP/confidentiality agreements.
+5.4 Alertas rojas y escalamiento / Red Flags and Escalation
+Español
+English
+Escalar si personal técnico clave no firmó PI/confidencialidad; si existen contratistas tratados como empleados; si faltan aportes de seguridad social; si hay reclamaciones laborales; o si ex empleados mantienen accesos administrativos.
+Escalate if key technical staff have not signed IP/confidentiality agreements; if contractors are treated as employees; if social security contributions are missing; if employment claims exist; or if former employees retain administrative access.
+
+6. Contrato Marco de Prestación de Servicios con Clientes Corporativos / Corporate Customer Master Services Agreement
+6.1 Objetivo de la revisión / Review Objective
+Español
+English
+Confirmar que los contratos B2B protegen la tecnología de la Sociedad, asignan riesgos de manera proporcional, regulan datos y permiten cobrar, suspender o terminar adecuadamente.
+Confirm that B2B agreements protect Company technology, allocate risk proportionately, regulate data, and allow effective payment collection, suspension, and termination.
+6.2 Cláusulas críticas a revisar / Critical Clauses to Review
+Cláusula / Clause
+Qué revisar en español
+What to review in English
+Riesgo si falta o falla / Risk if Missing or Defective
+Objeto y Órdenes de Servicio / Scope and SOWs
+Revisar alcance, entregables, cronograma, exclusiones, supuestos y orden de prelación.
+Review scope, deliverables, timeline, exclusions, assumptions, and order of precedence.
+Scope creep, trabajo no pagado y disputas de entregables. / Scope creep, unpaid work, and deliverable disputes.
+Licencia y uso permitido / License and permitted use
+Revisar licencia limitada y prohibición de reventa, sublicencia, ingeniería inversa y uso ilícito.
+Review limited license and prohibition on resale, sublicensing, reverse engineering, and unlawful use.
+Cliente puede explotar o copiar el producto. / Customer may exploit or copy the product.
+Obligaciones del Cliente / Customer obligations
+Verificar cooperación, acceso, datos legítimos, seguridad de credenciales y responsabilidad por usuarios.
+Verify cooperation, access, lawful data, credential security, and responsibility for users.
+Retrasos imputados al proveedor o datos ilícitos del cliente. / Delays blamed on provider or unlawful customer data.
+Tarifas, impuestos y mora / Fees, taxes, and late payment
+Revisar precio, IVA, retenciones, plazo de pago, intereses, suspensión y no reembolso.
+Review pricing, VAT, withholding, payment term, interest, suspension, and non-refundability.
+Problemas de caja, mora o servicios no cobrados. / Cash-flow problems, late payment, or unpaid services.
+Tecnología del Proveedor y Datos del Cliente / Provider Technology and Customer Data
+Confirmar reserva de software, código, herramientas, mejoras y know-how; licencia limitada de datos.
+Confirm reservation of software, code, tools, improvements, and know-how; limited data license.
+Cliente reclama PI crítica o proveedor carece de permiso para procesar datos. / Customer claims critical IP or provider lacks permission to process data.
+Confidencialidad / Confidentiality
+Revisar definición, uso, divulgación a representantes, excepciones y supervivencia.
+Review definition, use, disclosure to representatives, exceptions, and survival.
+Divulgación de precios, producto, estrategia o datos. / Disclosure of pricing, product, strategy, or data.
+DPA y seguridad / DPA and security
+Verificar Responsable/Encargado, instrucciones, subencargados, incidentes, medidas y transferencias.
+Verify controller/processor roles, instructions, subprocessors, incidents, safeguards, and transfers.
+Incumplimiento de datos y responsabilidad no asignada. / Data non-compliance and unallocated liability.
+Garantías / Warranties
+Revisar garantía limitada, plazo de reclamo y remedio exclusivo.
+Review limited warranty, claim period, and exclusive remedy.
+Garantías abiertas y promesas de resultados. / Open-ended warranties and outcome promises.
+Indemnidad / Indemnity
+Revisar PI, exclusiones, procedimiento de defensa y responsabilidad del Cliente por sus datos.
+Review IP, exclusions, defense procedure, and Customer responsibility for its data.
+Indemnidad excesiva o falta de protección por datos del cliente. / Excessive indemnity or lack of protection for customer data.
+Limitación de responsabilidad / Limitation of liability
+Revisar exclusión de daños indirectos, cap, supercap, carve-outs y coherencia con indemnidad.
+Review exclusion of indirect damages, cap, supercap, carve-outs, and consistency with indemnity.
+Exposición superior a ingresos o seguro. / Exposure exceeding revenue or insurance.
+Plazo, suspensión y terminación / Term, suspension, and termination
+Revisar renovación, terminación por incumplimiento, suspensión por riesgo, pagos pendientes y exportación de datos.
+Review renewal, termination for breach, suspension for risk, outstanding payments, and data export.
+Servicio indefinido, mora persistente o discusión sobre datos. / Indefinite service, persistent non-payment, or data dispute.
+Cumplimiento y publicidad / Compliance and publicity
+Revisar anticorrupción, sanciones, uso de marcas y referencia de clientes.
+Review anti-corruption, sanctions, use of marks, and customer reference rights.
+Riesgo regulatorio o uso no autorizado de marca. / Regulatory risk or unauthorized trademark use.
+6.3 Revisión de contratos firmados / Review of Executed Agreements
+Español
+English
+Para cada cliente material, preparar una tabla que incluya: ingresos, plazo, fecha de renovación, cap de responsabilidad, indemnidades, SLA, DPA, exclusividad, cesión de PI, descuentos, terminación por conveniencia y desviaciones del modelo.
+For each material customer, prepare a table showing: revenue, term, renewal date, liability cap, indemnities, SLA, DPA, exclusivity, IP assignment, discounts, termination for convenience, and deviations from the standard form.
+6.4 Alertas rojas y escalamiento / Red Flags and Escalation
+Español
+English
+Escalar si un cliente recibe titularidad del código base o mejoras generales; si no existe cap de responsabilidad; si hay indemnidad ilimitada; si se garantizan resultados o disponibilidad absoluta; si hay exclusividad amplia; o si el contrato permite terminación sin pago de compromisos pendientes.
+Escalate if a customer receives ownership of base code or general improvements; if no liability cap exists; if indemnity is unlimited; if outcomes or absolute availability are guaranteed; if broad exclusivity exists; or if the agreement allows termination without payment of committed amounts.
+
+7. Términos y Condiciones para Usuarios Finales / End-User Terms and Conditions
+7.1 Objetivo de la revisión / Review Objective
+Español
+English
+Confirmar que los usuarios aceptan válidamente los términos, que las reglas de uso son exigibles y que el producto, pagos, datos, IA y responsabilidad están regulados de manera compatible con ley colombiana y normas de consumo aplicables.
+Confirm that users validly accept the terms, use rules are enforceable, and product, payment, data, AI, and liability matters are governed consistently with Colombian law and applicable consumer rules.
+7.2 Cláusulas críticas a revisar / Critical Clauses to Review
+Cláusula / Clause
+Qué revisar en español
+What to review in English
+Riesgo si falta o falla / Risk if Missing or Defective
+Aceptación / Acceptance
+Verificar clickwrap, versión, fecha, usuario y conservación de logs.
+Verify clickwrap, version, date, user, and retention of logs.
+Términos no exigibles. / Unenforceable terms.
+Cuenta y elegibilidad / Account and eligibility
+Revisar capacidad, exactitud de datos, credenciales y suspensión.
+Review capacity, data accuracy, credentials, and suspension.
+Fraude, suplantación y acceso no autorizado. / Fraud, impersonation, and unauthorized access.
+Licencia y restricciones / License and restrictions
+Revisar licencia limitada, no reventa, no ingeniería inversa, no abuso técnico ni competencia.
+Review limited license, no resale, no reverse engineering, no technical abuse, and no competition.
+Copia o uso indebido del producto. / Copying or misuse of the product.
+Contenido del Usuario / User Content
+Revisar propiedad del usuario, licencia operativa a la Sociedad y garantía de derechos del usuario.
+Review user ownership, operational license to the Company, and user warranty of rights.
+Falta de permiso para operar el servicio o reclamos de terceros. / Lack of permission to operate the service or third-party claims.
+IA / AI
+Revisar advertencias, revisión humana, no asesoría profesional, restricciones de decisiones de alto impacto y entrenamiento.
+Review warnings, human review, no professional advice, high-impact decision restrictions, and training rules.
+Reclamaciones por resultados inexactos o uso sensible. / Claims arising from inaccurate outputs or sensitive use.
+Pagos y renovación / Payments and renewal
+Revisar precios, impuestos, auto-renovación, cancelación, reembolsos y avisos.
+Review pricing, taxes, auto-renewal, cancellation, refunds, and notices.
+Chargebacks, reclamaciones de consumidor y disputas de cobro. / Chargebacks, consumer claims, and billing disputes.
+PI / Intellectual property
+Confirmar reserva de derechos y licencia sobre feedback.
+Confirm reservation of rights and license to feedback.
+Usuario reclama derechos sobre producto o mejoras. / User claims rights over product or improvements.
+Privacidad / Privacy
+Revisar referencia a política, datos de terceros, ejercicio de derechos y contacto.
+Review reference to privacy policy, third-party data, exercise of rights, and contact.
+Incumplimiento de transparencia de datos. / Data transparency non-compliance.
+Garantías y responsabilidad / Warranties and liability
+Revisar "as is", límites razonables y respeto de derechos irrenunciables de consumidores.
+Review "as is," reasonable limits, and preservation of non-waivable consumer rights.
+Cláusulas inválidas o responsabilidad abierta. / Invalid clauses or open-ended liability.
+Suspensión y terminación / Suspension and termination
+Revisar causal, exportación de contenido, retención y eliminación.
+Review grounds, content export, retention, and deletion.
+Usuario abusivo o conflicto sobre datos después de cierre de cuenta. / Abusive user or post-account closure data dispute.
+Modificaciones / Amendments
+Revisar aviso previo, vigencia y aceptación de cambios materiales.
+Review advance notice, effectiveness, and acceptance of material changes.
+Cambios no exigibles. / Unenforceable changes.
+7.3 Alertas rojas y escalamiento / Red Flags and Escalation
+Español
+English
+Escalar si no existe clickwrap verificable; si hay auto-renovación sin aviso o cancelación clara; si los términos de IA prometen precisión; si se usan datos de usuarios para entrenamiento sin base clara; o si se excluyen derechos irrenunciables de consumidores.
+Escalate if no verifiable clickwrap exists; if auto-renewal lacks clear notice or cancellation; if AI terms promise accuracy; if user data is used for training without a clear basis; or if non-waivable consumer rights are excluded.
+
+8. Documentos Transversales: Privacidad, Seguridad, Convertibles y Cumplimiento
+Cross-Functional Documents: Privacy, Security, Convertibles, and Compliance
+8.1 Privacidad y Protección de Datos / Privacy and Data Protection
+Punto de revisión / Review Item
+Español
+English
+Política de privacidad / Privacy policy
+Verificar publicación, fecha, responsable, finalidades, derechos y canal de contacto.
+Verify publication, date, controller, purposes, rights, and contact channel.
+Inventario y flujos / Inventory and flows
+Revisar bases de datos, categorías, finalidades, transferencias y proveedores.
+Review databases, categories, purposes, transfers, and vendors.
+Roles B2B / B2B roles
+Confirmar Responsable/Encargado/Subencargado en cada relación relevante.
+Confirm controller/processor/subprocessor roles in each relevant relationship.
+Derechos de titulares / Data-subject rights
+Revisar procedimientos y evidencia de atención de consultas y reclamos.
+Review procedures and evidence of handling access requests and complaints.
+Incidentes / Incidents
+Verificar proceso de detección, evaluación, notificación y registro.
+Verify process for detection, assessment, notification, and recordkeeping.
+8.2 Seguridad de la Información / Information Security
+Punto de revisión / Review Item
+Español
+English
+Accesos / Access
+Revisar MFA, cuentas compartidas, privilegios, gestión de secretos y revocación.
+Review MFA, shared accounts, privileges, secret management, and revocation.
+Activos / Assets
+Confirmar propiedad corporativa de dominios, cloud, repositorios, pagos y herramientas.
+Confirm corporate ownership of domains, cloud, repositories, payment accounts, and tools.
+Backups / Backups
+Revisar frecuencia, cifrado, pruebas de restauración y responsable.
+Review frequency, encryption, restoration testing, and ownership.
+Incidentes / Incidents
+Revisar playbook, responsables, notificación a clientes y lecciones aprendidas.
+Review playbook, owners, customer notification, and lessons learned.
+8.3 SAFEs, Notas Convertibles y Financiamiento / SAFEs, Convertible Notes, and Financing
+Punto de revisión / Review Item
+Español
+English
+Autorización / Authorization
+Verificar aprobaciones corporativas y consistencia con estatutos.
+Verify corporate approvals and consistency with bylaws.
+Términos económicos / Economics
+Revisar principal, cap, descuento, interés, vencimiento y conversiones.
+Review principal, cap, discount, interest, maturity, and conversions.
+Cambio de control / Change of Control
+Revisar pago, conversión o fórmula aplicable.
+Review applicable payment, conversion, or formula.
+Cap table / Cap table
+Reflejar todos los instrumentos en el cap table fully diluted.
+Reflect all instruments in the fully diluted cap table.
+Derechos de inversionistas / Investor rights
+Revisar pro rata, información, preferencias, vetos, junta y adhesión.
+Review pro rata, information, preferences, vetoes, board rights, and joinders.
+8.4 Cumplimiento y Seguros / Compliance and Insurance
+Punto de revisión / Review Item
+Español
+English
+Compliance / Compliance
+Revisar anticorrupción, conflictos, sanciones, AML, ética y canal de denuncias.
+Review anti-corruption, conflicts, sanctions, AML, ethics, and whistleblowing.
+Litigios / Litigation
+Revisar demandas, amenazas, investigaciones, acuerdos y reservas.
+Review claims, threats, investigations, settlements, and reserves.
+Seguros / Insurance
+Revisar ciber, E&O, D&O, responsabilidad civil, empleo, exclusiones y renovaciones.
+Review cyber, E&O, D&O, general liability, employment coverage, exclusions, and renewals.
+
+9. Formato de Hallazgo para el Abogado Junior
+Junior Counsel Finding Template
+Campo / Field
+Instrucción en español
+Instruction in English
+Documento / Document
+Identificar documento, fecha, versión y Partes.
+Identify document, date, version, and parties.
+Cláusula / Clause
+Indicar número y título de la cláusula afectada.
+State the number and title of the affected clause.
+Hallazgo / Finding
+Describir de forma objetiva qué falta, contradice o no está probado.
+Objectively describe what is missing, inconsistent, or unproven.
+Riesgo / Risk
+Clasificar Alto, Medio, Bajo o Información requerida.
+Classify as High, Medium, Low, or Information required.
+Impacto / Impact
+Explicar efecto práctico: PI, cap table, pago, datos, empleo, cliente o Transacción.
+Explain practical effect: IP, cap table, payment, data, employment, customer, or Transaction.
+Documento soporte / Evidence
+Indicar documento recibido y documento adicional requerido.
+Identify document received and additional document required.
+Recomendación / Recommendation
+Proponer acción concreta: solicitar, corregir, firmar, ratificar, registrar o escalar.
+Propose a specific action: request, amend, execute, ratify, register, or escalate.
+Responsable / Owner
+Sugerir CEO, CTO, CFO, RR. HH., ventas, legal, consejo o asesor externo.
+Suggest CEO, CTO, CFO, HR, sales, legal, board, or external counsel.
+Fecha objetivo / Target Date
+Indicar pre-cierre, 30, 60 o 90 días, según impacto.
+State pre-closing, 30, 60, or 90 days, based on impact.
+Ejemplo de Hallazgo / Sample Finding
+Español
+English
+Documento: Acuerdo de Fundadores y Accionistas, fechado [FECHA]. Cláusula: 6 – Vesting. Hallazgo: El acuerdo establece vesting de cuatro años con cliff de doce meses, pero no se entregaron contratos de recompra, opciones de compra, cartas de instrucción ni evidencia de registro de restricciones en el libro de accionistas. Riesgo: Alto. Impacto: El derecho de recompra de acciones no consolidadas puede no ser ejecutable; existe riesgo de dead equity. Recomendación: Solicitar y revisar documentos operativos de vesting; si no existen, preparar y ejecutar paquete de recompra y restricciones como condición precedente.
+Document: Founders' and Shareholders' Agreement dated [DATE]. Clause: 6 – Vesting. Finding: The agreement provides for four-year vesting with a 12-month cliff, but no repurchase agreements, call options, instruction letters, or evidence of registration of restrictions in the shareholders' register were provided. Risk: High. Impact: The repurchase right over unvested shares may not be enforceable; there is a dead equity risk. Recommendation: Request and review operative vesting documents; if they do not exist, prepare and execute a repurchase and restriction package as a condition precedent.
+
+10. Checklist Final Antes de Cerrar la Revisión
+Final Checklist Before Closing the Review
+Español
+English
+□ El cap table coincide con estatutos, libro de accionistas, títulos, opciones y convertibles.
+□ The cap table matches the bylaws, shareholders' register, certificates, options, and convertibles.
+□ Todos los fundadores, empleados, contratistas y asesores técnicos relevantes firmaron PI y confidencialidad.
+□ All relevant founders, employees, contractors, and technical advisers signed IP and confidentiality agreements.
+□ Vesting, recompra y salida de fundadores tienen documentos operativos ejecutables.
+□ Founder vesting, repurchase, and departure arrangements have enforceable operative documents.
+□ ESOP, Acciones Restringidas y Opciones fueron aprobados y están reconciliados.
+□ ESOP, Restricted Shares, and Options were approved and are reconciled.
+□ Los contratos laborales y de servicios protegen PI, datos, seguridad y devolución de activos.
+□ Employment and services agreements protect IP, data, security, and return of assets.
+□ Los contratos B2B protegen Tecnología del Proveedor, cobro, datos, indemnidad y responsabilidad.
+□ B2B agreements protect Provider Technology, payment, data, indemnity, and liability.
+□ Los términos de usuarios tienen aceptación verificable, privacidad, reglas de IA y pagos claros.
+□ End-user terms have verifiable acceptance, privacy, AI rules, and clear payment terms.
+□ Los activos críticos están en cuentas corporativas y los accesos están controlados.
+□ Critical assets are in corporate accounts and access is controlled.
+□ Los documentos convertibles y derechos de inversionistas están reflejados en el cap table.
+□ Convertible instruments and investor rights are reflected in the cap table.
+□ Los hallazgos rojos fueron escalados y tienen acción, responsable y fecha objetivo.
+□ Red findings were escalated and have an action, owner, and target date.
+Nota final para el abogado junior / Final Note for Junior Counsel
+Español
+English
+La función del abogado junior no es resolver por sí solo todos los temas complejos. Su función es detectar inconsistencias, solicitar evidencia, documentar el riesgo de forma clara, priorizar hallazgos y escalar oportunamente. Cuando un tema afecte PI, cap table, derechos de fundadores, deuda, protección de datos, responsabilidad elevada o empleo, debe escalarse antes de concluir la revisión.
+The junior lawyer's role is not to resolve every complex issue alone. The role is to identify inconsistencies, request evidence, document the risk clearly, prioritize findings, and escalate promptly. Any issue affecting IP, the cap table, founder rights, debt, data protection, high liability, or employment should be escalated before concluding the review.
