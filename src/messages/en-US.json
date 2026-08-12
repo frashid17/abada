@@ -22,7 +22,10 @@
       "adminAi": "AI usage",
       "adminRequests": "Requests",
       "adminAudit": "Audit"
-    }
+    },
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "mobileNav": "Main navigation"
   },
   "notifications": {
     "title": "Notifications",
@@ -615,6 +618,16 @@
           "tabLabel": "Terms of use",
           "title": "Terms and conditions of use",
           "description": "B2C platform terms: account, license, AI, payments, and liability."
+        },
+        "ip_assignment": {
+          "tabLabel": "IP Assignment",
+          "title": "Confidentiality, IP Assignment, and Inventions",
+          "description": "Agreement for founders, employees, and contractors: confidentiality, ownership of developments, and pre-existing IP."
+        },
+        "equity_compensation": {
+          "tabLabel": "Equity compensation",
+          "title": "Equity Compensation and Incentive Plan",
+          "description": "Pool, founder restricted shares, and options for employees/consultants in a Colombian S.A.S."
         }
       },
       "intros": {
@@ -623,7 +636,9 @@
         "founders": "This agreement sets how founders work together: contributions, vesting, IP, governance, and transfers. Click a clause to see the firm guide.",
         "employment": "Investment-ready employment template: role, pay, confidentiality, and IP assignment. Click a clause for the guide.",
         "corporate_client": "Master agreement for corporate clients. Review scope, IP, data, and liability caps with the side guide.",
-        "terms_of_use": "End-user terms for your product. Click a clause to see what it does."
+        "terms_of_use": "End-user terms for your product. Click a clause to see what it does.",
+        "ip_assignment": "This agreement helps ensure code, data, and know-how sit with the Company. Click a clause to see the firm guide.",
+        "equity_compensation": "The Plan aligns incentives with equity without relying only on cash. Review pool, vesting, leavers, and change of control with the side guide."
       },
       "callouts": {
         "term_sheet": {
@@ -708,6 +723,34 @@
           "account": {
             "label": "Account and eligibility",
             "hint": "Who may sign up and how access can be suspended."
+          }
+        },
+        "ip_assignment": {
+          "confidentiality": {
+            "label": "Confidentiality",
+            "hint": "Protects roadmap, code, pricing, and investor discussions."
+          },
+          "assignment": {
+            "label": "IP assignment",
+            "hint": "Without clear Company ownership, a financing or sale can stall."
+          },
+          "preExisting": {
+            "label": "Pre-existing IP",
+            "hint": "Disclose exclusions and the license if personal IP enters the product."
+          }
+        },
+        "equity_compensation": {
+          "pool": {
+            "label": "Pool / reserve",
+            "hint": "Sets future dilution so you can hire without renegotiating the cap table every grant."
+          },
+          "restricted": {
+            "label": "Restricted shares",
+            "hint": "Vesting and repurchase avoid dead equity if a founder leaves early."
+          },
+          "options": {
+            "label": "Options",
+            "hint": "Incentivize employees and advisors without issuing shares on day one."
           }
         }
       },
@@ -1233,6 +1276,180 @@
             "summary": "of the section: Provides channels for support, privacy matters, and general communications. Importance for founders: Promotes transparency and enables requests, complaints, claims, and data-protection inquiries to be handled in an orderly and traceable manner.",
             "why": "Purpose of the section: Provides channels for support, privacy matters, and general communications. Importance for founders: Promotes transparency and enables requests, complaints, claims, and data-protection inquiries to be handled in an orderly and traceable manner."
           }
+        },
+        "ip_assignment": {
+          "preamble": {
+            "title": "Heading, Parties, and Purpose",
+            "summary": "Identifies the Company and the founder, employee, contractor, or technical team member signing the document. It also establishes that the agreement covers confidentiality, intellectual property, and inventions related to the Business.",
+            "why": "Prevents disputes over who is bound and the scope of the document. For a startup, the most valuable early assets are often its code, product, data, and know-how; therefore, every person contributing to the product should be contractually bound."
+          },
+          "1": {
+            "title": "1. Purpose and Scope",
+            "summary": "Establishes that the Contributor participates in the business and that the agreement governs the work product and information the Contributor learns, uses, or creates through that relationship.",
+            "why": "Reduces the risk that someone will claim that their developments were unrelated to the Company. This is especially relevant when a founder or developer works on a hybrid, remote, part-time, or contractor basis."
+          },
+          "2": {
+            "title": "2. Definitions",
+            "summary": "Broadly defines “Confidential Information” and “Developments,” including software, code, AI models, data, interfaces, documentation, methods, and trade secrets.",
+            "why": "A broad definition avoids gaps. Without it, a developer could argue that an algorithm, prompt, database, or product improvement was not covered by the assignment or confidentiality obligation."
+          },
+          "3": {
+            "title": "3. Confidentiality",
+            "summary": "Requires the Contributor to protect and use confidential information only for authorized purposes; it also establishes reasonable exceptions and a process for legally compelled disclosure.",
+            "why": "Protects information that may immediately lose value if disclosed: the roadmap, pricing, commercial strategy, credentials, source code, customer contacts, and investor discussions. It also helps demonstrate that the Company took reasonable measures to protect its trade secrets."
+          },
+          "4": {
+            "title": "4. Ownership and Assignment of Economic Rights",
+            "summary": "Recognizes the Company’s exclusive ownership of the Developments and contains an express assignment of economic intellectual property rights.",
+            "why": "This is one of the most important clauses for a financing round or sale of the company. Investors and buyers review whether the Company truly owns the code, trademarks, designs, and technology assets. If a founder or contractor retains those rights, that person may block financing, an acquisition, or commercial use of the product."
+          },
+          "5": {
+            "title": "5. Moral Rights and Authorizations",
+            "summary": "Recognizes that moral rights are inalienable in Colombia but obtains authorizations allowing the Company to adapt, modify, integrate, publish, and exploit the Developments to the extent permitted by law.",
+            "why": "An assignment of economic rights alone may not resolve every issue involving modification or attribution. This authorization reduces the risk that a creator later objects to changes needed in software, content, designs, or product materials."
+          },
+          "6": {
+            "title": "6. Software, Code, Third-Party Materials, and AI",
+            "summary": "Regulates the use of open-source software, libraries, data, models, and third-party materials, and imposes license review and recordkeeping obligations.",
+            "why": "Prevents the team from incorporating software or materials subject to licenses that require source-code disclosure, broad licenses to third parties, or unforeseen costs. It also mitigates the risk that a developer improperly uses information from a previous employer."
+          },
+          "7": {
+            "title": "7. Pre-Existing IP",
+            "summary": "Requires the Contributor to disclose intellectual property owned before joining and establishes a broad license if that IP is incorporated into the Business.",
+            "why": "Prevents a founder from later claiming that an essential part of the product was personally owned and demanding payment, control, or renegotiation after the company grows. Schedule 1 transparently identifies what is excluded and what license the Company receives."
+          },
+          "8": {
+            "title": "8. Disclosure, Delivery, and Cooperation",
+            "summary": "Requires the Contributor to deliver repositories, documentation, files, credentials, and other materials, and to sign additional documents needed to register or perfect rights.",
+            "why": "Ensures operational continuity when someone leaves. Without this clause, code may remain in a personal account, credentials may be lost, and the Company may be unable to prove ownership to investors, customers, or authorities."
+          },
+          "9": {
+            "title": "9. Security, Data, and Ownership of Assets",
+            "summary": "Establishes that accounts, repositories, equipment, credentials, and corporate assets belong to the Company and requires compliance with security and data-handling measures.",
+            "why": "Reduces the risk of unauthorized access, data loss, and reliance on personal accounts. It is a basic due diligence measure: investors typically review who controls GitHub, domains, cloud services, databases, and administrator accounts."
+          },
+          "10": {
+            "title": "10. Return of Property and Termination",
+            "summary": "Requires the return of assets, access credentials, and information, and deletion of copies under the Contributor’s control when the relationship ends.",
+            "why": "Facilitates an orderly departure and protects the Company from former team members retaining code, databases, customer information, or access to critical infrastructure."
+          },
+          "11": {
+            "title": "11. Contributor Representations",
+            "summary": "The Contributor confirms capacity, absence of conflicts, compliance with prior obligations, and no intentional infringement of third-party rights.",
+            "why": "Creates a contractual basis for claims if a Contributor concealed prior restrictions or introduced third-party assets without permission. It also helps identify intellectual property or non-compete risks involving a former employer at an early stage."
+          },
+          "12": {
+            "title": "12. Breach and Remedies",
+            "summary": "Recognizes that certain breaches may cause harm that is difficult to quantify and permits injunctive relief, specific performance, and damages.",
+            "why": "Provides tools to respond quickly to leaks, misuse of code, withholding of credentials, or misappropriation of assets. In technology businesses, waiting for a lengthy damages proceeding may be insufficient to contain the harm."
+          },
+          "13": {
+            "title": "13. Governing Law and Dispute Resolution",
+            "summary": "Establishes Colombian law and a tiered process of negotiation, conciliation, and arbitration or ordinary court proceedings.",
+            "why": "Avoids uncertainty about where and how a dispute will be resolved. It may also help reduce costs and achieve a faster solution to sensitive internal conflicts."
+          },
+          "14": {
+            "title": "14. General Provisions",
+            "summary": "Includes entire agreement, written amendments, severability, and electronic signature provisions.",
+            "why": "Prevents informal conversations or oral agreements from altering critical IP and confidentiality obligations. Electronic signatures also facilitate the rapid onboarding of developers, consultants, and remote contributors."
+          }
+        },
+        "equity_compensation": {
+          "preamble": {
+            "title": "Heading and Implementation Note",
+            "summary": "Identifies the Plan and the Company and explains its purpose of adapting the economics of restricted shares for founders and options for employees to the Colombian context.",
+            "why": "Avoids mechanically importing U.S. documents that do not fit Colombian corporate formalities. It makes clear that the Plan must be coordinated with the bylaws, authorized capital, shareholders’ ledger, and shareholders’ agreement."
+          },
+          "1": {
+            "title": "1. Purpose",
+            "summary": "Establishes that the Plan seeks to attract, retain, and align founders, employees, consultants, and advisors through equity-linked incentives.",
+            "why": "Provides a compensation tool that does not depend solely on cash. It is essential for hiring technical and executive talent at an early stage when resources are limited."
+          },
+          "2": {
+            "title": "2. Definitions",
+            "summary": "Defines recurring Plan terms such as Participants, Incentives, Vesting, Continuous Service Relationship, and Change of Control.",
+            "why": "TODO(legal): Guide Other Docs has no dedicated definitions block for the Plan; validate with the firm."
+          },
+          "3": {
+            "title": "3. Plan Administration",
+            "summary": "Designates the body authorized to grant, interpret, amend, and administer incentives.",
+            "why": "Prevents improvised or inconsistent grants. It also protects governance: once investors are involved, they will want to know who can dilute shareholders and under what rules."
+          },
+          "4": {
+            "title": "4. Plan Pool",
+            "summary": "Establishes the percentage or number of shares reserved for incentives, commonly called the ESOP pool.",
+            "why": "The pool determines future dilution. If it is not planned, an investment round may require creating a pool that causes greater founder dilution. If sized correctly, it supports hiring without renegotiating the capital structure for each grant."
+          },
+          "5": {
+            "title": "5. Eligibility and Types of Incentives",
+            "summary": "Defines who may receive incentives: founders, employees, directors, contractors, consultants, and advisors. Allows the use of restricted shares, subscription rights, options, transfer promises, or other permitted economic rights.",
+            "why": "Allows the Plan to be used for key people who are not necessarily employees. This is useful for startups working with advisors, technical consultants, or contractors at an early stage. Provides flexibility to select the most suitable structure based on the participant’s profile, applicable law, tax considerations, and the Company’s stage. Not every participant should receive the same instrument."
+          },
+          "6": {
+            "title": "6. Restricted Shares for Founders",
+            "summary": "Implements an RSPA-style structure: the founder receives or subscribes for shares, but the Company retains a repurchase right over the unvested portion if the founder ceases to be involved.",
+            "why": "Protects the team and future investors from “dead equity”: a person leaving early while retaining a large ownership stake without continuing to contribute. Vesting aligns ownership with continued service and value creation."
+          },
+          "7": {
+            "title": "7. Options for Employees, Consultants, and Advisors",
+            "summary": "Establishes the mechanism for granting options, including the number of shares, exercise price, vesting, term, and post-termination rules.",
+            "why": "Allows employees and consultants to be incentivized without issuing shares on day one. It also protects the capitalization table because unexercised options may lapse if a participant leaves before vesting or exercising them."
+          },
+          "8": {
+            "title": "8. Grant Letters and Individual Documents",
+            "summary": "Requires each incentive to be documented individually with its specific terms.",
+            "why": "Prevents disputes over the number of shares, price, vesting, or acceleration. The Plan establishes the general rules; the individual letter permits each case to be tailored without amending the entire Plan."
+          },
+          "9": {
+            "title": "9. Continuous Service Relationship",
+            "summary": "Defines what constitutes continuous service for vesting and option purposes.",
+            "why": "Prevents changes in role, contractual arrangement, or working hours from unintentionally interrupting vesting. It also allows the administrator to define clearly when a departure actually ends the right to continue vesting incentives."
+          },
+          "10": {
+            "title": "10. Good Leaver and Bad Leaver",
+            "summary": "Distinguishes legitimate departures from departures involving serious misconduct and connects that distinction to repurchase rights and the treatment of shares.",
+            "why": "Allows balanced treatment of a person who leaves because of incapacity, removal without cause, or mutual agreement, while giving the Company greater protection when a person abandons the venture, competes, commits fraud, or breaches IP or confidentiality obligations."
+          },
+          "11": {
+            "title": "11. Change of Control",
+            "summary": "Defines how shares and options are treated if the Company is sold, merged, or undergoes a change of control.",
+            "why": "Avoids uncertainty in an acquisition. Double-trigger acceleration is often a balanced solution: it protects people who lose their roles after a sale without granting automatic acceleration merely upon closing the transaction."
+          },
+          "12": {
+            "title": "12. Capital Adjustments and Reorganizations",
+            "summary": "Permits adjustments to the number of shares and exercise prices in the event of stock splits, consolidations, mergers, spin-offs, or other reorganizations.",
+            "why": "Prevents incentives from unjustifiably losing or gaining value because of purely corporate changes that do not reflect a real economic variation."
+          },
+          "13": {
+            "title": "13. Taxes, Withholdings, and Social Security",
+            "summary": "Assigns tax responsibility to the Participant and allows the Company to make withholdings or condition issuances on tax compliance.",
+            "why": "Shares and options may have complex tax consequences. This clause prevents the Company from assuming a participant’s personal tax liability and requires the treatment to be reviewed before issuance or exercise."
+          },
+          "14": {
+            "title": "14. No Guarantee of Continued Engagement",
+            "summary": "Clarifies that receiving an incentive does not guarantee employment, consultancy work, future compensation, or continued engagement.",
+            "why": "Reduces the risk that an employee or consultant will claim that the option or Plan guaranteed continued employment or a particular contractual relationship."
+          },
+          "15": {
+            "title": "15. Transfer Restrictions, Accession, and Compliance",
+            "summary": "Subjects shares issued under the Plan to the bylaws, shareholders’ agreement, transfer restrictions, and IP/confidentiality documents.",
+            "why": "Prevents ESOP shares from ending up in the hands of undesirable third parties or outside the intended governance framework. It also ensures that anyone receiving equity is bound by IP and confidentiality protections."
+          },
+          "16": {
+            "title": "16. Term, Amendment, and Termination of the Plan",
+            "summary": "Defines the duration, amendment, and termination of the Plan without improperly affecting incentives already granted.",
+            "why": "Preserves flexibility to adapt the Plan for a financing round, regulatory changes, or hiring needs while maintaining the confidence of people who have already received incentives."
+          },
+          "17": {
+            "title": "17. Governing Law and Dispute Resolution",
+            "summary": "Establishes Colombian law and a tiered negotiation, conciliation, and arbitration or court process.",
+            "why": "TODO(legal): Guide Other Docs does not detail this Plan block; validate with the firm."
+          },
+          "18": {
+            "title": "18. General Provisions",
+            "summary": "Includes entire agreement, precedence, severability, and electronic signature provisions.",
+            "why": "TODO(legal): Guide Other Docs does not detail this Plan block; validate with the firm."
+          }
         }
       }
     },
@@ -1258,7 +1475,7 @@
       "tipsTitle": "Upload by category",
       "tipsDescription": "Cover corporate, financial, tax, and labor categories first — investors and the firm review against Colombian DD standards.",
       "coverageTitle": "Document checklist",
-      "coverageDescription": "Track which categories still need a file before the firm can complete its review.",
+      "coverageDescription": "Coverage follows the firm Information Request (RFI). Upload at least one document per requested category.",
       "stats": {
         "documents": "Documents uploaded",
         "categories": "Categories covered"
@@ -1279,6 +1496,16 @@
       "uploading": "Uploading…",
       "uploadSuccess": "Document uploaded successfully.",
       "categories": {
+        "corporate_governance": "Corporate & governance",
+        "founders_shareholders": "Founders & shareholders",
+        "ip_technology": "IP, technology & confidentiality",
+        "equity_compensation": "Equity compensation / ESOP",
+        "labor_talent": "Employment, contractors & talent",
+        "commercial_customers": "Commercial & corporate customers",
+        "privacy_consumer": "End users, privacy & consumer",
+        "financing_related": "Financing & related parties",
+        "disputes_compliance": "Disputes, compliance & insurance",
+        "other": "Other",
         "corporate": "Corporate",
         "financial": "Financial",
         "tax": "Tax",
@@ -1286,8 +1513,7 @@
         "contracts": "Contracts",
         "ip": "Intellectual property",
         "litigation": "Litigation",
-        "regulatory": "Regulatory",
-        "other": "Other"
+        "regulatory": "Regulatory"
       },
       "errors": {
         "upload_failed": "Could not upload the document.",
@@ -1297,7 +1523,10 @@
         "unsupported_type": "File type not allowed.",
         "invalid_filename": "Invalid file name.",
         "forbidden": "You do not have permission to upload to this room."
-      }
+      },
+      "workspacePanes": "Room views",
+      "paneRoom": "Documents",
+      "paneUpload": "Upload"
     },
     "documents": {
       "nda": {
@@ -1658,6 +1887,16 @@
       "version": "Version {n}",
       "download": "Download",
       "categories": {
+        "corporate_governance": "Corporate & governance",
+        "founders_shareholders": "Founders & shareholders",
+        "ip_technology": "IP, technology & confidentiality",
+        "equity_compensation": "Equity compensation / ESOP",
+        "labor_talent": "Employment, contractors & talent",
+        "commercial_customers": "Commercial & corporate customers",
+        "privacy_consumer": "End users, privacy & consumer",
+        "financing_related": "Financing & related parties",
+        "disputes_compliance": "Disputes, compliance & insurance",
+        "other": "Other",
         "corporate": "Corporate",
         "financial": "Financial",
         "tax": "Tax",
@@ -1665,8 +1904,7 @@
         "contracts": "Contracts",
         "ip": "Intellectual property",
         "litigation": "Litigation",
-        "regulatory": "Regulatory",
-        "other": "Other"
+        "regulatory": "Regulatory"
       }
     }
   },
@@ -1730,14 +1968,21 @@
       "riskLevels": {
         "bajo": "Low",
         "medio": "Medium",
-        "alto": "High"
+        "alto": "High",
+        "info_requerida": "Information required"
       },
       "scheduleCallTitle": "Schedule a call with the firm",
       "scheduleCallHint": "Request a follow-up on this room. The firm will confirm the time.",
       "scheduleCallLabel": "Preferred date and time",
       "scheduleCallCta": "Request call",
       "scheduleCallSuccess": "Request sent. You will be notified when the firm confirms.",
-      "scheduleCallError": "Could not send the request."
+      "scheduleCallError": "Could not send the request.",
+      "findingsEmptyTitle": "No findings yet",
+      "findingsEmptyDescription": "The firm has not published findings in this room yet.",
+      "recommendedActionShort": "Action",
+      "workspacePanes": "Room views",
+      "paneMain": "Assessment",
+      "paneDocs": "Documents"
     }
   },
   "firm": {
@@ -1899,7 +2144,8 @@
       "riskLevels": {
         "bajo": "Low",
         "medio": "Medium",
-        "alto": "High"
+        "alto": "High",
+        "info_requerida": "Information required"
       },
       "errors": {
         "create_failed": "Could not create the room.",
@@ -1910,7 +2156,44 @@
         "tenant_not_configured": "Firm workspace is not configured correctly. Ask an admin to check tenant setup.",
         "firm_org_required": "You must have firm membership.",
         "firm_membership_required": "You must have firm membership."
-      }
+      },
+      "playbookAssistTitle": "Playbook checklist",
+      "draftFromFindings": "Draft from findings",
+      "downloadReport": "Download DD report",
+      "assessmentDrafted": "Draft generated from findings. Review before publishing.",
+      "reportDownloaded": "Report downloaded.",
+      "backToRooms": "Back to rooms",
+      "dealWorkspaceSubtitle": "Review the data room, log findings with the playbook, and publish the assessment for investors.",
+      "documentsHint": "Latest version per category",
+      "findingsHint": "Register by risk category",
+      "findingsEmptyTitle": "No findings yet",
+      "findingsEmptyDescription": "Use the review panel on the right to log the first finding with the playbook checklist.",
+      "findingCount": "{count} finding(s)",
+      "recommendedActionShort": "Action",
+      "reviewPanelEyebrow": "Review",
+      "addFindingHint": "Classify risk, check the playbook, and capture evidence.",
+      "assessmentEyebrow": "Output",
+      "assessmentHint": "Internal draft until you publish for investors.",
+      "stats": {
+        "documents": "Documents",
+        "findings": "Findings",
+        "assessment": "Assessment",
+        "status": "Room status",
+        "published": "Published",
+        "draft": "Draft",
+        "pending": "Pending",
+        "riskMix": "High {high} · Med {med} · Low {low} · Info {info}"
+      },
+      "tabFinding": "Log finding",
+      "tabAssessment": "Assessment",
+      "findingDescriptionPlaceholder": "What did you find, and where?",
+      "recommendedActionPlaceholder": "What should be fixed or confirmed?",
+      "legalCitationPlaceholder": "Optional statute or clause reference",
+      "assessmentPlaceholder": "Executive summary for investors…",
+      "workspacePanes": "Room views",
+      "paneRoom": "Room",
+      "paneReview": "Review",
+      "backShort": "Back"
     },
     "calls": {
       "title": "Scheduled calls",
