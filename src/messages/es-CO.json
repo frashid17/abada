@@ -22,7 +22,10 @@
       "adminAi": "Uso de IA",
       "adminRequests": "Solicitudes",
       "adminAudit": "Auditoría"
-    }
+    },
+    "openMenu": "Abrir menú",
+    "closeMenu": "Cerrar menú",
+    "mobileNav": "Navegación principal"
   },
   "notifications": {
     "title": "Notificaciones",
@@ -615,6 +618,16 @@
           "tabLabel": "Términos de uso",
           "title": "Términos y condiciones de uso",
           "description": "Términos B2C de la plataforma: cuenta, licencia, IA, pagos y responsabilidad."
+        },
+        "ip_assignment": {
+          "tabLabel": "Cesión de PI",
+          "title": "Confidencialidad, cesión de PI e invenciones",
+          "description": "Acuerdo para fundadores, empleados y contratistas: confidencialidad, titularidad de desarrollos y PI preexistente."
+        },
+        "equity_compensation": {
+          "tabLabel": "Compensación en acciones",
+          "title": "Plan de compensación en acciones e incentivos",
+          "description": "Pool, acciones restringidas para fundadores y opciones para empleados/consultores en una S.A.S. colombiana."
         }
       },
       "intros": {
@@ -623,7 +636,9 @@
         "founders": "Este acuerdo fija cómo trabajan juntos los fundadores: aportes, vesting, PI, gobierno y transferencias. Haz clic en una cláusula para ver la guía de la firma.",
         "employment": "Plantilla laboral investment-ready: cargo, salario, confidencialidad y cesión de PI. Haz clic en una cláusula para la guía.",
         "corporate_client": "Contrato marco con clientes corporativos. Revisa objeto, IP, datos y límites de responsabilidad con la guía lateral.",
-        "terms_of_use": "Términos para usuarios finales de tu producto. Haz clic en una cláusula para entender su función."
+        "terms_of_use": "Términos para usuarios finales de tu producto. Haz clic en una cláusula para entender su función.",
+        "ip_assignment": "Este acuerdo asegura que el código, datos y know-how queden en la Sociedad. Haz clic en una cláusula para ver la guía de la firma.",
+        "equity_compensation": "El Plan alinea incentivos con equity sin depender solo de caja. Revisa pool, vesting, leavers y cambio de control con la guía lateral."
       },
       "callouts": {
         "term_sheet": {
@@ -708,6 +723,34 @@
           "account": {
             "label": "Cuenta y elegibilidad",
             "hint": "Quién puede registrarse y cómo se suspende el acceso."
+          }
+        },
+        "ip_assignment": {
+          "confidentiality": {
+            "label": "Confidencialidad",
+            "hint": "Protege roadmap, código, precios y conversaciones con inversionistas."
+          },
+          "assignment": {
+            "label": "Cesión de PI",
+            "hint": "Sin titularidad clara de la Sociedad, una ronda o venta puede bloquearse."
+          },
+          "preExisting": {
+            "label": "PI preexistente",
+            "hint": "Declara exclusiones y licencia si se incorpora al producto."
+          }
+        },
+        "equity_compensation": {
+          "pool": {
+            "label": "Reserva / pool",
+            "hint": "Define dilución futura para contratar sin renegociar el cap table en cada grant."
+          },
+          "restricted": {
+            "label": "Acciones restringidas",
+            "hint": "Vesting y recompra evitan dead equity si un fundador sale temprano."
+          },
+          "options": {
+            "label": "Opciones",
+            "hint": "Incentiva empleados y asesores sin emitir acciones el día uno."
           }
         }
       },
@@ -1233,6 +1276,180 @@
             "summary": "of the section: Provides channels for support, privacy matters, and general communications. Importance for founders: Promotes transparency and enables requests, complaints, claims, and data-protection inquiries to be handled in an orderly and traceable manner.",
             "why": "Purpose of the section: Provides channels for support, privacy matters, and general communications. Importance for founders: Promotes transparency and enables requests, complaints, claims, and data-protection inquiries to be handled in an orderly and traceable manner."
           }
+        },
+        "ip_assignment": {
+          "preamble": {
+            "title": "Encabezado, Partes y Objeto",
+            "summary": "Identifica a la Sociedad y al colaborador (fundador, empleado, contratista o equipo técnico) y fija que el acuerdo cubre confidencialidad, PI e invenciones del Negocio.",
+            "why": "Evita disputas sobre quién está obligado y el alcance. En una startup, el código, producto, datos y know-how suelen ser el activo más valioso; quien aporte al producto debe quedar vinculado contractualemente."
+          },
+          "1": {
+            "title": "1. Objeto y Alcance",
+            "summary": "Establece que el Colaborador participa en el negocio y que el acuerdo gobierna el work product y la información que conoce, usa o crea por esa relación.",
+            "why": "Reduce el riesgo de que alguien diga que sus desarrollos no estaban relacionados con la Sociedad. Es clave en esquemas híbridos, remotos, part-time o de contratistas."
+          },
+          "2": {
+            "title": "2. Definiciones",
+            "summary": "Define de forma amplia “Información Confidencial” y “Desarrollos”, incluyendo software, código, modelos de IA, datos, interfaces, documentación, métodos y secretos empresariales.",
+            "why": "Una definición amplia evita vacíos. Sin ella, un desarrollador podría argumentar que un algoritmo, prompt, base de datos o mejora no estaba cubierta."
+          },
+          "3": {
+            "title": "3. Confidencialidad",
+            "summary": "Obliga al Colaborador a proteger y usar la información confidencial solo para fines autorizados; incluye excepciones razonables y un proceso para revelaciones legalmente exigidas.",
+            "why": "Protege información que pierde valor si se divulga: roadmap, precios, estrategia, credenciales, código, contactos de clientes y conversaciones con inversionistas."
+          },
+          "4": {
+            "title": "4. Titularidad y Cesión de Derechos Patrimoniales",
+            "summary": "Reconoce la titularidad exclusiva de la Sociedad sobre los Desarrollos e incluye cesión expresa de derechos patrimoniales de PI.",
+            "why": "Es de las cláusulas más importantes para una ronda o venta. Inversionistas y compradores revisan si la Sociedad realmente es dueña del código, marcas, diseños y tecnología."
+          },
+          "5": {
+            "title": "5. Derechos Morales y Autorizaciones",
+            "summary": "Reconoce que los derechos morales son inalienables en Colombia, pero obtiene autorizaciones para adaptar, modificar, integrar, publicar y explotar los Desarrollos en la medida permitida por la ley.",
+            "why": "La sola cesión patrimonial puede no resolver objeciones a cambios o atribución. Esta autorización reduce fricción al iterar el producto."
+          },
+          "6": {
+            "title": "6. Software, Código, Materiales de Terceros e Inteligencia Artificial",
+            "summary": "Regula el uso de software open source, librerías, datos, modelos y materiales de terceros, e impone revisión de licencias y registro.",
+            "why": "Evita incorporar licencias que obliguen a revelar código o costos imprevistos, y mitiga el uso indebido de información de un empleador anterior."
+          },
+          "7": {
+            "title": "7. Propiedad Intelectual Preexistente",
+            "summary": "Exige revelar PI previa y otorga licencia amplia si se incorpora al Negocio; el Anexo 1 identifica exclusiones.",
+            "why": "Evita que un fundador reclame después que una parte esencial del producto era personal y exija pago o control. El anexo da transparencia para due diligence."
+          },
+          "8": {
+            "title": "8. Divulgación, Entrega y Colaboración",
+            "summary": "Obliga a entregar repositorios, documentación, archivos y credenciales, y a firmar documentos adicionales para registrar o perfeccionar derechos.",
+            "why": "Asegura continuidad operativa si alguien sale. Sin esto, el código puede quedar en cuentas personales y la Sociedad no podrá probar titularidad."
+          },
+          "9": {
+            "title": "9. Seguridad, Datos y Activos de la Sociedad",
+            "summary": "Establece que cuentas, repositorios, equipos y credenciales son de la Sociedad y exige cumplir medidas de seguridad y datos.",
+            "why": "Reduce accesos no autorizados y dependencia de cuentas personales. Es un básico de due diligence: quién controla GitHub, dominios, cloud y bases de datos."
+          },
+          "10": {
+            "title": "10. Devolución de Bienes y Terminación",
+            "summary": "Exige devolver activos, accesos e información, y eliminar copias bajo control del Colaborador al terminar la relación.",
+            "why": "Facilita una salida ordenada y evita que ex-colaboradores retengan código, datos de clientes o acceso a infraestructura crítica."
+          },
+          "11": {
+            "title": "11. Declaraciones y Garantías del Colaborador",
+            "summary": "El Colaborador confirma capacidad, ausencia de conflictos, cumplimiento de obligaciones previas y no infracción intencional de derechos de terceros.",
+            "why": "Da base contractual si se ocultaron restricciones previas o se introdujeron activos de terceros sin permiso."
+          },
+          "12": {
+            "title": "12. Incumplimiento y Remedios",
+            "summary": "Reconoce que ciertos incumplimientos causan daño difícil de cuantificar y permite medidas cautelares, cumplimiento específico y daños.",
+            "why": "Da herramientas para reaccionar rápido ante filtraciones, retención de credenciales o apropiación indebida."
+          },
+          "13": {
+            "title": "13. Ley Aplicable y Solución de Controversias",
+            "summary": "Fija ley colombiana y un proceso escalonado de negociación, conciliación y arbitraje o jurisdicción ordinaria.",
+            "why": "Evita incertidumbre sobre dónde y cómo se resuelve un conflicto interno sensible."
+          },
+          "14": {
+            "title": "14. Disposiciones Generales",
+            "summary": "Incluye integridad del acuerdo, modificaciones por escrito, divisibilidad y firma electrónica.",
+            "why": "Evita que conversaciones informales alteren obligaciones críticas de PI y confidencialidad. La firma electrónica agiliza onboarding remoto."
+          }
+        },
+        "equity_compensation": {
+          "preamble": {
+            "title": "Encabezado y Nota de Implementación",
+            "summary": "Identifica el Plan y la Sociedad y explica que adapta la lógica económica de acciones restringidas (fundadores) y opciones (empleados) al contexto colombiano.",
+            "why": "Evita importar mecánicamente documentos de EE. UU. que no encajan con formalidades societarias colombianas. El Plan debe coordinarse con estatutos, capital autorizado, libro de accionistas y acuerdo de accionistas."
+          },
+          "1": {
+            "title": "1. Objeto",
+            "summary": "Establece que el Plan busca atraer, retener y alinear a fundadores, empleados, consultores y asesores con incentivos ligados a equity.",
+            "why": "Da una herramienta de compensación que no depende solo de caja. Es esencial para contratar talento técnico y ejecutivo en etapas tempranas."
+          },
+          "2": {
+            "title": "2. Definiciones",
+            "summary": "Define términos recurrentes del Plan (Participantes, Incentivos, Vesting, Relación de Servicio Continua, Cambio de Control, etc.).",
+            "why": "TODO(legal): el guide Other Docs no trae un bloque dedicado de definiciones para el Plan; usar este resumen explicativo y validar con la firma."
+          },
+          "3": {
+            "title": "3. Administración del Plan",
+            "summary": "Designa el órgano autorizado para otorgar, interpretar, modificar y administrar incentivos.",
+            "why": "Evita otorgamientos improvisados o inconsistentes. Protege gobernanza: los inversionistas querrán saber quién puede diluir y bajo qué reglas."
+          },
+          "4": {
+            "title": "4. Reserva del Plan",
+            "summary": "Fija el porcentaje o número de acciones reservadas para incentivos (pool / ESOP).",
+            "why": "El pool determina dilución futura. Si no se planea, una ronda puede exigir crear pool con mayor dilución de fundadores."
+          },
+          "5": {
+            "title": "5. Elegibilidad y Tipos de Incentivos",
+            "summary": "Define quién puede recibir incentivos y qué instrumentos se pueden otorgar (acciones restringidas, opciones, promesas de transferencia u otros derechos económicos permitidos).",
+            "why": "Permite incentivar personas clave que no sean empleados y elegir la estructura adecuada según perfil, impuestos y etapa de la compañía."
+          },
+          "6": {
+            "title": "6. Acciones Restringidas para Fundadores",
+            "summary": "Implementa una estructura tipo RSPA: el fundador recibe o suscribe acciones, pero la Sociedad retiene derecho de recompra sobre la porción no consolidada si deja de aportar.",
+            "why": "Protege al equipo e inversionistas del “dead equity”: alguien que se va temprano conservando una participación alta sin seguir contribuyendo."
+          },
+          "7": {
+            "title": "7. Opciones para Empleados, Consultores y Asesores",
+            "summary": "Establece el mecanismo de opciones: número de acciones, precio de ejercicio, vesting, plazo y reglas post-terminación.",
+            "why": "Permite incentivar sin emitir acciones el día uno. Las opciones no ejercidas pueden caducar si la persona se va antes de consolidar o ejercer."
+          },
+          "8": {
+            "title": "8. Cartas de Otorgamiento y Documentos Individuales",
+            "summary": "Exige documentar cada incentivo con una carta u acuerdo individual con sus términos específicos.",
+            "why": "Evita disputas sobre número, precio, vesting o aceleración. El Plan da reglas generales; la carta ajusta cada caso."
+          },
+          "9": {
+            "title": "9. Relación de Servicio Continua",
+            "summary": "Define qué cuenta como servicio continuo para efectos de vesting y ejercicio.",
+            "why": "Evita que cambios de rol o modalidad interrumpan vesting sin querer, y aclara cuándo una salida corta el derecho a seguir consolidando."
+          },
+          "10": {
+            "title": "10. Good Leaver y Bad Leaver",
+            "summary": "Distingue salidas legítimas de salidas por falta grave y conecta eso con recompra y tratamiento de acciones.",
+            "why": "Permite trato equilibrado ante incapacidad o remoción sin causa, y mayor protección si hay abandono, competencia, fraude o incumplimiento de PI/confidencialidad."
+          },
+          "11": {
+            "title": "11. Cambio de Control",
+            "summary": "Define el tratamiento de acciones y opciones si hay venta, fusión o cambio de control.",
+            "why": "Evita incertidumbre en una adquisición. La aceleración de doble disparo suele equilibrar protección post-venta sin acelerar solo por el cierre."
+          },
+          "12": {
+            "title": "12. Ajustes de Capital y Reorganizaciones",
+            "summary": "Permite ajustar número de acciones y precios ante splits, consolidaciones, fusiones u otras reorganizaciones.",
+            "why": "Evita que los incentivos pierdan o ganen valor injustificadamente por cambios societarios sin variación económica real."
+          },
+          "13": {
+            "title": "13. Impuestos, Retenciones y Seguridad Social",
+            "summary": "Asigna la responsabilidad tributaria al Participante y permite retenciones o condicionar emisiones al cumplimiento fiscal.",
+            "why": "Acciones y opciones pueden tener consecuencias fiscales complejas. Evita que la Sociedad asuma la carga personal del participante."
+          },
+          "14": {
+            "title": "14. Sin Garantía de Vinculación",
+            "summary": "Aclara que recibir un incentivo no garantiza empleo, consultoría, compensación futura ni continuidad.",
+            "why": "Reduce el riesgo de que alguien alegue que la opción o el Plan garantizaba continuidad laboral o contractual."
+          },
+          "15": {
+            "title": "15. Restricciones de Transferencia, Adhesión y Cumplimiento",
+            "summary": "Somete las acciones del Plan a estatutos, acuerdo de accionistas, restricciones de transferencia y documentos de PI/confidencialidad.",
+            "why": "Evita que acciones del ESOP queden en manos indeseadas o fuera del marco de gobernanza previsto."
+          },
+          "16": {
+            "title": "16. Vigencia, Modificación y Terminación del Plan",
+            "summary": "Define duración, modificación y terminación del Plan sin afectar indebidamente incentivos ya otorgados.",
+            "why": "Da flexibilidad para adaptar el Plan a una ronda o cambios regulatorios manteniendo confianza de quienes ya recibieron incentivos."
+          },
+          "17": {
+            "title": "17. Ley Aplicable y Solución de Controversias",
+            "summary": "Fija ley colombiana y un proceso escalonado de negociación, conciliación y arbitraje o jurisdicción ordinaria.",
+            "why": "TODO(legal): el guide Other Docs no detalla este bloque para el Plan; adaptar del patrón de otros documentos y validar con la firma."
+          },
+          "18": {
+            "title": "18. Disposiciones Generales",
+            "summary": "Incluye integridad, prelación frente a estatutos/acuerdo de accionistas, divisibilidad y firma electrónica.",
+            "why": "TODO(legal): el guide Other Docs no detalla este bloque para el Plan; resumen explicativo pendiente de validación legal."
+          }
         }
       }
     },
@@ -1258,7 +1475,7 @@
       "tipsTitle": "Sube por categoría",
       "tipsDescription": "Cubre primero las categorías corporativa, financiera, tributaria y laboral — la firma e inversionistas revisan según estándares de DD en Colombia.",
       "coverageTitle": "Lista de documentos",
-      "coverageDescription": "Sigue qué categorías aún necesitan un archivo antes de que la firma complete su revisión.",
+      "coverageDescription": "Cobertura según el Requerimiento de Información (RDI) de la firma. Sube al menos un documento por categoría solicitada.",
       "stats": {
         "documents": "Documentos subidos",
         "categories": "Categorías cubiertas"
@@ -1279,6 +1496,16 @@
       "uploading": "Subiendo…",
       "uploadSuccess": "Documento subido correctamente.",
       "categories": {
+        "corporate_governance": "Corporativo y gobierno",
+        "founders_shareholders": "Fundadores y accionistas",
+        "ip_technology": "PI, tecnología y confidencialidad",
+        "equity_compensation": "Compensación en acciones / ESOP",
+        "labor_talent": "Laboral, consultores y talento",
+        "commercial_customers": "Contratos comerciales y clientes",
+        "privacy_consumer": "Usuarios, privacidad y consumidor",
+        "financing_related": "Financiamiento y vinculados",
+        "disputes_compliance": "Litigios, cumplimiento y seguros",
+        "other": "Otros",
         "corporate": "Corporativo",
         "financial": "Financiero",
         "tax": "Tributario",
@@ -1286,8 +1513,7 @@
         "contracts": "Contractual",
         "ip": "Propiedad intelectual",
         "litigation": "Litigios",
-        "regulatory": "Regulatorio",
-        "other": "Otros"
+        "regulatory": "Regulatorio"
       },
       "errors": {
         "upload_failed": "No se pudo subir el documento.",
@@ -1297,7 +1523,10 @@
         "unsupported_type": "Tipo de archivo no permitido.",
         "invalid_filename": "Nombre de archivo no válido.",
         "forbidden": "No tienes permiso para subir a esta sala."
-      }
+      },
+      "workspacePanes": "Vistas de la sala",
+      "paneRoom": "Documentos",
+      "paneUpload": "Subir"
     },
     "documents": {
       "nda": {
@@ -1658,6 +1887,16 @@
       "version": "Versión {n}",
       "download": "Descargar",
       "categories": {
+        "corporate_governance": "Corporativo y gobierno",
+        "founders_shareholders": "Fundadores y accionistas",
+        "ip_technology": "PI, tecnología y confidencialidad",
+        "equity_compensation": "Compensación en acciones / ESOP",
+        "labor_talent": "Laboral, consultores y talento",
+        "commercial_customers": "Contratos comerciales y clientes",
+        "privacy_consumer": "Usuarios, privacidad y consumidor",
+        "financing_related": "Financiamiento y vinculados",
+        "disputes_compliance": "Litigios, cumplimiento y seguros",
+        "other": "Otros",
         "corporate": "Corporativo",
         "financial": "Financiero",
         "tax": "Tributario",
@@ -1665,8 +1904,7 @@
         "contracts": "Contractual",
         "ip": "Propiedad intelectual",
         "litigation": "Litigios",
-        "regulatory": "Regulatorio",
-        "other": "Otros"
+        "regulatory": "Regulatorio"
       }
     }
   },
@@ -1730,14 +1968,21 @@
       "riskLevels": {
         "bajo": "Bajo",
         "medio": "Medio",
-        "alto": "Alto"
+        "alto": "Alto",
+        "info_requerida": "Información requerida"
       },
       "scheduleCallTitle": "Agendar llamada con la firma",
       "scheduleCallHint": "Solicita un seguimiento sobre esta sala. La firma confirmará el horario.",
       "scheduleCallLabel": "Fecha y hora preferida",
       "scheduleCallCta": "Solicitar llamada",
       "scheduleCallSuccess": "Solicitud enviada. Recibirás una notificación cuando la firma confirme.",
-      "scheduleCallError": "No se pudo enviar la solicitud."
+      "scheduleCallError": "No se pudo enviar la solicitud.",
+      "findingsEmptyTitle": "Aún no hay hallazgos",
+      "findingsEmptyDescription": "La firma aún no ha publicado hallazgos en esta sala.",
+      "recommendedActionShort": "Acción",
+      "workspacePanes": "Vistas de la sala",
+      "paneMain": "Evaluación",
+      "paneDocs": "Documentos"
     }
   },
   "firm": {
@@ -1899,7 +2144,8 @@
       "riskLevels": {
         "bajo": "Bajo",
         "medio": "Medio",
-        "alto": "Alto"
+        "alto": "Alto",
+        "info_requerida": "Información requerida"
       },
       "errors": {
         "create_failed": "No se pudo crear la sala.",
@@ -1910,7 +2156,44 @@
         "tenant_not_configured": "El espacio de trabajo de la firma no está configurado correctamente. Pide a un administrador revisar el tenant.",
         "firm_org_required": "Debes tener membresía en la firma.",
         "firm_membership_required": "Debes tener membresía en la firma."
-      }
+      },
+      "playbookAssistTitle": "Checklist del playbook",
+      "draftFromFindings": "Borrador desde hallazgos",
+      "downloadReport": "Descargar reporte DD",
+      "assessmentDrafted": "Borrador generado desde los hallazgos. Revísalo antes de publicar.",
+      "reportDownloaded": "Reporte descargado.",
+      "backToRooms": "Volver a salas",
+      "dealWorkspaceSubtitle": "Revisa el data room, registra hallazgos con el playbook y publica la evaluación para inversionistas.",
+      "documentsHint": "Última versión por categoría",
+      "findingsHint": "Registro por categoría de riesgo",
+      "findingsEmptyTitle": "Aún no hay hallazgos",
+      "findingsEmptyDescription": "Usa el panel de revisión a la derecha para registrar el primer hallazgo con la guía del playbook.",
+      "findingCount": "{count} hallazgo(s)",
+      "recommendedActionShort": "Acción",
+      "reviewPanelEyebrow": "Revisión",
+      "addFindingHint": "Clasifica el riesgo, consulta el checklist y documenta la evidencia.",
+      "assessmentEyebrow": "Salida",
+      "assessmentHint": "Borrador interno hasta que publiques para inversionistas.",
+      "stats": {
+        "documents": "Documentos",
+        "findings": "Hallazgos",
+        "assessment": "Evaluación",
+        "status": "Estado de la sala",
+        "published": "Publicada",
+        "draft": "Borrador",
+        "pending": "Pendiente",
+        "riskMix": "Alto {high} · Medio {med} · Bajo {low} · Info {info}"
+      },
+      "tabFinding": "Registrar hallazgo",
+      "tabAssessment": "Evaluación",
+      "findingDescriptionPlaceholder": "¿Qué encontraste y dónde?",
+      "recommendedActionPlaceholder": "¿Qué debe corregirse o confirmarse?",
+      "legalCitationPlaceholder": "Cita legal u opcional de cláusula",
+      "assessmentPlaceholder": "Resumen ejecutivo para inversionistas…",
+      "workspacePanes": "Vistas de la sala",
+      "paneRoom": "Sala",
+      "paneReview": "Revisión",
+      "backShort": "Volver"
     },
     "calls": {
       "title": "Llamadas programadas",
