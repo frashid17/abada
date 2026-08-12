@@ -8,6 +8,10 @@ import { foundersMasterTemplate } from "@/lib/documents/templates/founders";
 import { foundersMasterTemplateEn } from "@/lib/documents/templates/founders.en";
 import { termSheetMasterTemplate } from "@/lib/documents/templates/term-sheet";
 import { termSheetMasterTemplateEn } from "@/lib/documents/templates/term-sheet.en";
+import { equityCompensationMasterTemplate } from "@/lib/documents/templates/equity-compensation";
+import { equityCompensationMasterTemplateEn } from "@/lib/documents/templates/equity-compensation.en";
+import { ipAssignmentMasterTemplate } from "@/lib/documents/templates/ip-assignment";
+import { ipAssignmentMasterTemplateEn } from "@/lib/documents/templates/ip-assignment.en";
 import { termsOfUseMasterTemplate } from "@/lib/documents/templates/terms-of-use";
 import { termsOfUseMasterTemplateEn } from "@/lib/documents/templates/terms-of-use.en";
 
@@ -17,7 +21,9 @@ export type LearnDocumentType =
   | "founders"
   | "employment"
   | "corporate_client"
-  | "terms_of_use";
+  | "terms_of_use"
+  | "ip_assignment"
+  | "equity_compensation";
 
 export type RenderResult = {
   body: string;
@@ -133,6 +139,24 @@ export function renderLearnDocument(
 
   if (documentType === "terms_of_use") {
     const template = pickTemplate(locale, termsOfUseMasterTemplate, termsOfUseMasterTemplateEn);
+    return mergeTemplate(template, valuesFromFields(template, fields));
+  }
+
+  if (documentType === "ip_assignment") {
+    const template = pickTemplate(
+      locale,
+      ipAssignmentMasterTemplate,
+      ipAssignmentMasterTemplateEn,
+    );
+    return mergeTemplate(template, valuesFromFields(template, fields));
+  }
+
+  if (documentType === "equity_compensation") {
+    const template = pickTemplate(
+      locale,
+      equityCompensationMasterTemplate,
+      equityCompensationMasterTemplateEn,
+    );
     return mergeTemplate(template, valuesFromFields(template, fields));
   }
 
