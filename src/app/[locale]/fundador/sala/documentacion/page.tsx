@@ -1,5 +1,5 @@
 import { redirect } from "next/navigation";
 
-export default function FounderDocumentationRedirectPage() {
-  redirect("/fundador/plantillas/term-sheet");
+export default function FounderSalaDocumentationRedirect() {
+  redirect("/fundador/documentos/guia/term-sheet");
 }

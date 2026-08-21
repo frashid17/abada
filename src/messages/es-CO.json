@@ -539,11 +539,13 @@
     },
     "documentsPage": {
       "title": "Documentos",
-      "subtitle": "Cinco flujos guiados para dejar tu startup lista para inversión — empieza donde quieras o continúa donde lo dejaste.",
+      "subtitle": "Flujos guiados y plantillas de la firma en un solo lugar — completa los campos mientras lees cada cláusula.",
       "eyebrow": "Biblioteca de documentos",
-      "catalogSubtitle": "Explora cada documento del paquete de investment-readiness, en orden del checklist.",
-      "catalogHeading": "Biblioteca completa",
-      "catalogDescription": "Cada documento se apoya en el anterior. Abre cualquier flujo para redactar, guardar y descargar.",
+      "catalogSubtitle": "Redacción con guía integrada: desplázate el documento, llena los espacios y usa los comentarios de la firma.",
+      "catalogHeading": "Documentos de investment-readiness",
+      "catalogDescription": "Abre un documento para redactarlo en el texto, con la guía de cláusulas a un lado.",
+      "guidesHeading": "Más plantillas de la firma",
+      "guidesDescription": "Modelos educativos con comentarios de la firma. Cuando tengan flujo de borrador, se abrirán en el mismo espacio de redacción.",
       "pipelineTitle": "Tu ruta de documentos",
       "continueCta": "Continuar donde lo dejaste",
       "documentCount": "{count} documentos",
@@ -553,6 +555,17 @@
       "eyebrow": "Plantillas de la firma",
       "title": "Aprende los documentos",
       "subtitle": "Elige una plantilla, lee cada cláusula y descubre por qué importa en tu ronda — con comentarios de la firma."
+    },
+    "workspace": {
+      "eyebrow": "Redacción guiada",
+      "subtitle": "Desplázate por el documento, completa los campos en el texto y lee la guía de cada cláusula a medida que avanzas.",
+      "scrollHint": "Al desplazarte se actualiza la guía de la cláusula",
+      "calloutHint": "Ir a esta cláusula en el documento",
+      "structureHeading": "Opciones del documento",
+      "fieldsInClause": "Campos en esta sección",
+      "fillInHint": "Completa los espacios resaltados en el texto; se guardan automáticamente.",
+      "selectHint": "Desplázate o haz clic en una cláusula para ver la guía y los campos de esa sección.",
+      "clauseFallbackTitle": "Esta sección"
     },
     "legalLibrary": {
       "eyebrow": "Corpus legal",
@@ -581,6 +594,7 @@
     "learn": {
       "documentProgress": "Documento {step} de {total}",
       "clickHint": "Haz clic en una cláusula para ver la explicación",
+      "scrollHint": "Al desplazarte se actualiza la guía de la cláusula",
       "selectClauseTitle": "Selecciona una cláusula",
       "selectClauseHint": "Haz clic en cualquier cláusula del borrador para ver qué significa y por qué importa para tu ronda.",
       "draftMeta": "Borrador para revisión · {count} cláusulas",

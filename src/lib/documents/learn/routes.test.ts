@@ -18,9 +18,12 @@ describe("learn document routes", () => {
 
   it("builds template paths", () => {
     expect(learnTypeToSlug("term_sheet")).toBe("term-sheet");
-    expect(templatesPath("shareholders")).toBe("/fundador/plantillas/shareholders");
-    expect(templatesPath("terms_of_use")).toBe("/fundador/plantillas/terms-of-use");
-    expect(templatesPath("ip_assignment")).toBe("/fundador/plantillas/ip-assignment");
-    expect(templatesPath("equity_compensation")).toBe("/fundador/plantillas/equity-compensation");
+    expect(templatesPath("shareholders")).toBe("/fundador/documentos/shareholders");
+    expect(templatesPath("employment")).toBe("/fundador/documentos/employment");
+    expect(templatesPath("terms_of_use")).toBe("/fundador/documentos/guia/terms-of-use");
+    expect(templatesPath("ip_assignment")).toBe("/fundador/documentos/guia/ip-assignment");
+    expect(templatesPath("equity_compensation")).toBe(
+      "/fundador/documentos/guia/equity-compensation",
+    );
   });
 });

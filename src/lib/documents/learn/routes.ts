@@ -25,12 +25,18 @@ export function learnTypeToSlug(documentType: LearnDocumentType): string {
   return LEARN_DOCUMENT_SLUGS[documentType];
 }
 
-export const TEMPLATES_BASE_PATH = "/fundador/plantillas";
+export const TEMPLATES_BASE_PATH = "/fundador/documentos/guia";
+
+/** Legacy plantillas path — redirects target TEMPLATES_BASE_PATH. */
+export const LEGACY_TEMPLATES_BASE_PATH = "/fundador/plantillas";
 
 /** @deprecated Use TEMPLATES_BASE_PATH */
 export const DOCUMENTATION_BASE_PATH = TEMPLATES_BASE_PATH;
 
 export function templatesPath(documentType: LearnDocumentType): string {
+  if (documentType === "shareholders" || documentType === "employment") {
+    return `/fundador/documentos/${documentType}`;
+  }
   return `${TEMPLATES_BASE_PATH}/${learnTypeToSlug(documentType)}`;
 }
 

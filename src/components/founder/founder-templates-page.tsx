@@ -19,8 +19,8 @@ export async function FounderTemplatesPage({ params }: FounderTemplatesPageProps
   const payload = await getLearnDocument(documentType, locale);
 
   return (
-    <div className="flex min-h-0 flex-1 flex-col">
-      <div className="shrink-0 border-b border-border/50 bg-background/80 px-4 py-4 backdrop-blur-sm sm:px-6">
+    <div className="-mx-4 space-y-0 sm:-mx-6">
+      <div className="sticky top-14 z-30 border-b border-border/50 bg-background/95 px-4 py-3 backdrop-blur-sm sm:top-16 sm:px-6">
         <FounderDocumentationTabs activeDocument={documentType} />
       </div>
       <DocumentLearnView payload={payload} layout="fullscreen" />

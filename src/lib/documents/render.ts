@@ -82,6 +82,24 @@ function asString(value: string | number | boolean | undefined): string {
   return String(value);
 }
 
+/** Markers for inline editable fields in draft workspace (never ship raw master templates). */
+export const FIELD_MARKER_OPEN = "⟦";
+export const FIELD_MARKER_CLOSE = "⟧";
+
+export function fieldMarker(key: string): string {
+  return `${FIELD_MARKER_OPEN}${key}${FIELD_MARKER_CLOSE}`;
+}
+
+const FIELD_MARKER_RE = /⟦(\w+)⟧/g;
+
+export function extractFieldKeysFromEditableBody(body: string): string[] {
+  const keys = new Set<string>();
+  for (const match of body.matchAll(FIELD_MARKER_RE)) {
+    if (match[1]) keys.add(match[1]);
+  }
+  return [...keys];
+}
+
 function mergeTemplate(template: string, values: Record<string, string>): RenderResult {
   const missingFields: string[] = [];
   const body = template.replace(/\{\{(\w+)\}\}/g, (_, key: string) => {
@@ -93,6 +111,45 @@ function mergeTemplate(template: string, values: Record<string, string>): Render
     return value;
   });
   return { body, missingFields };
+}
+
+/**
+ * Inject clause fragments from `values`, leave intake field tokens as ⟦key⟧ for the client.
+ * `editableKeys` = intake schema field keys that appear in the document body.
+ */
+function mergeTemplateEditable(
+  template: string,
+  values: Record<string, string>,
+  editableKeys: ReadonlySet<string>,
+): RenderResult {
+  const missingFields: string[] = [];
+
+  // Pass 1: expand non-editable placeholders (conditional clause fragments, etc.)
+  const withFragments = template.replace(/\{\{(\w+)\}\}/g, (match, key: string) => {
+    if (editableKeys.has(key)) return match;
+    const value = values[key];
+    if (!value) {
+      missingFields.push(key);
+      return `[${key}]`;
+    }
+    return value;
+  });
+
+  // Pass 2: mark editable fields (fragments may contain nested {{fields}})
+  const body = withFragments.replace(/\{\{(\w+)\}\}/g, (_, key: string) => {
+    if (editableKeys.has(key)) {
+      if (!values[key]) missingFields.push(key);
+      return fieldMarker(key);
+    }
+    const value = values[key];
+    if (!value) {
+      missingFields.push(key);
+      return `[${key}]`;
+    }
+    return value;
+  });
+
+  return { body, missingFields: [...new Set(missingFields)] };
 }
 
 function buildNdaValues(fields: FieldValues, locale: DocumentLocale): Record<string, string> {
@@ -311,38 +368,72 @@ function buildShareholdersValues(fields: FieldValues, locale: DocumentLocale): R
   };
 }
 
+function buildValues(
+  documentType: InvestmentDocumentType,
+  fields: FieldValues,
+  locale: DocumentLocale,
+): Record<string, string> {
+  switch (documentType) {
+    case "nda":
+      return buildNdaValues(fields, locale);
+    case "vesting":
+      return buildVestingValues(fields, locale);
+    case "ip":
+      return buildIpValues(fields, locale);
+    case "employment":
+      return buildEmploymentValues(fields, locale);
+    case "shareholders":
+      return buildShareholdersValues(fields, locale);
+    default:
+      return {};
+  }
+}
+
+function masterTemplate(
+  documentType: InvestmentDocumentType,
+  locale: DocumentLocale,
+): string {
+  const en = locale === "en-US";
+  switch (documentType) {
+    case "nda":
+      return en ? ndaMasterTemplateEn : ndaMasterTemplate;
+    case "vesting":
+      return en ? vestingMasterTemplateEn : vestingMasterTemplate;
+    case "ip":
+      return en ? ipMasterTemplateEn : ipMasterTemplate;
+    case "employment":
+      return en ? employmentMasterTemplateEn : employmentMasterTemplate;
+    case "shareholders":
+      return en ? shareholdersMasterTemplateEn : shareholdersMasterTemplate;
+    default:
+      return "";
+  }
+}
+
 export function renderDocument(
   documentType: InvestmentDocumentType,
   fields: FieldValues,
   locale: DocumentLocale = "es-CO",
 ): RenderResult {
-  const en = locale === "en-US";
-  switch (documentType) {
-    case "nda":
-      return mergeTemplate(
-        en ? ndaMasterTemplateEn : ndaMasterTemplate,
-        buildNdaValues(fields, locale),
-      );
-    case "vesting":
-      return mergeTemplate(
-        en ? vestingMasterTemplateEn : vestingMasterTemplate,
-        buildVestingValues(fields, locale),
-      );
-    case "ip":
-      return mergeTemplate(en ? ipMasterTemplateEn : ipMasterTemplate, buildIpValues(fields, locale));
-    case "employment":
-      return mergeTemplate(
-        en ? employmentMasterTemplateEn : employmentMasterTemplate,
-        buildEmploymentValues(fields, locale),
-      );
-    case "shareholders":
-      return mergeTemplate(
-        en ? shareholdersMasterTemplateEn : shareholdersMasterTemplate,
-        buildShareholdersValues(fields, locale),
-      );
-    default:
-      return { body: "", missingFields: ["unsupported_document_type"] };
-  }
+  const template = masterTemplate(documentType, locale);
+  if (!template) return { body: "", missingFields: ["unsupported_document_type"] };
+  return mergeTemplate(template, buildValues(documentType, fields, locale));
+}
+
+/** Draft workspace body: intake fields as ⟦key⟧ markers; clause fragments expanded. */
+export function renderDocumentEditable(
+  documentType: InvestmentDocumentType,
+  fields: FieldValues,
+  editableKeys: readonly string[],
+  locale: DocumentLocale = "es-CO",
+): RenderResult {
+  const template = masterTemplate(documentType, locale);
+  if (!template) return { body: "", missingFields: ["unsupported_document_type"] };
+  return mergeTemplateEditable(
+    template,
+    buildValues(documentType, fields, locale),
+    new Set(editableKeys),
+  );
 }
 
 export function wrapPreviewHtml(

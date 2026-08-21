@@ -5,6 +5,10 @@ import type { InvestmentDocumentType } from "@/lib/documents/catalog";
 import type { FieldValues } from "@/lib/documents/intake/types";
 import { getDocumentDisplayTitle } from "@/lib/documents/document-locale";
 import { getDisclaimer } from "@/lib/ai/guardrails";
+import {
+  buildEditableDocumentBody,
+  type EditableDocumentBody,
+} from "@/lib/documents/editable-body";
 import { wrapPreviewHtml, renderDocument } from "@/lib/documents/render";
 import {
   flagDocumentForHelp,
@@ -50,12 +54,14 @@ export async function flagDocumentForHelpAction(
 export async function getDocumentPreviewHtmlAction(
   documentType: InvestmentDocumentType,
   locale: "es-CO" | "en-US",
+  fields?: FieldValues,
 ): Promise<{ html: string; missingFields: string[] } | { error: string }> {
   try {
-    const state = await getDocumentFlowState(documentType);
-    if (!state) return { error: "Document not found" };
+    const resolvedFields =
+      fields ?? (await getDocumentFlowState(documentType))?.fields;
+    if (!resolvedFields) return { error: "Document not found" };
 
-    const rendered = renderDocument(documentType, state.fields, locale);
+    const rendered = renderDocument(documentType, resolvedFields, locale);
     const disclaimer = getDisclaimer(locale, "document");
     const html = wrapPreviewHtml(
       rendered.body,
@@ -66,6 +72,22 @@ export async function getDocumentPreviewHtmlAction(
     return { html, missingFields: rendered.missingFields };
   } catch (error) {
     return { error: error instanceof Error ? error.message : "Preview failed" };
+  }
+}
+
+export async function getEditableDocumentBodyAction(
+  documentType: InvestmentDocumentType,
+  fields: FieldValues,
+  locale: "es-CO" | "en-US",
+): Promise<EditableDocumentBody | { error: string }> {
+  try {
+    const body = buildEditableDocumentBody(documentType, fields, locale);
+    if (!body) return { error: "Unsupported document type" };
+    return body;
+  } catch (error) {
+    return {
+      error: error instanceof Error ? error.message : "Failed to build document body",
+    };
   }
 }
 

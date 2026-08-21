@@ -1,6 +1,6 @@
 # Firm template sources
 
-Word exports from Balam Legal / Yamale for founder Templates (`/fundador/plantillas`).
+Word exports from Balam Legal / Yamale for founder document guides (`/fundador/documentos/guia`). Draftable docs (shareholders, employment) open in the unified Documents workspace with inline fields.
 
 ## Usable
 

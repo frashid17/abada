@@ -128,7 +128,8 @@ Colombian legal-AI due diligence & investment-readiness platform.
 - [x] Security headers — nosniff, frame deny, referrer policy, permissions-policy
 - [x] Admin PDF upload UI — paste or PDF (text layer + OCR via Poppler/Tesseract); CLI `corpus:ingest` still available
 - [x] Mock AI paywall — Colombia checkout (card / Nequi / Daviplata) gates drafting assistant; `FEATURE_AI_PAYWALL`
-- [x] Firm templates import — Founders, Employment, Corporate Client, Terms of Use, IP Assignment, Equity Compensation + guide bubbles under `/fundador/plantillas`
+- [x] Firm templates import — Founders, Employment, Corporate Client, Terms of Use, IP Assignment, Equity Compensation + guide bubbles
+- [x] Unified founder Documents workspace — Templates merged into Documents; draftable docs use scroll-synced clause guides + inline fill-in fields
 - [x] Corrected Equity/IP DOCX (`20260806`) imported — July exports were wrong bodies (kept under `docs/templates/sources` as superseded)
 - [x] DD firm package (`20260806`) — Playbook + Info Request (RDI) + Report under `docs/dd/`; RDI upload taxonomy; firm playbook assist; bilingual report export; `info_requerida` risk level
 - [ ] **Manual:** Apply migration `018_mock_payments.sql` (allows `mock` provider on `payments`)

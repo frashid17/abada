@@ -539,11 +539,13 @@
     },
     "documentsPage": {
       "title": "Documents",
-      "subtitle": "Five guided flows to get your startup investor-ready — start anywhere or continue where you left off.",
+      "subtitle": "Guided flows and firm templates in one place — fill in the blanks while you read each clause.",
       "eyebrow": "Document library",
-      "catalogSubtitle": "Browse every document in your investment-readiness pack, in checklist order.",
-      "catalogHeading": "Full library",
-      "catalogDescription": "Each document builds on the last. Open any flow to draft, save, and download.",
+      "catalogSubtitle": "Drafting with an integrated guide: scroll the document, fill the blanks, and use firm commentary.",
+      "catalogHeading": "Investment-readiness documents",
+      "catalogDescription": "Open a document to draft in the text, with the clause guide beside you.",
+      "guidesHeading": "More firm templates",
+      "guidesDescription": "Educational models with firm commentary. When they gain a draft flow, they open in the same drafting workspace.",
       "pipelineTitle": "Your document path",
       "continueCta": "Continue where you left off",
       "documentCount": "{count} documents",
@@ -553,6 +555,17 @@
       "eyebrow": "Firm templates",
       "title": "Learn the documents",
       "subtitle": "Choose a template, read each clause, and see why it matters for your round — with firm commentary."
+    },
+    "workspace": {
+      "eyebrow": "Guided drafting",
+      "subtitle": "Scroll the document, fill in the blanks in place, and read the clause guide as you go.",
+      "scrollHint": "Scrolling updates the clause guide",
+      "calloutHint": "Jump to this clause in the document",
+      "structureHeading": "Document options",
+      "fieldsInClause": "Fields in this section",
+      "fillInHint": "Complete the highlighted blanks in the text; they save automatically.",
+      "selectHint": "Scroll or click a clause to see the guide and fields for that section.",
+      "clauseFallbackTitle": "This section"
     },
     "legalLibrary": {
       "eyebrow": "Legal corpus",
@@ -581,6 +594,7 @@
     "learn": {
       "documentProgress": "Document {step} of {total}",
       "clickHint": "Click a clause to see its explanation",
+      "scrollHint": "Scrolling updates the clause guide",
       "selectClauseTitle": "Select a clause",
       "selectClauseHint": "Click any clause in the draft to see what it means and why it matters for your round.",
       "draftMeta": "Draft for review · {count} clauses",

@@ -3,9 +3,8 @@
 import Link from "next/link";
 import { useTranslations } from "next-intl";
 import {
-  TEMPLATES_BASE_PATH,
   LEARN_DOCUMENT_TYPES,
-  learnTypeToSlug,
+  templatesPath,
 } from "@/lib/documents/learn/routes";
 import type { LearnDocumentType } from "@/lib/documents/learn/render-learn-document";
 import { cn } from "@/lib/utils";
@@ -28,7 +27,7 @@ export function FounderDocumentationTabs({ activeDocument }: FounderDocumentatio
       </div>
       <div className="flex flex-wrap gap-2">
         {LEARN_DOCUMENT_TYPES.map((documentType) => {
-          const href = `${TEMPLATES_BASE_PATH}/${learnTypeToSlug(documentType)}`;
+          const href = templatesPath(documentType);
           const isActive = documentType === activeDocument;
 
           return (

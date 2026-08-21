@@ -25,7 +25,6 @@ const navKeys = {
   founder: [
     { href: "/fundador", key: "dashboard" },
     { href: "/fundador/documentos", key: "documents" },
-    { href: "/fundador/plantillas", key: "templates" },
     { href: "/fundador/leyes", key: "laws" },
     { href: "/fundador/sala", key: "dataRoom" },
   ],

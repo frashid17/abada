@@ -41,7 +41,7 @@ test("protected admin console redirects logged-out visitors", async ({ page }) =
 });
 
 test("protected templates page redirects logged-out visitors", async ({ page }) => {
-  await page.goto("/fundador/plantillas/term-sheet");
+  await page.goto("/fundador/documentos/guia/term-sheet");
   await page.waitForURL(/iniciar-sesion|sign-in/);
   expect(page.url()).toMatch(/iniciar-sesion|sign-in/);
 });
