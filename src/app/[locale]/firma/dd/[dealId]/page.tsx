@@ -1,3 +1,4 @@
+import { auth } from "@clerk/nextjs/server";
 import Link from "next/link";
 import { getLocale, getTranslations } from "next-intl/server";
 import { notFound } from "next/navigation";
@@ -13,6 +14,7 @@ import { FirmScheduledCallsPanel } from "@/components/firm/firm-scheduled-calls-
 import { DeleteDealButton } from "@/components/firm/delete-deal-button";
 import { Button } from "@/components/ui/button";
 import { getDealAssessment } from "@/lib/dd/assessments";
+import { buildDdAiSessionContext } from "@/lib/dd/ai-session-context";
 import { listDealFindings, listFindingsByCategory } from "@/lib/dd/findings";
 import { listPlaybookAreas, getPlaybookArea } from "@/lib/dd/playbook";
 import { listDataRoomDocuments } from "@/lib/data-room/service";
@@ -21,7 +23,7 @@ import { getFirmDeal } from "@/lib/firm/deals";
 import { requireFirmPageAccess } from "@/lib/firm/session";
 import { listScheduledCallsForTenant } from "@/lib/scheduled-calls/service";
 import { getFirmMembershipForUser } from "@/lib/firm/membership";
-import { auth } from "@clerk/nextjs/server";
+import { getAiAccessStatus } from "@/lib/payments/ai-access";
 
 export default async function FirmDealDetailPage({
   params,
@@ -39,7 +41,8 @@ export default async function FirmDealDetailPage({
   const playbookLocale = locale.startsWith("en") ? "en" : "es";
   const { userId } = await auth();
   const membership = userId ? await getFirmMembershipForUser(userId) : null;
-  const [documents, findingsByCategory, findings, assessment, participants, scheduledCalls] =
+  const documentLocale = locale.startsWith("en") ? "en-US" : "es-CO";
+  const [documents, findingsByCategory, findings, assessment, participants, scheduledCalls, aiAccess] =
     await Promise.all([
       listDataRoomDocuments(dealId),
       listFindingsByCategory(dealId),
@@ -47,6 +50,13 @@ export default async function FirmDealDetailPage({
       getDealAssessment(dealId),
       listDealParticipantsWithLabels(dealId),
       membership ? listScheduledCallsForTenant(membership.tenantId) : Promise.resolve([]),
+      userId
+        ? getAiAccessStatus(userId, documentLocale)
+        : Promise.resolve({
+            hasAccess: false,
+            paywallEnabled: true,
+            amountFormatted: "",
+          }),
     ]);
 
   const documentOptions = documents.map((doc) => ({
@@ -72,6 +82,24 @@ export default async function FirmDealDetailPage({
     : assessment?.summary
       ? t("stats.draft")
       : t("stats.pending");
+
+  const aiSessionContext = buildDdAiSessionContext({
+    dealName: deal.name,
+    dealStatus: deal.status,
+    documents: documents.map((doc) => ({
+      title: doc.title,
+      category: doc.taxonomyCategory,
+      versionNumber: doc.versionNumber,
+    })),
+    findings: findings.map((finding) => ({
+      riskCategory: finding.riskCategory,
+      riskLevel: finding.riskLevel,
+      description: finding.description,
+      recommendedAction: finding.recommendedAction,
+    })),
+    assessmentSummary: assessment?.summary ?? null,
+    assessmentPublished: Boolean(assessment?.publishedAt),
+  });
 
   return (
     <AppShell variant="firm" workspace>
@@ -131,10 +159,13 @@ export default async function FirmDealDetailPage({
           review={
             <FirmReviewPanel
               dealId={dealId}
+              dealName={deal.name}
               documentOptions={documentOptions}
               playbookTips={playbookTips}
               initialSummary={assessment?.summary ?? ""}
               publishedAt={assessment?.publishedAt ?? null}
+              aiSessionContext={aiSessionContext}
+              aiAccess={aiAccess}
             />
           }
         />
