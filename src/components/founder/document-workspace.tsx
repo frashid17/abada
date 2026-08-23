@@ -272,7 +272,6 @@ export function DocumentWorkspace({
   initialBody,
   status,
   helpMessage,
-  reviewSummary,
   aiAccess,
   learnGuideType,
 }: DocumentWorkspaceProps) {
