@@ -16,10 +16,13 @@ export function MobileNav({ items }: MobileNavProps) {
   const t = useTranslations("shell");
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
+  const [menuPathname, setMenuPathname] = useState(pathname);
 
-  useEffect(() => {
-    setOpen(false);
-  }, [pathname]);
+  // Close the drawer when the route changes (render-time sync, not an effect).
+  if (pathname !== menuPathname) {
+    setMenuPathname(pathname);
+    if (open) setOpen(false);
+  }
 
   useEffect(() => {
     if (!open) return;
