@@ -18,28 +18,39 @@ import {
 } from "@/lib/dd/actions";
 import { DD_RISK_CATEGORIES, DD_RISK_LEVELS } from "@/lib/dd/taxonomy";
 import type { PlaybookTip } from "@/components/dd/finding-form";
+import { DdAiPanel } from "@/components/dd/dd-ai-panel";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Select } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
 import { cn } from "@/lib/utils";
 
+type TabId = "finding" | "assessment" | "ai";
+
 type FirmReviewPanelProps = {
   dealId: string;
+  dealName: string;
   documentOptions: Array<{ id: string; label: string }>;
   playbookTips: PlaybookTip[];
   initialSummary: string;
   publishedAt: string | null;
+  aiSessionContext: string;
+  aiAccess: {
+    hasAccess: boolean;
+    paywallEnabled: boolean;
+    amountFormatted: string;
+  };
 };
-
-type TabId = "finding" | "assessment";
 
 export function FirmReviewPanel({
   dealId,
+  dealName,
   documentOptions,
   playbookTips,
   initialSummary,
   publishedAt,
+  aiSessionContext,
+  aiAccess,
 }: FirmReviewPanelProps) {
   const t = useTranslations("firm.dd");
   const [tab, setTab] = useState<TabId>("finding");
@@ -53,12 +64,13 @@ export function FirmReviewPanel({
         <div
           role="tablist"
           aria-label={t("reviewPanelEyebrow")}
-          className="mt-3 flex gap-1"
+          className="mt-3 flex flex-wrap gap-1"
         >
           {(
             [
               { id: "finding" as const, label: t("tabFinding") },
               { id: "assessment" as const, label: t("tabAssessment") },
+              { id: "ai" as const, label: t("tabAi") },
             ] as const
           ).map((item) => (
             <button
@@ -82,12 +94,22 @@ export function FirmReviewPanel({
 
       <div className="p-4">
         {tab === "finding" ? (
-          <FindingFields dealId={dealId} documentOptions={documentOptions} playbookTips={playbookTips} />
-        ) : (
+          <FindingFields
+            dealId={dealId}
+            documentOptions={documentOptions}
+            playbookTips={playbookTips}
+          />
+        ) : tab === "assessment" ? (
           <AssessmentFields
             dealId={dealId}
             initialSummary={initialSummary}
             publishedAt={publishedAt}
+          />
+        ) : (
+          <DdAiPanel
+            dealName={dealName}
+            sessionContext={aiSessionContext}
+            initialAccess={aiAccess}
           />
         )}
       </div>
