@@ -2200,6 +2200,27 @@
       },
       "tabFinding": "Log finding",
       "tabAssessment": "Assessment",
+      "tabAi": "AI assistant",
+      "ai": {
+        "badge": "Due diligence",
+        "title": "Review assistant",
+        "description": "Ask about findings, prioritization, and assessment angles using the firm playbook.",
+        "welcome": "Use chat to draft findings, cross-check the playbook, or prepare the assessment. The firm must validate every conclusion.",
+        "suggestionsLabel": "Suggestions",
+        "prompts": {
+          "priorityGaps": "Based on current documents and findings, what are the three highest-priority gaps?",
+          "draftFinding": "Help me draft a High/Medium/Low finding with a recommended action for this room.",
+          "assessmentAngle": "Draft angles for the executive assessment investors will see."
+        },
+        "promptPrefix": "Due diligence context — {deal}",
+        "placeholder": "Ask about risks, evidence, or the next finding…",
+        "send": "Send",
+        "newChat": "New conversation",
+        "loading": "Analyzing…",
+        "error": "Could not get a response. Try again.",
+        "errorNotConfigured": "The AI assistant is not configured in this environment.",
+        "disclaimer": "AI assistance · validate with a firm attorney before publishing."
+      },
       "findingDescriptionPlaceholder": "What did you find, and where?",
       "recommendedActionPlaceholder": "What should be fixed or confirmed?",
       "legalCitationPlaceholder": "Optional statute or clause reference",
