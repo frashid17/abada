@@ -2200,6 +2200,27 @@
       },
       "tabFinding": "Registrar hallazgo",
       "tabAssessment": "Evaluación",
+      "tabAi": "Asistente IA",
+      "ai": {
+        "badge": "Due diligence",
+        "title": "Asistente de revisión",
+        "description": "Pregunta sobre hallazgos, priorización y ángulos de evaluación con el playbook de la firma.",
+        "welcome": "Usa el chat para redactar hallazgos, contrastar con el playbook o preparar la evaluación. La firma debe validar cada conclusión.",
+        "suggestionsLabel": "Sugerencias",
+        "prompts": {
+          "priorityGaps": "Con los documentos y hallazgos actuales, ¿cuáles son las tres brechas de mayor prioridad?",
+          "draftFinding": "Ayúdame a redactar un hallazgo Alto/Medio/Bajo con acción recomendada a partir de esta sala.",
+          "assessmentAngle": "Borrador de ángulos para la evaluación ejecutiva que verán los inversionistas."
+        },
+        "promptPrefix": "Contexto de due diligence — {deal}",
+        "placeholder": "Pregunta sobre riesgos, evidencia o el próximo hallazgo…",
+        "send": "Enviar",
+        "newChat": "Nueva conversación",
+        "loading": "Analizando…",
+        "error": "No se pudo obtener una respuesta. Intenta de nuevo.",
+        "errorNotConfigured": "El asistente de IA no está configurado en este entorno.",
+        "disclaimer": "Asistencia de IA · validar con un abogado de la firma antes de publicar."
+      },
       "findingDescriptionPlaceholder": "¿Qué encontraste y dónde?",
       "recommendedActionPlaceholder": "¿Qué debe corregirse o confirmarse?",
       "legalCitationPlaceholder": "Cita legal u opcional de cláusula",
