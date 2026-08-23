@@ -111,5 +111,6 @@ export async function runAiGateway(request: GatewayRequest): Promise<GatewayResp
     request.locale,
     model,
     brain.documents.map((d) => d.id),
+    request.task === "dd_finding" ? "dd" : "standard",
   );
 }
