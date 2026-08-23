@@ -132,6 +132,7 @@ Colombian legal-AI due diligence & investment-readiness platform.
 - [x] Unified founder Documents workspace — Templates merged into Documents; draftable docs use scroll-synced clause guides + inline fill-in fields
 - [x] Corrected Equity/IP DOCX (`20260806`) imported — July exports were wrong bodies (kept under `docs/templates/sources` as superseded)
 - [x] DD firm package (`20260806`) — Playbook + Info Request (RDI) + Report under `docs/dd/`; RDI upload taxonomy; firm playbook assist; bilingual report export; `info_requerida` risk level
+- [x] Firm DD AI chatbot — review-pane assistant (`dd_finding`) with deal/docs/findings session context + playbook injection
 - [ ] **Manual:** Apply migration `018_mock_payments.sql` (allows `mock` provider on `payments`)
 - [ ] **Manual:** Apply migration `019_dd_info_requerida_risk_level.sql` (adds `info_requerida` to findings)
 - [ ] **Manual:** Create Sentry project and set DSN / auth token in Vercel
