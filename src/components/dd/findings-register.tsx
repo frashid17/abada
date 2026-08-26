@@ -4,11 +4,18 @@ import { DD_RISK_CATEGORIES, type DdRiskLevel } from "@/lib/dd/taxonomy";
 import type { FindingRecord } from "@/lib/dd/findings";
 import { cn } from "@/lib/utils";
 
-const LEVEL_STYLES: Record<DdRiskLevel, string> = {
-  bajo: "border-risk-low/35 bg-risk-low/10 text-risk-low",
-  medio: "border-risk-med/35 bg-risk-med/10 text-risk-med",
-  alto: "border-risk-high/35 bg-risk-high/10 text-risk-high",
-  info_requerida: "border-primary/35 bg-primary/10 text-primary",
+const LEVEL_INK: Record<DdRiskLevel, string> = {
+  bajo: "var(--good)",
+  medio: "var(--highlight)",
+  alto: "var(--risk-high)",
+  info_requerida: "var(--fg-muted)",
+};
+
+const LEVEL_BADGE: Record<DdRiskLevel, string> = {
+  bajo: "bg-good text-primary-foreground",
+  medio: "bg-highlight text-highlight-fg",
+  alto: "bg-risk-high text-primary-foreground",
+  info_requerida: "bg-muted text-muted-foreground",
 };
 
 type FindingsRegisterProps = {
@@ -22,38 +29,28 @@ export async function FindingsRegister({
 }: FindingsRegisterProps) {
   const t = await getTranslations(translationNamespace);
 
-  const categoriesWithFindings = DD_RISK_CATEGORIES.filter(
-    (category) => (findingsByCategory[category] ?? []).length > 0,
+  const flatFindings = DD_RISK_CATEGORIES.flatMap((category) =>
+    (findingsByCategory[category] ?? []).map((finding) => ({ category, finding })),
   );
-  const total = DD_RISK_CATEGORIES.reduce(
-    (sum, category) => sum + (findingsByCategory[category]?.length ?? 0),
-    0,
-  );
+  const total = flatFindings.length;
 
   return (
-    <div className="overflow-hidden rounded-2xl border border-border/70 bg-card">
-      <div className="flex flex-wrap gap-2 border-b border-border/60 px-4 py-3">
+    <div className="overflow-hidden rounded-[10px] border border-border bg-card shadow-sm">
+      <div className="flex flex-wrap gap-2 border-b border-[color:var(--line-2)] bg-rail px-4 py-3">
         {DD_RISK_CATEGORIES.map((category) => {
           const count = findingsByCategory[category]?.length ?? 0;
           return (
             <span
               key={category}
               className={cn(
-                "inline-flex items-center gap-1.5 rounded-full border px-2.5 py-1 text-[11px] font-medium transition-colors",
+                "inline-flex items-center gap-1.5 border px-2.5 py-1 text-[11px] font-semibold tracking-wide",
                 count > 0
-                  ? "border-primary/30 bg-primary/10 text-foreground"
-                  : "border-border/50 bg-muted/20 text-muted-foreground",
+                  ? "border-accent-line bg-accent-soft text-accent-fg"
+                  : "border-border bg-card text-muted-foreground",
               )}
             >
               {t(`riskCategories.${category}`)}
-              <span
-                className={cn(
-                  "tabular-nums",
-                  count > 0 ? "text-primary" : "text-muted-foreground/80",
-                )}
-              >
-                {count}
-              </span>
+              <span className="tabular-nums">{count}</span>
             </span>
           );
         })}
@@ -61,7 +58,7 @@ export async function FindingsRegister({
 
       {total === 0 ? (
         <div className="flex flex-col items-center justify-center gap-3 px-6 py-14 text-center">
-          <div className="flex h-12 w-12 items-center justify-center rounded-full bg-muted/40 text-muted-foreground">
+          <div className="flex h-12 w-12 items-center justify-center bg-muted text-muted-foreground">
             <Inbox className="h-5 w-5" />
           </div>
           <div className="space-y-1">
@@ -72,52 +69,89 @@ export async function FindingsRegister({
           </div>
         </div>
       ) : (
-        <div className="divide-y divide-border/50">
-          {categoriesWithFindings.map((category) => {
-            const findings = findingsByCategory[category] ?? [];
+        <ul className="px-4 sm:px-6">
+          {flatFindings.map(({ category, finding }, index) => {
+            const ink = LEVEL_INK[finding.riskLevel];
+            const showCategory =
+              index === 0 || flatFindings[index - 1]?.category !== category;
+            const evidenceParts = [
+              finding.legalCitation,
+              finding.sourcePage != null
+                ? t("findingPage", { page: finding.sourcePage })
+                : null,
+            ].filter(Boolean);
+
             return (
-              <div key={category} className="px-4 py-4">
-                <div className="mb-3 flex items-center justify-between gap-2">
-                  <h3 className="text-sm font-semibold text-foreground">
+              <li key={finding.id}>
+                {showCategory ? (
+                  <p className="pt-5 text-[11px] font-bold uppercase tracking-[0.1em] text-muted-foreground">
                     {t(`riskCategories.${category}`)}
-                  </h3>
-                  <span className="text-[11px] tabular-nums text-muted-foreground">
-                    {findings.length}
-                  </span>
-                </div>
-                <ul className="space-y-2.5">
-                  {findings.map((finding) => (
-                    <li
-                      key={finding.id}
-                      className="rounded-xl border border-border/55 bg-muted/15 px-3.5 py-3"
+                  </p>
+                ) : null}
+                <div className="grid gap-3 border-b border-[color:var(--line-2)] py-6 last:border-b-0 sm:grid-cols-[132px_minmax(0,1fr)] sm:gap-x-8">
+                  <div className="flex flex-row items-center gap-3 sm:flex-col sm:items-start sm:gap-2.5">
+                    <span
+                      className={cn(
+                        "inline-grid min-w-[34px] place-items-center px-2 py-1 text-sm font-bold tabular-nums",
+                        LEVEL_BADGE[finding.riskLevel],
+                      )}
                     >
-                      <div className="mb-2 flex flex-wrap items-center gap-2">
-                        <span
-                          className={cn(
-                            "rounded-full border px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide",
-                            LEVEL_STYLES[finding.riskLevel],
-                          )}
-                        >
-                          {t(`riskLevels.${finding.riskLevel}`)}
-                        </span>
-                      </div>
-                      <p className="text-sm leading-relaxed text-foreground">{finding.description}</p>
-                      {finding.recommendedAction ? (
-                        <p className="mt-2 border-t border-border/40 pt-2 text-xs leading-relaxed text-muted-foreground">
-                          <span className="font-medium text-foreground/80">
-                            {t("recommendedActionShort")}:{" "}
-                          </span>
-                          {finding.recommendedAction}
-                        </p>
-                      ) : null}
-                    </li>
-                  ))}
-                </ul>
-              </div>
+                      {index + 1}
+                    </span>
+                    <span
+                      className="text-[11.5px] font-bold uppercase tracking-[0.08em]"
+                      style={{ color: ink }}
+                    >
+                      {t(`riskLevels.${finding.riskLevel}`)}
+                    </span>
+                  </div>
+
+                  <div className="border-l-2 pl-4 sm:pl-5" style={{ borderColor: ink }}>
+                    <h4 className="font-serif text-lg font-semibold leading-snug tracking-tight text-foreground">
+                      {finding.description}
+                    </h4>
+                    {finding.recommendedAction ? (
+                      <p className="mt-2 max-w-[74ch] text-[15px] leading-relaxed text-[color:var(--ink-2)]">
+                        {finding.recommendedAction}
+                      </p>
+                    ) : null}
+
+                    <div className="mt-4 grid max-w-[900px] gap-4 border-t border-[color:var(--line-2)] pt-3.5 sm:grid-cols-3 sm:gap-6">
+                      <MetaCell
+                        label={t("findingMetaImpact")}
+                        value={t(`riskCategories.${finding.riskCategory}`)}
+                      />
+                      <MetaCell
+                        label={t("findingMetaAction")}
+                        value={finding.recommendedAction ?? t("findingMetaUnset")}
+                      />
+                      <MetaCell
+                        label={t("findingMetaEvidence")}
+                        value={
+                          evidenceParts.length > 0
+                            ? evidenceParts.join(" · ")
+                            : t("findingMetaUnset")
+                        }
+                      />
+                    </div>
+                  </div>
+                </div>
+              </li>
             );
           })}
-        </div>
+        </ul>
       )}
+    </div>
+  );
+}
+
+function MetaCell({ label, value }: { label: string; value: string }) {
+  return (
+    <div>
+      <p className="mb-1.5 text-[11px] font-bold uppercase tracking-[0.08em] text-muted-foreground">
+        {label}
+      </p>
+      <p className="text-[14.5px] leading-snug text-[color:var(--ink-2)]">{value}</p>
     </div>
   );
 }
