@@ -1,4 +1,4 @@
-import { Cormorant_Garamond, Geist_Mono, Plus_Jakarta_Sans } from "next/font/google";
+import { Inter, Geist_Mono, Source_Serif_4 } from "next/font/google";
 import { NextIntlClientProvider } from "next-intl";
 import { getLocale, getMessages, getTranslations } from "next-intl/server";
 import { ClerkProvider } from "@clerk/nextjs";
@@ -8,8 +8,8 @@ import { getClerkAuthConfig } from "@/lib/auth/clerk-urls";
 import { parseThemeSetting, serverHtmlDarkClass, THEME_COOKIE_KEY } from "@/lib/theme";
 import "./globals.css";
 
-const jakarta = Plus_Jakarta_Sans({
-  variable: "--font-jakarta",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
 });
@@ -19,10 +19,10 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-const cormorant = Cormorant_Garamond({
-  variable: "--font-cormorant",
+const sourceSerif = Source_Serif_4({
+  variable: "--font-source-serif",
   subsets: ["latin"],
-  weight: ["500", "600", "700"],
+  weight: ["400", "600", "700"],
 });
 
 export async function generateMetadata() {
@@ -43,7 +43,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   return (
     <html lang={locale} className={serverHtmlDarkClass(storedTheme)} suppressHydrationWarning>
       <body
-        className={`${jakarta.variable} ${geistMono.variable} ${cormorant.variable} font-sans antialiased`}
+        className={`${inter.variable} ${geistMono.variable} ${sourceSerif.variable} font-sans antialiased`}
       >
         <ClerkProvider
           signInUrl={clerk.signInUrl}
