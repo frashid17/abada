@@ -1,0 +1,1768 @@
+{
+  "order": [
+    "fundadores",
+    "incentivos",
+    "pi"
+  ],
+  "docs": {
+    "fundadores": {
+      "t_es": "Acuerdo de Fundadores",
+      "t_en": "Founders Agreement",
+      "sub_es": "Cómo trabajan juntos los fundadores, quién decide qué y qué pasa si alguien se va.",
+      "sub_en": "How the founders work together, who decides what, and what happens if someone leaves.",
+      "full_es": "Acuerdo de Fundadores y Accionistas — Sociedad por Acciones Simplificada (S.A.S.), Colombia",
+      "full_en": "Founders and Shareholders Agreement — Simplified Stock Company (S.A.S.), Colombia",
+      "groups": [
+        {
+          "g_es": "Punto de partida",
+          "g_en": "Starting point",
+          "arts": [
+            {
+              "id": "enc",
+              "n": "—",
+              "t_es": "Encabezado y partes",
+              "t_en": "Heading and parties",
+              "does_es": "Identifica a cada fundador, a la sociedad y la fecha desde la cual empiezan a aplicar las obligaciones.",
+              "does_en": "Identifies each founder, the company, and the date from which the obligations start to apply.",
+              "matters_es": "Evita dudas sobre quién queda obligado, en qué calidad firma cada persona y desde cuándo corren el vesting, las restricciones de transferencia y la confidencialidad. Una fecha efectiva mal puesta desplaza todo el calendario de consolidación.",
+              "matters_en": "It removes doubt about who is bound, in what capacity each person signs, and when vesting, transfer restrictions, and confidentiality start to run. A wrong effective date shifts the entire vesting calendar.",
+              "cl": [
+                "Este Acuerdo de Fundadores y Accionistas (el “Acuerdo”) se celebra a partir del {{co.fecha}} (la “Fecha Efectiva”), por y entre:",
+                "{{f1.nombre}}, identificado con {{f1.id}}, con domicilio en {{f1.dom}}.",
+                "{{f2.nombre}}, identificado con {{f2.id}}, con domicilio en {{f2.dom}}.",
+                "{{co.nombre}} S.A.S., sociedad por acciones simplificada constituida conforme a las leyes de la República de Colombia, identificada con NIT {{co.nit}}, con domicilio principal en {{co.domicilio}} (la “Sociedad”).",
+                "Cada una de las personas antes identificadas se denominará una “Parte” y conjuntamente las “Partes”."
+              ]
+            },
+            {
+              "id": "a1",
+              "n": "1",
+              "t_es": "Antecedentes y objeto",
+              "t_en": "Background and purpose",
+              "does_es": "Explica el negocio, el propósito del acuerdo y su intención de complementar los estatutos, el libro de accionistas y los documentos de inversión.",
+              "does_en": "Explains the business, the purpose of the agreement, and its intention to supplement the bylaws, the shareholder register, and the investment documents.",
+              "matters_es": "Fija el marco de interpretación de todo lo demás. Confirma que el documento no regula solo la propiedad de las acciones: también gobierna la contribución, el control y la salida de quienes construyen la empresa.",
+              "matters_en": "It sets the interpretive frame for everything else. It confirms that the document governs more than share ownership: it also governs contribution, control, and the departure of the people building the company.",
+              "cl": [
+                "1.1 La Sociedad fue constituida o será estructurada como una sociedad por acciones simplificada conforme a la Ley 1258 de 2008 y las demás normas colombianas aplicables, con el propósito de desarrollar el negocio consistente en {{co.negocio}} (el “Negocio”).",
+                "1.2 Las Partes desean regular sus derechos y obligaciones como fundadores y accionistas de la Sociedad, incluyendo gobierno corporativo, aportes, permanencia, propiedad intelectual, transferencias de acciones, financiación, salida de fundadores y transacciones estratégicas.",
+                "1.3 Las Partes se obligan a adoptar, mantener y, cuando sea necesario, modificar los estatutos sociales, el libro de registro de accionistas, reglamentos de emisión y suscripción de acciones, contratos de inversión, acuerdos de propiedad intelectual y demás documentos corporativos para reflejar y hacer exigibles las disposiciones de este Acuerdo, en la medida permitida por la ley."
+              ]
+            },
+            {
+              "id": "a2",
+              "n": "2",
+              "t_es": "Definiciones",
+              "t_en": "Definitions",
+              "does_es": "Define los términos técnicos que se repiten a lo largo del acuerdo, como Acciones, Cambio de Control, Transferencia, Causal Grave e Información Confidencial.",
+              "does_en": "Defines the technical terms that recur throughout the agreement, such as Shares, Change of Control, Transfer, Serious Cause, and Confidential Information.",
+              "matters_es": "Las definiciones reducen la ambigüedad y deciden cuándo se activan los demás artículos. Una definición clara de Cambio de Control determina en qué momento se disparan la aceleración del vesting, el tag-along y el drag-along.",
+              "matters_en": "Definitions reduce ambiguity and decide when the other articles switch on. A clear Change of Control definition determines exactly when vesting acceleration, tag-along, and drag-along are triggered.",
+              "cl": [
+                "“Acciones” significa las acciones suscritas, pagadas o por suscribir de la Sociedad, así como cualquier derecho, valor o instrumento convertible, intercambiable o ejercible en acciones de la Sociedad.",
+                "“Accionista” significa toda persona titular de Acciones que haya adherido válidamente a este Acuerdo.",
+                "“Accionista Fundador” significa cada fundador inicial identificado en el encabezado de este Acuerdo.",
+                "“Afiliada” significa, respecto de una persona, cualquier otra persona que la controle, sea controlada por ella o esté bajo control común con ella, en los términos de la ley aplicable.",
+                "“Cambio de Control” significa una operación o serie de operaciones relacionadas mediante las cuales una o más personas adquieren directa o indirectamente el control de la Sociedad, o se produce la venta, licencia exclusiva o disposición de la totalidad o una parte sustancial de sus activos o del Negocio.",
+                "“Causal Grave” tiene el significado previsto en la Cláusula 14.4.",
+                "“Información Confidencial” tiene el significado previsto en la Cláusula 17.",
+                "“Transferencia” significa toda venta, cesión, enajenación, aporte, promesa, gravamen, prenda, usufructo, fiducia, adjudicación, donación, disposición o acto que implique transmitir, restringir o afectar directa o indirectamente el dominio, la nuda propiedad o los derechos políticos o económicos sobre Acciones."
+              ]
+            },
+            {
+              "id": "a3",
+              "n": "3",
+              "t_es": "Capitalización y estructura accionaria",
+              "t_en": "Capitalisation and share structure",
+              "does_es": "Establece la estructura accionaria inicial, admite la creación de clases o series de acciones y somete las emisiones futuras a reglas de aprobación.",
+              "does_en": "Sets the initial share structure, allows classes or series of shares to be created, and makes future issuances subject to approval rules.",
+              "matters_es": "Protege el cap table. Necesitas claridad sobre quién tiene qué, cómo se mide la dilución y qué aprobaciones se requieren antes de emitir acciones, opciones, SAFEs o notas convertibles. Un cap table desordenado es una de las razones más frecuentes por las que se cae una ronda.",
+              "matters_en": "It protects the cap table. You need clarity on who holds what, how dilution is measured, and what approvals are needed before issuing shares, options, SAFEs, or convertible notes. A messy cap table is one of the most common reasons a round falls apart.",
+              "cl": [
+                "3.1 A la Fecha Efectiva, la estructura accionaria inicial de la Sociedad será la indicada en el Anexo 1, sujeta a los estatutos, al libro de registro de accionistas y a los documentos de suscripción aplicables.",
+                "3.2 Las Partes reconocen que la Sociedad podrá crear clases o series de acciones con derechos económicos, políticos o de otra naturaleza diferenciados, en la medida permitida por la ley y los estatutos.",
+                "3.3 Toda emisión futura de acciones, opciones, derechos de suscripción, bonos convertibles, SAFEs, notas convertibles, warrants u otros instrumentos que puedan generar dilución deberá observar este Acuerdo, los estatutos y las aprobaciones corporativas requeridas."
+              ]
+            }
+          ]
+        },
+        {
+          "g_es": "El compromiso de los fundadores",
+          "g_en": "The founders commitment",
+          "arts": [
+            {
+              "id": "a4",
+              "n": "4",
+              "t_es": "Aportes, roles y dedicación",
+              "t_en": "Contributions, roles, and commitment",
+              "does_es": "Documenta lo que cada fundador aporta, su cargo y su nivel de dedicación. Aclara que ser accionista no equivale a ser empleado ni da derecho a salario.",
+              "does_en": "Documents what each founder contributes, their role, and their level of commitment. It clarifies that being a shareholder is not the same as being an employee and gives no right to a salary.",
+              "matters_es": "Evita expectativas incompatibles sobre quién aporta capital, tecnología, ventas o red de contactos. También reduce el riesgo de que un fundador conserve una participación alta sin contribuir de forma constante, que es el conflicto más común entre socios.",
+              "matters_en": "It prevents mismatched expectations about who brings capital, technology, sales, or network. It also lowers the risk that a founder keeps a large stake without contributing consistently, which is the most common conflict between partners.",
+              "cl": [
+                "4.1 Los Accionistas Fundadores se obligan a realizar los aportes económicos, técnicos, operativos y estratégicos previstos en el Anexo 2.",
+                "4.2 Los roles iniciales de los Accionistas Fundadores serán los siguientes:",
+                "{{f1.nombre}}: {{f1.rol}}.",
+                "{{f2.nombre}}: {{f2.rol}}.",
+                "4.3 Cada Accionista Fundador dedicará al Negocio el tiempo y atención mínimos definidos en el Anexo 2. Ningún Fundador podrá desatender materialmente sus responsabilidades, abandonar el proyecto, competir con la Sociedad durante su vinculación activa ni participar en actividades con conflicto de interés sin la autorización previa requerida conforme a este Acuerdo.",
+                "4.4 La condición de Accionista Fundador no genera por sí sola una relación laboral, derecho a salario, honorarios, beneficios ni permanencia en un cargo. Cualquier relación laboral, civil, comercial o de administración entre la Sociedad y un Fundador deberá documentarse por separado."
+              ]
+            },
+            {
+              "id": "a5",
+              "n": "5",
+              "t_es": "Propiedad intelectual",
+              "t_en": "Intellectual property",
+              "does_es": "Atribuye a la sociedad todo lo que se desarrolle en relación con el negocio y contiene la cesión de derechos patrimoniales. También trata los derechos morales y la propiedad intelectual preexistente.",
+              "does_en": "Assigns everything developed in connection with the business to the company and contains the assignment of economic rights. It also addresses moral rights and pre-existing intellectual property.",
+              "matters_es": "Es la cláusula crítica para levantar capital, vender a clientes corporativos y llegar a una eventual adquisición. La empresa tiene que poder demostrar que controla el código, la marca, los datos y el know-how con los que opera. Si la propiedad intelectual queda en manos de un fundador, puede bloquear una financiación o una venta.",
+              "matters_en": "This is the critical clause for raising capital, selling to corporate clients, and reaching a possible acquisition. The company has to be able to show it controls the code, the brand, the data, and the know-how it runs on. If intellectual property stays with a founder, it can block a financing or a sale.",
+              "note_es": "Este artículo se complementa con el Acuerdo de Cesión de Propiedad Intelectual, que cada fundador, empleado y contratista firma por separado. El acuerdo de fundadores solo obliga a firmarlo.",
+              "note_en": "This article works together with the Intellectual Property Assignment Agreement, which each founder, employee, and contractor signs separately. The founders agreement only creates the obligation to sign it.",
+              "cl": [
+                "5.1 Toda propiedad intelectual, software, código, contenido, diseño, base de datos, modelo, algoritmo, documentación, marca, dominio, secreto empresarial, know-how, invención, mejora y demás activo intangible creado, desarrollado, concebido, reducido a práctica o puesto a disposición por un Accionista Fundador, solo o con terceros, en relación con el Negocio o utilizando recursos de la Sociedad (los “Desarrollos”), pertenecerá exclusivamente a la Sociedad.",
+                "5.2 Cada Accionista Fundador cede a favor de la Sociedad, de forma total, exclusiva, irrevocable, transferible, sublicenciable, mundial y por el máximo término de protección legal, todos los derechos patrimoniales de propiedad intelectual transferibles que recaigan sobre los Desarrollos.",
+                "5.3 Cada Fundador reconoce que los derechos morales de autor son personales e inalienables de acuerdo con la ley colombiana. En la medida permitida por la ley, autoriza a la Sociedad a modificar, adaptar, integrar, traducir, publicar, divulgar y explotar los Desarrollos, siempre que no se afecte injustificadamente su honra o reputación.",
+                "5.4 La propiedad intelectual preexistente excluida por un Fundador deberá identificarse de forma completa en el Anexo 3. Si una propiedad intelectual preexistente se incorpora al Negocio, el Fundador respectivo otorgará a la Sociedad una licencia mundial, perpetua, irrevocable, transferible, sublicenciable, gratuita y plenamente pagada para usarla, modificarla, integrarla, distribuirla y explotarla en relación con el Negocio.",
+                "5.5 Cada Fundador firmará los acuerdos de confidencialidad, cesión de propiedad intelectual, cesión de derechos de explotación económica y demás documentos que la Sociedad solicite razonablemente para perfeccionar, registrar, defender o hacer oponibles los derechos de la Sociedad sobre los Desarrollos."
+              ]
+            },
+            {
+              "id": "a6",
+              "n": "6",
+              "t_es": "Vesting, permanencia y recompra",
+              "t_en": "Vesting, continued service, and repurchase",
+              "dec": "accel",
+              "does_es": "Vincula la consolidación de las acciones de los fundadores a su permanencia. Establece un calendario de cuatro años con un año de cliff, un derecho de recompra sobre lo no consolidado y el régimen de aceleración.",
+              "does_en": "Links the vesting of founder shares to continued service. It sets a four year schedule with a one year cliff, a repurchase right over unvested shares, and the acceleration regime.",
+              "matters_es": "Evita el capital muerto, que es el riesgo de que un fundador se vaya temprano y conserve una participación alta. El vesting protege a quienes se quedan, alinea los incentivos y suele ser una condición de entrada para los inversionistas.",
+              "matters_en": "It avoids dead equity, the risk that a founder leaves early and keeps a large stake. Vesting protects the people who stay, aligns incentives, and is usually a condition of entry for investors.",
+              "note_es": "En una S.A.S. el vesting no funciona como declaración. Tiene que respaldarse con mecanismos ejecutables: restricciones estatutarias, opciones de compra, pactos de recompra, cartas de instrucción o promesas de transferencia. Sin esos documentos operativos, la cláusula es difícil de hacer cumplir.",
+              "note_en": "In a Colombian S.A.S. vesting does not work as a statement of intent. It has to be backed by enforceable mechanisms: charter restrictions, call options, repurchase undertakings, instruction letters, or transfer promises. Without those operative documents the clause is hard to enforce.",
+              "cl": [
+                "6.1 Con el objeto de alinear la participación accionaria con la permanencia y creación de valor, las Acciones de cada Fundador estarán sujetas a un esquema de consolidación gradual (“Vesting”) que se implementará mediante restricciones estatutarias a la negociación, pactos de recompra, opciones de compra, promesas de cesión, prendas, endosos u otros mecanismos permitidos bajo derecho colombiano.",
+                "6.2 Salvo que el Anexo 1 establezca algo diferente, el Vesting tendrá una duración de cuatro (4) años, con un periodo inicial obligatorio (“Cliff”) de doce (12) meses. Al cumplirse el primer año desde la Fecha de Inicio de Vesting, consolidará el veinticinco por ciento (25 %) de las Acciones de Fundador sujetas a Vesting. El saldo consolidará mensualmente y de forma lineal durante los treinta y seis (36) meses siguientes, sujeto a la continuidad de la vinculación activa del Fundador con la Sociedad.",
+                "6.3 La Fecha de Inicio de Vesting de cada Fundador será {{co.fecha}}, salvo que el Anexo 1 o los documentos individuales de suscripción, compra o recompra indiquen una fecha distinta.",
+                "6.4 Mientras las Acciones no estén consolidadas, la Sociedad y/o el accionista o tercero designado por ella tendrá un derecho irrevocable de recompra sobre las Acciones no consolidadas, en los términos de la Cláusula 14 y de los documentos complementarios.",
+                "6.5 En caso de Cambio de Control, se aplicará el siguiente régimen de aceleración: [[accel]]. Si se adopta aceleración de doble disparo, esta operará únicamente si, dentro de los [[accelWin]] siguientes al Cambio de Control, el Fundador es removido sin Causal Grave o termina su vinculación por una causa atribuible a la nueva administración que afecte de manera material y adversa su rol, funciones esenciales o remuneración, y que no sea subsanada dentro de un plazo razonable.",
+                "6.6 Los Fundadores se obligan a suscribir los instrumentos operativos necesarios para ejecutar el Vesting y los derechos de recompra, incluyendo contratos de suscripción, opciones de compra, poderes permitidos por la ley, endosos, cartas de instrucción y documentación de depósito o custodia."
+              ]
+            }
+          ]
+        },
+        {
+          "g_es": "Cómo se toman las decisiones",
+          "g_en": "How decisions get made",
+          "arts": [
+            {
+              "id": "a7",
+              "n": "7",
+              "t_es": "Gobierno corporativo",
+              "t_en": "Corporate governance",
+              "dec": "board",
+              "does_es": "Define los órganos de administración, la asamblea, el representante legal y, si aplica, la junta directiva o el comité asesor, y su relación con los estatutos.",
+              "does_en": "Defines the governing bodies, the shareholders meeting, the legal representative, and where applicable the board or advisory committee, and how they relate to the bylaws.",
+              "matters_es": "Permite separar la propiedad de la gestión diaria. Los fundadores tienen que acordar quién toma las decisiones operativas, cómo se supervisa la administración y qué ocurre cuando entren inversionistas con derecho a silla o a observador.",
+              "matters_en": "It lets ownership be separated from day to day management. Founders have to agree who takes operating decisions, how management is supervised, and what happens when investors arrive with board or observer rights.",
+              "cl": [
+                "7.1 La administración de la Sociedad se ejercerá conforme a la Ley 1258 de 2008, los estatutos y este Acuerdo.",
+                "7.2 La Sociedad contará con los siguientes órganos o cargos, según se establezca en los estatutos: (a) asamblea de accionistas; (b) representante legal; y (c) [[board]].",
+                "7.3 Mientras no exista junta directiva formal, las materias reservadas previstas en este Acuerdo requerirán aprobación de los Accionistas conforme a las mayorías previstas en la Cláusula 8.",
+                "7.4 Si existe junta directiva, su composición, designación, funciones y quórum se regirán por los estatutos y las decisiones válidamente adoptadas por la asamblea de accionistas.",
+                "7.5 Los administradores y accionistas deberán actuar de buena fe, con lealtad y con la diligencia de un buen hombre de negocios, de acuerdo con la ley colombiana."
+              ]
+            },
+            {
+              "id": "a8",
+              "n": "8",
+              "t_es": "Materias reservadas",
+              "t_en": "Reserved matters",
+              "dec": "reservedPct",
+              "does_es": "Identifica las decisiones estratégicas que requieren mayoría reforzada, entre ellas emitir acciones, endeudarse, vender activos, cambiar el negocio, repartir dividendos y reformar estatutos.",
+              "does_en": "Identifies the strategic decisions that need a supermajority, among them issuing shares, taking on debt, selling assets, changing the business, declaring dividends, and amending the bylaws.",
+              "matters_es": "Protege a los fundadores minoritarios y evita que una mayoría simple tome decisiones irreversibles o muy dilutivas sin consulta. También hace la gobernanza más predecible para los inversionistas que vengan después.",
+              "matters_en": "It protects minority founders and prevents a simple majority from taking irreversible or heavily dilutive decisions without consultation. It also makes governance more predictable for the investors who come later.",
+              "note_es": "Un umbral demasiado alto puede paralizar la compañía y uno demasiado bajo deja a los minoritarios sin protección. Se calibra según el número de fundadores, el reparto accionario y la etapa de la empresa.",
+              "note_en": "A threshold that is too high can paralyse the company and one that is too low leaves minority holders unprotected. It is calibrated by the number of founders, the ownership split, and the stage of the company.",
+              "cl": [
+                "8.1 Requerirán aprobación previa de la asamblea de accionistas con el voto favorable de al menos [[reservedPct]] de las Acciones con derecho a voto, y cualquier aprobación adicional exigida por los estatutos o acuerdos de inversión, las siguientes materias:",
+                {
+                  "h": "Materias sujetas a mayoría reforzada"
+                },
+                "(a) reforma de estatutos; (b) creación, modificación o eliminación de clases o series de acciones; (c) emisión de Acciones, valores convertibles, opciones, warrants, SAFEs, notas convertibles u otros instrumentos dilutivos, salvo emisiones bajo un plan de incentivos aprobado; (d) creación, aprobación o modificación material de un plan de incentivos de capital;",
+                "(e) endeudamiento, garantías o gravámenes por cuantía superior a [[debtCap]]; (f) aprobación del presupuesto anual o desviaciones materiales del presupuesto aprobado; (g) adquisición, enajenación, licencia exclusiva o gravamen de activos materiales o propiedad intelectual esencial; (h) fusión, escisión, transformación, reorganización, disolución, liquidación, venta de la Sociedad o Cambio de Control;",
+                "(i) declaración de dividendos, reducción de capital o recompra de acciones, salvo conforme a mecanismos previamente aprobados; (j) operaciones con partes vinculadas fuera del giro ordinario del negocio; (k) nombramiento, remoción o modificación material de la remuneración del representante legal, ejecutivos clave o Fundadores; (l) inicio, transacción o terminación de litigios materiales; (m) modificación sustancial del Negocio; y (n) las demás materias previstas como reservadas en estatutos, acuerdos de inversión o decisiones de la asamblea.",
+                "8.2 Las Partes procurarán que las materias reservadas que deban ser oponibles a la Sociedad o a terceros queden reflejadas también en los estatutos sociales y en las actas corporativas correspondientes."
+              ]
+            }
+          ]
+        },
+        {
+          "g_es": "Dinero y acciones",
+          "g_en": "Money and shares",
+          "arts": [
+            {
+              "id": "a9",
+              "n": "9",
+              "t_es": "Financiamiento futuro y derecho de preferencia",
+              "t_en": "Future financing and pre-emptive rights",
+              "does_es": "Permite a la sociedad levantar capital y da a los accionistas el derecho a participar proporcionalmente en las nuevas emisiones, con excepciones y aprobaciones.",
+              "does_en": "Allows the company to raise capital and gives shareholders the right to take part proportionally in new issuances, subject to exceptions and approvals.",
+              "matters_es": "Te protege frente a una dilución inesperada sin impedir que la empresa levante capital. La obligación de cooperar en la diligencia debida, el saneamiento del cap table y la formalización de la propiedad intelectual evita que un solo fundador retrase una ronda de la que depende la supervivencia de la compañía.",
+              "matters_en": "It protects you against unexpected dilution without stopping the company from raising capital. The duty to cooperate on diligence, cap table cleanup, and IP formalisation stops one founder from delaying a round the company depends on.",
+              "cl": [
+                "9.1 La Sociedad podrá obtener financiación mediante aportes de capital, deuda, deuda convertible, SAFEs, notas convertibles, subvenciones, ingresos operativos u otras estructuras permitidas por ley.",
+                "9.2 Salvo renuncia válida, excepción prevista en estatutos o aprobación requerida conforme a este Acuerdo, todo Accionista tendrá derecho de preferencia para suscribir nuevas Acciones o valores convertibles a prorrata de su participación accionaria.",
+                "9.3 El aviso de emisión deberá indicar, como mínimo, el número y clase de valores ofrecidos, precio, forma de pago, plazo de ejercicio y términos económicos materiales. El plazo para ejercer el derecho de preferencia será de quince (15) días hábiles desde la notificación, salvo disposición diferente de los estatutos o de documentos de inversión válidamente aprobados.",
+                "9.4 Las Partes se obligan a cooperar razonablemente en procesos de financiación, due diligence, saneamiento de cap table, formalización de propiedad intelectual y adopción de documentos requeridos por inversionistas, siempre que la transacción haya sido aprobada conforme a las mayorías aplicables y no imponga obligaciones personales desproporcionadas o ajenas al mercado."
+              ]
+            },
+            {
+              "id": "a10",
+              "n": "10",
+              "t_es": "Restricciones a la transferencia",
+              "t_en": "Transfer restrictions",
+              "does_es": "Limita la venta, cesión o prenda de acciones fuera de las reglas del acuerdo, exige que el adquirente se adhiera y prevé la inscripción en el libro de accionistas.",
+              "does_en": "Restricts the sale, assignment, or pledge of shares outside the rules of the agreement, requires the buyer to join it, and provides for registration in the shareholder register.",
+              "matters_es": "Evita que un fundador transfiera acciones a un tercero no deseado, por ejemplo un competidor, un exsocio en conflicto o un inversionista no alineado, sin que la sociedad y los demás accionistas tengan protección.",
+              "matters_en": "It stops a founder transferring shares to an unwanted third party, for example a competitor, a former partner in conflict, or a misaligned investor, with no protection for the company and the other shareholders.",
+              "cl": [
+                "10.1 Ningún Accionista podrá Transferir Acciones salvo de conformidad con este Acuerdo, los estatutos y la ley aplicable.",
+                "10.2 Toda Transferencia permitida estará sujeta, según corresponda, a: (a) derechos de adquisición preferente; (b) cumplimiento del Vesting y de los derechos de recompra; (c) adhesión previa del adquirente a este Acuerdo; (d) las aprobaciones corporativas exigibles; y (e) la inscripción en el libro de registro de accionistas.",
+                "10.3 Toda Transferencia realizada en contravención de este Acuerdo será inoponible frente a la Sociedad en la medida permitida por la ley, y facultará a la Sociedad y a los Accionistas afectados para exigir las medidas correctivas, indemnizaciones, cumplimiento específico y demás remedios aplicables.",
+                "10.4 No se considerarán Transferencias prohibidas las realizadas a una Afiliada, vehículo de inversión, patrimonio autónomo, sucesión o heredero de un Accionista, siempre que el adquirente se adhiera a este Acuerdo y que la Transferencia no eluda las restricciones, derechos de recompra o mecanismos de control previstos en este documento."
+              ]
+            },
+            {
+              "id": "a11",
+              "n": "11",
+              "t_es": "Derecho de adquisición preferente",
+              "t_en": "Right of first refusal",
+              "does_es": "Da primero a la sociedad y después a los demás accionistas el derecho de comprar las acciones que un accionista quiere vender a un tercero, en los mismos términos ofrecidos.",
+              "does_en": "Gives the company first, and then the other shareholders, the right to buy shares a holder wants to sell to a third party, on the same terms offered.",
+              "matters_es": "Mantiene el control sobre quién entra al cap table. También permite que los fundadores que se quedan, o la propia sociedad, consoliden participación cuando un cofundador decide salir.",
+              "matters_en": "It keeps control over who enters the cap table. It also lets the remaining founders, or the company itself, consolidate ownership when a cofounder decides to leave.",
+              "cl": [
+                "11.1 Si un Accionista desea Transferir Acciones a un tercero no afiliado (el “Accionista Oferente”), deberá notificar por escrito a la Sociedad y a los demás Accionistas, indicando el número de Acciones, precio, forma de pago, identidad del potencial adquirente y demás términos materiales de la oferta bona fide.",
+                "11.2 La Sociedad tendrá un primer derecho de adquisición preferente sobre las Acciones ofrecidas durante quince (15) días hábiles. Si la Sociedad no ejerce total o parcialmente dicho derecho, los demás Accionistas tendrán un derecho secundario de adquisición preferente, a prorrata de sus participaciones o conforme acuerden, durante un plazo adicional de cinco (5) días hábiles.",
+                "11.3 Respecto de las Acciones no adquiridas bajo la Cláusula 11.2, el Accionista Oferente podrá Transferirlas al tercero identificado dentro de los treinta (30) días hábiles siguientes, en términos no más favorables que los ofrecidos a la Sociedad y a los demás Accionistas.",
+                "11.4 Si la Transferencia al tercero no se realiza dentro de dicho plazo o si cambian materialmente sus términos, el Accionista Oferente deberá reiniciar el procedimiento previsto en esta Cláusula."
+              ]
+            },
+            {
+              "id": "a12",
+              "n": "12",
+              "t_es": "Derecho de acompañamiento (tag-along)",
+              "t_en": "Tag-along right",
+              "dec": "tagPct",
+              "does_es": "Permite que los accionistas minoritarios participen proporcionalmente en una venta relevante hecha por los mayoritarios, en términos equivalentes.",
+              "does_en": "Lets minority shareholders take part proportionally in a significant sale by majority holders, on equivalent terms.",
+              "matters_es": "Evita que un fundador mayoritario venda su participación o el control a un tercero mientras los demás quedan como socios de un comprador que no eligieron. Te da una salida junto con la venta principal.",
+              "matters_en": "It stops a controlling founder selling their stake or control to a third party while the others are left as partners of a buyer they did not choose. It gives you an exit alongside the main sale.",
+              "cl": [
+                "12.1 Si uno o varios Accionistas titulares, individual o conjuntamente, de al menos [[tagPct]] de las Acciones con derecho a voto pretenden Transferir Acciones a un tercero en una operación que implique Cambio de Control o venta de una participación material, los demás Accionistas tendrán derecho a participar proporcionalmente en la venta, en los mismos términos y condiciones económicos y legales.",
+                "12.2 El Accionista vendedor deberá notificar a los demás Accionistas los términos de la transacción propuesta, incluyendo identidad del adquirente, número de Acciones, precio, forma de pago y fecha estimada de cierre. Los Accionistas tendrán quince (15) días hábiles para ejercer su derecho de acompañamiento.",
+                "12.3 Las obligaciones de declaraciones, garantías, indemnidad, escrow, holdback o ajustes de precio exigidas a los Accionistas que ejerzan tag-along deberán ser razonables, proporcionales a los ingresos que reciban y, salvo fraude o dolo propio, limitadas a declaraciones sobre capacidad, titularidad y ausencia de gravámenes."
+              ]
+            },
+            {
+              "id": "a13",
+              "n": "13",
+              "t_es": "Derecho de arrastre (drag-along)",
+              "t_en": "Drag-along right",
+              "dec": "dragPct",
+              "does_es": "Obliga a todos los accionistas a apoyar una venta aprobada por la mayoría calificada, siempre que existan protecciones de trato proporcional y límites de responsabilidad.",
+              "does_en": "Requires all shareholders to support a sale approved by the qualified majority, provided proportionate treatment and liability limits are in place.",
+              "matters_es": "Evita que un accionista minoritario bloquee una adquisición atractiva para la compañía. Las salvaguardas son esenciales: los minoritarios no deben asumir responsabilidad solidaria, garantías comerciales desproporcionadas ni obligaciones personales ajenas a la venta.",
+              "matters_en": "It stops a minority holder blocking an acquisition that is good for the company. The safeguards matter: minority holders should not take on joint and several liability, disproportionate business warranties, or personal obligations unrelated to the sale.",
+              "note_es": "Este es el número más sensible de todo el acuerdo. Es el porcentaje de accionistas que puede obligarte a vender tu parte de la compañía aunque no estés de acuerdo con la operación.",
+              "note_en": "This is the most sensitive number in the whole agreement. It is the percentage of shareholders that can require you to sell your part of the company even when you disagree with the deal.",
+              "cl": [
+                "13.1 Si una venta de la Sociedad, Cambio de Control, fusión o transacción equivalente es aprobada por Accionistas que representen al menos [[dragPct]] de las Acciones con derecho a voto y por cualquier mayoría especial aplicable conforme a los estatutos o acuerdos de inversión, todos los Accionistas estarán obligados a vender, ceder, votar a favor o de otro modo apoyar la transacción.",
+                "13.2 El ejercicio del drag-along estará sujeto a las siguientes condiciones: (a) cada Accionista recibirá la misma forma de contraprestación por acción de la misma clase, sujeto a preferencias económicas válidamente establecidas; (b) las obligaciones de cada Accionista minoritario estarán limitadas a la transferencia de sus Acciones y a declaraciones de capacidad, titularidad y ausencia de gravámenes, salvo fraude o dolo propio;",
+                "(c) la responsabilidad post-cierre de cada Accionista minoritario será mancomunada, no solidaria, y no excederá la porción del precio efectivamente recibida por dicho Accionista, salvo fraude o dolo propio; (d) los montos sujetos a depósito en garantía (escrow), retenciones (holdback), indemnidades o ajustes de precio se asignarán de manera proporcional y razonable; y (e) no se impondrán obligaciones personales no monetarias irrazonables a los Accionistas arrastrados.",
+                "13.3 Cada Parte se obliga a suscribir oportunamente los documentos, endosos, poderes, votos, renuncias y demás instrumentos razonablemente necesarios para dar efecto a esta Cláusula."
+              ]
+            }
+          ]
+        },
+        {
+          "g_es": "Si alguien se va",
+          "g_en": "If someone leaves",
+          "arts": [
+            {
+              "id": "a14",
+              "n": "14",
+              "t_es": "Salida de fundadores: good leaver y bad leaver",
+              "t_en": "Founder departures: good leaver and bad leaver",
+              "dec": "badLeaver",
+              "does_es": "Define qué ocurre si un fundador se va, distingue entre una salida de buena fe y una salida por falta grave, define la causal grave y regula la recompra de acciones consolidadas y no consolidadas.",
+              "does_en": "Defines what happens if a founder leaves, separates a good faith departure from one for serious misconduct, defines serious cause, and governs the repurchase of vested and unvested shares.",
+              "matters_es": "Es la cláusula con mayor potencial de conflicto de todo el acuerdo. Protege a la compañía frente al abandono, la competencia desleal y el fraude, y al mismo tiempo tiene que tratar con justicia las salidas por muerte, incapacidad, remoción sin causa o mutuo acuerdo.",
+              "matters_en": "This is the most dispute prone clause in the agreement. It protects the company against abandonment, unfair competition, and fraud, and at the same time it has to treat fairly departures caused by death, disability, removal without cause, or mutual agreement.",
+              "note_es": "Acuerda con cuidado el precio de recompra de las acciones consolidadas de un bad leaver, el procedimiento para determinar la causal y la forma de pago. Tiene que haber evidencia documental y un proceso razonable, porque una cláusula sin procedimiento se convierte en una herramienta de abuso.",
+              "note_en": "Agree carefully on the repurchase price for a bad leaver vested shares, the procedure for establishing the cause, and the payment mechanics. There has to be documentary evidence and a reasonable process, because a clause with no procedure becomes a tool for abuse.",
+              "cl": [
+                "14.1 Ocurre un “Evento de Salida” respecto de un Fundador cuando este deja de prestar servicios a la Sociedad o al grupo empresarial aplicable, deja de cumplir materialmente el rol acordado o cesa su vinculación activa por cualquier causa.",
+                "14.2 Un Fundador será considerado “Good Leaver” si su salida se produce por muerte, incapacidad, remoción sin Causal Grave, mutuo acuerdo o cualquier otra circunstancia expresamente calificada como tal por el órgano competente de la Sociedad.",
+                "14.3 Un Fundador será considerado “Bad Leaver” si su salida se produce por abandono injustificado, competencia desleal, incumplimiento material de obligaciones de dedicación, violación de confidencialidad o de la cesión de propiedad intelectual, fraude, dolo, conflicto de interés no revelado, apropiación indebida, remoción por Causal Grave o conducta gravemente perjudicial para la Sociedad.",
+                "14.4 “Causal Grave” significa, sujeto a la ley aplicable y al debido proceso interno razonable: (a) incumplimiento material de este Acuerdo, del acuerdo de propiedad intelectual o de un acuerdo relevante con la Sociedad; (b) violación grave de deberes legales, fiduciarios o societarios; (c) fraude, estafa, abuso de confianza, apropiación indebida o conducta dolosa; (d) uso indebido de activos, Información Confidencial o propiedad intelectual de la Sociedad; (e) negativa injustificada y persistente a cumplir funciones esenciales; (f) condena o admisión de responsabilidad por delito doloso relevante; o (g) conducta que cause o pueda causar perjuicio material a la Sociedad.",
+                "14.5 En cualquier Evento de Salida, la Sociedad y/o el accionista designado tendrá derecho a adquirir las Acciones no consolidadas del Fundador saliente por el menor valor entre el precio originalmente pagado, el valor nominal o el menor valor permitido por la ley y los documentos aplicables.",
+                "14.6 En caso de Good Leaver, las Acciones consolidadas permanecerán en cabeza del Fundador saliente, sin perjuicio de los derechos de adquisición preferente, restricciones de transferencia y mecanismos de compra válidamente establecidos.",
+                "14.7 En caso de Bad Leaver, la Sociedad y/o los Accionistas designados podrán adquirir las Acciones consolidadas del Fundador saliente por un valor equivalente a [[badLeaver]], en la medida permitida por la ley y los documentos societarios aplicables.",
+                "14.8 El Fundador saliente deberá renunciar, cuando corresponda, a cargos de administración, representación, dirección o manejo que ejerza en la Sociedad; devolver bienes, accesos, información y documentos; y colaborar razonablemente en la transición de sus responsabilidades."
+              ]
+            },
+            {
+              "id": "a15",
+              "n": "15",
+              "t_es": "Plan de incentivos de capital",
+              "t_en": "Equity incentive plan",
+              "dec": "esopPct",
+              "does_es": "Autoriza la creación de un plan de incentivos para empleados, consultores, asesores y administradores, y define el tamaño inicial de la bolsa.",
+              "does_en": "Authorises an incentive plan for employees, consultants, advisors, and directors, and sets the initial size of the pool.",
+              "matters_es": "Te permite contratar y retener talento sin depender solo del salario. La bolsa genera dilución, y aun así suele ser necesaria para armar un equipo competitivo y con frecuencia la exigen los inversionistas.",
+              "matters_en": "It lets you hire and keep talent without relying on salary alone. The pool creates dilution, and even so it is usually necessary to build a competitive team and investors often require it.",
+              "note_es": "El porcentaje que fijes aquí tiene que ser el mismo que fijes en el Plan de Compensación en Acciones. Dos cifras distintas en dos documentos es de los hallazgos más comunes en una diligencia debida.",
+              "note_en": "The percentage you set here has to match the one you set in the Equity Compensation Plan. Two different figures in two documents is one of the most common findings in due diligence.",
+              "cl": [
+                "15.1 La Sociedad podrá crear un plan de incentivos para empleados, consultores, asesores y administradores (el “Plan de Incentivos”), sujeto a las aprobaciones requeridas.",
+                "15.2 El tamaño inicial del Plan de Incentivos será equivalente a [[esopPct]] del capital plenamente diluido, salvo aprobación diferente conforme a la Cláusula 8.",
+                "15.3 Las Acciones, opciones o derechos otorgados bajo el Plan de Incentivos estarán sujetos a los estatutos, a este Acuerdo y a los documentos individuales de otorgamiento aplicables."
+              ]
+            }
+          ]
+        },
+        {
+          "g_es": "Transparencia y protección",
+          "g_en": "Transparency and protection",
+          "arts": [
+            {
+              "id": "a16",
+              "n": "16",
+              "t_es": "Información, registros y dividendos",
+              "t_en": "Information, records, and dividends",
+              "dec": "reportDays",
+              "does_es": "Regula los libros societarios, la información financiera y operativa periódica, el presupuesto y la política de dividendos.",
+              "does_en": "Governs corporate books, periodic financial and operating information, the budget, and dividend policy.",
+              "matters_es": "Asegura transparencia entre fundadores y ayuda a detectar temprano problemas de caja, de ejecución o de gobierno. La política de reinversión evita expectativas prematuras de dividendos cuando la empresa todavía necesita capital para crecer.",
+              "matters_en": "It ensures transparency between founders and helps catch cash, execution, or governance problems early. The reinvestment policy avoids premature dividend expectations while the company still needs capital to grow.",
+              "cl": [
+                "16.1 La Sociedad mantendrá libros, registros, actas, documentos contables y libro de registro de accionistas conforme a la ley colombiana.",
+                "16.2 La Sociedad entregará a los Accionistas, sujeto a obligaciones razonables de confidencialidad, la siguiente información: (a) estados financieros anuales dentro de los [[reportDays]] siguientes al cierre de cada ejercicio; (b) reportes trimestrales de gestión y métricas relevantes dentro de los treinta (30) días siguientes al cierre del trimestre; y (c) presupuesto anual, plan operativo y plan de caja para el siguiente ejercicio, cuando hayan sido aprobados.",
+                "16.3 La política de dividendos será definida por la asamblea de accionistas de conformidad con la ley, los estatutos, las necesidades de caja, el plan de crecimiento y las obligaciones de la Sociedad. Salvo decisión en contrario, la intención inicial de las Partes será reinvertir las utilidades razonablemente disponibles en el crecimiento del Negocio."
+              ]
+            },
+            {
+              "id": "a17",
+              "n": "17",
+              "t_es": "Confidencialidad",
+              "t_en": "Confidentiality",
+              "does_es": "Protege la información no pública de la sociedad, el negocio, los clientes, los inversionistas y los fundadores, y define las excepciones y las reglas de divulgación obligatoria.",
+              "does_en": "Protects non-public information about the company, the business, clients, investors, and founders, and sets out the exceptions and the rules for compelled disclosure.",
+              "matters_es": "Protege el valor competitivo y el secreto empresarial. Es especialmente importante antes de lanzar producto, negociar con clientes, levantar capital o desarrollar tecnología diferenciada.",
+              "matters_en": "It protects competitive value and trade secrets. It matters most before launching a product, negotiating with clients, raising capital, or building differentiated technology.",
+              "cl": [
+                "17.1 “Información Confidencial” significa toda información no pública de la Sociedad, el Negocio, los Fundadores, clientes, proveedores, empleados, productos, tecnología, código, modelos, datos, seguridad, estrategias, planes comerciales, finanzas, términos de inversión, estructura accionaria y documentos contractuales.",
+                "17.2 Cada Parte mantendrá la Información Confidencial en estricta reserva, la utilizará exclusivamente para los fines permitidos por este Acuerdo y no la divulgará a terceros, salvo a asesores, empleados, afiliadas, contratistas o potenciales inversionistas que necesiten conocerla y estén sujetos a obligaciones de confidencialidad adecuadas.",
+                "17.3 No será Información Confidencial la información que una Parte demuestre que: (a) es pública sin incumplimiento; (b) ya conocía legítimamente; (c) recibió de un tercero sin deber de reserva; o (d) desarrolló de manera independiente sin usar Información Confidencial.",
+                "17.4 Si una Parte debe revelar Información Confidencial por requerimiento legal, deberá, en la medida permitida, informar previamente a la Sociedad y limitar la revelación a la porción estrictamente exigida.",
+                "17.5 Estas obligaciones permanecerán vigentes durante la vigencia del Acuerdo y por cinco (5) años después de su terminación; respecto de secretos empresariales, subsistirán mientras la información mantenga ese carácter."
+              ]
+            },
+            {
+              "id": "a18",
+              "n": "18",
+              "t_es": "No competencia y no captación",
+              "t_en": "Non-competition and non-solicitation",
+              "dec": "nonSolicit",
+              "does_es": "Prohíbe competir mientras el fundador está vinculado y limita la captación directa de empleados clave, contratistas, clientes o aliados después de la salida.",
+              "does_en": "Prohibits competing while the founder is engaged and limits direct solicitation of key employees, contractors, clients, or partners after departure.",
+              "matters_es": "Protege la continuidad del equipo, las relaciones comerciales y el know-how. Las restricciones posteriores a la relación tienen que ser razonables y revisarse con cuidado bajo derecho colombiano, porque su exigibilidad es limitada.",
+              "matters_en": "It protects team continuity, commercial relationships, and know-how. Post-termination restrictions have to be reasonable and reviewed carefully under Colombian law, because their enforceability is limited.",
+              "note_es": "En Colombia una cláusula de no competencia posterior a la terminación normalmente requiere una compensación específica para ser exigible. No asumas que basta con escribirla.",
+              "note_en": "In Colombia a post-termination non-compete usually needs specific compensation to be enforceable. Do not assume that writing it down is enough.",
+              "cl": [
+                "18.1 Durante el tiempo en que un Fundador esté vinculado activamente con la Sociedad, no podrá participar en actividades que compitan materialmente con el Negocio sin autorización previa y escrita del órgano competente.",
+                "18.2 Durante la vinculación activa y por [[nonSolicit]] después de la salida, cada Fundador se abstendrá de inducir a la ruptura contractual a empleados clave, contratistas estratégicos, clientes relevantes o aliados comerciales materiales de la Sociedad con quienes haya tenido contacto sustancial durante los últimos doce (12) meses de vinculación.",
+                "18.3 Cualquier restricción postcontractual adicional de no competencia deberá pactarse por separado, tener un alcance razonable y ser válida conforme al derecho colombiano."
+              ]
+            },
+            {
+              "id": "a19",
+              "n": "19",
+              "t_es": "Declaraciones y garantías",
+              "t_en": "Representations and warranties",
+              "does_es": "Cada fundador confirma su capacidad, la ausencia de conflictos, que no usa indebidamente propiedad intelectual de terceros, la titularidad de sus acciones y que tuvo oportunidad de recibir asesoría independiente.",
+              "does_en": "Each founder confirms their capacity, the absence of conflicts, that they are not misusing third party intellectual property, ownership of their shares, and that they had the chance to take independent advice.",
+              "matters_es": "Obliga a revelar restricciones de un empleo anterior, gravámenes sobre acciones, conflictos o riesgos de propiedad intelectual antes de que se conviertan en problemas de la sociedad. Estas declaraciones se vuelven a exigir en la diligencia debida de la ronda.",
+              "matters_en": "It forces disclosure of prior employment restrictions, encumbrances over shares, conflicts, or IP risks before they become the company problem. These same representations are asked for again in the diligence for the round.",
+              "cl": [
+                "Cada Accionista Fundador declara y garantiza a la Sociedad y a los demás Accionistas que:",
+                "19.1 Tiene capacidad y autorización suficientes para celebrar y cumplir este Acuerdo.",
+                "19.2 La celebración y ejecución de este Acuerdo no infringe contratos, decisiones judiciales, restricciones legales u obligaciones frente a terceros.",
+                "19.3 No utilizará indebidamente información confidencial, secretos empresariales o propiedad intelectual de terceros en beneficio del Negocio.",
+                "19.4 Las Acciones que suscriba, posea o transfiera estarán libres de gravámenes no revelados, salvo los establecidos en este Acuerdo o en los documentos societarios aplicables.",
+                "19.5 Ha tenido oportunidad razonable de obtener asesoría legal, tributaria y contable independiente."
+              ]
+            },
+            {
+              "id": "a20",
+              "n": "20",
+              "t_es": "Adhesión de nuevos accionistas",
+              "t_en": "Joinder by new shareholders",
+              "does_es": "Exige que quien adquiera acciones se adhiera al acuerdo antes de ser reconocido como accionista para efectos del régimen contractual.",
+              "does_en": "Requires anyone acquiring shares to join the agreement before being recognised as a shareholder for contractual purposes.",
+              "matters_es": "Evita que un nuevo accionista tenga acciones sin quedar sujeto al vesting, a las restricciones de transferencia, a la confidencialidad ni al tag y drag. Mantiene el acuerdo coherente a medida que el cap table crece.",
+              "matters_en": "It stops a new holder from owning shares without being bound by vesting, transfer restrictions, confidentiality, or tag and drag. It keeps the agreement coherent as the cap table grows.",
+              "cl": [
+                "20.1 Como condición para que cualquier persona adquiera Acciones, salvo dispensa expresa aprobada conforme a este Acuerdo, dicha persona deberá adherirse previamente a este Acuerdo mediante documento escrito aceptable para la Sociedad.",
+                "20.2 La Sociedad no inscribirá en el libro de registro de accionistas una Transferencia a favor de una persona que no haya cumplido con la obligación de adhesión, en la medida permitida por la ley y los estatutos."
+              ]
+            }
+          ]
+        },
+        {
+          "g_es": "Cierre",
+          "g_en": "Closing",
+          "arts": [
+            {
+              "id": "a21",
+              "n": "21",
+              "t_es": "Solución de controversias",
+              "t_en": "Dispute resolution",
+              "dec": "forum",
+              "does_es": "Establece una secuencia de negociación directa, luego conciliación o mediación y finalmente arbitraje o jurisdicción ordinaria, con la posibilidad de pedir medidas cautelares urgentes.",
+              "does_en": "Sets a sequence of direct negotiation, then conciliation or mediation, and finally arbitration or the ordinary courts, with the option of urgent interim relief.",
+              "matters_es": "Un conflicto entre fundadores puede paralizar la empresa. El proceso escalonado incentiva una solución temprana, y la posibilidad de medidas cautelares es lo que te permite detener una filtración de información, una apropiación de propiedad intelectual o una transferencia indebida de acciones mientras el fondo del asunto se resuelve.",
+              "matters_en": "A founder dispute can paralyse the company. The stepped process encourages early resolution, and the availability of interim relief is what lets you stop an information leak, an IP grab, or an improper share transfer while the substance is being decided.",
+              "cl": [
+                "21.1 Las Partes intentarán resolver de buena fe cualquier controversia relacionada con este Acuerdo mediante negociación directa durante quince (15) días hábiles desde la notificación escrita de la controversia.",
+                "21.2 Si no se alcanza una solución, las Partes acudirán a conciliación o mediación ante el [[centro]], con sede en {{co.ciudad}}.",
+                "21.3 Si la controversia persiste, será resuelta por [[forum]], con sede en {{co.ciudad}}, conforme a la ley colombiana. Sin perjuicio de lo anterior, cualquier Parte podrá solicitar medidas cautelares o protección inmediata ante autoridad competente respecto de confidencialidad, propiedad intelectual, restricciones de transferencia o derechos societarios."
+              ]
+            },
+            {
+              "id": "a22",
+              "n": "22",
+              "t_es": "Notificaciones",
+              "t_en": "Notices",
+              "does_es": "Define cómo, dónde y cuándo se entienden recibidas las comunicaciones formales entre las partes.",
+              "does_en": "Defines how, where, and when formal communications between the parties are treated as received.",
+              "matters_es": "Casi todas las acciones importantes del acuerdo dependen de plazos: el ejercicio del derecho de preferencia, el aviso de venta, la convocatoria, la salida, la recompra o la controversia. Una regla clara de notificaciones evita discutir después si un aviso fue válido o llegó a tiempo.",
+              "matters_en": "Almost every important action in the agreement runs on a deadline: exercising pre-emptive rights, the sale notice, the meeting call, a departure, a repurchase, or a dispute. A clear notice rule avoids arguing later about whether a notice was valid or timely.",
+              "cl": [
+                "22.1 Toda notificación bajo este Acuerdo deberá realizarse por escrito a las direcciones físicas y electrónicas establecidas en el Anexo 4, o a las que una Parte informe posteriormente por escrito.",
+                "22.2 Las notificaciones se entenderán recibidas: (a) en la fecha de entrega personal; (b) al día hábil siguiente de su envío por mensajería reconocida; (c) al tercer día hábil siguiente de su envío por correo certificado; o (d) en la fecha de envío por correo electrónico, si no se recibe mensaje de error y se envía antes de las 5:00 p.m. de un día hábil; en caso contrario, el siguiente día hábil."
+              ]
+            },
+            {
+              "id": "a23",
+              "n": "23",
+              "t_es": "Disposiciones generales",
+              "t_en": "General provisions",
+              "dec": "amendPct",
+              "does_es": "Contiene la ley aplicable, la vigencia, el régimen de modificaciones, la integridad, la prelación frente a los estatutos, la cesión, la divisibilidad, el cumplimiento específico y la firma electrónica.",
+              "does_en": "Contains governing law, term, amendment rules, entire agreement, precedence over the bylaws, assignment, severability, specific performance, and electronic signature.",
+              "matters_es": "Estas cláusulas son las que permiten que el acuerdo siga funcionando a través de cambios corporativos, rondas de inversión y reorganizaciones. La regla de prelación es especialmente importante en Colombia, porque ciertas materias tienen que quedar reflejadas en los estatutos para ser plenamente eficaces frente a la sociedad o frente a terceros.",
+              "matters_en": "These clauses are what keep the agreement working through corporate changes, financing rounds, and reorganisations. The precedence rule matters most in Colombia, because certain matters have to appear in the bylaws to be fully effective against the company or third parties.",
+              "cl": [
+                "23.1 Ley aplicable. Este Acuerdo se regirá e interpretará de conformidad con las leyes de la República de Colombia.",
+                "23.2 Vigencia. Este Acuerdo entrará en vigor en la Fecha Efectiva y continuará vigente mientras cualquier Parte sea titular de Acciones o tenga derechos u obligaciones pendientes bajo este Acuerdo.",
+                "23.3 Modificaciones. Toda modificación deberá constar por escrito y ser aprobada por la Sociedad y por Accionistas que representen al menos [[amendPct]] de las Acciones con derecho a voto, sin perjuicio de mayorías especiales, derechos de clase o consentimientos adicionales exigidos por la ley, estatutos o acuerdos de inversión.",
+                "23.4 Integridad. Este Acuerdo constituye el acuerdo íntegro entre las Partes respecto de su objeto y reemplaza los entendimientos previos sobre la misma materia.",
+                "23.5 Prelación. En caso de conflicto entre este Acuerdo, los estatutos y las normas imperativas, prevalecerán las normas imperativas y, para los asuntos societarios que legalmente deban constar en estatutos, los estatutos debidamente aprobados. Las Partes negociarán y aprobarán de buena fe las modificaciones necesarias para armonizar dichos documentos.",
+                "23.6 Cesión. Ninguna Parte podrá ceder sus derechos u obligaciones bajo este Acuerdo salvo conforme a una Transferencia permitida y a la adhesión del cesionario a este Acuerdo.",
+                "23.7 Divisibilidad. Si una disposición resulta inválida o inexigible, las demás conservarán plena vigencia y la disposición afectada se ajustará en la mínima medida necesaria para hacerla válida y exigible, cuando ello sea permitido por la ley.",
+                "23.8 Cumplimiento específico. Las Partes reconocen que el incumplimiento de obligaciones de propiedad intelectual, confidencialidad, Vesting, transferencia de Acciones o cooperación corporativa puede causar perjuicios de difícil reparación. La Sociedad y las Partes afectadas podrán solicitar medidas cautelares, cumplimiento específico, indemnización y demás remedios disponibles.",
+                "23.9 Firmas electrónicas. Este Acuerdo podrá firmarse en contrapartes y mediante firma electrónica o digital válida conforme a la legislación colombiana."
+              ]
+            },
+            {
+              "id": "anx",
+              "n": "A",
+              "t_es": "Anexos y firmas",
+              "t_en": "Schedules and signatures",
+              "does_es": "Recoge la estructura accionaria y el vesting, los aportes y roles, la propiedad intelectual preexistente excluida, las direcciones de notificación y las firmas de las partes.",
+              "does_en": "Holds the share structure and vesting, the contributions and roles, the excluded pre-existing IP, the notice addresses, and the signatures of the parties.",
+              "matters_es": "Los anexos son la parte que un inversionista revisa primero. El Anexo 1 tiene que coincidir exactamente con los estatutos, los documentos de suscripción, el libro de accionistas y el cap table. Cualquier inconsistencia complica una ronda o una salida.",
+              "matters_en": "The schedules are the part an investor checks first. Schedule 1 has to match the bylaws, the subscription documents, the shareholder register, and the cap table exactly. Any inconsistency complicates a round or an exit.",
+              "cl": [
+                {
+                  "h": "Anexo 1 — Estructura accionaria y vesting"
+                },
+                "Para cada accionista se registra el número de acciones, el porcentaje plenamente diluido, la fecha de inicio de vesting, las acciones sujetas a vesting y el crédito de vesting por trabajo previo.",
+                {
+                  "h": "Anexo 2 — Aportes, roles y dedicación"
+                },
+                "Para cada fundador se registra el rol, los aportes comprometidos, la dedicación mínima y las responsabilidades principales.",
+                {
+                  "h": "Anexo 3 — Propiedad intelectual preexistente excluida"
+                },
+                "Para cada activo se registra el titular, la descripción, si se incorporará al negocio y las condiciones de licencia.",
+                {
+                  "h": "Anexo 4 — Direcciones para notificaciones"
+                },
+                "Dirección física y correo electrónico de cada fundador y de la Sociedad.",
+                {
+                  "h": "Firmas"
+                },
+                "En constancia de lo anterior, las Partes suscriben el presente Acuerdo en la Fecha Efectiva. Firman {{f1.nombre}}, {{f2.nombre}} y, por la Sociedad, {{co.repLegal}} en calidad de {{co.repCargo}}."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "incentivos": {
+      "t_es": "Acuerdo de Compensación en Acciones",
+      "t_en": "Equity Compensation Agreement",
+      "sub_es": "Cómo se reparte capital al equipo y a los fundadores, y qué condiciones lo gobiernan.",
+      "sub_en": "How equity is granted to the team and the founders, and the conditions that govern it.",
+      "full_es": "Plan de Compensación en Acciones e Incentivos — S.A.S. Colombia",
+      "full_en": "Equity Compensation and Incentive Plan — Colombian S.A.S.",
+      "groups": [
+        {
+          "g_es": "Qué es el plan",
+          "g_en": "What the plan is",
+          "arts": [
+            {
+              "id": "e0",
+              "n": "—",
+              "t_es": "Encabezado",
+              "t_en": "Heading",
+              "does_es": "Identifica a la sociedad que adopta el plan y la fecha desde la cual el plan produce efectos.",
+              "does_en": "Identifies the company adopting the plan and the date from which the plan takes effect.",
+              "matters_es": "A diferencia del acuerdo de fundadores, este documento no es un contrato entre partes. Es un plan que la sociedad adopta de forma unilateral, y los participantes entran a él después mediante una carta de otorgamiento.",
+              "matters_en": "Unlike the founders agreement, this document is not a contract between parties. It is a plan the company adopts unilaterally, and participants enter it later through a grant letter.",
+              "cl": [
+                "Este Plan de Compensación en Acciones e Incentivos (el “Plan”) es adoptado por {{co.nombre}} S.A.S., sociedad por acciones simplificada constituida conforme a las leyes de la República de Colombia, identificada con NIT {{co.nit}} (la “Sociedad”), a partir del {{co.fecha}}."
+              ]
+            },
+            {
+              "id": "e1",
+              "n": "1",
+              "t_es": "Objeto",
+              "t_en": "Purpose",
+              "does_es": "Declara para qué existe el plan, que es atraer y retener a fundadores, empleados, contratistas, consultores y asesores mediante acciones, opciones y otros derechos ligados al capital.",
+              "does_en": "States why the plan exists, which is to attract and retain founders, employees, contractors, consultants, and advisors through shares, options, and other rights tied to the capital.",
+              "matters_es": "La segunda parte de este artículo es la que protege a la compañía. Deja escrito que recibir un incentivo no es una promesa de empleo, de permanencia ni de recibir más incentivos en el futuro. Sin esa frase, un participante puede argumentar que el plan creó expectativas laborales.",
+              "matters_en": "The second part of this article is what protects the company. It states in writing that receiving a grant is not a promise of employment, of continued service, or of further grants. Without that sentence a participant can argue the plan created employment expectations.",
+              "cl": [
+                "1.1 El Plan tiene por objeto atraer, retener, incentivar y alinear a fundadores, empleados, administradores, contratistas independientes, consultores y asesores estratégicos mediante la asignación de acciones, derechos de suscripción, opciones, promesas de transferencia u otros derechos económicos vinculados al capital de la Sociedad.",
+                "1.2 Los Incentivos otorgados bajo el Plan pretenden alinear los intereses de los Participantes con la creación de valor sostenible de la Sociedad y no constituyen una garantía de empleo, contratación, remuneración futura, permanencia ni derecho a recibir Incentivos adicionales."
+              ]
+            },
+            {
+              "id": "e2",
+              "n": "2",
+              "t_es": "Definiciones",
+              "t_en": "Definitions",
+              "does_es": "Define acciones restringidas, opción, incentivo, participante, carta de otorgamiento, relación de servicio continua y vesting.",
+              "does_en": "Defines restricted shares, option, incentive, participant, grant letter, continuous service relationship, and vesting.",
+              "matters_es": "La definición de relación de servicio continua es la más importante del artículo. Determina si un cambio de cargo, de jornada o de tipo de contrato dentro del grupo interrumpe el vesting de una persona. Aquí queda escrito que no lo interrumpe, salvo decisión expresa del administrador.",
+              "matters_en": "The definition of continuous service relationship is the most important one here. It determines whether a change of role, hours, or contract type inside the group interrupts a person vesting. This text says it does not, unless the administrator expressly decides otherwise.",
+              "cl": [
+                "“Acciones Restringidas” significa acciones de la Sociedad emitidas, suscritas, adquiridas o prometidas a favor de un Participante, sujetas a Vesting, restricciones de transferencia y derechos de recompra a favor de la Sociedad y/o de los cesionarios designados por esta.",
+                "“Carta de Otorgamiento” significa el documento individual, físico o electrónico, mediante el cual la Sociedad otorga un Incentivo a un Participante y define sus términos particulares.",
+                "“Cambio de Control” significa una transacción o serie de transacciones relacionadas mediante las cuales una persona o grupo adquiere directa o indirectamente el control de la Sociedad, o la Sociedad dispone de la totalidad o de una parte sustancial de sus activos o del Negocio.",
+                "“Incentivo” significa cualquier Acción Restringida, opción de compra, derecho de suscripción, promesa de transferencia, unidad o derecho económico equivalente otorgado bajo el Plan.",
+                "“Opción” significa el derecho otorgado a un Participante para adquirir o suscribir Acciones de la Sociedad, sujeto a los términos del Plan y de la Carta de Otorgamiento aplicable.",
+                "“Participante” significa un fundador, empleado, administrador, contratista, consultor o asesor seleccionado por el Administrador para recibir un Incentivo.",
+                "“Relación de Servicio Continua” significa la relación ininterrumpida de un Participante como empleado, administrador, fundador activo, contratista o consultor de la Sociedad o una Afiliada. Un cambio de cargo, remuneración, jornada, tipo de vinculación o entidad empleadora dentro del grupo no interrumpirá por sí solo la Relación de Servicio Continua, salvo decisión expresa y escrita del Administrador.",
+                "“Vesting” significa la consolidación gradual del derecho económico sobre Acciones Restringidas, Opciones u otros Incentivos, vinculada al paso del tiempo, la continuidad de la Relación de Servicio Continua, el cumplimiento de hitos o una combinación de estos."
+              ]
+            },
+            {
+              "id": "e3",
+              "n": "3",
+              "t_es": "Administración del plan",
+              "t_en": "Plan administration",
+              "dec": "admin",
+              "does_es": "Designa quién administra el plan y qué puede decidir, incluyendo a quién se le otorga, cuántas acciones, a qué precio y bajo qué calendario.",
+              "does_en": "Appoints who administers the plan and what they can decide, including who receives a grant, how many shares, at what price, and on what schedule.",
+              "matters_es": "Quien administra el plan controla la dilución del cap table de forma gradual y silenciosa. Mientras el equipo es pequeño conviene la agilidad del representante legal, y aun así vale la pena fijar por escrito hasta cuánto puede otorgar sin volver a la asamblea.",
+              "matters_en": "Whoever administers the plan controls cap table dilution gradually and quietly. While the team is small the speed of the legal representative helps, and even so it is worth setting in writing how much can be granted without going back to the shareholders.",
+              "cl": [
+                "3.1 El Plan será administrado por [[admin]].",
+                "3.2 Dentro de los límites de este Plan, de los estatutos, del acuerdo de accionistas y de las aprobaciones corporativas requeridas, el Administrador podrá: (a) seleccionar Participantes; (b) determinar el tipo, número, clase y condiciones de los Incentivos; (c) establecer precio de suscripción, compra o ejercicio, fechas de otorgamiento, vesting, hitos, vencimiento, aceleración y demás términos particulares;",
+                "(d) aprobar, interpretar, modificar y administrar las Cartas de Otorgamiento y los documentos operativos; (e) adoptar mecanismos de recompra, restricciones de transferencia, opciones de compra, promesas de cesión, cartas de instrucción, endosos, depósitos o custodia de títulos; y (f) resolver de buena fe las dudas de interpretación y adoptar decisiones razonables de administración del Plan.",
+                "3.3 Las decisiones del Administrador se documentarán en actas, decisiones escritas, Cartas de Otorgamiento o cualquier medio que permita acreditar razonablemente su contenido y aprobación."
+              ]
+            }
+          ]
+        },
+        {
+          "g_es": "Cuánto y para quién",
+          "g_en": "How much and for whom",
+          "arts": [
+            {
+              "id": "e4",
+              "n": "4",
+              "t_es": "Reserva del plan",
+              "t_en": "Plan reserve",
+              "dec": "poolPct",
+              "does_es": "Fija cuántas acciones se reservan para el plan como porcentaje del capital plenamente diluido y qué pasa con las acciones de incentivos que se cancelan o vencen.",
+              "does_en": "Sets how many shares are reserved for the plan as a percentage of fully diluted capital and what happens to shares from grants that are cancelled or expire.",
+              "matters_es": "Este porcentaje sale de tu bolsillo. La bolsa se calcula antes de la ronda, de modo que la dilución la asumen los fundadores y no el inversionista que entra. Reservar poco te deja sin con qué contratar, y reservar mucho te diluye sin necesidad.",
+              "matters_en": "This percentage comes out of your pocket. The pool is calculated before the round, so the dilution is taken by the founders and not by the incoming investor. Reserving too little leaves you without hiring currency, and reserving too much dilutes you for no reason.",
+              "note_es": "La regla del 4.3, que devuelve a la bolsa las acciones de incentivos cancelados o vencidos, es la que hace que el plan sea sostenible en el tiempo. Sin ella tendrías que ampliar la reserva cada vez que alguien se va.",
+              "note_en": "The rule in 4.3, which returns shares from cancelled or expired grants to the pool, is what makes the plan sustainable over time. Without it you would have to enlarge the reserve every time someone leaves.",
+              "cl": [
+                "4.1 La Sociedad reservará para el Plan un número de Acciones equivalente a [[poolPct]] de su capital sobre una base plenamente diluida, sujeto a las aprobaciones societarias, estatutarias y contractuales aplicables.",
+                "4.2 La reserva podrá incrementarse, reducirse o modificarse mediante las aprobaciones corporativas requeridas y conforme al acuerdo de accionistas.",
+                "4.3 Las Acciones subyacentes a Incentivos cancelados, expirados, no ejercidos, recomprados o terminados sin emisión definitiva podrán volver a estar disponibles para futuros otorgamientos bajo el Plan, en la medida permitida por la ley y por las decisiones corporativas aplicables."
+              ]
+            },
+            {
+              "id": "e5",
+              "n": "5",
+              "t_es": "Elegibilidad y tipos de incentivos",
+              "t_en": "Eligibility and types of grant",
+              "does_es": "Define quién puede participar y qué instrumentos puede otorgar la sociedad, desde acciones restringidas hasta opciones, promesas de transferencia y derechos económicos equivalentes.",
+              "does_en": "Defines who can participate and what instruments the company can grant, from restricted shares to options, transfer promises, and equivalent economic rights.",
+              "matters_es": "Colombia no tiene un régimen de opciones sobre acciones tan desarrollado como el estadounidense, y por eso el plan deja abiertas varias vías. La flexibilidad de este artículo es lo que permite escoger el instrumento que funcione para cada caso sin tener que reformar el plan.",
+              "matters_en": "Colombia does not have a stock option regime as developed as the United States one, which is why the plan leaves several routes open. The flexibility in this article is what lets you pick the instrument that works case by case without amending the plan.",
+              "cl": [
+                "5.1 Podrán ser Participantes los fundadores, empleados, administradores, contratistas independientes, consultores y asesores de la Sociedad o sus Afiliadas que sean seleccionados por el Administrador.",
+                "5.2 El Administrador podrá otorgar, según sea legal y operativamente viable: (a) Acciones Restringidas; (b) derechos de suscripción de Acciones; (c) Opciones de compra o suscripción de Acciones; (d) promesas de compraventa, cesión o transferencia de Acciones; (e) unidades, derechos económicos equivalentes o incentivos vinculados al valor de la Sociedad; y (f) otros incentivos de capital permitidos por la ley.",
+                "5.3 La Sociedad podrá condicionar el otorgamiento, vesting, ejercicio o entrega de un Incentivo al cumplimiento de objetivos de desempeño, hitos de producto, permanencia, resultados financieros, comportamiento ético, cumplimiento de políticas, firma de documentos de propiedad intelectual y confidencialidad, o cualquier otra condición razonable definida en la Carta de Otorgamiento."
+              ]
+            }
+          ]
+        },
+        {
+          "g_es": "Fundadores",
+          "g_en": "Founders",
+          "arts": [
+            {
+              "id": "e6",
+              "n": "6",
+              "t_es": "Acciones restringidas para fundadores",
+              "t_en": "Restricted shares for founders",
+              "does_es": "Aplica el mismo calendario de cuatro años con cliff de doce meses a las acciones de fundadores y establece el derecho de recompra sobre lo no consolidado.",
+              "does_en": "Applies the same four year schedule with a twelve month cliff to founder shares and sets the repurchase right over unvested shares.",
+              "matters_es": "Este artículo tiene que decir exactamente lo mismo que el artículo 6 del acuerdo de fundadores. Son dos documentos que describen el mismo vesting, y si difieren en el plazo, en el cliff o en el precio de recompra, tienes una contradicción que un abogado de diligencia debida va a encontrar.",
+              "matters_en": "This article has to say exactly what article 6 of the founders agreement says. Two documents describe the same vesting, and if they differ on the term, the cliff, or the repurchase price, you have a contradiction that a diligence lawyer will find.",
+              "note_es": "El 6.5 es la parte operativa que hace real todo lo demás. Firmar el plan no basta: hay que firmar también los documentos de recompra, las restricciones de transferencia, las instrucciones y los endosos.",
+              "note_en": "Clause 6.5 is the operative part that makes everything else real. Signing the plan is not enough: the repurchase documents, transfer restrictions, instructions, and endorsements have to be signed too.",
+              "cl": [
+                "6.1 Las Acciones Restringidas podrán otorgarse a Fundadores mediante contratos de suscripción, compra, promesa de transferencia u otros mecanismos legalmente permitidos, sujetos a restricciones de negociación y a un derecho de recompra a favor de la Sociedad y/o del cesionario que esta designe.",
+                "6.2 Salvo que una Carta de Otorgamiento o el acuerdo de fundadores establezca algo distinto, las Acciones Restringidas estarán sujetas a Vesting durante cuatro (4) años, con un cliff de doce (12) meses. Al cumplirse el primer año desde la Fecha de Inicio de Vesting, consolidará el veinticinco por ciento (25 %) de las Acciones Restringidas. El saldo consolidará mensualmente, en cuotas iguales, durante los treinta y seis (36) meses siguientes, sujeto a que el Fundador mantenga una Relación de Servicio Continua.",
+                "6.3 En caso de terminación de la Relación de Servicio Continua de un Fundador, la Sociedad y/o el cesionario designado podrá recomprar las Acciones no consolidadas por el menor valor entre: (a) el precio efectivamente pagado por dichas Acciones; (b) su valor nominal; o (c) el menor valor permitido por la ley y los documentos aplicables.",
+                "6.4 Las Acciones Restringidas estarán sujetas a los estatutos, al acuerdo de accionistas, a las restricciones de transferencia, a los derechos de adquisición preferente, tag-along, drag-along, pactos de recompra y demás documentos societarios y contractuales aplicables.",
+                "6.5 Los Fundadores receptores de Acciones Restringidas deberán suscribir los documentos de recompra, restricciones de transferencia, instrucciones, endosos, custodia, cesión de propiedad intelectual y confidencialidad que solicite razonablemente la Sociedad para hacer ejecutables los mecanismos previstos en este Plan."
+              ]
+            }
+          ]
+        },
+        {
+          "g_es": "Equipo",
+          "g_en": "Team",
+          "arts": [
+            {
+              "id": "e7",
+              "n": "7",
+              "t_es": "Opciones para empleados y consultores",
+              "t_en": "Options for employees and consultants",
+              "dec": "exWindow",
+              "does_es": "Regula las opciones que se otorgan al equipo: qué tiene que decir la carta de otorgamiento, el calendario de consolidación, el precio de ejercicio y el plazo para ejercer después de salir.",
+              "does_en": "Governs the options granted to the team: what the grant letter has to say, the vesting schedule, the exercise price, and the window to exercise after leaving.",
+              "matters_es": "El plazo de ejercicio del 7.4 es la cláusula que más afecta a la persona que recibe la opción. Noventa días es el estándar de mercado, y también significa que quien no tenga la caja para ejercer en ese plazo pierde lo que se ganó trabajando. Es una decisión de cultura además de una decisión legal.",
+              "matters_en": "The exercise window in 7.4 is the clause that affects the person receiving the option the most. Ninety days is the market standard, and it also means anyone without the cash to exercise within that window loses what they earned by working. It is a culture decision as much as a legal one.",
+              "note_es": "El precio de ejercicio necesita un soporte defendible. Un precio artificialmente bajo genera un riesgo tributario para el participante, porque la diferencia con el valor real se puede tratar como ingreso.",
+              "note_en": "The exercise price needs a defensible basis. An artificially low price creates tax exposure for the participant, because the gap against real value can be treated as income.",
+              "cl": [
+                "7.1 El Administrador podrá otorgar Opciones a Participantes elegibles mediante una Carta de Otorgamiento que indique, como mínimo: número de Acciones subyacentes, clase de Acciones, precio de ejercicio, fecha de otorgamiento, fecha de vencimiento, fecha de inicio de Vesting, calendario de Vesting, condiciones de ejercicio, tratamiento después de la terminación y cualquier condición especial.",
+                "7.2 Salvo disposición diferente en una Carta de Otorgamiento, las Opciones consolidarán durante cuatro (4) años, con un cliff inicial de doce (12) meses y consolidación mensual posterior durante treinta y seis (36) meses, sujeto a la Relación de Servicio Continua.",
+                "7.3 El precio de ejercicio por Acción será [[strike]] o el valor determinado por el Administrador de acuerdo con criterios razonables, el valor de referencia de las Acciones, los estatutos y la normativa aplicable.",
+                "7.4 Una Opción podrá ejercerse únicamente respecto de la porción consolidada y dentro del plazo previsto en la Carta de Otorgamiento. Salvo disposición diferente en dicha Carta, el Participante tendrá [[exWindow]] después de la terminación de su Relación de Servicio Continua para ejercer las Opciones consolidadas, excepto en caso de muerte, incapacidad o extensión aprobada por el Administrador. En ningún caso una Opción podrá ejercerse después de su Fecha de Vencimiento.",
+                "7.5 Las Opciones serán personales e intransferibles, salvo por causa de muerte, sucesión o los mecanismos expresamente autorizados por el Administrador y permitidos por la ley.",
+                "7.6 La Sociedad no estará obligada a emitir Acciones al ejercicio de una Opción hasta que el Participante: (a) pague íntegramente el precio de ejercicio y cualquier impuesto, retención o costo aplicable; (b) suscriba los documentos societarios requeridos; (c) se adhiera al acuerdo de accionistas, si aplica; y (d) cumpla las condiciones de propiedad intelectual, confidencialidad, cumplimiento y demás requisitos razonables aplicables."
+              ]
+            },
+            {
+              "id": "e8",
+              "n": "8",
+              "t_es": "Cartas de otorgamiento",
+              "t_en": "Grant letters",
+              "does_es": "Exige que cada incentivo se documente en una carta individual y establece que, ante un conflicto, la carta prevalece sobre el plan para ese participante.",
+              "does_en": "Requires each grant to be documented in an individual letter and provides that, in a conflict, the letter prevails over the plan for that participant.",
+              "matters_es": "La carta de otorgamiento es el documento que la persona realmente firma y guarda. El plan es el marco general, y la carta es lo que se le puede exigir a la compañía. Si la carta dice algo distinto del plan, manda la carta, y por eso las cartas se revisan antes de emitirlas.",
+              "matters_en": "The grant letter is the document the person actually signs and keeps. The plan is the general framework and the letter is what can be enforced against the company. If the letter says something different from the plan, the letter wins, which is why letters are reviewed before they go out.",
+              "cl": [
+                "8.1 Cada Incentivo deberá documentarse mediante una Carta de Otorgamiento o acuerdo individual aprobado por el Administrador.",
+                "8.2 En caso de conflicto entre el Plan y una Carta de Otorgamiento, prevalecerá la Carta de Otorgamiento respecto del Participante correspondiente, salvo que contradiga una norma imperativa, los estatutos, el acuerdo de accionistas o las aprobaciones corporativas aplicables.",
+                "8.3 La Carta de Otorgamiento podrá incluir condiciones de desempeño, confidencialidad, propiedad intelectual, no captación, tratamiento tributario, mecanismos de recompra, aceleración, good leaver, bad leaver, obligaciones de firma de documentos y cualquier otra condición consistente con el Plan."
+              ]
+            }
+          ]
+        },
+        {
+          "g_es": "Permanencia y salida",
+          "g_en": "Service and departure",
+          "arts": [
+            {
+              "id": "e9",
+              "n": "9",
+              "t_es": "Relación de servicio continua",
+              "t_en": "Continuous service",
+              "does_es": "Establece que el vesting depende de que la relación de servicio siga viva y define cuándo se entiende terminada.",
+              "does_en": "Provides that vesting depends on the service relationship staying alive and defines when it is treated as ended.",
+              "matters_es": "El 9.3 protege a la persona. Una licencia, una incapacidad, un permiso o un cambio de rol no interrumpen el vesting cuando la ley o el administrador determinan razonablemente que debe mantenerse. Sin esa regla, una licencia de maternidad podría congelar la consolidación.",
+              "matters_en": "Clause 9.3 protects the person. Leave, disability, an authorised absence, or a change of role do not interrupt vesting where the law or the administrator reasonably decide it should continue. Without that rule, maternity leave could freeze vesting.",
+              "cl": [
+                "9.1 El Vesting y el derecho a ejercer Incentivos estarán sujetos a la continuidad de la Relación de Servicio Continua, salvo que una Carta de Otorgamiento establezca otra cosa.",
+                "9.2 La terminación de la Relación de Servicio Continua ocurrirá en la fecha en que el Participante deje de prestar servicios a la Sociedad o a una Afiliada, según determine el Administrador de buena fe y con sujeción a la ley aplicable.",
+                "9.3 Ninguna licencia, incapacidad, permiso, cambio de rol o interrupción temporal autorizada interrumpirá la Relación de Servicio Continua cuando la ley o el Administrador determinen razonablemente que debe mantenerse para fines de Vesting."
+              ]
+            },
+            {
+              "id": "e10",
+              "n": "10",
+              "t_es": "Good leaver y bad leaver",
+              "t_en": "Good leaver and bad leaver",
+              "does_es": "Remite el tratamiento de quien sale a la carta de otorgamiento, al acuerdo de accionistas y a los documentos de recompra, y define las dos categorías.",
+              "does_en": "Refers the treatment of a departing person to the grant letter, the shareholders agreement, and the repurchase documents, and defines the two categories.",
+              "matters_es": "Las definiciones tienen que ser idénticas a las del artículo 14 del acuerdo de fundadores. Dos definiciones distintas de la misma conducta abren la puerta a que alguien discuta bajo qué documento se le juzga.",
+              "matters_en": "The definitions have to be identical to those in article 14 of the founders agreement. Two different definitions of the same conduct open the door to arguing which document applies.",
+              "cl": [
+                "10.1 El tratamiento de un Participante que termine su Relación de Servicio Continua se sujetará a la Carta de Otorgamiento, al acuerdo de accionistas, a los documentos de recompra y a la ley aplicable.",
+                "10.2 Un Fundador o Participante podrá ser tratado como Good Leaver en caso de muerte, incapacidad, terminación sin causa grave, mutuo acuerdo u otra circunstancia calificada como tal por el Administrador o el órgano competente.",
+                "10.3 Un Fundador o Participante podrá ser tratado como Bad Leaver en caso de abandono injustificado, fraude, competencia desleal, incumplimiento material, violación de obligaciones de confidencialidad o propiedad intelectual, conflicto de interés no revelado, apropiación indebida, remoción por causa grave o conducta que cause perjuicio material a la Sociedad.",
+                "10.4 En caso de Bad Leaver, la Sociedad y/o sus cesionarios designados podrán ejercer derechos de compra o recompra sobre Acciones consolidadas, en los términos permitidos por la ley, los estatutos, el acuerdo de accionistas y los documentos individuales aplicables."
+              ]
+            },
+            {
+              "id": "e11",
+              "n": "11",
+              "t_es": "Cambio de control",
+              "t_en": "Change of control",
+              "does_es": "Define qué pasa con los incentivos si la compañía se vende, incluyendo el régimen de aceleración y la facultad de la sociedad de asumir, sustituir o convertir los incentivos.",
+              "does_en": "Defines what happens to grants if the company is sold, including the acceleration regime and the company power to assume, substitute, or convert grants.",
+              "matters_es": "El límite del 11.4 es la protección real del participante: la sociedad puede reorganizar los incentivos en una venta, y no puede reducir indebidamente los derechos que ya se consolidaron sin el consentimiento de quien los tiene.",
+              "matters_en": "The limit in 11.4 is the participant real protection: the company can restructure grants in a sale, and it cannot unduly reduce rights already vested without the consent of the person holding them.",
+              "cl": [
+                "11.1 En caso de Cambio de Control, cada Incentivo recibirá el tratamiento establecido en la Carta de Otorgamiento correspondiente, en el acuerdo de accionistas y en los documentos de la transacción.",
+                "11.2 Salvo pacto distinto, el régimen de aceleración aplicable será [[accel]].",
+                "11.3 Cuando exista aceleración de doble disparo, esta ocurrirá únicamente si el Participante es removido sin causa grave o termina su relación por un cambio material y adverso no subsanado en sus funciones esenciales o remuneración, dentro de los [[accelWin]] siguientes al Cambio de Control, según los términos de la Carta de Otorgamiento aplicable.",
+                "11.4 La Sociedad podrá asumir, sustituir, convertir, cancelar con pago, acelerar o ajustar Incentivos en una transacción de Cambio de Control, siempre que el tratamiento sea razonable, consistente con los documentos aplicables y no reduzca indebidamente los derechos económicos ya consolidados, salvo acuerdo válido del Participante."
+              ]
+            }
+          ]
+        },
+        {
+          "g_es": "Ajustes e impuestos",
+          "g_en": "Adjustments and tax",
+          "arts": [
+            {
+              "id": "e12",
+              "n": "12",
+              "t_es": "Ajustes de capital y reorganizaciones",
+              "t_en": "Capital adjustments and reorganisations",
+              "does_es": "Permite al administrador ajustar el número, la clase y el precio de las acciones sujetas a incentivos cuando cambia el capital de la sociedad.",
+              "does_en": "Lets the administrator adjust the number, class, and price of shares under grants when the company capital changes.",
+              "matters_es": "Sin este artículo, una división de acciones o una recapitalización podría multiplicar o destruir el valor de una opción por accidente. El ajuste preserva el valor económico sin darle a nadie un beneficio inesperado.",
+              "matters_en": "Without this article, a share split or a recapitalisation could multiply or destroy the value of an option by accident. The adjustment preserves economic value without handing anyone an unexpected windfall.",
+              "cl": [
+                "12.1 En caso de división, agrupación, recapitalización, distribución extraordinaria, aumento o reducción de capital, fusión, escisión, reorganización, cambio de clase de Acciones u otra operación que afecte materialmente el capital de la Sociedad, el Administrador podrá realizar ajustes equitativos al número, clase y precio de las Acciones sujetas a Incentivos.",
+                "12.2 Los ajustes buscarán preservar razonablemente el valor económico de los Incentivos sin aumentar indebidamente el beneficio económico del Participante ni perjudicar de forma desproporcionada a la Sociedad o a los demás Accionistas."
+              ]
+            },
+            {
+              "id": "e13",
+              "n": "13",
+              "t_es": "Impuestos, retenciones y seguridad social",
+              "t_en": "Tax, withholding, and social security",
+              "does_es": "Pone en cabeza del participante sus propios impuestos y permite a la sociedad practicar retenciones y condicionar la entrega de acciones al pago de las obligaciones aplicables.",
+              "does_en": "Places the participant own taxes on them and lets the company withhold and condition the delivery of shares on payment of the applicable obligations.",
+              "matters_es": "Este es el punto donde más gente se lleva una sorpresa. Recibir o ejercer un incentivo puede generar un hecho gravable aunque no haya entrado dinero a la cuenta de la persona. El 13.3 deja claro que el plan no es asesoría tributaria y que cada participante tiene que buscar la suya.",
+              "matters_en": "This is where most people get surprised. Receiving or exercising a grant can create a taxable event even though no money has reached the person account. Clause 13.3 makes clear the plan is not tax advice and that each participant has to get their own.",
+              "cl": [
+                "13.1 Cada Participante será responsable de sus impuestos, retenciones, aportes, costos y obligaciones derivados de la concesión, consolidación, ejercicio, suscripción, compra, venta, transferencia o liquidación de Incentivos.",
+                "13.2 La Sociedad podrá practicar las retenciones exigidas por la ley y condicionar el otorgamiento, ejercicio, emisión, transferencia o inscripción de Acciones al pago, retención, certificación o acreditación de las obligaciones tributarias, laborales o de seguridad social aplicables.",
+                "13.3 Ninguna disposición del Plan constituye asesoría tributaria, laboral, contable o financiera. Cada Participante deberá obtener asesoría independiente sobre las consecuencias de recibir, consolidar, ejercer o transferir Incentivos."
+              ]
+            },
+            {
+              "id": "e14",
+              "n": "14",
+              "t_es": "Sin garantía de vinculación",
+              "t_en": "No guarantee of engagement",
+              "does_es": "Repite y refuerza que participar en el plan no crea relación laboral ni garantiza permanencia, y que la sociedad puede terminar la relación conforme a la ley.",
+              "does_en": "Repeats and reinforces that taking part in the plan creates no employment relationship and guarantees no continued service, and that the company can end the relationship under the law.",
+              "matters_es": "Es una repetición deliberada de lo dicho en el artículo 1. En materia laboral colombiana las cláusulas de este tipo se leen con lupa, y tenerlas escritas en dos lugares del documento reduce el margen de discusión.",
+              "matters_en": "This deliberately repeats what article 1 says. Under Colombian employment law clauses of this kind are read closely, and having them written in two places in the document narrows the room for argument.",
+              "cl": [
+                "14.1 La participación en el Plan, el otorgamiento de un Incentivo o el Vesting de cualquier derecho no crean ni garantizan relación laboral, continuidad de empleo, prestación de servicios, permanencia, remuneración futura ni derecho a recibir Incentivos adicionales.",
+                "14.2 La Sociedad podrá terminar la relación laboral, contractual o de servicios de un Participante conforme a la ley y a los contratos aplicables, sin que ello implique por sí solo incumplimiento de este Plan, salvo los derechos expresamente consolidados o exigibles bajo la Carta de Otorgamiento aplicable."
+              ]
+            }
+          ]
+        },
+        {
+          "g_es": "Reglas finales",
+          "g_en": "Final rules",
+          "arts": [
+            {
+              "id": "e15",
+              "n": "15",
+              "t_es": "Restricciones de transferencia y adhesión",
+              "t_en": "Transfer restrictions and joinder",
+              "does_es": "Somete toda acción emitida bajo el plan a los estatutos y al acuerdo de accionistas, y condiciona la entrega a la firma de los documentos de confidencialidad y propiedad intelectual.",
+              "does_en": "Subjects every share issued under the plan to the bylaws and the shareholders agreement, and conditions delivery on signing the confidentiality and intellectual property documents.",
+              "matters_es": "Este artículo es el que conecta los tres documentos. Nadie recibe acciones sin adherirse al acuerdo de accionistas y sin firmar la cesión de propiedad intelectual, y así el cap table se mantiene limpio a medida que crece el equipo.",
+              "matters_en": "This article is what connects the three documents. Nobody receives shares without joining the shareholders agreement and signing the intellectual property assignment, which keeps the cap table clean as the team grows.",
+              "cl": [
+                "15.1 Toda Acción emitida, suscrita, adquirida o transferida en virtud del Plan estará sujeta a los estatutos, al acuerdo de accionistas, al libro de registro de accionistas, a las restricciones de transferencia y a los documentos de recompra aplicables.",
+                "15.2 Como condición para recibir Acciones o ejercer una Opción, el Participante deberá, si la Sociedad lo solicita razonablemente: (a) adherirse al acuerdo de accionistas; (b) firmar acuerdos de confidencialidad, propiedad intelectual, tratamiento de datos, no captación y seguridad; (c) entregar la información requerida para registros societarios, tributarios y de cumplimiento; y (d) aceptar los mecanismos de control, recompra, custodia, endoso, instrucción y transferencia aplicables.",
+                "15.3 La Sociedad podrá negarse a inscribir o registrar una transferencia realizada en contravención de este Plan, de los estatutos, del acuerdo de accionistas o de los documentos aplicables, en la medida permitida por la ley."
+              ]
+            },
+            {
+              "id": "e16",
+              "n": "16",
+              "t_es": "Vigencia, modificación y terminación",
+              "t_en": "Term, amendment, and termination",
+              "dec": "planTerm",
+              "does_es": "Fija la duración del plan y establece que su terminación no afecta los incentivos ya otorgados ni permite modificaciones adversas sin consentimiento.",
+              "does_en": "Sets the duration of the plan and provides that its termination does not affect grants already made, and that adverse changes need consent.",
+              "matters_es": "La protección del 16.3 es la que le da credibilidad al plan frente al equipo. Una compañía no puede reducir lo ya otorgado con una modificación unilateral, salvo cuando la ley o una autoridad se lo exijan.",
+              "matters_en": "The protection in 16.3 is what gives the plan credibility with the team. A company cannot cut back what it already granted through a unilateral amendment, except where the law or an authority requires it.",
+              "cl": [
+                "16.1 El Plan entrará en vigor en la Fecha de Efectividad y permanecerá vigente por [[planTerm]], salvo terminación anticipada por el órgano competente.",
+                "16.2 La terminación del Plan no afectará Incentivos válidamente otorgados antes de la terminación, los cuales continuarán rigiéndose por este Plan y por sus Cartas de Otorgamiento, salvo que el Administrador determine un tratamiento diferente permitido por la ley y los documentos aplicables.",
+                "16.3 El Plan podrá modificarse por el órgano competente, sujeto a las aprobaciones corporativas requeridas. Ninguna modificación afectará materialmente y de manera adversa Incentivos ya otorgados sin consentimiento del Participante afectado, salvo cuando la modificación sea necesaria para cumplir la ley, los estatutos, un acuerdo de inversión o una orden de autoridad competente."
+              ]
+            },
+            {
+              "id": "e17",
+              "n": "17",
+              "t_es": "Ley aplicable y controversias",
+              "t_en": "Governing law and disputes",
+              "does_es": "Somete el plan a la ley colombiana y establece la misma secuencia escalonada de negociación, conciliación y arbitraje o jurisdicción ordinaria.",
+              "does_en": "Submits the plan to Colombian law and sets the same stepped sequence of negotiation, conciliation, and arbitration or the ordinary courts.",
+              "matters_es": "Mantener el mismo foro en los tres documentos evita que un mismo conflicto tenga que discutirse en dos sedes distintas. Si cambias el centro o el foro aquí, cámbialo también en los otros dos.",
+              "matters_en": "Keeping the same forum across the three documents avoids having one dispute argued in two different places. If you change the centre or the forum here, change it in the other two as well.",
+              "cl": [
+                "17.1 Este Plan se regirá e interpretará conforme a las leyes de la República de Colombia.",
+                "17.2 Toda controversia relacionada con el Plan o un Incentivo será tratada inicialmente mediante negociación directa durante quince (15) días hábiles desde la notificación escrita de la controversia.",
+                "17.3 Si no se alcanza una solución, las Partes acudirán a conciliación ante el [[centro]], con sede en {{co.ciudad}}.",
+                "17.4 Si la controversia persiste, será resuelta por [[forum]], con sede en {{co.ciudad}}, sin perjuicio de medidas cautelares o de protección inmediata que la Sociedad pueda solicitar respecto de confidencialidad, propiedad intelectual, Acciones, restricciones de transferencia o activos corporativos."
+              ]
+            },
+            {
+              "id": "e18",
+              "n": "18",
+              "t_es": "Disposiciones generales y anexos",
+              "t_en": "General provisions and schedules",
+              "does_es": "Cierra el plan con integridad, prelación, divisibilidad y firma electrónica, y contiene los dos modelos de carta de otorgamiento.",
+              "does_en": "Closes the plan with entire agreement, precedence, severability, and electronic signature, and holds the two grant letter templates.",
+              "matters_es": "Los anexos son la parte del documento que más se usa en el día a día. El Anexo A se emite cada vez que entra un fundador y el Anexo B cada vez que se contrata a alguien con opciones. Vale la pena tenerlos listos antes de necesitarlos.",
+              "matters_en": "The schedules are the part of the document used most day to day. Schedule A is issued whenever a founder comes in and Schedule B whenever someone is hired with options. It is worth having them ready before you need them.",
+              "cl": [
+                "18.1 Integridad. Este Plan, junto con cada Carta de Otorgamiento y los documentos corporativos aplicables, constituye el acuerdo completo respecto de los Incentivos otorgados bajo el Plan.",
+                "18.2 Prelación. En caso de conflicto entre el Plan, los estatutos, el acuerdo de accionistas y las normas imperativas, prevalecerán las normas imperativas y los estatutos respecto de materias que deban constar en ellos para ser oponibles a la Sociedad o a terceros.",
+                "18.3 Divisibilidad y firma electrónica. Si una disposición resulta inválida, las demás conservarán vigencia. Las Cartas de Otorgamiento podrán suscribirse mediante firma electrónica o digital válida conforme a la legislación colombiana.",
+                {
+                  "h": "Anexo A — Carta de otorgamiento de acciones restringidas a fundador"
+                },
+                "Registra el participante, su identificación, el número y clase de acciones restringidas, el precio de suscripción, la fecha de otorgamiento, la fecha de inicio de vesting, el calendario, el derecho de recompra, el tratamiento good leaver y bad leaver, la aceleración por cambio de control y los documentos complementarios exigidos.",
+                {
+                  "h": "Anexo B — Carta de otorgamiento de opción"
+                },
+                "Registra el participante, el número de acciones subyacentes, la clase, el precio de ejercicio, las fechas de otorgamiento, inicio de vesting y vencimiento, el calendario, el plazo de ejercicio después de la terminación, la aceleración y las condiciones adicionales."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "pi": {
+      "t_es": "Cesión de Propiedad Intelectual",
+      "t_en": "IP Assignment Agreement",
+      "sub_es": "El documento que hace que la compañía, y no las personas, sea dueña de lo que se construye.",
+      "sub_en": "The document that makes the company, not the individuals, the owner of what gets built.",
+      "full_es": "Acuerdo de Confidencialidad, Cesión de Propiedad Intelectual e Invenciones — S.A.S. Colombia",
+      "full_en": "Confidentiality, Intellectual Property Assignment and Inventions Agreement — Colombian S.A.S.",
+      "groups": [
+        {
+          "g_es": "Qué cubre",
+          "g_en": "What it covers",
+          "arts": [
+            {
+              "id": "p0",
+              "n": "—",
+              "t_es": "Encabezado y partes",
+              "t_en": "Heading and parties",
+              "dec": "capacity",
+              "does_es": "Identifica a la sociedad y a la persona que firma, y establece en qué calidad presta sus servicios.",
+              "does_en": "Identifies the company and the person signing, and establishes in what capacity they provide their services.",
+              "matters_es": "Este acuerdo se firma una vez por cada persona que toca el producto. Fundadores, empleados, contratistas, consultores y asesores técnicos. La versión más importante es la del contratista, porque es la única figura en la que la ley colombiana no ayuda a la compañía por defecto.",
+              "matters_en": "This agreement is signed once for every person who touches the product. Founders, employees, contractors, consultants, and technical advisors. The contractor version matters most, because it is the only role where Colombian law does not help the company by default.",
+              "cl": [
+                "Este Acuerdo de Confidencialidad, Cesión de Propiedad Intelectual e Invenciones (el “Acuerdo”) se celebra a partir del {{co.fecha}}, entre:",
+                "La Sociedad: {{co.nombre}} S.A.S., sociedad por acciones simplificada constituida conforme a las leyes de la República de Colombia, identificada con NIT {{co.nit}}, con domicilio en {{co.domicilio}} (la “Sociedad”); y",
+                "El Colaborador: {{colab.nombre}}, identificado con {{colab.id}}, quien presta sus servicios en calidad de [[capacity]] (el “Colaborador”).",
+                "La Sociedad y el Colaborador se denominarán individualmente una “Parte” y conjuntamente las “Partes”."
+              ]
+            },
+            {
+              "id": "p1",
+              "n": "1",
+              "t_es": "Objeto y alcance",
+              "t_en": "Purpose and scope",
+              "does_es": "Delimita qué regula el acuerdo y establece que complementa cualquier contrato laboral, de servicios o de fundadores ya firmado.",
+              "does_en": "Sets out what the agreement governs and provides that it supplements any employment, services, or founders contract already signed.",
+              "matters_es": "La regla del 1.3 es la que evita un problema práctico. Cuando este acuerdo y un contrato laboral dicen cosas distintas sobre propiedad intelectual, prevalece la disposición que dé mayor protección a la compañía. Así no tienes que reformar contratos antiguos cada vez que actualizas la política.",
+              "matters_en": "The rule in 1.3 avoids a practical problem. Where this agreement and an employment contract say different things about intellectual property, the provision giving the company more protection prevails. That way you do not have to amend old contracts every time you update the policy.",
+              "cl": [
+                "1.1 El Colaborador prestará, ha prestado o podrá prestar servicios, desarrollar actividades o participar en el Negocio de la Sociedad en calidad de [[capacity]].",
+                "1.2 Este Acuerdo regula la confidencialidad, titularidad, cesión, protección, divulgación y entrega de los resultados, activos e información que el Colaborador cree, desarrolle, conozca, use o reciba en relación con la Sociedad, sus Afiliadas, el Negocio o los Servicios.",
+                "1.3 Este Acuerdo complementa cualquier contrato laboral, de prestación de servicios, de administración, de consultoría, de suscripción de acciones o acuerdo de fundadores celebrado entre las Partes. En caso de conflicto, prevalecerá la disposición que otorgue mayor protección a la Sociedad respecto de la Información Confidencial y los derechos de propiedad intelectual, en la medida permitida por la ley."
+              ]
+            },
+            {
+              "id": "p2",
+              "n": "2",
+              "t_es": "Definiciones",
+              "t_en": "Definitions",
+              "does_es": "Define información confidencial, desarrollos y propiedad intelectual preexistente, con un alcance que incluye código, modelos de inteligencia artificial, prompts, bases de datos y credenciales.",
+              "does_en": "Defines confidential information, developments, and pre-existing intellectual property, with a scope that covers code, artificial intelligence models, prompts, databases, and credentials.",
+              "matters_es": "La definición de desarrollos es el corazón del documento. Cubre tres supuestos: lo que se relaciona con el negocio, lo que se hace en ejecución de las funciones y lo que se construye usando recursos, información o tiempo pagado por la compañía. Ese tercer supuesto es el que cubre el código escrito un domingo en el computador de la casa con el portátil de la empresa.",
+              "matters_en": "The definition of developments is the heart of the document. It covers three cases: what relates to the business, what is made in the course of the role, and what is built using company resources, information, or paid time. That third case is what covers code written on a Sunday at home on the company laptop.",
+              "note_es": "Esta versión ya incluye modelos de inteligencia artificial, prompts y datasets dentro de los desarrollos. Muchas plantillas todavía no lo hacen, y en una compañía de software eso deja un vacío grande.",
+              "note_en": "This version already brings artificial intelligence models, prompts, and datasets inside the definition of developments. Many templates still do not, and in a software company that leaves a large gap.",
+              "cl": [
+                "“Información Confidencial” significa toda información no pública de la Sociedad, sus Afiliadas, fundadores, inversionistas, clientes, proveedores, aliados, empleados, contratistas o usuarios, incluyendo información técnica, comercial, financiera, estratégica, de producto, de seguridad, código fuente, código objeto, repositorios, algoritmos, modelos de inteligencia artificial, prompts, documentación, credenciales, tokens, claves, secretos empresariales, planes de negocio, listas de clientes, precios, contratos, métricas, proyecciones, datos personales, bases de datos, diseños, interfaces, arquitectura y metodologías.",
+                "“Desarrollos” significa todas las invenciones, obras, programas de computador, código fuente y objeto, APIs, scripts, modelos de inteligencia artificial, prompts, documentación, bases de datos, diseños, interfaces, contenidos, marcas, nombres, dominios, procesos, metodologías, mejoras, datos, informes, prototipos, know-how y secretos empresariales, protegibles o no, creados por el Colaborador, individualmente o con terceros, y que: (a) se relacionen con el Negocio, productos, servicios o actividades actuales o razonablemente previstas de la Sociedad; (b) se desarrollen en ejecución de sus funciones o servicios; o (c) se desarrollen usando recursos, activos, Información Confidencial o tiempo pagado por la Sociedad.",
+                "“PI Preexistente” significa cualquier activo de propiedad intelectual que el Colaborador posea o controle legítimamente antes de su vinculación con la Sociedad y que esté identificado de manera completa en el Anexo 1."
+              ]
+            }
+          ]
+        },
+        {
+          "g_es": "Confidencialidad",
+          "g_en": "Confidentiality",
+          "arts": [
+            {
+              "id": "p3",
+              "n": "3",
+              "t_es": "Confidencialidad",
+              "t_en": "Confidentiality",
+              "does_es": "Obliga a mantener reserva sobre la información no pública, define las cuatro excepciones estándar y regula qué hacer si una autoridad exige revelarla.",
+              "does_en": "Requires non-public information to be kept confidential, defines the four standard exceptions, and governs what to do if an authority compels disclosure.",
+              "matters_es": "Las excepciones del 3.3 son las que hacen que la cláusula sea exigible. Una obligación de confidencialidad sin excepciones se vuelve desproporcionada y un juez puede reducirla. La carga de probar que aplica una excepción está en quien la invoca.",
+              "matters_en": "The exceptions in 3.3 are what make the clause enforceable. A confidentiality duty with no exceptions becomes disproportionate and a judge can cut it back. The burden of proving an exception applies sits with the person invoking it.",
+              "cl": [
+                "3.1 El Colaborador mantendrá la Información Confidencial en estricta reserva y la utilizará exclusivamente para cumplir sus funciones, servicios u obligaciones autorizadas en beneficio de la Sociedad.",
+                "3.2 El Colaborador no podrá divulgar, copiar, reproducir, transferir, publicar, comercializar, usar para fines propios, extraer, descargar, almacenar en medios no autorizados ni permitir el acceso de terceros a Información Confidencial, salvo autorización previa y escrita de la Sociedad o cuando sea estrictamente necesario para el desarrollo autorizado de sus funciones y el tercero esté sujeto a obligaciones de confidencialidad al menos tan protectoras como las previstas en este Acuerdo.",
+                "3.3 Las obligaciones de esta Cláusula no aplicarán a información que el Colaborador demuestre mediante evidencia suficiente que: (a) es o se hace pública sin incumplimiento de este Acuerdo; (b) ya conocía legítimamente y sin deber de reserva antes de recibirla; (c) recibió lícitamente de un tercero sin deber de confidencialidad; o (d) desarrolló de manera independiente sin usar Información Confidencial.",
+                "3.4 Si el Colaborador es requerido por ley, orden de autoridad competente o proceso judicial para revelar Información Confidencial, deberá, en la medida permitida por la ley: (a) notificar previamente a la Sociedad; (b) cooperar razonablemente con la Sociedad para procurar una orden de protección o tratamiento confidencial; y (c) revelar únicamente la información estrictamente requerida.",
+                "3.5 Las obligaciones de confidencialidad permanecerán vigentes durante la relación del Colaborador con la Sociedad y por cinco (5) años después de su terminación. Respecto de secretos empresariales, las obligaciones subsistirán mientras la información conserve ese carácter conforme a la ley."
+              ]
+            }
+          ]
+        },
+        {
+          "g_es": "Propiedad",
+          "g_en": "Ownership",
+          "arts": [
+            {
+              "id": "p4",
+              "n": "4",
+              "t_es": "Titularidad y cesión de derechos",
+              "t_en": "Ownership and assignment of rights",
+              "does_es": "Establece que los desarrollos pertenecen a la sociedad desde su creación y contiene la cesión total de los derechos patrimoniales de propiedad intelectual.",
+              "does_en": "Provides that developments belong to the company from creation and contains the full assignment of economic intellectual property rights.",
+              "matters_es": "Este es el artículo por el que existe el documento. En Colombia la titularidad de una obra no pasa a la empresa solo porque la empresa pagó por ella, y sin una cesión escrita la compañía puede terminar sin poder demostrar que es dueña de su propio producto. El 4.4 cierra el punto de la contraprestación, que es donde se cae este tipo de cláusulas cuando se discuten.",
+              "matters_en": "This is the article the document exists for. In Colombia ownership of a work does not pass to the company just because the company paid for it, and without a written assignment the company can end up unable to prove it owns its own product. Clause 4.4 closes the consideration point, which is where clauses of this kind fail when they are challenged.",
+              "cl": [
+                "4.1 Todos los Desarrollos pertenecerán exclusivamente a la Sociedad desde su creación, en la medida permitida por la ley.",
+                "4.2 El Colaborador cede a favor de la Sociedad, de manera total, exclusiva, irrevocable, transferible, sublicenciable, mundial y por el máximo término de protección legal, todos los derechos patrimoniales de autor y demás derechos de propiedad intelectual transferibles que recaigan sobre los Desarrollos.",
+                "4.3 La cesión incluye los derechos de reproducción, fijación, edición, publicación, distribución, comunicación pública, puesta a disposición, transformación, adaptación, traducción, modificación, compilación, integración, comercialización, licencia, cesión, importación, exportación y explotación de los Desarrollos por cualquier medio, formato, territorio, soporte, canal o modalidad actual o futura.",
+                "4.4 La remuneración, contraprestación, salario, honorarios, acciones, opciones, participación accionaria u otros beneficios pactados entre las Partes constituyen contraprestación suficiente para la cesión de derechos patrimoniales prevista en este Acuerdo, sin perjuicio de los derechos irrenunciables que la ley colombiana reconozca.",
+                "4.5 La cesión cubre los Desarrollos creados durante la vigencia de la relación con la Sociedad y los Desarrollos creados antes de la firma de este Acuerdo que estén descritos en el Anexo 1, hayan sido incorporados, entregados, usados o destinados al Negocio, o hayan sido desarrollados específicamente para la Sociedad."
+              ]
+            },
+            {
+              "id": "p5",
+              "n": "5",
+              "t_es": "Derechos morales y autorizaciones",
+              "t_en": "Moral rights and authorisations",
+              "does_es": "Reconoce que los derechos morales de autor no se pueden ceder en Colombia y obtiene, en su lugar, una autorización amplia para modificar, adaptar, traducir, integrar y explotar los desarrollos.",
+              "does_en": "Recognises that moral rights cannot be assigned in Colombia and obtains instead a broad authorisation to modify, adapt, translate, integrate, and exploit the developments.",
+              "matters_es": "Esta es una diferencia real entre el derecho colombiano y el anglosajón, y una plantilla traducida del inglés casi siempre la ignora. Los derechos morales son personales e inalienables, y por eso el documento no intenta cederlos: pide una autorización, que es lo que sí funciona.",
+              "matters_en": "This is a real difference between Colombian and common law drafting, and a template translated from English almost always misses it. Moral rights are personal and inalienable, which is why the document does not try to assign them: it asks for an authorisation, which is what actually works.",
+              "cl": [
+                "5.1 El Colaborador reconoce que los derechos morales de autor son personales e inalienables conforme a la ley colombiana.",
+                "5.2 Sin perjuicio de lo anterior, en la medida permitida por la ley, el Colaborador autoriza de manera previa, expresa e informada a la Sociedad, sus Afiliadas, cesionarios, sublicenciatarios y clientes para modificar, adaptar, actualizar, integrar, traducir, transformar, compilar, publicar, divulgar, mantener anónimo el nombre del autor cuando sea razonable y explotar los Desarrollos, siempre que ello no afecte injustificadamente la honra o reputación del Colaborador.",
+                "5.3 El Colaborador se obliga a no impedir ni obstaculizar el ejercicio de los derechos patrimoniales cedidos a la Sociedad, salvo que exista una vulneración comprobada de derechos morales irrenunciables."
+              ]
+            },
+            {
+              "id": "p6",
+              "n": "6",
+              "t_es": "Software de terceros, código abierto e inteligencia artificial",
+              "t_en": "Third party software, open source, and artificial intelligence",
+              "does_es": "Prohíbe incorporar componentes de terceros con licencias incompatibles con el modelo de negocio y regula el uso de herramientas de inteligencia artificial con información de la compañía.",
+              "does_en": "Prohibits incorporating third party components with licences incompatible with the business model and governs the use of artificial intelligence tools with company information.",
+              "matters_es": "El 6.1 es lo que evita que una licencia copyleft obligue a la compañía a liberar su código. El 6.4 es la cláusula más nueva y la más incómoda de aplicar: prohíbe cargar código, repositorios o información confidencial en herramientas de inteligencia artificial no autorizadas. Si tu equipo ya usa esas herramientas, esta política tiene que venir con una lista de las que sí están aprobadas.",
+              "matters_en": "Clause 6.1 is what stops a copyleft licence forcing the company to release its code. Clause 6.4 is the newest and the hardest to apply: it prohibits uploading code, repositories, or confidential information into unauthorised artificial intelligence tools. If your team already uses those tools, this policy has to come with a list of the ones that are approved.",
+              "note_es": "El 6.3 protege a la compañía en la otra dirección. Prohíbe que alguien traiga código o secretos de un empleador anterior, que es una de las contaminaciones más difíciles de limpiar después.",
+              "note_en": "Clause 6.3 protects the company in the other direction. It prohibits anyone bringing in code or secrets from a previous employer, which is one of the hardest contaminations to clean up later.",
+              "cl": [
+                "6.1 El Colaborador no incorporará a los Desarrollos código, bibliotecas, modelos, datasets, contenidos, imágenes, software, componentes open source o materiales de terceros que impongan obligaciones de divulgación, licencia, atribución, copyleft, pago, restricciones de uso o condiciones incompatibles con el modelo de negocio de la Sociedad, salvo autorización previa y escrita de la Sociedad.",
+                "6.2 El Colaborador cumplirá los procedimientos razonables de la Sociedad para documentar dependencias, licencias de software libre, componentes de terceros, fuentes de datos, herramientas de inteligencia artificial y modelos incorporados en los Desarrollos.",
+                "6.3 El Colaborador no utilizará ni divulgará secretos empresariales, información confidencial, código, modelos, documentos, datos o materiales protegidos pertenecientes a empleadores, clientes, contratistas o terceros anteriores, salvo autorización escrita de su titular.",
+                "6.4 El Colaborador no podrá cargar, ingresar, compartir o procesar Información Confidencial, datos personales, código, repositorios o materiales de la Sociedad en herramientas públicas, gratuitas, personales o no autorizadas de inteligencia artificial, almacenamiento, desarrollo, colaboración, análisis o comunicación, salvo autorización previa y escrita de la Sociedad."
+              ]
+            },
+            {
+              "id": "p7",
+              "n": "7",
+              "t_es": "Propiedad intelectual preexistente",
+              "t_en": "Pre-existing intellectual property",
+              "dec": "priorIP",
+              "does_es": "Exige que cualquier propiedad intelectual anterior que la persona quiera excluir quede identificada en el Anexo 1, y otorga una licencia amplia si esa propiedad se incorpora al negocio.",
+              "does_en": "Requires any earlier intellectual property the person wants to exclude to be listed in Schedule 1, and grants a broad licence if that property is brought into the business.",
+              "matters_es": "La segunda frase del 7.1 es la que hace trabajar al anexo. Si el Anexo 1 no identifica ningún activo, se entiende que la persona no excluye nada relevante para el negocio. Por eso el anexo se firma siempre, incluso cuando la respuesta es ninguna.",
+              "matters_en": "The second sentence of 7.1 is what makes the schedule work. If Schedule 1 lists no assets, the person is treated as excluding nothing relevant to the business. That is why the schedule is always signed, even when the answer is none.",
+              "cl": [
+                "7.1 El Colaborador declara que toda PI Preexistente que pretenda excluir de la cesión prevista en este Acuerdo se encuentra identificada de forma completa, precisa y suficiente en el Anexo 1. Si el Anexo 1 no identifica ningún activo, se entenderá que el Colaborador no excluye PI Preexistente relevante para el Negocio.",
+                "7.2 Si el Colaborador incorpora PI Preexistente en un Desarrollo, producto, servicio, repositorio, documentación, proceso u operación de la Sociedad, otorga a la Sociedad una licencia mundial, perpetua, irrevocable, transferible, sublicenciable, gratuita y plenamente pagada para usar, reproducir, modificar, integrar, adaptar, distribuir, comercializar y explotar dicha PI Preexistente en relación con el Negocio.",
+                "7.3 El Colaborador garantiza que tiene el derecho de otorgar la licencia prevista en esta Cláusula y que informará previamente a la Sociedad cualquier limitación, gravamen, licencia de tercero o restricción aplicable a la PI Preexistente."
+              ]
+            }
+          ]
+        },
+        {
+          "g_es": "Obligaciones prácticas",
+          "g_en": "Practical obligations",
+          "arts": [
+            {
+              "id": "p8",
+              "n": "8",
+              "t_es": "Divulgación, entrega y colaboración",
+              "t_en": "Disclosure, delivery, and cooperation",
+              "does_es": "Obliga a entregar los desarrollos, repositorios, credenciales y documentación, y a firmar después de la salida los documentos necesarios para registrar la titularidad.",
+              "does_en": "Requires delivery of developments, repositories, credentials, and documentation, and the signing after departure of the documents needed to register ownership.",
+              "matters_es": "El poder del 8.4 es la parte más fuerte del artículo. Si la persona no firma un documento necesario después de una solicitud razonable, la sociedad queda designada como apoderada para firmarlo. Está limitado a ese objeto y no libera a la compañía de intentar primero obtener la firma, que es lo que lo hace defendible.",
+              "matters_en": "The power of attorney in 8.4 is the strongest part of the article. If the person does not sign a necessary document after a reasonable request, the company is appointed to sign it. It is limited to that purpose and does not release the company from trying to obtain the signature first, which is what makes it defensible.",
+              "cl": [
+                "8.1 El Colaborador informará y entregará oportunamente a la Sociedad todos los Desarrollos, repositorios, archivos, documentación, diagramas, configuraciones, credenciales, llaves de acceso, diseños, bases de datos, soportes, registros de licencias y demás materiales relacionados con el Negocio.",
+                "8.2 El Colaborador documentará los Desarrollos de manera razonable y mantendrá los materiales de trabajo, código, repositorios y archivos en los sistemas o plataformas autorizados por la Sociedad.",
+                "8.3 El Colaborador firmará, durante y después de la terminación de su relación con la Sociedad, los documentos razonablemente necesarios para perfeccionar, registrar, defender o hacer oponible la titularidad de la Sociedad sobre los Desarrollos, incluyendo solicitudes, cesiones, declaraciones, formularios, poderes y documentos de registro en Colombia o en el exterior.",
+                "8.4 En la medida permitida por la ley, si el Colaborador no firma un documento necesario después de una solicitud razonable de la Sociedad, el Colaborador designa a la Sociedad y a su representante legal como apoderados especiales para suscribir los documentos estrictamente necesarios para perfeccionar los derechos cedidos bajo este Acuerdo. Esta designación se entenderá limitada al objeto de esta Cláusula y no libera a la Sociedad de realizar esfuerzos razonables para obtener la firma del Colaborador."
+              ]
+            },
+            {
+              "id": "p9",
+              "n": "9",
+              "t_es": "Seguridad, datos y activos",
+              "t_en": "Security, data, and assets",
+              "does_es": "Declara que las cuentas, dominios, repositorios, credenciales e infraestructura son de la sociedad, y obliga a cumplir las políticas de seguridad y a reportar incidentes.",
+              "does_en": "States that accounts, domains, repositories, credentials, and infrastructure belong to the company, and requires compliance with security policies and reporting of incidents.",
+              "matters_es": "El 9.1 resuelve un problema que aparece en casi toda diligencia debida temprana: el dominio registrado a nombre personal de un fundador, el repositorio en una cuenta personal, la cuenta de nube pagada con una tarjeta particular. Este artículo deja escrito que todo eso es de la compañía.",
+              "matters_en": "Clause 9.1 solves a problem that shows up in almost every early diligence: the domain registered in a founder personal name, the repository under a personal account, the cloud account paid on a personal card. This article states in writing that all of it belongs to the company.",
+              "cl": [
+                "9.1 Todos los equipos, cuentas, correos corporativos, repositorios, dominios, licencias, llaves, tokens, credenciales, ambientes de desarrollo, infraestructuras cloud, dispositivos, archivos y demás activos proporcionados, pagados o administrados por la Sociedad son de propiedad exclusiva de la Sociedad.",
+                "9.2 El Colaborador cumplirá las políticas, procedimientos y controles razonables de seguridad, protección de datos, desarrollo seguro, gestión de accesos, respaldo, cifrado, uso de herramientas y continuidad de negocio que adopte la Sociedad.",
+                "9.3 El Colaborador no almacenará Información Confidencial ni datos personales en cuentas personales, dispositivos no autorizados, repositorios personales, servicios no aprobados o medios removibles no autorizados, salvo autorización previa y escrita de la Sociedad.",
+                "9.4 El Colaborador deberá informar inmediatamente a la Sociedad cualquier incidente real o sospechado de pérdida, acceso no autorizado, divulgación, alteración, destrucción, extracción o tratamiento indebido de Información Confidencial, datos personales o activos de la Sociedad."
+              ]
+            },
+            {
+              "id": "p10",
+              "n": "10",
+              "t_es": "Devolución de bienes y terminación",
+              "t_en": "Return of property and termination",
+              "does_es": "Obliga a devolver todo lo de la compañía al terminar la relación, a eliminar las copias en medios personales y a colaborar en la transición.",
+              "does_en": "Requires everything belonging to the company to be returned when the relationship ends, copies on personal media to be deleted, and cooperation in the transition.",
+              "matters_es": "La excepción del 10.2 sobre copias de respaldo automáticas es la que hace la cláusula realista. Nadie puede garantizar que borró un archivo de un respaldo automático de su teléfono, y una obligación imposible de cumplir debilita todo el documento.",
+              "matters_en": "The exception in 10.2 for automatic backups is what makes the clause realistic. Nobody can guarantee they deleted a file from an automatic phone backup, and an obligation that cannot be met weakens the whole document.",
+              "cl": [
+                "10.1 Al terminar la relación del Colaborador con la Sociedad, o cuando la Sociedad lo solicite, el Colaborador devolverá inmediatamente todos los bienes, equipos, soportes, accesos, documentos, archivos, copias, credenciales y materiales de la Sociedad que estén bajo su posesión o control.",
+                "10.2 El Colaborador eliminará, cuando sea técnicamente posible, las copias de Información Confidencial y datos personales que se encuentren en sus dispositivos, cuentas o medios personales no autorizados, salvo copias de respaldo automáticas no fácilmente accesibles o retenciones exigidas por ley.",
+                "10.3 El Colaborador colaborará razonablemente en la transición de proyectos, accesos, documentación, repositorios, contraseñas, pendientes y Desarrollos para asegurar la continuidad operativa de la Sociedad."
+              ]
+            }
+          ]
+        },
+        {
+          "g_es": "Garantías y cierre",
+          "g_en": "Warranties and closing",
+          "arts": [
+            {
+              "id": "p11",
+              "n": "11",
+              "t_es": "Declaraciones y garantías",
+              "t_en": "Representations and warranties",
+              "does_es": "La persona confirma su capacidad, que la cesión no viola obligaciones con terceros, que los desarrollos no infringen derechos ajenos y que tuvo oportunidad de recibir asesoría independiente.",
+              "does_en": "The person confirms their capacity, that the assignment does not breach obligations to third parties, that the developments do not infringe others rights, and that they had the chance to take independent advice.",
+              "matters_es": "La declaración del 11.4 es la que obliga a hablar antes de que sea tarde. Si alguien viene de una empresa con una cláusula de no competencia o con obligaciones sobre invenciones, la compañía tiene que enterarse al momento de contratar y no cuando llegue la carta del abogado del anterior empleador.",
+              "matters_en": "The representation in 11.4 is what forces the conversation before it is too late. If someone comes from a company with a non-compete or with invention obligations, the company has to find out at hiring time and not when the previous employer lawyer letter arrives.",
+              "cl": [
+                "El Colaborador declara y garantiza que:",
+                "11.1 Tiene capacidad y facultad suficientes para celebrar y cumplir este Acuerdo.",
+                "11.2 La cesión, licencias y autorizaciones previstas en este Acuerdo no vulneran obligaciones válidamente asumidas frente a terceros.",
+                "11.3 Los Desarrollos entregados por el Colaborador no infringirán intencionalmente derechos de propiedad intelectual, confidencialidad o secretos empresariales de terceros.",
+                "11.4 Revelará oportunamente a la Sociedad cualquier conflicto de interés, restricción contractual, obligación previa o limitación relevante que pueda afectar los Desarrollos o el cumplimiento de este Acuerdo.",
+                "11.5 Ha tenido oportunidad razonable de obtener asesoría legal independiente antes de firmar este Acuerdo."
+              ]
+            },
+            {
+              "id": "p12",
+              "n": "12",
+              "t_es": "Incumplimiento y remedios",
+              "t_en": "Breach and remedies",
+              "does_es": "Reconoce que un incumplimiento de confidencialidad o propiedad intelectual causa perjuicios de difícil reparación y habilita medidas cautelares y cumplimiento específico.",
+              "does_en": "Recognises that a breach of confidentiality or intellectual property causes harm that is hard to repair and enables interim relief and specific performance.",
+              "matters_es": "El reconocimiento del 12.1 no es retórico. Es el que le permite a la compañía pedir una medida cautelar rápida, porque para obtenerla hay que demostrar que la indemnización posterior no repara el daño. Tenerlo aceptado por escrito acorta esa discusión.",
+              "matters_en": "The acknowledgement in 12.1 is not rhetoric. It is what lets the company ask for fast interim relief, because to obtain it you have to show that later damages do not repair the harm. Having it accepted in writing shortens that argument.",
+              "cl": [
+                "12.1 El Colaborador reconoce que el incumplimiento de las obligaciones de confidencialidad, propiedad intelectual, protección de datos o seguridad puede causar perjuicios graves y de difícil reparación a la Sociedad.",
+                "12.2 La Sociedad podrá solicitar medidas cautelares, cumplimiento específico, restitución, entrega de información, recuperación de activos, indemnización de perjuicios y demás remedios disponibles conforme a la ley, sin perjuicio de las acciones administrativas, civiles, laborales, penales o disciplinarias que puedan resultar aplicables."
+              ]
+            },
+            {
+              "id": "p13",
+              "n": "13",
+              "t_es": "Ley aplicable y controversias",
+              "t_en": "Governing law and disputes",
+              "does_es": "Somete el acuerdo a la ley colombiana con la misma secuencia de negociación, conciliación y arbitraje o jurisdicción ordinaria de los otros dos documentos.",
+              "does_en": "Submits the agreement to Colombian law with the same sequence of negotiation, conciliation, and arbitration or the ordinary courts as the other two documents.",
+              "matters_es": "El 13.4 reserva a la sociedad la posibilidad de pedir medidas cautelares ante cualquier autoridad competente sin esperar a agotar la conciliación. En una fuga de información esa diferencia de semanas es la que decide si el daño se puede contener.",
+              "matters_en": "Clause 13.4 reserves the company right to seek interim relief before any competent authority without waiting to exhaust conciliation. In an information leak that difference of weeks decides whether the damage can be contained.",
+              "cl": [
+                "13.1 Este Acuerdo se regirá por las leyes de la República de Colombia.",
+                "13.2 Toda controversia relacionada con este Acuerdo será tratada inicialmente mediante negociación directa durante quince (15) días hábiles desde la notificación escrita de la controversia.",
+                "13.3 Si la controversia no se resuelve mediante negociación directa, las Partes acudirán a conciliación ante el [[centro]], con sede en {{co.ciudad}}.",
+                "13.4 Si la controversia persiste, será resuelta por [[forum]], con sede en {{co.ciudad}}. Sin perjuicio de lo anterior, la Sociedad podrá solicitar medidas cautelares o de protección inmediata ante cualquier autoridad competente para proteger Información Confidencial, propiedad intelectual, datos personales o activos críticos."
+              ]
+            },
+            {
+              "id": "p14",
+              "n": "14",
+              "t_es": "Disposiciones generales, anexo y firmas",
+              "t_en": "General provisions, schedule, and signatures",
+              "does_es": "Cierra el acuerdo con integridad, modificaciones, divisibilidad, cesión, notificaciones y firma electrónica, y contiene el anexo de propiedad intelectual preexistente.",
+              "does_en": "Closes the agreement with entire agreement, amendments, severability, assignment, notices, and electronic signature, and holds the pre-existing intellectual property schedule.",
+              "matters_es": "La regla de cesión del 14.4 es la que importa en una venta. La sociedad puede ceder este acuerdo a un adquirente, y la persona no puede ceder sus obligaciones. Sin esa asimetría, un comprador tendría que volver a firmar con cada persona que alguna vez tocó el producto.",
+              "matters_en": "The assignment rule in 14.4 is what matters in a sale. The company can assign this agreement to a buyer, and the person cannot assign their obligations. Without that asymmetry, a buyer would have to re-sign with every person who ever touched the product.",
+              "cl": [
+                "14.1 Integridad. Este Acuerdo constituye el acuerdo completo entre las Partes respecto de su objeto y reemplaza los entendimientos previos sobre confidencialidad, propiedad intelectual e invenciones, salvo aquellos que expresamente sobrevivan o complementen este Acuerdo.",
+                "14.2 Modificaciones. Toda modificación de este Acuerdo deberá constar por escrito y estar firmada por ambas Partes.",
+                "14.3 Divisibilidad. Si una disposición resulta inválida o inexigible, las demás conservarán plena vigencia, y la disposición afectada se interpretará o ajustará en la mínima medida necesaria para hacerla válida y exigible.",
+                "14.4 Cesión. El Colaborador no podrá ceder sus derechos u obligaciones bajo este Acuerdo sin autorización previa y escrita de la Sociedad. La Sociedad podrá ceder este Acuerdo a una Afiliada, sucesor o adquirente de la totalidad o una parte sustancial de sus activos o Negocio.",
+                "14.5 Notificaciones. Las notificaciones se realizarán por escrito a las direcciones indicadas por las Partes. Se entenderán recibidas en la fecha de entrega personal, al día hábil siguiente si se envían por mensajería reconocida, al tercer día hábil siguiente si se remiten por correo certificado o en la fecha de envío por correo electrónico si no hay mensaje de error y se envía antes de las 5:00 p.m. de un día hábil.",
+                "14.6 Firmas electrónicas. Este Acuerdo podrá firmarse en contrapartes y mediante firma electrónica o digital válida conforme a la legislación colombiana.",
+                {
+                  "h": "Anexo 1 — Propiedad intelectual preexistente excluida"
+                },
+                "Para cada activo se registra el titular, la descripción, si se incorporará al negocio y las condiciones de licencia. Estado declarado: [[priorIP]].",
+                {
+                  "h": "Firmas"
+                },
+                "Por la Sociedad firma {{co.repLegal}} en calidad de {{co.repCargo}}. Por su parte firma {{colab.nombre}}, identificado con {{colab.id}}."
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "decisions": {
+    "accel": {
+      "es": "Aceleración",
+      "en": "Acceleration",
+      "type": "choice",
+      "def": "doble",
+      "q_es": "Si la compañía se vende, ¿qué pasa con las acciones que aún no has consolidado?",
+      "q_en": "If the company is sold, what happens to shares you have not yet vested?",
+      "options": [
+        {
+          "v": "sin",
+          "t": "Sin aceleración",
+          "te": "No acceleration",
+          "c_es": "Tus acciones no consolidadas siguen su calendario normal. El comprador lo prefiere porque te obliga a quedarte.",
+          "c_en": "Unvested shares keep their normal schedule. Buyers prefer this because it keeps you in place."
+        },
+        {
+          "v": "doble",
+          "t": "Aceleración de doble disparo",
+          "te": "Double-trigger acceleration",
+          "rec": 1,
+          "c_es": "Consolidas todo solo si además te sacan sin causa grave después de la venta. Es el equilibrio que la mayoría de fondos acepta.",
+          "c_en": "You vest in full only if you are also removed without serious cause after the sale. This is the balance most funds accept."
+        }
+      ]
+    },
+    "accelWin": {
+      "es": "Ventana",
+      "en": "Window",
+      "type": "num",
+      "def": 12,
+      "unit_es": "meses",
+      "unit_en": "months",
+      "q_es": "¿Cuántos meses después de la venta se mantiene la protección de doble disparo?",
+      "q_en": "For how many months after the sale does double-trigger protection last?",
+      "hint_es": "Doce meses es lo habitual. Algunos fondos negocian hasta dieciocho.",
+      "hint_en": "Twelve months is standard. Some funds negotiate up to eighteen."
+    },
+    "board": {
+      "es": "Órgano de administración",
+      "en": "Governing body",
+      "type": "choice",
+      "def": "comite",
+      "q_es": "¿Qué órgano de administración vas a tener desde el inicio?",
+      "q_en": "What governing body will you have from the start?",
+      "options": [
+        {
+          "v": "ninguno",
+          "t": "Ninguno inicialmente",
+          "te": "None initially",
+          "c_es": "Solo asamblea y representante legal. Es lo más simple, y es común antes de la primera ronda.",
+          "c_en": "Shareholders meeting and legal representative only. Simplest option, common before the first round."
+        },
+        {
+          "v": "comite",
+          "t": "Comité asesor",
+          "te": "Advisory committee",
+          "rec": 1,
+          "c_es": "Consejo sin poder formal de decisión. Te da criterio externo sin ceder control.",
+          "c_en": "Advice without formal decision power. Gives you outside judgment without giving up control."
+        },
+        {
+          "v": "junta",
+          "t": "Junta directiva",
+          "te": "Board of directors",
+          "c_es": "Órgano formal con facultades propias. Los inversionistas suelen exigirla en la ronda de inversión.",
+          "c_en": "Formal body with its own powers. Investors usually require one at the financing round."
+        }
+      ]
+    },
+    "reservedPct": {
+      "es": "Mayoría reforzada",
+      "en": "Supermajority",
+      "type": "num",
+      "def": 75,
+      "unit_es": "%",
+      "unit_en": "%",
+      "q_es": "¿Qué porcentaje de votos se necesita para las decisiones estratégicas?",
+      "q_en": "What percentage of votes is required for strategic decisions?",
+      "hint_es": "Un umbral muy alto puede bloquear a la compañía. Uno muy bajo deja sin protección a los fundadores minoritarios. Setenta y cinco por ciento es el estándar de la firma.",
+      "hint_en": "A threshold that is too high can deadlock the company. One that is too low leaves minority founders unprotected. Seventy five percent is the firm standard."
+    },
+    "debtCap": {
+      "es": "Tope de endeudamiento",
+      "en": "Debt cap",
+      "type": "num",
+      "def": 100000000,
+      "unit_es": "COP",
+      "unit_en": "COP",
+      "q_es": "¿A partir de qué monto un endeudamiento o garantía necesita aprobación reforzada?",
+      "q_en": "Above what amount does borrowing or granting security need supermajority approval?",
+      "hint_es": "Fíjalo en relación con tu caja mensual, no con una cifra redonda.",
+      "hint_en": "Set it relative to your monthly cash position, not to a round number."
+    },
+    "tagPct": {
+      "es": "Disparo del tag-along",
+      "en": "Tag-along trigger",
+      "type": "num",
+      "def": 25,
+      "unit_es": "%",
+      "unit_en": "%",
+      "q_es": "¿Desde qué porcentaje de venta se activa tu derecho a vender junto con los demás?",
+      "q_en": "From what percentage of a sale does your right to sell alongside others switch on?",
+      "hint_es": "Veinticinco por ciento captura las ventas relevantes sin activarse en transferencias menores.",
+      "hint_en": "Twenty five percent captures meaningful sales without triggering on minor transfers."
+    },
+    "dragPct": {
+      "es": "Umbral de arrastre",
+      "en": "Drag-along threshold",
+      "type": "num",
+      "def": 75,
+      "unit_es": "%",
+      "unit_en": "%",
+      "q_es": "¿Qué mayoría puede obligar a todos los accionistas a vender la compañía?",
+      "q_en": "What majority can require every shareholder to sell the company?",
+      "hint_es": "Setenta y cinco por ciento es el estándar de Balam Legal. Bajarlo facilita una venta y debilita a los minoritarios; subirlo puede dejar que un solo accionista bloquee una buena oferta.",
+      "hint_en": "Seventy five percent is the Balam Legal standard. Lowering it makes a sale easier and weakens minority holders; raising it can var a single holder block a good offer."
+    },
+    "badLeaver": {
+      "es": "Precio Bad Leaver",
+      "en": "Bad leaver price",
+      "type": "choice",
+      "def": "desc",
+      "q_es": "Si un fundador sale por falta grave, ¿a qué precio se le recompran las acciones que ya consolidó?",
+      "q_en": "If a founder leaves for serious cause, at what price are their already vested shares repurchased?",
+      "options": [
+        {
+          "v": "razonable",
+          "t": "Valor razonable",
+          "te": "Fair value",
+          "c_es": "Precio de mercado. Es más defendible ante un juez y reduce el riesgo de que la cláusula se declare abusiva.",
+          "c_en": "Market price. Easier to defend before a judge and lowers the risk that the clause is struck down as abusive."
+        },
+        {
+          "v": "desc",
+          "t": "Valor patrimonial menos 30 %",
+          "te": "Book value less 30%",
+          "rec": 1,
+          "c_es": "Castiga la conducta grave sin llegar a la confiscación. Requiere un procedimiento documentado para determinar la causal.",
+          "c_en": "Penalises serious misconduct without amounting to confiscation. Requires a documented procedure to establish the cause."
+        }
+      ]
+    },
+    "esopPct": {
+      "es": "Bolsa de incentivos",
+      "en": "Option pool",
+      "type": "num",
+      "def": 10,
+      "unit_es": "%",
+      "unit_en": "%",
+      "q_es": "¿Qué porcentaje del capital reservas para el equipo?",
+      "q_en": "What percentage of the capital do you reserve for the team?",
+      "hint_es": "Entre diez y quince por ciento es lo normal en Colombia antes de una ronda semilla. La bolsa te diluye, y sin ella no puedes contratar talento.",
+      "hint_en": "Ten to fifteen percent is normal in Colombia before a seed round. The pool dilutes you, and without it you cannot hire talent."
+    },
+    "reportDays": {
+      "es": "Plazo de reportes",
+      "en": "Reporting deadline",
+      "type": "num",
+      "def": 90,
+      "unit_es": "días",
+      "unit_en": "days",
+      "q_es": "¿En cuántos días entregas los estados financieros anuales a los accionistas?",
+      "q_en": "Within how many days do you deliver annual financial statements to shareholders?",
+      "hint_es": "Noventa días calendario después del cierre es un compromiso realista para una compañía temprana.",
+      "hint_en": "Ninety calendar days after year end is a realistic commitment for an early stage company."
+    },
+    "nonSolicit": {
+      "es": "No captación",
+      "en": "Non-solicitation",
+      "type": "num",
+      "def": 12,
+      "unit_es": "meses",
+      "unit_en": "months",
+      "q_es": "¿Por cuántos meses después de salir un fundador no puede llevarse al equipo o a los clientes?",
+      "q_en": "For how many months after leaving can a founder not take the team or the clients?",
+      "hint_es": "Doce meses es razonable y exigible. Plazos más largos suelen caerse en Colombia.",
+      "hint_en": "Twelve months is reasonable and enforceable. Longer periods tend to fail in Colombia."
+    },
+    "centro": {
+      "es": "Centro de conciliación",
+      "en": "Conciliation centre",
+      "type": "choice",
+      "def": "ccb",
+      "q_es": "¿Ante qué centro se tramita la conciliación si hay un conflicto?",
+      "q_en": "Which centre handles conciliation if a dispute arises?",
+      "options": [
+        {
+          "v": "ccb",
+          "t": "Centro de Arbitraje y Conciliación de la Cámara de Comercio de Bogotá",
+          "te": "Bogotá Chamber of Commerce Arbitration and Conciliation Centre",
+          "rec": 1,
+          "c_es": "El más usado en operaciones de capital de riesgo en Colombia. Los inversionistas lo reconocen.",
+          "c_en": "The most used in Colombian venture transactions. Investors recognise it."
+        },
+        {
+          "v": "ccm",
+          "t": "Cámara de Comercio de Medellín",
+          "te": "Medellín Chamber of Commerce",
+          "c_es": "Sensato si la compañía y los fundadores están en Antioquia.",
+          "c_en": "Sensible if the company and founders are in Antioquia."
+        },
+        {
+          "v": "ccc",
+          "t": "Cámara de Comercio de Cali",
+          "te": "Cali Chamber of Commerce",
+          "c_es": "Sensato si la compañía opera desde el Valle del Cauca.",
+          "c_en": "Sensible if the company operates from Valle del Cauca."
+        }
+      ]
+    },
+    "forum": {
+      "es": "Foro",
+      "en": "Forum",
+      "type": "choice",
+      "def": "arb",
+      "q_es": "Si la conciliación falla, ¿quién resuelve el conflicto?",
+      "q_en": "If conciliation fails, who resolves the dispute?",
+      "options": [
+        {
+          "v": "arb",
+          "t": "Tribunal de arbitramento",
+          "te": "Arbitration tribunal",
+          "rec": 1,
+          "c_es": "Más rápido y reservado que la justicia ordinaria. Cuesta más por adelantado y es lo que esperan los fondos.",
+          "c_en": "Faster and more private than the ordinary courts. Costs more upfront and is what funds expect."
+        },
+        {
+          "v": "ord",
+          "t": "Jurisdicción ordinaria",
+          "te": "Ordinary courts",
+          "c_es": "Sin costo de tribunal, y con plazos que pueden extenderse por años.",
+          "c_en": "No tribunal cost, with timelines that can stretch into years."
+        }
+      ]
+    },
+    "amendPct": {
+      "es": "Mayoría para modificar",
+      "en": "Amendment majority",
+      "type": "num",
+      "def": 75,
+      "unit_es": "%",
+      "unit_en": "%",
+      "q_es": "¿Qué mayoría se necesita para modificar este acuerdo?",
+      "q_en": "What majority is needed to amend this agreement?",
+      "hint_es": "Mantenlo alineado con la mayoría de materias reservadas para que no haya dos umbrales en conflicto.",
+      "hint_en": "Keep it aligned with the reserved matters majority so you do not end up with two conflicting thresholds."
+    },
+    "admin": {
+      "es": "Administrador del plan",
+      "en": "Plan administrator",
+      "type": "choice",
+      "def": "rep",
+      "q_es": "¿Quién administra el plan y decide los otorgamientos?",
+      "q_en": "Who administers the plan and decides grants?",
+      "options": [
+        {
+          "v": "rep",
+          "t": "Representante legal",
+          "te": "Legal representative",
+          "rec": 1,
+          "c_es": "Ágil mientras el equipo es pequeño. Conviene fijar límites por escrito sobre cuánto puede otorgar sin consultar.",
+          "c_en": "Fast while the team is small. Worth setting written limits on how much can be granted without consultation."
+        },
+        {
+          "v": "junta",
+          "t": "Junta directiva",
+          "te": "Board of directors",
+          "c_es": "Más control y más formalidad. Es lo que pedirá un inversionista una vez tenga silla en junta.",
+          "c_en": "More control and more formality. This is what an investor will ask for once they hold a board seat."
+        }
+      ]
+    },
+    "poolPct": {
+      "es": "Reserva del plan",
+      "en": "Plan reserve",
+      "type": "num",
+      "def": 10,
+      "unit_es": "%",
+      "unit_en": "%",
+      "q_es": "¿Qué porcentaje del capital plenamente diluido reservas para el plan?",
+      "q_en": "What percentage of fully diluted capital do you reserve for the plan?",
+      "hint_es": "Este número debe coincidir con el que pactaste en el acuerdo de fundadores. Si difieren, un inversionista lo va a encontrar.",
+      "hint_en": "This number must match the one agreed in the founders agreement. If they differ, an investor will find it."
+    },
+    "strike": {
+      "es": "Precio de ejercicio",
+      "en": "Exercise price",
+      "type": "num",
+      "def": 1000,
+      "unit_es": "COP",
+      "unit_en": "COP",
+      "q_es": "¿Cuál es el precio de ejercicio por acción?",
+      "q_en": "What is the exercise price per share?",
+      "hint_es": "Debe apoyarse en un criterio defendible, por ejemplo el valor de la última ronda o un avalúo. Un precio artificialmente bajo genera riesgo tributario para quien recibe la opción.",
+      "hint_en": "It must rest on a defensible basis such as the last round price or a valuation. An artificially low price creates tax exposure for the person receiving the option."
+    },
+    "exWindow": {
+      "es": "Plazo de ejercicio",
+      "en": "Exercise window",
+      "type": "choice",
+      "def": "90",
+      "q_es": "Cuando alguien sale de la compañía, ¿cuánto tiempo tiene para ejercer sus opciones consolidadas?",
+      "q_en": "When someone leaves the company, how long do they have to exercise vested options?",
+      "options": [
+        {
+          "v": "90",
+          "t": "90 días",
+          "te": "90 days",
+          "rec": 1,
+          "c_es": "Es el estándar de mercado. Quien no tiene la caja para ejercer pierde la opción, y esa es una crítica real al modelo.",
+          "c_en": "Market standard. Anyone without the cash to exercise loses the option, and that is a fair criticism of the model."
+        },
+        {
+          "v": "365",
+          "t": "12 meses",
+          "te": "12 months",
+          "c_es": "Más justo con el empleado y cada vez más común. Mantiene el cap table abierto más tiempo.",
+          "c_en": "Fairer to the employee and increasingly common. Keeps the cap table open for longer."
+        }
+      ]
+    },
+    "planTerm": {
+      "es": "Vigencia del plan",
+      "en": "Plan term",
+      "type": "num",
+      "def": 10,
+      "unit_es": "años",
+      "unit_en": "years",
+      "q_es": "¿Por cuántos años estará vigente el plan?",
+      "q_en": "For how many years will the plan remain in force?",
+      "hint_es": "Diez años es lo habitual. Al vencer, los incentivos ya otorgados siguen rigiéndose por el plan.",
+      "hint_en": "Ten years is standard. On expiry, grants already made continue to be governed by the plan."
+    },
+    "capacity": {
+      "es": "Calidad del firmante",
+      "en": "Signer capacity",
+      "type": "choice",
+      "def": "fundador",
+      "q_es": "¿En qué calidad firma la persona que cede la propiedad intelectual?",
+      "q_en": "In what capacity does the person assigning intellectual property sign?",
+      "options": [
+        {
+          "v": "fundador",
+          "t": "Fundador",
+          "te": "Founder",
+          "rec": 1,
+          "c_es": "Firma además del acuerdo de fundadores. Los dos documentos se refuerzan.",
+          "c_en": "Signs in addition to the founders agreement. The two documents reinforce each other."
+        },
+        {
+          "v": "empleado",
+          "t": "Empleado",
+          "te": "Employee",
+          "c_es": "Va junto al contrato laboral. En Colombia la presunción legal no basta por sí sola, y por eso este documento existe.",
+          "c_en": "Goes alongside the employment contract. In Colombia the statutory presumption is not enough on its own, which is why this document exists."
+        },
+        {
+          "v": "contratista",
+          "t": "Contratista o consultor",
+          "te": "Contractor or consultant",
+          "c_es": "El caso de mayor riesgo. Sin este acuerdo firmado, el contratista conserva derechos sobre lo que construyó.",
+          "c_en": "The highest risk case. Without this agreement signed, the contractor keeps rights over what they built."
+        }
+      ]
+    },
+    "priorIP": {
+      "es": "PI preexistente",
+      "en": "Pre-existing IP",
+      "type": "choice",
+      "def": "ninguna",
+      "q_es": "¿La persona que firma excluye propiedad intelectual creada antes de entrar a la compañía?",
+      "q_en": "Does the signer exclude intellectual property created before joining the company?",
+      "options": [
+        {
+          "v": "ninguna",
+          "t": "No excluye nada",
+          "te": "Nothing excluded",
+          "rec": 1,
+          "c_es": "El Anexo 1 se firma indicando “ninguna”. Es la posición más limpia para una diligencia debida.",
+          "c_en": "Schedule 1 is signed stating “none”. This is the cleanest position for due diligence."
+        },
+        {
+          "v": "algunas",
+          "t": "Sí, se detallan en el Anexo 1",
+          "te": "Yes, listed in Schedule 1",
+          "c_es": "Hay que describir cada activo con precisión. Una descripción vaga se interpreta en contra de quien excluye.",
+          "c_en": "Each asset must be described precisely. A vague description is read against the person excluding it."
+        }
+      ]
+    }
+  },
+  "ui": {
+    "es": {
+      "docs": "Documentos",
+      "setup": "Datos de tu empresa",
+      "review": "Revisión",
+      "home_eyebrow": "Preparación legal para levantar capital",
+      "home_h1": "Tres documentos. Uno a la vez.",
+      "home_lede": "Cada artículo se explica antes de leerlo. Los datos de tu empresa se cargan una sola vez y aparecen ya escritos dentro del texto. Las decisiones que sí tienes que tomar se te presentan por separado, en el momento en que aparecen.",
+      "start": "Comenzar",
+      "cont": "Continuar",
+      "open": "Abrir",
+      "notstarted": "Sin empezar",
+      "inprog": "En progreso",
+      "done": "Completo",
+      "decisions": "decisiones",
+      "setup_lede": "Esta información se escribe una vez y se inserta automáticamente en los tres documentos. Puedes cambiarla en cualquier momento desde el propio texto.",
+      "save": "Guardar y continuar",
+      "back": "Volver",
+      "prev": "Anterior",
+      "next": "Siguiente",
+      "finish": "Ir a revisión",
+      "guided": "Guiado",
+      "continuous": "Documento completo",
+      "whatis": "Qué hace este artículo",
+      "whymatters": "Por qué te importa",
+      "negot": "Punto de negociación",
+      "text": "Texto del artículo",
+      "decision": "Tu decisión",
+      "rec": "Recomendado",
+      "of": "de",
+      "art": "Artículo",
+      "pending": "Pendiente",
+      "review_h": "Revisión antes de firmar",
+      "review_lede": "Estas son las decisiones que tomaste y las que siguen abiertas. Un abogado de Balam Legal revisa el documento antes de que se emita la versión final.",
+      "yourdec": "Decisión",
+      "value": "Valor",
+      "where": "Dónde aparece",
+      "opendec": "Decisiones pendientes",
+      "alldone": "No quedan decisiones pendientes.",
+      "dl": "Descargar borrador",
+      "sendrev": "Enviar a revisión legal",
+      "fill": "Completar",
+      "edit": "Editar",
+      "setval": "Definir valor",
+      "langnote": "El texto operativo permanece en español porque es el texto que rige bajo la ley colombiana. La explicación está disponible en los dos idiomas."
+    },
+    "en": {
+      "docs": "Documents",
+      "setup": "Your company details",
+      "review": "Review",
+      "home_eyebrow": "Legal preparation for raising capital",
+      "home_h1": "Three documents. One at a time.",
+      "home_lede": "Every article is explained before you read it. Your company details are entered once and appear already written into the text. The choices you actually have to make are presented separately, at the point where they arise.",
+      "start": "Start",
+      "cont": "Continue",
+      "open": "Open",
+      "notstarted": "Not started",
+      "inprog": "In progress",
+      "done": "Complete",
+      "decisions": "decisions",
+      "setup_lede": "You enter this once and it flows into all three documents. You can change it at any time from within the text itself.",
+      "save": "Save and continue",
+      "back": "Back",
+      "prev": "Previous",
+      "next": "Next",
+      "finish": "Go to review",
+      "guided": "Guided",
+      "continuous": "Full document",
+      "whatis": "What this article does",
+      "whymatters": "Why it matters to you",
+      "negot": "Negotiation point",
+      "text": "Article text",
+      "decision": "Your decision",
+      "rec": "Recommended",
+      "of": "of",
+      "art": "Article",
+      "pending": "Pending",
+      "review_h": "Review before signing",
+      "review_lede": "These are the choices you made and the ones still open. A Balam Legal attorney reviews the document before the final version is issued.",
+      "yourdec": "Decision",
+      "value": "Value",
+      "where": "Where it appears",
+      "opendec": "Open decisions",
+      "alldone": "No decisions are outstanding.",
+      "dl": "Download draft",
+      "sendrev": "Send for legal review",
+      "fill": "Complete",
+      "edit": "Edit",
+      "setval": "Set value",
+      "langnote": "The operative text stays in Spanish because that is the text that governs under Colombian law. The explanation is available in both languages."
+    }
+  },
+  "tokens": {
+    "co.nombre": {
+      "es": "Nombre de la sociedad",
+      "en": "Company name",
+      "ph": "[NOMBRE DE LA SOCIEDAD]",
+      "long": false
+    },
+    "co.nit": {
+      "es": "NIT",
+      "en": "Tax ID (NIT)",
+      "ph": "[NIT]",
+      "long": false
+    },
+    "co.domicilio": {
+      "es": "Domicilio principal",
+      "en": "Registered address",
+      "ph": "[DOMICILIO]",
+      "long": false
+    },
+    "co.ciudad": {
+      "es": "Ciudad",
+      "en": "City",
+      "ph": "[CIUDAD, COLOMBIA]",
+      "long": false
+    },
+    "co.negocio": {
+      "es": "Descripción del negocio",
+      "en": "Business description",
+      "ph": "[DESCRIPCIÓN DEL NEGOCIO]",
+      "long": true
+    },
+    "co.fecha": {
+      "es": "Fecha efectiva",
+      "en": "Effective date",
+      "ph": "[FECHA]",
+      "type": "date",
+      "long": false
+    },
+    "co.repLegal": {
+      "es": "Representante legal",
+      "en": "Legal representative",
+      "ph": "[NOMBRE DEL REPRESENTANTE LEGAL]",
+      "long": false
+    },
+    "co.repCargo": {
+      "es": "Cargo del representante",
+      "en": "Representative title",
+      "ph": "[CARGO]",
+      "long": false
+    },
+    "f1.nombre": {
+      "es": "Fundador 1 — nombre",
+      "en": "Founder 1 — name",
+      "ph": "[FUNDADOR 1]",
+      "long": false
+    },
+    "f1.id": {
+      "es": "Fundador 1 — identificación",
+      "en": "Founder 1 — ID",
+      "ph": "[IDENTIFICACIÓN]",
+      "long": false
+    },
+    "f1.rol": {
+      "es": "Fundador 1 — cargo",
+      "en": "Founder 1 — role",
+      "ph": "[CARGO Y RESPONSABILIDADES]",
+      "long": false
+    },
+    "f2.nombre": {
+      "es": "Fundador 2 — nombre",
+      "en": "Founder 2 — name",
+      "ph": "[FUNDADOR 2]",
+      "long": false
+    },
+    "f2.id": {
+      "es": "Fundador 2 — identificación",
+      "en": "Founder 2 — ID",
+      "ph": "[IDENTIFICACIÓN]",
+      "long": false
+    },
+    "f2.rol": {
+      "es": "Fundador 2 — cargo",
+      "en": "Founder 2 — role",
+      "ph": "[CARGO Y RESPONSABILIDADES]",
+      "long": false
+    },
+    "colab.nombre": {
+      "es": "Nombre del colaborador",
+      "en": "Collaborator name",
+      "ph": "[NOMBRE DEL COLABORADOR]",
+      "long": false
+    },
+    "colab.id": {
+      "es": "Identificación del colaborador",
+      "en": "Collaborator ID",
+      "ph": "[IDENTIFICACIÓN]",
+      "long": false
+    },
+    "f1.dom": {
+      "es": "Fundador 1 — domicilio",
+      "en": "Founder 1 — address",
+      "long": false
+    },
+    "f2.dom": {
+      "es": "Fundador 2 — domicilio",
+      "en": "Founder 2 — address",
+      "long": false
+    }
+  }
+}
