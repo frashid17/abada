@@ -65,20 +65,44 @@ export const emptyPrototypeStore = (): PrototypeStore => ({
 
 const EMPTY_STORE = emptyPrototypeStore();
 
-function readStore(): PrototypeStore {
-  if (typeof window === "undefined") return EMPTY_STORE;
+let cachedRaw: string | null = null;
+let cachedStore: PrototypeStore = EMPTY_STORE;
+
+function parseStore(raw: string | null): PrototypeStore {
+  if (!raw) return EMPTY_STORE;
   try {
-    const raw = window.localStorage.getItem(STORAGE_KEY);
-    if (!raw) return EMPTY_STORE;
-    return { ...emptyPrototypeStore(), ...JSON.parse(raw) } as PrototypeStore;
+    const parsed = JSON.parse(raw) as Partial<PrototypeStore>;
+    return {
+      ...emptyPrototypeStore(),
+      ...parsed,
+      company: { ...emptyPrototypeStore().company, ...parsed.company },
+      founders: parsed.founders?.length
+        ? parsed.founders.map((founder) => ({ ...emptyFounder(), ...founder }))
+        : emptyPrototypeStore().founders,
+      decisions: { ...(parsed.decisions ?? {}) },
+      seen: { ...(parsed.seen ?? {}) },
+    };
   } catch {
     return EMPTY_STORE;
   }
 }
 
+/** Cached getSnapshot — must return the same reference when data is unchanged. */
+function getClientSnapshot(): PrototypeStore {
+  if (typeof window === "undefined") return EMPTY_STORE;
+  const raw = window.localStorage.getItem(STORAGE_KEY);
+  if (raw === cachedRaw) return cachedStore;
+  cachedRaw = raw;
+  cachedStore = parseStore(raw);
+  return cachedStore;
+}
+
 function writeStore(next: PrototypeStore) {
   if (typeof window === "undefined") return;
-  window.localStorage.setItem(STORAGE_KEY, JSON.stringify(next));
+  const raw = JSON.stringify(next);
+  window.localStorage.setItem(STORAGE_KEY, raw);
+  cachedRaw = raw;
+  cachedStore = next;
   window.dispatchEvent(new Event(STORE_EVENT));
 }
 
@@ -100,7 +124,7 @@ function getServerSnapshot(): PrototypeStore {
 }
 
 export function usePrototypeDocumentStore() {
-  const store = useSyncExternalStore(subscribe, readStore, getServerSnapshot);
+  const store = useSyncExternalStore(subscribe, getClientSnapshot, getServerSnapshot);
   const hydrated = useSyncExternalStore(
     () => () => undefined,
     () => true,
