@@ -1,5 +1,4 @@
 import { getTranslations } from "next-intl/server";
-import { ShieldCheck } from "lucide-react";
 import Link from "next/link";
 import { AuthHeaderActions } from "@/components/auth/auth-header-actions";
 import { BrandMark } from "@/components/brand/brand-mark";
@@ -59,25 +58,40 @@ export async function AppShell({ children, variant, workspace = false }: AppShel
   return (
     <div
       className={cn(
-        "relative flex flex-col",
+        "relative flex flex-col bg-background",
         workspace ? "h-dvh overflow-hidden" : "min-h-dvh",
       )}
     >
-      <PageBackdrop />
-      <header className="fixed inset-x-0 top-0 z-50 border-b border-border bg-background/95 shadow-soft backdrop-blur-md supports-[backdrop-filter]:bg-background/90">
-        <div className="mx-auto flex h-14 max-w-7xl items-center justify-between gap-3 px-4 sm:h-16 sm:gap-4 sm:px-6">
-          <div className="flex min-w-0 items-center gap-2 sm:gap-5">
+      {variant === "public" ? <PageBackdrop /> : null}
+      <header
+        className={cn(
+          "sticky top-0 z-50 border-b border-border bg-card",
+          isApp ? "shadow-none" : "fixed inset-x-0 bg-background/95 shadow-soft backdrop-blur-md",
+        )}
+      >
+        <div
+          className={cn(
+            "mx-auto flex items-center justify-between gap-3 px-4 sm:px-5",
+            isApp ? "h-[60px] max-w-[1240px]" : "h-14 max-w-7xl sm:h-16 sm:px-6",
+          )}
+        >
+          <div className="flex min-w-0 items-center gap-2 sm:gap-4">
             <MobileNav items={nav} />
-            <Link href="/" className="cursor-pointer transition-opacity hover:opacity-90">
+            <Link href={isApp ? nav[0]?.href ?? "/" : "/"} className="cursor-pointer">
               <BrandMark wordmark={t("brand")} className="[&>span]:hidden [&>span]:sm:inline" />
             </Link>
             {nav.length > 0 ? <ShellNav items={nav} /> : null}
           </div>
           <div className="flex shrink-0 items-center gap-1.5 sm:gap-2">
-            <span className="mr-1 hidden items-center gap-1.5 rounded-md border border-primary/15 bg-primary/5 px-2 py-1 text-xs font-medium text-primary lg:inline-flex">
-              <ShieldCheck className="h-3.5 w-3.5" aria-hidden />
-              {firmName}
-            </span>
+            {isApp ? (
+              <span className="mr-1 hidden text-[12.5px] font-medium text-muted-foreground lg:inline">
+                {firmName}
+              </span>
+            ) : (
+              <span className="mr-1 hidden items-center gap-1.5 rounded-md border border-primary/15 bg-primary/5 px-2 py-1 text-xs font-medium text-primary lg:inline-flex">
+                {firmName}
+              </span>
+            )}
             <LocaleSelector />
             <ThemeToggle />
             {isApp ? <NotificationBell /> : null}
@@ -87,20 +101,18 @@ export async function AppShell({ children, variant, workspace = false }: AppShel
       </header>
       <main
         className={cn(
-          "relative z-0 mx-auto w-full max-w-7xl grow px-4 sm:px-6",
+          "relative z-0 mx-auto w-full grow",
+          isApp ? "max-w-[1240px] px-4 sm:px-5" : "max-w-7xl px-4 sm:px-6",
           workspace
-            ? "flex min-h-0 flex-col overflow-hidden pb-4 pt-[4.25rem] sm:pt-[5rem]"
-            : "shrink-0 basis-auto pb-16 pt-20 sm:pb-20 sm:pt-24",
+            ? "flex min-h-0 flex-col overflow-hidden pb-4 pt-4"
+            : isApp
+              ? "shrink-0 basis-auto pb-16 pt-6 sm:pb-20 sm:pt-8"
+              : "shrink-0 basis-auto pb-16 pt-20 sm:pb-20 sm:pt-24",
         )}
       >
         {children}
       </main>
-      {!workspace && !isApp ? <SiteFooter /> : null}
-      {!workspace && isApp ? (
-        <footer className="relative z-0 border-t border-border/60 py-4 text-center text-xs text-muted-foreground">
-          {firmName}
-        </footer>
-      ) : null}
+      {!workspace ? <SiteFooter variant={variant} /> : null}
     </div>
   );
 }
