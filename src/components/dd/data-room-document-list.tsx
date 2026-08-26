@@ -17,8 +17,8 @@ export async function DataRoomDocumentList({
 
   if (documents.length === 0) {
     return (
-      <div className="flex flex-col items-center justify-center gap-3 rounded-2xl border border-dashed border-border/70 bg-card/50 px-6 py-12 text-center">
-        <div className="flex h-11 w-11 items-center justify-center rounded-full bg-muted/40 text-muted-foreground">
+      <div className="flex flex-col items-center justify-center gap-3 rounded-[10px] border border-dashed border-border bg-rail/60 px-6 py-12 text-center">
+        <div className="flex h-11 w-11 items-center justify-center bg-muted text-muted-foreground">
           <FileStack className="h-5 w-5" />
         </div>
         <p className="text-sm text-muted-foreground">{t("empty")}</p>
@@ -36,14 +36,14 @@ export async function DataRoomDocumentList({
   }
 
   return (
-    <div className="overflow-hidden rounded-2xl border border-border/70 bg-card">
-      <ul className="divide-y divide-border/50">
+    <div className="overflow-hidden rounded-[10px] border border-border bg-card shadow-sm">
+      <ul className="divide-y divide-[color:var(--line-2)]">
         {[...latestByCategory.entries()]
           .sort(([a], [b]) => a.localeCompare(b))
           .map(([category, doc]) => (
             <li
               key={doc.id}
-              className="flex items-center justify-between gap-3 px-4 py-3.5 transition-colors hover:bg-muted/20"
+              className="flex items-center justify-between gap-3 px-4 py-3.5 transition-colors hover:bg-rail"
             >
               <div className="min-w-0">
                 <p className="truncate text-sm font-medium text-foreground">{doc.title}</p>
@@ -54,7 +54,7 @@ export async function DataRoomDocumentList({
               {showDownload ? (
                 <Link
                   href={`/api/data-room/${doc.id}/download`}
-                  className="inline-flex shrink-0 cursor-pointer items-center gap-1.5 rounded-lg border border-border/60 px-2.5 py-1.5 text-xs font-medium text-foreground transition-colors hover:border-primary/40 hover:text-primary"
+                  className="inline-flex shrink-0 cursor-pointer items-center gap-1.5 border border-border px-2.5 py-1.5 text-xs font-semibold text-foreground transition-colors hover:border-highlight hover:text-highlight"
                 >
                   <Download className="h-3.5 w-3.5" />
                   {t("download")}
