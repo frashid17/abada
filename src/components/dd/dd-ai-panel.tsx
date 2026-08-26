@@ -148,10 +148,10 @@ export function DdAiPanel({ dealName, sessionContext, initialAccess }: DdAiPanel
 
   return (
     <>
-      <div className="flex h-[min(520px,70dvh)] flex-col overflow-hidden rounded-xl border border-border/60 bg-background/40">
-        <div className="flex items-start justify-between gap-2 border-b border-border/50 px-3 py-2.5">
+      <div className="flex h-[min(520px,70dvh)] flex-col overflow-hidden rounded-[10px] border border-border bg-card">
+        <div className="flex items-start justify-between gap-2 border-b border-[color:var(--line-2)] bg-rail px-4 py-3">
           <div className="min-w-0 space-y-0.5">
-            <div className="flex items-center gap-1.5 text-primary">
+            <div className="flex items-center gap-1.5 text-highlight">
               <Sparkles className="h-3.5 w-3.5" aria-hidden />
               <p className="text-[11px] font-bold uppercase tracking-[0.12em]">{t("badge")}</p>
             </div>
@@ -171,10 +171,10 @@ export function DdAiPanel({ dealName, sessionContext, initialAccess }: DdAiPanel
           </Button>
         </div>
 
-        <div ref={scrollRef} className="min-h-0 flex-1 space-y-3 overflow-y-auto px-3 py-3">
+        <div ref={scrollRef} className="min-h-0 flex-1 space-y-5 overflow-y-auto bg-card px-4 py-4">
           {locked ? (
-            <div className="rounded-xl border border-dashed border-border/70 bg-muted/20 p-4 text-center">
-              <Lock className="mx-auto h-5 w-5 text-muted-foreground" aria-hidden />
+            <div className="border border-dashed border-accent-line bg-accent-soft p-4 text-center">
+              <Lock className="mx-auto h-5 w-5 text-accent-fg" aria-hidden />
               <p className="mt-2 text-sm font-medium text-foreground">{tPay("lockedTitle")}</p>
               <p className="mt-1 text-xs text-muted-foreground">
                 {tPay("lockedBody", { amount: amountFormatted })}
@@ -191,9 +191,9 @@ export function DdAiPanel({ dealName, sessionContext, initialAccess }: DdAiPanel
             </div>
           ) : messages.length === 0 ? (
             <div className="space-y-3">
-              <p className="text-sm leading-relaxed text-muted-foreground">{t("welcome")}</p>
-              <div className="flex flex-col gap-2">
-                <p className="text-[10px] font-bold uppercase tracking-[0.12em] text-muted-foreground">
+              <p className="text-[15px] leading-relaxed text-[color:var(--ink-2)]">{t("welcome")}</p>
+              <div className="overflow-hidden border border-[color:var(--line-2)] bg-rail">
+                <p className="border-b border-[color:var(--line-2)] px-3 py-2 text-[10px] font-bold uppercase tracking-[0.12em] text-muted-foreground">
                   {t("suggestionsLabel")}
                 </p>
                 {suggestedPrompts.map((prompt) => (
@@ -203,8 +203,8 @@ export function DdAiPanel({ dealName, sessionContext, initialAccess }: DdAiPanel
                     disabled={loading}
                     onClick={() => void sendMessage(prompt)}
                     className={cn(
-                      "rounded-lg border border-border/60 bg-card/70 px-3 py-2 text-left text-xs leading-relaxed text-foreground/90",
-                      "transition-colors hover:border-primary/30 hover:bg-primary/5",
+                      "w-full border-b border-[color:var(--line-2)] px-3 py-2.5 text-left text-[13.5px] leading-relaxed text-[color:var(--ink-2)] last:border-b-0",
+                      "transition-colors hover:bg-card hover:text-accent-fg",
                     )}
                   >
                     {prompt}
@@ -217,14 +217,19 @@ export function DdAiPanel({ dealName, sessionContext, initialAccess }: DdAiPanel
               <div
                 key={message.id}
                 className={cn(
-                  "rounded-xl px-3 py-2.5 text-sm leading-relaxed",
+                  "max-w-[90%] text-[15px] leading-relaxed",
                   message.role === "user"
-                    ? "ml-6 bg-primary/10 text-foreground"
-                    : "mr-2 border border-border/50 bg-card/80 text-foreground/90",
+                    ? "ml-auto rounded-[8px] bg-primary px-3.5 py-2.5 text-primary-foreground"
+                    : "mr-2 border-l-2 border-highlight pl-4 text-foreground/90",
                 )}
               >
                 {message.role === "assistant" ? (
-                  <AiMessageContent content={message.content} />
+                  <>
+                    <p className="mb-2 text-[11px] font-bold uppercase tracking-[0.08em] text-highlight">
+                      {t("badge")}
+                    </p>
+                    <AiMessageContent content={message.content} />
+                  </>
                 ) : (
                   <p className="whitespace-pre-wrap">{message.content}</p>
                 )}
@@ -238,20 +243,20 @@ export function DdAiPanel({ dealName, sessionContext, initialAccess }: DdAiPanel
             </div>
           ) : null}
           {error ? (
-            <p className="text-xs text-[var(--risk-med)]" role="alert">
+            <p className="text-xs text-risk-med" role="alert">
               {error}
             </p>
           ) : null}
         </div>
 
         <form
-          className="border-t border-border/50 p-3"
+          className="border-t border-[color:var(--line-2)] bg-card"
           onSubmit={(event) => {
             event.preventDefault();
             void sendMessage(input);
           }}
         >
-          <div className="flex gap-2">
+          <div className="flex">
             <textarea
               ref={inputRef}
               value={input}
@@ -265,20 +270,22 @@ export function DdAiPanel({ dealName, sessionContext, initialAccess }: DdAiPanel
                   void sendMessage(input);
                 }
               }}
-              className="min-h-[2.75rem] flex-1 resize-none rounded-lg border border-border/70 bg-background px-3 py-2 text-sm outline-none ring-primary/30 placeholder:text-muted-foreground focus-visible:ring-2"
+              className="min-h-[3rem] flex-1 resize-none border-0 bg-transparent px-4 py-3 text-sm outline-none ring-0 placeholder:text-muted-foreground focus-visible:bg-rail"
             />
             <Button
               type="submit"
               size="sm"
-              variant="cta"
+              variant="ghost"
               disabled={loading || locked || !input.trim()}
-              className="self-end"
+              className="self-stretch rounded-none border-l border-[color:var(--line-2)] px-5 font-bold"
               aria-label={t("send")}
             >
               <SendHorizontal className="h-4 w-4" />
             </Button>
           </div>
-          <p className="mt-2 text-[10px] leading-relaxed text-muted-foreground">{t("disclaimer")}</p>
+          <p className="border-t border-[color:var(--line-2)] bg-rail px-4 py-2 text-[10px] leading-relaxed text-muted-foreground">
+            {t("disclaimer")}
+          </p>
         </form>
       </div>
 
