@@ -56,15 +56,15 @@ export function FirmReviewPanel({
   const [tab, setTab] = useState<TabId>("finding");
 
   return (
-    <div className="overflow-hidden rounded-2xl border border-border/70 bg-card">
-      <div className="border-b border-border/60 px-4 pt-4">
-        <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-muted-foreground">
+    <div className="overflow-hidden rounded-[10px] border border-border bg-card shadow-sm">
+      <div className="border-b border-[color:var(--line-2)] bg-rail px-4 pt-4">
+        <p className="text-[11px] font-bold uppercase tracking-[0.12em] text-highlight">
           {t("reviewPanelEyebrow")}
         </p>
         <div
           role="tablist"
           aria-label={t("reviewPanelEyebrow")}
-          className="mt-3 flex flex-wrap gap-1"
+          className="mt-3 flex flex-wrap gap-0"
         >
           {(
             [
@@ -79,10 +79,10 @@ export function FirmReviewPanel({
               role="tab"
               aria-selected={tab === item.id}
               className={cn(
-                "cursor-pointer rounded-t-lg px-3.5 py-2 text-sm font-medium transition-colors",
+                "cursor-pointer border-b-2 px-3.5 py-2.5 text-sm font-semibold transition-colors",
                 tab === item.id
-                  ? "border-b-2 border-primary text-foreground"
-                  : "text-muted-foreground hover:text-foreground",
+                  ? "border-highlight text-foreground"
+                  : "border-transparent text-muted-foreground hover:text-foreground",
               )}
               onClick={() => setTab(item.id)}
             >
@@ -92,7 +92,7 @@ export function FirmReviewPanel({
         </div>
       </div>
 
-      <div className="p-4">
+      <div className="bg-card p-4 sm:p-5">
         {tab === "finding" ? (
           <FindingFields
             dealId={dealId}
@@ -209,23 +209,23 @@ function FindingFields({
       </Field>
 
       {tipsForRisk.length > 0 ? (
-        <div className="rounded-lg border border-border/60 bg-muted/15">
+        <div className="rounded-[10px] border border-accent-line bg-accent-soft">
           <button
             type="button"
             className="flex w-full cursor-pointer items-center justify-between gap-2 px-3 py-2.5 text-left"
             onClick={() => setPlaybookOpen((open) => !open)}
             aria-expanded={playbookOpen}
           >
-            <span className="text-xs font-medium text-foreground">{t("playbookAssistTitle")}</span>
+            <span className="text-xs font-semibold text-accent-fg">{t("playbookAssistTitle")}</span>
             <ChevronDown
               className={cn(
-                "h-4 w-4 shrink-0 text-muted-foreground transition-transform",
+                "h-4 w-4 shrink-0 text-accent-fg transition-transform",
                 playbookOpen && "rotate-180",
               )}
             />
           </button>
           {playbookOpen ? (
-            <div className="space-y-2 border-t border-border/50 px-3 py-3">
+            <div className="space-y-2 border-t border-accent-line px-3 py-3">
               {tipsForRisk.length > 1 ? (
                 <Select
                   id="playbookArea"
@@ -244,7 +244,7 @@ function FindingFields({
               )}
               <ul className="space-y-1.5">
                 {(activeTip?.checks ?? []).map((check) => (
-                  <li key={check} className="text-xs leading-relaxed text-muted-foreground">
+                  <li key={check} className="text-xs leading-relaxed text-[color:var(--ink-2)]">
                     · {check}
                   </li>
                 ))}
@@ -290,7 +290,7 @@ function FindingFields({
         {t("saveFinding")}
       </Button>
 
-      {message ? <p className="text-center text-sm text-risk-low">{message}</p> : null}
+      {message ? <p className="text-center text-sm text-good">{message}</p> : null}
     </form>
   );
 }
@@ -346,13 +346,18 @@ function AssessmentFields({
 
   return (
     <div className="space-y-4">
-      {publishedAt ? (
-        <p className="text-xs text-muted-foreground">
-          {t("publishedAt", { date: new Date(publishedAt).toLocaleDateString() })}
+      <div className="rounded-[10px] border border-border bg-rail px-4 py-3">
+        <p className="text-[11px] font-bold uppercase tracking-[0.1em] text-highlight">
+          {t("assessmentEyebrow")}
         </p>
-      ) : (
-        <p className="text-xs text-muted-foreground">{t("assessmentHint")}</p>
-      )}
+        {publishedAt ? (
+          <p className="mt-1 text-xs text-muted-foreground">
+            {t("publishedAt", { date: new Date(publishedAt).toLocaleDateString() })}
+          </p>
+        ) : (
+          <p className="mt-1 text-xs text-muted-foreground">{t("assessmentHint")}</p>
+        )}
+      </div>
 
       <Field label={t("assessmentSummaryLabel")} htmlFor="assessment-summary">
         <Textarea
@@ -362,6 +367,7 @@ function AssessmentFields({
           rows={8}
           placeholder={t("assessmentPlaceholder")}
           onChange={(e) => setSummary(e.target.value)}
+          className="font-serif text-[15.5px] leading-relaxed"
         />
       </Field>
 
@@ -390,7 +396,7 @@ function AssessmentFields({
         </Button>
       </div>
 
-      <div className="flex gap-2 border-t border-border/50 pt-4">
+      <div className="flex gap-2 border-t border-[color:var(--line-2)] pt-4">
         <Button
           type="button"
           variant="outline"
@@ -405,6 +411,7 @@ function AssessmentFields({
         <Button
           type="button"
           size="sm"
+          variant="cta"
           disabled={pending || !summary.trim()}
           className="cursor-pointer"
           onClick={() => save(true)}
@@ -413,7 +420,7 @@ function AssessmentFields({
         </Button>
       </div>
 
-      {message ? <p className="text-sm text-risk-low">{message}</p> : null}
+      {message ? <p className="text-sm text-good">{message}</p> : null}
     </div>
   );
 }
