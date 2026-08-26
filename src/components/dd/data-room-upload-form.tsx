@@ -49,10 +49,12 @@ export function DataRoomUploadForm({ dealId, uploaderName }: DataRoomUploadFormP
     <form
       ref={formRef}
       onSubmit={handleSubmit}
-      className="space-y-4 rounded-2xl border border-border/70 bg-card p-5 lg:sticky lg:top-24"
+      className="space-y-4 rounded-[10px] border border-border bg-card p-5 shadow-sm lg:sticky lg:top-24"
     >
-      <div className="space-y-1">
-        <h3 className="font-serif text-lg font-semibold">{t("uploadTitle")}</h3>
+      <div className="space-y-1 border-b border-[color:var(--line-2)] pb-4">
+        <p className="text-[11px] font-bold uppercase tracking-[0.1em] text-highlight">
+          {t("uploadTitle")}
+        </p>
         <p className="text-sm text-muted-foreground">{t("uploadDescription")}</p>
       </div>
 
@@ -83,12 +85,12 @@ export function DataRoomUploadForm({ dealId, uploaderName }: DataRoomUploadFormP
         {t("ndaGateLabel")}
       </label>
 
-      <Button type="submit" disabled={pending} className="w-full sm:w-auto">
+      <Button type="submit" variant="cta" disabled={pending} className="w-full sm:w-auto">
         {pending ? <Loader2 className="h-4 w-4 animate-spin" /> : <Upload className="h-4 w-4" />}
         {pending ? t("uploading") : t("uploadCta")}
       </Button>
 
-      {message ? <p className="text-sm text-risk-low">{message}</p> : null}
+      {message ? <p className="text-sm text-good">{message}</p> : null}
       {error ? <p className="text-sm text-destructive">{error}</p> : null}
     </form>
   );
