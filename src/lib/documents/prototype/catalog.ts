@@ -64,7 +64,15 @@ export const PROTOTYPE_DECISIONS = content.decisions as Record<string, Prototype
 
 export const PROTOTYPE_TOKENS = content.tokens as Record<
   string,
-  { es: string; en: string; ph?: string; type?: string; long?: boolean }
+  {
+    es: string;
+    en: string;
+    ph?: string;
+    sample_es?: string;
+    sample_en?: string;
+    type?: string;
+    long?: boolean;
+  }
 >;
 
 export function isPrototypeDocId(value: string): value is PrototypeDocId {
