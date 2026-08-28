@@ -1661,36 +1661,48 @@
       "es": "Nombre de la sociedad",
       "en": "Company name",
       "ph": "[NOMBRE DE LA SOCIEDAD]",
+      "sample_es": "Acme Colombia",
+      "sample_en": "Acme Colombia",
       "long": false
     },
     "co.nit": {
       "es": "NIT",
       "en": "Tax ID (NIT)",
       "ph": "[NIT]",
+      "sample_es": "900.482.117-3",
+      "sample_en": "900.482.117-3",
       "long": false
     },
     "co.domicilio": {
       "es": "Domicilio principal",
       "en": "Registered address",
       "ph": "[DOMICILIO]",
+      "sample_es": "Calle 93 # 11-27, Oficina 402, Bogotá D.C.",
+      "sample_en": "Calle 93 # 11-27, Oficina 402, Bogotá D.C.",
       "long": false
     },
     "co.ciudad": {
       "es": "Ciudad",
       "en": "City",
       "ph": "[CIUDAD, COLOMBIA]",
+      "sample_es": "Bogotá D.C.",
+      "sample_en": "Bogotá D.C.",
       "long": false
     },
     "co.negocio": {
       "es": "Descripción del negocio",
       "en": "Business description",
       "ph": "[DESCRIPCIÓN DEL NEGOCIO]",
+      "sample_es": "una plataforma de pagos para comercios pequeños",
+      "sample_en": "a payments platform for small merchants",
       "long": true
     },
     "co.fecha": {
       "es": "Fecha efectiva",
       "en": "Effective date",
       "ph": "[FECHA]",
+      "sample_es": "2026-09-01",
+      "sample_en": "2026-09-01",
       "type": "date",
       "long": false
     },
@@ -1698,70 +1710,94 @@
       "es": "Representante legal",
       "en": "Legal representative",
       "ph": "[NOMBRE DEL REPRESENTANTE LEGAL]",
+      "sample_es": "Mariana Restrepo Gómez",
+      "sample_en": "Mariana Restrepo Gómez",
       "long": false
     },
     "co.repCargo": {
       "es": "Cargo del representante",
       "en": "Representative title",
       "ph": "[CARGO]",
+      "sample_es": "Gerente general",
+      "sample_en": "Chief Executive Officer",
       "long": false
     },
     "f1.nombre": {
       "es": "Fundador 1 — nombre",
       "en": "Founder 1 — name",
       "ph": "[FUNDADOR 1]",
+      "sample_es": "Mariana Restrepo Gómez",
+      "sample_en": "Mariana Restrepo Gómez",
       "long": false
     },
     "f1.id": {
       "es": "Fundador 1 — identificación",
       "en": "Founder 1 — ID",
       "ph": "[IDENTIFICACIÓN]",
+      "sample_es": "C.C. 1.020.418.776",
+      "sample_en": "C.C. 1.020.418.776",
       "long": false
     },
     "f1.rol": {
       "es": "Fundador 1 — cargo",
       "en": "Founder 1 — role",
       "ph": "[CARGO Y RESPONSABILIDADES]",
+      "sample_es": "Gerente general, producto y relación con inversionistas",
+      "sample_en": "CEO, product, and investor relations",
       "long": false
     },
     "f2.nombre": {
       "es": "Fundador 2 — nombre",
       "en": "Founder 2 — name",
       "ph": "[FUNDADOR 2]",
+      "sample_es": "Daniel Ocampo Vélez",
+      "sample_en": "Daniel Ocampo Vélez",
       "long": false
     },
     "f2.id": {
       "es": "Fundador 2 — identificación",
       "en": "Founder 2 — ID",
       "ph": "[IDENTIFICACIÓN]",
+      "sample_es": "C.C. 1.017.339.204",
+      "sample_en": "C.C. 1.017.339.204",
       "long": false
     },
     "f2.rol": {
       "es": "Fundador 2 — cargo",
       "en": "Founder 2 — role",
       "ph": "[CARGO Y RESPONSABILIDADES]",
+      "sample_es": "Director de tecnología, arquitectura y equipo de ingeniería",
+      "sample_en": "CTO, architecture, and engineering team",
       "long": false
     },
     "colab.nombre": {
       "es": "Nombre del colaborador",
       "en": "Collaborator name",
       "ph": "[NOMBRE DEL COLABORADOR]",
+      "sample_es": "Mariana Restrepo Gómez",
+      "sample_en": "Mariana Restrepo Gómez",
       "long": false
     },
     "colab.id": {
       "es": "Identificación del colaborador",
       "en": "Collaborator ID",
       "ph": "[IDENTIFICACIÓN]",
+      "sample_es": "C.C. 1.020.418.776",
+      "sample_en": "C.C. 1.020.418.776",
       "long": false
     },
     "f1.dom": {
       "es": "Fundador 1 — domicilio",
       "en": "Founder 1 — address",
+      "sample_es": "Bogotá D.C.",
+      "sample_en": "Bogotá D.C.",
       "long": false
     },
     "f2.dom": {
       "es": "Fundador 2 — domicilio",
       "en": "Founder 2 — address",
+      "sample_es": "Medellín",
+      "sample_en": "Medellín",
       "long": false
     }
   }
