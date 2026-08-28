@@ -246,4 +246,13 @@
     font-weight: 600;
     padding: 0 1px;
   }
+
+  .proto-tk.set:hover {
+    border-bottom-color: var(--accent);
+    background: var(--accent-bg);
+  }
+
+  .proto-tk.sample {
+    color: var(--fg-muted);
+  }
 }
