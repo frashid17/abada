@@ -13,6 +13,7 @@ import {
   type PrototypeArticle,
   type PrototypeDocId,
 } from "@/lib/documents/prototype/catalog";
+import { getTokenSampleRaw, resolveTokenDisplay } from "@/lib/documents/prototype/token-display";
 import { usePrototypeDocumentStore } from "@/lib/documents/prototype/store";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -28,11 +29,9 @@ function renderClauseHtml(
 ): string {
   return text
     .replace(/\{\{(\w+(?:\.\w+)+)\}\}/g, (_, key: string) => {
-      const value = tokenValue(key);
-      const meta = PROTOTYPE_TOKENS[key];
-      const label = value || meta?.ph || (lang === "en" ? meta?.en : meta?.es) || key;
-      const set = value ? " set" : "";
-      return `<button type="button" class="proto-tk${set}" data-token="${key}">${escapeHtml(label)}</button>`;
+      const { label, isUserValue } = resolveTokenDisplay(key, tokenValue(key), lang);
+      const classes = isUserValue ? "proto-tk set" : "proto-tk set sample";
+      return `<button type="button" class="${classes}" data-token="${key}">${escapeHtml(label)}</button>`;
     })
     .replace(/\[\[(\w+)\]\]/g, (_, key: string) => {
       const label = decisionLabel(key, lang);
@@ -243,7 +242,8 @@ export function DocumentArticleReader({
 
   function openToken(key: string) {
     setEditingToken(key);
-    setTokenDraft(tokenValue(key));
+    const current = tokenValue(key);
+    setTokenDraft(current || getTokenSampleRaw(key, lang));
   }
 
   function goNext() {
