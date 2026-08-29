@@ -18,8 +18,6 @@ function isUniqueViolation(error: { code?: string; message?: string } | null): b
 }
 
 export async function getOnboardingRedirect(userId: string): Promise<string | null> {
-  if (await isPlatformAdmin(userId)) return "/admin";
-
   const supabase = createServiceRoleSupabaseClient();
   const { data: profile } = await supabase
     .from("profiles")
@@ -39,6 +37,9 @@ export async function getOnboardingRedirect(userId: string): Promise<string | nu
 
   const autoRedirect = await tryAutoCompleteInviteOnboarding(userId);
   if (autoRedirect) return autoRedirect;
+
+  // Platform admin is an ops overlay — only use it when there is no product workspace.
+  if (await isPlatformAdmin(userId)) return "/admin";
 
   return null;
 }
