@@ -28,7 +28,7 @@ function getInitials(name: string | null | undefined, email: string | null | und
   return "AB";
 }
 
-export function AccountMenu() {
+export function AccountMenu({ showAdminLink = false }: { showAdminLink?: boolean }) {
   const t = useTranslations("auth.account");
   const { user, isLoaded } = useUser();
   const { signOut } = useClerk();
@@ -43,7 +43,7 @@ export function AccountMenu() {
     (user.unsafeMetadata?.context as UserContext | undefined) ??
     "founder";
 
-  const isAdmin = user.publicMetadata?.platformAdmin === true;
+  const isAdmin = showAdminLink || user.publicMetadata?.platformAdmin === true;
 
   const displayName = user.fullName ?? user.primaryEmailAddress?.emailAddress ?? t("user");
   const email = user.primaryEmailAddress?.emailAddress ?? "";
