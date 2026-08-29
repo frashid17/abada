@@ -9,6 +9,7 @@
     "nav": {
       "dashboard": "Mi espacio",
       "documents": "Documentos",
+      "diligence": "Diligencia",
       "dataRoom": "Sala de datos",
       "rooms": "Salas de datos",
       "queue": "Cola de revisión",
@@ -19,6 +20,7 @@
       "laws": "Leyes y normas",
       "adminOverview": "Resumen",
       "adminDocuments": "Documentos guiados",
+      "adminDiligence": "Preguntas de diligencia",
       "adminTemplates": "Plantillas maestras",
       "adminCorpus": "Corpus legal",
       "adminKnowledge": "Centro de conocimiento",
@@ -268,6 +270,39 @@
       "toggle": "Alternar",
       "sourceDb": "Base de datos",
       "sourceEnv": "Entorno por defecto"
+    },
+    "diligence": {
+      "eyebrow": "Diligencia debida",
+      "title": "Banco de preguntas",
+      "subtitle": "Publica las preguntas que responden los fundadores. Los huecos se convierten en hallazgos borrador para la firma.",
+      "seed": "Sembrar desde los packs guiados",
+      "seeded": "Se insertaron {count} preguntas nuevas.",
+      "newQuestion": "Nueva pregunta",
+      "saved": "Pregunta guardada.",
+      "slug": "Slug",
+      "section": "Sección",
+      "qEs": "Pregunta (ES)",
+      "qEn": "Pregunta (EN)",
+      "findingEs": "Hallazgo si hay hueco (ES)",
+      "findingEn": "Hallazgo si hay hueco (EN)",
+      "answerType": "Tipo de respuesta",
+      "sortOrder": "Orden",
+      "riskCategory": "Categoría de riesgo",
+      "riskLevel": "Riesgo si hay hueco",
+      "status": "Estado",
+      "create": "Crear",
+      "update": "Actualizar",
+      "publish": "Publicar",
+      "unpublish": "Despublicar",
+      "delete": "Eliminar",
+      "empty": "Aún no hay preguntas. Siembra desde los packs guiados para empezar.",
+      "sections": {
+        "fundadores": "Acuerdo de fundadores",
+        "incentivos": "Compensación en equity",
+        "pi": "Cesión de PI",
+        "declaration": "Declaraciones",
+        "cross": "Cruce entre documentos"
+      }
     },
     "knowledge": {
       "eyebrow": "Centro de conocimiento",
@@ -1707,6 +1742,34 @@
         }
       }
     },
+    "diligence": {
+      "eyebrow": "Diligencia debida",
+      "title": "Cuestionario de autoevaluación",
+      "subtitle": "Responde las mismas preguntas que haría el abogado del fondo sobre fundadores, equity y PI. Los huecos se convierten en hallazgos borrador en tu sala.",
+      "emptyQuestions": "Aún no hay preguntas publicadas. Pide a operaciones que siembre el banco de preguntas.",
+      "dealLabel": "Sala de DD para los hallazgos",
+      "dealHint": "Al enviar, se crean hallazgos borrador en esta sala para revisión de la firma.",
+      "noDeals": "Necesitas una sala de DD activa (invitación de la firma) antes de enviar hallazgos.",
+      "notePlaceholder": "Nota u evidencia opcional",
+      "save": "Guardar avance",
+      "submit": "Enviar y crear hallazgos borrador",
+      "saved": "Avance guardado.",
+      "submitted": "Enviado. Se crearon {count} hallazgos borrador para la firma.",
+      "reopen": "Reabrir para editar",
+      "reopened": "Cuestionario reabierto. Se borraron los hallazgos borrador previos.",
+      "answers": {
+        "yes": "Sí",
+        "no": "No",
+        "na": "N/A"
+      },
+      "sections": {
+        "fundadores": "Acuerdo de fundadores",
+        "incentivos": "Compensación en equity",
+        "pi": "Cesión de PI",
+        "declaration": "Declaraciones",
+        "cross": "Cruce entre documentos"
+      }
+    },
     "sala": {
       "subnav": {
         "ariaLabel": "Secciones de sala de datos",
@@ -2372,6 +2435,9 @@
       "dealSubtitle": "Revisa documentos, hallazgos y evaluación de esta sala.",
       "documentsTitle": "Documentos de la sala",
       "findingsTitle": "Hallazgos por categoría",
+      "draftBadge": "Borrador del cuestionario",
+      "acceptDraft": "Aceptar",
+      "dismissDraft": "Descartar",
       "addFinding": "Registrar hallazgo",
       "riskCategoryLabel": "Categoría de riesgo",
       "riskLevelLabel": "Nivel de riesgo",
