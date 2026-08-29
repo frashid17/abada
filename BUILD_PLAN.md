@@ -112,7 +112,7 @@ Colombian legal-AI due diligence & investment-readiness platform.
 - [x] Platform admin console — `/admin` overview + feed, corpus add/edit (paste or PDF+OCR), AI usage, reviews, audit (name/email labels)
 - [x] Optional pg_cron scheduling migration — `017_schedule_purge_jobs.sql`
 - [ ] **Manual:** Apply migration `015_m7_hardening.sql`
-- [ ] **Manual:** Apply migration `016_platform_admin.sql` and set `PLATFORM_ADMIN_SUBS` (your Clerk user id)
+- [ ] **Manual:** Apply migration `016_platform_admin.sql` and set `PLATFORM_ADMIN_SUBS` (comma-separated emails)
 - [ ] **Manual:** Apply migration `017_schedule_purge_jobs.sql` (or schedule purge RPCs externally)
 - [ ] **Manual:** Install Poppler + Tesseract (`spa`) on hosts that run admin PDF uploads
 - [ ] **Manual:** `npx playwright install chromium` before first `npm run test:e2e`
@@ -134,6 +134,8 @@ Colombian legal-AI due diligence & investment-readiness platform.
 - [x] DD firm package (`20260806`) — Playbook + Info Request (RDI) + Report under `docs/dd/`; RDI upload taxonomy; firm playbook assist; bilingual report export; `info_requerida` risk level
 - [x] Firm DD AI chatbot — review-pane assistant (`dd_finding`) with deal/docs/findings session context + playbook injection
 - [x] Meghan UI redesign (authenticated app) — warm canvas tokens + Source Serif/Inter; Documents hub as 3 guided articles (`fundadores` / `incentivos` / `pi`) with company setup + review-before-sign + secondary investment docs; firm DD findings as risk notes + restyled AI tab; founder Sala coverage/upload chrome; app footer product/legal/contact. Marketing homepage left unchanged.
+- [x] Platform admin CMS — `/admin/documentos`, `/admin/plantillas`, `/admin/tenants`, `/admin/equipo`, `/admin/flags`, `/admin/conocimiento`; firm template overrides at `/firma/plantillas`; migration `020_platform_cms.sql`
+- [ ] **Manual:** Apply migration `020_platform_cms.sql` (guided document + template CMS tables)
 - [ ] **Manual:** Apply migration `018_mock_payments.sql` (allows `mock` provider on `payments`)
 - [ ] **Manual:** Apply migration `019_dd_info_requerida_risk_level.sql` (adds `info_requerida` to findings)
 - [ ] **Manual:** Create Sentry project and set DSN / auth token in Vercel
