@@ -785,16 +785,19 @@ export interface Database {
       platform_admins: {
         Row: {
           clerk_user_id: string;
+          email: string | null;
           display_name: string | null;
           created_at: string;
         };
         Insert: {
           clerk_user_id: string;
+          email?: string | null;
           display_name?: string | null;
           created_at?: string;
         };
         Update: {
           clerk_user_id?: string;
+          email?: string | null;
           display_name?: string | null;
           created_at?: string;
         };
