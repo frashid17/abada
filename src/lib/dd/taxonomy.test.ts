@@ -46,6 +46,9 @@ describe("DD report", () => {
       description: "Falta cesión de PI de un contratista clave.",
       recommendedAction: "Obtener acuerdo de cesión firmado.",
       legalCitation: null,
+      status: "active",
+      sourceQuestionId: null,
+      questionnaireId: null,
       createdAt: new Date().toISOString(),
     },
   ];
