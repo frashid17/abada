@@ -15,16 +15,16 @@ export type EditableDocumentBody = {
   missingFields: string[];
 };
 
-export function buildEditableDocumentBody(
+export async function buildEditableDocumentBody(
   documentType: InvestmentDocumentType,
   fields: FieldValues,
   locale: DocumentLocale,
-): EditableDocumentBody | null {
+): Promise<EditableDocumentBody | null> {
   const schema = getIntakeSchema(documentType);
   if (!schema) return null;
 
   const editableKeys = schema.fields.map((field) => field.key);
-  const rendered = renderDocumentEditable(documentType, fields, editableKeys, locale);
+  const rendered = await renderDocumentEditable(documentType, fields, editableKeys, locale);
   const bodyFieldKeys = extractFieldKeysFromEditableBody(rendered.body);
   const bodyKeySet = new Set(bodyFieldKeys);
   const structureFields = schema.fields.filter((field) => !bodyKeySet.has(field.key));
