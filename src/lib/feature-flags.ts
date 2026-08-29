@@ -1,9 +1,9 @@
 /**
  * Environment-driven feature flags for MVP beta readiness.
  * Defaults are conservative; enable via env without code changes.
+ *
+ * This module is client-safe. DB override helpers live in feature-flags-server.ts.
  */
-
-import { getFeatureFlagOverridesMap } from "@/lib/platform-admin/ops-cms";
 
 export type FeatureFlag =
   | "aiDrafting"
@@ -14,6 +14,17 @@ export type FeatureFlag =
   | "knowledgeHub"
   | "analytics"
   | "sentry";
+
+export const FEATURE_FLAG_KEYS: readonly FeatureFlag[] = [
+  "aiDrafting",
+  "aiPaywall",
+  "paymentsCheckout",
+  "dataRoomUploads",
+  "adminPdfOcr",
+  "knowledgeHub",
+  "analytics",
+  "sentry",
+] as const;
 
 function envFlag(name: string, defaultEnabled: boolean): boolean {
   const raw = process.env[name]?.trim().toLowerCase();
@@ -37,22 +48,6 @@ const FLAGS: Record<FeatureFlag, () => boolean> = {
 
 export function isFeatureEnabled(flag: FeatureFlag): boolean {
   return FLAGS[flag]();
-}
-
-/** DB override wins when present; otherwise env default. */
-export async function isFeatureEnabledAsync(flag: FeatureFlag): Promise<boolean> {
-  const overrides = await getFeatureFlagOverridesMap();
-  if (flag in overrides) return overrides[flag]!;
-  return isFeatureEnabled(flag);
-}
-
-export async function getFeatureFlagsAsync(): Promise<Record<FeatureFlag, boolean>> {
-  const overrides = await getFeatureFlagOverridesMap();
-  const flags = getFeatureFlags();
-  for (const key of Object.keys(overrides) as FeatureFlag[]) {
-    if (key in flags) flags[key] = overrides[key]!;
-  }
-  return flags;
 }
 
 export function getFeatureFlags(): Record<FeatureFlag, boolean> {
