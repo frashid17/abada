@@ -304,7 +304,7 @@ export async function renderOwnedDocument(
   const state = await getDocumentFlowState(documentType);
   if (!state) throw new Error("Document not found");
 
-  const rendered = renderDocument(documentType, state.fields);
+  const rendered = await renderDocument(documentType, state.fields);
   return { ...rendered, documentId: state.document.id };
 }
 
@@ -325,7 +325,7 @@ export async function createFingerprintedVersion(
     throw new Error(`Missing required fields: ${missing.join(", ")}`);
   }
 
-  const rendered = renderDocument(documentType, state.fields, locale);
+  const rendered = await renderDocument(documentType, state.fields, locale);
   const fingerprint = createDocumentFingerprint({
     content: rendered.body,
     ownerSub,
