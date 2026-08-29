@@ -1,37 +1,32 @@
-import type { DocumentLocale } from "@/lib/documents/document-locale";
 import type { InvestmentDocumentType } from "@/lib/documents/catalog";
+import type { DocumentLocale } from "@/lib/documents/document-locale";
 import type { FieldValues } from "@/lib/documents/intake/types";
+import { resolveMasterTemplateBody } from "@/lib/firm/template-cms";
 import {
   employmentFixedTerm,
   employmentIndefinite,
-  employmentMasterTemplate,
   employmentNonCompeteCompensated,
   employmentNonCompeteNone,
 } from "@/lib/documents/templates/employment";
 import {
   employmentFixedTermEn,
   employmentIndefiniteEn,
-  employmentMasterTemplateEn,
   employmentNonCompeteCompensatedEn,
   employmentNonCompeteNoneEn,
 } from "@/lib/documents/templates/employment.en";
 import {
-  ipMasterTemplate,
   ipScopeAll,
   ipScopeSpecified,
 } from "@/lib/documents/templates/ip";
 import {
-  ipMasterTemplateEn,
   ipScopeAllEn,
   ipScopeSpecifiedEn,
 } from "@/lib/documents/templates/ip.en";
 import {
-  ndaMasterTemplate,
   ndaMutualObligations,
   ndaUnilateralObligations,
 } from "@/lib/documents/templates/nda";
 import {
-  ndaMasterTemplateEn,
   ndaMutualObligationsEn,
   ndaUnilateralObligationsEn,
 } from "@/lib/documents/templates/nda.en";
@@ -40,7 +35,6 @@ import {
   shareholdersAntiDilutionNone,
   shareholdersDisputeArbitration,
   shareholdersDisputeCourts,
-  shareholdersMasterTemplate,
   shareholdersTagAlongNo,
   shareholdersTagAlongYes,
 } from "@/lib/documents/templates/shareholders";
@@ -49,7 +43,6 @@ import {
   shareholdersAntiDilutionNoneEn,
   shareholdersDisputeArbitrationEn,
   shareholdersDisputeCourtsEn,
-  shareholdersMasterTemplateEn,
   shareholdersTagAlongNoEn,
   shareholdersTagAlongYesEn,
 } from "@/lib/documents/templates/shareholders.en";
@@ -60,7 +53,6 @@ import {
   vestingDepartureForfeit,
   vestingDepartureNegotiable,
   vestingDeparturePartial,
-  vestingMasterTemplate,
 } from "@/lib/documents/templates/vesting";
 import {
   vestingAccelerationDoubleEn,
@@ -69,7 +61,6 @@ import {
   vestingDepartureForfeitEn,
   vestingDepartureNegotiableEn,
   vestingDeparturePartialEn,
-  vestingMasterTemplateEn,
 } from "@/lib/documents/templates/vesting.en";
 
 export type RenderResult = {
@@ -389,45 +380,34 @@ function buildValues(
   }
 }
 
-function masterTemplate(
+async function masterTemplate(
   documentType: InvestmentDocumentType,
   locale: DocumentLocale,
-): string {
-  const en = locale === "en-US";
-  switch (documentType) {
-    case "nda":
-      return en ? ndaMasterTemplateEn : ndaMasterTemplate;
-    case "vesting":
-      return en ? vestingMasterTemplateEn : vestingMasterTemplate;
-    case "ip":
-      return en ? ipMasterTemplateEn : ipMasterTemplate;
-    case "employment":
-      return en ? employmentMasterTemplateEn : employmentMasterTemplate;
-    case "shareholders":
-      return en ? shareholdersMasterTemplateEn : shareholdersMasterTemplate;
-    default:
-      return "";
-  }
+  tenantId?: string | null,
+): Promise<string> {
+  return resolveMasterTemplateBody(documentType, locale, tenantId);
 }
 
-export function renderDocument(
+export async function renderDocument(
   documentType: InvestmentDocumentType,
   fields: FieldValues,
   locale: DocumentLocale = "es-CO",
-): RenderResult {
-  const template = masterTemplate(documentType, locale);
+  tenantId?: string | null,
+): Promise<RenderResult> {
+  const template = await masterTemplate(documentType, locale, tenantId);
   if (!template) return { body: "", missingFields: ["unsupported_document_type"] };
   return mergeTemplate(template, buildValues(documentType, fields, locale));
 }
 
 /** Draft workspace body: intake fields as ⟦key⟧ markers; clause fragments expanded. */
-export function renderDocumentEditable(
+export async function renderDocumentEditable(
   documentType: InvestmentDocumentType,
   fields: FieldValues,
   editableKeys: readonly string[],
   locale: DocumentLocale = "es-CO",
-): RenderResult {
-  const template = masterTemplate(documentType, locale);
+  tenantId?: string | null,
+): Promise<RenderResult> {
+  const template = await masterTemplate(documentType, locale, tenantId);
   if (!template) return { body: "", missingFields: ["unsupported_document_type"] };
   return mergeTemplateEditable(
     template,
