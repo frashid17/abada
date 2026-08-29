@@ -1,6 +1,6 @@
 import { getTranslations } from "next-intl/server";
 import Link from "next/link";
-import { ArrowRight, FileText, Fingerprint, Scale, ShieldCheck, Stamp } from "lucide-react";
+import { ArrowRight, FileText, Scale, ShieldCheck, Stamp } from "lucide-react";
 import { FeaturePanel } from "@/components/legal/feature-panel";
 import { LegalBadge } from "@/components/legal/legal-badge";
 import { Button } from "@/components/ui/button";
@@ -78,23 +78,6 @@ export async function LandingHero({ isSignedIn }: LandingHeroProps) {
                   </span>
                 </div>
               ))}
-            </CardContent>
-          </Card>
-
-          <Card variant="elevated" className="flex h-full flex-col justify-center">
-            <CardContent className="space-y-2 p-6">
-              <div className="flex items-center gap-2 text-primary">
-                <Fingerprint className="h-4 w-4" aria-hidden />
-                <span className="text-xs font-semibold uppercase tracking-wider">
-                  {t("compliance.audit")}
-                </span>
-              </div>
-              <p className="font-serif text-4xl font-semibold tracking-tight text-foreground">
-                {t("stats.statDocuments.value")}
-              </p>
-              <p className="text-sm leading-relaxed text-muted-foreground">
-                {t("stats.statDocuments.label")}
-              </p>
             </CardContent>
           </Card>
         </div>
