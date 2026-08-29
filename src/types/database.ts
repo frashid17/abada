@@ -482,6 +482,9 @@ export interface Database {
           description: string;
           recommended_action: string | null;
           legal_citation: string | null;
+          status: string;
+          source_question_id: string | null;
+          questionnaire_id: string | null;
           created_at: string;
           updated_at: string;
         };
@@ -496,6 +499,9 @@ export interface Database {
           description: string;
           recommended_action?: string | null;
           legal_citation?: string | null;
+          status?: string;
+          source_question_id?: string | null;
+          questionnaire_id?: string | null;
           created_at?: string;
           updated_at?: string;
         };
@@ -510,6 +516,9 @@ export interface Database {
           description?: string;
           recommended_action?: string | null;
           legal_citation?: string | null;
+          status?: string;
+          source_question_id?: string | null;
+          questionnaire_id?: string | null;
           created_at?: string;
           updated_at?: string;
         };
@@ -1053,6 +1062,129 @@ export interface Database {
           conditions?: Json;
           notes?: string | null;
           created_at?: string;
+          updated_at?: string;
+        };
+        Relationships: [];
+      };
+      platform_dd_questions: {
+        Row: {
+          id: string;
+          slug: string;
+          section_key: string;
+          sort_order: number;
+          q_es: string;
+          q_en: string;
+          hint_es: string | null;
+          hint_en: string | null;
+          answer_type: string;
+          risk_category: string;
+          risk_level_if_gap: string;
+          finding_es: string;
+          finding_en: string;
+          action_es: string | null;
+          action_en: string | null;
+          status: string;
+          updated_by: string | null;
+          created_at: string;
+          updated_at: string;
+        };
+        Insert: {
+          id?: string;
+          slug: string;
+          section_key: string;
+          sort_order?: number;
+          q_es: string;
+          q_en: string;
+          hint_es?: string | null;
+          hint_en?: string | null;
+          answer_type?: string;
+          risk_category: string;
+          risk_level_if_gap?: string;
+          finding_es: string;
+          finding_en: string;
+          action_es?: string | null;
+          action_en?: string | null;
+          status?: string;
+          updated_by?: string | null;
+          created_at?: string;
+          updated_at?: string;
+        };
+        Update: {
+          id?: string;
+          slug?: string;
+          section_key?: string;
+          sort_order?: number;
+          q_es?: string;
+          q_en?: string;
+          hint_es?: string | null;
+          hint_en?: string | null;
+          answer_type?: string;
+          risk_category?: string;
+          risk_level_if_gap?: string;
+          finding_es?: string;
+          finding_en?: string;
+          action_es?: string | null;
+          action_en?: string | null;
+          status?: string;
+          updated_by?: string | null;
+          created_at?: string;
+          updated_at?: string;
+        };
+        Relationships: [];
+      };
+      dd_questionnaires: {
+        Row: {
+          id: string;
+          owner_sub: string;
+          deal_id: string | null;
+          tenant_id: string | null;
+          status: string;
+          submitted_at: string | null;
+          created_at: string;
+          updated_at: string;
+        };
+        Insert: {
+          id?: string;
+          owner_sub: string;
+          deal_id?: string | null;
+          tenant_id?: string | null;
+          status?: string;
+          submitted_at?: string | null;
+          created_at?: string;
+          updated_at?: string;
+        };
+        Update: {
+          id?: string;
+          owner_sub?: string;
+          deal_id?: string | null;
+          tenant_id?: string | null;
+          status?: string;
+          submitted_at?: string | null;
+          created_at?: string;
+          updated_at?: string;
+        };
+        Relationships: [];
+      };
+      dd_questionnaire_answers: {
+        Row: {
+          questionnaire_id: string;
+          question_id: string;
+          value: string;
+          note: string | null;
+          updated_at: string;
+        };
+        Insert: {
+          questionnaire_id: string;
+          question_id: string;
+          value?: string;
+          note?: string | null;
+          updated_at?: string;
+        };
+        Update: {
+          questionnaire_id?: string;
+          question_id?: string;
+          value?: string;
+          note?: string | null;
           updated_at?: string;
         };
         Relationships: [];
