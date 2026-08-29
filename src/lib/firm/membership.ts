@@ -54,6 +54,16 @@ export function isFirmAdminRole(role: FirmMemberRole): boolean {
   return role === "admin" || role === "partner";
 }
 
+export async function requireFirmAdmin(): Promise<FirmMembership & { userId: string }> {
+  const { userId } = await auth();
+  if (!userId) throw new Error("Unauthorized");
+  const membership = await getFirmMembershipForUser(userId);
+  if (!membership || !isFirmAdminRole(membership.role)) {
+    throw new Error("Firm admin access required");
+  }
+  return { ...membership, userId };
+}
+
 export async function listFirmMemberSubs(tenantId: string): Promise<string[]> {
   const supabase = createServiceRoleSupabaseClient();
   const { data, error } = await supabase
