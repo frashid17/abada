@@ -135,7 +135,9 @@ Colombian legal-AI due diligence & investment-readiness platform.
 - [x] Firm DD AI chatbot — review-pane assistant (`dd_finding`) with deal/docs/findings session context + playbook injection
 - [x] Meghan UI redesign (authenticated app) — warm canvas tokens + Source Serif/Inter; Documents hub as 3 guided articles (`fundadores` / `incentivos` / `pi`) with company setup + review-before-sign + secondary investment docs; firm DD findings as risk notes + restyled AI tab; founder Sala coverage/upload chrome; app footer product/legal/contact. Marketing homepage left unchanged.
 - [x] Platform admin CMS — `/admin/documentos`, `/admin/plantillas`, `/admin/tenants`, `/admin/equipo`, `/admin/flags`, `/admin/conocimiento`; firm template overrides at `/firma/plantillas`; migration `020_platform_cms.sql`
+- [x] DD questionnaire loop — admin bank `/admin/diligencia`, founder answers `/fundador/diligencia`, draft findings for firm accept/dismiss; migration `022_dd_questionnaire.sql`
 - [ ] **Manual:** Apply migration `020_platform_cms.sql` (guided document + template CMS tables)
+- [ ] **Manual:** Apply migration `022_dd_questionnaire.sql` (DD question bank + founder responses + finding draft status)
 - [ ] **Manual:** Apply migration `018_mock_payments.sql` (allows `mock` provider on `payments`)
 - [ ] **Manual:** Apply migration `019_dd_info_requerida_risk_level.sql` (adds `info_requerida` to findings)
 - [ ] **Manual:** Create Sentry project and set DSN / auth token in Vercel
