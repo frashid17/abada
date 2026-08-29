@@ -364,7 +364,7 @@
   "public": {
     "eyebrow": "Balam Legal · Investment-readiness platform",
     "headline": "The legal layer for Colombian startups raising venture capital",
-    "subheadline": "Prepare the five documents investors expect, with review by a named Balam Legal attorney.",
+    "subheadline": "Prepare the three core documents investors expect, with review by a named Balam Legal attorney.",
     "ctaFounder": "I'm a founder",
     "ctaInvestor": "I'm an investor",
     "ctaFirm": "Firm access",
@@ -375,8 +375,8 @@
       "body": "AI speeds up the draft; a named Balam Legal attorney reviews before you sign or share."
     },
     "finalCta": {
-      "title": "Start with the NDA and founder vesting agreement",
-      "subtitle": "The first two checklist documents — guided flow, preview, and fingerprinted download.",
+      "title": "Start with the founders agreement",
+      "subtitle": "Three core documents — guided flow, preview, and attorney review.",
       "button": "Create founder account"
     },
     "compliance": {
@@ -386,8 +386,13 @@
       "colombia": "Colombian VC law"
     },
     "pipeline": {
-      "title": "The five checklist documents",
-      "subtitle": "A guided flow per document — from investment-readiness to firm review."
+      "title": "The three checklist documents",
+      "subtitle": "A guided flow per document — from investment-readiness to firm review.",
+      "docs": {
+        "founders": "Founders agreement",
+        "equity": "Equity compensation agreement",
+        "ip": "IP assignment agreement"
+      }
     },
     "disclosureBanner": "AI assistance guides the process; every legally significant document is reviewed by a named {firm} attorney before you sign or share.",
     "modulesTitle": "One platform, three connected modules",
@@ -396,14 +401,14 @@
       "title": "Round-ready",
       "description": "Everything an investor expects to see, in one place.",
       "items": {
-        "documents": "5 investment-readiness documents",
+        "documents": "3 investment-readiness documents",
         "review": "Named-attorney review",
         "diligence": "Risk-category due diligence"
       }
     },
     "stats": {
       "statDocuments": {
-        "value": "5",
+        "value": "3",
         "label": "Core documents to raise capital"
       },
       "statFirm": {
@@ -418,8 +423,8 @@
     "modules": {
       "readiness": {
         "title": "Investment-readiness",
-        "description": "Five essential documents",
-        "body": "NDA, vesting, IP assignment, employment agreement, and shareholders agreement — with AI help and human review."
+        "description": "Three essential documents",
+        "body": "Founders agreement, equity compensation agreement, and IP assignment — with AI help and human review."
       },
       "diligence": {
         "title": "Due diligence",
