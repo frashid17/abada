@@ -18,10 +18,19 @@
       "templates": "Plantillas",
       "laws": "Leyes y normas",
       "adminOverview": "Resumen",
+      "adminDocuments": "Documentos guiados",
+      "adminTemplates": "Plantillas maestras",
       "adminCorpus": "Corpus legal",
+      "adminKnowledge": "Centro de conocimiento",
+      "adminTenants": "Firmas",
+      "adminTeam": "Usuarios",
+      "adminFlags": "Funcionalidades",
       "adminAi": "Uso de IA",
       "adminRequests": "Solicitudes",
-      "adminAudit": "Auditoría"
+      "adminAudit": "Auditoría",
+      "firmTemplates": "Plantillas",
+      "more": "Más",
+      "adminConsole": "Admin de plataforma"
     },
     "openMenu": "Abrir menú",
     "closeMenu": "Cerrar menú",
@@ -165,6 +174,113 @@
       "actor": "Actor",
       "resource": "Recurso",
       "when": "Cuándo"
+    },
+    "documents": {
+      "eyebrow": "Documentos guiados",
+      "title": "Paquetes fundadores, incentivos e IP",
+      "subtitle": "Edita artículos, tokens y decisiones sin redesplegar.",
+      "importSeed": "Importar desde código",
+      "editGlobals": "Editar tokens y decisiones",
+      "articles": "artículos",
+      "editPack": "Editar artículos",
+      "publish": "Publicar",
+      "back": "Volver",
+      "editArticle": "Editar",
+      "globalsTitle": "Tokens y decisiones",
+      "globalsSubtitle": "Marcadores y opciones compartidas entre todos los paquetes.",
+      "titleEs": "Título (español)",
+      "titleEn": "Título (inglés)",
+      "doesEs": "Qué hace este artículo (ES)",
+      "doesEn": "Qué hace este artículo (EN)",
+      "mattersEs": "Por qué importa (ES)",
+      "mattersEn": "Por qué importa (EN)",
+      "clauses": "Párrafos del artículo",
+      "clausesHint": "Separa párrafos con una línea en blanco. Usa {{tokens}} y [[decisiones]] como en el documento.",
+      "save": "Guardar borrador",
+      "labelEs": "Etiqueta (español)",
+      "labelEn": "Etiqueta (inglés)",
+      "sampleEs": "Ejemplo (español)",
+      "sampleEn": "Ejemplo (inglés)",
+      "status": {
+        "draft": "Borrador",
+        "published": "Publicado"
+      }
+    },
+    "templates": {
+      "eyebrow": "Plantillas maestras",
+      "title": "Cuerpos de documentos de inversión",
+      "subtitle": "NDA, vesting, IP, laboral y acuerdo de accionistas.",
+      "importSeed": "Importar desde código",
+      "edit": "Editar",
+      "save": "Guardar borrador",
+      "publish": "Publicar",
+      "back": "Volver",
+      "body": "Cuerpo de la plantilla",
+      "status": {
+        "draft": "Borrador",
+        "published": "Publicado"
+      }
+    },
+    "tenants": {
+      "eyebrow": "Firmas",
+      "title": "Firmas de abogados",
+      "subtitle": "Espacios de trabajo en la plataforma.",
+      "members": "miembros"
+    },
+    "team": {
+      "eyebrow": "Usuarios",
+      "title": "Usuarios de la plataforma",
+      "subtitle": "Consulta a todos los usuarios y cambia su acceso al espacio de trabajo o a la consola admin.",
+      "clerkUserId": "ID de usuario Clerk",
+      "email": "Correo",
+      "emailPlaceholder": "nombre@empresa.com",
+      "displayName": "Nombre para mostrar",
+      "add": "Agregar admin",
+      "remove": "Quitar",
+      "search": "Buscar",
+      "searchPlaceholder": "Nombre, correo o acceso…",
+      "userCount": "{count} usuarios",
+      "empty": "No se encontraron usuarios.",
+      "colUser": "Usuario",
+      "colAccess": "Acceso",
+      "colAdmin": "Admin de plataforma",
+      "colActions": "Acciones",
+      "adminYes": "Admin",
+      "adminNo": "Usuario",
+      "makeAdmin": "Hacer admin",
+      "revokeAdmin": "Quitar admin",
+      "sourceEnv": "env",
+      "envLocked": "Este admin está en PLATFORM_ADMIN_SUBS y debe cambiarse en la configuración del entorno.",
+      "onboarded": "Onboarding completo",
+      "notOnboarded": "Onboarding incompleto",
+      "contexts": {
+        "founder": "Fundador",
+        "investor": "Inversionista",
+        "firm": "Firma"
+      }
+    },
+    "flags": {
+      "eyebrow": "Funcionalidades",
+      "title": "Interruptores en tiempo de ejecución",
+      "subtitle": "Las sobreescrituras en base de datos tienen prioridad sobre el entorno.",
+      "on": "Activo",
+      "off": "Inactivo",
+      "toggle": "Alternar",
+      "sourceDb": "Base de datos",
+      "sourceEnv": "Entorno por defecto"
+    },
+    "knowledge": {
+      "eyebrow": "Centro de conocimiento",
+      "title": "Artículos públicos",
+      "subtitle": "Contenido mostrado en /conocimiento.",
+      "slug": "Slug",
+      "articleTitle": "Título",
+      "excerpt": "Extracto",
+      "body": "Cuerpo",
+      "create": "Crear",
+      "update": "Actualizar",
+      "edit": "Editar",
+      "delete": "Eliminar"
     }
   },
   "theme": {
@@ -402,6 +518,7 @@
       "user": "Usuario",
       "dashboard": "Ir al panel",
       "adminDashboard": "Consola admin",
+      "adminButton": "Admin",
       "founderDashboard": "Panel fundador",
       "manage": "Administrar cuenta",
       "signOut": "Cerrar sesión"
@@ -2368,6 +2485,18 @@
         "completed": "Completada",
         "cancelled": "Cancelada"
       }
+    },
+    "templates": {
+      "eyebrow": "Plantillas",
+      "title": "Sobreescrituras de la firma",
+      "subtitle": "Personaliza las plantillas maestras y la biblioteca de cláusulas de tu firma.",
+      "templatesTitle": "Documentos",
+      "clausesTitle": "Cláusulas",
+      "slug": "Slug",
+      "name": "Nombre",
+      "body": "Cuerpo",
+      "save": "Guardar",
+      "delete": "Eliminar"
     },
     "team": {
       "eyebrow": "Equipo",
