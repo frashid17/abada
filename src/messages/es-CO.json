@@ -364,7 +364,7 @@
   "public": {
     "eyebrow": "Balam Legal · Plataforma de investment-readiness",
     "headline": "La capa legal para startups colombianas que levantan capital",
-    "subheadline": "Prepara los cinco documentos que los inversionistas esperan, con revisión de un abogado nombrado de Balam Legal.",
+    "subheadline": "Prepara los tres documentos esenciales que los inversionistas esperan, con revisión de un abogado nombrado de Balam Legal.",
     "ctaFounder": "Soy fundador",
     "ctaInvestor": "Soy inversionista",
     "ctaFirm": "Acceso firma",
@@ -375,8 +375,8 @@
       "body": "La IA acelera el borrador; un abogado nombrado de Balam Legal revisa antes de firmar o compartir."
     },
     "finalCta": {
-      "title": "Empieza con el NDA y el vesting de fundadores",
-      "subtitle": "Los dos primeros documentos del checklist — flujo guiado, vista previa y descarga con huella de auditoría.",
+      "title": "Empieza con el acuerdo de fundadores",
+      "subtitle": "Tres documentos esenciales — flujo guiado, vista previa y revisión por abogado.",
       "button": "Crear cuenta de fundador"
     },
     "compliance": {
@@ -386,8 +386,13 @@
       "colombia": "Derecho colombiano de VC"
     },
     "pipeline": {
-      "title": "Los cinco documentos del checklist",
-      "subtitle": "Un flujo guiado por documento — de investment-readiness a revisión de la firma."
+      "title": "Los tres documentos del checklist",
+      "subtitle": "Un flujo guiado por documento — de investment-readiness a revisión de la firma.",
+      "docs": {
+        "founders": "Acuerdo de fundadores",
+        "equity": "Acuerdo de compensación en equity",
+        "ip": "Cesión de propiedad intelectual"
+      }
     },
     "disclosureBanner": "La asistencia con IA orienta el proceso; cada documento con relevancia legal es revisado por un abogado nombrado de {firm} antes de firmar o compartir.",
     "modulesTitle": "Una plataforma, tres módulos conectados",
@@ -396,14 +401,14 @@
       "title": "Listo para la ronda",
       "description": "Todo lo que un inversionista espera ver, en un solo lugar.",
       "items": {
-        "documents": "5 documentos de investment-readiness",
+        "documents": "3 documentos de investment-readiness",
         "review": "Revisión por abogado nombrado",
         "diligence": "Due diligence con evaluación por riesgo"
       }
     },
     "stats": {
       "statDocuments": {
-        "value": "5",
+        "value": "3",
         "label": "Documentos esenciales para levantar capital"
       },
       "statFirm": {
@@ -418,8 +423,8 @@
     "modules": {
       "readiness": {
         "title": "Investment-readiness",
-        "description": "Cinco documentos esenciales",
-        "body": "NDA, vesting, cesión de PI, contrato laboral y acuerdo de accionistas — con ayuda de IA y revisión humana."
+        "description": "Tres documentos esenciales",
+        "body": "Acuerdo de fundadores, compensación en equity y cesión de PI — con ayuda de IA y revisión humana."
       },
       "diligence": {
         "title": "Due diligence",
