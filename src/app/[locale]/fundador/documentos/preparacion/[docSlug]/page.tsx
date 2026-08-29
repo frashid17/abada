@@ -4,8 +4,25 @@ import { AppShell } from "@/components/layout/app-shell";
 import { DocumentArticleReader } from "@/components/founder/document-article-reader";
 import { PrototypeContentProvider } from "@/components/founder/prototype-content-provider";
 import { getOrCreateProfile } from "@/lib/auth/profile";
-import { isPrototypeDocId } from "@/lib/documents/prototype/catalog";
+import {
+  flattenPrototypeArticles,
+  isPrototypeDocId,
+} from "@/lib/documents/prototype/catalog";
 import { getResolvedPrototypeContent } from "@/lib/documents/prototype/resolve-content";
+
+function resolveArticleIndex(
+  art: string | undefined,
+  articles: ReturnType<typeof flattenPrototypeArticles>,
+): number {
+  if (!art || articles.length === 0) return 0;
+  const byId = articles.findIndex((article) => article.id === art);
+  if (byId >= 0) return byId;
+  const byNumber = Number.parseInt(art, 10);
+  if (Number.isFinite(byNumber)) {
+    return Math.min(Math.max(byNumber, 0), articles.length - 1);
+  }
+  return 0;
+}
 
 export default async function FounderDocumentPreparationPage({
   params,
@@ -26,16 +43,14 @@ export default async function FounderDocumentPreparationPage({
   const profile = await getOrCreateProfile();
   if (profile?.context !== "founder") redirect("/");
 
-  const initialIndex = Number.parseInt(art ?? "0", 10);
   const content = await getResolvedPrototypeContent();
+  const articles = flattenPrototypeArticles(docSlug, content);
+  const initialIndex = resolveArticleIndex(art, articles);
 
   return (
     <AppShell variant="founder">
       <PrototypeContentProvider content={content}>
-        <DocumentArticleReader
-          docId={docSlug}
-          initialIndex={Number.isFinite(initialIndex) ? initialIndex : 0}
-        />
+        <DocumentArticleReader docId={docSlug} initialIndex={initialIndex} />
       </PrototypeContentProvider>
     </AppShell>
   );
