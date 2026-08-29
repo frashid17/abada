@@ -803,6 +803,260 @@ export interface Database {
         };
         Relationships: [];
       };
+      platform_document_globals: {
+        Row: {
+          id: string;
+          draft_payload: Json;
+          published_revision: number | null;
+          updated_by: string | null;
+          updated_at: string;
+        };
+        Insert: {
+          id?: string;
+          draft_payload?: Json;
+          published_revision?: number | null;
+          updated_by?: string | null;
+          updated_at?: string;
+        };
+        Update: {
+          id?: string;
+          draft_payload?: Json;
+          published_revision?: number | null;
+          updated_by?: string | null;
+          updated_at?: string;
+        };
+        Relationships: [];
+      };
+      platform_document_global_revisions: {
+        Row: {
+          id: string;
+          revision: number;
+          payload: Json;
+          published_at: string;
+          published_by: string;
+          note: string | null;
+        };
+        Insert: {
+          id?: string;
+          revision: number;
+          payload: Json;
+          published_at?: string;
+          published_by: string;
+          note?: string | null;
+        };
+        Update: {
+          id?: string;
+          revision?: number;
+          payload?: Json;
+          published_at?: string;
+          published_by?: string;
+          note?: string | null;
+        };
+        Relationships: [];
+      };
+      platform_document_packs: {
+        Row: {
+          id: string;
+          title_es: string;
+          title_en: string;
+          draft_payload: Json;
+          status: string;
+          published_revision: number | null;
+          updated_by: string | null;
+          created_at: string;
+          updated_at: string;
+        };
+        Insert: {
+          id: string;
+          title_es: string;
+          title_en: string;
+          draft_payload?: Json;
+          status?: string;
+          published_revision?: number | null;
+          updated_by?: string | null;
+          created_at?: string;
+          updated_at?: string;
+        };
+        Update: {
+          id?: string;
+          title_es?: string;
+          title_en?: string;
+          draft_payload?: Json;
+          status?: string;
+          published_revision?: number | null;
+          updated_by?: string | null;
+          created_at?: string;
+          updated_at?: string;
+        };
+        Relationships: [];
+      };
+      platform_document_revisions: {
+        Row: {
+          id: string;
+          pack_id: string;
+          revision: number;
+          payload: Json;
+          published_at: string;
+          published_by: string;
+          note: string | null;
+        };
+        Insert: {
+          id?: string;
+          pack_id: string;
+          revision: number;
+          payload: Json;
+          published_at?: string;
+          published_by: string;
+          note?: string | null;
+        };
+        Update: {
+          id?: string;
+          pack_id?: string;
+          revision?: number;
+          payload?: Json;
+          published_at?: string;
+          published_by?: string;
+          note?: string | null;
+        };
+        Relationships: [
+          {
+            foreignKeyName: "platform_document_revisions_pack_id_fkey";
+            columns: ["pack_id"];
+            isOneToOne: false;
+            referencedRelation: "platform_document_packs";
+            referencedColumns: ["id"];
+          },
+        ];
+      };
+      platform_templates: {
+        Row: {
+          slug: string;
+          locale: string;
+          name: string;
+          draft_body: string;
+          status: string;
+          published_revision: number | null;
+          updated_by: string | null;
+          created_at: string;
+          updated_at: string;
+        };
+        Insert: {
+          slug: string;
+          locale: string;
+          name: string;
+          draft_body?: string;
+          status?: string;
+          published_revision?: number | null;
+          updated_by?: string | null;
+          created_at?: string;
+          updated_at?: string;
+        };
+        Update: {
+          slug?: string;
+          locale?: string;
+          name?: string;
+          draft_body?: string;
+          status?: string;
+          published_revision?: number | null;
+          updated_by?: string | null;
+          created_at?: string;
+          updated_at?: string;
+        };
+        Relationships: [];
+      };
+      platform_template_revisions: {
+        Row: {
+          id: string;
+          slug: string;
+          locale: string;
+          revision: number;
+          body: string;
+          published_at: string;
+          published_by: string;
+          note: string | null;
+        };
+        Insert: {
+          id?: string;
+          slug: string;
+          locale: string;
+          revision: number;
+          body: string;
+          published_at?: string;
+          published_by: string;
+          note?: string | null;
+        };
+        Update: {
+          id?: string;
+          slug?: string;
+          locale?: string;
+          revision?: number;
+          body?: string;
+          published_at?: string;
+          published_by?: string;
+          note?: string | null;
+        };
+        Relationships: [];
+      };
+      platform_feature_flag_overrides: {
+        Row: {
+          flag_key: string;
+          enabled: boolean;
+          updated_by: string | null;
+          updated_at: string;
+        };
+        Insert: {
+          flag_key: string;
+          enabled: boolean;
+          updated_by?: string | null;
+          updated_at?: string;
+        };
+        Update: {
+          flag_key?: string;
+          enabled?: boolean;
+          updated_by?: string | null;
+          updated_at?: string;
+        };
+        Relationships: [];
+      };
+      clauses: {
+        Row: {
+          id: string;
+          tenant_id: string;
+          slug: string;
+          name: string;
+          body: string;
+          variants: Json;
+          conditions: Json;
+          notes: string | null;
+          created_at: string;
+          updated_at: string;
+        };
+        Insert: {
+          id?: string;
+          tenant_id: string;
+          slug: string;
+          name: string;
+          body: string;
+          variants?: Json;
+          conditions?: Json;
+          notes?: string | null;
+          created_at?: string;
+          updated_at?: string;
+        };
+        Update: {
+          id?: string;
+          tenant_id?: string;
+          slug?: string;
+          name?: string;
+          body?: string;
+          variants?: Json;
+          conditions?: Json;
+          notes?: string | null;
+          created_at?: string;
+          updated_at?: string;
+        };
+        Relationships: [];
+      };
       legal_source_chunks: {
         Row: {
           id: string;
