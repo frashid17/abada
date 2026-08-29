@@ -1,14 +1,14 @@
 import { getTranslations } from "next-intl/server";
-import { INVESTMENT_DOCUMENT_CATALOG } from "@/lib/documents/catalog";
 import { DocumentPipeline } from "@/components/legal/document-pipeline";
+
+const LANDING_DOC_KEYS = ["founders", "equity", "ip"] as const;
 
 export async function LandingPipeline() {
   const t = await getTranslations("public");
-  const docs = await getTranslations("founder.documents");
 
-  const steps = INVESTMENT_DOCUMENT_CATALOG.map((def) => ({
-    step: def.step,
-    label: docs(`${def.type}.title`),
+  const steps = LANDING_DOC_KEYS.map((key, index) => ({
+    step: index + 1,
+    label: t(`pipeline.docs.${key}`),
   }));
 
   return (
