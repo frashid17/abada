@@ -3,8 +3,8 @@ import { buildEditableDocumentBody } from "@/lib/documents/editable-body";
 import { extractFieldKeysFromEditableBody, fieldMarker } from "@/lib/documents/render";
 
 describe("editable document body", () => {
-  it("marks intake fields and expands clause fragments for shareholders", () => {
-    const body = buildEditableDocumentBody(
+  it("marks intake fields and expands clause fragments for shareholders", async () => {
+    const body = await buildEditableDocumentBody(
       "shareholders",
       {
         company_name: "Acme SAS",
