@@ -5,10 +5,8 @@ import { useTranslations } from "next-intl";
 import { useRouter } from "@/i18n/navigation";
 import { setFeatureFlagAction } from "@/lib/platform-admin/cms-actions";
 import type { FeatureFlag } from "@/lib/feature-flags";
-import { getFeatureFlags } from "@/lib/feature-flags";
+import { FEATURE_FLAG_KEYS, getFeatureFlags } from "@/lib/feature-flags";
 import { Button } from "@/components/ui/button";
-
-const FLAG_KEYS = Object.keys(getFeatureFlags()) as FeatureFlag[];
 
 export function FeatureFlagsPanel({
   overrides,
@@ -30,7 +28,7 @@ export function FeatureFlagsPanel({
 
   return (
     <div className="divide-y divide-border rounded-xl border border-border">
-      {FLAG_KEYS.map((flag) => {
+      {FEATURE_FLAG_KEYS.map((flag) => {
         const enabled = flag in overrides ? overrides[flag]! : envDefaults[flag];
         const source = flag in overrides ? t("sourceDb") : t("sourceEnv");
         return (
