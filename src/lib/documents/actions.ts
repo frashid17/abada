@@ -61,7 +61,7 @@ export async function getDocumentPreviewHtmlAction(
       fields ?? (await getDocumentFlowState(documentType))?.fields;
     if (!resolvedFields) return { error: "Document not found" };
 
-    const rendered = renderDocument(documentType, resolvedFields, locale);
+    const rendered = await renderDocument(documentType, resolvedFields, locale);
     const disclaimer = getDisclaimer(locale, "document");
     const html = wrapPreviewHtml(
       rendered.body,
@@ -81,7 +81,7 @@ export async function getEditableDocumentBodyAction(
   locale: "es-CO" | "en-US",
 ): Promise<EditableDocumentBody | { error: string }> {
   try {
-    const body = buildEditableDocumentBody(documentType, fields, locale);
+    const body = await buildEditableDocumentBody(documentType, fields, locale);
     if (!body) return { error: "Unsupported document type" };
     return body;
   } catch (error) {
