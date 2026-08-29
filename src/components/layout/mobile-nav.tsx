@@ -55,7 +55,7 @@ export function MobileNav({ items }: MobileNavProps) {
       </Button>
 
       {open ? (
-        <div className="fixed inset-0 top-16 z-40 md:hidden">
+        <div className="fixed inset-0 top-[60px] z-40 md:hidden">
           <button
             type="button"
             aria-label={t("closeMenu")}
@@ -71,7 +71,8 @@ export function MobileNav({ items }: MobileNavProps) {
                 const isSectionRoot =
                   item.href === "/fundador" ||
                   item.href === "/firma" ||
-                  item.href === "/inversionista";
+                  item.href === "/inversionista" ||
+                  item.href === "/admin";
                 const active = isSectionRoot
                   ? pathname === item.href
                   : pathname === item.href || pathname.startsWith(`${item.href}/`);
