@@ -5,11 +5,10 @@ import { useLocale, useTranslations } from "next-intl";
 import { useCallback, useRef, useState } from "react";
 import { Download, ExternalLink, Eye, Loader2, RefreshCw } from "lucide-react";
 import {
-  PROTOTYPE_DECISIONS,
-  PROTOTYPE_DOCS,
   listPrototypeDecisionRows,
 } from "@/lib/documents/prototype/catalog";
 import { usePrototypeDocumentStore } from "@/lib/documents/prototype/store";
+import { usePrototypeContent } from "@/components/founder/prototype-content-provider";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
@@ -17,6 +16,7 @@ export function DocumentReviewBeforeSign() {
   const t = useTranslations("founder.documentsPrototype");
   const locale = useLocale() as "es-CO" | "en-US";
   const lang = locale.startsWith("en") ? "en" : "es";
+  const content = usePrototypeContent();
   const { store, hydrated } = usePrototypeDocumentStore();
   const [toast, setToast] = useState<string | null>(null);
   const [previewUrl, setPreviewUrl] = useState<string | null>(null);
@@ -26,14 +26,14 @@ export function DocumentReviewBeforeSign() {
   const [error, setError] = useState<string | null>(null);
   const previewUrlRef = useRef<string | null>(null);
 
-  const rows = listPrototypeDecisionRows();
+  const rows = listPrototypeDecisionRows(content);
   const openCount = rows.filter((row) => {
     const value = store.decisions[row.key];
     return value === undefined || value === "";
   }).length;
 
   function decisionLabel(key: string): string {
-    const decision = PROTOTYPE_DECISIONS[key];
+    const decision = content.decisions[key];
     const value = store.decisions[key] ?? decision?.def;
     if (!decision || value === undefined || value === "") {
       return lang === "en" ? decision?.en ?? key : decision?.es ?? key;
@@ -167,9 +167,9 @@ export function DocumentReviewBeforeSign() {
             </thead>
             <tbody>
               {rows.map((row) => {
-                const decision = PROTOTYPE_DECISIONS[row.key];
+                const decision = content.decisions[row.key];
                 const set = isSet(row.key);
-                const articleIndex = PROTOTYPE_DOCS[row.docId].groups
+                const articleIndex = content.docs[row.docId].groups
                   .flatMap((group) => group.arts)
                   .findIndex((article) => article.id === row.article.id);
                 return (
@@ -196,7 +196,7 @@ export function DocumentReviewBeforeSign() {
                       </span>
                     </td>
                     <td className="px-4 py-4 align-top text-[12.5px] text-muted-foreground">
-                      {lang === "en" ? PROTOTYPE_DOCS[row.docId].t_en : PROTOTYPE_DOCS[row.docId].t_es}
+                      {lang === "en" ? content.docs[row.docId].t_en : content.docs[row.docId].t_es}
                       <br />
                       {lang === "en" ? row.article.t_en : row.article.t_es}
                     </td>
