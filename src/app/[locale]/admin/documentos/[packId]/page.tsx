@@ -8,7 +8,6 @@ import { Button } from "@/components/ui/button";
 import { isPlatformAdmin } from "@/lib/platform-admin/auth";
 import { getAdminPackDraft } from "@/lib/platform-admin/document-cms";
 import { isPrototypeDocId } from "@/lib/documents/prototype/catalog";
-import { flattenPrototypeArticles } from "@/lib/documents/prototype/catalog";
 
 export default async function AdminDocumentPackPage({
   params,
@@ -24,12 +23,7 @@ export default async function AdminDocumentPackPage({
 
   const t = await getTranslations("admin.documents");
   const doc = await getAdminPackDraft(packId);
-  const articles = flattenPrototypeArticles(packId, {
-    order: [packId],
-    docs: { [packId]: doc },
-    decisions: {},
-    tokens: {},
-  });
+  const articles = doc.groups.flatMap((group) => group.arts);
 
   return (
     <AppShell variant="admin">
