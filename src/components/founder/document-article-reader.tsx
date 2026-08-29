@@ -5,16 +5,13 @@ import { useRouter } from "next/navigation";
 import { useLocale, useTranslations } from "next-intl";
 import { useEffect, useMemo, useState } from "react";
 import {
-  PROTOTYPE_DECISIONS,
-  PROTOTYPE_DOC_ORDER,
-  PROTOTYPE_DOCS,
-  PROTOTYPE_TOKENS,
   flattenPrototypeArticles,
   type PrototypeArticle,
   type PrototypeDocId,
 } from "@/lib/documents/prototype/catalog";
 import { getTokenSampleRaw, resolveTokenDisplay } from "@/lib/documents/prototype/token-display";
 import { usePrototypeDocumentStore } from "@/lib/documents/prototype/store";
+import { usePrototypeContent } from "@/components/founder/prototype-content-provider";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
@@ -26,10 +23,11 @@ function renderClauseHtml(
   tokenValue: (key: string) => string,
   decisionLabel: (key: string, lang: "es" | "en") => string | null,
   lang: "es" | "en",
+  tokens: Record<string, { es: string; en: string; type?: string }>,
 ): string {
   return text
     .replace(/\{\{(\w+(?:\.\w+)+)\}\}/g, (_, key: string) => {
-      const { label, isUserValue } = resolveTokenDisplay(key, tokenValue(key), lang);
+      const { label, isUserValue } = resolveTokenDisplay(key, tokenValue(key), lang, tokens);
       const classes = isUserValue ? "proto-tk set" : "proto-tk set sample";
       return `<button type="button" class="${classes}" data-token="${key}">${escapeHtml(label)}</button>`;
     })
@@ -55,6 +53,7 @@ function ArticleBody({
   decisionLabel,
   onToken,
   onDec,
+  tokens,
 }: {
   article: PrototypeArticle;
   lang: "es" | "en";
@@ -62,6 +61,7 @@ function ArticleBody({
   decisionLabel: (key: string, lang: "es" | "en") => string | null;
   onToken: (key: string) => void;
   onDec: (key: string) => void;
+  tokens: Record<string, { es: string; en: string; type?: string }>;
 }) {
   const blocks = article.cl ?? [];
 
@@ -90,7 +90,7 @@ function ArticleBody({
             </h5>
           );
         }
-        const html = renderClauseHtml(String(block), tokenValue, decisionLabel, lang);
+        const html = renderClauseHtml(String(block), tokenValue, decisionLabel, lang, tokens);
         return (
           <p key={index} className="mb-4 last:mb-0" dangerouslySetInnerHTML={{ __html: html }} />
         );
@@ -104,14 +104,15 @@ function DecisionCard({
   lang,
   value,
   onChange,
+  decision,
 }: {
   decKey: string;
   lang: "es" | "en";
   value: string | number | undefined;
   onChange: (value: string | number) => void;
+  decision: import("@/lib/documents/prototype/types").PrototypeDecision;
 }) {
   const t = useTranslations("founder.documentsPrototype");
-  const decision = PROTOTYPE_DECISIONS[decKey];
   if (!decision) return null;
   const isSet = value !== undefined && String(value).length > 0;
 
@@ -196,8 +197,9 @@ export function DocumentArticleReader({
   const locale = useLocale();
   const lang = locale.startsWith("en") ? "en" : "es";
   const router = useRouter();
-  const doc = PROTOTYPE_DOCS[docId];
-  const articles = useMemo(() => flattenPrototypeArticles(docId), [docId]);
+  const content = usePrototypeContent();
+  const doc = content.docs[docId];
+  const articles = useMemo(() => flattenPrototypeArticles(docId, content), [docId, content]);
   const { store, setDecision, markSeen, tokenValue, setTokenValue } = usePrototypeDocumentStore();
   const [mode, setMode] = useState<Mode>("guided");
   const [index, setIndex] = useState(() =>
@@ -207,8 +209,8 @@ export function DocumentArticleReader({
   const [tokenDraft, setTokenDraft] = useState("");
 
   const article = articles[index] ?? articles[0]!;
-  const docOrderIndex = PROTOTYPE_DOC_ORDER.indexOf(docId);
-  const nextDocId = PROTOTYPE_DOC_ORDER[docOrderIndex + 1];
+  const docOrderIndex = content.order.indexOf(docId);
+  const nextDocId = content.order[docOrderIndex + 1];
 
   useEffect(() => {
     if (article) markSeen(docId, article.id);
@@ -232,7 +234,7 @@ export function DocumentArticleReader({
   }, [articles.length, index, mode]);
 
   function decisionLabel(key: string, currentLang: "es" | "en"): string | null {
-    const decision = PROTOTYPE_DECISIONS[key];
+    const decision = content.decisions[key];
     const value = store.decisions[key];
     if (!decision || value === undefined || value === "") return null;
     if (decision.type === "num") return String(value);
@@ -243,7 +245,7 @@ export function DocumentArticleReader({
   function openToken(key: string) {
     setEditingToken(key);
     const current = tokenValue(key);
-    setTokenDraft(current || getTokenSampleRaw(key, lang));
+    setTokenDraft(current || getTokenSampleRaw(key, lang, content.tokens));
   }
 
   function goNext() {
@@ -262,7 +264,7 @@ export function DocumentArticleReader({
     index >= articles.length - 1
       ? nextDocId
         ? t("nextDocument", {
-            title: lang === "en" ? PROTOTYPE_DOCS[nextDocId].t_en : PROTOTYPE_DOCS[nextDocId].t_es,
+            title: lang === "en" ? content.docs[nextDocId].t_en : content.docs[nextDocId].t_es,
           })
         : t("finish")
       : t("next");
@@ -404,6 +406,7 @@ export function DocumentArticleReader({
                   lang={lang}
                   value={store.decisions[article.dec]}
                   onChange={(value) => setDecision(article.dec!, value)}
+                  decision={content.decisions[article.dec]!}
                 />
               ) : null}
 
@@ -423,6 +426,7 @@ export function DocumentArticleReader({
                   const artIndex = articles.findIndex((a) => a.dec === key);
                   if (artIndex >= 0) setIndex(artIndex);
                 }}
+                tokens={content.tokens}
               />
 
               <div className="mt-8 flex justify-between gap-3 border-t border-border pt-5">
@@ -463,6 +467,7 @@ export function DocumentArticleReader({
                       decisionLabel={decisionLabel}
                       onToken={openToken}
                       onDec={() => undefined}
+                      tokens={content.tokens}
                     />
                   </section>
                 ))}
@@ -485,14 +490,14 @@ export function DocumentArticleReader({
           <div className="w-full max-w-[300px] rounded-xl border border-border bg-card p-4 shadow-lg">
             <h5 className="text-[12.5px] font-bold">
               {lang === "en"
-                ? PROTOTYPE_TOKENS[editingToken]?.en
-                : PROTOTYPE_TOKENS[editingToken]?.es}
+                ? content.tokens[editingToken]?.en
+                : content.tokens[editingToken]?.es}
             </h5>
             <p className="mt-1 text-[12px] text-muted-foreground">{t("tokenUpdates")}</p>
             <Input
               className="mt-2"
               autoFocus
-              type={PROTOTYPE_TOKENS[editingToken]?.type === "date" ? "date" : "text"}
+              type={content.tokens[editingToken]?.type === "date" ? "date" : "text"}
               value={tokenDraft}
               onChange={(event) => setTokenDraft(event.target.value)}
               onKeyDown={(event) => {
