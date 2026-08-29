@@ -1,5 +1,6 @@
 import { getTranslations } from "next-intl/server";
 import { Inbox } from "lucide-react";
+import { FindingReviewActions } from "@/components/dd/finding-review-actions";
 import { DD_RISK_CATEGORIES, type DdRiskLevel } from "@/lib/dd/taxonomy";
 import type { FindingRecord } from "@/lib/dd/findings";
 import { cn } from "@/lib/utils";
@@ -107,6 +108,13 @@ export async function FindingsRegister({
                   </div>
 
                   <div className="border-l-2 pl-4 sm:pl-5" style={{ borderColor: ink }}>
+                    <div className="flex flex-wrap items-center gap-2">
+                      {finding.status === "draft" && translationNamespace === "firm.dd" ? (
+                        <span className="rounded-full border border-highlight/40 bg-highlight/15 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide text-highlight">
+                          {t("draftBadge")}
+                        </span>
+                      ) : null}
+                    </div>
                     <h4 className="font-serif text-lg font-semibold leading-snug tracking-tight text-foreground">
                       {finding.description}
                     </h4>
@@ -134,6 +142,9 @@ export async function FindingsRegister({
                         }
                       />
                     </div>
+                    {finding.status === "draft" && translationNamespace === "firm.dd" ? (
+                      <FindingReviewActions findingId={finding.id} />
+                    ) : null}
                   </div>
                 </div>
               </li>
