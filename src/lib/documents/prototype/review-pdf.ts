@@ -1,9 +1,9 @@
 import { PDFDocument, StandardFonts, rgb, type PDFPage, type PDFFont } from "pdf-lib";
 import {
-  PROTOTYPE_DECISIONS,
-  PROTOTYPE_DOCS,
   listPrototypeDecisionRows,
 } from "@/lib/documents/prototype/catalog";
+import { getResolvedPrototypeContent } from "@/lib/documents/prototype/resolve-content";
+import type { PrototypeContentBundle } from "@/lib/documents/prototype/types";
 import type { PrototypeCompany } from "@/lib/documents/prototype/store";
 import esCO from "@/messages/es-CO.json";
 import enUS from "@/messages/en-US.json";
@@ -99,20 +99,20 @@ function wrapText(text: string, font: PDFFont, size: number, maxWidth: number): 
   return lines.length ? lines : [""];
 }
 
-function prepareRows(input: ReviewDraftPdfInput): PreparedRow[] {
+function prepareRows(input: ReviewDraftPdfInput, content: PrototypeContentBundle): PreparedRow[] {
   const lang = input.locale === "en-US" ? "en" : "es";
-  return listPrototypeDecisionRows().map((row) => {
-    const decision = PROTOTYPE_DECISIONS[row.key];
+  return listPrototypeDecisionRows(content).map((row) => {
+    const decision = content.decisions[row.key];
     const raw = input.decisions[row.key];
     const isDefault = raw === undefined || raw === "";
     return {
       key: row.key,
       title: lang === "en" ? decision?.en ?? row.key : decision?.es ?? row.key,
       question: lang === "en" ? decision?.q_en ?? "" : decision?.q_es ?? "",
-      value: decisionLabel(row.key, input.decisions, lang),
+      value: decisionLabel(row.key, input.decisions, lang, content),
       isDefault,
       docTitle:
-        lang === "en" ? PROTOTYPE_DOCS[row.docId].t_en : PROTOTYPE_DOCS[row.docId].t_es,
+        lang === "en" ? content.docs[row.docId].t_en : content.docs[row.docId].t_es,
       articleTitle: lang === "en" ? row.article.t_en : row.article.t_es,
     };
   });
@@ -122,8 +122,9 @@ function decisionLabel(
   key: string,
   decisions: Record<string, string | number>,
   lang: "es" | "en",
+  content: PrototypeContentBundle,
 ): string {
-  const decision = PROTOTYPE_DECISIONS[key];
+  const decision = content.decisions[key];
   const value = decisions[key] ?? decision?.def;
   if (!decision || value === undefined || value === "") {
     return lang === "en" ? decision?.en ?? key : decision?.es ?? key;
@@ -473,8 +474,9 @@ function drawFooters(ctx: PdfContext) {
 }
 
 export async function buildReviewDraftPdf(input: ReviewDraftPdfInput): Promise<Uint8Array> {
+  const content = await getResolvedPrototypeContent();
   const copy = getCopy(input.locale);
-  const rows = prepareRows(input);
+  const rows = prepareRows(input, content);
   const openCount = rows.filter((row) => row.isDefault).length;
 
   const pdfDoc = await PDFDocument.create();
