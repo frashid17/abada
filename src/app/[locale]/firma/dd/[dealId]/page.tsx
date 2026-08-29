@@ -45,8 +45,8 @@ export default async function FirmDealDetailPage({
   const [documents, findingsByCategory, findings, assessment, participants, scheduledCalls, aiAccess] =
     await Promise.all([
       listDataRoomDocuments(dealId),
-      listFindingsByCategory(dealId),
-      listDealFindings(dealId),
+      listFindingsByCategory(dealId, { includeDrafts: true }),
+      listDealFindings(dealId, { includeDrafts: true }),
       getDealAssessment(dealId),
       listDealParticipantsWithLabels(dealId),
       membership ? listScheduledCallsForTenant(membership.tenantId) : Promise.resolve([]),
