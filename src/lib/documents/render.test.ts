@@ -2,8 +2,8 @@ import { describe, expect, it } from "vitest";
 import { renderDocument } from "@/lib/documents/render";
 
 describe("renderDocument", () => {
-  it("renders NDA with mutual obligations", () => {
-    const result = renderDocument("nda", {
+  it("renders NDA with mutual obligations", async () => {
+    const result = await renderDocument("nda", {
       company_name: "Acme S.A.S.",
       company_id: "900111222-3",
       counterparty_name: "Fondo Alpha",
@@ -20,8 +20,8 @@ describe("renderDocument", () => {
     expect(result.body).toContain("Cada Parte se compromete");
   });
 
-  it("renders NDA in English when locale is en-US", () => {
-    const result = renderDocument(
+  it("renders NDA in English when locale is en-US", async () => {
+    const result = await renderDocument(
       "nda",
       {
         company_name: "Acme S.A.S.",
@@ -42,8 +42,8 @@ describe("renderDocument", () => {
     expect(result.body).not.toContain("ACUERDO DE CONFIDENCIALIDAD");
   });
 
-  it("renders vesting with acceleration clause", () => {
-    const result = renderDocument("vesting", {
+  it("renders vesting with acceleration clause", async () => {
+    const result = await renderDocument("vesting", {
       company_name: "Acme S.A.S.",
       company_id: "900111222-3",
       founder_name: "María López",
@@ -64,8 +64,8 @@ describe("renderDocument", () => {
     expect(result.body).toContain("doble evento");
   });
 
-  it("renders IP assignment with full scope", () => {
-    const result = renderDocument("ip", {
+  it("renders IP assignment with full scope", async () => {
+    const result = await renderDocument("ip", {
       company_name: "Acme S.A.S.",
       company_id: "900111222-3",
       assignor_name: "Juan Pérez",
@@ -83,8 +83,8 @@ describe("renderDocument", () => {
     expect(result.body).toContain("actuales y futuras");
   });
 
-  it("renders employment with indefinite contract", () => {
-    const result = renderDocument("employment", {
+  it("renders employment with indefinite contract", async () => {
+    const result = await renderDocument("employment", {
       company_name: "Acme S.A.S.",
       company_id: "900111222-3",
       employee_name: "Ana Gómez",
@@ -104,8 +104,8 @@ describe("renderDocument", () => {
     expect(result.body).toContain("término indefinido");
   });
 
-  it("renders shareholders with drag-along and anti-dilution", () => {
-    const result = renderDocument("shareholders", {
+  it("renders shareholders with drag-along and anti-dilution", async () => {
+    const result = await renderDocument("shareholders", {
       company_name: "Acme S.A.S.",
       company_id: "900111222-3",
       lead_investor_name: "Fondo Alpha",
