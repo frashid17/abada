@@ -86,7 +86,7 @@ export async function getShareholdersLearnDocument(
     ...(state?.fields ?? {}),
   };
 
-  const rendered = renderDocument("shareholders", fields, locale);
+  const rendered = await renderDocument("shareholders", fields, locale);
   const step =
     INVESTMENT_DOCUMENT_CATALOG.find((item) => item.type === "shareholders")?.step ?? 5;
 
