@@ -4,13 +4,13 @@ import Link from "next/link";
 import { useLocale, useTranslations } from "next-intl";
 import { useMemo } from "react";
 import {
-  PROTOTYPE_DOC_ORDER,
-  PROTOTYPE_DOCS,
   countPrototypeArticles,
   countPrototypeDecisions,
+  flattenPrototypeArticles,
   type PrototypeDocId,
 } from "@/lib/documents/prototype/catalog";
 import { usePrototypeDocumentStore } from "@/lib/documents/prototype/store";
+import { usePrototypeContent } from "@/components/founder/prototype-content-provider";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
@@ -36,14 +36,15 @@ export function DocumentsPrototypeHub({
   const t = useTranslations("founder.documentsPrototype");
   const locale = useLocale();
   const lang = locale.startsWith("en") ? "en" : "es";
+  const content = usePrototypeContent();
   const { store, hydrated } = usePrototypeDocumentStore();
 
   const companyReady = Boolean(store.company.nombre.trim() && store.company.nit.trim());
 
   const cards = useMemo(() => {
-    return PROTOTYPE_DOC_ORDER.map((id, index) => {
-      const doc = PROTOTYPE_DOCS[id];
-      const arts = doc.groups.flatMap((g) => g.arts);
+    return content.order.map((id, index) => {
+      const doc = content.docs[id];
+      const arts = flattenPrototypeArticles(id, content);
       const progress = docProgress(id, store.seen, store.decisions, arts);
       const status =
         progress.doneDec === 0 && progress.seenCount === 0
@@ -57,7 +58,7 @@ export function DocumentsPrototypeHub({
           : Math.round((progress.seenCount / Math.max(progress.totalArts, 1)) * 100);
       return { id, doc, index, status, pct, progress };
     });
-  }, [store.decisions, store.seen]);
+  }, [content, store.decisions, store.seen]);
 
   return (
     <div className="pb-16 pt-2">
@@ -133,8 +134,8 @@ export function DocumentsPrototypeHub({
                 />
               </div>
               <p className="text-[12.5px] text-muted-foreground">
-                {progress.doneDec} {t("of")} {countPrototypeDecisions(id)} {t("decisions")} ·{" "}
-                {countPrototypeArticles(id)} {t("articles")}
+                {progress.doneDec} {t("of")} {countPrototypeDecisions(id, content)} {t("decisions")} ·{" "}
+                {countPrototypeArticles(id, content)} {t("articles")}
               </p>
             </div>
           </Link>
