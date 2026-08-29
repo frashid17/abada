@@ -18,10 +18,65 @@ import { cn } from "@/lib/utils";
 
 type Mode = "guided" | "continuous";
 
+function listArticleDecisionKeys(article: PrototypeArticle): string[] {
+  const keys: string[] = [];
+  const seen = new Set<string>();
+  function add(key: string | undefined) {
+    if (!key || seen.has(key)) return;
+    seen.add(key);
+    keys.push(key);
+  }
+  add(article.dec);
+  for (const block of article.cl ?? []) {
+    if (typeof block !== "string") continue;
+    for (const match of block.matchAll(/\[\[(\w+)\]\]/g)) {
+      add(match[1]);
+    }
+  }
+  return keys;
+}
+
+function formatDecisionNumber(
+  value: string | number,
+  lang: "es" | "en",
+  unit?: string,
+): string {
+  const n = Number(value);
+  if (!Number.isFinite(n)) return String(value);
+  const formatted = new Intl.NumberFormat(lang === "en" ? "en-US" : "es-CO").format(n);
+  return unit ? `${formatted} ${unit}` : formatted;
+}
+
+function resolveDecisionDisplay(
+  key: string,
+  storeValue: string | number | undefined,
+  lang: "es" | "en",
+  decision: import("@/lib/documents/prototype/types").PrototypeDecision | undefined,
+): { label: string; isUserValue: boolean } | null {
+  if (!decision) return null;
+  const hasUserValue = storeValue !== undefined && String(storeValue).length > 0;
+  const effective = hasUserValue ? storeValue : decision.def;
+  if (effective === undefined || effective === "") return null;
+
+  if (decision.type === "num") {
+    const unit = lang === "en" ? decision.unit_en : decision.unit_es;
+    return {
+      label: formatDecisionNumber(effective, lang, unit),
+      isUserValue: hasUserValue,
+    };
+  }
+
+  const option = decision.options?.find((item) => item.v === String(effective));
+  return {
+    label: option ? (lang === "en" ? option.te : option.t) : String(effective),
+    isUserValue: hasUserValue,
+  };
+}
+
 function renderClauseHtml(
   text: string,
   tokenValue: (key: string) => string,
-  decisionLabel: (key: string, lang: "es" | "en") => string | null,
+  decisionDisplay: (key: string, lang: "es" | "en") => { label: string; isUserValue: boolean } | null,
   lang: "es" | "en",
   tokens: Record<string, { es: string; en: string; type?: string }>,
 ): string {
@@ -32,9 +87,12 @@ function renderClauseHtml(
       return `<button type="button" class="${classes}" data-token="${key}">${escapeHtml(label)}</button>`;
     })
     .replace(/\[\[(\w+)\]\]/g, (_, key: string) => {
-      const label = decisionLabel(key, lang);
-      const set = label ? " set" : "";
-      return `<button type="button" class="proto-tk${set}" data-dec="${key}">${escapeHtml(label || key)}</button>`;
+      const resolved = decisionDisplay(key, lang);
+      if (!resolved) {
+        return `<button type="button" class="proto-tk" data-dec="${key}">${escapeHtml(key)}</button>`;
+      }
+      const classes = resolved.isUserValue ? "proto-tk set" : "proto-tk set sample";
+      return `<button type="button" class="${classes}" data-dec="${key}">${escapeHtml(resolved.label)}</button>`;
     });
 }
 
@@ -50,7 +108,7 @@ function ArticleBody({
   article,
   lang,
   tokenValue,
-  decisionLabel,
+  decisionDisplay,
   onToken,
   onDec,
   tokens,
@@ -58,7 +116,7 @@ function ArticleBody({
   article: PrototypeArticle;
   lang: "es" | "en";
   tokenValue: (key: string) => string;
-  decisionLabel: (key: string, lang: "es" | "en") => string | null;
+  decisionDisplay: (key: string, lang: "es" | "en") => { label: string; isUserValue: boolean } | null;
   onToken: (key: string) => void;
   onDec: (key: string) => void;
   tokens: Record<string, { es: string; en: string; type?: string }>;
@@ -90,7 +148,7 @@ function ArticleBody({
             </h5>
           );
         }
-        const html = renderClauseHtml(String(block), tokenValue, decisionLabel, lang, tokens);
+        const html = renderClauseHtml(String(block), tokenValue, decisionDisplay, lang, tokens);
         return (
           <p key={index} className="mb-4 last:mb-0" dangerouslySetInnerHTML={{ __html: html }} />
         );
@@ -129,9 +187,12 @@ function DecisionCard({
         <div className="flex items-center gap-2">
           <Input
             type="number"
-            className="w-[110px]"
+            className="w-[160px]"
             value={value ?? decision.def ?? ""}
-            onChange={(event) => onChange(Number(event.target.value))}
+            onChange={(event) => {
+              const raw = event.target.value;
+              onChange(raw === "" ? "" : Number(raw));
+            }}
           />
           <span className="text-sm text-muted-foreground">
             {lang === "en" ? decision.unit_en : decision.unit_es}
@@ -202,15 +263,39 @@ export function DocumentArticleReader({
   const articles = useMemo(() => flattenPrototypeArticles(docId, content), [docId, content]);
   const { store, setDecision, markSeen, tokenValue, setTokenValue } = usePrototypeDocumentStore();
   const [mode, setMode] = useState<Mode>("guided");
-  const [index, setIndex] = useState(() =>
-    Math.min(Math.max(initialIndex, 0), Math.max(articles.length - 1, 0)),
-  );
+  const [activeArticleId, setActiveArticleId] = useState<string | undefined>(() => {
+    const clamped = Math.min(Math.max(initialIndex, 0), Math.max(articles.length - 1, 0));
+    return articles[clamped]?.id;
+  });
   const [editingToken, setEditingToken] = useState<string | null>(null);
   const [tokenDraft, setTokenDraft] = useState("");
 
+  const index = useMemo(() => {
+    if (!activeArticleId) return 0;
+    const found = articles.findIndex((item) => item.id === activeArticleId);
+    return found >= 0 ? found : 0;
+  }, [activeArticleId, articles]);
+
   const article = articles[index] ?? articles[0]!;
+  const articleDecisionKeys = useMemo(() => listArticleDecisionKeys(article), [article]);
   const docOrderIndex = content.order.indexOf(docId);
   const nextDocId = content.order[docOrderIndex + 1];
+
+  function goToIndex(nextIndex: number | ((current: number) => number)) {
+    const resolved = typeof nextIndex === "function" ? nextIndex(index) : nextIndex;
+    const clamped = Math.min(Math.max(resolved, 0), Math.max(articles.length - 1, 0));
+    const nextArticle = articles[clamped];
+    if (!nextArticle) return;
+    setActiveArticleId(nextArticle.id);
+  }
+
+  useEffect(() => {
+    if (!article?.id || typeof window === "undefined") return;
+    const url = new URL(window.location.href);
+    if (url.searchParams.get("art") === article.id) return;
+    url.searchParams.set("art", article.id);
+    window.history.replaceState(window.history.state, "", `${url.pathname}${url.search}`);
+  }, [article?.id]);
 
   useEffect(() => {
     if (article) markSeen(docId, article.id);
@@ -223,23 +308,35 @@ export function DocumentArticleReader({
       const target = event.target as HTMLElement | null;
       if (target?.tagName === "INPUT" || target?.tagName === "TEXTAREA") return;
       if (event.key === "ArrowRight" && index < articles.length - 1) {
-        setIndex((value) => value + 1);
+        goToIndex((value) => value + 1);
       }
       if (event.key === "ArrowLeft" && index > 0) {
-        setIndex((value) => value - 1);
+        goToIndex((value) => value - 1);
       }
     }
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- goToIndex closes over latest index/articles
   }, [articles.length, index, mode]);
 
-  function decisionLabel(key: string, currentLang: "es" | "en"): string | null {
-    const decision = content.decisions[key];
-    const value = store.decisions[key];
-    if (!decision || value === undefined || value === "") return null;
-    if (decision.type === "num") return String(value);
-    const option = decision.options?.find((item) => item.v === String(value));
-    return option ? (currentLang === "en" ? option.te : option.t) : String(value);
+  function decisionDisplay(
+    key: string,
+    currentLang: "es" | "en",
+  ): { label: string; isUserValue: boolean } | null {
+    return resolveDecisionDisplay(key, store.decisions[key], currentLang, content.decisions[key]);
+  }
+
+  function focusDecision(key: string) {
+    const artIndex = articles.findIndex(
+      (item) => item.dec === key || listArticleDecisionKeys(item).includes(key),
+    );
+    if (artIndex >= 0 && artIndex !== index) {
+      setMode("guided");
+      goToIndex(artIndex);
+    }
+    requestAnimationFrame(() => {
+      document.getElementById(`dec-${key}`)?.scrollIntoView({ behavior: "smooth", block: "center" });
+    });
   }
 
   function openToken(key: string) {
@@ -250,7 +347,7 @@ export function DocumentArticleReader({
 
   function goNext() {
     if (index < articles.length - 1) {
-      setIndex((value) => value + 1);
+      goToIndex((value) => value + 1);
       return;
     }
     if (nextDocId) {
@@ -320,7 +417,12 @@ export function DocumentArticleReader({
                 const artIndex = articles.findIndex((a) => a.id === item.id);
                 const current = mode === "guided" && artIndex === index;
                 const done = Boolean(store.seen[docId]?.[item.id]);
-                const waiting = Boolean(item.dec && !store.decisions[item.dec]);
+                const waiting = listArticleDecisionKeys(item).some((key) => {
+                  const decision = content.decisions[key];
+                  if (!decision) return false;
+                  const value = store.decisions[key];
+                  return value === undefined || value === "";
+                });
                 return (
                   <button
                     key={item.id}
@@ -328,7 +430,7 @@ export function DocumentArticleReader({
                     aria-current={current}
                     onClick={() => {
                       setMode("guided");
-                      setIndex(artIndex);
+                      goToIndex(artIndex);
                     }}
                     className={cn(
                       "mb-0.5 flex w-full items-baseline gap-2 rounded-lg px-2.5 py-1.5 text-left text-[13px] leading-snug text-[color:var(--ink-2)]",
@@ -400,15 +502,20 @@ export function DocumentArticleReader({
                 </div>
               </div>
 
-              {article.dec ? (
-                <DecisionCard
-                  decKey={article.dec}
-                  lang={lang}
-                  value={store.decisions[article.dec]}
-                  onChange={(value) => setDecision(article.dec!, value)}
-                  decision={content.decisions[article.dec]!}
-                />
-              ) : null}
+              {articleDecisionKeys.map((decKey) => {
+                const decision = content.decisions[decKey];
+                if (!decision) return null;
+                return (
+                  <DecisionCard
+                    key={decKey}
+                    decKey={decKey}
+                    lang={lang}
+                    value={store.decisions[decKey]}
+                    onChange={(value) => setDecision(decKey, value)}
+                    decision={decision}
+                  />
+                );
+              })}
 
               <div className="mb-3 mt-6 flex flex-wrap items-baseline gap-2 text-[10.5px] font-bold uppercase tracking-[0.1em] text-muted-foreground">
                 <span>{t("text")}</span>
@@ -420,12 +527,9 @@ export function DocumentArticleReader({
                 article={article}
                 lang={lang}
                 tokenValue={tokenValue}
-                decisionLabel={decisionLabel}
+                decisionDisplay={decisionDisplay}
                 onToken={openToken}
-                onDec={(key) => {
-                  const artIndex = articles.findIndex((a) => a.dec === key);
-                  if (artIndex >= 0) setIndex(artIndex);
-                }}
+                onDec={focusDecision}
                 tokens={content.tokens}
               />
 
@@ -434,7 +538,7 @@ export function DocumentArticleReader({
                   type="button"
                   variant="outline"
                   disabled={index === 0}
-                  onClick={() => setIndex((value) => Math.max(0, value - 1))}
+                  onClick={() => goToIndex((value) => Math.max(0, value - 1))}
                 >
                   ← {t("prev")}
                 </Button>
@@ -464,9 +568,9 @@ export function DocumentArticleReader({
                       article={item}
                       lang={lang}
                       tokenValue={tokenValue}
-                      decisionLabel={decisionLabel}
+                      decisionDisplay={decisionDisplay}
                       onToken={openToken}
-                      onDec={() => undefined}
+                      onDec={focusDecision}
                       tokens={content.tokens}
                     />
                   </section>
