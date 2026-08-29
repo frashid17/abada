@@ -24,10 +24,12 @@ export function LocaleSelector() {
 
   function toggleLocale() {
     const nextLocale = locales.find((value) => value !== locale) ?? "es-CO";
+    const query = typeof window !== "undefined" ? window.location.search : "";
+    const href = query ? `${pathname}${query}` : pathname;
 
     startTransition(async () => {
       await setLocaleCookie(nextLocale);
-      router.replace(pathname, { locale: nextLocale });
+      router.replace(href, { locale: nextLocale });
       nextRouter.refresh();
     });
   }
