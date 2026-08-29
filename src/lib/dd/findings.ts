@@ -14,6 +14,9 @@ export type FindingRecord = {
   description: string;
   recommendedAction: string | null;
   legalCitation: string | null;
+  status: "draft" | "active" | "dismissed";
+  sourceQuestionId: string | null;
+  questionnaireId: string | null;
   createdAt: string;
 };
 
@@ -28,6 +31,9 @@ function mapFinding(row: {
   description: string;
   recommended_action: string | null;
   legal_citation: string | null;
+  status?: string | null;
+  source_question_id?: string | null;
+  questionnaire_id?: string | null;
   created_at: string;
 }): FindingRecord {
   return {
@@ -41,23 +47,36 @@ function mapFinding(row: {
     description: row.description,
     recommendedAction: row.recommended_action,
     legalCitation: row.legal_citation,
+    status: (row.status as FindingRecord["status"]) ?? "active",
+    sourceQuestionId: row.source_question_id ?? null,
+    questionnaireId: row.questionnaire_id ?? null,
     createdAt: row.created_at,
   };
 }
 
-export async function listDealFindings(dealId: string): Promise<FindingRecord[]> {
+export async function listDealFindings(
+  dealId: string,
+  options?: { includeDrafts?: boolean },
+): Promise<FindingRecord[]> {
   const { userId } = await auth();
   if (!userId) throw new Error("Unauthorized");
 
   await assertDealReadAccess(dealId, userId);
 
   const supabase = createServiceRoleSupabaseClient();
-  const { data, error } = await supabase
+  let query = supabase
     .from("findings")
     .select(
-      "id, deal_id, tenant_id, risk_category, risk_level, source_document_id, source_page, description, recommended_action, legal_citation, created_at",
+      "id, deal_id, tenant_id, risk_category, risk_level, source_document_id, source_page, description, recommended_action, legal_citation, status, source_question_id, questionnaire_id, created_at",
     )
     .eq("deal_id", dealId)
+    .neq("status", "dismissed");
+
+  if (!options?.includeDrafts) {
+    query = query.eq("status", "active");
+  }
+
+  const { data, error } = await query
     .order("risk_level", { ascending: false })
     .order("created_at", { ascending: false });
 
@@ -97,9 +116,10 @@ export async function createFinding(input: {
       source_page: input.sourcePage ?? null,
       recommended_action: input.recommendedAction ?? null,
       legal_citation: input.legalCitation ?? null,
+      status: "active",
     })
     .select(
-      "id, deal_id, tenant_id, risk_category, risk_level, source_document_id, source_page, description, recommended_action, legal_citation, created_at",
+      "id, deal_id, tenant_id, risk_category, risk_level, source_document_id, source_page, description, recommended_action, legal_citation, status, source_question_id, questionnaire_id, created_at",
     )
     .single();
 
@@ -119,8 +139,9 @@ export async function createFinding(input: {
 
 export async function listFindingsByCategory(
   dealId: string,
+  options?: { includeDrafts?: boolean },
 ): Promise<Record<string, FindingRecord[]>> {
-  const findings = await listDealFindings(dealId);
+  const findings = await listDealFindings(dealId, options);
   return findings.reduce<Record<string, FindingRecord[]>>((acc, finding) => {
     const key = finding.riskCategory;
     acc[key] = acc[key] ?? [];
