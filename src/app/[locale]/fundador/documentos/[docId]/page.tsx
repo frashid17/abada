@@ -52,7 +52,7 @@ export default async function FounderDocumentFlowPage({
   ]);
   if (!state) notFound();
 
-  const initialBody = buildEditableDocumentBody(docId, state.fields, locale);
+  const initialBody = await buildEditableDocumentBody(docId, state.fields, locale);
   if (!initialBody) notFound();
 
   const learnGuideType =
