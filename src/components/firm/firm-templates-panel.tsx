@@ -26,7 +26,12 @@ export function FirmTemplatesPanel({
   const t = useTranslations("firm.templates");
   const router = useRouter();
   const [pending, startTransition] = useTransition();
-  const [templateForm, setTemplateForm] = useState({
+  const [templateForm, setTemplateForm] = useState<{
+    id: string;
+    slug: string;
+    name: string;
+    body: string;
+  }>({
     id: "",
     slug: INVESTMENT_DOCUMENT_TYPES[0],
     name: "",
