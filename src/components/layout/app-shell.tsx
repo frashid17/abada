@@ -28,6 +28,7 @@ const navKeys = {
   founder: [
     { href: "/fundador", key: "dashboard" },
     { href: "/fundador/documentos", key: "documents" },
+    { href: "/fundador/diligencia", key: "diligence" },
     { href: "/fundador/leyes", key: "laws" },
     { href: "/fundador/sala", key: "dataRoom" },
   ],
@@ -45,6 +46,7 @@ const navKeys = {
   admin: [
     { href: "/admin", key: "adminOverview" },
     { href: "/admin/documentos", key: "adminDocuments" },
+    { href: "/admin/diligencia", key: "adminDiligence" },
     { href: "/admin/plantillas", key: "adminTemplates" },
     { href: "/admin/corpus", key: "adminCorpus" },
     { href: "/admin/conocimiento", key: "adminKnowledge" },
