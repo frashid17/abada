@@ -3,6 +3,8 @@
  * Defaults are conservative; enable via env without code changes.
  */
 
+import { getFeatureFlagOverridesMap } from "@/lib/platform-admin/ops-cms";
+
 export type FeatureFlag =
   | "aiDrafting"
   | "aiPaywall"
@@ -35,6 +37,22 @@ const FLAGS: Record<FeatureFlag, () => boolean> = {
 
 export function isFeatureEnabled(flag: FeatureFlag): boolean {
   return FLAGS[flag]();
+}
+
+/** DB override wins when present; otherwise env default. */
+export async function isFeatureEnabledAsync(flag: FeatureFlag): Promise<boolean> {
+  const overrides = await getFeatureFlagOverridesMap();
+  if (flag in overrides) return overrides[flag]!;
+  return isFeatureEnabled(flag);
+}
+
+export async function getFeatureFlagsAsync(): Promise<Record<FeatureFlag, boolean>> {
+  const overrides = await getFeatureFlagOverridesMap();
+  const flags = getFeatureFlags();
+  for (const key of Object.keys(overrides) as FeatureFlag[]) {
+    if (key in flags) flags[key] = overrides[key]!;
+  }
+  return flags;
 }
 
 export function getFeatureFlags(): Record<FeatureFlag, boolean> {
