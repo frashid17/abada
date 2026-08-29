@@ -9,6 +9,7 @@
     "nav": {
       "dashboard": "My workspace",
       "documents": "Documents",
+      "diligence": "Due diligence",
       "dataRoom": "Data room",
       "rooms": "Data rooms",
       "queue": "Review queue",
@@ -19,6 +20,7 @@
       "laws": "Laws & regulations",
       "adminOverview": "Overview",
       "adminDocuments": "Guided documents",
+      "adminDiligence": "Due diligence Q&A",
       "adminTemplates": "Master templates",
       "adminCorpus": "Legal corpus",
       "adminKnowledge": "Knowledge hub",
@@ -268,6 +270,39 @@
       "toggle": "Toggle",
       "sourceDb": "DB override",
       "sourceEnv": "Environment default"
+    },
+    "diligence": {
+      "eyebrow": "Due diligence",
+      "title": "Questionnaire bank",
+      "subtitle": "Publish the questions founders answer. Gaps become draft findings for firm review.",
+      "seed": "Seed from playbook packs",
+      "seeded": "Inserted {count} new questions.",
+      "newQuestion": "New question",
+      "saved": "Question saved.",
+      "slug": "Slug",
+      "section": "Section",
+      "qEs": "Question (ES)",
+      "qEn": "Question (EN)",
+      "findingEs": "Finding if gap (ES)",
+      "findingEn": "Finding if gap (EN)",
+      "answerType": "Answer type",
+      "sortOrder": "Sort order",
+      "riskCategory": "Risk category",
+      "riskLevel": "Risk if gap",
+      "status": "Status",
+      "create": "Create",
+      "update": "Update",
+      "publish": "Publish",
+      "unpublish": "Unpublish",
+      "delete": "Delete",
+      "empty": "No questions yet. Seed from the guided packs to start.",
+      "sections": {
+        "fundadores": "Founders agreement",
+        "incentivos": "Equity compensation",
+        "pi": "IP assignment",
+        "declaration": "Declarations",
+        "cross": "Cross-document"
+      }
     },
     "knowledge": {
       "eyebrow": "Knowledge hub",
@@ -1707,6 +1742,34 @@
         }
       }
     },
+    "diligence": {
+      "eyebrow": "Due diligence",
+      "title": "Self-assessment questionnaire",
+      "subtitle": "Answer the same checks a fund counsel would ask about your founders, equity, and IP packs. Gaps become draft findings in your DD room.",
+      "emptyQuestions": "No published questions yet. Ask platform ops to seed the questionnaire bank.",
+      "dealLabel": "DD room for findings",
+      "dealHint": "Submit attaches draft findings to this room for firm review.",
+      "noDeals": "You need an active DD room (firm invite) before you can submit findings.",
+      "notePlaceholder": "Optional note or evidence pointer",
+      "save": "Save progress",
+      "submit": "Submit and create draft findings",
+      "saved": "Progress saved.",
+      "submitted": "Submitted. {count} draft findings were created for firm review.",
+      "reopen": "Reopen to edit",
+      "reopened": "Questionnaire reopened. Prior draft findings were cleared.",
+      "answers": {
+        "yes": "Yes",
+        "no": "No",
+        "na": "N/A"
+      },
+      "sections": {
+        "fundadores": "Founders agreement",
+        "incentivos": "Equity compensation",
+        "pi": "IP assignment",
+        "declaration": "Declarations",
+        "cross": "Cross-document"
+      }
+    },
     "sala": {
       "subnav": {
         "ariaLabel": "Data room sections",
@@ -2372,6 +2435,9 @@
       "dealSubtitle": "Review documents, findings, and assessment for this room.",
       "documentsTitle": "Room documents",
       "findingsTitle": "Findings by category",
+      "draftBadge": "Draft from questionnaire",
+      "acceptDraft": "Accept",
+      "dismissDraft": "Dismiss",
       "addFinding": "Record finding",
       "riskCategoryLabel": "Risk category",
       "riskLevelLabel": "Risk level",
