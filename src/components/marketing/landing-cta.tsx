@@ -3,7 +3,9 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-export async function LandingCta() {
+export async function LandingCta({ isSignedIn }: { isSignedIn: boolean }) {
+  if (isSignedIn) return null;
+
   const t = await getTranslations("public");
 
   return (
