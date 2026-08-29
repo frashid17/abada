@@ -15,7 +15,12 @@ export function DocumentPipeline({ title, subtitle, steps, className }: Document
         <p className="text-lg text-muted-foreground">{subtitle}</p>
       </div>
 
-      <ol className="relative grid gap-4 md:grid-cols-5">
+      <ol
+        className={cn(
+          "relative grid gap-4",
+          steps.length <= 3 ? "md:grid-cols-3" : "md:grid-cols-5",
+        )}
+      >
         {steps.map(({ step, label }, index) => (
           <li key={step} className="relative">
             {index < steps.length - 1 ? (
