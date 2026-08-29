@@ -18,10 +18,19 @@
       "templates": "Templates",
       "laws": "Laws & regulations",
       "adminOverview": "Overview",
+      "adminDocuments": "Guided documents",
+      "adminTemplates": "Master templates",
       "adminCorpus": "Legal corpus",
+      "adminKnowledge": "Knowledge hub",
+      "adminTenants": "Tenants",
+      "adminTeam": "Users",
+      "adminFlags": "Feature flags",
       "adminAi": "AI usage",
       "adminRequests": "Requests",
-      "adminAudit": "Audit"
+      "adminAudit": "Audit",
+      "firmTemplates": "Templates",
+      "more": "More",
+      "adminConsole": "Platform admin"
     },
     "openMenu": "Open menu",
     "closeMenu": "Close menu",
@@ -165,6 +174,113 @@
       "actor": "Actor",
       "resource": "Resource",
       "when": "When"
+    },
+    "documents": {
+      "eyebrow": "Guided documents",
+      "title": "Founders, incentives & IP packs",
+      "subtitle": "Edit article copy, tokens, and decisions without redeploying.",
+      "importSeed": "Import from code seed",
+      "editGlobals": "Edit tokens & decisions",
+      "articles": "articles",
+      "editPack": "Edit articles",
+      "publish": "Publish",
+      "back": "Back",
+      "editArticle": "Edit",
+      "globalsTitle": "Tokens & decisions",
+      "globalsSubtitle": "Shared placeholders and decision options across all guided packs.",
+      "titleEs": "Title (Spanish)",
+      "titleEn": "Title (English)",
+      "doesEs": "What this article does (ES)",
+      "doesEn": "What this article does (EN)",
+      "mattersEs": "Why it matters (ES)",
+      "mattersEn": "Why it matters (EN)",
+      "clauses": "Clause paragraphs",
+      "clausesHint": "Separate paragraphs with a blank line. Use {{tokens}} and [[decisions]] as in the live document.",
+      "save": "Save draft",
+      "labelEs": "Label (Spanish)",
+      "labelEn": "Label (English)",
+      "sampleEs": "Sample (Spanish)",
+      "sampleEn": "Sample (English)",
+      "status": {
+        "draft": "Draft",
+        "published": "Published"
+      }
+    },
+    "templates": {
+      "eyebrow": "Master templates",
+      "title": "Investment document masters",
+      "subtitle": "NDA, vesting, IP, employment, and shareholders agreement bodies.",
+      "importSeed": "Import from code seed",
+      "edit": "Edit",
+      "save": "Save draft",
+      "publish": "Publish",
+      "back": "Back",
+      "body": "Template body",
+      "status": {
+        "draft": "Draft",
+        "published": "Published"
+      }
+    },
+    "tenants": {
+      "eyebrow": "Tenants",
+      "title": "Law firms",
+      "subtitle": "Firm workspaces on the platform.",
+      "members": "members"
+    },
+    "team": {
+      "eyebrow": "Users",
+      "title": "Platform users",
+      "subtitle": "See everyone on the platform and change their workspace access or platform admin rights.",
+      "clerkUserId": "Clerk user ID",
+      "email": "Email",
+      "emailPlaceholder": "name@company.com",
+      "displayName": "Display name",
+      "add": "Add admin",
+      "remove": "Remove",
+      "search": "Search",
+      "searchPlaceholder": "Name, email, or access…",
+      "userCount": "{count} users",
+      "empty": "No users found.",
+      "colUser": "User",
+      "colAccess": "Workspace access",
+      "colAdmin": "Platform admin",
+      "colActions": "Actions",
+      "adminYes": "Admin",
+      "adminNo": "User",
+      "makeAdmin": "Make admin",
+      "revokeAdmin": "Revoke admin",
+      "sourceEnv": "env",
+      "envLocked": "This admin is set in PLATFORM_ADMIN_SUBS and must be changed in environment config.",
+      "onboarded": "Onboarding complete",
+      "notOnboarded": "Onboarding incomplete",
+      "contexts": {
+        "founder": "Founder",
+        "investor": "Investor",
+        "firm": "Firm"
+      }
+    },
+    "flags": {
+      "eyebrow": "Feature flags",
+      "title": "Runtime toggles",
+      "subtitle": "Database overrides take precedence over environment defaults.",
+      "on": "On",
+      "off": "Off",
+      "toggle": "Toggle",
+      "sourceDb": "DB override",
+      "sourceEnv": "Environment default"
+    },
+    "knowledge": {
+      "eyebrow": "Knowledge hub",
+      "title": "Public articles",
+      "subtitle": "Content shown on /conocimiento.",
+      "slug": "Slug",
+      "articleTitle": "Title",
+      "excerpt": "Excerpt",
+      "body": "Body",
+      "create": "Create",
+      "update": "Update",
+      "edit": "Edit",
+      "delete": "Delete"
     }
   },
   "theme": {
@@ -402,6 +518,7 @@
       "user": "User",
       "dashboard": "Go to dashboard",
       "adminDashboard": "Admin console",
+      "adminButton": "Admin",
       "founderDashboard": "Founder dashboard",
       "manage": "Manage account",
       "signOut": "Sign out"
@@ -2368,6 +2485,18 @@
         "completed": "Completed",
         "cancelled": "Cancelled"
       }
+    },
+    "templates": {
+      "eyebrow": "Templates",
+      "title": "Firm template overrides",
+      "subtitle": "Override platform master templates and clause library for your firm.",
+      "templatesTitle": "Document overrides",
+      "clausesTitle": "Clause library",
+      "slug": "Slug",
+      "name": "Name",
+      "body": "Body",
+      "save": "Save",
+      "delete": "Delete"
     },
     "team": {
       "eyebrow": "Team",
