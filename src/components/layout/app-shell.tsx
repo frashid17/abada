@@ -12,6 +12,7 @@ import { ShellNav } from "@/components/layout/shell-nav";
 import { ThemeToggle } from "@/components/layout/theme-toggle";
 import { NotificationBell } from "@/components/notifications/notification-bell";
 import { getFirmName } from "@/lib/brand";
+import { getOnboardingRedirect } from "@/lib/onboarding/actions";
 import { isPlatformAdmin } from "@/lib/platform-admin/auth";
 import { cn } from "@/lib/utils";
 
@@ -23,7 +24,7 @@ type AppShellProps = {
 };
 
 const navKeys = {
-  public: [{ href: "/conocimiento", key: "knowledge" }],
+  public: [{ href: "/iniciar-sesion", key: "dashboard" }],
   founder: [
     { href: "/fundador", key: "dashboard" },
     { href: "/fundador/documentos", key: "documents" },
@@ -61,8 +62,14 @@ export async function AppShell({ children, variant, workspace = false }: AppShel
   const firmName = getFirmName();
   const { userId } = await auth();
   const showAdminLink = userId ? await isPlatformAdmin(userId) : false;
+
+  let publicWorkspaceHref = "/iniciar-sesion";
+  if (variant === "public" && userId) {
+    publicWorkspaceHref = (await getOnboardingRedirect(userId)) ?? "/onboarding";
+  }
+
   const nav = navKeys[variant].map((item) => ({
-    href: item.href,
+    href: variant === "public" ? publicWorkspaceHref : item.href,
     label: t(`nav.${item.key}`),
   }));
   const isApp = variant !== "public";
@@ -94,7 +101,7 @@ export async function AppShell({ children, variant, workspace = false }: AppShel
         >
           <div className="flex min-w-0 flex-1 items-center gap-2 sm:gap-3">
             <MobileNav items={nav} />
-            <Link href={isApp ? nav[0]?.href ?? "/" : "/"} className="shrink-0 cursor-pointer">
+            <Link href="/" className="shrink-0 cursor-pointer">
               <BrandMark wordmark={t("brand")} className="[&>span]:hidden [&>span]:sm:inline" />
             </Link>
             {!isAdminShell && nav.length > 0 ? <ShellNav items={nav} /> : null}
