@@ -1,4 +1,5 @@
-import { PROTOTYPE_TOKENS } from "@/lib/documents/prototype/catalog";
+import { SEED_PROTOTYPE_CONTENT } from "@/lib/documents/prototype/seed";
+import type { PrototypeTokenMeta } from "@/lib/documents/prototype/types";
 
 const MONTHS_ES = [
   "enero",
@@ -40,8 +41,12 @@ export function formatPrototypeDate(value: string, lang: "es" | "en"): string {
   return `${day} de ${MONTHS_ES[month]} de ${year}`;
 }
 
-export function getTokenSample(key: string, lang: "es" | "en"): string {
-  const meta = PROTOTYPE_TOKENS[key];
+export function getTokenSample(
+  key: string,
+  lang: "es" | "en",
+  tokens: Record<string, PrototypeTokenMeta> = SEED_PROTOTYPE_CONTENT.tokens,
+): string {
+  const meta = tokens[key];
   if (!meta) return "";
   const sample = lang === "en" ? meta.sample_en : meta.sample_es;
   if (!sample) return lang === "en" ? meta.en : meta.es;
@@ -50,8 +55,12 @@ export function getTokenSample(key: string, lang: "es" | "en"): string {
 }
 
 /** Raw sample value for form inputs (e.g. ISO date strings). */
-export function getTokenSampleRaw(key: string, lang: "es" | "en"): string {
-  const meta = PROTOTYPE_TOKENS[key];
+export function getTokenSampleRaw(
+  key: string,
+  lang: "es" | "en",
+  tokens: Record<string, PrototypeTokenMeta> = SEED_PROTOTYPE_CONTENT.tokens,
+): string {
+  const meta = tokens[key];
   if (!meta) return "";
   const sample = lang === "en" ? meta.sample_en : meta.sample_es;
   if (sample) return sample;
@@ -62,12 +71,13 @@ export function resolveTokenDisplay(
   key: string,
   value: string,
   lang: "es" | "en",
+  tokens: Record<string, PrototypeTokenMeta> = SEED_PROTOTYPE_CONTENT.tokens,
 ): { label: string; isUserValue: boolean } {
-  const meta = PROTOTYPE_TOKENS[key];
+  const meta = tokens[key];
   const trimmed = value.trim();
   if (trimmed) {
     const label = meta?.type === "date" ? formatPrototypeDate(trimmed, lang) : trimmed;
     return { label, isUserValue: true };
   }
-  return { label: getTokenSample(key, lang) || key, isUserValue: false };
+  return { label: getTokenSample(key, lang, tokens) || key, isUserValue: false };
 }
