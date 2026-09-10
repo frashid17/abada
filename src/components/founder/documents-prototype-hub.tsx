@@ -35,17 +35,20 @@ export function DocumentsPrototypeHub() {
   const content = usePrototypeContent();
   const { store, hydrated } = usePrototypeDocumentStore();
 
-  const companyName = store.company.nombre ?? "";
-  const companyNit = store.company.nit ?? "";
+  const companyName =
+    typeof store.company?.nombre === "string" ? store.company.nombre : "";
+  const companyNit = typeof store.company?.nit === "string" ? store.company.nit : "";
   const companyReady = Boolean(companyName.trim() && companyNit.trim());
 
   const cards = useMemo(() => {
-    return content.order
-      .filter((id): id is PrototypeDocId => Boolean(content.docs[id]))
+    const order = Array.isArray(content?.order) ? content.order : [];
+    const docs = content?.docs ?? {};
+    return order
+      .filter((id): id is PrototypeDocId => Boolean(docs[id as PrototypeDocId]))
       .map((id, index) => {
-        const doc = content.docs[id]!;
+        const doc = docs[id]!;
         const arts = flattenPrototypeArticles(id, content);
-        const progress = docProgress(id, store.seen, store.decisions, arts);
+        const progress = docProgress(id, store.seen ?? {}, store.decisions ?? {}, arts);
         const status =
           progress.doneDec === 0 && progress.seenCount === 0
             ? "notStarted"
@@ -121,10 +124,10 @@ export function DocumentsPrototypeHub() {
               </span>
             </div>
             <h3 className="font-serif text-xl font-semibold tracking-tight">
-              {lang === "en" ? doc.t_en : doc.t_es}
+              {(lang === "en" ? doc.t_en : doc.t_es) || id}
             </h3>
             <p className="text-sm leading-relaxed text-[color:var(--ink-2)]">
-              {lang === "en" ? doc.sub_en : doc.sub_es}
+              {(lang === "en" ? doc.sub_en : doc.sub_es) || ""}
             </p>
             <div className="mt-auto space-y-2 pt-2">
               <div className="h-[5px] overflow-hidden rounded-full bg-[color:var(--line-2)]">
