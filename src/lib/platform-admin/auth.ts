@@ -22,10 +22,12 @@ function primaryEmailFromClerkUser(user: {
 }
 
 /**
- * Platform ops access:
+ * Platform ops access (authoritative sources only):
  * - PLATFORM_ADMIN_SUBS: comma-separated emails (preferred) or Clerk user ids
- * - Clerk publicMetadata.platformAdmin === true
  * - rows in public.platform_admins
+ *
+ * Clerk publicMetadata.platformAdmin is synced when granting/revoking for client
+ * UX hints, but must not grant access by itself (stale flags survive DB wipes).
  */
 export async function isPlatformAdmin(userId?: string | null): Promise<boolean> {
   const sub = userId ?? (await auth()).userId;
@@ -37,8 +39,6 @@ export async function isPlatformAdmin(userId?: string | null): Promise<boolean> 
   try {
     const clerk = await clerkClient();
     const user = await clerk.users.getUser(sub);
-    if (user.publicMetadata?.platformAdmin === true) return true;
-
     const email = primaryEmailFromClerkUser(user);
     if (email && allowlist.some((entry) => normalizeEmail(entry) === email)) {
       return true;
