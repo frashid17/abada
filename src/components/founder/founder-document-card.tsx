@@ -1,5 +1,7 @@
+"use client";
+
 import Link from "next/link";
-import { ArrowRight, Clock3 } from "lucide-react";
+import { ArrowRight, Clock3, FileText } from "lucide-react";
 import { DOCUMENT_ICONS } from "@/components/founder/document-icons";
 import { DocumentStatusChip } from "@/components/founder/document-status-chip";
 import { isDocumentFlowReady } from "@/lib/documents/dashboard-insights";
@@ -34,7 +36,7 @@ export function FounderDocumentCard({
   featured = false,
   featuredLayout = false,
 }: FounderDocumentCardProps) {
-  const Icon = DOCUMENT_ICONS[doc.documentType];
+  const Icon = DOCUMENT_ICONS[doc.documentType] ?? FileText;
   const isNotStarted = doc.status === "not_started";
   const flowReady = isDocumentFlowReady();
   const showUpdated = doc.status !== "not_started" && doc.updatedAt !== new Date(0).toISOString();
