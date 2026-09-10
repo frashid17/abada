@@ -28,6 +28,12 @@ import {
   setUserPlatformAdmin,
   upsertKnowledgeArticle,
 } from "@/lib/platform-admin/ops-cms";
+import {
+  cleanupOrphanedProfiles,
+  previewOrphanedProfiles,
+  type OrphanCleanupPreview,
+  type OrphanCleanupResult,
+} from "@/lib/platform-admin/profile-cleanup";
 import type { FeatureFlag } from "@/lib/feature-flags";
 import type { UserContext } from "@/types/database";
 import {
@@ -193,6 +199,29 @@ export async function setUserContextAction(
     await setUserContext(clerkUserId, context);
     revalidatePath("/admin/equipo");
     return { ok: true };
+  } catch (error) {
+    return { ok: false, error: error instanceof Error ? error.message : "Failed" };
+  }
+}
+
+export async function previewOrphanedProfilesAction(): Promise<
+  { ok: true; preview: OrphanCleanupPreview } | { ok: false; error: string }
+> {
+  try {
+    const preview = await previewOrphanedProfiles();
+    return { ok: true, preview };
+  } catch (error) {
+    return { ok: false, error: error instanceof Error ? error.message : "Failed" };
+  }
+}
+
+export async function cleanupOrphanedProfilesAction(
+  confirmPhrase: string,
+): Promise<{ ok: true; result: OrphanCleanupResult } | { ok: false; error: string }> {
+  try {
+    const result = await cleanupOrphanedProfiles(confirmPhrase);
+    revalidatePath("/admin/equipo");
+    return { ok: true, result };
   } catch (error) {
     return { ok: false, error: error instanceof Error ? error.message : "Failed" };
   }
