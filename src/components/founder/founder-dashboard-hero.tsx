@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import { ArrowRight, Flag, FileCheck2, Sparkles } from "lucide-react";
 import { ProgressRing } from "@/components/ui/progress-ring";
