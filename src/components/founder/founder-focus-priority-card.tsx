@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import { ArrowRight, Clock3, FileCheck2, Sparkles } from "lucide-react";
 import { DOCUMENT_ICONS, PROTOTYPE_DOC_ICONS } from "@/components/founder/document-icons";
