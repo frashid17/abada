@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { CheckCircle2, Loader2 } from "lucide-react";
+import { CheckCircle2, FileCheck2, Loader2 } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 import { DOCUMENT_ICONS } from "@/components/founder/document-icons";
 import type { DashboardDocument } from "@/lib/documents/dashboard";
 import type { DocumentStatus } from "@/lib/documents/catalog";
@@ -12,6 +13,8 @@ type FounderChecklistTrackerProps = {
   stepLabel: (step: number) => string;
   title: string;
   subtitle?: string;
+  hrefFor?: (documentType: string) => string;
+  icons?: Record<string, LucideIcon>;
 };
 
 function trackerTone(status: DocumentStatus, isNext: boolean): string {
@@ -34,6 +37,8 @@ export function FounderChecklistTracker({
   stepLabel,
   title,
   subtitle,
+  hrefFor,
+  icons = DOCUMENT_ICONS,
 }: FounderChecklistTrackerProps) {
   const nextType =
     documents.find((doc) => doc.status !== "complete")?.documentType ?? null;
@@ -69,19 +74,27 @@ export function FounderChecklistTracker({
           />
         </div>
 
-        <ol className="relative grid gap-3 sm:grid-cols-5 sm:gap-2.5">
+        <ol
+          className={cn(
+            "relative grid gap-3 sm:gap-2.5",
+            documents.length <= 3 ? "sm:grid-cols-3" : "sm:grid-cols-5",
+          )}
+        >
           {documents.map((doc) => {
             const isNext = doc.documentType === nextType;
             const isComplete = doc.status === "complete";
             const isActive =
               isNext || doc.status === "draft" || doc.status === "in_review";
-            const Icon = DOCUMENT_ICONS[doc.documentType];
+            const Icon = icons[doc.documentType] ?? FileCheck2;
             const docTitle = documentTitles[doc.documentType] ?? doc.documentType;
+            const href = hrefFor
+              ? hrefFor(doc.documentType)
+              : `/fundador/documentos/${doc.documentType}`;
 
             return (
               <li key={doc.documentType} className="relative">
                 <Link
-                  href={`/fundador/documentos/${doc.documentType}`}
+                  href={href}
                   className={cn(
                     "group relative flex h-full cursor-pointer flex-col items-center rounded-2xl border p-3.5 text-center",
                     "transition-all duration-200 hover:-translate-y-1 hover:shadow-card",
