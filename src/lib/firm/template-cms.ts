@@ -1,6 +1,6 @@
 import { createServiceRoleSupabaseClient } from "@/lib/supabase/server";
 import { writeAuditLog } from "@/lib/audit";
-import { requireFirmAdmin } from "@/lib/firm/membership";
+import { requireFirmAdmin, requireFirmMembership } from "@/lib/firm/membership";
 import {
   getPublishedMasterTemplateBody,
   type TemplateLocale,
@@ -28,7 +28,7 @@ export type FirmClauseRow = {
 };
 
 async function requireFirmTenantId(): Promise<string> {
-  const { tenantId } = await requireFirmAdmin();
+  const { tenantId } = await requireFirmMembership();
   if (!tenantId) throw new Error("No firm tenant");
   return tenantId;
 }
