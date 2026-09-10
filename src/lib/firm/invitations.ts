@@ -1,10 +1,26 @@
 import { randomBytes } from "crypto";
+import { clerkClient } from "@clerk/nextjs/server";
 import { createServiceRoleSupabaseClient } from "@/lib/supabase/server";
 import { resolveDefaultFirmTenantId } from "@/lib/firm/reviews";
 import type { FirmMemberRole } from "@/lib/firm/membership";
 import { toAbsoluteAppUrl } from "@/lib/auth/app-url";
 
 const INVITE_TTL_DAYS = 7;
+
+async function setClerkWorkspaceContext(clerkUserId: string, context: "firm") {
+  try {
+    const clerk = await clerkClient();
+    const user = await clerk.users.getUser(clerkUserId);
+    const existingPublic = (user.publicMetadata ?? {}) as Record<string, unknown>;
+    const existingUnsafe = (user.unsafeMetadata ?? {}) as Record<string, unknown>;
+    await clerk.users.updateUserMetadata(clerkUserId, {
+      publicMetadata: { ...existingPublic, context },
+      unsafeMetadata: { ...existingUnsafe, context },
+    });
+  } catch {
+    // Clerk metadata sync is best-effort; profile context still gates workspace.
+  }
+}
 
 export type FirmInvitationRecord = {
   id: string;
@@ -130,6 +146,8 @@ export async function redeemFirmInvitation(input: {
     },
     { onConflict: "clerk_user_id" },
   );
+
+  await setClerkWorkspaceContext(input.clerkUserId, "firm");
 
   const { data, error } = await supabase
     .from("firm_invitations")
@@ -311,4 +329,6 @@ export async function bootstrapFirmAdmin(input: {
     },
     { onConflict: "clerk_user_id" },
   );
+
+  await setClerkWorkspaceContext(input.clerkUserId, "firm");
 }
