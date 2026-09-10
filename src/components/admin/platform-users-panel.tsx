@@ -113,7 +113,11 @@ export function PlatformUsersPanel({ users }: { users: AdminUserRow[] }) {
                     {user.isPlatformAdmin ? (
                       <span className="inline-flex rounded-md border border-good-line bg-good-bg px-2 py-0.5 text-xs font-semibold text-good">
                         {t("adminYes")}
-                        {user.adminSource === "env" ? ` · ${t("sourceEnv")}` : ""}
+                        {user.adminSource === "env"
+                          ? ` · ${t("sourceEnv")}`
+                          : user.adminSource === "metadata"
+                            ? ` · ${t("sourceMetadata")}`
+                            : ""}
                       </span>
                     ) : (
                       <span className="inline-flex rounded-md border border-border px-2 py-0.5 text-xs font-medium text-muted-foreground">
