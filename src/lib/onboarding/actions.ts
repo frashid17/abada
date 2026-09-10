@@ -26,6 +26,9 @@ export async function getOnboardingRedirect(userId: string): Promise<string | nu
     .maybeSingle();
 
   if (profile?.onboarding_complete) {
+    // Firm membership wins over a stale founder/investor profile context.
+    const membershipHome = await getFirmMembershipForUser(userId);
+    if (membershipHome) return "/firma";
     return homeForContext(profile.context);
   }
 
