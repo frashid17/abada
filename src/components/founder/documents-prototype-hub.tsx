@@ -18,7 +18,7 @@ function docProgress(
   docId: PrototypeDocId,
   seen: Record<string, Record<string, boolean>>,
   decisions: Record<string, string | number>,
-  articles: ReturnType<typeof import("@/lib/documents/prototype/catalog").flattenPrototypeArticles>,
+  articles: ReturnType<typeof flattenPrototypeArticles>,
 ) {
   const totalDec = articles.filter((a) => a.dec).length;
   const doneDec = articles.filter(
@@ -28,40 +28,40 @@ function docProgress(
   return { totalDec, doneDec, seenCount, totalArts: articles.length };
 }
 
-export function DocumentsPrototypeHub({
-  secondary,
-}: {
-  secondary?: React.ReactNode;
-}) {
+export function DocumentsPrototypeHub() {
   const t = useTranslations("founder.documentsPrototype");
   const locale = useLocale();
   const lang = locale.startsWith("en") ? "en" : "es";
   const content = usePrototypeContent();
   const { store, hydrated } = usePrototypeDocumentStore();
 
-  const companyReady = Boolean(store.company.nombre.trim() && store.company.nit.trim());
+  const companyName = store.company.nombre ?? "";
+  const companyNit = store.company.nit ?? "";
+  const companyReady = Boolean(companyName.trim() && companyNit.trim());
 
   const cards = useMemo(() => {
-    return content.order.map((id, index) => {
-      const doc = content.docs[id];
-      const arts = flattenPrototypeArticles(id, content);
-      const progress = docProgress(id, store.seen, store.decisions, arts);
-      const status =
-        progress.doneDec === 0 && progress.seenCount === 0
-          ? "notStarted"
-          : progress.doneDec >= progress.totalDec && progress.totalDec > 0
-            ? "done"
-            : "inProgress";
-      const pct =
-        progress.totalDec > 0
-          ? Math.round((progress.doneDec / progress.totalDec) * 100)
-          : Math.round((progress.seenCount / Math.max(progress.totalArts, 1)) * 100);
-      return { id, doc, index, status, pct, progress };
-    });
+    return content.order
+      .filter((id): id is PrototypeDocId => Boolean(content.docs[id]))
+      .map((id, index) => {
+        const doc = content.docs[id]!;
+        const arts = flattenPrototypeArticles(id, content);
+        const progress = docProgress(id, store.seen, store.decisions, arts);
+        const status =
+          progress.doneDec === 0 && progress.seenCount === 0
+            ? "notStarted"
+            : progress.doneDec >= progress.totalDec && progress.totalDec > 0
+              ? "done"
+              : "inProgress";
+        const pct =
+          progress.totalDec > 0
+            ? Math.round((progress.doneDec / progress.totalDec) * 100)
+            : Math.round((progress.seenCount / Math.max(progress.totalArts, 1)) * 100);
+        return { id, doc, index, status, pct, progress };
+      });
   }, [content, store.decisions, store.seen]);
 
   return (
-    <div className="pb-16 pt-2">
+    <div className="pb-4 pt-2">
       <p className="text-[11.5px] font-bold uppercase tracking-[0.12em] text-highlight">
         {t("eyebrow")}
       </p>
@@ -85,7 +85,7 @@ export function DocumentsPrototypeHub({
         </span>
         <p className="min-w-[200px] flex-1 text-[13px] text-muted-foreground">
           {hydrated && companyReady
-            ? `${store.company.nombre} · NIT ${store.company.nit}`
+            ? `${companyName} · NIT ${companyNit}`
             : t("setupLede")}
         </p>
         <Button asChild size="sm" variant={companyReady ? "outline" : "cta"}>
@@ -143,8 +143,6 @@ export function DocumentsPrototypeHub({
       </div>
 
       <p className="mt-6 text-[12.5px] text-muted-foreground">{t("langNote")}</p>
-
-      {secondary ? <div className="mt-12 space-y-4">{secondary}</div> : null}
     </div>
   );
 }
