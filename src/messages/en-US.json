@@ -252,6 +252,7 @@
       "makeAdmin": "Make admin",
       "revokeAdmin": "Revoke admin",
       "sourceEnv": "env",
+      "sourceMetadata": "Clerk flag (stale)",
       "envLocked": "This admin is set in PLATFORM_ADMIN_SUBS and must be changed in environment config.",
       "onboarded": "Onboarding complete",
       "notOnboarded": "Onboarding incomplete",
@@ -586,6 +587,7 @@
       "adminDashboard": "Admin console",
       "adminButton": "Admin",
       "founderDashboard": "Founder dashboard",
+      "firmDashboard": "Firm dashboard",
       "manage": "Manage account",
       "signOut": "Sign out"
     },
@@ -2593,7 +2595,14 @@
       "name": "Name",
       "body": "Body",
       "save": "Save",
-      "delete": "Delete"
+      "delete": "Delete",
+      "open": "Open in editor",
+      "emptyTemplates": "No firm template overrides yet. Create one above to customize a master document.",
+      "emptyClauses": "No firm clauses yet. Add clause library entries above.",
+      "editingTemplate": "Editing template — save to update, or cancel.",
+      "editingClause": "Editing clause — save to update, or cancel.",
+      "cancelEdit": "Cancel",
+      "readOnly": "You can browse firm templates. Only partners and administrators can edit them."
     },
     "team": {
       "eyebrow": "Team",
