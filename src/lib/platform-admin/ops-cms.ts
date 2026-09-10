@@ -121,6 +121,27 @@ function parseEnvAdminSubs(): Set<string> {
   );
 }
 
+async function listClerkMetadataAdminIds(): Promise<Set<string>> {
+  const clerk = await clerkClient();
+  const ids = new Set<string>();
+  let offset = 0;
+  const limit = 100;
+
+  for (;;) {
+    const page = await clerk.users.getUserList({ limit, offset });
+    for (const user of page.data) {
+      if (user.publicMetadata?.platformAdmin === true) {
+        ids.add(user.id);
+      }
+    }
+    if (page.data.length < limit) break;
+    offset += limit;
+    if (offset > 10_000) break;
+  }
+
+  return ids;
+}
+
 export async function listAdminUsers(): Promise<AdminUserRow[]> {
   await requirePlatformAdmin();
   const supabase = createServiceRoleSupabaseClient();
@@ -134,18 +155,28 @@ export async function listAdminUsers(): Promise<AdminUserRow[]> {
   const dbAdmins = new Set((adminRows ?? []).map((row) => row.clerk_user_id));
   const envEmails = parseEnvAdminEmails();
   const envSubs = parseEnvAdminSubs();
+  let metadataAdmins = new Set<string>();
+  try {
+    metadataAdmins = await listClerkMetadataAdminIds();
+  } catch {
+    // Clerk listing is best-effort for stale-flag visibility
+  }
 
   return (profiles ?? []).map((row) => {
     const email = row.email?.toLowerCase() ?? null;
     const inDb = dbAdmins.has(row.clerk_user_id);
     const inEnv =
       envSubs.has(row.clerk_user_id) || (email !== null && envEmails.has(email));
-    const isPlatformAdmin = inDb || inEnv;
-    const adminSource: AdminUserRow["adminSource"] = inDb
-      ? "db"
-      : inEnv
-        ? "env"
-        : null;
+    const inMetadata = metadataAdmins.has(row.clerk_user_id);
+    // Access is env/db only; metadata is shown so stale Clerk flags can be revoked.
+    const isPlatformAdmin = inDb || inEnv || inMetadata;
+    const adminSource: AdminUserRow["adminSource"] = inEnv
+      ? "env"
+      : inDb
+        ? "db"
+        : inMetadata
+          ? "metadata"
+          : null;
 
     return {
       clerkUserId: row.clerk_user_id,
