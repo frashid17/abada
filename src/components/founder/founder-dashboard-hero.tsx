@@ -18,6 +18,7 @@ type FounderDashboardHeroProps = {
   nextDocument: DashboardDocument | null;
   nextDocumentTitle: string | null;
   continueCta: string;
+  nextDocumentHref?: string;
   stats: {
     completed: string;
     inProgress: string;
@@ -37,6 +38,7 @@ export function FounderDashboardHero({
   nextDocument,
   nextDocumentTitle,
   continueCta,
+  nextDocumentHref = "/fundador/documentos",
   stats,
 }: FounderDashboardHeroProps) {
   const showCta = nextDocument && isDocumentFlowReady();
@@ -94,7 +96,7 @@ export function FounderDashboardHero({
           <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
             {showCta ? (
               <Button asChild variant="cta" size="lg" className="h-12 rounded-xl px-6 shadow-glow">
-                <Link href={`/fundador/documentos/${nextDocument.documentType}`}>
+                <Link href={nextDocumentHref}>
                   <Sparkles className="h-4 w-4" />
                   {continueCta}
                   <ArrowRight className="h-4 w-4" />
