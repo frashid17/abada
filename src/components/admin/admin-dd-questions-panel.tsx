@@ -14,6 +14,7 @@ import { DD_RISK_CATEGORIES, DD_RISK_LEVELS } from "@/lib/dd/taxonomy";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { Select } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
 
 const SECTIONS = ["fundadores", "incentivos", "pi", "declaration", "cross"] as const;
@@ -110,8 +111,7 @@ export function AdminDdQuestionsPanel({ questions }: { questions: AdminDdQuestio
         </div>
         <div className="space-y-2">
           <Label>{t("section")}</Label>
-          <select
-            className="flex h-10 w-full rounded-md border border-input bg-background px-3 text-sm"
+          <Select
             value={form.sectionKey}
             onChange={(e) => setForm((f) => ({ ...f, sectionKey: e.target.value }))}
           >
@@ -120,7 +120,7 @@ export function AdminDdQuestionsPanel({ questions }: { questions: AdminDdQuestio
                 {t(`sections.${section}`)}
               </option>
             ))}
-          </select>
+          </Select>
         </div>
         <div className="space-y-2 lg:col-span-2">
           <Label>{t("qEs")}</Label>
@@ -140,15 +140,14 @@ export function AdminDdQuestionsPanel({ questions }: { questions: AdminDdQuestio
         </div>
         <div className="space-y-2">
           <Label>{t("answerType")}</Label>
-          <select
-            className="flex h-10 w-full rounded-md border border-input bg-background px-3 text-sm"
+          <Select
             value={form.answerType}
             onChange={(e) => setForm((f) => ({ ...f, answerType: e.target.value }))}
           >
             <option value="yes_no">yes_no</option>
             <option value="yes_no_na">yes_no_na</option>
             <option value="text">text</option>
-          </select>
+          </Select>
         </div>
         <div className="space-y-2">
           <Label>{t("sortOrder")}</Label>
@@ -160,8 +159,7 @@ export function AdminDdQuestionsPanel({ questions }: { questions: AdminDdQuestio
         </div>
         <div className="space-y-2">
           <Label>{t("riskCategory")}</Label>
-          <select
-            className="flex h-10 w-full rounded-md border border-input bg-background px-3 text-sm"
+          <Select
             value={form.riskCategory}
             onChange={(e) => setForm((f) => ({ ...f, riskCategory: e.target.value }))}
           >
@@ -170,12 +168,11 @@ export function AdminDdQuestionsPanel({ questions }: { questions: AdminDdQuestio
                 {category}
               </option>
             ))}
-          </select>
+          </Select>
         </div>
         <div className="space-y-2">
           <Label>{t("riskLevel")}</Label>
-          <select
-            className="flex h-10 w-full rounded-md border border-input bg-background px-3 text-sm"
+          <Select
             value={form.riskLevelIfGap}
             onChange={(e) => setForm((f) => ({ ...f, riskLevelIfGap: e.target.value }))}
           >
@@ -184,18 +181,17 @@ export function AdminDdQuestionsPanel({ questions }: { questions: AdminDdQuestio
                 {level}
               </option>
             ))}
-          </select>
+          </Select>
         </div>
         <div className="space-y-2">
           <Label>{t("status")}</Label>
-          <select
-            className="flex h-10 w-full rounded-md border border-input bg-background px-3 text-sm"
+          <Select
             value={form.status}
             onChange={(e) => setForm((f) => ({ ...f, status: e.target.value }))}
           >
             <option value="draft">draft</option>
             <option value="published">published</option>
-          </select>
+          </Select>
         </div>
         <div className="flex items-end">
           <Button type="submit" variant="cta" disabled={pending}>
