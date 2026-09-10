@@ -19,14 +19,31 @@ export async function getOrCreateProfile() {
     .eq("clerk_user_id", userId)
     .maybeSingle();
 
-  if (existing) return existing;
-
   const clerk = await clerkClient();
   const user = await clerk.users.getUser(userId);
-  const context =
+  const contextFromClerk =
     (user.publicMetadata?.context as UserContext | undefined) ??
     (user.unsafeMetadata?.context as UserContext | undefined) ??
-    "founder";
+    null;
+
+  if (existing) {
+    // Clerk is source of truth for workspace context when metadata is set.
+    if (contextFromClerk && existing.context !== contextFromClerk) {
+      const { data: synced, error } = await supabase
+        .from("profiles")
+        .update({
+          context: contextFromClerk,
+          updated_at: new Date().toISOString(),
+        })
+        .eq("clerk_user_id", userId)
+        .select("*")
+        .single();
+      if (!error && synced) return synced;
+    }
+    return existing;
+  }
+
+  const context = contextFromClerk ?? "founder";
   const email = user.primaryEmailAddress?.emailAddress?.trim().toLowerCase() ?? null;
 
   const baseRow = {
