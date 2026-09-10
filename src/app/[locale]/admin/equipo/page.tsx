@@ -4,6 +4,7 @@ import { redirect } from "next/navigation";
 import { AppShell } from "@/components/layout/app-shell";
 import { PageHeader } from "@/components/layout/page-header";
 import { PlatformUsersPanel } from "@/components/admin/platform-users-panel";
+import { ProfileOrphanCleanup } from "@/components/admin/profile-orphan-cleanup";
 import { isPlatformAdmin } from "@/lib/platform-admin/auth";
 import { listAdminUsers } from "@/lib/platform-admin/ops-cms";
 
@@ -20,6 +21,7 @@ export default async function AdminTeamPage() {
       <div className="space-y-8">
         <PageHeader eyebrow={t("eyebrow")} title={t("title")} description={t("subtitle")} />
         <PlatformUsersPanel users={users} />
+        <ProfileOrphanCleanup />
       </div>
     </AppShell>
   );
