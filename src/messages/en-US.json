@@ -259,6 +259,32 @@
         "founder": "Founder",
         "investor": "Investor",
         "firm": "Firm"
+      },
+      "cleanup": {
+        "title": "Orphan profile cleanup",
+        "description": "Remove profile rows whose Clerk user id does not exist in the Clerk instance configured for this environment. Preview first; only empty profiles are deleted.",
+        "localhostNote": "Localhost usually uses Clerk TEST keys (pk_test_). Cleanup then compares against test Clerk only. Never run this while localhost points at production Supabase with test Clerk keys — every live profile would look like an orphan.",
+        "preview": "Preview orphans",
+        "clerkMode": "Clerk mode: {mode}",
+        "counts": "{clerk} in Clerk · {profiles} profiles · {orphans} orphans",
+        "removable": "{count} removable",
+        "blocked": "{count} blocked",
+        "none": "No orphaned profiles for the current Clerk instance.",
+        "colUser": "Profile",
+        "colRelated": "Related rows",
+        "colStatus": "Status",
+        "relatedSummary": "docs {documents} · memberships {memberships} · reviews {reviews} · deals {deals} · questionnaires {questionnaires}",
+        "statusRemovable": "Safe to delete",
+        "blockedReason": {
+          "current_admin": "Blocked — current admin",
+          "env_admin": "Blocked — PLATFORM_ADMIN_SUBS",
+          "has_related_data": "Blocked — has related data (manual review)",
+          "blocked": "Blocked"
+        },
+        "confirmHint": "Type {phrase} to confirm. Use CLEANUP-TEST with test Clerk keys and CLEANUP-LIVE with production Clerk keys.",
+        "confirmLabel": "Confirmation phrase",
+        "deleteRemovable": "Delete {count} empty orphans",
+        "deleted": "Deleted {count} orphan profile(s). Skipped {skipped}."
       }
     },
     "flags": {
@@ -665,13 +691,13 @@
     "dashboard": {
       "eyebrow": "Investment-readiness",
       "title": "My workspace",
-      "subtitle": "Your investment-readiness checklist — five documents to be investor-ready.",
+      "subtitle": "Your investment-readiness checklist — three documents to be investor-ready.",
       "step": "Step {step}",
       "progress": "{completed} of {total} complete",
       "continueCta": "Continue checklist",
       "nextUp": "Next up: {title}",
       "pipelineTitle": "Your document path",
-      "pipelineSubtitle": "Five steps to investment-readiness — tap any to open the flow.",
+      "pipelineSubtitle": "Three steps to investment-readiness — tap any to open the flow.",
       "allDocuments": "All documents",
       "comingSoonBadge": "Coming soon",
       "updated": "Updated {date}",
