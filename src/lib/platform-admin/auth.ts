@@ -1,16 +1,9 @@
 import { auth, clerkClient } from "@clerk/nextjs/server";
-import { createServiceRoleSupabaseClient } from "@/lib/supabase/server";
-
-function normalizeEmail(value: string): string {
-  return value.trim().toLowerCase();
-}
-
-function parseAdminAllowlist(): string[] {
-  return (process.env.PLATFORM_ADMIN_SUBS ?? "")
-    .split(",")
-    .map((s) => s.trim())
-    .filter(Boolean);
-}
+import {
+  detectClerkKeyMode,
+  normalizeEmail,
+  parseAdminAllowlist,
+} from "@/lib/platform-admin/clerk-env";
 
 function primaryEmailFromClerkUser(user: {
   emailAddresses: Array<{ id: string; emailAddress: string }>;
@@ -22,12 +15,11 @@ function primaryEmailFromClerkUser(user: {
 }
 
 /**
- * Platform ops access (authoritative sources only):
- * - PLATFORM_ADMIN_SUBS: comma-separated emails (preferred) or Clerk user ids
- * - rows in public.platform_admins
+ * Platform ops access — Clerk instance + env only (no Supabase user table):
+ * - PLATFORM_ADMIN_SUBS: emails (preferred) or Clerk user ids for the current instance
+ * - Clerk publicMetadata.platformAdmin === true
  *
- * Clerk publicMetadata.platformAdmin is synced when granting/revoking for client
- * UX hints, but must not grant access by itself (stale flags survive DB wipes).
+ * Test keys only see test Clerk users; live keys only see live Clerk users.
  */
 export async function isPlatformAdmin(userId?: string | null): Promise<boolean> {
   const sub = userId ?? (await auth()).userId;
@@ -39,6 +31,8 @@ export async function isPlatformAdmin(userId?: string | null): Promise<boolean> 
   try {
     const clerk = await clerkClient();
     const user = await clerk.users.getUser(sub);
+    if (user.publicMetadata?.platformAdmin === true) return true;
+
     const email = primaryEmailFromClerkUser(user);
     if (email && allowlist.some((entry) => normalizeEmail(entry) === email)) {
       return true;
@@ -47,17 +41,7 @@ export async function isPlatformAdmin(userId?: string | null): Promise<boolean> 
     // ignore Clerk lookup failures
   }
 
-  try {
-    const supabase = createServiceRoleSupabaseClient();
-    const { data } = await supabase
-      .from("platform_admins")
-      .select("clerk_user_id")
-      .eq("clerk_user_id", sub)
-      .maybeSingle();
-    return Boolean(data);
-  } catch {
-    return false;
-  }
+  return false;
 }
 
 export async function requirePlatformAdmin(): Promise<string> {
@@ -90,3 +74,5 @@ export async function findClerkUserIdByEmail(email: string): Promise<{
     displayName: [user.firstName, user.lastName].filter(Boolean).join(" ") || null,
   };
 }
+
+export { detectClerkKeyMode, primaryEmailFromClerkUser };
