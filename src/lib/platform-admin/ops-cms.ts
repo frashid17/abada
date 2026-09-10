@@ -1,7 +1,17 @@
 import { clerkClient } from "@clerk/nextjs/server";
 import { createServiceRoleSupabaseClient } from "@/lib/supabase/server";
 import { writeAuditLog } from "@/lib/audit";
-import { findClerkUserIdByEmail, requirePlatformAdmin } from "@/lib/platform-admin/auth";
+import {
+  findClerkUserIdByEmail,
+  primaryEmailFromClerkUser,
+  requirePlatformAdmin,
+} from "@/lib/platform-admin/auth";
+import {
+  detectClerkKeyMode,
+  normalizeEmail,
+  parseAdminAllowlist,
+  type ClerkKeyMode,
+} from "@/lib/platform-admin/clerk-env";
 import type { FeatureFlag } from "@/lib/feature-flags";
 import type { UserContext } from "@/types/database";
 
@@ -26,8 +36,13 @@ export type AdminUserRow = {
   context: "founder" | "investor" | "firm";
   onboardingComplete: boolean;
   isPlatformAdmin: boolean;
-  adminSource: "db" | "env" | "metadata" | null;
+  adminSource: "env" | "clerk" | null;
   updatedAt: string;
+};
+
+export type AdminUsersListResult = {
+  users: AdminUserRow[];
+  clerkMode: ClerkKeyMode;
 };
 
 export type AdminKnowledgeArticle = {
@@ -40,6 +55,31 @@ export type AdminKnowledgeArticle = {
   status: string;
   publishedAt: string | null;
 };
+
+function isUserContext(value: unknown): value is UserContext {
+  return value === "founder" || value === "investor" || value === "firm";
+}
+
+async function listAllClerkUsers() {
+  const clerk = await clerkClient();
+  const users = [];
+  let offset = 0;
+  const limit = 100;
+
+  for (;;) {
+    const page = await clerk.users.getUserList({
+      limit,
+      offset,
+      orderBy: "-created_at",
+    });
+    users.push(...page.data);
+    if (page.data.length < limit) break;
+    offset += limit;
+    if (offset > 10_000) break;
+  }
+
+  return users;
+}
 
 export async function listAdminTenants(): Promise<AdminTenantRow[]> {
   await requirePlatformAdmin();
@@ -67,35 +107,37 @@ export async function listAdminTenants(): Promise<AdminTenantRow[]> {
 }
 
 export async function listAdminPlatformAdmins(): Promise<AdminPlatformAdminRow[]> {
-  await requirePlatformAdmin();
-  const supabase = createServiceRoleSupabaseClient();
-  const { data, error } = await supabase
-    .from("platform_admins")
-    .select("clerk_user_id, email, display_name, created_at")
-    .order("created_at");
-  if (error) throw error;
-  return (data ?? []).map((row) => ({
-    clerkUserId: row.clerk_user_id,
-    email: row.email ?? null,
-    displayName: row.display_name,
-    createdAt: row.created_at,
-  }));
+  const { users } = await listAdminUsers();
+  return users
+    .filter((user) => user.isPlatformAdmin)
+    .map((user) => ({
+      clerkUserId: user.clerkUserId,
+      email: user.email,
+      displayName: user.displayName,
+      createdAt: user.updatedAt,
+    }));
 }
 
 export async function addPlatformAdmin(email: string, displayName?: string): Promise<void> {
   await requirePlatformAdmin();
   const resolved = await findClerkUserIdByEmail(email);
   if (!resolved) {
-    throw new Error("No Clerk user found for that email");
+    throw new Error("No Clerk user found for that email in the current Clerk instance");
   }
 
   await setUserPlatformAdmin(resolved.clerkUserId, true);
+
   if (displayName?.trim()) {
-    const supabase = createServiceRoleSupabaseClient();
-    await supabase
-      .from("platform_admins")
-      .update({ display_name: displayName.trim() })
-      .eq("clerk_user_id", resolved.clerkUserId);
+    const clerk = await clerkClient();
+    const user = await clerk.users.getUser(resolved.clerkUserId);
+    const existingPublic = (user.publicMetadata ?? {}) as Record<string, unknown>;
+    await clerk.users.updateUserMetadata(resolved.clerkUserId, {
+      publicMetadata: {
+        ...existingPublic,
+        platformAdmin: true,
+        displayNameOverride: displayName.trim(),
+      },
+    });
   }
 }
 
@@ -103,92 +145,60 @@ export async function removePlatformAdmin(clerkUserId: string): Promise<void> {
   await setUserPlatformAdmin(clerkUserId, false);
 }
 
-function parseEnvAdminEmails(): Set<string> {
-  return new Set(
-    (process.env.PLATFORM_ADMIN_SUBS ?? "")
-      .split(",")
-      .map((s) => s.trim().toLowerCase())
-      .filter((s) => s.includes("@")),
-  );
-}
-
-function parseEnvAdminSubs(): Set<string> {
-  return new Set(
-    (process.env.PLATFORM_ADMIN_SUBS ?? "")
-      .split(",")
-      .map((s) => s.trim())
-      .filter((s) => s.startsWith("user_")),
-  );
-}
-
-async function listClerkMetadataAdminIds(): Promise<Set<string>> {
-  const clerk = await clerkClient();
-  const ids = new Set<string>();
-  let offset = 0;
-  const limit = 100;
-
-  for (;;) {
-    const page = await clerk.users.getUserList({ limit, offset });
-    for (const user of page.data) {
-      if (user.publicMetadata?.platformAdmin === true) {
-        ids.add(user.id);
-      }
-    }
-    if (page.data.length < limit) break;
-    offset += limit;
-    if (offset > 10_000) break;
-  }
-
-  return ids;
-}
-
-export async function listAdminUsers(): Promise<AdminUserRow[]> {
+export async function listAdminUsers(): Promise<AdminUsersListResult> {
   await requirePlatformAdmin();
-  const supabase = createServiceRoleSupabaseClient();
-  const { data: profiles, error } = await supabase
-    .from("profiles")
-    .select("clerk_user_id, email, display_name, context, onboarding_complete, updated_at")
-    .order("updated_at", { ascending: false });
-  if (error) throw error;
+  const clerkMode = detectClerkKeyMode();
+  const allowlist = parseAdminAllowlist();
+  const clerkUsers = await listAllClerkUsers();
 
-  const { data: adminRows } = await supabase.from("platform_admins").select("clerk_user_id");
-  const dbAdmins = new Set((adminRows ?? []).map((row) => row.clerk_user_id));
-  const envEmails = parseEnvAdminEmails();
-  const envSubs = parseEnvAdminSubs();
-  let metadataAdmins = new Set<string>();
-  try {
-    metadataAdmins = await listClerkMetadataAdminIds();
-  } catch {
-    // Clerk listing is best-effort for stale-flag visibility
+  // Optional onboarding mirror from profiles — only for Clerk users that exist now.
+  const supabase = createServiceRoleSupabaseClient();
+  const clerkIds = clerkUsers.map((user) => user.id);
+  const onboardingBySub = new Map<string, boolean>();
+  if (clerkIds.length > 0) {
+    const { data: profiles } = await supabase
+      .from("profiles")
+      .select("clerk_user_id, onboarding_complete")
+      .in("clerk_user_id", clerkIds);
+    for (const row of profiles ?? []) {
+      onboardingBySub.set(row.clerk_user_id, Boolean(row.onboarding_complete));
+    }
   }
 
-  return (profiles ?? []).map((row) => {
-    const email = row.email?.toLowerCase() ?? null;
-    const inDb = dbAdmins.has(row.clerk_user_id);
+  const users: AdminUserRow[] = clerkUsers.map((user) => {
+    const email = primaryEmailFromClerkUser(user);
+    const meta = (user.publicMetadata ?? {}) as Record<string, unknown>;
+    const unsafe = (user.unsafeMetadata ?? {}) as Record<string, unknown>;
+    const contextRaw = meta.context ?? unsafe.context;
+    const context: UserContext = isUserContext(contextRaw) ? contextRaw : "founder";
     const inEnv =
-      envSubs.has(row.clerk_user_id) || (email !== null && envEmails.has(email));
-    const inMetadata = metadataAdmins.has(row.clerk_user_id);
-    // Access is env/db only; metadata is shown so stale Clerk flags can be revoked.
-    const isPlatformAdmin = inDb || inEnv || inMetadata;
-    const adminSource: AdminUserRow["adminSource"] = inEnv
-      ? "env"
-      : inDb
-        ? "db"
-        : inMetadata
-          ? "metadata"
-          : null;
+      allowlist.includes(user.id) ||
+      (email !== null && allowlist.some((entry) => normalizeEmail(entry) === email));
+    const inClerk = meta.platformAdmin === true;
+    const isPlatformAdmin = inEnv || inClerk;
+    const adminSource: AdminUserRow["adminSource"] = inEnv ? "env" : inClerk ? "clerk" : null;
+    const displayName =
+      (typeof meta.displayNameOverride === "string" && meta.displayNameOverride) ||
+      user.fullName ||
+      [user.firstName, user.lastName].filter(Boolean).join(" ") ||
+      null;
+    const onboardingFromMeta =
+      typeof meta.onboardingComplete === "boolean" ? meta.onboardingComplete : null;
 
     return {
-      clerkUserId: row.clerk_user_id,
-      email: row.email,
-      displayName: row.display_name,
-      context: row.context as UserContext,
-      onboardingComplete: Boolean(row.onboarding_complete),
+      clerkUserId: user.id,
+      email,
+      displayName,
+      context,
+      onboardingComplete:
+        onboardingFromMeta ?? onboardingBySub.get(user.id) ?? false,
       isPlatformAdmin,
       adminSource,
-      updatedAt: row.updated_at,
+      updatedAt: new Date(user.updatedAt).toISOString(),
     };
   });
+
+  return { users, clerkMode };
 }
 
 export async function setUserPlatformAdmin(
@@ -200,32 +210,9 @@ export async function setUserPlatformAdmin(
     throw new Error("You cannot remove your own platform admin access");
   }
 
-  const supabase = createServiceRoleSupabaseClient();
   const clerk = await clerkClient();
   const user = await clerk.users.getUser(clerkUserId);
-  const email =
-    user.primaryEmailAddress?.emailAddress?.trim().toLowerCase() ??
-    user.emailAddresses[0]?.emailAddress?.trim().toLowerCase() ??
-    null;
-  const displayName =
-    user.fullName ??
-    ([user.firstName, user.lastName].filter(Boolean).join(" ") || null);
-
-  if (enabled) {
-    const { error } = await supabase.from("platform_admins").upsert({
-      clerk_user_id: clerkUserId,
-      email,
-      display_name: displayName,
-    });
-    if (error) throw error;
-  } else {
-    const { error } = await supabase
-      .from("platform_admins")
-      .delete()
-      .eq("clerk_user_id", clerkUserId);
-    if (error) throw error;
-  }
-
+  const email = primaryEmailFromClerkUser(user);
   const existingPublic = (user.publicMetadata ?? {}) as Record<string, unknown>;
   await clerk.users.updateUserMetadata(clerkUserId, {
     publicMetadata: { ...existingPublic, platformAdmin: enabled },
@@ -236,7 +223,7 @@ export async function setUserPlatformAdmin(
     actorSub,
     resourceType: "platform_admin",
     resourceId: clerkUserId,
-    metadata: { email, via: "users_panel" },
+    metadata: { email, via: "clerk_metadata", clerkMode: detectClerkKeyMode() },
   });
 }
 
@@ -249,16 +236,6 @@ export async function setUserContext(
     throw new Error("Invalid context");
   }
 
-  const supabase = createServiceRoleSupabaseClient();
-  const { error } = await supabase
-    .from("profiles")
-    .update({
-      context,
-      updated_at: new Date().toISOString(),
-    })
-    .eq("clerk_user_id", clerkUserId);
-  if (error) throw error;
-
   const clerk = await clerkClient();
   const user = await clerk.users.getUser(clerkUserId);
   const existingPublic = (user.publicMetadata ?? {}) as Record<string, unknown>;
@@ -268,12 +245,22 @@ export async function setUserContext(
     unsafeMetadata: { ...existingUnsafe, context },
   });
 
+  // Mirror into the app profile when it already exists for this Clerk user.
+  const supabase = createServiceRoleSupabaseClient();
+  await supabase
+    .from("profiles")
+    .update({
+      context,
+      updated_at: new Date().toISOString(),
+    })
+    .eq("clerk_user_id", clerkUserId);
+
   await writeAuditLog({
     action: "platform.user.context_updated",
     actorSub,
-    resourceType: "profile",
+    resourceType: "clerk_user",
     resourceId: clerkUserId,
-    metadata: { context },
+    metadata: { context, via: "clerk_metadata", clerkMode: detectClerkKeyMode() },
   });
 }
 
