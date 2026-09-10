@@ -20,13 +20,18 @@ export function AuthHeaderPlaceholder() {
 type AuthHeaderActionsProps = {
   signInLabel: string;
   showAdminLink?: boolean;
+  dashboardHref?: string;
 };
 
 /**
  * Client-only auth chrome — avoids Clerk SignedIn/SignedOut hydration mismatches
  * with Radix dropdowns in AccountMenu.
  */
-export function AuthHeaderActions({ signInLabel, showAdminLink = false }: AuthHeaderActionsProps) {
+export function AuthHeaderActions({
+  signInLabel,
+  showAdminLink = false,
+  dashboardHref = "/fundador",
+}: AuthHeaderActionsProps) {
   const { isLoaded, userId } = useAuth();
   const mounted = useIsClient();
   const t = useTranslations("auth.account");
@@ -53,7 +58,7 @@ export function AuthHeaderActions({ signInLabel, showAdminLink = false }: AuthHe
           </Link>
         </Button>
       ) : null}
-      <AccountMenu showAdminLink={showAdminLink} />
+      <AccountMenu showAdminLink={showAdminLink} dashboardHref={dashboardHref} />
     </div>
   );
 }
