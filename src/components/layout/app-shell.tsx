@@ -12,9 +12,12 @@ import { ShellNav } from "@/components/layout/shell-nav";
 import { ThemeToggle } from "@/components/layout/theme-toggle";
 import { NotificationBell } from "@/components/notifications/notification-bell";
 import { getFirmName } from "@/lib/brand";
+import { homeForContext } from "@/lib/auth/routing";
+import { resolveWorkspaceHome } from "@/lib/auth/workspace-home";
 import { getOnboardingRedirect } from "@/lib/onboarding/actions";
 import { isPlatformAdmin } from "@/lib/platform-admin/auth";
 import { cn } from "@/lib/utils";
+import type { UserContext } from "@/types/database";
 
 type AppShellProps = {
   children: React.ReactNode;
@@ -64,6 +67,11 @@ export async function AppShell({ children, variant, workspace = false }: AppShel
   const firmName = getFirmName();
   const { userId } = await auth();
   const showAdminLink = userId ? await isPlatformAdmin(userId) : false;
+  const dashboardHref = userId
+    ? variant === "firm" || variant === "founder" || variant === "investor"
+      ? homeForContext(variant as UserContext)
+      : await resolveWorkspaceHome(userId)
+    : "/iniciar-sesion";
 
   let publicWorkspaceHref = "/iniciar-sesion";
   if (variant === "public" && userId) {
@@ -127,7 +135,11 @@ export async function AppShell({ children, variant, workspace = false }: AppShel
             <LocaleSelector />
             <ThemeToggle />
             {isApp ? <NotificationBell /> : null}
-            <AuthHeaderActions signInLabel={t("signIn")} showAdminLink={showAdminLink} />
+            <AuthHeaderActions
+              signInLabel={t("signIn")}
+              showAdminLink={showAdminLink}
+              dashboardHref={dashboardHref}
+            />
           </div>
         </div>
       </header>
