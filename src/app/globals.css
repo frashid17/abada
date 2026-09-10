@@ -153,8 +153,55 @@
     @apply border-border outline-ring/50;
   }
 
+  :root {
+    color-scheme: light;
+  }
+
+  .dark {
+    color-scheme: dark;
+  }
+
   body {
     @apply bg-background text-foreground antialiased;
+  }
+
+  /* Native selects/options often ignore Tailwind in dark mode without explicit colors. */
+  select {
+    background-color: var(--surface);
+    color: var(--fg);
+  }
+
+  select option,
+  select optgroup {
+    background-color: var(--surface);
+    color: var(--fg);
+  }
+
+  input,
+  textarea {
+    background-color: var(--surface);
+    color: var(--fg);
+  }
+
+  input::placeholder,
+  textarea::placeholder {
+    color: var(--fg-muted);
+  }
+
+  /* Browser autofill can force light backgrounds and wash out dark-mode text. */
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  textarea:-webkit-autofill,
+  textarea:-webkit-autofill:hover,
+  textarea:-webkit-autofill:focus,
+  select:-webkit-autofill,
+  select:-webkit-autofill:hover,
+  select:-webkit-autofill:focus {
+    -webkit-text-fill-color: var(--fg);
+    caret-color: var(--fg);
+    box-shadow: 0 0 0 1000px var(--surface) inset;
+    transition: background-color 99999s ease-out;
   }
 
   ::selection {
