@@ -5,12 +5,10 @@ import type { UserContext } from "@/types/database";
 
 /**
  * Resolve the product workspace home for a signed-in user.
- * Firm membership wins over stale Clerk/profile founder context.
+ * Profile/Clerk workspace context is the source of truth.
+ * Firm membership is only a fallback when context is missing.
  */
 export async function resolveWorkspaceHome(userId: string): Promise<string> {
-  const membership = await getFirmMembershipForUser(userId);
-  if (membership) return "/firma";
-
   const supabase = createServiceRoleSupabaseClient();
   const { data: profile } = await supabase
     .from("profiles")
@@ -22,15 +20,15 @@ export async function resolveWorkspaceHome(userId: string): Promise<string> {
     return homeForContext(profile.context as UserContext);
   }
 
+  const membership = await getFirmMembershipForUser(userId);
+  if (membership) return "/firma";
+
   return "/fundador";
 }
 
 export async function resolveWorkspaceContext(
   userId: string,
 ): Promise<UserContext> {
-  const membership = await getFirmMembershipForUser(userId);
-  if (membership) return "firm";
-
   const supabase = createServiceRoleSupabaseClient();
   const { data: profile } = await supabase
     .from("profiles")
@@ -38,9 +36,16 @@ export async function resolveWorkspaceContext(
     .eq("clerk_user_id", userId)
     .maybeSingle();
 
-  if (profile?.context === "investor" || profile?.context === "firm") {
+  if (
+    profile?.context === "founder" ||
+    profile?.context === "investor" ||
+    profile?.context === "firm"
+  ) {
     return profile.context;
   }
+
+  const membership = await getFirmMembershipForUser(userId);
+  if (membership) return "firm";
 
   return "founder";
 }
