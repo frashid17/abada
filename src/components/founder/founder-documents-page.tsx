@@ -1,9 +1,8 @@
 import { getTranslations } from "next-intl/server";
 import { DocumentsPrototypeHub } from "@/components/founder/documents-prototype-hub";
 import { FounderDocumentsList } from "@/components/founder/founder-documents-list";
-import { PrototypeContentProvider } from "@/components/founder/prototype-content-provider";
+import { WithResolvedPrototypeContent } from "@/components/founder/with-resolved-prototype-content";
 import type { FounderDashboardData } from "@/lib/documents/dashboard";
-import { getResolvedPrototypeContent } from "@/lib/documents/prototype/resolve-content";
 
 type FounderDocumentsPageContentProps = {
   data: FounderDashboardData;
@@ -11,10 +10,9 @@ type FounderDocumentsPageContentProps = {
 
 export async function FounderDocumentsPageContent({ data }: FounderDocumentsPageContentProps) {
   const t = await getTranslations("founder");
-  const content = await getResolvedPrototypeContent();
 
   return (
-    <PrototypeContentProvider content={content}>
+    <WithResolvedPrototypeContent>
       <div className="space-y-12">
         <DocumentsPrototypeHub />
         <section className="space-y-4">
@@ -29,6 +27,6 @@ export async function FounderDocumentsPageContent({ data }: FounderDocumentsPage
           <FounderDocumentsList data={data} variant="catalog" showHeading={false} />
         </section>
       </div>
-    </PrototypeContentProvider>
+    </WithResolvedPrototypeContent>
   );
 }
