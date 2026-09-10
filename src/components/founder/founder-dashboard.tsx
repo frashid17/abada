@@ -1,13 +1,10 @@
 import { FounderDashboardBody } from "@/components/founder/founder-dashboard-body";
-import { PrototypeContentProvider } from "@/components/founder/prototype-content-provider";
-import { getResolvedPrototypeContent } from "@/lib/documents/prototype/resolve-content";
+import { WithResolvedPrototypeContent } from "@/components/founder/with-resolved-prototype-content";
 
 export async function FounderDashboard() {
-  const content = await getResolvedPrototypeContent();
-
   return (
-    <PrototypeContentProvider content={content}>
+    <WithResolvedPrototypeContent>
       <FounderDashboardBody />
-    </PrototypeContentProvider>
+    </WithResolvedPrototypeContent>
   );
 }
