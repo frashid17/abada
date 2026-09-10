@@ -8,12 +8,19 @@ import {
   setUserPlatformAdminAction,
 } from "@/lib/platform-admin/cms-actions";
 import type { AdminUserRow } from "@/lib/platform-admin/ops-cms";
+import type { ClerkKeyMode } from "@/lib/platform-admin/clerk-env";
 import type { UserContext } from "@/types/database";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Select } from "@/components/ui/select";
 
-export function PlatformUsersPanel({ users }: { users: AdminUserRow[] }) {
+export function PlatformUsersPanel({
+  users,
+  clerkMode,
+}: {
+  users: AdminUserRow[];
+  clerkMode: ClerkKeyMode;
+}) {
   const t = useTranslations("admin.team");
   const router = useRouter();
   const [pending, startTransition] = useTransition();
@@ -47,8 +54,22 @@ export function PlatformUsersPanel({ users }: { users: AdminUserRow[] }) {
     });
   }
 
+  const modeLabel =
+    clerkMode === "test"
+      ? t("clerkModeTest")
+      : clerkMode === "live"
+        ? t("clerkModeLive")
+        : t("clerkModeUnknown");
+
   return (
     <div className="space-y-4">
+      <div className="rounded-xl border border-border bg-muted/30 px-4 py-3 text-sm">
+        <p className="font-medium text-foreground">{t("clerkSourceTitle")}</p>
+        <p className="mt-1 text-muted-foreground">
+          {t("clerkSourceBody", { mode: modeLabel })}
+        </p>
+      </div>
+
       <div className="flex flex-wrap items-end justify-between gap-3">
         <div className="min-w-[220px] flex-1 space-y-1">
           <label htmlFor="userSearch" className="text-sm font-medium">
@@ -115,8 +136,8 @@ export function PlatformUsersPanel({ users }: { users: AdminUserRow[] }) {
                         {t("adminYes")}
                         {user.adminSource === "env"
                           ? ` · ${t("sourceEnv")}`
-                          : user.adminSource === "metadata"
-                            ? ` · ${t("sourceMetadata")}`
+                          : user.adminSource === "clerk"
+                            ? ` · ${t("sourceClerk")}`
                             : ""}
                       </span>
                     ) : (
