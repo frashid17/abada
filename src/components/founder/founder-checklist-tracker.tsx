@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import { CheckCircle2, FileCheck2, Loader2 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
