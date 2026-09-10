@@ -2,8 +2,12 @@ import { clerkClient } from "@clerk/nextjs/server";
 import { createServiceRoleSupabaseClient } from "@/lib/supabase/server";
 import { writeAuditLog } from "@/lib/audit";
 import { requirePlatformAdmin } from "@/lib/platform-admin/auth";
+import {
+  detectClerkKeyMode,
+  type ClerkKeyMode,
+} from "@/lib/platform-admin/clerk-env";
 
-export type ClerkKeyMode = "test" | "live" | "unknown";
+export type { ClerkKeyMode };
 
 export type OrphanRelatedCounts = {
   documents: number;
@@ -44,12 +48,7 @@ export type OrphanCleanupResult = {
 const CONFIRM_TEST = "CLEANUP-TEST";
 const CONFIRM_LIVE = "CLEANUP-LIVE";
 
-export function detectClerkKeyMode(): ClerkKeyMode {
-  const key = process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY ?? "";
-  if (key.startsWith("pk_test_")) return "test";
-  if (key.startsWith("pk_live_")) return "live";
-  return "unknown";
-}
+export { detectClerkKeyMode };
 
 export function confirmPhraseForMode(mode: ClerkKeyMode): string {
   if (mode === "live") return CONFIRM_LIVE;
