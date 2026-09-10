@@ -1,53 +1,24 @@
 "use client";
 
 import { useLocale, useTranslations } from "next-intl";
-import { useMemo, type ReactNode } from "react";
+import { useMemo } from "react";
+import { ShieldCheck } from "lucide-react";
 import { FounderChecklistTracker } from "@/components/founder/founder-checklist-tracker";
 import { FounderDashboardHero } from "@/components/founder/founder-dashboard-hero";
 import { FounderWorkspaceFocusClient } from "@/components/founder/founder-workspace-focus-client";
 import { PROTOTYPE_DOC_ICONS } from "@/components/founder/document-icons";
 import { usePrototypeContent } from "@/components/founder/prototype-content-provider";
+import { FeaturePanel } from "@/components/legal/feature-panel";
+import { LegalDisclosure } from "@/components/legal/legal-disclosure";
 import {
   getFounderPipelineProgress,
   toDashboardDocumentStatus,
 } from "@/lib/documents/founder-pipeline";
 import { usePrototypeDocumentStore } from "@/lib/documents/prototype/store";
+import { getFirmName } from "@/lib/brand";
 import type { DashboardDocument } from "@/lib/documents/dashboard";
 import type { DocumentStatus } from "@/lib/documents/catalog";
 import type { FounderDashboardInsights } from "@/lib/documents/dashboard-insights";
-
-type FounderDashboardBodyProps = {
-  sidebar: ReactNode;
-  hero: {
-    eyebrow: string;
-    title: string;
-    subtitle: string;
-    continueCta: string;
-    stats: {
-      completed: string;
-      inProgress: string;
-      needsAttention: string;
-      remaining: string;
-    };
-  };
-  pipeline: {
-    title: string;
-    subtitle: string;
-    stepLabel: (step: number) => string;
-  };
-  focus: {
-    title: string;
-    description: string;
-    browseAllDocuments: string;
-    alsoInProgress: string;
-    allCompleteTitle: string;
-    allCompleteDescription: string;
-    startDocument: string;
-    viewDocument: string;
-    statusLabels: Record<DocumentStatus, string>;
-    stepLabel: (step: number) => string;
-  };
-};
 
 function toDashboardDocuments(
   progress: ReturnType<typeof getFounderPipelineProgress>,
@@ -62,12 +33,23 @@ function toDashboardDocuments(
   }));
 }
 
-export function FounderDashboardBody({ sidebar, hero, pipeline, focus }: FounderDashboardBodyProps) {
+export function FounderDashboardBody() {
   const t = useTranslations("founder");
   const locale = useLocale();
   const lang = locale.startsWith("en") ? "en" : "es";
+  const firmName = getFirmName();
   const content = usePrototypeContent();
   const { store } = usePrototypeDocumentStore();
+
+  const statusLabels = useMemo(
+    () =>
+      Object.fromEntries(
+        (["not_started", "draft", "flagged", "in_review", "complete"] as DocumentStatus[]).map(
+          (status) => [status, t(`dashboard.status.${status}`)],
+        ),
+      ) as Record<DocumentStatus, string>,
+    [t],
+  );
 
   const progress = useMemo(
     () => getFounderPipelineProgress(content, store),
@@ -79,10 +61,10 @@ export function FounderDashboardBody({ sidebar, hero, pipeline, focus }: Founder
   const documentTitles = useMemo(
     () =>
       Object.fromEntries(
-        content.order.map((id) => [
-          id,
-          lang === "en" ? content.docs[id].t_en : content.docs[id].t_es,
-        ]),
+        content.order.map((id) => {
+          const doc = content.docs[id];
+          return [id, lang === "en" ? (doc?.t_en ?? id) : (doc?.t_es ?? id)];
+        }),
       ),
     [content.docs, content.order, lang],
   );
@@ -90,10 +72,10 @@ export function FounderDashboardBody({ sidebar, hero, pipeline, focus }: Founder
   const documentDescriptions = useMemo(
     () =>
       Object.fromEntries(
-        content.order.map((id) => [
-          id,
-          lang === "en" ? content.docs[id].sub_en : content.docs[id].sub_es,
-        ]),
+        content.order.map((id) => {
+          const doc = content.docs[id];
+          return [id, lang === "en" ? (doc?.sub_en ?? "") : (doc?.sub_es ?? "")];
+        }),
       ),
     [content.docs, content.order, lang],
   );
@@ -104,7 +86,7 @@ export function FounderDashboardBody({ sidebar, hero, pipeline, focus }: Founder
   );
 
   const nextDashboardDoc = progress.nextDocument
-    ? documents.find((doc) => doc.id === progress.nextDocument?.id) ?? null
+    ? (documents.find((doc) => doc.id === progress.nextDocument?.id) ?? null)
     : null;
 
   const nextDocumentTitle = progress.nextDocument
@@ -127,30 +109,37 @@ export function FounderDashboardBody({ sidebar, hero, pipeline, focus }: Founder
     total: progress.totalCount,
   });
 
+  const stepLabel = (step: number) => t("dashboard.step", { step });
+
   return (
     <div className="space-y-12">
       <FounderDashboardHero
-        eyebrow={hero.eyebrow}
-        title={hero.title}
-        subtitle={hero.subtitle}
+        eyebrow={t("dashboard.eyebrow")}
+        title={t("dashboard.title")}
+        subtitle={t("dashboard.subtitle")}
         progressLabel={progressLabel}
         completedCount={progress.completedCount}
         totalCount={progress.totalCount}
         insights={insights}
         nextDocument={nextDashboardDoc}
         nextDocumentTitle={nextDocumentTitle}
-        continueCta={hero.continueCta}
-        stats={hero.stats}
+        continueCta={t("dashboard.continueCta")}
+        stats={{
+          completed: t("dashboard.stats.completed"),
+          inProgress: t("dashboard.stats.inProgress"),
+          needsAttention: t("dashboard.stats.needsAttention"),
+          remaining: t("dashboard.stats.remaining"),
+        }}
         nextDocumentHref={progress.nextDocument?.href ?? "/fundador/documentos"}
       />
 
       <FounderChecklistTracker
         documents={documents}
-        labels={focus.statusLabels}
+        labels={statusLabels}
         documentTitles={documentTitles}
-        stepLabel={pipeline.stepLabel}
-        title={pipeline.title}
-        subtitle={pipeline.subtitle}
+        stepLabel={stepLabel}
+        title={t("dashboard.pipelineTitle")}
+        subtitle={t("dashboard.pipelineSubtitle")}
         hrefFor={(id) => hrefById[id] ?? `/fundador/documentos/preparacion/${id}`}
         icons={PROTOTYPE_DOC_ICONS}
       />
@@ -162,11 +151,31 @@ export function FounderDashboardBody({ sidebar, hero, pipeline, focus }: Founder
           documentDescriptions={documentDescriptions}
           hrefById={hrefById}
           insights={insights}
-          statusLabels={focus.statusLabels}
-          labels={focus}
+          statusLabels={statusLabels}
+          labels={{
+            title: t("dashboard.focusTitle"),
+            description: t("dashboard.focusDescription"),
+            browseAllDocuments: t("dashboard.browseAllDocuments"),
+            alsoInProgress: t("dashboard.alsoInProgress"),
+            allCompleteTitle: t("dashboard.allCompleteTitle"),
+            allCompleteDescription: t("dashboard.allCompleteDescription"),
+            startDocument: t("dashboard.startDocument"),
+            viewDocument: t("dashboard.viewDocument"),
+            stepLabel,
+          }}
         />
 
-        <aside className="space-y-4 xl:sticky xl:top-24">{sidebar}</aside>
+        <aside className="space-y-4 xl:sticky xl:top-24">
+          <FeaturePanel
+            tone="trust"
+            icon={ShieldCheck}
+            eyebrow={firmName}
+            title={t("dashboard.reviewTitle")}
+            description={t("dashboard.reviewDescription")}
+            className="rounded-3xl p-6"
+          />
+          <LegalDisclosure message={t("dashboard.disclaimer")} className="text-xs" />
+        </aside>
       </div>
     </div>
   );
