@@ -57,7 +57,12 @@ export async function ensureInvestmentReadinessChecklist(): Promise<void> {
 }
 
 export async function getFounderDashboard(): Promise<FounderDashboardData> {
-  await ensureInvestmentReadinessChecklist();
+  try {
+    await ensureInvestmentReadinessChecklist();
+  } catch (error) {
+    // Checklist seeding must not take down the documents page in production.
+    console.error("[founder-dashboard] checklist ensure failed", error);
+  }
   const ownerSub = await getOwnerSub();
   const supabase = await createServerSupabaseClient();
 
@@ -67,7 +72,9 @@ export async function getFounderDashboard(): Promise<FounderDashboardData> {
     .eq("owner_sub", ownerSub)
     .order("created_at", { ascending: true });
 
-  if (error) throw error;
+  if (error) {
+    console.error("[founder-dashboard] documents query failed", error);
+  }
 
   const byType = new Map(
     (data ?? []).map((row) => [
