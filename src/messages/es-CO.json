@@ -748,7 +748,11 @@
       "documentCount": "{count} documentos",
       "comingSoon": "El flujo guiado de este documento aún no está disponible.",
       "secondaryHeading": "Otros documentos de investment-readiness",
-      "secondaryDescription": "NDA, vesting, empleo y accionistas siguen disponibles mientras migramos el flujo guiado."
+      "secondaryDescription": "NDA, vesting, empleo y accionistas siguen disponibles mientras migramos el flujo guiado.",
+      "errorTitle": "No se pudieron cargar los documentos",
+      "errorDescription": "Algo falló al abrir el espacio de documentos. Intenta de nuevo o vuelve a tu panel.",
+      "errorRetry": "Reintentar",
+      "errorBack": "Volver al panel"
     },
     "documentsPrototype": {
       "eyebrow": "Preparación legal para levantar capital",
