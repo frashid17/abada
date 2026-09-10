@@ -1,24 +1,17 @@
 import { getTranslations } from "next-intl/server";
-import { FounderChecklistTracker } from "@/components/founder/founder-checklist-tracker";
-import { FounderDashboardHero } from "@/components/founder/founder-dashboard-hero";
-import { FounderWorkspaceFocus } from "@/components/founder/founder-workspace-focus";
+import { FounderDashboardBody } from "@/components/founder/founder-dashboard-body";
 import { FeaturePanel } from "@/components/legal/feature-panel";
 import { LegalDisclosure } from "@/components/legal/legal-disclosure";
+import { PrototypeContentProvider } from "@/components/founder/prototype-content-provider";
 import { ShieldCheck } from "lucide-react";
-import { getFounderDashboardInsights } from "@/lib/documents/dashboard-insights";
-import type { FounderDashboardData } from "@/lib/documents/dashboard";
-import type { DocumentStatus } from "@/lib/documents/catalog";
 import { getFirmName } from "@/lib/brand";
+import { getResolvedPrototypeContent } from "@/lib/documents/prototype/resolve-content";
+import type { DocumentStatus } from "@/lib/documents/catalog";
 
-type FounderDashboardProps = {
-  data: FounderDashboardData;
-};
-
-export async function FounderDashboard({ data }: FounderDashboardProps) {
+export async function FounderDashboard() {
   const t = await getTranslations("founder");
   const firmName = getFirmName();
-  const insights = getFounderDashboardInsights(data);
-  const pipelineDocuments = [...data.documents].sort((a, b) => a.step - b.step);
+  const content = await getResolvedPrototypeContent();
 
   const statusLabels = Object.fromEntries(
     (["not_started", "draft", "flagged", "in_review", "complete"] as DocumentStatus[]).map(
@@ -26,65 +19,54 @@ export async function FounderDashboard({ data }: FounderDashboardProps) {
     ),
   ) as Record<DocumentStatus, string>;
 
-  const documentTitles = Object.fromEntries(
-    pipelineDocuments.map((doc) => [
-      doc.documentType,
-      t(`documents.${doc.documentType}.title`),
-    ]),
+  const sidebar = (
+    <>
+      <FeaturePanel
+        tone="trust"
+        icon={ShieldCheck}
+        eyebrow={firmName}
+        title={t("dashboard.reviewTitle")}
+        description={t("dashboard.reviewDescription")}
+        className="rounded-3xl p-6"
+      />
+      <LegalDisclosure message={t("dashboard.disclaimer")} className="text-xs" />
+    </>
   );
 
-  const nextTitle = insights.nextDocument
-    ? t(`documents.${insights.nextDocument.documentType}.title`)
-    : null;
-
   return (
-    <div className="space-y-12">
-      <FounderDashboardHero
-        eyebrow={t("dashboard.eyebrow")}
-        title={t("dashboard.title")}
-        subtitle={t("dashboard.subtitle")}
-        progressLabel={t("dashboard.progress", {
-          completed: data.completedCount,
-          total: data.totalCount,
-        })}
-        completedCount={data.completedCount}
-        totalCount={data.totalCount}
-        insights={insights}
-        nextDocument={insights.nextDocument}
-        nextDocumentTitle={nextTitle ? t("dashboard.nextUp", { title: nextTitle }) : null}
-        continueCta={t("dashboard.continueCta")}
-        stats={{
-          completed: t("dashboard.stats.completed"),
-          inProgress: t("dashboard.stats.inProgress"),
-          needsAttention: t("dashboard.stats.needsAttention"),
-          remaining: t("dashboard.stats.remaining"),
+    <PrototypeContentProvider content={content}>
+      <FounderDashboardBody
+        sidebar={sidebar}
+        hero={{
+          eyebrow: t("dashboard.eyebrow"),
+          title: t("dashboard.title"),
+          subtitle: t("dashboard.subtitle"),
+          continueCta: t("dashboard.continueCta"),
+          stats: {
+            completed: t("dashboard.stats.completed"),
+            inProgress: t("dashboard.stats.inProgress"),
+            needsAttention: t("dashboard.stats.needsAttention"),
+            remaining: t("dashboard.stats.remaining"),
+          },
+        }}
+        pipeline={{
+          title: t("dashboard.pipelineTitle"),
+          subtitle: t("dashboard.pipelineSubtitle"),
+          stepLabel: (step) => t("dashboard.step", { step }),
+        }}
+        focus={{
+          title: t("dashboard.focusTitle"),
+          description: t("dashboard.focusDescription"),
+          browseAllDocuments: t("dashboard.browseAllDocuments"),
+          alsoInProgress: t("dashboard.alsoInProgress"),
+          allCompleteTitle: t("dashboard.allCompleteTitle"),
+          allCompleteDescription: t("dashboard.allCompleteDescription"),
+          startDocument: t("dashboard.startDocument"),
+          viewDocument: t("dashboard.viewDocument"),
+          statusLabels,
+          stepLabel: (step) => t("dashboard.step", { step }),
         }}
       />
-
-      <FounderChecklistTracker
-        documents={pipelineDocuments}
-        labels={statusLabels}
-        documentTitles={documentTitles}
-        stepLabel={(step) => t("dashboard.step", { step })}
-        title={t("dashboard.pipelineTitle")}
-        subtitle={t("dashboard.pipelineSubtitle")}
-      />
-
-      <div className="grid gap-8 xl:grid-cols-[minmax(0,1fr)_300px] xl:items-start">
-        <FounderWorkspaceFocus data={data} />
-
-        <aside className="space-y-4 xl:sticky xl:top-24">
-          <FeaturePanel
-            tone="trust"
-            icon={ShieldCheck}
-            eyebrow={firmName}
-            title={t("dashboard.reviewTitle")}
-            description={t("dashboard.reviewDescription")}
-            className="rounded-3xl p-6"
-          />
-          <LegalDisclosure message={t("dashboard.disclaimer")} className="text-xs" />
-        </aside>
-      </div>
-    </div>
+    </PrototypeContentProvider>
   );
 }
