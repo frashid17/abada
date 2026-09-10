@@ -72,13 +72,28 @@ function parseStore(raw: string | null): PrototypeStore {
   if (!raw) return EMPTY_STORE;
   try {
     const parsed = JSON.parse(raw) as Partial<PrototypeStore>;
+    const empty = emptyPrototypeStore();
+    const companyIn = (parsed.company ?? {}) as Partial<PrototypeCompany>;
+    const company: PrototypeCompany = { ...empty.company };
+    for (const key of Object.keys(empty.company) as Array<keyof PrototypeCompany>) {
+      const value = companyIn[key];
+      if (typeof value === "string") company[key] = value;
+    }
+
     return {
-      ...emptyPrototypeStore(),
-      ...parsed,
-      company: { ...emptyPrototypeStore().company, ...parsed.company },
+      ...empty,
+      company,
       founders: parsed.founders?.length
-        ? parsed.founders.map((founder) => ({ ...emptyFounder(), ...founder }))
-        : emptyPrototypeStore().founders,
+        ? parsed.founders.map((founder) => {
+            const next = emptyFounder();
+            const founderIn = (founder ?? {}) as Partial<PrototypeFounder>;
+            for (const key of Object.keys(next) as Array<keyof PrototypeFounder>) {
+              const value = founderIn[key];
+              if (typeof value === "string") next[key] = value;
+            }
+            return next;
+          })
+        : empty.founders,
       decisions: { ...(parsed.decisions ?? {}) },
       seen: { ...(parsed.seen ?? {}) },
     };
