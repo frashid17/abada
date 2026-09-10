@@ -38,8 +38,10 @@ export function flattenPrototypeArticles(
   content: PrototypeContentBundle = SEED_PROTOTYPE_CONTENT,
 ): PrototypeArticle[] {
   const doc = content.docs[docId];
-  if (!doc?.groups?.length) return [];
-  return doc.groups.flatMap((group) => group.arts ?? []);
+  if (!doc || !Array.isArray(doc.groups) || doc.groups.length === 0) return [];
+  return doc.groups.flatMap((group) =>
+    Array.isArray(group?.arts) ? group.arts : [],
+  );
 }
 
 export function countPrototypeDecisions(
