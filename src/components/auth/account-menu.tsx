@@ -6,8 +6,6 @@ import { useRouter } from "next/navigation";
 import { useTranslations } from "next-intl";
 import { ChevronDown, LogOut, Settings, LayoutDashboard, ShieldCheck } from "lucide-react";
 import { AuthHeaderPlaceholder } from "@/components/auth/auth-header-actions";
-import { homeForContext } from "@/lib/auth/routing";
-import type { UserContext } from "@/types/database";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -28,7 +26,13 @@ function getInitials(name: string | null | undefined, email: string | null | und
   return "AB";
 }
 
-export function AccountMenu({ showAdminLink = false }: { showAdminLink?: boolean }) {
+export function AccountMenu({
+  showAdminLink = false,
+  dashboardHref = "/fundador",
+}: {
+  showAdminLink?: boolean;
+  dashboardHref?: string;
+}) {
   const t = useTranslations("auth.account");
   const { user, isLoaded } = useUser();
   const { signOut } = useClerk();
@@ -38,12 +42,9 @@ export function AccountMenu({ showAdminLink = false }: { showAdminLink?: boolean
     return <AuthHeaderPlaceholder />;
   }
 
-  const context =
-    (user.publicMetadata?.context as UserContext | undefined) ??
-    (user.unsafeMetadata?.context as UserContext | undefined) ??
-    "founder";
-
-  const isAdmin = showAdminLink || user.publicMetadata?.platformAdmin === true;
+  const isAdmin = showAdminLink;
+  const isFirmDashboard = dashboardHref.startsWith("/firma");
+  const isFounderDashboard = dashboardHref.startsWith("/fundador");
 
   const displayName = user.fullName ?? user.primaryEmailAddress?.emailAddress ?? t("user");
   const email = user.primaryEmailAddress?.emailAddress ?? "";
@@ -88,9 +89,13 @@ export function AccountMenu({ showAdminLink = false }: { showAdminLink?: boolean
           </DropdownMenuItem>
         ) : null}
         <DropdownMenuItem asChild>
-          <Link href={homeForContext(context)} className="cursor-pointer">
+          <Link href={dashboardHref} className="cursor-pointer">
             <LayoutDashboard />
-            {context === "founder" && isAdmin ? t("founderDashboard") : t("dashboard")}
+            {isAdmin && isFounderDashboard
+              ? t("founderDashboard")
+              : isFirmDashboard
+                ? t("firmDashboard")
+                : t("dashboard")}
           </Link>
         </DropdownMenuItem>
         <DropdownMenuItem asChild>
