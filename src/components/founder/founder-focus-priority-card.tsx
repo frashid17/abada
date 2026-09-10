@@ -1,6 +1,7 @@
 import Link from "next/link";
-import { ArrowRight, Clock3, Sparkles } from "lucide-react";
-import { DOCUMENT_ICONS } from "@/components/founder/document-icons";
+import { ArrowRight, Clock3, FileCheck2, Sparkles } from "lucide-react";
+import { DOCUMENT_ICONS, PROTOTYPE_DOC_ICONS } from "@/components/founder/document-icons";
+import type { PrototypeDocId } from "@/lib/documents/prototype/types";
 import { DocumentStatusChip } from "@/components/founder/document-status-chip";
 import { isDocumentFlowReady } from "@/lib/documents/dashboard-insights";
 import type { DashboardDocument } from "@/lib/documents/dashboard";
@@ -16,6 +17,7 @@ type FounderFocusPriorityCardProps = {
   viewLabel: string;
   updatedLabel: string;
   priority?: boolean;
+  href?: string;
 };
 
 export function FounderFocusPriorityCard({
@@ -28,14 +30,18 @@ export function FounderFocusPriorityCard({
   viewLabel,
   updatedLabel,
   priority = false,
+  href: hrefOverride,
 }: FounderFocusPriorityCardProps) {
-  const Icon = DOCUMENT_ICONS[doc.documentType];
+  const Icon =
+    DOCUMENT_ICONS[doc.documentType as keyof typeof DOCUMENT_ICONS] ??
+    PROTOTYPE_DOC_ICONS[doc.documentType as PrototypeDocId] ??
+    FileCheck2;
   const isNotStarted = doc.status === "not_started";
   const flowReady = isDocumentFlowReady();
   const showUpdated =
     doc.status !== "not_started" && doc.updatedAt !== new Date(0).toISOString();
   const ctaLabel = isNotStarted && flowReady ? startLabel : viewLabel;
-  const href = `/fundador/documentos/${doc.documentType}`;
+  const href = hrefOverride ?? `/fundador/documentos/${doc.documentType}`;
   const useCtaStyle = priority && isNotStarted && flowReady;
 
   return (
