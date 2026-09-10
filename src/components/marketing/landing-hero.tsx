@@ -4,7 +4,6 @@ import { ArrowRight, FileText, Scale, ShieldCheck, Stamp } from "lucide-react";
 import { FeaturePanel } from "@/components/legal/feature-panel";
 import { LegalBadge } from "@/components/legal/legal-badge";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 
 type LandingHeroProps = {
   isSignedIn: boolean;
@@ -12,6 +11,12 @@ type LandingHeroProps = {
 
 export async function LandingHero({ isSignedIn }: LandingHeroProps) {
   const t = await getTranslations("public");
+
+  const readinessItems = [
+    { icon: FileText, key: "documents" },
+    { icon: ShieldCheck, key: "review" },
+    { icon: Scale, key: "diligence" },
+  ] as const;
 
   return (
     <section>
@@ -43,44 +48,38 @@ export async function LandingHero({ isSignedIn }: LandingHeroProps) {
           </div>
         </div>
 
-        <div className="grid gap-4 sm:grid-cols-2">
-          <FeaturePanel
-            className="sm:col-span-2"
-            tone="trust"
-            icon={ShieldCheck}
-            eyebrow={t("securityCard.eyebrow")}
-            title={t("securityCard.title")}
-            description={t("securityCard.body")}
-          />
-
-          <Card variant="feature" className="h-full">
-            <CardHeader>
-              <CardTitle className="text-lg">{t("heroCard.title")}</CardTitle>
-              <CardDescription>{t("heroCard.description")}</CardDescription>
-            </CardHeader>
-            <CardContent className="space-y-2">
-              {(
-                [
-                  { icon: FileText, key: "documents" },
-                  { icon: ShieldCheck, key: "review" },
-                  { icon: Scale, key: "diligence" },
-                ] as const
-              ).map(({ icon: Icon, key }) => (
-                <div
+        <FeaturePanel
+          tone="trust"
+          icon={ShieldCheck}
+          eyebrow={t("securityCard.eyebrow")}
+          title={t("securityCard.title")}
+          description={t("securityCard.body")}
+          className="h-full"
+        >
+          <div className="space-y-3 border-t border-trust-panel-accent/20 pt-5">
+            <div className="space-y-1">
+              <p className="text-sm font-semibold text-trust-panel-foreground">
+                {t("heroCard.title")}
+              </p>
+              <p className="text-sm text-trust-panel-muted">{t("heroCard.description")}</p>
+            </div>
+            <ul className="grid gap-2.5">
+              {readinessItems.map(({ icon: Icon, key }) => (
+                <li
                   key={key}
-                  className="flex items-center gap-3 rounded-lg border border-border bg-muted/50 px-3.5 py-2.5"
+                  className="flex items-center gap-3 rounded-xl border border-trust-panel-accent/20 bg-trust-panel-icon-bg/55 px-3.5 py-3"
                 >
-                  <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
-                    <Icon className="h-4 w-4" />
+                  <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-trust-panel-accent/15 text-trust-panel-accent ring-1 ring-trust-panel-accent/25">
+                    <Icon className="h-4 w-4" aria-hidden />
                   </div>
-                  <span className="text-sm font-medium leading-snug text-foreground">
+                  <span className="text-sm font-medium leading-snug text-trust-panel-foreground">
                     {t(`heroCard.items.${key}`)}
                   </span>
-                </div>
+                </li>
               ))}
-            </CardContent>
-          </Card>
-        </div>
+            </ul>
+          </div>
+        </FeaturePanel>
       </div>
     </section>
   );
