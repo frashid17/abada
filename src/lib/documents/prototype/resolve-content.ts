@@ -9,6 +9,12 @@ import type {
 
 const PACK_IDS: PrototypeDocId[] = ["fundadores", "incentivos", "pi"];
 
+export type ResolvedPrototypeContent = {
+  content: PrototypeContentBundle;
+  /** True when at least one published CMS revision was merged (must cross the RSC boundary). */
+  fromCms: boolean;
+};
+
 function mergeGlobalsAndDocs(
   globals: PrototypeGlobalsPayload,
   docs: Record<PrototypeDocId, PrototypeDoc>,
@@ -23,6 +29,16 @@ function mergeGlobalsAndDocs(
 
 /** Load published CMS content; fall back to code seed on miss or error. */
 export async function getResolvedPrototypeContent(): Promise<PrototypeContentBundle> {
+  const resolved = await getResolvedPrototypeContentSource();
+  return resolved.content;
+}
+
+/**
+ * Same as getResolvedPrototypeContent, but reports whether CMS published data was used.
+ * When fromCms is false, client components should use the bundled seed via context default
+ * instead of serializing ~175KB of seed JSON through the RSC flight payload.
+ */
+export async function getResolvedPrototypeContentSource(): Promise<ResolvedPrototypeContent> {
   try {
     const supabase = createServiceRoleSupabaseClient();
 
@@ -70,20 +86,23 @@ export async function getResolvedPrototypeContent(): Promise<PrototypeContentBun
     }
 
     if (globals || anyPackPublished) {
-      return mergeGlobalsAndDocs(
-        globals ?? {
-          order: SEED_PROTOTYPE_CONTENT.order,
-          decisions: SEED_PROTOTYPE_CONTENT.decisions,
-          tokens: SEED_PROTOTYPE_CONTENT.tokens,
-        },
-        docs,
-      );
+      return {
+        content: mergeGlobalsAndDocs(
+          globals ?? {
+            order: SEED_PROTOTYPE_CONTENT.order,
+            decisions: SEED_PROTOTYPE_CONTENT.decisions,
+            tokens: SEED_PROTOTYPE_CONTENT.tokens,
+          },
+          docs,
+        ),
+        fromCms: true,
+      };
     }
   } catch (error) {
     console.error("[prototype-content] CMS load failed, using seed", error);
   }
 
-  return SEED_PROTOTYPE_CONTENT;
+  return { content: SEED_PROTOTYPE_CONTENT, fromCms: false };
 }
 
 /** Admin draft view: merges DB drafts with seed fallbacks. */
