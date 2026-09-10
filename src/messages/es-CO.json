@@ -259,6 +259,32 @@
         "founder": "Fundador",
         "investor": "Inversionista",
         "firm": "Firma"
+      },
+      "cleanup": {
+        "title": "Limpieza de perfiles huérfanos",
+        "description": "Elimina filas de perfil cuyo id de Clerk no existe en la instancia de Clerk configurada para este entorno. Primero vista previa; solo se borran perfiles sin datos relacionados.",
+        "localhostNote": "En localhost normalmente usas claves TEST de Clerk (pk_test_). La limpieza solo compara contra ese Clerk de prueba. No ejecutes esto si localhost apunta a Supabase de producción con claves de prueba: todos los perfiles live parecerían huérfanos.",
+        "preview": "Vista previa de huérfanos",
+        "clerkMode": "Modo Clerk: {mode}",
+        "counts": "{clerk} en Clerk · {profiles} perfiles · {orphans} huérfanos",
+        "removable": "{count} eliminables",
+        "blocked": "{count} bloqueados",
+        "none": "No hay perfiles huérfanos para la instancia actual de Clerk.",
+        "colUser": "Perfil",
+        "colRelated": "Filas relacionadas",
+        "colStatus": "Estado",
+        "relatedSummary": "docs {documents} · membresías {memberships} · revisiones {reviews} · deals {deals} · cuestionarios {questionnaires}",
+        "statusRemovable": "Seguro para borrar",
+        "blockedReason": {
+          "current_admin": "Bloqueado — admin actual",
+          "env_admin": "Bloqueado — PLATFORM_ADMIN_SUBS",
+          "has_related_data": "Bloqueado — tiene datos relacionados (revisión manual)",
+          "blocked": "Bloqueado"
+        },
+        "confirmHint": "Escribe {phrase} para confirmar. Usa CLEANUP-TEST con claves de prueba y CLEANUP-LIVE con claves de producción.",
+        "confirmLabel": "Frase de confirmación",
+        "deleteRemovable": "Borrar {count} huérfanos vacíos",
+        "deleted": "Se eliminaron {count} perfil(es) huérfano(s). Omitidos {skipped}."
       }
     },
     "flags": {
@@ -665,13 +691,13 @@
     "dashboard": {
       "eyebrow": "Investment-readiness",
       "title": "Mi espacio",
-      "subtitle": "Tu checklist de investment-readiness — cinco documentos para estar listo ante inversionistas.",
+      "subtitle": "Tu checklist de investment-readiness — tres documentos para estar listo ante inversionistas.",
       "step": "Paso {step}",
       "progress": "{completed} de {total} completados",
       "continueCta": "Continuar checklist",
       "nextUp": "Siguiente: {title}",
       "pipelineTitle": "Tu ruta de documentos",
-      "pipelineSubtitle": "Cinco pasos hacia investment-readiness — toca cualquiera para abrir el flujo.",
+      "pipelineSubtitle": "Tres pasos hacia investment-readiness — toca cualquiera para abrir el flujo.",
       "allDocuments": "Todos los documentos",
       "comingSoonBadge": "Próximamente",
       "updated": "Actualizado {date}",
