@@ -252,6 +252,7 @@
       "makeAdmin": "Hacer admin",
       "revokeAdmin": "Quitar admin",
       "sourceEnv": "env",
+      "sourceMetadata": "flag Clerk (obsoleto)",
       "envLocked": "Este admin está en PLATFORM_ADMIN_SUBS y debe cambiarse en la configuración del entorno.",
       "onboarded": "Onboarding completo",
       "notOnboarded": "Onboarding incompleto",
@@ -586,6 +587,7 @@
       "adminDashboard": "Consola admin",
       "adminButton": "Admin",
       "founderDashboard": "Panel fundador",
+      "firmDashboard": "Panel de la firma",
       "manage": "Administrar cuenta",
       "signOut": "Cerrar sesión"
     },
@@ -2593,7 +2595,14 @@
       "name": "Nombre",
       "body": "Cuerpo",
       "save": "Guardar",
-      "delete": "Eliminar"
+      "delete": "Eliminar",
+      "open": "Abrir en el editor",
+      "emptyTemplates": "Aún no hay sobreescrituras. Crea una arriba para personalizar un documento maestro.",
+      "emptyClauses": "Aún no hay cláusulas de la firma. Agrega entradas arriba.",
+      "editingTemplate": "Editando plantilla — guarda para actualizar, o cancela.",
+      "editingClause": "Editando cláusula — guarda para actualizar, o cancela.",
+      "cancelEdit": "Cancelar",
+      "readOnly": "Puedes consultar las plantillas. Solo socios y administradores pueden editarlas."
     },
     "team": {
       "eyebrow": "Equipo",
