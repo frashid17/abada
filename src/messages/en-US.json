@@ -748,7 +748,11 @@
       "documentCount": "{count} documents",
       "comingSoon": "The guided flow for this document is not available yet.",
       "secondaryHeading": "Other investment-readiness documents",
-      "secondaryDescription": "NDA, vesting, employment, and shareholders remain available while we migrate the guided flow."
+      "secondaryDescription": "NDA, vesting, employment, and shareholders remain available while we migrate the guided flow.",
+      "errorTitle": "Documents could not load",
+      "errorDescription": "Something went wrong opening the documents workspace. Try again, or return to your dashboard.",
+      "errorRetry": "Try again",
+      "errorBack": "Back to workspace"
     },
     "documentsPrototype": {
       "eyebrow": "Legal preparation for raising capital",
