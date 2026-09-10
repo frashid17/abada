@@ -4,8 +4,10 @@ import {
   Scale,
   ShieldCheck,
   Users,
+  Wallet,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
+import type { PrototypeDocId } from "@/lib/documents/prototype/types";
 
 export const MODULE_ICONS = {
   readiness: FileText,
@@ -20,3 +22,9 @@ export const DOCUMENT_ICONS = {
   employment: FileText,
   shareholders: Scale,
 } as const satisfies Record<string, LucideIcon>;
+
+export const PROTOTYPE_DOC_ICONS: Record<PrototypeDocId, LucideIcon> = {
+  fundadores: Users,
+  incentivos: Wallet,
+  pi: FileCheck2,
+};
