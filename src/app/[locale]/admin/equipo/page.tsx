@@ -14,13 +14,13 @@ export default async function AdminTeamPage() {
   if (!(await isPlatformAdmin(userId))) redirect("/");
 
   const t = await getTranslations("admin.team");
-  const users = await listAdminUsers();
+  const { users, clerkMode } = await listAdminUsers();
 
   return (
     <AppShell variant="admin">
       <div className="space-y-8">
         <PageHeader eyebrow={t("eyebrow")} title={t("title")} description={t("subtitle")} />
-        <PlatformUsersPanel users={users} />
+        <PlatformUsersPanel users={users} clerkMode={clerkMode} />
         <ProfileOrphanCleanup />
       </div>
     </AppShell>
