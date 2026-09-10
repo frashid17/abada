@@ -15,9 +15,9 @@ export async function FounderDocumentsPageContent({ data }: FounderDocumentsPage
 
   return (
     <PrototypeContentProvider content={content}>
-      <DocumentsPrototypeHub
-      secondary={
-        <>
+      <div className="space-y-12">
+        <DocumentsPrototypeHub />
+        <section className="space-y-4">
           <div className="space-y-1">
             <h2 className="font-serif text-xl font-semibold tracking-tight sm:text-2xl">
               {t("documentsPage.secondaryHeading")}
@@ -26,14 +26,9 @@ export async function FounderDocumentsPageContent({ data }: FounderDocumentsPage
               {t("documentsPage.secondaryDescription")}
             </p>
           </div>
-          <FounderDocumentsList
-            data={data}
-            variant="catalog"
-            showHeading={false}
-          />
-        </>
-      }
-      />
+          <FounderDocumentsList data={data} variant="catalog" showHeading={false} />
+        </section>
+      </div>
     </PrototypeContentProvider>
   );
 }
