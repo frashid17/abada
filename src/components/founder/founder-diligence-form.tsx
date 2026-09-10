@@ -13,6 +13,7 @@ import type { DdAnswerMap, DdQuestionnaireRecord } from "@/lib/dd/questionnaire"
 import type { DealRecord } from "@/lib/deals/types";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
+import { Select } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
 import { cn } from "@/lib/utils";
 
@@ -75,8 +76,8 @@ export function FounderDiligenceForm({
         {deals.length === 0 ? (
           <p className="mt-2 text-sm text-muted-foreground">{t("noDeals")}</p>
         ) : (
-          <select
-            className="mt-2 flex h-10 w-full max-w-md rounded-md border border-input bg-background px-3 text-sm"
+          <Select
+            className="mt-2 max-w-md"
             value={dealId}
             disabled={submitted || pending}
             onChange={(e) => setDealId(e.target.value)}
@@ -86,7 +87,7 @@ export function FounderDiligenceForm({
                 {deal.name}
               </option>
             ))}
-          </select>
+          </Select>
         )}
         <p className="mt-2 text-sm text-muted-foreground">{t("dealHint")}</p>
       </div>
