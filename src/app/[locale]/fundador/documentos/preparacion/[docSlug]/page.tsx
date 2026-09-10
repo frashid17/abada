@@ -2,7 +2,7 @@ import { auth } from "@clerk/nextjs/server";
 import { redirect, notFound } from "next/navigation";
 import { AppShell } from "@/components/layout/app-shell";
 import { DocumentArticleReader } from "@/components/founder/document-article-reader";
-import { PrototypeContentProvider } from "@/components/founder/prototype-content-provider";
+import { WithResolvedPrototypeContent } from "@/components/founder/with-resolved-prototype-content";
 import { getOrCreateProfile } from "@/lib/auth/profile";
 import {
   flattenPrototypeArticles,
@@ -49,9 +49,9 @@ export default async function FounderDocumentPreparationPage({
 
   return (
     <AppShell variant="founder">
-      <PrototypeContentProvider content={content}>
+      <WithResolvedPrototypeContent>
         <DocumentArticleReader docId={docSlug} initialIndex={initialIndex} />
-      </PrototypeContentProvider>
+      </WithResolvedPrototypeContent>
     </AppShell>
   );
 }
