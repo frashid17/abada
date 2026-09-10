@@ -37,7 +37,9 @@ export function flattenPrototypeArticles(
   docId: PrototypeDocId,
   content: PrototypeContentBundle = SEED_PROTOTYPE_CONTENT,
 ): PrototypeArticle[] {
-  return content.docs[docId].groups.flatMap((group) => group.arts);
+  const doc = content.docs[docId];
+  if (!doc?.groups?.length) return [];
+  return doc.groups.flatMap((group) => group.arts ?? []);
 }
 
 export function countPrototypeDecisions(
