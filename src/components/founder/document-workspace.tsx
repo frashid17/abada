@@ -188,10 +188,10 @@ function InlineDocumentText({
                 onChange={(event) => onChange(key, event.target.value)}
                 onClick={(event) => event.stopPropagation()}
                 className={cn(
-                  "mx-0.5 max-w-[14rem] rounded-md border px-1.5 py-0.5 text-[0.95em] font-medium shadow-sm transition-colors",
+                  "mx-0.5 max-w-[14rem] rounded-md border px-1.5 py-0.5 text-[0.95em] font-medium text-foreground shadow-sm transition-colors",
                   filled
-                    ? "border-primary/30 bg-primary/10 text-foreground"
-                    : "border-dashed border-primary/50 bg-primary/5 text-primary",
+                    ? "border-primary/30 bg-primary/10"
+                    : "border-dashed border-primary/50 bg-primary/5",
                 )}
               >
                 <option value="">{t("selectOption")}</option>
