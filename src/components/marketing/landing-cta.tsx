@@ -16,7 +16,7 @@ export async function LandingCta({ isSignedIn }: { isSignedIn: boolean }) {
         </h2>
         <p className="text-muted-foreground">{t("finalCta.subtitle")}</p>
         <Button asChild size="lg" variant="cta">
-          <Link href="/registro">
+          <Link href="/registro?context=founder">
             {t("finalCta.button")}
             <ArrowRight className="h-4 w-4" />
           </Link>
