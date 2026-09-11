@@ -197,8 +197,8 @@
     "invites": {
       "eyebrow": "Access",
       "title": "Platform invitations",
-      "subtitle": "Invite users by email with a chosen workspace role. Emails are sent from it@balamlegal.co as Abada.",
-      "smtpMissing": "Email is not configured. Set RESEND_API_KEY (and verify balamlegal.co in Resend) to send invitation emails. You can still copy the invite link.",
+      "subtitle": "Invite users by email with a chosen workspace role. Emails are sent as Abada from your verified Resend domain.",
+      "smtpMissing": "Email is not configured. Set RESEND_API_KEY and use a verified Resend domain in RESEND_FROM_EMAIL. You can still copy the invite link.",
       "formTitle": "Send invitation",
       "formDescription": "Choose the workspace role. The invitee receives a Spanish email with the Abada logo.",
       "emailLabel": "Email",
@@ -229,7 +229,8 @@
         "invalid_role": "Invalid role.",
         "invite_failed": "Could not create the invitation.",
         "email_not_configured": "Invitation saved, but Resend is not configured (RESEND_API_KEY).",
-        "email_send_failed": "Invitation saved, but the email could not be sent."
+        "email_send_failed": "Invitation saved, but the email could not be sent.",
+        "email_send_failed_detail": "Invitation saved, but the email could not be sent: {detail}"
       }
     },
     "inviteAccept": {
