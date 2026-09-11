@@ -1,6 +1,5 @@
 import { auth } from "@clerk/nextjs/server";
 import { getTranslations } from "next-intl/server";
-import { redirect } from "next/navigation";
 import Link from "next/link";
 import { AuthShell } from "@/components/auth/auth-shell";
 import { PlatformInviteAccept } from "@/components/admin/platform-invite-accept";
