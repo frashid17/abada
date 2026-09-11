@@ -3,10 +3,14 @@
 import { useState, useTransition } from "react";
 import { useTranslations } from "next-intl";
 import { Copy, Loader2, Mail } from "lucide-react";
-import { createPlatformInviteAction } from "@/lib/platform-admin/invite-actions";
+import { useRouter } from "@/i18n/navigation";
+import { EmailChipInput } from "@/components/admin/email-chip-input";
+import {
+  createPlatformInvitesAction,
+  type BulkInviteResultItem,
+} from "@/lib/platform-admin/invite-actions";
 import type { PlatformInvitationRecord, PlatformInviteRole } from "@/lib/platform-admin/invitations";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Select } from "@/components/ui/select";
 
@@ -20,50 +24,56 @@ export function PlatformInvitePanel({
   emailConfigured: boolean;
 }) {
   const t = useTranslations("admin.invites");
+  const router = useRouter();
   const [pending, startTransition] = useTransition();
-  const [inviteUrl, setInviteUrl] = useState<string | null>(null);
-  const [emailSent, setEmailSent] = useState(false);
+  const [emails, setEmails] = useState<string[]>([]);
+  const [results, setResults] = useState<BulkInviteResultItem[] | null>(null);
   const [error, setError] = useState<string | null>(null);
-  const [copied, setCopied] = useState(false);
+  const [copiedEmail, setCopiedEmail] = useState<string | null>(null);
+  const [nowMs] = useState(() => Date.now());
 
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const form = e.currentTarget;
     setError(null);
-    setInviteUrl(null);
-    setEmailSent(false);
-    setCopied(false);
+    setResults(null);
+    setCopiedEmail(null);
+
+    if (emails.length === 0) {
+      setError(t("errors.invalid_email"));
+      return;
+    }
 
     const data = new FormData(form);
-    const email = String(data.get("email") ?? "");
     const role = String(data.get("role") ?? "founder");
 
     startTransition(async () => {
-      const result = await createPlatformInviteAction({ email, role });
+      const result = await createPlatformInvitesAction({
+        emails: emails.join(","),
+        role,
+      });
       if (!result.ok) {
         setError(t(`errors.${result.error}` as "errors.invite_failed"));
         return;
       }
-      setInviteUrl(result.inviteUrl);
-      setEmailSent(result.emailSent);
-      if (!result.emailSent) {
-        if (result.emailError === "email_not_configured") {
-          setError(t("errors.email_not_configured"));
-        } else if (result.emailError) {
-          setError(t("errors.email_send_failed_detail", { detail: result.emailError }));
-        } else {
-          setError(t("errors.email_send_failed"));
-        }
+      setResults(result.results);
+      const anyEmailIssue = result.results.some((item) => item.ok && !item.emailSent);
+      if (anyEmailIssue && !emailConfigured) {
+        setError(t("errors.email_not_configured"));
       }
+      setEmails([]);
       form.reset();
+      router.refresh();
     });
   }
 
-  async function copyLink() {
-    if (!inviteUrl) return;
-    await navigator.clipboard.writeText(inviteUrl);
-    setCopied(true);
+  async function copyLink(email: string, url: string) {
+    await navigator.clipboard.writeText(url);
+    setCopiedEmail(email);
   }
+
+  const sentCount = results?.filter((r) => r.ok && r.emailSent).length ?? 0;
+  const createdCount = results?.filter((r) => r.ok).length ?? 0;
 
   return (
     <div className="space-y-8">
@@ -82,15 +92,15 @@ export function PlatformInvitePanel({
 
         <div className="grid gap-4 sm:grid-cols-[1fr_180px]">
           <div className="space-y-2">
-            <Label htmlFor="platform-invite-email">{t("emailLabel")}</Label>
-            <Input
-              id="platform-invite-email"
-              name="email"
-              type="email"
-              required
+            <Label htmlFor="platform-invite-emails">{t("emailLabel")}</Label>
+            <EmailChipInput
+              id="platform-invite-emails"
+              value={emails}
+              onChange={setEmails}
               disabled={pending}
-              placeholder={t("emailPlaceholder")}
+              placeholder={t("emailChipPlaceholder")}
             />
+            <p className="text-xs text-muted-foreground">{t("emailHint")}</p>
           </div>
           <div className="space-y-2">
             <Label htmlFor="platform-invite-role">{t("roleLabel")}</Label>
@@ -104,7 +114,7 @@ export function PlatformInvitePanel({
           </div>
         </div>
 
-        <Button type="submit" size="sm" disabled={pending}>
+        <Button type="submit" size="sm" disabled={pending || emails.length === 0}>
           {pending ? <Loader2 className="h-4 w-4 animate-spin" /> : <Mail className="h-4 w-4" />}
           {t("submit")}
         </Button>
@@ -112,16 +122,46 @@ export function PlatformInvitePanel({
         {error ? <p className="text-sm text-destructive">{error}</p> : null}
       </form>
 
-      {inviteUrl ? (
+      {results && results.length > 0 ? (
         <div className="space-y-3 rounded-xl border border-primary/20 bg-primary/5 p-4">
           <p className="text-sm font-medium text-foreground">
-            {emailSent ? t("emailSent") : t("linkReady")}
+            {t("bulkSummary", { created: createdCount, sent: sentCount })}
           </p>
-          <p className="break-all font-mono text-xs text-muted-foreground">{inviteUrl}</p>
-          <Button type="button" variant="outline" size="sm" onClick={() => void copyLink()}>
-            <Copy className="h-4 w-4" />
-            {copied ? t("copied") : t("copyLink")}
-          </Button>
+          <ul className="space-y-3">
+            {results.map((item) => (
+              <li
+                key={item.email}
+                className="rounded-lg border border-border/60 bg-background/70 px-3 py-2 text-sm"
+              >
+                <div className="flex flex-wrap items-center justify-between gap-2">
+                  <span className="font-medium">{item.email}</span>
+                  <span className="text-xs text-muted-foreground">
+                    {!item.ok
+                      ? t(`errors.${item.error}` as "errors.invite_failed")
+                      : item.emailSent
+                        ? t("statusEmailSent")
+                        : t("statusLinkOnly")}
+                  </span>
+                </div>
+                {item.ok ? (
+                  <div className="mt-2 flex flex-wrap items-center gap-2">
+                    <p className="min-w-0 flex-1 break-all font-mono text-xs text-muted-foreground">
+                      {item.inviteUrl}
+                    </p>
+                    <Button
+                      type="button"
+                      variant="outline"
+                      size="sm"
+                      onClick={() => void copyLink(item.email, item.inviteUrl)}
+                    >
+                      <Copy className="h-4 w-4" />
+                      {copiedEmail === item.email ? t("copied") : t("copyLink")}
+                    </Button>
+                  </div>
+                ) : null}
+              </li>
+            ))}
+          </ul>
         </div>
       ) : null}
 
@@ -142,7 +182,7 @@ export function PlatformInvitePanel({
               </thead>
               <tbody>
                 {invitations.map((row) => {
-                  const expired = new Date(row.expiresAt).getTime() <= Date.now();
+                  const expired = new Date(row.expiresAt).getTime() <= nowMs;
                   const status = row.acceptedAt
                     ? t("statusAccepted")
                     : expired
