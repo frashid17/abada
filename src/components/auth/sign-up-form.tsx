@@ -8,11 +8,15 @@ import { AtSign, Eye, EyeOff, Loader2, Lock, User } from "lucide-react";
 import { AuthDivider } from "@/components/auth/auth-divider";
 import { AuthField } from "@/components/auth/auth-field";
 import { GoogleIcon } from "@/components/auth/auth-icons";
+import { PasswordRequirements } from "@/components/auth/password-requirements";
 import { resetClerkClientSession } from "@/lib/auth/clear-session";
 import { redirectAfterAuth } from "@/lib/auth/client-redirect";
 import { getClerkErrorMessage, isClerkAlreadySignedInError } from "@/lib/auth/clerk-errors";
+import { isPasswordValid } from "@/lib/auth/password-policy";
+import { PREFERRED_CONTEXT_COOKIE } from "@/lib/auth/preferred-context-cookie-name";
 import { useGoogleOAuthRedirect } from "@/lib/auth/use-google-oauth";
 import { buildOnboardingPath } from "@/lib/onboarding/paths";
+import type { UserContext } from "@/types/database";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 
@@ -20,9 +24,21 @@ type SignUpFormProps = {
   redirectUrl?: string;
   inviteToken?: string;
   inviteEmail?: string;
+  preferredContext?: UserContext;
 };
 
-export function SignUpForm({ redirectUrl, inviteToken, inviteEmail }: SignUpFormProps) {
+function rememberPreferredContext(context: UserContext | undefined) {
+  if (!context || typeof document === "undefined") return;
+  const secure = window.location.protocol === "https:" ? "; Secure" : "";
+  document.cookie = `${PREFERRED_CONTEXT_COOKIE}=${context}; Path=/; Max-Age=600; SameSite=Lax${secure}`;
+}
+
+export function SignUpForm({
+  redirectUrl,
+  inviteToken,
+  inviteEmail,
+  preferredContext,
+}: SignUpFormProps) {
   const t = useTranslations("auth.signUp");
   const { isLoaded: authLoaded } = useAuth();
   const { signOut } = useClerk();
@@ -41,7 +57,9 @@ export function SignUpForm({ redirectUrl, inviteToken, inviteEmail }: SignUpForm
 
   const postAuthPath = redirectUrl ?? buildOnboardingPath(inviteToken);
 
-  const metadata = inviteToken ? { inviteToken } : {};
+  const metadata: Record<string, string> = {};
+  if (inviteToken) metadata.inviteToken = inviteToken;
+  if (preferredContext) metadata.context = preferredContext;
 
   if (!authLoaded || !isLoaded || !signUp || !setActive || !googleReady) {
     return (
@@ -53,6 +71,12 @@ export function SignUpForm({ redirectUrl, inviteToken, inviteEmail }: SignUpForm
 
   const signUpClient = signUp;
   const setActiveSession = setActive;
+  const titleKey = preferredContext ?? "default";
+  const subtitleKey = inviteToken
+    ? "invite"
+    : preferredContext
+      ? preferredContext
+      : "default";
 
   async function handleAlreadySignedIn() {
     await resetClerkClientSession(signOut, { reload: true });
@@ -63,12 +87,25 @@ export function SignUpForm({ redirectUrl, inviteToken, inviteEmail }: SignUpForm
     setPending(true);
     setError(null);
 
+    if (!email.trim() || !firstName.trim() || !lastName.trim()) {
+      setError(t("requiredFields"));
+      setPending(false);
+      return;
+    }
+
+    if (!isPasswordValid(password)) {
+      setError(t("passwordRules.incomplete"));
+      setPending(false);
+      return;
+    }
+
     try {
+      rememberPreferredContext(preferredContext);
       await signUpClient.create({
-        emailAddress: email,
+        emailAddress: email.trim(),
         password,
-        firstName: firstName.trim() || undefined,
-        lastName: lastName.trim() || undefined,
+        firstName: firstName.trim(),
+        lastName: lastName.trim(),
         unsafeMetadata: metadata,
       });
 
@@ -95,7 +132,7 @@ export function SignUpForm({ redirectUrl, inviteToken, inviteEmail }: SignUpForm
 
       if (result.status === "complete" && result.createdSessionId) {
         await setActiveSession({ session: result.createdSessionId });
-        redirectAfterAuth(postAuthPath);
+        redirectAfterAuth(postAuthPath, preferredContext);
         return;
       }
 
@@ -116,6 +153,7 @@ export function SignUpForm({ redirectUrl, inviteToken, inviteEmail }: SignUpForm
     setError(null);
 
     try {
+      rememberPreferredContext(preferredContext);
       await redirectWithGoogle({ redirectPath: postAuthPath });
     } catch (err) {
       if (isClerkAlreadySignedInError(err)) {
@@ -132,10 +170,8 @@ export function SignUpForm({ redirectUrl, inviteToken, inviteEmail }: SignUpForm
     <Card variant="elevated" className="border-border/80 shadow-card">
       <CardHeader className="space-y-4">
         <div>
-          <CardTitle className="text-2xl">{t("title.default")}</CardTitle>
-          <CardDescription>
-            {inviteToken ? t("subtitle.invite") : t("subtitle.default")}
-          </CardDescription>
+          <CardTitle className="text-2xl">{t(`title.${titleKey}`)}</CardTitle>
+          <CardDescription>{t(`subtitle.${subtitleKey}`)}</CardDescription>
         </div>
       </CardHeader>
       <CardContent className="space-y-5">
@@ -156,27 +192,6 @@ export function SignUpForm({ redirectUrl, inviteToken, inviteEmail }: SignUpForm
             <AuthDivider />
 
             <form onSubmit={handleSignUp} className="space-y-4">
-              <div className="grid gap-4 sm:grid-cols-2">
-                <AuthField
-                  id="sign-up-first-name"
-                  label={t("firstName")}
-                  value={firstName}
-                  onChange={setFirstName}
-                  placeholder={t("firstNamePlaceholder")}
-                  icon={User}
-                  disabled={pending}
-                  autoComplete="given-name"
-                />
-                <AuthField
-                  id="sign-up-last-name"
-                  label={t("lastName")}
-                  value={lastName}
-                  onChange={setLastName}
-                  placeholder={t("lastNamePlaceholder")}
-                  disabled={pending}
-                  autoComplete="family-name"
-                />
-              </div>
               <AuthField
                 id="sign-up-email"
                 label={t("email")}
@@ -189,6 +204,29 @@ export function SignUpForm({ redirectUrl, inviteToken, inviteEmail }: SignUpForm
                 required
                 autoComplete="email"
               />
+              <div className="grid gap-4 sm:grid-cols-2">
+                <AuthField
+                  id="sign-up-first-name"
+                  label={t("firstName")}
+                  value={firstName}
+                  onChange={setFirstName}
+                  placeholder={t("firstNamePlaceholder")}
+                  icon={User}
+                  disabled={pending}
+                  required
+                  autoComplete="given-name"
+                />
+                <AuthField
+                  id="sign-up-last-name"
+                  label={t("lastName")}
+                  value={lastName}
+                  onChange={setLastName}
+                  placeholder={t("lastNamePlaceholder")}
+                  disabled={pending}
+                  required
+                  autoComplete="family-name"
+                />
+              </div>
               <AuthField
                 id="sign-up-password"
                 label={t("password")}
@@ -199,6 +237,7 @@ export function SignUpForm({ redirectUrl, inviteToken, inviteEmail }: SignUpForm
                 icon={Lock}
                 disabled={pending}
                 required
+                minLength={8}
                 autoComplete="new-password"
                 trailing={
                   <button
@@ -211,10 +250,23 @@ export function SignUpForm({ redirectUrl, inviteToken, inviteEmail }: SignUpForm
                   </button>
                 }
               />
+              <PasswordRequirements password={password} />
 
               {error ? <p className="text-sm text-destructive">{error}</p> : null}
 
-              <Button type="submit" variant="cta" size="lg" className="w-full" disabled={pending}>
+              <Button
+                type="submit"
+                variant="cta"
+                size="lg"
+                className="w-full"
+                disabled={
+                  pending ||
+                  !isPasswordValid(password) ||
+                  !email.trim() ||
+                  !firstName.trim() ||
+                  !lastName.trim()
+                }
+              >
                 {pending ? <Loader2 className="h-4 w-4 animate-spin" /> : null}
                 {t("submit")}
               </Button>
