@@ -205,6 +205,54 @@ export interface Database {
         };
         Relationships: [];
       };
+      platform_ui_copy_overrides: {
+        Row: {
+          id: string;
+          locale: "es-CO" | "en-US";
+          message_key: string;
+          value: string;
+          updated_by_sub: string;
+          updated_at: string;
+        };
+        Insert: {
+          id?: string;
+          locale: "es-CO" | "en-US";
+          message_key: string;
+          value: string;
+          updated_by_sub: string;
+          updated_at?: string;
+        };
+        Update: {
+          id?: string;
+          locale?: "es-CO" | "en-US";
+          message_key?: string;
+          value?: string;
+          updated_by_sub?: string;
+          updated_at?: string;
+        };
+        Relationships: [];
+      };
+      platform_admin_settings: {
+        Row: {
+          key: string;
+          value: Json;
+          updated_by_sub: string | null;
+          updated_at: string;
+        };
+        Insert: {
+          key: string;
+          value?: Json;
+          updated_by_sub?: string | null;
+          updated_at?: string;
+        };
+        Update: {
+          key?: string;
+          value?: Json;
+          updated_by_sub?: string | null;
+          updated_at?: string;
+        };
+        Relationships: [];
+      };
       documents: {
         Row: {
           id: string;
