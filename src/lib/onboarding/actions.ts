@@ -10,6 +10,9 @@ import { redeemFirmInvitation } from "@/lib/firm/invitations";
 import { resolveInviteForOnboarding } from "@/lib/firm/invite-lookup";
 import { getFirmMembershipForUser } from "@/lib/firm/membership";
 import { isPlatformAdmin } from "@/lib/platform-admin/auth";
+import {
+  redeemPlatformInvitation,
+} from "@/lib/platform-admin/invitations";
 import type { UserContext } from "@/types/database";
 
 function isUniqueViolation(error: { code?: string; message?: string } | null): boolean {
@@ -248,8 +251,24 @@ export async function tryAutoCompleteInviteOnboarding(userId: string): Promise<s
   const user = await clerk.users.getUser(userId);
   const email = user.primaryEmailAddress?.emailAddress;
   const inviteToken = user.unsafeMetadata?.inviteToken as string | undefined;
+  const platformInviteToken = user.unsafeMetadata?.platformInviteToken as string | undefined;
 
   if (!email) return null;
+
+  if (platformInviteToken) {
+    try {
+      const invitation = await redeemPlatformInvitation({
+        token: platformInviteToken,
+        clerkUserId: userId,
+        email,
+      });
+      if (invitation.role === "firm") return "/onboarding";
+      await markOnboardingComplete(userId, invitation.role);
+      return homeForContext(invitation.role);
+    } catch {
+      // Fall through to firm invite handling.
+    }
+  }
 
   const invitation = await resolveInviteForOnboarding({ inviteToken, email });
   if (!invitation) return null;
