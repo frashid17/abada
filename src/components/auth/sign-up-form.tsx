@@ -23,6 +23,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 type SignUpFormProps = {
   redirectUrl?: string;
   inviteToken?: string;
+  platformInviteToken?: string;
   inviteEmail?: string;
   preferredContext?: UserContext;
 };
@@ -36,6 +37,7 @@ function rememberPreferredContext(context: UserContext | undefined) {
 export function SignUpForm({
   redirectUrl,
   inviteToken,
+  platformInviteToken,
   inviteEmail,
   preferredContext,
 }: SignUpFormProps) {
@@ -55,10 +57,15 @@ export function SignUpForm({
   const [pending, setPending] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  const postAuthPath = redirectUrl ?? buildOnboardingPath(inviteToken);
+  const postAuthPath =
+    redirectUrl ??
+    (platformInviteToken
+      ? `/invitacion?token=${encodeURIComponent(platformInviteToken)}`
+      : buildOnboardingPath(inviteToken));
 
   const metadata: Record<string, string> = {};
   if (inviteToken) metadata.inviteToken = inviteToken;
+  if (platformInviteToken) metadata.platformInviteToken = platformInviteToken;
   if (preferredContext) metadata.context = preferredContext;
 
   if (!authLoaded || !isLoaded || !signUp || !setActive || !googleReady) {
@@ -72,7 +79,7 @@ export function SignUpForm({
   const signUpClient = signUp;
   const setActiveSession = setActive;
   const titleKey = preferredContext ?? "default";
-  const subtitleKey = inviteToken
+  const subtitleKey = inviteToken || platformInviteToken
     ? "invite"
     : preferredContext
       ? preferredContext
