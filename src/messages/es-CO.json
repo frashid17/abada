@@ -199,14 +199,19 @@
       "title": "Invitaciones de plataforma",
       "subtitle": "Invita usuarios por correo con el rol de espacio de trabajo que elijas. Los correos salen como Abada desde tu dominio verificado en Resend.",
       "smtpMissing": "El correo no está configurado. Define RESEND_API_KEY y usa un dominio verificado en RESEND_FROM_EMAIL. Aun así puedes copiar el enlace.",
-      "formTitle": "Enviar invitación",
-      "formDescription": "Elige el rol. La persona recibe un correo en español con el logo de Abada.",
-      "emailLabel": "Correo",
-      "emailPlaceholder": "nombre@empresa.com",
+      "formTitle": "Enviar invitaciones",
+      "formDescription": "Elige un rol de espacio de trabajo para todos los listados. Cada persona recibe su propio correo en español con el logo de Abada.",
+      "emailLabel": "Correos",
+      "emailPlaceholder": "nombre@empresa.com\nfundador@startup.co\nsocio@firma.com",
+      "emailChipPlaceholder": "Escribe un correo y pulsa Enter",
+      "emailHint": "Pulsa Enter, coma, o pega una lista. Cada dirección se convierte en una ficha que puedes quitar.",
       "roleLabel": "Rol",
-      "submit": "Enviar invitación",
+      "submit": "Enviar invitaciones",
       "emailSent": "Correo de invitación enviado. También puedes compartir este enlace:",
       "linkReady": "Invitación creada. Comparte este enlace (no se envió el correo):",
+      "bulkSummary": "Se crearon {created} invitación(es). Correos enviados: {sent}.",
+      "statusEmailSent": "Correo enviado",
+      "statusLinkOnly": "Solo enlace",
       "copyLink": "Copiar enlace",
       "copied": "Copiado",
       "listTitle": "Invitaciones recientes",
@@ -227,6 +232,8 @@
         "unauthorized": "Debes iniciar sesión.",
         "forbidden": "No tienes permiso.",
         "invalid_role": "Rol inválido.",
+        "invalid_email": "Ingresa al menos un correo válido.",
+        "too_many": "Puedes invitar como máximo 50 personas a la vez.",
         "invite_failed": "No se pudo crear la invitación.",
         "email_not_configured": "Invitación guardada, pero Resend no está configurado (RESEND_API_KEY).",
         "email_send_failed": "Invitación guardada, pero no se pudo enviar el correo.",
@@ -396,6 +403,27 @@
       "sourceDb": "Base de datos",
       "sourceEnv": "Entorno por defecto"
     },
+    "liveEditor": {
+      "enterEdit": "Editar texto de la plataforma",
+      "exitEdit": "Salir de la edición de texto",
+      "editingBanner": "Modo edición activo — haz clic en cualquier etiqueta o frase para cambiarla. Se guarda al instante para todos.",
+      "editTitle": "Editar texto",
+      "editHint": "Los cambios se aplican en vivo en toda la plataforma para este idioma.",
+      "keyLabel": "Clave del mensaje",
+      "save": "Guardar",
+      "reset": "Restablecer valor por defecto",
+      "close": "Cerrar",
+      "noMatch": "Ese texto no está vinculado a una entrada del catálogo (es dinámico o está fijo en código).",
+      "saveFailed": "No se pudo guardar la sobreescritura de texto.",
+      "resetFailed": "No se pudo restablecer la sobreescritura de texto.",
+      "hideFailed": "No se pudo actualizar el botón de lápiz.",
+      "hideFab": "Ocultar botón de lápiz",
+      "showFab": "Mostrar botón de lápiz",
+      "settingsTitle": "Editor de texto en vivo",
+      "settingsDescription": "Los administradores de plataforma pueden editar el copy en el sitio. Oculta el lápiz flotante aquí y vuelve a activarlo cuando quieras.",
+      "fabVisible": "El lápiz flotante es visible para administradores de plataforma.",
+      "fabHidden": "El lápiz flotante está oculto. Actívalo aquí para volver a editar el copy."
+    },
     "diligence": {
       "eyebrow": "Diligencia debida",
       "title": "Banco de preguntas",
@@ -563,7 +591,7 @@
       "description": "Todo lo que un inversionista espera ver, en un solo lugar.",
       "items": {
         "documents": "3 documentos de investment-readiness",
-        "review": "Revisión por abogado nombrado",
+        "review": "Revisión experta",
         "diligence": "Due diligence con evaluación por riesgo"
       }
     },
@@ -593,9 +621,9 @@
         "body": "Evaluación organizada por categoría de riesgo colombiana, no por árbol de archivos."
       },
       "review": {
-        "title": "Revisión nombrada",
+        "title": "Revisión experta",
         "description": "Abogado asignado",
-        "body": "Solicita revisión pagada con abogado identificado, comentarios y resumen ejecutivo."
+        "body": "Solicita revisión pagada con un abogado experto, comentarios y resumen ejecutivo."
       }
     }
   },
