@@ -16,6 +16,7 @@ export function FirmInviteForm() {
   const t = useTranslations("firm.team");
   const [pending, startTransition] = useTransition();
   const [inviteUrl, setInviteUrl] = useState<string | null>(null);
+  const [emailSent, setEmailSent] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [copied, setCopied] = useState(false);
 
@@ -24,6 +25,7 @@ export function FirmInviteForm() {
     const form = e.currentTarget;
     setError(null);
     setInviteUrl(null);
+    setEmailSent(false);
     setCopied(false);
 
     const data = new FormData(form);
@@ -37,6 +39,7 @@ export function FirmInviteForm() {
         return;
       }
       setInviteUrl(result.inviteUrl);
+      setEmailSent(result.emailSent);
       form.reset();
     });
   }
@@ -80,7 +83,9 @@ export function FirmInviteForm() {
 
       {inviteUrl ? (
         <div className="rounded-xl border border-primary/20 bg-primary/5 p-4 space-y-3">
-          <p className="text-sm font-medium text-foreground">{t("linkReady")}</p>
+          <p className="text-sm font-medium text-foreground">
+            {emailSent ? t("emailSent") : t("linkReady")}
+          </p>
           <p className="break-all font-mono text-xs text-muted-foreground">{inviteUrl}</p>
           <Button type="button" variant="outline" size="sm" onClick={() => void copyLink()}>
             <Copy className="h-4 w-4" />
