@@ -199,14 +199,19 @@
       "title": "Platform invitations",
       "subtitle": "Invite users by email with a chosen workspace role. Emails are sent as Abada from your verified Resend domain.",
       "smtpMissing": "Email is not configured. Set RESEND_API_KEY and use a verified Resend domain in RESEND_FROM_EMAIL. You can still copy the invite link.",
-      "formTitle": "Send invitation",
-      "formDescription": "Choose the workspace role. The invitee receives a Spanish email with the Abada logo.",
-      "emailLabel": "Email",
-      "emailPlaceholder": "name@company.com",
+      "formTitle": "Send invitations",
+      "formDescription": "Choose one workspace role for everyone listed. Each person gets their own Spanish email with the Abada logo.",
+      "emailLabel": "Emails",
+      "emailPlaceholder": "name@company.com\nfounder@startup.co\npartner@firm.com",
+      "emailChipPlaceholder": "Type an email and press Enter",
+      "emailHint": "Press Enter, comma, or paste a list. Each address becomes a chip you can remove.",
       "roleLabel": "Role",
-      "submit": "Send invitation",
+      "submit": "Send invitations",
       "emailSent": "Invitation email sent. You can also share this link:",
       "linkReady": "Invitation created. Share this link (email was not sent):",
+      "bulkSummary": "Created {created} invitation(s). Emails sent: {sent}.",
+      "statusEmailSent": "Email sent",
+      "statusLinkOnly": "Link only",
       "copyLink": "Copy link",
       "copied": "Copied",
       "listTitle": "Recent invitations",
@@ -227,6 +232,8 @@
         "unauthorized": "You must be signed in.",
         "forbidden": "You do not have permission.",
         "invalid_role": "Invalid role.",
+        "invalid_email": "Enter at least one valid email address.",
+        "too_many": "You can invite at most 50 people at once.",
         "invite_failed": "Could not create the invitation.",
         "email_not_configured": "Invitation saved, but Resend is not configured (RESEND_API_KEY).",
         "email_send_failed": "Invitation saved, but the email could not be sent.",
@@ -396,6 +403,27 @@
       "sourceDb": "DB override",
       "sourceEnv": "Environment default"
     },
+    "liveEditor": {
+      "enterEdit": "Edit platform text",
+      "exitEdit": "Exit text editing",
+      "editingBanner": "Edit mode on — click any label or sentence to change it. Saves instantly for everyone.",
+      "editTitle": "Edit text",
+      "editHint": "Changes apply live across the platform for this language.",
+      "keyLabel": "Message key",
+      "save": "Save",
+      "reset": "Reset to default",
+      "close": "Close",
+      "noMatch": "That text is not linked to a message catalog entry (dynamic or hard-coded).",
+      "saveFailed": "Could not save the text override.",
+      "resetFailed": "Could not reset the text override.",
+      "hideFailed": "Could not update the pencil button setting.",
+      "hideFab": "Hide pencil button",
+      "showFab": "Show pencil button",
+      "settingsTitle": "Live text editor",
+      "settingsDescription": "Platform admins can edit UI copy in place. Hide the floating pencil here, then turn it back on anytime.",
+      "fabVisible": "Floating pencil is visible to platform admins.",
+      "fabHidden": "Floating pencil is hidden. Re-enable it here to edit copy again."
+    },
     "diligence": {
       "eyebrow": "Due diligence",
       "title": "Questionnaire bank",
@@ -563,7 +591,7 @@
       "description": "Everything an investor expects to see, in one place.",
       "items": {
         "documents": "3 investment-readiness documents",
-        "review": "Named-attorney review",
+        "review": "Expert review",
         "diligence": "Risk-category due diligence"
       }
     },
@@ -593,9 +621,9 @@
         "body": "Assessment organized by Colombian risk category, not a file tree."
       },
       "review": {
-        "title": "Named review",
+        "title": "Expert review",
         "description": "Assigned attorney",
-        "body": "Request paid review with a named lawyer, markup, and executive summary."
+        "body": "Request paid review with an expert lawyer, markup, and executive summary."
       }
     }
   },
