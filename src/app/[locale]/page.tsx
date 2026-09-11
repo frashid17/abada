@@ -4,7 +4,6 @@ import { LandingDisclosure } from "@/components/marketing/landing-disclosure";
 import { LandingHero } from "@/components/marketing/landing-hero";
 import { LandingModules } from "@/components/marketing/landing-modules";
 import { LandingPipeline } from "@/components/marketing/landing-pipeline";
-import { LandingStats } from "@/components/marketing/landing-stats";
 import { getActiveSession } from "@/lib/auth/session";
 import { resolveWorkspaceHome } from "@/lib/auth/workspace-home";
 import { getOnboardingRedirect } from "@/lib/onboarding/actions";
@@ -34,7 +33,6 @@ export default async function HomePage() {
     <AppShell variant="public">
       <div className="space-y-20">
         <LandingHero isSignedIn={isSignedIn} workspaceHref={workspaceHref} />
-        <LandingStats />
         <LandingPipeline />
         <LandingModules />
         <LandingCta isSignedIn={isSignedIn} />
