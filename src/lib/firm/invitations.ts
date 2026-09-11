@@ -1,9 +1,18 @@
 import { randomBytes } from "crypto";
 import { clerkClient } from "@clerk/nextjs/server";
+import { getBrandName } from "@/lib/brand";
+import { buildBrandedEmailHtml, isEmailConfigured, sendEmail } from "@/lib/email/send";
 import { createServiceRoleSupabaseClient } from "@/lib/supabase/server";
 import { resolveDefaultFirmTenantId } from "@/lib/firm/reviews";
 import type { FirmMemberRole } from "@/lib/firm/membership";
 import { toAbsoluteAppUrl } from "@/lib/auth/app-url";
+
+const FIRM_ROLE_LABEL_ES: Record<FirmMemberRole, string> = {
+  admin: "Administrador",
+  partner: "Socio",
+  associate: "Asociado",
+  of_counsel: "Of counsel",
+};
 
 const INVITE_TTL_DAYS = 7;
 
@@ -61,20 +70,26 @@ export async function createFirmInvitation(input: {
   role: FirmMemberRole;
   invitedBySub: string;
   tenantId?: string;
-}): Promise<{ invitation: FirmInvitationRecord; inviteUrl: string }> {
+}): Promise<{
+  invitation: FirmInvitationRecord;
+  inviteUrl: string;
+  emailSent: boolean;
+  emailError?: string;
+}> {
   const tenantId = input.tenantId ?? (await resolveDefaultFirmTenantId());
   if (!tenantId) throw new Error("Firm tenant not configured");
 
   const token = randomBytes(24).toString("hex");
   const expiresAt = new Date();
   expiresAt.setDate(expiresAt.getDate() + INVITE_TTL_DAYS);
+  const email = input.email.trim().toLowerCase();
 
   const supabase = createServiceRoleSupabaseClient();
   const { data, error } = await supabase
     .from("firm_invitations")
     .insert({
       tenant_id: tenantId,
-      email: input.email.trim().toLowerCase(),
+      email,
       role: input.role,
       token,
       invited_by_sub: input.invitedBySub,
@@ -86,7 +101,45 @@ export async function createFirmInvitation(input: {
   if (error) throw error;
 
   const invitation = mapRow(data);
-  return { invitation, inviteUrl: buildFirmInviteUrl(token) };
+  const inviteUrl = buildFirmInviteUrl(token);
+  const brand = getBrandName();
+  const roleLabel = FIRM_ROLE_LABEL_ES[invitation.role];
+
+  let emailSent = false;
+  let emailError: string | undefined;
+
+  if (!isEmailConfigured()) {
+    emailError = "email_not_configured";
+  } else {
+    const subject = `Invitación a ${brand} — equipo de la firma (${roleLabel})`;
+    const bodyHtml = `
+      <p>Hola,</p>
+      <p>Te invitaron a unirte al equipo de la firma en <strong>${brand}</strong> con el rol de <strong>${roleLabel}</strong>.</p>
+      <p>Haz clic en el botón para crear tu cuenta (o iniciar sesión) y aceptar la invitación. El enlace vence en ${INVITE_TTL_DAYS} días.</p>
+    `;
+    const text = [
+      `Te invitaron a unirte al equipo de la firma en ${brand} como ${roleLabel}.`,
+      `Abre este enlace para aceptar: ${inviteUrl}`,
+      `El enlace vence en ${INVITE_TTL_DAYS} días.`,
+    ].join("\n\n");
+
+    const result = await sendEmail({
+      to: email,
+      subject,
+      html: buildBrandedEmailHtml({
+        title: `Invitación a ${brand}`,
+        bodyHtml,
+        ctaLabel: "Aceptar invitación",
+        ctaUrl: inviteUrl,
+        footer: `Este correo lo envió ${brand}. Si no esperabas esta invitación, puedes ignorarlo.`,
+      }),
+      text,
+    });
+    emailSent = result.ok;
+    if (!result.ok) emailError = result.error;
+  }
+
+  return { invitation, inviteUrl, emailSent, emailError };
 }
 
 export async function getFirmInvitationByToken(
