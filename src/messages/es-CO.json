@@ -197,8 +197,8 @@
     "invites": {
       "eyebrow": "Acceso",
       "title": "Invitaciones de plataforma",
-      "subtitle": "Invita usuarios por correo con el rol de espacio de trabajo que elijas. Los correos salen de it@balamlegal.co con el nombre Abada.",
-      "smtpMissing": "El correo no está configurado. Define RESEND_API_KEY (y verifica balamlegal.co en Resend) para enviar invitaciones. Aun así puedes copiar el enlace.",
+      "subtitle": "Invita usuarios por correo con el rol de espacio de trabajo que elijas. Los correos salen como Abada desde tu dominio verificado en Resend.",
+      "smtpMissing": "El correo no está configurado. Define RESEND_API_KEY y usa un dominio verificado en RESEND_FROM_EMAIL. Aun así puedes copiar el enlace.",
       "formTitle": "Enviar invitación",
       "formDescription": "Elige el rol. La persona recibe un correo en español con el logo de Abada.",
       "emailLabel": "Correo",
@@ -229,7 +229,8 @@
         "invalid_role": "Rol inválido.",
         "invite_failed": "No se pudo crear la invitación.",
         "email_not_configured": "Invitación guardada, pero Resend no está configurado (RESEND_API_KEY).",
-        "email_send_failed": "Invitación guardada, pero no se pudo enviar el correo."
+        "email_send_failed": "Invitación guardada, pero no se pudo enviar el correo.",
+        "email_send_failed_detail": "Invitación guardada, pero no se pudo enviar el correo: {detail}"
       }
     },
     "inviteAccept": {
