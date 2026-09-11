@@ -504,7 +504,14 @@ async function embedBrandLogo(pdfDoc: PDFDocument): Promise<PDFImage | null> {
   try {
     const logoPath = path.join(process.cwd(), "public", "brand", "abada-logo.png");
     const bytes = await readFile(logoPath);
-    return pdfDoc.embedPng(bytes);
+    // Accept real PNG or JPEG bytes even if the extension says .png.
+    if (bytes[0] === 0x89 && bytes[1] === 0x50) {
+      return pdfDoc.embedPng(bytes);
+    }
+    if (bytes[0] === 0xff && bytes[1] === 0xd8) {
+      return pdfDoc.embedJpg(bytes);
+    }
+    return null;
   } catch {
     return null;
   }
