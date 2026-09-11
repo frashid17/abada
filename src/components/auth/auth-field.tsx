@@ -13,8 +13,12 @@ type AuthFieldProps = {
   icon?: LucideIcon;
   disabled?: boolean;
   required?: boolean;
+  optional?: boolean;
+  optionalLabel?: string;
+  hint?: string;
   autoComplete?: string;
   trailing?: React.ReactNode;
+  minLength?: number;
 };
 
 export function AuthField({
@@ -27,12 +31,28 @@ export function AuthField({
   icon: Icon,
   disabled,
   required,
+  optional,
+  optionalLabel,
+  hint,
   autoComplete,
   trailing,
+  minLength,
 }: AuthFieldProps) {
   return (
     <div className="space-y-2">
-      <Label htmlFor={id}>{label}</Label>
+      <Label htmlFor={id} className="inline-flex items-center gap-1">
+        <span>{label}</span>
+        {required ? (
+          <span className="text-destructive" aria-hidden>
+            *
+          </span>
+        ) : null}
+        {optional ? (
+          <span className="font-normal text-muted-foreground">
+            ({optionalLabel ?? "optional"})
+          </span>
+        ) : null}
+      </Label>
       <div className="relative">
         {Icon ? (
           <Icon
@@ -46,8 +66,11 @@ export function AuthField({
           value={value}
           disabled={disabled}
           required={required}
+          minLength={minLength}
           placeholder={placeholder}
           autoComplete={autoComplete}
+          aria-required={required || undefined}
+          aria-describedby={hint ? `${id}-hint` : undefined}
           onChange={(e) => onChange(e.target.value)}
           className={cn(Icon && "pl-10", trailing && "pr-10")}
         />
@@ -55,6 +78,11 @@ export function AuthField({
           <div className="absolute right-1 top-1/2 -translate-y-1/2">{trailing}</div>
         ) : null}
       </div>
+      {hint ? (
+        <p id={`${id}-hint`} className="text-xs text-muted-foreground">
+          {hint}
+        </p>
+      ) : null}
     </div>
   );
 }
