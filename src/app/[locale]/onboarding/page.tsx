@@ -3,22 +3,26 @@ import { getTranslations } from "next-intl/server";
 import { redirect } from "next/navigation";
 import { AppShell } from "@/components/layout/app-shell";
 import { OnboardingWizard } from "@/components/onboarding/onboarding-wizard";
+import {
+  readPreferredContextCookie,
+} from "@/lib/auth/preferred-context-cookie";
+import { parseUserContext } from "@/lib/auth/user-context";
 import { getActiveSession } from "@/lib/auth/session";
 import { resolveInviteForOnboarding } from "@/lib/firm/invite-lookup";
 import type { FirmMemberRole } from "@/lib/firm/membership";
-import { getOnboardingRedirect } from "@/lib/onboarding/actions";
+import {
+  applyPreferredWorkspaceContext,
+  getOnboardingRedirect,
+} from "@/lib/onboarding/actions";
 
 export default async function OnboardingPage({
   searchParams,
 }: {
-  searchParams: Promise<{ invite?: string }>;
+  searchParams: Promise<{ invite?: string; context?: string }>;
 }) {
   const params = await searchParams;
   const { userId } = await getActiveSession();
   if (!userId) redirect("/registro");
-
-  const done = await getOnboardingRedirect(userId);
-  if (done) redirect(done);
 
   const user = await currentUser();
   const email =
@@ -30,6 +34,22 @@ export default async function OnboardingPage({
     inviteToken: params.invite?.trim(),
     email,
   });
+
+  const preferredFromCookie = await readPreferredContextCookie();
+  const preferred =
+    parseUserContext(params.context) ??
+    preferredFromCookie ??
+    parseUserContext(user?.unsafeMetadata?.context) ??
+    parseUserContext(user?.publicMetadata?.context);
+
+  // Firm invites win over a marketing-context preference.
+  if (!invitation && (preferred === "founder" || preferred === "investor")) {
+    const applied = await applyPreferredWorkspaceContext(userId, preferred);
+    if (applied) redirect(applied);
+  }
+
+  const done = await getOnboardingRedirect(userId);
+  if (done) redirect(done);
 
   const t = await getTranslations("onboarding");
 
@@ -47,6 +67,7 @@ export default async function OnboardingPage({
                 }
               : null
           }
+          preferredContext={preferred === "firm" ? "firm" : preferred}
         />
         {!invitation && !params.invite ? (
           <p className="mt-8 text-center text-sm text-muted-foreground">{t("inviteHint")}</p>
