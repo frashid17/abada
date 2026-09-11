@@ -43,7 +43,7 @@ export function AuthShell({ children }: AuthShellProps) {
           </div>
 
           <div className="relative z-10">
-            <BrandMark wordmark={tShell("brand")} className="[&_div]:bg-trust-panel-icon-bg [&_div]:text-trust-panel-accent [&_span]:text-trust-panel-fg" />
+            <BrandMark wordmark={tShell("brand")} className="[&_span]:text-trust-panel-fg" />
             <div className="mt-8 flex flex-wrap gap-2">
               <LegalBadge
                 icon={ShieldCheck}
