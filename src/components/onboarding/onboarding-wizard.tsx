@@ -32,13 +32,22 @@ type InviteInfo = {
 type OnboardingWizardProps = {
   userEmail: string;
   invitation: InviteInfo | null;
+  preferredContext?: "founder" | "investor" | "firm" | null;
 };
 
 type Step = "invite" | "choose" | "create_firm";
 
-export function OnboardingWizard({ userEmail, invitation }: OnboardingWizardProps) {
+export function OnboardingWizard({
+  userEmail,
+  invitation,
+  preferredContext = null,
+}: OnboardingWizardProps) {
   const t = useTranslations("onboarding");
-  const [step, setStep] = useState<Step>(invitation ? "invite" : "choose");
+  const [step, setStep] = useState<Step>(() => {
+    if (invitation) return "invite";
+    if (preferredContext === "firm") return "create_firm";
+    return "choose";
+  });
   const [firmName, setFirmName] = useState("");
   const [error, setError] = useState<string | null>(null);
   const [pending, startTransition] = useTransition();
