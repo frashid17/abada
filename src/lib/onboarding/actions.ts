@@ -126,6 +126,34 @@ async function seedFounderChecklist(clerkUserId: string): Promise<void> {
   if (insertError) throw insertError;
 }
 
+export async function applyPreferredWorkspaceContext(
+  userId: string,
+  preferred: UserContext,
+): Promise<string | null> {
+  if (preferred === "firm") {
+    const membership = await getFirmMembershipForUser(userId);
+    if (membership) {
+      await markOnboardingComplete(userId, "firm");
+      return "/firma";
+    }
+    // Firm creation / invite still needs the onboarding wizard.
+    return null;
+  }
+
+  if (preferred === "founder") {
+    await markOnboardingComplete(userId, "founder");
+    try {
+      await seedFounderChecklist(userId);
+    } catch (error) {
+      console.error("[onboarding] founder checklist seed failed", error);
+    }
+    return "/fundador";
+  }
+
+  await markOnboardingComplete(userId, "investor");
+  return "/inversionista";
+}
+
 export async function completeFounderOnboarding(): Promise<
   { ok: true; redirect: string } | { ok: false; error: string }
 > {
@@ -133,9 +161,8 @@ export async function completeFounderOnboarding(): Promise<
     const { userId } = await getActiveSession();
     if (!userId) return { ok: false, error: "unauthorized" };
 
-    await markOnboardingComplete(userId, "founder");
-    await seedFounderChecklist(userId);
-    return { ok: true, redirect: "/fundador" };
+    const redirect = await applyPreferredWorkspaceContext(userId, "founder");
+    return { ok: true, redirect: redirect ?? "/fundador" };
   } catch (error) {
     console.error("[onboarding] founder failed", error);
     return {
@@ -152,8 +179,8 @@ export async function completeInvestorOnboarding(): Promise<
     const { userId } = await getActiveSession();
     if (!userId) return { ok: false, error: "unauthorized" };
 
-    await markOnboardingComplete(userId, "investor");
-    return { ok: true, redirect: "/inversionista" };
+    const redirect = await applyPreferredWorkspaceContext(userId, "investor");
+    return { ok: true, redirect: redirect ?? "/inversionista" };
   } catch (error) {
     console.error("[onboarding] investor failed", error);
     return {
