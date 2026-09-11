@@ -142,6 +142,69 @@ export interface Database {
         };
         Relationships: [];
       };
+      platform_invitations: {
+        Row: {
+          id: string;
+          email: string;
+          role: "founder" | "investor" | "firm";
+          token: string;
+          invited_by_sub: string;
+          expires_at: string;
+          accepted_at: string | null;
+          accepted_by_sub: string | null;
+          created_at: string;
+        };
+        Insert: {
+          id?: string;
+          email: string;
+          role: "founder" | "investor" | "firm";
+          token: string;
+          invited_by_sub: string;
+          expires_at: string;
+          accepted_at?: string | null;
+          accepted_by_sub?: string | null;
+          created_at?: string;
+        };
+        Update: {
+          id?: string;
+          email?: string;
+          role?: "founder" | "investor" | "firm";
+          token?: string;
+          invited_by_sub?: string;
+          expires_at?: string;
+          accepted_at?: string | null;
+          accepted_by_sub?: string | null;
+          created_at?: string;
+        };
+        Relationships: [];
+      };
+      analytics_events: {
+        Row: {
+          id: string;
+          event: string;
+          actor_sub: string | null;
+          tenant_id: string | null;
+          properties: Record<string, unknown>;
+          created_at: string;
+        };
+        Insert: {
+          id?: string;
+          event: string;
+          actor_sub?: string | null;
+          tenant_id?: string | null;
+          properties?: Record<string, unknown>;
+          created_at?: string;
+        };
+        Update: {
+          id?: string;
+          event?: string;
+          actor_sub?: string | null;
+          tenant_id?: string | null;
+          properties?: Record<string, unknown>;
+          created_at?: string;
+        };
+        Relationships: [];
+      };
       documents: {
         Row: {
           id: string;
