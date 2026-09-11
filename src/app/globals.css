@@ -165,6 +165,15 @@
     @apply bg-background text-foreground antialiased;
   }
 
+  body.live-editor-active {
+    cursor: crosshair;
+  }
+
+  body.live-editor-active [data-live-editor-ui],
+  body.live-editor-active [data-live-editor-ui] * {
+    cursor: auto;
+  }
+
   /* Native selects/options often ignore Tailwind in dark mode without explicit colors. */
   select {
     background-color: var(--surface);
