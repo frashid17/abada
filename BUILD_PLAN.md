@@ -122,7 +122,10 @@ Colombian legal-AI due diligence & investment-readiness platform.
 ## M8 — Beta readiness
 
 - [x] Sentry — `@sentry/nextjs` wired (client/server/edge + `global-error`); enabled when `NEXT_PUBLIC_SENTRY_DSN` is set
-- [x] Analytics abstraction — `src/lib/analytics.ts` (off by default; optional webhook)
+- [x] Analytics abstraction — `src/lib/analytics.ts` (persists to `analytics_events` when enabled; optional webhook)
+- [x] Admin usage analytics — `/admin/analytics`
+- [x] Platform email invitations — Resend API, `/admin/invitaciones`, Spanish branded emails from Abada <it@balamlegal.co>
+- [x] Brand logo + legal favicon — `public/brand/*`, shell, PDFs, invite emails
 - [x] Feature flags — `src/lib/feature-flags.ts` (env-driven kill switches for AI, payments, uploads, OCR, hub)
 - [x] Runbooks — `docs/runbooks.md` + `GET /api/health`
 - [x] Security headers — nosniff, frame deny, referrer policy, permissions-policy
