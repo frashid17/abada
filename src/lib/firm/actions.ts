@@ -48,7 +48,10 @@ export async function updateFirmReviewAction(
 export async function createFirmInviteAction(input: {
   email: string;
   role: FirmMemberRole;
-}): Promise<{ ok: true; inviteUrl: string } | { ok: false; error: string }> {
+}): Promise<
+  | { ok: true; inviteUrl: string; emailSent: boolean; emailError?: string }
+  | { ok: false; error: string }
+> {
   try {
     const { userId } = await auth();
     if (!userId) return { ok: false, error: "unauthorized" };
@@ -58,7 +61,7 @@ export async function createFirmInviteAction(input: {
       return { ok: false, error: "forbidden" };
     }
 
-    const { inviteUrl } = await createFirmInvitation({
+    const { inviteUrl, emailSent, emailError } = await createFirmInvitation({
       email: input.email,
       role: input.role,
       invitedBySub: userId,
@@ -66,7 +69,7 @@ export async function createFirmInviteAction(input: {
     });
 
     revalidatePath("/firma/equipo");
-    return { ok: true, inviteUrl };
+    return { ok: true, inviteUrl, emailSent, emailError };
   } catch (error) {
     return { ok: false, error: error instanceof Error ? error.message : "invite_failed" };
   }
