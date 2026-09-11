@@ -10,9 +10,14 @@ export type SendEmailInput = {
 };
 
 function emailFrom() {
-  const fromEmail = process.env.RESEND_FROM_EMAIL?.trim() || "it@balamlegal.co";
+  // Must use a domain verified in Resend (abadalegal.com is verified).
+  const fromEmail = process.env.RESEND_FROM_EMAIL?.trim() || "it@abadalegal.com";
   const fromName = process.env.RESEND_FROM_NAME?.trim() || getBrandName();
   return `${fromName} <${fromEmail}>`;
+}
+
+function replyTo() {
+  return process.env.RESEND_REPLY_TO?.trim() || undefined;
 }
 
 export function isEmailConfigured(): boolean {
@@ -29,13 +34,24 @@ export async function sendEmail(
 
   try {
     const resend = new Resend(apiKey);
-    const { error } = await resend.emails.send({
+    const payload: {
+      from: string;
+      to: string;
+      subject: string;
+      html: string;
+      text: string;
+      replyTo?: string;
+    } = {
       from: emailFrom(),
       to: input.to,
       subject: input.subject,
       html: input.html,
       text: input.text,
-    });
+    };
+    const reply = replyTo();
+    if (reply) payload.replyTo = reply;
+
+    const { error } = await resend.emails.send(payload);
 
     if (error) {
       console.error("[email] Resend error", error);
