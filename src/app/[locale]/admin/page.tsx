@@ -2,12 +2,14 @@ import { auth } from "@clerk/nextjs/server";
 import { getTranslations } from "next-intl/server";
 import { redirect } from "next/navigation";
 import {
+  ArrowRight,
+  BarChart3,
   BookOpen,
   Bot,
   ClipboardList,
   FileSearch,
+  Mail,
   Plus,
-  ArrowRight,
 } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import { AppShell } from "@/components/layout/app-shell";
@@ -64,6 +66,18 @@ export default async function AdminOverviewPage() {
   ];
 
   const shortcuts = [
+    {
+      href: "/admin/analytics",
+      title: t("overview.viewAnalytics"),
+      description: t("overview.viewAnalyticsDescription"),
+      icon: BarChart3,
+    },
+    {
+      href: "/admin/invitaciones",
+      title: t("overview.sendInvite"),
+      description: t("overview.sendInviteDescription"),
+      icon: Mail,
+    },
     {
       href: "/admin/corpus?crear=1",
       title: t("overview.addLaw"),
