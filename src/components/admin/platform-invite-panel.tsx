@@ -47,13 +47,13 @@ export function PlatformInvitePanel({
       setInviteUrl(result.inviteUrl);
       setEmailSent(result.emailSent);
       if (!result.emailSent) {
-        setError(
-          t(
-            `errors.${(result.emailError === "email_not_configured"
-              ? "email_not_configured"
-              : "email_send_failed") as "email_not_configured"}`,
-          ),
-        );
+        if (result.emailError === "email_not_configured") {
+          setError(t("errors.email_not_configured"));
+        } else if (result.emailError) {
+          setError(t("errors.email_send_failed_detail", { detail: result.emailError }));
+        } else {
+          setError(t("errors.email_send_failed"));
+        }
       }
       form.reset();
     });
