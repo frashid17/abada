@@ -7,9 +7,10 @@ import { Button } from "@/components/ui/button";
 
 type LandingHeroProps = {
   isSignedIn: boolean;
+  workspaceHref?: string;
 };
 
-export async function LandingHero({ isSignedIn }: LandingHeroProps) {
+export async function LandingHero({ isSignedIn, workspaceHref = "/onboarding" }: LandingHeroProps) {
   const t = await getTranslations("public");
 
   const readinessItems = [
@@ -31,20 +32,29 @@ export async function LandingHero({ isSignedIn }: LandingHeroProps) {
           </h1>
           <p className="max-w-xl text-lg leading-relaxed text-muted-foreground">{t("subheadline")}</p>
           <div className="flex flex-wrap gap-3 pt-1">
-            <Button asChild size="lg" variant="cta">
-              <Link href="/registro">
-                {t("ctaFounder")}
-                <ArrowRight className="h-4 w-4" />
-              </Link>
-            </Button>
-            <Button asChild variant="outline" size="lg">
-              <Link href="/registro">{t("ctaInvestor")}</Link>
-            </Button>
-            {!isSignedIn ? (
-              <Button asChild variant="ghost" size="lg">
-                <Link href="/iniciar-sesion?redirect_url=/firma">{t("ctaFirm")}</Link>
+            {isSignedIn ? (
+              <Button asChild size="lg" variant="cta">
+                <Link href={workspaceHref}>
+                  {t("ctaWorkspace")}
+                  <ArrowRight className="h-4 w-4" />
+                </Link>
               </Button>
-            ) : null}
+            ) : (
+              <>
+                <Button asChild size="lg" variant="cta">
+                  <Link href="/registro?context=founder">
+                    {t("ctaFounder")}
+                    <ArrowRight className="h-4 w-4" />
+                  </Link>
+                </Button>
+                <Button asChild variant="outline" size="lg">
+                  <Link href="/registro?context=investor">{t("ctaInvestor")}</Link>
+                </Button>
+                <Button asChild variant="ghost" size="lg">
+                  <Link href="/registro?context=firm">{t("ctaFirm")}</Link>
+                </Button>
+              </>
+            )}
           </div>
         </div>
 
