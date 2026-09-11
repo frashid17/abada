@@ -55,6 +55,8 @@ const navKeys = {
     { href: "/admin/conocimiento", key: "adminKnowledge" },
     { href: "/admin/tenants", key: "adminTenants" },
     { href: "/admin/equipo", key: "adminTeam" },
+    { href: "/admin/invitaciones", key: "adminInvites" },
+    { href: "/admin/analytics", key: "adminAnalytics" },
     { href: "/admin/flags", key: "adminFlags" },
     { href: "/admin/ai", key: "adminAi" },
     { href: "/admin/requests", key: "adminRequests" },
