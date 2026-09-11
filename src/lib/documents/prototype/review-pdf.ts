@@ -1,4 +1,13 @@
-import { PDFDocument, StandardFonts, rgb, type PDFPage, type PDFFont } from "pdf-lib";
+import { readFile } from "fs/promises";
+import path from "path";
+import {
+  PDFDocument,
+  StandardFonts,
+  rgb,
+  type PDFPage,
+  type PDFFont,
+  type PDFImage,
+} from "pdf-lib";
 import {
   listPrototypeDecisionRows,
 } from "@/lib/documents/prototype/catalog";
@@ -53,6 +62,7 @@ type PdfContext = {
   copy: PdfCopy;
   brandName: string;
   firmName: string;
+  logo: PDFImage | null;
 };
 
 const COL = {
@@ -224,25 +234,42 @@ function drawHeader(ctx: PdfContext, input: ReviewDraftPdfInput, openCount: numb
   const { page, bold, regular, italic, copy } = ctx;
   let y = PAGE_HEIGHT - MARGIN_TOP;
 
-  page.drawText(ctx.brandName.toUpperCase(), {
-    x: MARGIN_X,
-    y,
-    size: 10,
-    font: bold,
-    color: ACCENT,
-  });
+  if (ctx.logo) {
+    const logoSize = 28;
+    page.drawImage(ctx.logo, {
+      x: MARGIN_X,
+      y: y - 8,
+      width: logoSize,
+      height: logoSize,
+    });
+    page.drawText(ctx.brandName.toUpperCase(), {
+      x: MARGIN_X + logoSize + 10,
+      y: y + 2,
+      size: 10,
+      font: bold,
+      color: ACCENT,
+    });
+  } else {
+    page.drawText(ctx.brandName.toUpperCase(), {
+      x: MARGIN_X,
+      y,
+      size: 10,
+      font: bold,
+      color: ACCENT,
+    });
+  }
 
   const firm = ctx.firmName;
   const firmWidth = regular.widthOfTextAtSize(firm, 9);
   page.drawText(firm, {
     x: PAGE_WIDTH - MARGIN_X - firmWidth,
-    y,
+    y: y + 2,
     size: 9,
     font: regular,
     color: INK_MUTED,
   });
 
-  y -= 12;
+  y -= ctx.logo ? 22 : 12;
   drawRule(page, y, 1.25, RULE);
   y -= 26;
 
@@ -473,6 +500,16 @@ function drawFooters(ctx: PdfContext) {
   });
 }
 
+async function embedBrandLogo(pdfDoc: PDFDocument): Promise<PDFImage | null> {
+  try {
+    const logoPath = path.join(process.cwd(), "public", "brand", "abada-logo.png");
+    const bytes = await readFile(logoPath);
+    return pdfDoc.embedPng(bytes);
+  } catch {
+    return null;
+  }
+}
+
 export async function buildReviewDraftPdf(input: ReviewDraftPdfInput): Promise<Uint8Array> {
   const content = await getResolvedPrototypeContent();
   const copy = getCopy(input.locale);
@@ -483,6 +520,7 @@ export async function buildReviewDraftPdf(input: ReviewDraftPdfInput): Promise<U
   const regular = await pdfDoc.embedFont(StandardFonts.TimesRoman);
   const bold = await pdfDoc.embedFont(StandardFonts.TimesRomanBold);
   const italic = await pdfDoc.embedFont(StandardFonts.TimesRomanItalic);
+  const logo = await embedBrandLogo(pdfDoc);
 
   const ctx: PdfContext = {
     pdfDoc,
@@ -497,6 +535,7 @@ export async function buildReviewDraftPdf(input: ReviewDraftPdfInput): Promise<U
     copy,
     brandName: input.brandName,
     firmName: input.firmName,
+    logo,
   };
 
   drawHeader(ctx, input, openCount);
