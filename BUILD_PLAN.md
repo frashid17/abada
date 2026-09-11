@@ -126,6 +126,7 @@ Colombian legal-AI due diligence & investment-readiness platform.
 - [x] Admin usage analytics — `/admin/analytics`
 - [x] Platform email invitations — Resend API, `/admin/invitaciones`, Spanish branded emails from Abada <it@balamlegal.co>
 - [x] Brand logo + legal favicon — `public/brand/*`, shell, PDFs, invite emails
+- [x] Live UI text editor — admin pencil FAB, DB copy overrides, hide/show in `/admin/flags`
 - [x] Feature flags — `src/lib/feature-flags.ts` (env-driven kill switches for AI, payments, uploads, OCR, hub)
 - [x] Runbooks — `docs/runbooks.md` + `GET /api/health`
 - [x] Security headers — nosniff, frame deny, referrer policy, permissions-policy
