@@ -123,17 +123,20 @@ export async function createFirmInvitation(input: {
       `El enlace vence en ${INVITE_TTL_DAYS} días.`,
     ].join("\n\n");
 
+    const branded = buildBrandedEmailHtml({
+      title: `Invitación a ${brand}`,
+      bodyHtml,
+      ctaLabel: "Aceptar invitación",
+      ctaUrl: inviteUrl,
+      footer: `Este correo lo envió ${brand}. Si no esperabas esta invitación, puedes ignorarlo.`,
+    });
+
     const result = await sendEmail({
       to: email,
       subject,
-      html: buildBrandedEmailHtml({
-        title: `Invitación a ${brand}`,
-        bodyHtml,
-        ctaLabel: "Aceptar invitación",
-        ctaUrl: inviteUrl,
-        footer: `Este correo lo envió ${brand}. Si no esperabas esta invitación, puedes ignorarlo.`,
-      }),
+      html: branded.html,
       text,
+      attachments: branded.attachments,
     });
     emailSent = result.ok;
     if (!result.ok) emailError = result.error;
