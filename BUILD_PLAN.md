@@ -50,6 +50,7 @@ Colombian legal-AI due diligence & investment-readiness platform.
 - [x] Vesting de Fundadores intake schema + guided flow UI
 - [x] Flag for help (`flagged` status + `intake_submissions`)
 - [x] Server-rendered preview + fingerprinted **PDF** download (`/api/documents/[docType]/download`) with party signature blocks; attorney cursive signature + firm watermark after review completion
+- [x] Pre-download feedback form (Google Form questions in-app) required once per document type; notifies Balam via Resend
 - [x] Finalize download auto-enqueues document in firm review queue (`/firma/cola`)
 - [x] Explicit **Submit for review** action (separate from download); founder chooses document language (es-CO / en-US) for preview and PDF disclaimers
 - [x] AI drafting panel in document flow (`/api/ai/chat`, task=`drafting`)
