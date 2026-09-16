@@ -42,9 +42,8 @@ export function DocumentReviewBeforeSign({
   const feedbackDocType = "prototype_review" as const;
 
   useEffect(() => {
-    if (readFeedbackModalOpen(feedbackDocType)) {
-      setFeedbackOpen(true);
-    }
+    if (!readFeedbackModalOpen(feedbackDocType)) return;
+    queueMicrotask(() => setFeedbackOpen(true));
   }, []);
 
   function openFeedbackModal() {
