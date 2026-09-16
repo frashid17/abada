@@ -1,4 +1,4 @@
-import { auth } from "@clerk/nextjs/server";
+import { auth, currentUser } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
 import { AppShell } from "@/components/layout/app-shell";
 import { DocumentReviewBeforeSign } from "@/components/founder/document-review-before-sign";
@@ -14,10 +14,16 @@ export default async function FounderDocumentReviewPage() {
   const profile = await getOrCreateProfile();
   if (profile?.context !== "founder") redirect("/");
 
+  const user = await currentUser();
+  const respondentEmail =
+    user?.primaryEmailAddress?.emailAddress ??
+    user?.emailAddresses?.[0]?.emailAddress ??
+    "";
+
   return (
     <AppShell variant="founder">
       <WithResolvedPrototypeContent>
-        <DocumentReviewBeforeSign />
+        <DocumentReviewBeforeSign respondentEmail={respondentEmail} />
       </WithResolvedPrototypeContent>
     </AppShell>
   );
