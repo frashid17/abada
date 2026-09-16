@@ -205,6 +205,48 @@ export interface Database {
         };
         Relationships: [];
       };
+      document_download_feedback: {
+        Row: {
+          id: string;
+          owner_sub: string;
+          document_type: string;
+          respondent_email: string;
+          respondent_name: string | null;
+          ease_rating: number;
+          what_would_change: string;
+          hardest_topic: string;
+          founders_without_lawyer: string;
+          lawyer_time_needed: string;
+          created_at: string;
+        };
+        Insert: {
+          id?: string;
+          owner_sub: string;
+          document_type: string;
+          respondent_email: string;
+          respondent_name?: string | null;
+          ease_rating: number;
+          what_would_change: string;
+          hardest_topic: string;
+          founders_without_lawyer: string;
+          lawyer_time_needed: string;
+          created_at?: string;
+        };
+        Update: {
+          id?: string;
+          owner_sub?: string;
+          document_type?: string;
+          respondent_email?: string;
+          respondent_name?: string | null;
+          ease_rating?: number;
+          what_would_change?: string;
+          hardest_topic?: string;
+          founders_without_lawyer?: string;
+          lawyer_time_needed?: string;
+          created_at?: string;
+        };
+        Relationships: [];
+      };
       platform_ui_copy_overrides: {
         Row: {
           id: string;
