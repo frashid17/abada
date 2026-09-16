@@ -1,6 +1,7 @@
 import { auth } from "@clerk/nextjs/server";
 import { NextResponse } from "next/server";
 import { isInvestmentDocumentType } from "@/lib/documents/catalog";
+import { hasDocumentDownloadFeedback } from "@/lib/documents/download-feedback";
 import { isFlowDocumentType } from "@/lib/documents/intake";
 import { createFingerprintedVersion } from "@/lib/documents/service";
 import { writeAuditLog } from "@/lib/audit";
@@ -19,6 +20,14 @@ export async function GET(request: Request, context: RouteContext) {
   const { docType } = await context.params;
   if (!isInvestmentDocumentType(docType) || !isFlowDocumentType(docType)) {
     return NextResponse.json({ error: "Not found" }, { status: 404 });
+  }
+
+  const feedbackDone = await hasDocumentDownloadFeedback(userId, docType);
+  if (!feedbackDone) {
+    return NextResponse.json(
+      { error: "feedback_required", message: "Document feedback required before download" },
+      { status: 403 },
+    );
   }
 
   const rate = await enforceRateLimit({
