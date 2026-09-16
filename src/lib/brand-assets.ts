@@ -1,6 +1,3 @@
-import fs from "node:fs";
-import path from "node:path";
-
 /** Brand asset paths served from /public. */
 export const BRAND_LOGO_PATH = "/brand/abada-logo.png";
 export const BRAND_FAVICON_PATH = "/brand/abada-favicon.png";
@@ -32,25 +29,4 @@ export function getEmailBrandLogoUrl(): string | null {
   }
 
   return null;
-}
-
-export type BrandLogoEmailAttachment = {
-  filename: string;
-  content: Buffer;
-  contentId: string;
-};
-
-/** Read logo bytes for Resend CID embedding (works in local + production). */
-export function readBrandLogoEmailAttachment(): BrandLogoEmailAttachment | null {
-  try {
-    const logoPath = path.join(process.cwd(), "public", "brand", "abada-logo.png");
-    if (!fs.existsSync(logoPath)) return null;
-    return {
-      filename: "abada-logo.png",
-      content: fs.readFileSync(logoPath),
-      contentId: EMAIL_BRAND_LOGO_CID,
-    };
-  } catch {
-    return null;
-  }
 }
