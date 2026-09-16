@@ -1,4 +1,4 @@
-import { auth } from "@clerk/nextjs/server";
+import { auth, currentUser } from "@clerk/nextjs/server";
 import { getLocale, getTranslations } from "next-intl/server";
 import { redirect, notFound } from "next/navigation";
 import { AppShell } from "@/components/layout/app-shell";
@@ -46,9 +46,10 @@ export default async function FounderDocumentFlowPage({
   }
 
   const locale = (await getLocale()) as "es-CO" | "en-US";
-  const [state, aiAccess] = await Promise.all([
+  const [state, aiAccess, user] = await Promise.all([
     getDocumentFlowState(docId),
     getAiAccessStatus(userId, locale),
+    currentUser(),
   ]);
   if (!state) notFound();
 
@@ -57,6 +58,10 @@ export default async function FounderDocumentFlowPage({
 
   const learnGuideType =
     docId === "shareholders" || docId === "employment" ? docId : undefined;
+  const respondentEmail =
+    user?.primaryEmailAddress?.emailAddress ??
+    user?.emailAddresses?.[0]?.emailAddress ??
+    "";
 
   return (
     <AppShell variant="founder">
@@ -76,6 +81,7 @@ export default async function FounderDocumentFlowPage({
           reviewSummary={state.reviewSummary}
           aiAccess={aiAccess}
           learnGuideType={learnGuideType}
+          respondentEmail={respondentEmail}
         />
       </div>
     </AppShell>
