@@ -141,17 +141,20 @@ export async function createPlatformInvitation(input: {
   if (!isEmailConfigured()) {
     emailError = "email_not_configured";
   } else {
+    const branded = buildBrandedEmailHtml({
+      title: `Invitación a ${brand}`,
+      bodyHtml,
+      ctaLabel: "Aceptar invitación",
+      ctaUrl: inviteUrl,
+      footer: `Este correo lo envió ${brand}. Si no esperabas esta invitación, puedes ignorarlo.`,
+    });
+
     const result = await sendEmail({
       to: email,
       subject,
-      html: buildBrandedEmailHtml({
-        title: `Invitación a ${brand}`,
-        bodyHtml,
-        ctaLabel: "Aceptar invitación",
-        ctaUrl: inviteUrl,
-        footer: `Este correo lo envió ${brand}. Si no esperabas esta invitación, puedes ignorarlo.`,
-      }),
+      html: branded.html,
       text,
+      attachments: branded.attachments,
     });
     emailSent = result.ok;
     if (!result.ok) emailError = result.error;
