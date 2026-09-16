@@ -311,4 +311,56 @@
   .proto-tk.sample {
     color: var(--fg-muted);
   }
+
+  /* Document download feedback rating slider */
+  .feedback-rating-slider {
+    height: 1.75rem;
+  }
+
+  .feedback-rating-slider:focus {
+    outline: none;
+  }
+
+  .feedback-rating-slider:focus-visible::-webkit-slider-thumb {
+    box-shadow: 0 0 0 4px color-mix(in oklab, var(--primary) 25%, transparent);
+  }
+
+  .feedback-rating-slider:focus-visible::-moz-range-thumb {
+    box-shadow: 0 0 0 4px color-mix(in oklab, var(--primary) 25%, transparent);
+  }
+
+  .feedback-rating-slider::-webkit-slider-runnable-track {
+    height: 0.5rem;
+    border-radius: 999px;
+    background: color-mix(in oklab, var(--muted) 85%, var(--border));
+  }
+
+  .feedback-rating-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    margin-top: -0.4rem;
+    width: 1.25rem;
+    height: 1.25rem;
+    border-radius: 999px;
+    border: 2px solid var(--background);
+    background: var(--primary);
+    box-shadow: 0 1px 3px color-mix(in oklab, var(--foreground) 20%, transparent);
+    cursor: pointer;
+  }
+
+  .feedback-rating-slider::-moz-range-track {
+    height: 0.5rem;
+    border-radius: 999px;
+    background: color-mix(in oklab, var(--muted) 85%, var(--border));
+  }
+
+  .feedback-rating-slider::-moz-range-thumb {
+    width: 1.25rem;
+    height: 1.25rem;
+    border: 2px solid var(--background);
+    border-radius: 999px;
+    background: var(--primary);
+    box-shadow: 0 1px 3px color-mix(in oklab, var(--foreground) 20%, transparent);
+    cursor: pointer;
+  }
 }
