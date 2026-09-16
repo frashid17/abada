@@ -1,6 +1,7 @@
 import { auth } from "@clerk/nextjs/server";
 import { NextResponse } from "next/server";
 import { getBrandName, getFirmName } from "@/lib/brand";
+import { hasDocumentDownloadFeedback } from "@/lib/documents/download-feedback";
 import { buildReviewDraftPdf } from "@/lib/documents/prototype/review-pdf";
 import type { PrototypeCompany } from "@/lib/documents/prototype/store";
 import { writeAuditLog } from "@/lib/audit";
@@ -9,6 +10,8 @@ type ReviewDraftBody = {
   locale?: string;
   company?: PrototypeCompany;
   decisions?: Record<string, string | number>;
+  /** preview = allow without feedback; download = require feedback */
+  mode?: "preview" | "download";
 };
 
 function sanitizeFilename(value: string): string {
@@ -35,6 +38,17 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "Invalid JSON" }, { status: 400 });
   }
 
+  const mode = body.mode === "download" ? "download" : "preview";
+  if (mode === "download") {
+    const feedbackDone = await hasDocumentDownloadFeedback(userId, "prototype_review");
+    if (!feedbackDone) {
+      return NextResponse.json(
+        { error: "feedback_required", message: "Document feedback required before download" },
+        { status: 403 },
+      );
+    }
+  }
+
   const locale = body.locale === "en-US" ? "en-US" : "es-CO";
   const company = body.company;
   const decisions = body.decisions ?? {};
@@ -56,11 +70,14 @@ export async function POST(request: Request) {
     const filename = `abada-revision-decisiones-${slug || "borrador"}.pdf`;
 
     await writeAuditLog({
-      action: "document.review_draft_download",
+      action:
+        mode === "download"
+          ? "document.review_draft_download"
+          : "document.review_draft_preview",
       actorSub: userId,
       resourceType: "document",
       resourceId: "prototype_review",
-      metadata: { locale, openDecisions: Object.keys(decisions).length },
+      metadata: { locale, mode, openDecisions: Object.keys(decisions).length },
       request,
     });
 
@@ -68,7 +85,10 @@ export async function POST(request: Request) {
       status: 200,
       headers: {
         "Content-Type": "application/pdf",
-        "Content-Disposition": `attachment; filename="${filename}"`,
+        "Content-Disposition":
+          mode === "download"
+            ? `attachment; filename="${filename}"`
+            : `inline; filename="${filename}"`,
       },
     });
   } catch (error) {
