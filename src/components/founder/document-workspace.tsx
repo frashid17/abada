@@ -310,9 +310,8 @@ export function DocumentWorkspace({
   const skipScrollSelect = useRef(false);
 
   useEffect(() => {
-    if (readFeedbackModalOpen(documentType)) {
-      setFeedbackOpen(true);
-    }
+    if (!readFeedbackModalOpen(documentType)) return;
+    queueMicrotask(() => setFeedbackOpen(true));
   }, [documentType]);
 
   function openFeedbackModal() {
