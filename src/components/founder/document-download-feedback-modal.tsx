@@ -51,12 +51,17 @@ export function DocumentDownloadFeedbackModal({
   const [succeeded, setSucceeded] = useState(false);
   const [pending, startTransition] = useTransition();
   const onCompletedRef = useRef(onCompleted);
-  onCompletedRef.current = onCompleted;
+
+  useEffect(() => {
+    onCompletedRef.current = onCompleted;
+  }, [onCompleted]);
 
   useEffect(() => {
     const saved = readFeedbackDraft(documentType);
-    if (saved) setDraft(saved);
-    setHydrated(true);
+    queueMicrotask(() => {
+      if (saved) setDraft(saved);
+      setHydrated(true);
+    });
   }, [documentType]);
 
   useEffect(() => {
@@ -66,8 +71,10 @@ export function DocumentDownloadFeedbackModal({
 
   useEffect(() => {
     if (!open) {
-      setSucceeded(false);
-      setError(null);
+      queueMicrotask(() => {
+        setSucceeded(false);
+        setError(null);
+      });
       return;
     }
 
