@@ -1,10 +1,7 @@
 import { Resend } from "resend";
 import { getBrandName } from "@/lib/brand";
-import {
-  EMAIL_BRAND_LOGO_CID,
-  getEmailBrandLogoUrl,
-  readBrandLogoEmailAttachment,
-} from "@/lib/brand-assets";
+import { EMAIL_BRAND_LOGO_CID, getEmailBrandLogoUrl } from "@/lib/brand-assets";
+import { readBrandLogoEmailAttachment } from "@/lib/brand-assets.server";
 
 export type SendEmailAttachment = {
   filename: string;
