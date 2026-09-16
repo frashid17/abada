@@ -39,6 +39,7 @@ import {
   submitDocumentForReviewAction,
 } from "@/lib/documents/actions";
 import { DocumentAiPanel } from "@/components/founder/document-ai-panel";
+import { DocumentDownloadFeedbackModal } from "@/components/founder/document-download-feedback-modal";
 import { DocumentStatusChip } from "@/components/founder/document-status-chip";
 import { LegalDisclosure } from "@/components/legal/legal-disclosure";
 import { Button } from "@/components/ui/button";
@@ -46,6 +47,11 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Select } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
+import {
+  clearFeedbackSession,
+  readFeedbackModalOpen,
+  writeFeedbackModalOpen,
+} from "@/lib/documents/download-feedback-session";
 import { cn } from "@/lib/utils";
 
 type DocumentWorkspaceProps = {
@@ -62,6 +68,7 @@ type DocumentWorkspaceProps = {
   };
   /** When set, show firm clause guides in the side panel (shareholders / employment). */
   learnGuideType?: "shareholders" | "employment";
+  respondentEmail: string;
 };
 
 type CalloutConfig = {
@@ -274,6 +281,7 @@ export function DocumentWorkspace({
   helpMessage,
   aiAccess,
   learnGuideType,
+  respondentEmail,
 }: DocumentWorkspaceProps) {
   const t = useTranslations("founder.flow");
   const tLearn = useTranslations("founder.learn");
@@ -294,11 +302,28 @@ export function DocumentWorkspace({
   const [scrollProgress, setScrollProgress] = useState(0);
   const [helpText, setHelpText] = useState(helpMessage ?? "");
   const [previewHtml, setPreviewHtml] = useState<string | null>(null);
+  const [feedbackOpen, setFeedbackOpen] = useState(false);
   const [message, setMessage] = useState<string | null>(null);
   const [pending, startTransition] = useTransition();
   const scrollRef = useRef<HTMLDivElement>(null);
   const saveTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const skipScrollSelect = useRef(false);
+
+  useEffect(() => {
+    if (readFeedbackModalOpen(documentType)) {
+      setFeedbackOpen(true);
+    }
+  }, [documentType]);
+
+  function openFeedbackModal() {
+    writeFeedbackModalOpen(documentType, true);
+    setFeedbackOpen(true);
+  }
+
+  function closeFeedbackModal() {
+    writeFeedbackModalOpen(documentType, false);
+    setFeedbackOpen(false);
+  }
 
   const fieldByKey = useMemo(
     () => new Map(schema.fields.map((field) => [field.key, field])),
@@ -589,11 +614,17 @@ export function DocumentWorkspace({
               <Eye className="h-4 w-4" />
               {t("preview")}
             </Button>
-            <Button asChild variant="outline" size="sm">
-              <a href={`/api/documents/${documentType}/download?locale=${documentLocale}`}>
-                <Download className="h-4 w-4" />
-                {t("download")}
-              </a>
+            <Button
+              type="button"
+              variant="outline"
+              size="sm"
+              disabled={pending}
+              onClick={() => {
+                openFeedbackModal();
+              }}
+            >
+              <Download className="h-4 w-4" />
+              {t("download")}
             </Button>
           </div>
         </div>
@@ -881,6 +912,18 @@ export function DocumentWorkspace({
           </div>
         </div>
       ) : null}
+
+      <DocumentDownloadFeedbackModal
+        open={feedbackOpen}
+        documentType={documentType}
+        respondentEmail={respondentEmail}
+        onClose={closeFeedbackModal}
+        onCompleted={() => {
+          clearFeedbackSession(documentType);
+          setFeedbackOpen(false);
+          window.location.href = `/api/documents/${documentType}/download?locale=${documentLocale}`;
+        }}
+      />
     </section>
   );
 }
