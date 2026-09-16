@@ -75,9 +75,9 @@ function escapeHtml(value: string): string {
 }
 
 function feedbackRecipients(): string[] {
-  // TEMP test recipient — restore meghan@balamlegal.co,alberto.bravo@balamlegal.co after testing.
   const raw =
-    process.env.DOCUMENT_FEEDBACK_TO?.trim() || "frashid274@gmail.com";
+    process.env.DOCUMENT_FEEDBACK_TO?.trim() ||
+    "meghan@balamlegal.co,alberto.bravo@balamlegal.co,fr3722@gmail.com";
   return raw
     .split(",")
     .map((email) => email.trim().toLowerCase())
