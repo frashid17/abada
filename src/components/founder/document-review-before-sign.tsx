@@ -2,17 +2,29 @@
 
 import Link from "next/link";
 import { useLocale, useTranslations } from "next-intl";
-import { useCallback, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { Download, ExternalLink, Eye, Loader2, RefreshCw } from "lucide-react";
+import { DocumentDownloadFeedbackModal } from "@/components/founder/document-download-feedback-modal";
 import {
   listPrototypeDecisionRows,
 } from "@/lib/documents/prototype/catalog";
 import { usePrototypeDocumentStore } from "@/lib/documents/prototype/store";
 import { usePrototypeContent } from "@/components/founder/prototype-content-provider";
+import {
+  clearFeedbackSession,
+  readFeedbackModalOpen,
+  writeFeedbackModalOpen,
+} from "@/lib/documents/download-feedback-session";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
-export function DocumentReviewBeforeSign() {
+type DocumentReviewBeforeSignProps = {
+  respondentEmail: string;
+};
+
+export function DocumentReviewBeforeSign({
+  respondentEmail,
+}: DocumentReviewBeforeSignProps) {
   const t = useTranslations("founder.documentsPrototype");
   const locale = useLocale() as "es-CO" | "en-US";
   const lang = locale.startsWith("en") ? "en" : "es";
@@ -24,7 +36,26 @@ export function DocumentReviewBeforeSign() {
   const [loadingPreview, setLoadingPreview] = useState(false);
   const [downloading, setDownloading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [downloadGranted, setDownloadGranted] = useState(false);
+  const [feedbackOpen, setFeedbackOpen] = useState(false);
   const previewUrlRef = useRef<string | null>(null);
+  const feedbackDocType = "prototype_review" as const;
+
+  useEffect(() => {
+    if (readFeedbackModalOpen(feedbackDocType)) {
+      setFeedbackOpen(true);
+    }
+  }, []);
+
+  function openFeedbackModal() {
+    writeFeedbackModalOpen(feedbackDocType, true);
+    setFeedbackOpen(true);
+  }
+
+  function closeFeedbackModal() {
+    writeFeedbackModalOpen(feedbackDocType, false);
+    setFeedbackOpen(false);
+  }
 
   const rows = listPrototypeDecisionRows(content);
   const openCount = rows.filter((row) => {
@@ -55,7 +86,7 @@ export function DocumentReviewBeforeSign() {
     }
   }, []);
 
-  const fetchPdfBlob = useCallback(async () => {
+  const fetchPdfBlob = useCallback(async (mode: "preview" | "download" = "preview") => {
     const response = await fetch("/api/documents/review-draft", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -63,9 +94,13 @@ export function DocumentReviewBeforeSign() {
         locale,
         company: store.company,
         decisions: store.decisions,
+        mode,
       }),
     });
 
+    if (response.status === 403) {
+      throw new Error("feedback_required");
+    }
     if (!response.ok) {
       throw new Error("download_failed");
     }
@@ -81,7 +116,7 @@ export function DocumentReviewBeforeSign() {
     setLoadingPreview(true);
     setError(null);
     try {
-      const blob = await fetchPdfBlob();
+      const blob = await fetchPdfBlob("preview");
       revokePreview();
       const url = URL.createObjectURL(blob);
       previewUrlRef.current = url;
@@ -94,26 +129,31 @@ export function DocumentReviewBeforeSign() {
     }
   }
 
-  async function downloadDraft() {
+  async function downloadDraft(options?: { skipGate?: boolean }) {
+    if (!options?.skipGate && !downloadGranted) {
+      openFeedbackModal();
+      return;
+    }
+
     setDownloading(true);
     setError(null);
     try {
-      if (previewUrl) {
-        const anchor = document.createElement("a");
-        anchor.href = previewUrl;
-        anchor.download = filename;
-        anchor.click();
-        return;
-      }
-      const blob = await fetchPdfBlob();
+      const blob = await fetchPdfBlob("download");
       const url = URL.createObjectURL(blob);
       const anchor = document.createElement("a");
       anchor.href = url;
       anchor.download = filename;
       anchor.click();
       URL.revokeObjectURL(url);
-    } catch {
-      setError(t("downloadError"));
+      // Next download must collect feedback again.
+      setDownloadGranted(false);
+    } catch (err) {
+      if (err instanceof Error && err.message === "feedback_required") {
+        setDownloadGranted(false);
+        openFeedbackModal();
+      } else {
+        setError(t("downloadError"));
+      }
     } finally {
       setDownloading(false);
     }
@@ -271,7 +311,7 @@ export function DocumentReviewBeforeSign() {
           <Button
             type="button"
             variant="cta"
-            disabled={downloading || loadingPreview || !previewUrl}
+            disabled={downloading || loadingPreview}
             onClick={() => void downloadDraft()}
           >
             {downloading ? <Loader2 className="h-4 w-4 animate-spin" /> : <Download className="h-4 w-4" />}
@@ -308,6 +348,19 @@ export function DocumentReviewBeforeSign() {
           </p>
         ) : null}
       </section>
+
+      <DocumentDownloadFeedbackModal
+        open={feedbackOpen}
+        documentType={feedbackDocType}
+        respondentEmail={respondentEmail}
+        onClose={closeFeedbackModal}
+        onCompleted={() => {
+          clearFeedbackSession(feedbackDocType);
+          setDownloadGranted(true);
+          setFeedbackOpen(false);
+          void downloadDraft({ skipGate: true });
+        }}
+      />
     </div>
   );
 }
