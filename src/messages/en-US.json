@@ -2869,5 +2869,23 @@
       "emailMismatchTitle": "Email mismatch",
       "emailMismatchDescription": "Sign in with {email} or ask for a new invitation to that address."
     }
+  },
+  "legal": {
+    "termsAcceptance": {
+      "eyebrow": "Legal requirement — Colombia",
+      "title": "Terms of Service and Personal Data Processing Policy",
+      "subtitle": "Before preparing documents on Abada, you must read and accept these terms. We record your acceptance (who, when, and from where).",
+      "versionLabel": "Version {version}",
+      "checkbox": "I have read and accept Abada’s Terms of Service and Personal Data Processing Policy.",
+      "accept": "Accept and continue",
+      "submitting": "Recording acceptance…",
+      "mustCheck": "Check the box to confirm you accept the terms.",
+      "requiredNote": "Acceptance is required to use the platform under Colombian personal data protection rules.",
+      "errors": {
+        "unauthorized": "You need to sign in.",
+        "invalid_locale": "Invalid locale.",
+        "generic": "Could not record acceptance. Try again."
+      }
+    }
   }
 }
