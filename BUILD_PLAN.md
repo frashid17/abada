@@ -50,7 +50,8 @@ Colombian legal-AI due diligence & investment-readiness platform.
 - [x] Vesting de Fundadores intake schema + guided flow UI
 - [x] Flag for help (`flagged` status + `intake_submissions`)
 - [x] Server-rendered preview + fingerprinted **PDF** download (`/api/documents/[docType]/download`) with party signature blocks; attorney cursive signature + firm watermark after review completion
-- [x] Pre-download feedback form (Google Form questions in-app) required once per document type; notifies Balam via Resend
+- [x] Pre-download feedback form (Google Form questions in-app) required before each PDF download; notifies Balam via Resend
+- [x] Terms of Service + Personal Data Policy acceptance modal on first document start (version `2026-10-23`, ES/EN); records acceptance + audit log; migration `027_terms_acceptances.sql`
 - [x] Finalize download auto-enqueues document in firm review queue (`/firma/cola`)
 - [x] Explicit **Submit for review** action (separate from download); founder chooses document language (es-CO / en-US) for preview and PDF disclaimers
 - [x] AI drafting panel in document flow (`/api/ai/chat`, task=`drafting`)
@@ -145,6 +146,8 @@ Colombian legal-AI due diligence & investment-readiness platform.
 - [ ] **Manual:** Apply migration `022_dd_questionnaire.sql` (DD question bank + founder responses + finding draft status)
 - [ ] **Manual:** Apply migration `018_mock_payments.sql` (allows `mock` provider on `payments`)
 - [ ] **Manual:** Apply migration `019_dd_info_requerida_risk_level.sql` (adds `info_requerida` to findings)
+- [ ] **Manual:** Apply migration `025_document_download_feedback.sql` + `026_document_feedback_multi_submit.sql` (survey gate)
+- [ ] **Manual:** Apply migration `027_terms_acceptances.sql` (ToS / data-policy acceptance records)
 - [ ] **Manual:** Create Sentry project and set DSN / auth token in Vercel
 - [ ] **Manual:** Enable `FEATURE_ANALYTICS=true` + webhook if product analytics is desired
 
