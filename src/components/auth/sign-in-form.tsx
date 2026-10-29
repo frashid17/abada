@@ -17,11 +17,24 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 
 type SignInFormProps = {
   redirectUrl?: string;
+  /** Optional workspace context preserved when switching to sign-up. */
+  preferredContext?: "founder" | "investor" | "firm";
 };
+
+function buildSignUpHref(
+  redirectUrl?: string,
+  preferredContext?: "founder" | "investor" | "firm",
+): string {
+  const params = new URLSearchParams();
+  if (preferredContext) params.set("context", preferredContext);
+  if (redirectUrl) params.set("redirect_url", redirectUrl);
+  const query = params.toString();
+  return query ? `/registro?${query}` : "/registro";
+}
 
 type SignInStep = "credentials" | "forgot_request" | "forgot_verify";
 
-export function SignInForm({ redirectUrl }: SignInFormProps) {
+export function SignInForm({ redirectUrl, preferredContext }: SignInFormProps) {
   const t = useTranslations("auth.signIn");
   const { isLoaded: authLoaded } = useAuth();
   const { signOut } = useClerk();
@@ -305,7 +318,10 @@ export function SignInForm({ redirectUrl }: SignInFormProps) {
 
         <p className="text-center text-sm text-muted-foreground">
           {t("noAccount")}{" "}
-          <Link href="/registro" className="font-medium text-primary hover:underline">
+          <Link
+            href={buildSignUpHref(redirectUrl, preferredContext)}
+            className="font-medium text-primary hover:underline"
+          >
             {t("createAccount")}
           </Link>
         </p>
