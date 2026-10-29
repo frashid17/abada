@@ -2869,5 +2869,23 @@
       "emailMismatchTitle": "Correo no coincide",
       "emailMismatchDescription": "Inicia sesión con {email} o pide una nueva invitación a ese correo."
     }
+  },
+  "legal": {
+    "termsAcceptance": {
+      "eyebrow": "Requisito legal — Colombia",
+      "title": "Términos del Servicio y Política de Datos Personales",
+      "subtitle": "Antes de preparar documentos en Abada, debe leer y aceptar estos términos. Guardamos un registro de su aceptación (quién, cuándo y desde dónde).",
+      "versionLabel": "Versión {version}",
+      "checkbox": "He leído y acepto los Términos y Condiciones del Servicio de Abada y la Política de Tratamiento de Datos Personales.",
+      "accept": "Aceptar y continuar",
+      "submitting": "Registrando aceptación…",
+      "mustCheck": "Marque la casilla para confirmar que acepta los términos.",
+      "requiredNote": "La aceptación es obligatoria para usar la plataforma conforme a la normativa colombiana de protección de datos.",
+      "errors": {
+        "unauthorized": "Debes iniciar sesión.",
+        "invalid_locale": "Idioma no válido.",
+        "generic": "No se pudo registrar la aceptación. Intenta de nuevo."
+      }
+    }
   }
 }
