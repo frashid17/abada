@@ -1,6 +1,7 @@
 import { redirect } from "next/navigation";
 import { AuthShell } from "@/components/auth/auth-shell";
 import { SignUpForm } from "@/components/auth/sign-up-form";
+import { sanitizeRedirectUrl } from "@/lib/auth/redirect";
 import { getActiveSession, hasActiveAppSession } from "@/lib/auth/session";
 import { parseUserContext } from "@/lib/auth/user-context";
 import {
@@ -15,6 +16,17 @@ import {
   getPlatformInvitationByToken,
   isPlatformInvitationValid,
 } from "@/lib/platform-admin/invitations";
+import type { UserContext } from "@/types/database";
+
+/** Route founder/investor sign-ups through onboarding so workspace context is applied first. */
+function buildPreferredContextRedirect(
+  preferredContext: UserContext,
+  redirectUrl: string,
+): string {
+  const params = new URLSearchParams({ context: preferredContext });
+  if (redirectUrl) params.set("redirect_url", redirectUrl);
+  return `/onboarding?${params.toString()}`;
+}
 
 export default async function SignUpPage({
   searchParams,
@@ -32,6 +44,7 @@ export default async function SignUpPage({
   const platformInviteToken = params.platform_invite?.trim();
   const inviteEmail = params.email?.trim().toLowerCase();
   const preferredContext = parseUserContext(params.context);
+  const redirectUrl = sanitizeRedirectUrl(params.redirect_url, "");
 
   if (await hasActiveAppSession()) {
     const { userId } = await getActiveSession();
@@ -41,10 +54,10 @@ export default async function SignUpPage({
       }
       if (preferredContext) {
         const applied = await applyPreferredWorkspaceContext(userId, preferredContext);
-        redirect(params.redirect_url ?? applied ?? `/onboarding?context=${preferredContext}`);
+        redirect(redirectUrl || applied || `/onboarding?context=${preferredContext}`);
       }
       const destination = (await getOnboardingRedirect(userId)) ?? "/onboarding";
-      redirect(params.redirect_url ?? destination);
+      redirect(redirectUrl || destination);
     }
   }
 
@@ -62,16 +75,17 @@ export default async function SignUpPage({
     }
   }
 
-  const defaultRedirect = platformInviteToken
+  const formRedirect = platformInviteToken
     ? `/invitacion?token=${encodeURIComponent(platformInviteToken)}`
-    : preferredContext
-      ? `/onboarding?context=${preferredContext}`
-      : undefined;
+    : preferredContext === "founder" || preferredContext === "investor"
+      ? buildPreferredContextRedirect(preferredContext, redirectUrl)
+      : redirectUrl || undefined;
 
   return (
     <AuthShell>
       <SignUpForm
-        redirectUrl={params.redirect_url ?? defaultRedirect}
+        redirectUrl={formRedirect}
+        signInRedirectUrl={redirectUrl || undefined}
         inviteToken={inviteToken}
         platformInviteToken={platformInviteToken}
         inviteEmail={inviteEmail || undefined}
