@@ -197,10 +197,10 @@
     "invites": {
       "eyebrow": "Access",
       "title": "Platform invitations",
-      "subtitle": "Invite users by email with a chosen workspace role. Emails are sent as Abada from your verified Resend domain.",
+      "subtitle": "Share the beta access QR code, or invite by email with a workspace role. Emails are sent as Abada from your verified Resend domain.",
       "smtpMissing": "Email is not configured. Set RESEND_API_KEY and use a verified Resend domain in RESEND_FROM_EMAIL. You can still copy the invite link.",
-      "formTitle": "Send invitations",
-      "formDescription": "Choose one workspace role for everyone listed. Each person gets their own Spanish email with the Abada logo.",
+      "formTitle": "Send email invitations",
+      "formDescription": "Optional if you already share the QR. Choose one workspace role for everyone listed. Each person gets their own Spanish email with the Abada logo.",
       "emailLabel": "Emails",
       "emailPlaceholder": "name@company.com\nfounder@startup.co\npartner@firm.com",
       "emailChipPlaceholder": "Type an email and press Enter",
@@ -223,6 +223,16 @@
       "statusPending": "Pending",
       "statusAccepted": "Accepted",
       "statusExpired": "Expired",
+      "qr": {
+        "title": "Beta access QR code",
+        "description": "Share this with pilot founders. Scanning opens founder signup and lands them on the documents hub after account creation. Consent and the survey still appear when they start and download.",
+        "download": "Download PNG",
+        "copyLink": "Copy link",
+        "copied": "Copied",
+        "imageAlt": "QR code to open Abada documents as a founder",
+        "flowHint": "Flow: scan → create account → documents hub → accept terms when starting a document → survey before PDF download.",
+        "generateError": "Could not generate the QR code."
+      },
       "roles": {
         "founder": "Founder",
         "investor": "Investor",
