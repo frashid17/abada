@@ -3,15 +3,17 @@ import { AuthShell } from "@/components/auth/auth-shell";
 import { SignInForm } from "@/components/auth/sign-in-form";
 import { sanitizeRedirectUrl } from "@/lib/auth/redirect";
 import { getActiveSession, hasActiveAppSession } from "@/lib/auth/session";
+import { parseUserContext } from "@/lib/auth/user-context";
 import { getOnboardingRedirect } from "@/lib/onboarding/actions";
 
 export default async function SignInPage({
   searchParams,
 }: {
-  searchParams: Promise<{ redirect_url?: string }>;
+  searchParams: Promise<{ redirect_url?: string; context?: string }>;
 }) {
   const params = await searchParams;
   const redirectUrl = sanitizeRedirectUrl(params.redirect_url, "");
+  const preferredContext = parseUserContext(params.context) ?? undefined;
 
   if (await hasActiveAppSession()) {
     const { userId } = await getActiveSession();
@@ -23,7 +25,10 @@ export default async function SignInPage({
 
   return (
     <AuthShell>
-      <SignInForm redirectUrl={redirectUrl || undefined} />
+      <SignInForm
+        redirectUrl={redirectUrl || undefined}
+        preferredContext={preferredContext}
+      />
     </AuthShell>
   );
 }
