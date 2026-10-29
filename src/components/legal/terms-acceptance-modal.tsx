@@ -1,6 +1,7 @@
 "use client";
 
-import { useState, useTransition } from "react";
+import { useEffect, useState, useTransition } from "react";
+import { createPortal } from "react-dom";
 import { useLocale, useTranslations } from "next-intl";
 import { useRouter } from "next/navigation";
 import { Check, Loader2, Scale } from "lucide-react";
@@ -22,11 +23,25 @@ export function TermsAcceptanceModal({
   const t = useTranslations("legal.termsAcceptance");
   const locale = useLocale();
   const router = useRouter();
+  const [mounted, setMounted] = useState(false);
   const [accepted, setAccepted] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [pending, startTransition] = useTransition();
 
-  if (!open) return null;
+  useEffect(() => {
+    queueMicrotask(() => setMounted(true));
+  }, []);
+
+  useEffect(() => {
+    if (!open) return;
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = previousOverflow;
+    };
+  }, [open]);
+
+  if (!open || !mounted) return null;
 
   function handleAccept() {
     if (!accepted) {
@@ -47,9 +62,9 @@ export function TermsAcceptanceModal({
     });
   }
 
-  return (
+  const modal = (
     <div
-      className="fixed inset-0 z-[60] flex items-end justify-center bg-background/80 p-0 pt-16 backdrop-blur-md sm:items-center sm:p-6 sm:pt-20"
+      className="fixed inset-0 z-[100] flex items-center justify-center bg-background/85 p-4 backdrop-blur-sm sm:p-6"
       role="presentation"
     >
       <div
@@ -57,8 +72,8 @@ export function TermsAcceptanceModal({
         aria-modal="true"
         aria-labelledby="terms-acceptance-title"
         className={cn(
-          "relative flex max-h-[min(94dvh,calc(100dvh-5rem))] w-full max-w-3xl flex-col overflow-hidden",
-          "rounded-t-3xl border border-border/70 bg-card shadow-glow sm:rounded-3xl",
+          "flex w-full max-w-3xl flex-col overflow-hidden rounded-3xl border border-border/70 bg-card shadow-glow",
+          "max-h-[calc(100dvh-2rem)] sm:max-h-[calc(100dvh-3rem)]",
         )}
       >
         <div className="shrink-0 border-b border-border/60 px-5 pb-4 pt-6 sm:px-6 sm:pt-7">
@@ -76,9 +91,7 @@ export function TermsAcceptanceModal({
               >
                 {t("title")}
               </h2>
-              <p className="text-sm leading-relaxed text-muted-foreground">
-                {t("subtitle")}
-              </p>
+              <p className="text-sm leading-relaxed text-muted-foreground">{t("subtitle")}</p>
               <p className="text-xs text-muted-foreground">
                 {t("versionLabel", { version: termsVersion })}
               </p>
@@ -114,9 +127,7 @@ export function TermsAcceptanceModal({
                 if (e.target.checked) setError(null);
               }}
             />
-            <span className="text-sm leading-relaxed text-foreground">
-              {t("checkbox")}
-            </span>
+            <span className="text-sm leading-relaxed text-foreground">{t("checkbox")}</span>
           </label>
 
           {error ? (
@@ -143,4 +154,6 @@ export function TermsAcceptanceModal({
       </div>
     </div>
   );
+
+  return createPortal(modal, document.body);
 }
