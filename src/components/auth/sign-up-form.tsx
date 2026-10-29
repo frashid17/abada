@@ -21,12 +21,26 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 
 type SignUpFormProps = {
+  /** Post-sign-up destination (may be onboarding with nested redirect). */
   redirectUrl?: string;
+  /** Final destination preserved when switching to sign-in (e.g. /fundador/documentos). */
+  signInRedirectUrl?: string;
   inviteToken?: string;
   platformInviteToken?: string;
   inviteEmail?: string;
   preferredContext?: UserContext;
 };
+
+function buildSignInHref(
+  redirectUrl?: string,
+  preferredContext?: UserContext,
+): string {
+  const params = new URLSearchParams();
+  if (preferredContext) params.set("context", preferredContext);
+  if (redirectUrl) params.set("redirect_url", redirectUrl);
+  const query = params.toString();
+  return query ? `/iniciar-sesion?${query}` : "/iniciar-sesion";
+}
 
 function rememberPreferredContext(context: UserContext | undefined) {
   if (!context || typeof document === "undefined") return;
@@ -36,6 +50,7 @@ function rememberPreferredContext(context: UserContext | undefined) {
 
 export function SignUpForm({
   redirectUrl,
+  signInRedirectUrl,
   inviteToken,
   platformInviteToken,
   inviteEmail,
@@ -302,7 +317,10 @@ export function SignUpForm({
 
         <p className="text-center text-sm text-muted-foreground">
           {t("hasAccount")}{" "}
-          <Link href="/iniciar-sesion" className="font-medium text-primary hover:underline">
+          <Link
+            href={buildSignInHref(signInRedirectUrl ?? redirectUrl, preferredContext)}
+            className="font-medium text-primary hover:underline"
+          >
             {t("signIn")}
           </Link>
         </p>
