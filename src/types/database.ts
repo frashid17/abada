@@ -247,6 +247,42 @@ export interface Database {
         };
         Relationships: [];
       };
+      terms_acceptances: {
+        Row: {
+          id: string;
+          owner_sub: string;
+          terms_version: string;
+          locale: string;
+          respondent_email: string;
+          respondent_name: string | null;
+          ip_address: string | null;
+          user_agent: string | null;
+          accepted_at: string;
+        };
+        Insert: {
+          id?: string;
+          owner_sub: string;
+          terms_version: string;
+          locale: string;
+          respondent_email: string;
+          respondent_name?: string | null;
+          ip_address?: string | null;
+          user_agent?: string | null;
+          accepted_at?: string;
+        };
+        Update: {
+          id?: string;
+          owner_sub?: string;
+          terms_version?: string;
+          locale?: string;
+          respondent_email?: string;
+          respondent_name?: string | null;
+          ip_address?: string | null;
+          user_agent?: string | null;
+          accepted_at?: string;
+        };
+        Relationships: [];
+      };
       platform_ui_copy_overrides: {
         Row: {
           id: string;
