@@ -13,16 +13,17 @@ type InviteQrCardProps = {
   fileStem?: string;
 };
 
+type QrResult =
+  | { status: "ready"; forUrl: string; dataUrl: string }
+  | { status: "error"; forUrl: string; message: string };
+
 export function InviteQrCard({ url, fileStem = "abada-acceso-beta" }: InviteQrCardProps) {
   const t = useTranslations("admin.invites.qr");
-  const [dataUrl, setDataUrl] = useState<string | null>(null);
-  const [error, setError] = useState<string | null>(null);
+  const [result, setResult] = useState<QrResult | null>(null);
   const [copied, setCopied] = useState(false);
 
   useEffect(() => {
     let cancelled = false;
-    setError(null);
-    setDataUrl(null);
 
     void QRCode.toDataURL(url, {
       errorCorrectionLevel: "M",
@@ -34,17 +35,22 @@ export function InviteQrCard({ url, fileStem = "abada-acceso-beta" }: InviteQrCa
         light: "#FFFFFF",
       },
     })
-      .then((next) => {
-        if (!cancelled) setDataUrl(next);
+      .then((dataUrl) => {
+        if (!cancelled) setResult({ status: "ready", forUrl: url, dataUrl });
       })
       .catch(() => {
-        if (!cancelled) setError(t("generateError"));
+        if (!cancelled) {
+          setResult({ status: "error", forUrl: url, message: t("generateError") });
+        }
       });
 
     return () => {
       cancelled = true;
     };
   }, [url, t]);
+
+  const dataUrl = result?.status === "ready" && result.forUrl === url ? result.dataUrl : null;
+  const error = result?.status === "error" && result.forUrl === url ? result.message : null;
 
   async function copyLink() {
     await navigator.clipboard.writeText(url);
