@@ -3,6 +3,7 @@ import { NextResponse } from "next/server";
 import { isInvestmentDocumentType } from "@/lib/documents/catalog";
 import { hasDocumentDownloadFeedback } from "@/lib/documents/download-feedback";
 import { isFlowDocumentType } from "@/lib/documents/intake";
+import { hasAcceptedCurrentTerms } from "@/lib/legal/terms";
 import { createFingerprintedVersion } from "@/lib/documents/service";
 import { writeAuditLog } from "@/lib/audit";
 import { enforceRateLimit, RATE_LIMITS, rateLimitResponseBody } from "@/lib/rate-limit";
@@ -20,6 +21,14 @@ export async function GET(request: Request, context: RouteContext) {
   const { docType } = await context.params;
   if (!isInvestmentDocumentType(docType) || !isFlowDocumentType(docType)) {
     return NextResponse.json({ error: "Not found" }, { status: 404 });
+  }
+
+  const termsAccepted = await hasAcceptedCurrentTerms(userId);
+  if (!termsAccepted) {
+    return NextResponse.json(
+      { error: "terms_required", message: "Terms acceptance required before download" },
+      { status: 403 },
+    );
   }
 
   const feedbackDone = await hasDocumentDownloadFeedback(userId, docType);
