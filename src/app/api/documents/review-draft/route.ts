@@ -4,6 +4,7 @@ import { getBrandName, getFirmName } from "@/lib/brand";
 import { hasDocumentDownloadFeedback } from "@/lib/documents/download-feedback";
 import { buildReviewDraftPdf } from "@/lib/documents/prototype/review-pdf";
 import type { PrototypeCompany } from "@/lib/documents/prototype/store";
+import { hasAcceptedCurrentTerms } from "@/lib/legal/terms";
 import { writeAuditLog } from "@/lib/audit";
 
 type ReviewDraftBody = {
@@ -40,6 +41,13 @@ export async function POST(request: Request) {
 
   const mode = body.mode === "download" ? "download" : "preview";
   if (mode === "download") {
+    const termsAccepted = await hasAcceptedCurrentTerms(userId);
+    if (!termsAccepted) {
+      return NextResponse.json(
+        { error: "terms_required", message: "Terms acceptance required before download" },
+        { status: 403 },
+      );
+    }
     const feedbackDone = await hasDocumentDownloadFeedback(userId, "prototype_review");
     if (!feedbackDone) {
       return NextResponse.json(
