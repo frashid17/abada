@@ -5,6 +5,7 @@ import { useTranslations } from "next-intl";
 import { Copy, Loader2, Mail } from "lucide-react";
 import { useRouter } from "@/i18n/navigation";
 import { EmailChipInput } from "@/components/admin/email-chip-input";
+import { InviteQrCard } from "@/components/admin/invite-qr-card";
 import {
   createPlatformInvitesAction,
   type BulkInviteResultItem,
@@ -19,9 +20,12 @@ const ROLES: PlatformInviteRole[] = ["founder", "investor", "firm"];
 export function PlatformInvitePanel({
   invitations,
   emailConfigured,
+  signupUrl,
 }: {
   invitations: PlatformInvitationRecord[];
   emailConfigured: boolean;
+  /** Absolute founder signup URL for the shareable beta QR. */
+  signupUrl: string;
 }) {
   const t = useTranslations("admin.invites");
   const router = useRouter();
@@ -77,6 +81,8 @@ export function PlatformInvitePanel({
 
   return (
     <div className="space-y-8">
+      <InviteQrCard url={signupUrl} />
+
       {!emailConfigured ? (
         <div className="rounded-xl border border-amber-500/30 bg-amber-500/10 px-4 py-3 text-sm text-foreground">
           {t("smtpMissing")}
