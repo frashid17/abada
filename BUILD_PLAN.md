@@ -52,6 +52,7 @@ Colombian legal-AI due diligence & investment-readiness platform.
 - [x] Server-rendered preview + fingerprinted **PDF** download (`/api/documents/[docType]/download`) with party signature blocks; attorney cursive signature + firm watermark after review completion
 - [x] Pre-download feedback form (Google Form questions in-app) required before each PDF download; notifies Balam via Resend
 - [x] Terms of Service + Personal Data Policy acceptance modal on first document start (version `2026-10-23`, ES/EN); records acceptance + audit log; migration `027_terms_acceptances.sql`
+- [x] Beta access QR on `/admin/invitaciones` — downloadable PNG + copy link; signup as founder then land on `/fundador/documentos`
 - [x] Finalize download auto-enqueues document in firm review queue (`/firma/cola`)
 - [x] Explicit **Submit for review** action (separate from download); founder chooses document language (es-CO / en-US) for preview and PDF disclaimers
 - [x] AI drafting panel in document flow (`/api/ai/chat`, task=`drafting`)
