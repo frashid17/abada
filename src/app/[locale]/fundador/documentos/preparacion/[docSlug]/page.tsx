@@ -1,14 +1,17 @@
 import { auth } from "@clerk/nextjs/server";
+import { getLocale } from "next-intl/server";
 import { redirect, notFound } from "next/navigation";
 import { AppShell } from "@/components/layout/app-shell";
 import { DocumentArticleReader } from "@/components/founder/document-article-reader";
 import { WithResolvedPrototypeContent } from "@/components/founder/with-resolved-prototype-content";
+import { TermsAcceptanceGate } from "@/components/legal/terms-acceptance-gate";
 import { getOrCreateProfile } from "@/lib/auth/profile";
 import {
   flattenPrototypeArticles,
   isPrototypeDocId,
 } from "@/lib/documents/prototype/catalog";
 import { getResolvedPrototypeContent } from "@/lib/documents/prototype/resolve-content";
+import { getTermsGateProps } from "@/lib/legal/terms-gate";
 
 function resolveArticleIndex(
   art: string | undefined,
@@ -43,15 +46,21 @@ export default async function FounderDocumentPreparationPage({
   const profile = await getOrCreateProfile();
   if (profile?.context !== "founder") redirect("/");
 
-  const content = await getResolvedPrototypeContent();
+  const locale = (await getLocale()) as "es-CO" | "en-US";
+  const [content, termsGate] = await Promise.all([
+    getResolvedPrototypeContent(),
+    getTermsGateProps(userId, locale),
+  ]);
   const articles = flattenPrototypeArticles(docSlug, content);
   const initialIndex = resolveArticleIndex(art, articles);
 
   return (
     <AppShell variant="founder">
-      <WithResolvedPrototypeContent>
-        <DocumentArticleReader docId={docSlug} initialIndex={initialIndex} />
-      </WithResolvedPrototypeContent>
+      <TermsAcceptanceGate {...termsGate}>
+        <WithResolvedPrototypeContent>
+          <DocumentArticleReader docId={docSlug} initialIndex={initialIndex} />
+        </WithResolvedPrototypeContent>
+      </TermsAcceptanceGate>
     </AppShell>
   );
 }
