@@ -1,9 +1,12 @@
 import { auth, currentUser } from "@clerk/nextjs/server";
+import { getLocale } from "next-intl/server";
 import { redirect } from "next/navigation";
 import { AppShell } from "@/components/layout/app-shell";
 import { DocumentReviewBeforeSign } from "@/components/founder/document-review-before-sign";
 import { WithResolvedPrototypeContent } from "@/components/founder/with-resolved-prototype-content";
+import { TermsAcceptanceGate } from "@/components/legal/terms-acceptance-gate";
 import { getOrCreateProfile } from "@/lib/auth/profile";
+import { getTermsGateProps } from "@/lib/legal/terms-gate";
 
 export default async function FounderDocumentReviewPage() {
   const { userId } = await auth();
@@ -14,7 +17,11 @@ export default async function FounderDocumentReviewPage() {
   const profile = await getOrCreateProfile();
   if (profile?.context !== "founder") redirect("/");
 
-  const user = await currentUser();
+  const locale = (await getLocale()) as "es-CO" | "en-US";
+  const [user, termsGate] = await Promise.all([
+    currentUser(),
+    getTermsGateProps(userId, locale),
+  ]);
   const respondentEmail =
     user?.primaryEmailAddress?.emailAddress ??
     user?.emailAddresses?.[0]?.emailAddress ??
@@ -22,9 +29,11 @@ export default async function FounderDocumentReviewPage() {
 
   return (
     <AppShell variant="founder">
-      <WithResolvedPrototypeContent>
-        <DocumentReviewBeforeSign respondentEmail={respondentEmail} />
-      </WithResolvedPrototypeContent>
+      <TermsAcceptanceGate {...termsGate}>
+        <WithResolvedPrototypeContent>
+          <DocumentReviewBeforeSign respondentEmail={respondentEmail} />
+        </WithResolvedPrototypeContent>
+      </TermsAcceptanceGate>
     </AppShell>
   );
 }
