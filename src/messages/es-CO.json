@@ -197,10 +197,10 @@
     "invites": {
       "eyebrow": "Acceso",
       "title": "Invitaciones de plataforma",
-      "subtitle": "Invita usuarios por correo con el rol de espacio de trabajo que elijas. Los correos salen como Abada desde tu dominio verificado en Resend.",
+      "subtitle": "Comparte el código QR de acceso beta, o invita por correo con un rol de espacio de trabajo. Los correos salen como Abada desde tu dominio verificado en Resend.",
       "smtpMissing": "El correo no está configurado. Define RESEND_API_KEY y usa un dominio verificado en RESEND_FROM_EMAIL. Aun así puedes copiar el enlace.",
-      "formTitle": "Enviar invitaciones",
-      "formDescription": "Elige un rol de espacio de trabajo para todos los listados. Cada persona recibe su propio correo en español con el logo de Abada.",
+      "formTitle": "Enviar invitaciones por correo",
+      "formDescription": "Opcional si ya compartes el QR. Elige un rol para todos los listados. Cada persona recibe su propio correo en español con el logo de Abada.",
       "emailLabel": "Correos",
       "emailPlaceholder": "nombre@empresa.com\nfundador@startup.co\nsocio@firma.com",
       "emailChipPlaceholder": "Escribe un correo y pulsa Enter",
@@ -223,6 +223,16 @@
       "statusPending": "Pendiente",
       "statusAccepted": "Aceptada",
       "statusExpired": "Vencida",
+      "qr": {
+        "title": "Código QR de acceso beta",
+        "description": "Compártelo con fundadores de prueba. Al escanearlo llegan al registro y, tras crear la cuenta, al hub de documentos. El consentimiento y la encuesta aparecen al generar y descargar.",
+        "download": "Descargar PNG",
+        "copyLink": "Copiar enlace",
+        "copied": "Copiado",
+        "imageAlt": "Código QR para abrir documentos de Abada como fundador",
+        "flowHint": "Flujo: escanear → crear cuenta → hub de documentos → aceptar términos al iniciar un documento → encuesta antes de descargar el PDF.",
+        "generateError": "No se pudo generar el código QR."
+      },
       "roles": {
         "founder": "Fundador",
         "investor": "Inversionista",
