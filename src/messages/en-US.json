@@ -229,9 +229,12 @@
         "download": "Download PNG",
         "copyLink": "Copy link",
         "copied": "Copied",
-        "imageAlt": "QR code to open Abada documents as a founder",
+        "imageAlt": "Abada poster with QR code for founder access",
         "flowHint": "Flow: scan → create account → documents hub → accept terms when starting a document → survey before PDF download.",
-        "generateError": "Could not generate the QR code."
+        "generateError": "Could not generate the QR code.",
+        "posterHeadline": "Beta access for founders",
+        "posterInstruction": "Scan the code to create your account and open documents",
+        "posterFooter": "Abada · Operated by Balam Legal"
       },
       "roles": {
         "founder": "Founder",
