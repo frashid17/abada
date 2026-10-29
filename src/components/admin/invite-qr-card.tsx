@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { useTranslations } from "next-intl";
 import { Copy, Download, Loader2, QrCode } from "lucide-react";
 import QRCode from "qrcode";
+import { composeInviteQrPosterPng } from "@/lib/admin/compose-invite-qr-png";
 import { Button } from "@/components/ui/button";
 
 type InviteQrCardProps = {
@@ -13,43 +14,58 @@ type InviteQrCardProps = {
   fileStem?: string;
 };
 
-type QrResult =
-  | { status: "ready"; forUrl: string; dataUrl: string }
+type PosterResult =
+  | { status: "ready"; forUrl: string; posterDataUrl: string }
   | { status: "error"; forUrl: string; message: string };
 
 export function InviteQrCard({ url, fileStem = "abada-acceso-beta" }: InviteQrCardProps) {
   const t = useTranslations("admin.invites.qr");
-  const [result, setResult] = useState<QrResult | null>(null);
+  const tShell = useTranslations("shell");
+  const [result, setResult] = useState<PosterResult | null>(null);
   const [copied, setCopied] = useState(false);
 
   useEffect(() => {
     let cancelled = false;
 
-    void QRCode.toDataURL(url, {
-      errorCorrectionLevel: "M",
-      margin: 2,
-      width: 512,
-      color: {
-        // High-contrast ink for reliable camera scanning (not UI tokens).
-        dark: "#000000",
-        light: "#FFFFFF",
-      },
-    })
-      .then((dataUrl) => {
-        if (!cancelled) setResult({ status: "ready", forUrl: url, dataUrl });
-      })
-      .catch(() => {
+    void (async () => {
+      try {
+        const qrDataUrl = await QRCode.toDataURL(url, {
+          errorCorrectionLevel: "M",
+          margin: 2,
+          width: 512,
+          color: {
+            // High-contrast ink for reliable camera scanning (not UI tokens).
+            dark: "#000000",
+            light: "#FFFFFF",
+          },
+        });
+
+        const posterDataUrl = await composeInviteQrPosterPng({
+          qrDataUrl,
+          url,
+          copy: {
+            brandName: tShell("brand"),
+            headline: t("posterHeadline"),
+            instruction: t("posterInstruction"),
+            footer: t("posterFooter"),
+          },
+        });
+
+        if (!cancelled) setResult({ status: "ready", forUrl: url, posterDataUrl });
+      } catch {
         if (!cancelled) {
           setResult({ status: "error", forUrl: url, message: t("generateError") });
         }
-      });
+      }
+    })();
 
     return () => {
       cancelled = true;
     };
-  }, [url, t]);
+  }, [url, t, tShell]);
 
-  const dataUrl = result?.status === "ready" && result.forUrl === url ? result.dataUrl : null;
+  const posterDataUrl =
+    result?.status === "ready" && result.forUrl === url ? result.posterDataUrl : null;
   const error = result?.status === "error" && result.forUrl === url ? result.message : null;
 
   async function copyLink() {
@@ -59,9 +75,9 @@ export function InviteQrCard({ url, fileStem = "abada-acceso-beta" }: InviteQrCa
   }
 
   function downloadPng() {
-    if (!dataUrl) return;
+    if (!posterDataUrl) return;
     const anchor = document.createElement("a");
-    anchor.href = dataUrl;
+    anchor.href = posterDataUrl;
     anchor.download = `${fileStem}.png`;
     anchor.click();
   }
@@ -70,11 +86,15 @@ export function InviteQrCard({ url, fileStem = "abada-acceso-beta" }: InviteQrCa
     <section className="rounded-2xl border border-border/70 bg-muted/30 p-5">
       <div className="flex flex-col gap-6 sm:flex-row sm:items-start">
         <div className="flex shrink-0 flex-col items-center gap-3">
-          <div className="flex h-48 w-48 items-center justify-center rounded-xl border border-border/60 bg-background p-3">
-            {dataUrl ? (
-              // Data URL from qrcode — next/image is not useful here.
+          <div className="flex h-64 w-48 items-center justify-center overflow-hidden rounded-xl border border-border/60 bg-background p-2">
+            {posterDataUrl ? (
+              // Poster data URL from canvas — next/image is not useful here.
               // eslint-disable-next-line @next/next/no-img-element
-              <img src={dataUrl} alt={t("imageAlt")} className="h-full w-full" />
+              <img
+                src={posterDataUrl}
+                alt={t("imageAlt")}
+                className="h-full w-full object-contain"
+              />
             ) : error ? (
               <QrCode className="h-10 w-10 text-muted-foreground" aria-hidden />
             ) : (
@@ -96,7 +116,7 @@ export function InviteQrCard({ url, fileStem = "abada-acceso-beta" }: InviteQrCa
           <p className="break-all font-mono text-xs text-muted-foreground">{url}</p>
 
           <div className="flex flex-wrap gap-2">
-            <Button type="button" size="sm" onClick={downloadPng} disabled={!dataUrl}>
+            <Button type="button" size="sm" onClick={downloadPng} disabled={!posterDataUrl}>
               <Download className="h-4 w-4" />
               {t("download")}
             </Button>
