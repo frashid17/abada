@@ -5,12 +5,14 @@ import { AppShell } from "@/components/layout/app-shell";
 import { DocumentWorkspace } from "@/components/founder/document-workspace";
 import { DocumentFlowBackLink } from "@/components/founder/document-flow-back-link";
 import { FounderDocumentationTabs } from "@/components/founder/founder-documentation-tabs";
+import { TermsAcceptanceGate } from "@/components/legal/terms-acceptance-gate";
 import { Card, CardContent } from "@/components/ui/card";
 import { isFlowDocumentType, getIntakeSchema } from "@/lib/documents/intake";
 import { ensureInvestmentReadinessChecklist } from "@/lib/documents/dashboard";
 import { buildEditableDocumentBody } from "@/lib/documents/editable-body";
 import { getDocumentFlowState } from "@/lib/documents/service";
 import { isInvestmentDocumentType } from "@/lib/documents/catalog";
+import { getTermsGateProps } from "@/lib/legal/terms-gate";
 import { getAiAccessStatus } from "@/lib/payments/ai-access";
 
 export default async function FounderDocumentFlowPage({
@@ -46,10 +48,11 @@ export default async function FounderDocumentFlowPage({
   }
 
   const locale = (await getLocale()) as "es-CO" | "en-US";
-  const [state, aiAccess, user] = await Promise.all([
+  const [state, aiAccess, user, termsGate] = await Promise.all([
     getDocumentFlowState(docId),
     getAiAccessStatus(userId, locale),
     currentUser(),
+    getTermsGateProps(userId, locale),
   ]);
   if (!state) notFound();
 
@@ -65,25 +68,27 @@ export default async function FounderDocumentFlowPage({
 
   return (
     <AppShell variant="founder">
-      <div className="-mx-4 space-y-0 sm:-mx-6">
-        <div className="sticky top-14 z-30 space-y-3 border-b border-border/50 bg-background/95 px-4 py-3 backdrop-blur-sm sm:top-16 sm:px-6">
-          <DocumentFlowBackLink />
-          {learnGuideType ? (
-            <FounderDocumentationTabs activeDocument={learnGuideType} />
-          ) : null}
+      <TermsAcceptanceGate {...termsGate}>
+        <div className="-mx-4 space-y-0 sm:-mx-6">
+          <div className="sticky top-14 z-30 space-y-3 border-b border-border/50 bg-background/95 px-4 py-3 backdrop-blur-sm sm:top-16 sm:px-6">
+            <DocumentFlowBackLink />
+            {learnGuideType ? (
+              <FounderDocumentationTabs activeDocument={learnGuideType} />
+            ) : null}
+          </div>
+          <DocumentWorkspace
+            documentType={docId}
+            initialFields={state.fields}
+            initialBody={initialBody}
+            status={state.document.status}
+            helpMessage={state.helpMessage}
+            reviewSummary={state.reviewSummary}
+            aiAccess={aiAccess}
+            learnGuideType={learnGuideType}
+            respondentEmail={respondentEmail}
+          />
         </div>
-        <DocumentWorkspace
-          documentType={docId}
-          initialFields={state.fields}
-          initialBody={initialBody}
-          status={state.document.status}
-          helpMessage={state.helpMessage}
-          reviewSummary={state.reviewSummary}
-          aiAccess={aiAccess}
-          learnGuideType={learnGuideType}
-          respondentEmail={respondentEmail}
-        />
-      </div>
+      </TermsAcceptanceGate>
     </AppShell>
   );
 }
