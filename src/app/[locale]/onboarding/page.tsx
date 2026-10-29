@@ -6,6 +6,7 @@ import { OnboardingWizard } from "@/components/onboarding/onboarding-wizard";
 import {
   readPreferredContextCookie,
 } from "@/lib/auth/preferred-context-cookie";
+import { sanitizeRedirectUrl } from "@/lib/auth/redirect";
 import { parseUserContext } from "@/lib/auth/user-context";
 import { getActiveSession } from "@/lib/auth/session";
 import { resolveInviteForOnboarding } from "@/lib/firm/invite-lookup";
@@ -18,12 +19,13 @@ import {
 export default async function OnboardingPage({
   searchParams,
 }: {
-  searchParams: Promise<{ invite?: string; context?: string }>;
+  searchParams: Promise<{ invite?: string; context?: string; redirect_url?: string }>;
 }) {
   const params = await searchParams;
   const { userId } = await getActiveSession();
   if (!userId) redirect("/registro");
 
+  const redirectUrl = sanitizeRedirectUrl(params.redirect_url, "");
   const user = await currentUser();
   const email =
     user?.primaryEmailAddress?.emailAddress ??
@@ -45,11 +47,11 @@ export default async function OnboardingPage({
   // Firm invites win over a marketing-context preference.
   if (!invitation && (preferred === "founder" || preferred === "investor")) {
     const applied = await applyPreferredWorkspaceContext(userId, preferred);
-    if (applied) redirect(applied);
+    if (applied) redirect(redirectUrl || applied);
   }
 
   const done = await getOnboardingRedirect(userId);
-  if (done) redirect(done);
+  if (done) redirect(redirectUrl || done);
 
   const t = await getTranslations("onboarding");
 
